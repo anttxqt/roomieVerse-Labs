@@ -28,9 +28,9 @@
   --blue-soft: #dbeafe;
   --blue-dark: #0a1e4a;
   --blue-deep: #061638;
-  --pink: #ec4899;
-  --pink-bright: #ff77b7;
-  --pink-soft: #fbcfe8;
+  --pink: #ff9fbd;
+  --pink-bright: #ffc8d8;
+  --pink-soft: #fff0f5;
   --paper: #ffffff;
   --paper-blue: #f5f8ff;
   --ink: #071733;
@@ -422,7 +422,7 @@ img {
   display: inline-block;
   padding: .04em .12em .08em;
   border-radius: .16em;
-  color: white;
+  color: var(--blue-dark);
   background: var(--pink);
   font-style: normal;
 }
@@ -475,7 +475,7 @@ img {
   top: 49%;
   width: 148px;
   aspect-ratio: 1;
-  background: linear-gradient(145deg, #ffd6ea, var(--pink-bright) 53%, #be185d);
+  background: linear-gradient(145deg, #fff0f5, var(--pink-bright) 53%, #f58cac);
 }
 
 .hero-orb--blue {
@@ -524,7 +524,7 @@ img {
   position: relative;
   height: 100vh;
   min-height: 700px;
-  color: white;
+  color: var(--blue-dark);
   background: var(--pink);
 }
 
@@ -534,8 +534,8 @@ img {
   min-height: 700px;
   overflow: hidden;
   background:
-    radial-gradient(circle at 52% 44%, rgba(37,99,235,.34), transparent 43%),
-    linear-gradient(145deg, #f05ca5 0%, var(--pink) 56%, #d93686 100%);
+    radial-gradient(circle at 52% 44%, rgba(255,255,255,.46), transparent 43%),
+    linear-gradient(145deg, #ffd0df 0%, var(--pink) 56%, #f58cac 100%);
 }
 
 .story-copy {
@@ -583,7 +583,7 @@ img {
 .story-copy p {
   max-width: 750px;
   margin: 0 auto;
-  color: rgba(255,255,255,.76);
+  color: rgba(7,23,51,.72);
   font-size: clamp(17px, 1.5vw, 22px);
   line-height: 1.65;
 }
@@ -591,7 +591,7 @@ img {
 .story-emphasis {
   --line-progress: 0;
   position: relative;
-  color: white;
+  color: var(--blue-dark);
   white-space: nowrap;
 }
 
@@ -603,7 +603,7 @@ img {
   bottom: -.2em;
   height: .17em;
   border-radius: 999px;
-  background: var(--blue-soft);
+  background: var(--blue);
   transform: scaleX(var(--line-progress));
   transform-origin: left center;
 }
@@ -621,7 +621,7 @@ img {
   right: -22vw;
   width: 72vw;
   aspect-ratio: 1;
-  color: var(--blue-soft);
+  color: var(--blue);
   animation: orbit-turn 40s linear infinite;
 }
 
@@ -629,6 +629,7 @@ img {
 
 .keep-scrolling {
   opacity: 0;
+  color: rgba(7,23,51,.56);
 }
 
 .hero-side-logo {
@@ -970,7 +971,7 @@ img {
 }
 
 .topping-card:nth-child(2) {
-  color: white;
+  color: var(--blue-dark);
   background: var(--pink);
 }
 
@@ -1031,7 +1032,7 @@ img {
   margin: 0;
   padding: 112px max(6.5vw, 38px);
   overflow: hidden;
-  color: white;
+  color: var(--blue-dark);
   background: var(--pink);
 }
 
@@ -1061,7 +1062,7 @@ img {
 .footer-copy > p {
   max-width: 540px;
   margin: 38px 0;
-  color: rgba(255,255,255,.74);
+  color: rgba(7,23,51,.72);
   font-size: clamp(19px, 1.7vw, 25px);
   line-height: 1.45;
 }
@@ -1072,16 +1073,16 @@ img {
   gap: 38px;
   padding: 20px 25px 20px 29px;
   border-radius: 999px;
-  color: var(--blue-dark);
-  background: white;
+  color: white;
+  background: var(--blue);
   font-weight: 700;
   transition: transform .25s ease, background-color .25s ease;
 }
 
 .button:hover {
   transform: translateY(-3px);
-  color: white;
-  background: var(--blue);
+  color: var(--blue-dark);
+  background: white;
 }
 
 .button span {
@@ -1119,7 +1120,7 @@ img {
   bottom: -50vw;
   width: 90vw;
   aspect-ratio: 1;
-  color: var(--blue-soft);
+  color: var(--blue);
 }
 
 .floating-menu {
