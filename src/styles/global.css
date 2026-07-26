@@ -28,6 +28,7 @@
   --blue-soft: #dbeafe;
   --blue-dark: #0a1e4a;
   --blue-deep: #061638;
+  --roomieverse-blue: #93c5fd;
   --pink: #ffd0df;
   --pink-bright: #ffe6ee;
   --pink-soft: #fff7fa;
@@ -144,7 +145,7 @@ img {
   align-items: center;
   justify-content: space-between;
   padding: 0 28px;
-  color: white;
+  color: var(--blue-dark);
   transition: inset 0.55s var(--ease-out), top 0.55s var(--ease-out), height 0.55s var(--ease-out), padding 0.55s var(--ease-out), background-color 0.4s ease, box-shadow 0.4s ease;
 }
 
@@ -155,6 +156,7 @@ img {
   height: 84px;
   padding-inline: 5.2vw;
   background: rgba(6, 22, 56, 0.94);
+  color: white;
   box-shadow: 0 1px rgba(255,255,255,.13);
   backdrop-filter: blur(18px);
 }
@@ -384,7 +386,7 @@ img {
   height: 100vh;
   min-height: 700px;
   overflow: hidden;
-  background: var(--blue);
+  background: var(--blue-deep);
 }
 
 .hero-shell {
@@ -392,9 +394,9 @@ img {
   inset: 22px;
   overflow: hidden;
   border-radius: 82px;
-  color: white;
-  background: var(--blue-deep);
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,.07);
+  color: var(--blue-dark);
+  background: var(--roomieverse-blue);
+  box-shadow: inset 0 0 0 1px rgba(7,23,51,.08);
 }
 
 .hero-copy {
@@ -429,7 +431,7 @@ img {
 .hero-copy p {
   max-width: 680px;
   margin: 0 auto;
-  color: rgba(255,255,255,.68);
+  color: rgba(7,23,51,.68);
   font-size: clamp(16px, 1.55vw, 23px);
   line-height: 1.45;
 }
@@ -500,7 +502,7 @@ img {
   display: grid;
   justify-items: center;
   gap: 9px;
-  color: rgba(255,255,255,.58);
+  color: rgba(7,23,51,.58);
   transform: translateX(-50%);
 }
 
