@@ -178,9 +178,23 @@ img {
   white-space: nowrap;
 }
 
-.brand strong b {
-  font-weight: 500;
-  opacity: .65;
+.brand-wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  gap: .34em;
+  font-size: 25px !important;
+  font-weight: 700;
+}
+
+.brand-wordmark > span {
+  letter-spacing: -.07em;
+}
+
+.brand-wordmark small {
+  font-size: .68em;
+  font-weight: 700;
+  letter-spacing: -.025em;
+  opacity: .68;
 }
 
 .brand-mark {
@@ -1169,8 +1183,6 @@ img {
     right: 34px;
   }
 
-  .brand strong b { display: none; }
-
   .dish-card,
   .dish-card:nth-child(even) {
     grid-template-columns: 1fr;
@@ -1234,6 +1246,11 @@ img {
 
   .brand strong {
     font-size: 15px;
+  }
+
+  .brand-wordmark {
+    gap: .28em;
+    font-size: 18px !important;
   }
 
   .menu-button {
