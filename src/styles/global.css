@@ -28,9 +28,10 @@
   --blue-soft: #dbeafe;
   --blue-dark: #0a1e4a;
   --blue-deep: #061638;
-  --pink: #ff9fbd;
-  --pink-bright: #ffc8d8;
-  --pink-soft: #fff0f5;
+  --pink: #ffd0df;
+  --pink-bright: #ffe6ee;
+  --pink-soft: #fff7fa;
+  --pink-ink: #d75c88;
   --paper: #ffffff;
   --paper-blue: #f5f8ff;
   --ink: #071733;
@@ -221,7 +222,7 @@ img {
 
 .menu-button:hover {
   transform: translateY(-2px);
-  color: white;
+  color: var(--blue-dark);
   background: var(--pink);
 }
 
@@ -674,7 +675,7 @@ img {
 }
 
 .section-title em {
-  color: var(--pink);
+  color: var(--pink-ink);
   font-style: normal;
 }
 
@@ -799,7 +800,7 @@ img {
 }
 
 .product-sidebar b { width: 70%; height: 22px; background: var(--blue); }
-.product-card--pink .product-sidebar b { background: var(--pink); }
+.product-card--pink .product-sidebar b { background: var(--pink-ink); }
 .product-card--navy .product-sidebar b { background: var(--blue-dark); }
 
 .product-dashboard {
@@ -842,7 +843,7 @@ img {
 
 .product-metrics span { color: var(--muted); font-size: 9px; }
 .product-metrics strong { color: var(--blue); font-size: 20px; }
-.product-card--pink .product-metrics strong { color: var(--pink); }
+.product-card--pink .product-metrics strong { color: var(--pink-ink); }
 .product-card--navy .product-metrics strong { color: var(--blue-dark); }
 
 .product-chart {
@@ -869,7 +870,7 @@ img {
 .product-chart i:nth-child(5) { height: 64%; }
 .product-chart i:nth-child(6) { height: 92%; }
 .product-card--pink .product-chart { background: #fce7f3; }
-.product-card--pink .product-chart i { background: var(--pink); }
+.product-card--pink .product-chart i { background: var(--pink-ink); }
 .product-card--navy .product-chart { background: #e8eefc; }
 .product-card--navy .product-chart i { background: var(--blue-dark); }
 
@@ -907,7 +908,7 @@ img {
   letter-spacing: .02em;
 }
 
-.product-card--pink .dish-copy > small { color: var(--pink); }
+.product-card--pink .dish-copy > small { color: var(--pink-ink); }
 .product-card--navy .dish-copy > small { color: var(--blue-dark); }
 
 .dish-copy p {
