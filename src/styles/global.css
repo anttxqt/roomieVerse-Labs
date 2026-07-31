@@ -1246,7 +1246,7 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
   gap: 32px;
   padding: 56px 72px;
   border-radius: 56px;
-  background: var(--pink);
+  background: var(--blue-deep);
   box-shadow: 0 12px 40px rgba(5, 18, 47, 0.05);
 }
 
@@ -1281,7 +1281,7 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
 }
 
 .footer-row-links a {
-  color: var(--blue-dark);
+  color: var(--paper);
   font-size: 18px;
   font-weight: 600;
   text-decoration: none;
@@ -1307,8 +1307,12 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
   opacity: 0.7;
 }
 
-.footer-card--logo {
-  color: var(--blue-dark);
+.footer-card--logo .brand-logo__image--navy {
+  opacity: 0;
+}
+
+.footer-card--logo .brand-logo__image--light {
+  opacity: 1;
 }
 
 .footer-card--logo svg {
