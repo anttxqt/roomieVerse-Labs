@@ -576,7 +576,8 @@ img {
   letter-spacing: -.075em;
 }
 
-.hero-copy h1 em {
+.hero-copy h1 em,
+.hero-copy p mark {
   position: relative;
   display: inline-block;
   padding: .04em .12em .08em;
