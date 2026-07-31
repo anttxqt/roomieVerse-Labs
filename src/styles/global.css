@@ -170,6 +170,42 @@ img {
   transition: inset 0.55s var(--ease-out), top 0.55s var(--ease-out), height 0.55s var(--ease-out), padding 0.55s var(--ease-out), background-color 0.4s ease, box-shadow 0.4s ease;
 }
 
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  color: currentColor;
+}
+
+.lang-switch a {
+  color: currentColor;
+  opacity: 0.5;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.lang-switch a:hover {
+  opacity: 0.8;
+}
+
+.lang-switch a.is-active {
+  opacity: 1;
+  font-weight: 700;
+}
+
+.lang-sep {
+  opacity: 0.3;
+}
+
 .past-hero .topbar {
   top: 0;
   left: 0;
