@@ -1245,38 +1245,37 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
 }
 
 .footer-card--contact {
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  gap: clamp(40px, 8vw, 120px);
-}
-
-.footer-col {
-  display: flex;
   flex-direction: column;
-  gap: 20px;
-  text-align: left;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 32px;
 }
 
-.footer-col-title {
+.footer-row {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.footer-row-title {
   font-size: 16px;
   font-weight: 500;
   color: var(--blue);
   opacity: 0.7;
   margin: 0;
+  min-width: 90px;
 }
 
-.footer-col-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.footer-row-links {
   display: flex;
-  flex-direction: column;
-  gap: 16px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: clamp(16px, 3vw, 24px);
 }
 
-.footer-col-list a {
+.footer-row-links a {
   color: var(--blue-dark);
   font-size: 18px;
   font-weight: 600;
@@ -1284,7 +1283,7 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
   transition: opacity 0.2s ease;
 }
 
-.footer-col-list a:hover {
+.footer-row-links a:hover {
   opacity: 0.7;
 }
 
