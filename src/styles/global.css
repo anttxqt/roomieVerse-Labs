@@ -581,6 +581,7 @@ img {
   position: relative;
   display: inline-block;
   color: var(--blue-dark);
+  background: transparent;
   font-style: normal;
   z-index: 1;
 }
