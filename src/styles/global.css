@@ -1199,7 +1199,7 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
   grid-template-columns: 1fr 1fr;
   gap: 32px;
   padding: 40px max(4.5vw, 24px);
-  background: var(--pink);
+  background: var(--paper);
 }
 
 .footer-card {
@@ -1210,7 +1210,7 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
   gap: 32px;
   padding: 56px 72px;
   border-radius: 56px;
-  background: var(--paper);
+  background: var(--pink);
   box-shadow: 0 12px 40px rgba(5, 18, 47, 0.05);
 }
 
