@@ -514,28 +514,31 @@ img {
 .hero-float img {
   width: 100%;
   height: auto;
-  filter: drop-shadow(0 15px 25px rgba(0,0,0,.15));
+  filter: drop-shadow(0 10px 20px rgba(0, 20, 60, .05));
 }
 
 .hero-float--roomio {
-  width: clamp(220px, 20vw, 320px);
-  left: 5vw;
-  top: 15%;
+  width: clamp(120px, 10vw, 160px);
+  left: 8vw;
+  top: 20%;
   animation-delay: -1.5s;
+  animation-duration: 5s;
 }
 
 .hero-float--roomieverse {
-  width: clamp(240px, 22vw, 340px);
-  right: 6vw;
-  top: 20%;
+  width: clamp(140px, 12vw, 190px);
+  right: 8vw;
+  top: 30%;
   animation-delay: -3.2s;
+  animation-duration: 7s;
 }
 
 .hero-float--roomibase {
-  width: clamp(200px, 18vw, 280px);
-  left: 15vw;
-  bottom: 12%;
+  width: clamp(130px, 11vw, 170px);
+  left: 20vw;
+  bottom: 20%;
   animation-delay: -4.8s;
+  animation-duration: 6s;
 }
 
 @keyframes orb-float {
