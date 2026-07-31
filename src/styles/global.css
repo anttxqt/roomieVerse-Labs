@@ -1245,8 +1245,11 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
 }
 
 .footer-card--contact {
+  flex-direction: row;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: clamp(40px, 8vw, 120px);
 }
 
 .footer-col {
@@ -1254,17 +1257,14 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
   flex-direction: column;
   gap: 20px;
   text-align: left;
-  width: 100%;
 }
 
 .footer-col-title {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
   color: var(--blue);
   opacity: 0.7;
   margin: 0;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
 }
 
 .footer-col-list {
