@@ -1210,6 +1210,7 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
   max-width: 440px;
   margin: 0 0 20px;
   font-size: clamp(42px, 4.8vw, 70px);
+  font-weight: 700;
   line-height: .94;
   letter-spacing: -.06em;
 }
