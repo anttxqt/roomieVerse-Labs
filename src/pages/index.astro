@@ -201,6 +201,7 @@ const journey = [
       const heroFrame = document.querySelector('.hero-frame');
       const heroShell = document.querySelector('.hero-shell');
       const heroCopy = document.querySelector('.hero-copy');
+      const scrollCue = document.querySelector('.scroll-cue');
       const footer = document.querySelector('.footer');
       const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
       let ticking = false;
@@ -221,6 +222,7 @@ const journey = [
         heroShell.style.borderRadius = `${radius * (1 - morph)}px`;
         heroCopy.style.opacity = String(1 - fade);
         heroCopy.style.transform = `translate(-50%, calc(-50% - ${fade * 45}px)) scale(${1 - fade * .03})`;
+        if (scrollCue) scrollCue.style.opacity = String(1 - clamp(progress * 5));
         
         body.classList.toggle('past-hero', hero.getBoundingClientRect().bottom < innerHeight * .35);
       }
