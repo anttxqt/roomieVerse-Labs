@@ -580,11 +580,20 @@ img {
 .hero-copy p mark {
   position: relative;
   display: inline-block;
-  padding: .04em .12em .08em;
-  border-radius: .16em;
   color: var(--blue-dark);
-  background: var(--pink);
   font-style: normal;
+  z-index: 1;
+}
+
+.hero-copy h1 em::before,
+.hero-copy p mark::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -0.05em -0.15em;
+  background: var(--pink);
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  transform: rotate(-1.5deg);
 }
 
 .hero-copy p {
