@@ -1261,9 +1261,8 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
 
 .footer-row-title {
   font-size: 16px;
-  font-weight: 800;
-  color: var(--blue); /* Color for 'Labs' */
-  opacity: 0.85;
+  font-weight: 700;
+  color: var(--blue-dark);
   margin: 0;
   min-width: 90px;
 }
@@ -1276,9 +1275,9 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
 }
 
 .footer-row-links a {
-  color: var(--blue-dark); /* Color for 'roomieVerse' */
+  color: var(--blue-dark);
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 600;
   text-decoration: none;
   transition: opacity 0.2s ease;
 }
