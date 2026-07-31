@@ -1391,8 +1391,8 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
 
 .reveal {
   opacity: 0;
-  transform: translateY(78px) scale(.97);
-  transition: opacity 1s var(--ease-out), transform 1.15s var(--ease-out);
+  transform: translateY(140px) scale(.82);
+  transition: opacity 1.1s var(--ease-out), transform 1.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal.is-visible {
