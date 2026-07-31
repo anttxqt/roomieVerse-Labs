@@ -876,7 +876,7 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
 
 .section-title {
   max-width: 1250px;
-  margin: 0 auto 88px;
+  margin: 130px auto 88px;
 }
 
 .section-title h2 {
@@ -1137,7 +1137,7 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
   align-items: flex-start;
   gap: 24px;
   max-width: 1250px;
-  margin: 130px auto 48px;
+  margin: 0 auto 48px;
 }
 
 .topping-heading h3 {

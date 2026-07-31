@@ -120,8 +120,18 @@ const journey = [
         </div>
       </section>
 
-      <section class="menu-section" id="products" aria-labelledby="products-title">
-        <div class="section-title reveal">
+      <section class="menu-section">
+        <div class="topping-heading reveal" id="story">
+          <h3>Một hành trình liền mạch</h3>
+          <p><mark>roomieVerse Labs</mark> sẽ đồng hành cùng mọi người trong suốt quá trình tìm chỗ ở,<br />trong lúc ở cho tới việc quản lý chỗ ở đối với người cho thuê.</p>
+        </div>
+        <div class="toppings-grid journey-grid">
+          {journey.map(([number, title, description], index) => (
+            <article class={`topping-card journey-card journey-card--${index + 1} reveal`}><span>{number}</span><i aria-hidden="true"></i><h3>{title}</h3><p>{description}</p></article>
+          ))}
+        </div>
+
+        <div class="section-title reveal" id="products" aria-labelledby="products-title">
           <h2 id="products-title">Bọn mình có gì<span style="color: var(--pink)">?</span></h2>
         </div>
 
@@ -144,16 +154,6 @@ const journey = [
               </div>
               <div class="dish-copy"><small>{product.role}</small><h3>{product.name}</h3><p>{product.description}</p></div>
             </article>
-          ))}
-        </div>
-
-        <div class="topping-heading reveal" id="story">
-          <h3>Một hành trình liền mạch</h3>
-          <p><mark>roomieVerse Labs</mark> sẽ đồng hành cùng mọi người trong suốt quá trình tìm chỗ ở,<br />trong lúc ở cho tới việc quản lý chỗ ở đối với người cho thuê.</p>
-        </div>
-        <div class="toppings-grid journey-grid">
-          {journey.map(([number, title, description], index) => (
-            <article class={`topping-card journey-card journey-card--${index + 1} reveal`}><span>{number}</span><i aria-hidden="true"></i><h3>{title}</h3><p>{description}</p></article>
           ))}
         </div>
       </section>
