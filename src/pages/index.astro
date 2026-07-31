@@ -185,8 +185,11 @@ const journey = [
         const inset = innerWidth <= 700 ? 9 : 22;
         const radius = innerWidth <= 700 ? 38 : 82;
         
-        // Inner shell fades from var(--roomieverse-blue) rgb(147,197,253) to white rgb(255,255,255)
-        heroShell.style.backgroundColor = `rgb(${Math.round(147 + 108 * morph)},${Math.round(197 + 58 * morph)},${Math.round(253 + 2 * morph)})`;
+        // Outer frame fades from dark blue to paper-blue to hide the seam with the next section
+        heroFrame.style.backgroundColor = `rgb(${Math.round(6 + 239 * morph)},${Math.round(22 + 226 * morph)},${Math.round(56 + 199 * morph)})`;
+        
+        // Inner shell fades from roomieverse-blue to paper-blue
+        heroShell.style.backgroundColor = `rgb(${Math.round(147 + 98 * morph)},${Math.round(197 + 51 * morph)},${Math.round(253 + 2 * morph)})`;
         heroShell.style.inset = `${inset * (1 - morph)}px`;
         heroShell.style.borderRadius = `${radius * (1 - morph)}px`;
         heroCopy.style.opacity = String(1 - fade);
