@@ -127,7 +127,7 @@ const journey = [
         </div>
         <div class="toppings-grid journey-grid">
           {journey.map(([number, title, description], index) => (
-            <article class={`topping-card journey-card journey-card--${index + 1} reveal`}><span>{number}</span><i aria-hidden="true"></i><h3>{title}</h3><p>{description}</p></article>
+            <article class={`topping-card journey-card journey-card--${index + 1}`}><span>{number}</span><i aria-hidden="true"></i><h3>{title}</h3><p>{description}</p></article>
           ))}
         </div>
 
@@ -137,7 +137,7 @@ const journey = [
 
         <div class="dish-list product-list">
           {products.map((product, index) => (
-            <article class={`dish-card product-card product-card--${product.accent}`}>
+            <article class={`dish-card product-card product-card--${product.accent} reveal`}>
               <div class="dish-media product-visual">
                 <span>0{index + 1}</span>
                 <div class="product-window" aria-hidden="true">
@@ -203,8 +203,8 @@ const journey = [
       const heroCopy = document.querySelector('.hero-copy');
       const scrollCue = document.querySelector('.scroll-cue');
       const footer = document.querySelector('.footer');
-      const productList = document.querySelector('.product-list');
-      const productCards = document.querySelectorAll('.product-card');
+      const journeyGrid = document.querySelector('.journey-grid');
+      const journeyCards = document.querySelectorAll('.journey-card');
       const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
       let ticking = false;
 
@@ -229,23 +229,25 @@ const journey = [
         body.classList.toggle('past-hero', hero.getBoundingClientRect().bottom < innerHeight * .35);
       }
 
-      function updateProducts() {
-        if (!productList || productCards.length === 0) return;
-        const listTop = productList.getBoundingClientRect().top;
+      function updateJourney() {
+        if (!journeyGrid || journeyCards.length === 0) return;
+        const gridTop = journeyGrid.getBoundingClientRect().top;
         
-        productCards.forEach((card) => {
-           const cardAbsoluteTop = listTop + card.offsetTop; 
-           const cardProgress = clamp((innerHeight - cardAbsoluteTop) / (innerHeight * 0.5));
-           const eased = smoothstep(cardProgress);
+        journeyCards.forEach((card, index) => {
+           // Create a staggered gather effect
+           const offset = innerHeight * 0.15 * index; 
+           const progress = clamp((innerHeight - (gridTop + offset)) / (innerHeight * 0.7));
+           const eased = smoothstep(progress);
            
            if (!reduceMotion) {
              card.style.opacity = String(Math.max(0, eased));
-             card.style.transform = `translateY(${150 * (1 - eased)}px) scale(${0.85 + 0.15 * eased})`;
+             // gather from below and slightly smaller
+             card.style.transform = `translateY(${120 * (1 - eased)}px) scale(${0.85 + 0.15 * eased})`;
            }
         });
       }
 
-      function updatePage() { updateHero(); updateProducts(); ticking = false; }
+      function updatePage() { updateHero(); updateJourney(); ticking = false; }
       function requestUpdate() { if (!ticking) { ticking = true; requestAnimationFrame(updatePage); } }
       function setMenu(open) { menu.classList.toggle('is-open', open); body.classList.toggle('menu-open', open); menu.setAttribute('aria-hidden', String(!open)); menuButton.setAttribute('aria-expanded', String(open)); if (open) menuClose.focus({ preventScroll: true }); else menuButton.focus({ preventScroll: true }); }
 
