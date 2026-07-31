@@ -1129,11 +1129,11 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
 
 .topping-heading {
   display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: 40px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
   max-width: 1250px;
-  margin: 130px auto 36px;
+  margin: 130px auto 48px;
 }
 
 .topping-heading h3 {
@@ -1145,11 +1145,11 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
 }
 
 .topping-heading p {
-  max-width: 430px;
-  margin: 0 0 5px;
+  max-width: 800px;
+  margin: 0;
   color: var(--muted);
-  font-size: 17px;
-  line-height: 1.55;
+  font-size: clamp(17px, 1.35vw, 20px);
+  line-height: 1.58;
 }
 
 .toppings-grid {
