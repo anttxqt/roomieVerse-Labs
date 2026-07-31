@@ -107,19 +107,6 @@ const journey = [
         </div>
       </section>
 
-      <section class="story-scroll" id="story" aria-label="Một hành trình ở liền mạch">
-        <div class="story-sticky">
-          <div class="story-orbit" aria-hidden="true"><i></i><i></i><i></i></div>
-          <div class="story-copy">
-            <h2>Từ tìm một nơi<br /><mark>đến sống tốt hơn.</mark></h2>
-            <p>Ba sản phẩm nối tiếp nhau: <span class="story-emphasis">Roomibase tìm chỗ ở</span>, <span class="story-emphasis">Roomieverse tìm người hợp</span>, còn Roomio giúp việc vận hành phía sau gọn hơn.</p>
-          </div>
-          <div class="story-mascot" aria-hidden="true"><img src="/brand/easymatch.png" width="640" height="640" alt="" /></div>
-          <div class="story-float" aria-hidden="true"><img src="/brand/simple.png" width="640" height="640" alt="" /></div>
-          <div class="keep-scrolling"><span>Tiếp tục cuộn</span><i>↓</i></div>
-        </div>
-      </section>
-
       <section class="menu-section" id="products" aria-labelledby="products-title">
         <div class="section-title reveal">
           <h2 id="products-title">Ba sản phẩm.<br /><em>Đúng từng việc.</em></h2>
@@ -187,14 +174,6 @@ const journey = [
       const heroFrame = document.querySelector('.hero-frame');
       const heroShell = document.querySelector('.hero-shell');
       const heroCopy = document.querySelector('.hero-copy');
-      const heroMascot = document.querySelector('.hero-mascot');
-      const story = document.querySelector('.story-scroll');
-      const storyCopy = document.querySelector('.story-copy');
-      const storyMark = document.querySelector('.story-copy mark');
-      const storyEmphases = [...document.querySelectorAll('.story-emphasis')];
-      const storyMascot = document.querySelector('.story-mascot');
-      const storyFloat = document.querySelector('.story-float');
-      const storyCue = document.querySelector('.keep-scrolling');
       const footer = document.querySelector('.footer');
       const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
       let ticking = false;
@@ -205,33 +184,18 @@ const journey = [
         const fade = smoothstep((progress - .08) / .46);
         const inset = innerWidth <= 700 ? 9 : 22;
         const radius = innerWidth <= 700 ? 38 : 82;
-        heroFrame.style.backgroundColor = `rgb(${Math.round(6 + 249 * morph)},${Math.round(22 + 186 * morph)},${Math.round(56 + 167 * morph)})`;
+        
+        // Inner shell fades from var(--roomieverse-blue) rgb(147,197,253) to white rgb(255,255,255)
+        heroShell.style.backgroundColor = `rgb(${Math.round(147 + 108 * morph)},${Math.round(197 + 58 * morph)},${Math.round(253 + 2 * morph)})`;
         heroShell.style.inset = `${inset * (1 - morph)}px`;
         heroShell.style.borderRadius = `${radius * (1 - morph)}px`;
         heroCopy.style.opacity = String(1 - fade);
         heroCopy.style.transform = `translate(-50%, calc(-50% - ${fade * 45}px)) scale(${1 - fade * .03})`;
-        heroMascot.style.opacity = String(1 - fade * .9);
-        heroMascot.style.transform = `translate3d(${progress * 45}px,${progress * 32}px,0) rotate(${progress * 12 - 7}deg)`;
+        
         body.classList.toggle('past-hero', hero.getBoundingClientRect().bottom < innerHeight * .35);
       }
 
-      function updateStory() {
-        const rect = story.getBoundingClientRect();
-        const raw = reduceMotion ? 1 : clamp((innerHeight - rect.top) / Math.max(1, innerHeight * .84));
-        const enter = smoothstep((raw - .08) / .72);
-        const mark = smoothstep((raw - .25) / .42);
-        storyCopy.style.opacity = String(enter);
-        storyCopy.style.transform = `translate(-50%, calc(-50% + ${(1 - enter) * 82}px)) scale(${.94 + enter * .06})`;
-        storyMark.style.setProperty('--mark-progress', String(mark));
-        storyEmphases.forEach((emphasis, index) => emphasis.style.setProperty('--line-progress', String(smoothstep((raw - (.42 + index * .07)) / .27))));
-        storyMascot.style.opacity = String(enter);
-        storyMascot.style.transform = `translate3d(${(1 - enter) * -180}px,${(1 - enter) * 130}px,0) rotate(${(1 - enter) * -18 - 7}deg) scale(${.62 + enter * .38})`;
-        storyFloat.style.opacity = String(enter);
-        storyFloat.style.transform = `translate3d(${(1 - enter) * 150}px,${(1 - enter) * -100}px,0) rotate(${(1 - enter) * 15 + 7}deg) scale(${.7 + enter * .3})`;
-        storyCue.style.opacity = String(smoothstep((raw - .55) / .35));
-      }
-
-      function updatePage() { updateHero(); updateStory(); ticking = false; }
+      function updatePage() { updateHero(); ticking = false; }
       function requestUpdate() { if (!ticking) { ticking = true; requestAnimationFrame(updatePage); } }
       function setMenu(open) { menu.classList.toggle('is-open', open); body.classList.toggle('menu-open', open); menu.setAttribute('aria-hidden', String(!open)); menuButton.setAttribute('aria-expanded', String(open)); if (open) menuClose.focus({ preventScroll: true }); else menuButton.focus({ preventScroll: true }); }
 
