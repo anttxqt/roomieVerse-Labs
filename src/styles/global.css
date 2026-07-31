@@ -286,19 +286,36 @@ img {
   gap: 15px;
   min-width: 112px;
   min-height: 48px;
+  padding: 0 16px;
+  box-sizing: border-box;
   justify-content: center;
   border-radius: 999px;
   color: var(--blue-dark);
   background: white;
   cursor: pointer;
-  box-shadow: 0 8px 22px rgba(5,18,47,.18);
-  transition: transform .25s ease, background-color .25s ease;
+  border: 1px solid transparent;
+  transition: min-width .3s ease, background-color .3s ease, border-color .3s ease;
 }
 
 .menu-button:hover {
-  transform: translateY(-2px);
+  min-width: 64px;
   color: var(--blue-dark);
   background: var(--pink);
+  border-color: var(--blue-dark);
+}
+
+.menu-button span {
+  display: inline-block;
+  overflow: hidden;
+  max-width: 60px;
+  white-space: nowrap;
+  transition: max-width .3s ease, opacity .2s ease, margin .3s ease;
+}
+
+.menu-button:hover span {
+  max-width: 0;
+  opacity: 0;
+  margin-right: -15px;
 }
 
 .menu-button i {
@@ -306,6 +323,11 @@ img {
   width: 18px;
   height: 10px;
   border-top: 2px solid currentColor;
+  transition: width .3s ease;
+}
+
+.menu-button:hover i {
+  width: 26px;
 }
 
 .menu-button i::after {
@@ -315,6 +337,11 @@ img {
   right: 0;
   width: 12px;
   border-top: 2px solid currentColor;
+  transition: width .3s ease;
+}
+
+.menu-button:hover i::after {
+  width: 26px;
 }
 
 .menu-overlay {
