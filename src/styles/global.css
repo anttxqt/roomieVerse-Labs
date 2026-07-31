@@ -280,6 +280,12 @@ img {
   width: 100%; height: 100%; object-fit: contain;
 }
 
+@property --menu-border {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
 .menu-button {
   display: inline-flex;
   align-items: center;
@@ -291,16 +297,34 @@ img {
   justify-content: center;
   border-radius: 999px;
   color: var(--blue-dark);
-  background: white;
+  background: transparent;
   cursor: pointer;
-  border: 1px solid transparent;
-  transition: background-color .3s ease, border-color .3s ease;
+  border: 0;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
 }
 
-.menu-button:hover {
-  color: var(--blue-dark);
-  background: var(--pink);
-  border-color: var(--blue-dark);
+.menu-button::before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  top: -50%; left: -50%; right: -50%; bottom: -50%;
+  background: conic-gradient(from 0deg, var(--blue-dark) var(--menu-border), transparent var(--menu-border));
+  transition: --menu-border 0.5s ease-in-out;
+}
+
+.menu-button:hover::before {
+  --menu-border: 360deg;
+}
+
+.menu-button::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 2px;
+  border-radius: 999px;
+  background: white;
 }
 
 .menu-button span {
@@ -322,11 +346,12 @@ img {
   width: 18px;
   height: 10px;
   border-top: 2px solid currentColor;
-  transition: width .3s ease;
+  transition: width .3s ease, border-width .3s ease;
 }
 
 .menu-button:hover i {
   width: 26px;
+  border-top-width: 3px;
 }
 
 .menu-button i::after {
@@ -336,11 +361,12 @@ img {
   right: 0;
   width: 12px;
   border-top: 2px solid currentColor;
-  transition: width .3s ease;
+  transition: width .3s ease, border-width .3s ease;
 }
 
 .menu-button:hover i::after {
   width: 26px;
+  border-top-width: 3px;
 }
 
 .menu-overlay {
@@ -438,6 +464,14 @@ img {
   line-height: .98;
   letter-spacing: -.065em;
   transition: transform .35s var(--ease-out), color .25s ease;
+}
+
+.menu-body nav a:nth-child(odd) {
+  color: var(--blue-dark);
+}
+
+.menu-body nav a:nth-child(even) {
+  color: #4b6a9b;
 }
 
 .menu-body nav a + a {
