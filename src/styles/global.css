@@ -501,8 +501,7 @@ img {
 }
 
 .menu-orbits,
-.story-orbit,
-.footer-orbit {
+.story-orbit {
   position: absolute;
   pointer-events: none;
 }
@@ -515,8 +514,7 @@ img {
 }
 
 .menu-orbits i,
-.story-orbit i,
-.footer-orbit i {
+.story-orbit i {
   position: absolute;
   inset: 0;
   border: 1px solid currentColor;
@@ -525,12 +523,10 @@ img {
 }
 
 .menu-orbits i:nth-child(2),
-.story-orbit i:nth-child(2),
-.footer-orbit i:nth-child(2) { inset: 17%; }
+.story-orbit i:nth-child(2) { inset: 17%; }
 
 .menu-orbits i:nth-child(3),
-.story-orbit i:nth-child(3),
-.footer-orbit i:nth-child(3) { inset: 34%; }
+.story-orbit i:nth-child(3) { inset: 34%; }
 
 .hero-scroll {
   position: relative;
@@ -1198,47 +1194,38 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
 
 .footer {
   position: relative;
-  display: grid;
-  grid-template-columns: minmax(320px, .8fr) minmax(0, 1.2fr);
-  align-items: center;
-  gap: 5vw;
-  min-height: 780px;
   margin: 0;
-  padding: 112px max(6.5vw, 38px);
-  overflow: hidden;
-  color: var(--blue-dark);
+  padding: 40px max(4.5vw, 24px);
+  background: var(--paper);
+}
+
+.footer-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 56px 72px;
+  border-radius: 56px;
   background: var(--pink);
+  box-shadow: 0 12px 40px rgba(5, 18, 47, 0.05);
 }
 
-.footer-copy,
-.footer-suite {
-  position: relative;
-  z-index: 2;
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
-.footer-brand {
+.footer-logo {
   display: flex;
   align-items: center;
-  gap: 23px;
+  color: var(--blue-dark);
 }
 
-.footer-brand .brand-mark {
-  width: clamp(88px, 8vw, 124px);
-  height: clamp(88px, 8vw, 124px);
-}
-
-.footer-brand strong {
-  font-size: clamp(48px, 5.8vw, 88px);
-  line-height: .86;
-  letter-spacing: -.065em;
-}
-
-.footer-copy > p {
-  max-width: 540px;
-  margin: 38px 0;
-  color: rgba(7,23,51,.72);
-  font-size: clamp(19px, 1.7vw, 25px);
-  line-height: 1.45;
+.footer-logo svg {
+  width: auto;
+  height: clamp(32px, 3.5vw, 42px);
 }
 
 .button {
@@ -1263,39 +1250,7 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
   font-size: 22px;
 }
 
-.footer-suite {
-  display: grid;
-  gap: 18px;
-  width: min(650px, 100%);
-  justify-self: center;
-}
-
-.suite-logo {
-  display: grid;
-  min-height: 145px;
-  place-items: center;
-  padding: 26px 45px;
-  border: 2px solid var(--blue-dark);
-  border-radius: 36px;
-  background: white;
-  box-shadow: 9px 10px 0 rgba(6,22,56,.76);
-  transition: transform .35s var(--ease-out);
-}
-
-.suite-logo:hover { transform: translate(-4px, -5px); }
-.suite-logo img { max-width: 75%; max-height: 90px; object-fit: contain; }
-.suite-logo--verse { min-height: 190px; background: #fff4fa; }
-.suite-logo--verse img { width: clamp(180px, 18vw, 240px); height: auto; }
-.suite-logo--base { background: var(--blue-dark); }
-.suite-logo--base img { max-width: 82%; }
-
-.footer-orbit {
-  left: -30vw;
-  bottom: -50vw;
-  width: 90vw;
-  aspect-ratio: 1;
-  color: var(--blue);
-}
+/* Old footer suite removed */
 
 .floating-menu {
   position: fixed;
@@ -1366,17 +1321,13 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
   }
 
   .footer {
-    grid-template-columns: 1fr;
-    gap: 70px;
+    padding: 32px 18px;
   }
 
-  .footer-copy {
-    max-width: 650px;
-  }
-
-  .footer-suite {
-    width: min(680px, 88vw);
-    justify-self: center;
+  .footer-card {
+    padding: 40px;
+    gap: 24px;
+    border-radius: 40px;
   }
 }
 
@@ -1681,32 +1632,18 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
   }
 
   .footer {
-    min-height: auto;
-    padding: 88px 22px 78px;
-    gap: 58px;
+    padding: 24px 14px;
   }
 
-  .footer-brand {
-    gap: 15px;
+  .footer-card {
+    padding: 32px 24px;
+    flex-direction: column-reverse;
+    justify-content: center;
+    border-radius: 32px;
   }
-
-  .footer-brand .brand-mark {
-    width: 74px;
-    height: 74px;
-  }
-
-  .footer-brand strong {
-    font-size: clamp(45px, 14vw, 66px);
-  }
-
-  .footer-copy > p {
-    margin: 28px 0;
-    font-size: 18px;
-  }
-
-  .footer-suite {
-    width: 100%;
-    gap: 12px;
+  
+  .footer-links {
+    justify-content: center;
   }
 
   .suite-logo { min-height: 105px; padding: 20px 28px; border-radius: 25px; box-shadow: 6px 7px 0 rgba(6,22,56,.76); }
