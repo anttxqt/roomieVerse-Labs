@@ -397,7 +397,7 @@ img {
   height: 78px;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   padding: 0 28px;
   box-sizing: border-box;
   transition: inset 0.55s var(--ease-out), top 0.55s var(--ease-out), height 0.55s var(--ease-out), padding 0.55s var(--ease-out);
@@ -409,6 +409,37 @@ img {
   right: 0;
   height: 84px;
   padding-inline: 5.2vw;
+}
+
+.menu-logos {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) 1px minmax(70px, .8fr) 1px minmax(0, 1.3fr);
+  align-items: center;
+  gap: clamp(12px, 2vw, 24px);
+  width: min(350px, 50vw);
+}
+
+.menu-logo {
+  width: 100%;
+  height: clamp(16px, 3vw, 28px);
+  object-fit: contain;
+}
+
+.menu-logo--roomio,
+.menu-logo--base {
+  object-position: center;
+}
+
+.menu-logo--verse {
+  justify-self: center;
+  width: clamp(70px, 8vw, 90px);
+  height: auto;
+}
+
+.menu-divider {
+  width: 1px;
+  height: clamp(24px, 4vw, 36px);
+  background: rgba(7, 23, 51, .16);
 }
 
 .brand--blue .brand-mark {
@@ -428,7 +459,6 @@ img {
   align-items: center;
   justify-content: center;
   margin-right: 16px;
-  margin-top: 14px; /* Nudge X down to match original position */
   cursor: pointer;
   transition: transform .35s ease, color .25s ease;
 }
