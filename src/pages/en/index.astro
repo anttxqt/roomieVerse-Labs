@@ -105,7 +105,7 @@ const journey = [
         <div class="hero-frame">
           <div class="hero-shell">
             <div class="hero-copy">
-              <h1>Trải nghiệm việc thuê và cho thuê chỗ ở<br /><em>trở nên tốt hơn.</em></h1>
+              <h1>Trải nghiệm việc <em>thuê và cho thuê</em> chỗ ở<br />trở nên <strong style="color: var(--pink-ink)">tốt hơn.</strong></h1>
             </div>
             
             <div class="scroll-cue"><span>Cuộn để xem</span><i>↓</i></div>
@@ -218,7 +218,7 @@ const journey = [
       footerObserver.observe(footer);
       addEventListener('scroll', requestUpdate, { passive: true });
       addEventListener('resize', requestUpdate);
-      addEventListener('load', () => { setTimeout(() => preloader.classList.add('is-hidden'), 680); updatePage(); });
+      addEventListener('load', () => { setTimeout(() => { preloader.classList.add('is-hidden'); body.classList.add('is-loaded'); }, 680); updatePage(); });
       updatePage();
     </script>
   </body>

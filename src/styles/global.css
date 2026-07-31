@@ -599,6 +599,18 @@ img {
   background: var(--pink);
   border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
   transform: rotate(-1.5deg);
+  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  transition: clip-path 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+body.is-loaded .hero-copy h1 em::before {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  transition-delay: 0.7s;
+}
+
+.topping-heading.is-visible p mark::before {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  transition-delay: 0.3s;
 }
 
 .hero-copy p {
