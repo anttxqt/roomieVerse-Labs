@@ -1214,6 +1214,10 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
   letter-spacing: -.06em;
 }
 
+.topping-card:nth-child(2) h3 {
+  max-width: 900px;
+}
+
 .topping-card p {
   position: relative;
   z-index: 1;
@@ -1222,6 +1226,10 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
   font-size: 18px;
   line-height: 1.55;
   opacity: .75;
+}
+
+.topping-card:nth-child(2) p {
+  max-width: 700px;
 }
 
 .footer {
