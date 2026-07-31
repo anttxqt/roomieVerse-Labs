@@ -1232,6 +1232,10 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
   background: linear-gradient(to bottom, var(--paper-blue) 0%, var(--paper) 40%);
 }
 
+#story {
+  scroll-margin-top: 160px; /* Offset to prevent header overlap when clicking anchor links */
+}
+
 .footer-card {
   display: flex;
   flex-direction: column;
