@@ -894,7 +894,7 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
   overflow: hidden;
   aspect-ratio: 3 / 2;
   border-radius: 58px;
-  background: var(--blue);
+  background: var(--blue-soft);
   box-shadow: 0 24px 70px rgba(7,23,51,.14);
 }
 
@@ -921,7 +921,7 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
 }
 
 .product-card--navy .product-visual {
-  background: var(--roomibase);
+  background: var(--roomibase-soft);
 }
 
 .product-window {
