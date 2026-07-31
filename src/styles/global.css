@@ -1195,37 +1195,37 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
 .footer {
   position: relative;
   margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
   padding: 40px max(4.5vw, 24px);
-  background: var(--paper);
+  background: var(--pink);
 }
 
 .footer-card {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 32px;
   padding: 56px 72px;
   border-radius: 56px;
-  background: var(--pink);
+  background: var(--paper);
   box-shadow: 0 12px 40px rgba(5, 18, 47, 0.05);
 }
 
-.footer-links {
-  display: flex;
+.footer-card--contact {
+  flex-direction: row;
   flex-wrap: wrap;
-  gap: 16px;
 }
 
-.footer-logo {
-  display: flex;
-  align-items: center;
+.footer-card--logo {
   color: var(--blue-dark);
 }
 
-.footer-logo svg {
+.footer-card--logo svg {
   width: auto;
-  height: clamp(32px, 3.5vw, 42px);
+  height: clamp(48px, 6vw, 72px);
 }
 
 .button {
@@ -1321,13 +1321,7 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
   }
 
   .footer {
-    padding: 32px 18px;
-  }
-
-  .footer-card {
-    padding: 40px;
-    gap: 24px;
-    border-radius: 40px;
+    grid-template-columns: 1fr;
   }
 }
 
@@ -1631,19 +1625,9 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
     font-size: 16px;
   }
 
-  .footer {
-    padding: 24px 14px;
-  }
-
   .footer-card {
     padding: 32px 24px;
-    flex-direction: column-reverse;
-    justify-content: center;
     border-radius: 32px;
-  }
-  
-  .footer-links {
-    justify-content: center;
   }
 
   .suite-logo { min-height: 105px; padding: 20px 28px; border-radius: 25px; box-shadow: 6px 7px 0 rgba(6,22,56,.76); }
