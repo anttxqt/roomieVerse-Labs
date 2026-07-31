@@ -407,13 +407,7 @@ img {
   transition: inset 0.55s var(--ease-out), top 0.55s var(--ease-out), height 0.55s var(--ease-out), padding 0.55s var(--ease-out);
 }
 
-.past-hero .menu-head {
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 84px;
-  padding-inline: 5.2vw;
-}
+
 
 .menu-logos {
   display: grid;
@@ -520,6 +514,29 @@ img {
 .menu-body nav span {
   font-size: 13px;
   letter-spacing: 0;
+  position: relative;
+  transition: color .25s ease;
+}
+
+.menu-body nav span::before {
+  content: "→";
+  position: absolute;
+  left: -2px;
+  top: 50%;
+  opacity: 0;
+  font-size: 20px;
+  color: var(--blue);
+  transform: translate(-15px, -50%);
+  transition: opacity .25s ease, transform .35s var(--ease-out);
+}
+
+.menu-body nav a:hover span {
+  color: transparent;
+}
+
+.menu-body nav a:hover span::before {
+  opacity: 1;
+  transform: translate(0, -50%);
 }
 
 .menu-brand {
@@ -1436,8 +1453,7 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
 
   .topbar,
   .past-hero .topbar,
-  .menu-head,
-  .past-hero .menu-head {
+  .menu-head {
     top: 0;
     left: 0;
     right: 0;
