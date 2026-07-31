@@ -1283,7 +1283,6 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
 }
 
 .footer-row--bottom {
-  margin-top: 8px;
   gap: clamp(16px, 3vw, 24px);
 }
 
