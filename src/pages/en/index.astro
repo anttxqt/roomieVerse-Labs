@@ -29,6 +29,7 @@ const products = [
     logoAlt: 'Roomibase',
     accent: 'navy',
     metrics: ['Chủ nhà', 'Người thuê', 'Chỗ ở'],
+    comingSoon: true,
   },
 ]
 
@@ -153,7 +154,17 @@ const journey = [
                   </div>
                 </div>
               </div>
-              <div class="dish-copy"><small>{product.role}</small><h3>{product.name}</h3><p>{product.description}</p></div>
+              <div class="dish-copy">
+                <small>
+                  {product.role}
+                  {product.comingSoon && <span class="badge badge--coming-soon">Coming soon</span>}
+                </small>
+                <h3>{product.name}</h3>
+                <p>{product.description}</p>
+                {product.comingSoon && (
+                  <a href="#footer" class="product-action"><span>Get notified when launched</span></a>
+                )}
+              </div>
             </article>
           ))}
         </div>
