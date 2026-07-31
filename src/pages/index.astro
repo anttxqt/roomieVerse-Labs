@@ -16,7 +16,7 @@ const products = [
     name: 'roomieverse',
     role: 'Tìm phòng và người ở cùng',
     description: 'Kết nối người tìm phòng và roommate dựa trên lối sống, thói quen và sở thích — minh bạch, không môi giới.',
-    logo: '/brand/roomieverse.png',
+    logo: '/brand/roomieverse-cropped.png',
     logoAlt: 'Roomieverse',
     accent: 'pink',
     metrics: ['Tìm phòng', 'Tìm bạn', 'Phòng chung'],
@@ -25,7 +25,7 @@ const products = [
     name: 'roomibase',
     role: 'Tìm chỗ ở trực tiếp',
     description: 'Kết nối chủ nhà và người thuê để tìm phòng trọ, căn hộ, nhà riêng và phòng dịch vụ trực tiếp, không qua trung gian.',
-    logo: '/brand/roomibase.png',
+    logo: '/brand/roomibase-rounded.png',
     logoAlt: 'Roomibase',
     accent: 'navy',
     metrics: ['Chủ nhà', 'Người thuê', 'Chỗ ở'],
@@ -56,7 +56,16 @@ const journey = [
   </head>
   <body>
     <div class="preloader" aria-hidden="true">
-      <div class="preloader-logos"><img src="/brand/roomio.png" width="611" height="176" alt="" /><span></span><span></span></div>
+      <div class="preloader-content">
+        <div class="preloader-logos">
+          <img class="preloader-logo preloader-logo--roomio" src="/brand/roomio.png" width="611" height="176" alt="" />
+          <span class="preloader-divider"></span>
+          <img class="preloader-logo preloader-logo--verse" src="/brand/roomieverse-stacked-cropped.png" width="813" height="397" alt="" />
+          <span class="preloader-divider"></span>
+          <img class="preloader-logo preloader-logo--base" src="/brand/roomibase-rounded.png" width="1603" height="308" alt="" />
+        </div>
+        <div class="preloader-credit"><RoomieverseLabsLogo /></div>
+      </div>
     </div>
 
     <header class="topbar" aria-label="Điều hướng chính">
@@ -163,8 +172,8 @@ const journey = [
       </div>
       <div class="footer-suite reveal" aria-label="Roomio, Roomieverse và Roomibase">
         <div class="suite-logo suite-logo--roomio"><img src="/brand/roomio.png" width="611" height="176" alt="Roomio" /></div>
-        <div class="suite-logo suite-logo--verse"><img src="/brand/roomieverse.png" width="640" height="640" alt="Roomieverse" /></div>
-        <div class="suite-logo suite-logo--base"><img src="/brand/roomibase.png" width="981" height="178" alt="Roomibase" /></div>
+        <div class="suite-logo suite-logo--verse"><img src="/brand/roomieverse-cropped.png" width="615" height="416" alt="Roomieverse" /></div>
+        <div class="suite-logo suite-logo--base"><img src="/brand/roomibase-rounded.png" width="1603" height="308" alt="Roomibase" /></div>
       </div>
     </footer>
 
