@@ -327,22 +327,25 @@ img {
 }
 
 .menu-close {
-  width: 56px;
-  height: 56px;
-  border: 2px solid currentColor;
-  border-radius: 50%;
-  color: var(--blue-dark);
+  width: 100px;
+  height: 100px;
+  padding: 0;
+  border: none;
   background: transparent;
-  font-size: 35px;
+  color: var(--blue-dark);
+  font-size: 64px;
   line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16px;
   cursor: pointer;
-  transition: transform .35s ease, background-color .25s ease, color .25s ease;
+  transition: transform .35s ease, color .25s ease;
 }
 
 .menu-close:hover {
-  transform: rotate(90deg);
-  color: white;
-  background: var(--blue);
+  transform: rotate(90deg) scale(1.1);
+  color: var(--blue);
 }
 
 .menu-body {
@@ -1313,8 +1316,10 @@ img {
   }
 
   .menu-close {
-    width: 48px;
-    height: 48px;
+    width: 80px;
+    height: 80px;
+    margin-right: 8px;
+    font-size: 54px;
   }
 
   .menu-body {
