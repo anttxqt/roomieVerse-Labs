@@ -574,6 +574,11 @@ img {
   font-weight: 700;
   line-height: .83;
   letter-spacing: -.075em;
+  isolation: isolate;
+}
+
+.topping-heading p {
+  isolation: isolate;
 }
 
 .hero-copy h1 em,
@@ -583,7 +588,6 @@ img {
   color: var(--blue-dark);
   background: transparent;
   font-style: normal;
-  z-index: 1;
 }
 
 .hero-copy h1 em::before,
