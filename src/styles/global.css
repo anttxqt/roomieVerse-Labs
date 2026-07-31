@@ -339,6 +339,7 @@ img {
   align-items: center;
   justify-content: center;
   margin-right: 16px;
+  margin-top: 14px; /* Nudge X down to match original position */
   cursor: pointer;
   transition: transform .35s ease, color .25s ease;
 }
@@ -356,7 +357,7 @@ img {
   align-items: end;
   gap: 8vw;
   height: 100%;
-  padding: calc(var(--header-inset) + 95px) 6vw 4vh;
+  padding: calc(var(--header-inset) + 95px) 6vw 10vh;
   box-sizing: border-box;
 }
 
@@ -390,11 +391,16 @@ img {
   letter-spacing: 0;
 }
 
-.menu-body > p {
-  margin: 0;
+.menu-brand {
+  display: flex;
+  justify-content: center;
   padding-bottom: 2vh;
-  font-size: clamp(20px, 2vw, 30px);
-  line-height: 1.25;
+  width: 100%;
+}
+
+.menu-brand .brand-logo {
+  width: clamp(320px, 28vw, 480px);
+  height: auto;
 }
 
 .menu-orbits,
@@ -491,7 +497,6 @@ img {
   line-height: 1.45;
 }
 
-.hero-mascot,
 .story-mascot {
   position: absolute;
   z-index: 4;
@@ -499,49 +504,38 @@ img {
   filter: drop-shadow(0 28px 30px rgba(0,0,0,.25));
 }
 
-.hero-mascot {
-  right: -4vw;
-  bottom: -7vw;
-  width: clamp(330px, 31vw, 570px);
-  transform: rotate(-6deg);
-}
-
-.hero-orb {
+.hero-float {
   position: absolute;
   z-index: 2;
-  border-radius: 42% 58% 55% 45%;
-  box-shadow: inset -16px -15px 24px rgba(3,18,49,.3), inset 13px 12px 20px rgba(255,255,255,.65), 0 18px 32px rgba(0,0,0,.22);
+  will-change: transform, opacity;
   animation: orb-float 5.5s ease-in-out infinite alternate;
 }
 
-.hero-orb::after {
-  content: "";
-  position: absolute;
-  top: 14%;
-  left: 17%;
-  width: 30%;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: rgba(255,255,255,.75);
-  filter: blur(7px);
+.hero-float img {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 15px 25px rgba(0,0,0,.15));
 }
 
-.hero-orb--pink {
-  left: -48px;
-  top: 49%;
-  width: 148px;
-  aspect-ratio: 1;
-  background: linear-gradient(145deg, #fff0f5, var(--pink-bright) 53%, #f58cac);
+.hero-float--roomio {
+  width: clamp(220px, 20vw, 320px);
+  left: 5vw;
+  top: 15%;
+  animation-delay: -1.5s;
 }
 
-.hero-orb--blue {
-  right: 5.5vw;
-  top: 16%;
-  width: 95px;
-  aspect-ratio: 1;
-  border-radius: 31%;
-  background: linear-gradient(145deg, #dbeafe, var(--blue-bright) 52%, #1d4ed8);
-  animation-delay: -2.8s;
+.hero-float--roomieverse {
+  width: clamp(240px, 22vw, 340px);
+  right: 6vw;
+  top: 20%;
+  animation-delay: -3.2s;
+}
+
+.hero-float--roomibase {
+  width: clamp(200px, 18vw, 280px);
+  left: 15vw;
+  bottom: 12%;
+  animation-delay: -4.8s;
 }
 
 @keyframes orb-float {
@@ -1326,7 +1320,7 @@ img {
     grid-template-columns: 1fr;
     align-content: end;
     height: 100%;
-    padding: 85px 20px 4vh;
+    padding: 85px 20px 8vh;
   }
 
   .menu-body nav a {
