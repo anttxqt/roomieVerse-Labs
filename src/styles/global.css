@@ -308,7 +308,7 @@ img {
   height: 78px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding: 0 28px;
   box-sizing: border-box;
   transition: inset 0.55s var(--ease-out), top 0.55s var(--ease-out), height 0.55s var(--ease-out), padding 0.55s var(--ease-out);
