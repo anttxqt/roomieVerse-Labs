@@ -294,11 +294,10 @@ img {
   background: white;
   cursor: pointer;
   border: 1px solid transparent;
-  transition: min-width .3s ease, background-color .3s ease, border-color .3s ease;
+  transition: background-color .3s ease, border-color .3s ease;
 }
 
 .menu-button:hover {
-  min-width: 64px;
   color: var(--blue-dark);
   background: var(--pink);
   border-color: var(--blue-dark);
