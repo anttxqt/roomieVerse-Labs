@@ -113,9 +113,9 @@ import RoomieverseLabsLogo from '../../components/RoomieverseLabsLogo.astro'
 
             const scrollY = window.scrollY;
             let scrollProgress = 0;
-            if (scrollY > 150) {
-              // 150 -> 400 maps to 0 -> 1 (gather into logo)
-              scrollProgress = (scrollY - 150) / 250;
+            if (scrollY > 350) {
+              // 350 -> 650 maps to 0 -> 1 (gather into logo)
+              scrollProgress = (scrollY - 350) / 300;
             }
             
             let progress = loadProgress < 0 ? loadProgress : scrollProgress;
