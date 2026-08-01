@@ -1026,7 +1026,7 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
 }
 
 .product-card--pink .dish-copy > small { color: var(--pink-ink); }
-.product-card--navy .dish-copy > small { color: var(--roomibase-dark); }
+.product-card--navy .dish-copy > small { color: var(--roomibase); }
 
 .dish-copy p {
   margin: 0;
@@ -1049,7 +1049,7 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
 }
 
 .product-card--pink .badge--coming-soon { background: var(--pink-ink); }
-.product-card--navy .badge--coming-soon { background: var(--roomibase-dark); }
+.product-card--navy .badge--coming-soon { background: var(--roomibase); color: var(--ink); }
 
 .product-action {
   display: inline-block;
