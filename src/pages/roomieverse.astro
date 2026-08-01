@@ -5,54 +5,60 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
 
 <Layout title="roomieverse & roomibase · Giải pháp tìm chỗ ở">
   <main>
-    <section class="menu-section" style="padding-top: 150px; min-height: 80vh;">
+    <section class="apple-bento-section" style="padding-top: 150px; min-height: 100vh;">
       
       <!-- roomieverse section -->
-      <div class="section-title reveal" id="roomieverse">
-        <h2>roomie<span style="color: var(--pink-ink);">verse</span></h2>
-        <p style="margin-top: 20px; font-size: 1.2rem; color: var(--muted); max-width: 600px; margin-inline: auto;">
+      <div class="section-title reveal" id="roomieverse" style="text-align: center; margin-bottom: 60px;">
+        <h2 style="font-size: clamp(3rem, 6vw, 5rem); color: #fff;">roomie<span style="color: var(--pink-ink);">verse</span></h2>
+        <p style="margin-top: 24px; font-size: 1.25rem; color: #a1a1a6; max-width: 600px; margin-inline: auto;">
           Tìm phòng share - tìm bạn ở ghép
         </p>
       </div>
 
-      <div class="dish-list" style="margin-top: 60px;">
-        <article class="dish-card product-card product-card--pink reveal" style="grid-template-columns: 1fr;">
-          <div class="dish-copy" style="text-align: center; max-width: 800px; margin: 0 auto;">
-            <p>
-              Dành cho sinh viên, người đi làm xa quê muốn kiếm người ở ghép phù hợp với tiêu chí lối sống. Tìm phòng share lại trong căn hộ chung cư hay nhà nguyên căn. Tất cả trực tiếp và không qua môi giới.
-            </p>
+      <div class="apple-grid">
+        <!-- Main Feature (Large) -->
+        <article class="apple-card apple-card--span-4 apple-card--row-2 reveal">
+          <h3 class="apple-gradient-text--pink">CỘNG ĐỒNG.</h3>
+          <p>Dành cho sinh viên, người đi làm xa quê muốn kiếm người ở ghép phù hợp với tiêu chí lối sống. Tất cả trực tiếp và không qua môi giới.</p>
+          <div class="apple-visual">
+            <span style="color: #fff; font-weight: bold; opacity: 0.2; font-size: 1.5rem;">[ Ảnh minh họa tìm bạn ở ghép ]</span>
+            <div class="apple-visual-edge"></div>
           </div>
-          <div class="product-visual" style="margin-top: 40px; border-radius: 20px; box-shadow: 0 20px 40px var(--line);">
-            <div style="background: var(--pink-soft); width: 100%; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; border-radius: inherit;">
-              <span style="color: var(--pink-ink); font-weight: bold; font-size: 1.5rem;">[ Ảnh minh họa tìm bạn ở ghép ]</span>
-            </div>
-          </div>
+        </article>
+
+        <!-- Secondary Feature (Normal) -->
+        <article class="apple-card apple-card--span-2 reveal" style="transition-delay: 0.1s;">
+          <h3>Lối sống tương đồng</h3>
+          <p>Kết nối người tìm phòng và roommate dựa trên thói quen và nhịp sinh hoạt.</p>
+        </article>
+
+        <!-- Secondary Feature (Normal) -->
+        <article class="apple-card apple-card--span-2 reveal" style="transition-delay: 0.2s;">
+          <h3>Minh bạch</h3>
+          <p>Mọi thông tin về chi phí, hình ảnh phòng đều được xác thực rõ ràng.</p>
         </article>
       </div>
 
       <!-- Divider -->
-      <hr style="margin: 120px auto; max-width: 200px; border: 0; border-top: 2px dashed var(--line);" />
+      <hr style="margin: 120px auto; max-width: 200px; border: 0; border-top: 2px dashed rgba(255,255,255,0.2);" />
 
       <!-- roomibase section -->
-      <div class="section-title reveal" id="roomibase">
-        <h2>roomi<span style="color: var(--roomibase);">base</span></h2>
-        <p style="margin-top: 20px; font-size: 1.2rem; color: var(--muted); max-width: 600px; margin-inline: auto;">
+      <div class="section-title reveal" id="roomibase" style="text-align: center; margin-bottom: 60px;">
+        <h2 style="font-size: clamp(3rem, 6vw, 5rem); color: #fff;">roomi<span style="color: var(--roomibase);">base</span></h2>
+        <p style="margin-top: 24px; font-size: 1.25rem; color: #a1a1a6; max-width: 600px; margin-inline: auto;">
           Tìm phòng, tìm nhà cho thuê
         </p>
       </div>
 
-      <div class="dish-list" style="margin-top: 60px;">
-        <article class="dish-card product-card product-card--navy reveal" style="grid-template-columns: 1fr;">
-          <div class="dish-copy" style="text-align: center; max-width: 800px; margin: 0 auto;">
-            <p>
-              Dành cho người muốn tìm trọ hoặc tìm nhà, căn hộ cho thuê nguyên căn. Có thể qua trung gian môi giới hoặc trực tiếp.
-            </p>
-            <span class="badge badge--coming-soon" style="margin-top: 20px; display: inline-block;">Đang phát triển</span>
-          </div>
-          <div class="product-visual" style="margin-top: 40px; border-radius: 20px; box-shadow: 0 20px 40px var(--line);">
-            <div style="background: var(--roomibase-soft); width: 100%; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; border-radius: inherit;">
-              <span style="color: var(--roomibase-dark); font-weight: bold; font-size: 1.5rem;">[ Ảnh nền chờ ra mắt ]</span>
-            </div>
+      <div class="apple-grid">
+        <!-- Main Feature (Large) -->
+        <article class="apple-card apple-card--span-6 apple-card--row-2 reveal">
+          <h3 class="apple-gradient-text--navy">TRỰC TIẾP.</h3>
+          <p>Dành cho người muốn tìm trọ hoặc tìm nhà, căn hộ cho thuê nguyên căn. Có thể qua trung gian môi giới hoặc làm việc trực tiếp với chủ nhà.</p>
+          <span class="badge badge--coming-soon" style="margin-top: 16px; align-self: flex-start;">Đang phát triển</span>
+          <div class="apple-visual">
+            <span style="color: #fff; font-weight: bold; opacity: 0.2; font-size: 1.5rem;">[ Ảnh nền chờ ra mắt roomibase ]</span>
+            <div class="apple-visual-edge"></div>
           </div>
         </article>
       </div>
