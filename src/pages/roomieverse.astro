@@ -86,16 +86,20 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
   
           function updateGather() {
             if (!grid) return;
-            const gridRect = grid.getBoundingClientRect();
-            // Calculate center of grid relative to viewport
-            const gridCenterY = gridRect.top + gridRect.height / 2;
-            const viewportCenter = window.innerHeight / 2;
-            const offset = gridCenterY - viewportCenter;
+            const scrollY = window.scrollY;
             
-            // offset > 0 means grid is below center (scrolling TO it)
-            // offset < 0 means grid is above center (scrolling PAST it)
-            // We use 400px as the range to fully transition
-            let progress = -offset / 400; 
+            let progress = 0;
+            if (scrollY < 100) {
+              // 0 -> 100 maps to -1 -> 0 (gather in from outside)
+              progress = (scrollY - 100) / 100;
+            } else if (scrollY < 250) {
+              // Stay in grid
+              progress = 0;
+            } else {
+              // 250 -> 500 maps to 0 -> 1 (gather into logo)
+              progress = (scrollY - 250) / 250;
+            }
+            
             progress = Math.max(-1.5, Math.min(progress, 1.2));
   
             cardData.forEach(data => {
