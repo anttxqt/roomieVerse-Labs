@@ -145,17 +145,7 @@ const journey = [
             <article class={`dish-card product-card product-card--${product.accent} reveal`}>
               <div class="dish-media product-visual">
                 <span>0{index + 1}</span>
-                <div class="product-window" aria-hidden="true">
-                  <div class="product-window-bar"><i></i><i></i><i></i><small>{product.name}</small></div>
-                  <div class="product-window-body">
-                    <div class="product-sidebar"><b></b><i></i><i></i><i></i><i></i></div>
-                    <div class="product-dashboard">
-                      <img src={product.logo} width={product.name === 'roomieverse' ? '640' : product.name === 'roomibase' ? '981' : '611'} height={product.name === 'roomieverse' ? '640' : product.name === 'roomibase' ? '178' : '176'} alt="" />
-                      <div class="product-metrics">{product.metrics.map((metric, metricIndex) => <div><span>{metric}</span><strong>{metricIndex === 0 ? '24' : metricIndex === 1 ? '08' : '96%'}</strong></div>)}</div>
-                      <div class="product-chart"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-                    </div>
-                  </div>
-                </div>
+                <img src={product.logo} class="product-hero-logo" alt="" aria-hidden="true" />
               </div>
               <div class="dish-copy">
                 <small>
