@@ -1233,8 +1233,8 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
   padding: 112px 44px 44px;
   overflow: hidden;
   border-radius: 52px;
-  color: white;
-  background: var(--blue);
+  color: var(--blue-dark);
+  background: var(--roomibase);
 }
 
 .topping-card:nth-child(2) {
@@ -1245,17 +1245,22 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
 }
 
 .topping-card:nth-child(3) {
-  color: var(--blue-dark);
-  background: var(--blue-soft);
+  color: white;
+  background: var(--blue);
 }
 
 .topping-card > span {
+  color: var(--blue-dark);
   background: white;
 }
 
-.topping-card:nth-child(2) > span,
-.topping-card:nth-child(3) > span {
+.topping-card:nth-child(2) > span {
   color: var(--blue-dark);
+  background: white;
+}
+
+.topping-card:nth-child(3) > span {
+  color: var(--blue);
   background: white;
 }
 
