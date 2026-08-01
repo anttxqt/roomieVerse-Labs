@@ -1120,84 +1120,132 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
 }
 
 /* ==========================================================================
-   Bento Grid Layout (Showcases)
+   Apple-Style Bento Grid (Showcases)
    ========================================================================== */
 
-.bento-grid {
+.apple-bento-section {
+  background-color: #000;
+  color: #fff;
+  padding: 100px 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.apple-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
   max-width: 1250px;
-  margin: 80px auto;
+  margin: 0 auto;
   padding: 0 5vw;
 }
 
-.bento-card {
+.apple-card {
   position: relative;
-  background: white;
-  border-radius: 32px;
+  background: #111111; /* Very dark gray */
+  border-radius: 36px;
   padding: 40px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 16px;
   overflow: hidden;
-  box-shadow: 0 10px 40px -10px rgba(7, 23, 51, 0.08), 0 0 0 1px rgba(7, 23, 51, 0.03);
-  transition: transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out);
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  transition: transform 0.5s var(--ease-out), filter 0.5s var(--ease-out);
 }
 
-.bento-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px -10px rgba(7, 23, 51, 0.12), 0 0 0 1px rgba(7, 23, 51, 0.05);
+.apple-card:hover {
+  transform: scale(1.02);
+  filter: brightness(1.1);
 }
 
-.bento-card--navy { background: var(--paper-blue); }
-.bento-card--pink { background: var(--pink-soft); }
-
-.bento-card h3 {
-  font-size: clamp(1.25rem, 3vw, 1.75rem);
-  font-weight: 800;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-  color: var(--blue-dark);
+.apple-card--large {
+  padding: 60px;
 }
 
-.bento-card p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: var(--muted);
+.apple-card--glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
 }
 
-.bento-visual {
+.apple-card h3 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: #fff;
+  margin: 0;
+}
+
+.apple-card p {
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  line-height: 1.5;
+  color: #a1a1a6; /* Classic Apple light gray */
+  font-weight: 500;
+  max-width: 90%;
+  margin: 0;
+}
+
+.apple-gradient-text {
+  background: linear-gradient(135deg, #FF2E93 0%, #FF8000 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.apple-gradient-text--blue {
+  background: linear-gradient(135deg, #00C6FF 0%, #0072FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.apple-gradient-text--green {
+  background: linear-gradient(135deg, #38ef7d 0%, #11998e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.apple-visual {
   flex-grow: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.6);
-  min-height: 200px;
-  margin-top: 16px;
-  border: 1px solid rgba(7, 23, 51, 0.05);
-  box-shadow: inset 0 2px 10px rgba(7, 23, 51, 0.02);
+  border-radius: 24px;
+  background: #000;
+  min-height: 250px;
+  margin-top: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.apple-visual-edge {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(to top, rgba(0,0,0,1), transparent);
+  pointer-events: none;
 }
 
 @media (min-width: 800px) {
-  .bento-grid {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto;
+  .apple-grid {
+    grid-template-columns: repeat(6, 1fr);
   }
   
-  .bento-card--large {
-    grid-column: span 2;
-    grid-row: span 2;
-  }
+  .apple-card--span-6 { grid-column: span 6; }
+  .apple-card--span-4 { grid-column: span 4; }
+  .apple-card--span-3 { grid-column: span 3; }
+  .apple-card--span-2 { grid-column: span 2; }
   
-  .bento-card--wide {
-    grid-column: span 2;
-  }
-
-  .bento-card--tall {
-    grid-row: span 2;
-  }
+  .apple-card--row-2 { grid-row: span 2; }
 }
 
 
