@@ -946,12 +946,24 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
 }
 
 .product-visual {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0 4vw;
   background: transparent;
   box-shadow: none;
+}
+
+.product-visual::after {
+  content: "";
+  position: absolute;
+  right: calc(clamp(44px, 6vw, 100px) / -2);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 80px;
+  background: rgba(7, 23, 51, 0.1);
 }
 
 .product-hero-logo {
@@ -1335,6 +1347,10 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
   .dish-card {
     grid-template-columns: 1fr;
     gap: 30px;
+  }
+  
+  .product-visual::after {
+    display: none;
   }
 
   .dish-copy {
