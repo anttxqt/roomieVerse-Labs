@@ -95,22 +95,25 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
               }
             }
             
-            let loadProgress = -1;
+            let progress = -1;
             if (entranceStarted > 0) {
               let timeElapsed = Date.now() - entranceStarted;
-              let t = Math.min(timeElapsed / 1000, 1);
-              let loadEase = 1 - Math.pow(1 - t, 3); // Cubic ease-out
-              loadProgress = -1 + loadEase;
-            }
-
-            const scrollY = window.scrollY;
-            let scrollProgress = 0;
-            if (scrollY > 400) {
-              // 400 -> 750 maps to 0 -> 1 (gather into logo)
-              scrollProgress = (scrollY - 400) / 350;
+              
+              if (timeElapsed < 1000) {
+                // Phase 1: Entrance (-1 to 0) over 1s
+                let t = timeElapsed / 1000;
+                let loadEase = 1 - Math.pow(1 - t, 3);
+                progress = -1 + loadEase;
+              } else if (timeElapsed < 2500) {
+                // Phase 2: Reading time (0) for 1.5s
+                progress = 0;
+              } else {
+                // Phase 3: Gather into logo (0 to 1) over 1s
+                let t = Math.min((timeElapsed - 2500) / 1000, 1);
+                progress = t; // CSS will add easing and staggering delay
+              }
             }
             
-            let progress = loadProgress < 0 ? loadProgress : scrollProgress;
             progress = Math.max(-1.5, Math.min(progress, 1.2));
   
             cardData.forEach(data => {
