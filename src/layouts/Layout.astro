@@ -133,7 +133,10 @@ const {
       let ticking = false;
 
       function updateHero() {
-        if (!hero) return; // Only run on pages with hero-scroll
+        if (!hero) {
+          body.classList.toggle('past-hero', window.scrollY > 50);
+          return;
+        }
         const progress = clamp(-hero.getBoundingClientRect().top / Math.max(1, innerHeight * .7));
         const morph = smoothstep((progress - .04) / .58);
         const fade = smoothstep((progress - .08) / .46);
