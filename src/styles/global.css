@@ -1155,11 +1155,14 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
   font-size: 12px;
   font-weight: 700;
   color: white;
-  background: var(--pink-ink);
+  background: var(--blue);
   border-radius: 99px;
   vertical-align: middle;
   transform: translateY(-2px);
 }
+
+.product-card--pink .badge--coming-soon { background: var(--pink-ink); }
+.product-card--navy .badge--coming-soon { background: var(--roomibase-dark); }
 
 .product-action {
   display: inline-block;
