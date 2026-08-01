@@ -961,15 +961,24 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
   right: calc(clamp(44px, 6vw, 100px) / -2);
   top: 50%;
   transform: translateY(-50%);
-  width: 1px;
-  height: 80px;
-  background: rgba(7, 23, 51, 0.1);
+  width: 2px;
+  height: 60px;
+  border-radius: 2px;
+  background: var(--blue);
+  opacity: 0.5;
 }
+
+.product-card--pink .product-visual::after { background: var(--pink-ink); }
+.product-card--navy .product-visual::after { background: var(--roomibase); opacity: 0.8; }
 
 .product-hero-logo {
   max-width: 80%;
   max-height: 120px;
   object-fit: contain;
+}
+
+.product-card--pink .product-hero-logo {
+  max-height: 170px;
 }
 
 .dish-media > span,
