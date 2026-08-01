@@ -257,6 +257,18 @@ img {
   opacity: 1;
 }
 
+.topbar--dark-theme {
+  color: #fff;
+}
+
+.topbar--dark-theme .brand-logo__image--navy {
+  opacity: 0;
+}
+
+.topbar--dark-theme .brand-logo__image--light {
+  opacity: 1;
+}
+
 .brand-mark {
   position: relative;
   flex: 0 0 auto;
