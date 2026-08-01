@@ -193,7 +193,8 @@ if (currentPath.startsWith('/en/')) {
 
       function updateHero() {
         if (!hero) {
-          body.classList.toggle('past-hero', window.scrollY > 50);
+          const threshold = window.location.pathname.includes('roomieverse') ? 200 : 50;
+          body.classList.toggle('past-hero', window.scrollY > threshold);
           return;
         }
         const progress = clamp(-hero.getBoundingClientRect().top / Math.max(1, innerHeight * .7));
