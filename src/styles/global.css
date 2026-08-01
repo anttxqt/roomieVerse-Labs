@@ -1129,6 +1129,16 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
   letter-spacing: -.06em;
 }
 
+.product-title-logo {
+  display: block;
+  margin: 0 0 22px;
+  height: clamp(28px, 3.5vw, 42px);
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: left;
+}
+
 .dish-copy > small {
   display: inline-block;
   margin-bottom: 13px;

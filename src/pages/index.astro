@@ -159,7 +159,7 @@ const journey = [
                   {product.role}
                   {product.comingSoon && <span class="badge badge--coming-soon">Đang phát triển</span>}
                 </small>
-                <h3>{product.name}</h3>
+                <img src={`/brand/${product.name}.png`} alt={product.name} class="product-title-logo" />
                 <p>{product.description}</p>
                 {product.comingSoon && (
                   <a href="#footer" class="product-action"><span>Nhận thông báo khi ra mắt</span></a>
