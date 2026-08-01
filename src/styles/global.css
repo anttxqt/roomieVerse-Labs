@@ -664,6 +664,16 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
   0% {
     transform: scale(0.5);
     opacity: 0;
+    animation-timing-function: ease-out;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+    animation-timing-function: ease-in-out;
+  }
+  75% {
+    transform: scale(0.95);
+    animation-timing-function: ease-in-out;
   }
   100% {
     transform: scale(1);
@@ -680,7 +690,7 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
 }
 
 body.is-loaded .hero-copy h1 strong {
-  animation: popInBounce 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  animation: popInBounce 0.65s linear forwards;
   animation-delay: 1.6s;
 }
 
