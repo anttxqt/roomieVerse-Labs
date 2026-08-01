@@ -1071,8 +1071,9 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
 }
 
 .learn-more-link {
-  display: inline-grid;
-  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
   text-decoration: none;
   font-weight: 700;
   font-size: 15px;
@@ -1083,25 +1084,30 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
 .product-card--pink .learn-more-link { color: var(--pink-ink); }
 .product-card--navy .learn-more-link { color: var(--roomibase); }
 
-.lml-text, .lml-arrow {
-  grid-area: 1 / 1;
-  transition: transform 0.5s var(--ease-out);
+.lml-text {
+  transition: all 0.4s var(--ease-out);
+  transform: translateX(0);
+  opacity: 1;
+  display: inline-block;
 }
 
 .lml-arrow {
-  transform: translateX(-150%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: absolute;
+  left: -20px;
+  transform: translateX(0);
+  opacity: 0;
+  transition: all 0.4s var(--ease-out);
   font-size: 18px;
 }
 
 .learn-more-link:hover .lml-text {
-  transform: translateX(150%);
+  transform: translateX(30px);
+  opacity: 0;
 }
 
 .learn-more-link:hover .lml-arrow {
-  transform: translateX(0);
+  transform: translateX(70px);
+  opacity: 1;
 }
 
 .topping-heading {
