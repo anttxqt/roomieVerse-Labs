@@ -257,15 +257,15 @@ img {
   opacity: 1;
 }
 
-.topbar--dark-theme {
+body:not(.past-hero) .topbar--dark-theme {
   color: #fff;
 }
 
-.topbar--dark-theme .brand-logo__image--navy {
+body:not(.past-hero) .topbar--dark-theme .brand-logo__image--navy {
   opacity: 0;
 }
 
-.topbar--dark-theme .brand-logo__image--light {
+body:not(.past-hero) .topbar--dark-theme .brand-logo__image--light {
   opacity: 1;
 }
 
