@@ -5,7 +5,7 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
 
 <Layout title="roomieverse & roomibase · Giải pháp tìm chỗ ở" theme="dark">
   <main>
-    <section class="apple-bento-section" style="padding-top: 240px; padding-bottom: 80px; min-height: 100vh;">
+    <section class="apple-bento-section" style="padding-top: 180px; padding-bottom: 80px; min-height: 100vh;">
       
       <div class="keynote-grid" style="grid-template-columns: repeat(10, 1fr);">
         <!-- Forced Centerpiece -->
@@ -90,30 +90,27 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
             if (!grid) return;
             
             if (entranceStarted === 0) {
-              if (document.body.classList.contains('is-loaded')) {
-                entranceStarted = Date.now();
-              }
+              // Delay a tiny bit (200ms) then run automatically, independent of preloader
+              entranceStarted = Date.now() + 200;
             }
             
-            let progress = -1;
-            if (entranceStarted > 0) {
-              let timeElapsed = Date.now() - entranceStarted;
-              
-              if (timeElapsed < 1000) {
-                // Phase 1: Entrance (-1 to 0) over 1s
-                let t = timeElapsed / 1000;
-                let loadEase = 1 - Math.pow(1 - t, 3);
-                progress = -1 + loadEase;
-              } else if (timeElapsed < 2500) {
-                // Phase 2: Reading time (0) for 1.5s
-                progress = 0;
-              } else {
-                // Phase 3: Gather into logo (0 to 1) over 1s
-                let t = Math.min((timeElapsed - 2500) / 1000, 1);
-                progress = t; // CSS will add easing and staggering delay
-              }
+            let loadProgress = -1;
+            let timeElapsed = Date.now() - entranceStarted;
+            
+            if (timeElapsed > 0) {
+              let t = Math.min(timeElapsed / 1000, 1);
+              let loadEase = 1 - Math.pow(1 - t, 3); // Cubic ease-out
+              loadProgress = -1 + loadEase;
+            }
+
+            const scrollY = window.scrollY;
+            let scrollProgress = 0;
+            if (scrollY > 150) {
+              // 150 -> 400 maps to 0 -> 1 (gather into logo)
+              scrollProgress = (scrollY - 150) / 250;
             }
             
+            let progress = loadProgress < 0 ? loadProgress : scrollProgress;
             progress = Math.max(-1.5, Math.min(progress, 1.2));
   
             cardData.forEach(data => {
@@ -140,7 +137,7 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
               data.el.style.opacity = Math.max(0, opacity);
             });
             
-            if (entranceStarted > 0 && Date.now() - entranceStarted < 1000) {
+            if (timeElapsed < 1000) {
               requestAnimationFrame(updateGather);
             }
           }
