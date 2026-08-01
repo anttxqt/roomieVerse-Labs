@@ -54,6 +54,24 @@ const t = lang === 'en'
       roomio: '/roomio',
       roomieverse: '/roomieverse',
     };
+
+const currentPath = Astro.url.pathname;
+let viHref = '/';
+let enHref = '/en/';
+
+if (currentPath.startsWith('/en/')) {
+  viHref = currentPath.replace('/en/', '/') || '/';
+  enHref = currentPath;
+} else if (currentPath === '/en') {
+  viHref = '/';
+  enHref = '/en/';
+} else if (currentPath.startsWith('/en')) {
+  viHref = currentPath.replace('/en', '') || '/';
+  enHref = currentPath;
+} else {
+  viHref = currentPath;
+  enHref = currentPath === '/' ? '/en/' : `/en${currentPath}`;
+}
 ---
 
 <!doctype html>
@@ -91,9 +109,9 @@ const t = lang === 'en'
       </a>
       <div class="topbar-actions">
         <div class="lang-switch">
-          <a href="/" class={lang === 'vi' ? "is-active" : ""}>VI</a>
+          <a href={viHref} class={lang === 'vi' ? "is-active" : ""}>VI</a>
           <span class="lang-sep">|</span>
-          <a href="/en/" class={lang === 'en' ? "is-active" : ""}>EN</a>
+          <a href={enHref} class={lang === 'en' ? "is-active" : ""}>EN</a>
         </div>
         <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-menu"><span>Menu</span><i aria-hidden="true"></i></button>
       </div>
