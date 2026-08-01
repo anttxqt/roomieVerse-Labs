@@ -1244,7 +1244,7 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
   /* Force the centerpiece into the middle */
   .keynote-card--centerpiece {
     grid-column: 3 / 7; /* Spans columns 3,4,5,6 (out of 8) */
-    grid-row: 2 / 5; /* Spans 3 rows */
+    grid-row: 2 / 4; /* Spans 2 rows instead of 3 */
   }
 
   /* Span utilities for dense packing */
