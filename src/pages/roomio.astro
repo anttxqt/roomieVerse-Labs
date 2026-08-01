@@ -5,50 +5,46 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
 
 <Layout title="roomio · Vận hành & quản lý phòng cho thuê">
   <main>
-    <section class="apple-bento-section">
-      <div class="section-title reveal" style="text-align: center; margin-bottom: 60px;">
-        <h2 style="font-size: clamp(3rem, 6vw, 5rem); color: #fff;">roomio</h2>
-        <p style="margin-top: 24px; font-size: 1.25rem; color: #a1a1a6; max-width: 600px; margin-inline: auto;">
-          Bộ công cụ toàn diện giúp chủ trọ giải phóng thời gian và vận hành kinh doanh nhẹ nhàng hơn.
-        </p>
-      </div>
+    <section class="keynote-bento-section" style="padding-top: 120px; min-height: 100vh;">
+      <div class="keynote-grid">
+        <!-- Centerpiece -->
+        <article class="keynote-card keynote-card--centerpiece keynote-card--col-4 keynote-card--row-2 reveal">
+          <h3>roomio</h3>
+        </article>
 
-      <div class="apple-grid">
-        <!-- Main Feature (Large) -->
-        <article class="apple-card apple-card--span-4 apple-card--row-2 reveal">
-          <h3 class="apple-gradient-text">ALL-IN-ONE.</h3>
-          <p>Tất cả phòng, khách thuê, hợp đồng và hóa đơn trên một màn hình duy nhất.</p>
-          <div class="apple-visual">
-            <span style="color: #fff; font-weight: bold; opacity: 0.2; font-size: 1.5rem;">[ Ảnh Dashboard roomio ]</span>
-            <div class="apple-visual-edge"></div>
+        <!-- Big Text Card -->
+        <article class="keynote-card keynote-card--text-hero keynote-card--col-2 keynote-card--row-2 reveal" style="transition-delay: 0.1s;">
+          <h3 class="keynote-gradient-text">TỰ ĐỘNG<br/>HOÀN TOÀN</h3>
+          <p style="margin-top: 12px;">Tính bill & gửi thông báo nhắc nợ không trễ hẹn.</p>
+        </article>
+
+        <!-- Small Chip 1 -->
+        <article class="keynote-card keynote-card--chip keynote-card--col-2 reveal" style="transition-delay: 0.2s;">
+          <div class="keynote-chip-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
           </div>
+          <h3>Hợp đồng số</h3>
         </article>
 
-        <!-- Secondary Feature (Normal) -->
-        <article class="apple-card apple-card--span-2 reveal" style="transition-delay: 0.1s;">
-          <h3 class="apple-gradient-text--blue">Tự động.</h3>
-          <p>Hệ thống tự động tính toán điện nước và gửi thông báo cước hàng tháng qua Zalo/Email cho khách thuê. Không trễ hẹn.</p>
-        </article>
-
-        <!-- Secondary Feature (Normal) -->
-        <article class="apple-card apple-card--span-2 reveal" style="transition-delay: 0.2s;">
-          <h3 class="apple-gradient-text--green">Số hoá.</h3>
-          <p>Ký kết và quản lý hợp đồng điện tử. Tự động cảnh báo trước khi hợp đồng sắp hết hạn.</p>
-        </article>
-
-        <!-- Wide Feature (Wide) -->
-        <article class="apple-card apple-card--span-3 reveal">
-          <h3>Sự cố & Bảo trì</h3>
-          <p>Tiếp nhận và theo dõi tiến độ xử lý sự cố từ người thuê trực tiếp trên ứng dụng.</p>
-          <div class="apple-visual" style="min-height: 120px;">
-            <span style="color: #fff; font-weight: bold; opacity: 0.2;">[ Ảnh Báo cáo sự cố ]</span>
+        <!-- Small Chip 2 -->
+        <article class="keynote-card keynote-card--chip keynote-card--col-2 reveal" style="transition-delay: 0.25s;">
+          <div class="keynote-chip-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
           </div>
+          <h3>Phân quyền NV</h3>
         </article>
 
-        <!-- Normal Feature (Normal) -->
-        <article class="apple-card apple-card--span-3 reveal">
-          <h3>Nhân viên & Phân quyền</h3>
-          <p>Cấp quyền quản lý cho từng nhân viên theo từng tòa nhà cụ thể một cách an toàn.</p>
+        <!-- Small Chip 3 -->
+        <article class="keynote-card keynote-card--chip keynote-card--col-2 reveal" style="transition-delay: 0.3s;">
+          <div class="keynote-chip-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+          </div>
+          <h3>Bảo trì sự cố</h3>
+        </article>
+
+        <!-- Wide Image Card -->
+        <article class="keynote-card keynote-card--col-6 reveal" style="transition-delay: 0.35s; align-items: center; justify-content: center; min-height: 250px; background: #e3e3e8;">
+          <span style="color: #1d1d1f; font-weight: bold; opacity: 0.3; font-size: 1.5rem;">[ Ảnh minh họa Dashboard hoặc Mobile App ]</span>
         </article>
       </div>
     </section>
