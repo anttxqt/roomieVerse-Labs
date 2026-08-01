@@ -5,26 +5,55 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
 
 <Layout title="roomio · Vận hành & quản lý phòng cho thuê">
   <main>
-    <section class="menu-section" style="padding-top: 150px; min-height: 80vh;">
+    <section class="menu-section" style="padding-top: 150px; min-height: 100vh;">
       <div class="section-title reveal" id="hero">
-        <h2>roomio</h2>
-        <p style="margin-top: 20px; font-size: 1.2rem; color: var(--muted); max-width: 600px; margin-inline: auto;">
-          Vận hành & quản lý phòng cho thuê
+        <h2 style="font-size: clamp(3rem, 6vw, 5rem);">roomio</h2>
+        <p style="margin-top: 24px; font-size: 1.25rem; color: var(--muted); max-width: 600px; margin-inline: auto;">
+          Bộ công cụ toàn diện giúp chủ trọ giải phóng thời gian và vận hành kinh doanh nhẹ nhàng hơn.
         </p>
       </div>
 
-      <div class="dish-list" style="margin-top: 80px;">
-        <article class="dish-card product-card product-card--blue reveal" style="grid-template-columns: 1fr;">
-          <div class="dish-copy" style="text-align: center; max-width: 800px; margin: 0 auto;">
-            <p>
-              Dành cho chủ trọ quản lý tòa nhà, phòng, khách thuê, hợp đồng, hóa đơn, thu tiền, sự cố và nhân viên ở cùng một nơi. Gửi thông báo nhắc nợ hàng tháng, gửi bill tự động.
-            </p>
+      <div class="bento-grid">
+        <!-- Main Feature (Large) -->
+        <article class="bento-card bento-card--large bento-card--navy reveal">
+          <h3>Quản lý tập trung</h3>
+          <p>Tất cả phòng, khách thuê, hợp đồng và hóa đơn trên một màn hình duy nhất. Dễ dàng tra cứu và kiểm soát tình hình kinh doanh theo thời gian thực.</p>
+          <div class="bento-visual">
+            <span style="color: var(--blue-dark); font-weight: bold; opacity: 0.5;">[ Ảnh Dashboard roomio ]</span>
           </div>
-          <div class="product-visual" style="margin-top: 40px; border-radius: 20px; box-shadow: 0 20px 40px var(--line);">
-            <div style="background: var(--paper-blue); width: 100%; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; border-radius: inherit;">
-              <span style="color: var(--blue); font-weight: bold; font-size: 1.5rem;">[ Ảnh giao diện phần mềm roomio ]</span>
-            </div>
+        </article>
+
+        <!-- Secondary Feature (Normal) -->
+        <article class="bento-card reveal" style="transition-delay: 0.1s;">
+          <h3>Nhắc nợ tự động</h3>
+          <p>Hệ thống tự động tính toán điện nước và gửi thông báo cước hàng tháng qua Zalo/Email cho khách thuê.</p>
+          <div class="bento-visual">
+            <span style="color: var(--blue-dark); font-weight: bold; opacity: 0.5;">[ Ảnh Thông báo ]</span>
           </div>
+        </article>
+
+        <!-- Secondary Feature (Normal) -->
+        <article class="bento-card reveal" style="transition-delay: 0.2s;">
+          <h3>Hợp đồng thông minh</h3>
+          <p>Ký kết và quản lý hợp đồng điện tử. Tự động cảnh báo trước khi hợp đồng sắp hết hạn.</p>
+          <div class="bento-visual">
+            <span style="color: var(--blue-dark); font-weight: bold; opacity: 0.5;">[ Ảnh Hợp đồng ]</span>
+          </div>
+        </article>
+
+        <!-- Wide Feature (Wide) -->
+        <article class="bento-card bento-card--wide reveal">
+          <h3>Sự cố & Bảo trì</h3>
+          <p>Tiếp nhận và theo dõi tiến độ xử lý các sự cố hỏng hóc từ người thuê trực tiếp trên ứng dụng.</p>
+          <div class="bento-visual" style="min-height: 120px;">
+            <span style="color: var(--blue-dark); font-weight: bold; opacity: 0.5;">[ Ảnh Báo cáo sự cố ]</span>
+          </div>
+        </article>
+
+        <!-- Normal Feature (Normal) -->
+        <article class="bento-card reveal">
+          <h3>Nhân viên & Phân quyền</h3>
+          <p>Cấp quyền quản lý cho từng nhân viên theo từng tòa nhà cụ thể một cách an toàn.</p>
         </article>
       </div>
     </section>
