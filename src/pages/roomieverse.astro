@@ -85,14 +85,33 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
           }
   
           function updateGather() {
-            const scrollY = window.scrollY;
-            const progress = Math.min(Math.max(scrollY / 300, 0), 1);
-            const easedProgress = progress * (2 - progress); 
-            const scale = 1 - (easedProgress * 0.4);
+            if (!grid) return;
+            const gridRect = grid.getBoundingClientRect();
+            // Calculate center of grid relative to viewport
+            const gridCenterY = gridRect.top + gridRect.height / 2;
+            const viewportCenter = window.innerHeight / 2;
+            const offset = gridCenterY - viewportCenter;
+            
+            // offset > 0 means grid is below center (scrolling TO it)
+            // offset < 0 means grid is above center (scrolling PAST it)
+            // We use 400px as the range to fully transition
+            let progress = -offset / 400; 
+            progress = Math.max(-1.5, Math.min(progress, 1.2));
   
             cardData.forEach(data => {
-              data.el.style.transform = `translate(${data.dx * easedProgress}px, ${data.dy * easedProgress}px) scale(${scale})`;
-              data.el.style.opacity = 1 - (easedProgress * 0.5);
+              let p = progress;
+              let easeP = p > 0 ? p * (2 - p) : p; // ease-out when collapsing
+              
+              let scale = 1;
+              if (p > 0) scale = 1 - (easeP * 0.4); // shrink when collapsing
+              else scale = 1 - (p * 0.1); // slightly grow when pushed out
+              
+              let opacity = 1;
+              if (p > 0) opacity = 1 - (easeP * 0.5);
+              else opacity = 1 + p; // fade out when pushed out
+              
+              data.el.style.transform = `translate(${data.dx * easeP}px, ${data.dy * easeP}px) scale(${scale})`;
+              data.el.style.opacity = Math.max(0, opacity);
             });
           }
   
