@@ -1,6 +1,7 @@
 ---
 import '../../styles/global.css'
 import RoomieverseLabsLogo from '../../components/RoomieverseLabsLogo.astro'
+import Layout from '../../layouts/Layout.astro'
 
 const products = [
   {
@@ -12,6 +13,8 @@ const products = [
     titleLogo: '/brand/roomio.png',
     accent: 'blue',
     metrics: ['Tòa nhà', 'Hợp đồng', 'Hóa đơn'],
+    link: '/en/roomio',
+    linkText: 'Learn more',
   },
   {
     name: 'roomieverse',
@@ -22,6 +25,8 @@ const products = [
     titleLogo: '/brand/roomieverse.png',
     accent: 'pink',
     metrics: ['Tìm phòng', 'Tìm bạn', 'Phòng chung'],
+    link: '/en/roomieverse',
+    linkText: 'Learn more',
   },
   {
     name: 'roomibase',
@@ -33,6 +38,8 @@ const products = [
     accent: 'navy',
     metrics: ['Chủ nhà', 'Người thuê', 'Chỗ ở'],
     comingSoon: true,
+    link: '/en/roomieverse',
+    linkText: 'Learn more',
   },
 ]
 
@@ -43,22 +50,7 @@ const journey = [
 ]
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Roomio, Roomieverse và Roomibase — bộ ba sản phẩm đi cùng hành trình tìm chỗ ở, tìm người ở cùng và quản lý vận hành nhà trọ." />
-    <meta name="theme-color" content="#2563eb" />
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:title" content="Roomio · Roomieverse · Roomibase" />
-    <meta property="og:description" content="Ba sản phẩm cho một hành trình ở liền mạch." />
-    <meta property="og:image" content="/brand/roomieverse.png" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <title>Roomio · Roomieverse · Roomibase</title>
-  </head>
-  <body>
+<Layout lang="en">
     <div class="preloader" aria-hidden="true">
       <div class="preloader-content">
         <div class="preloader-logos">
@@ -152,100 +144,18 @@ const journey = [
                   {product.comingSoon && <span class="badge badge--coming-soon">In development</span>}
                 </small>
                 <p>{product.description}</p>
-                {product.comingSoon && (
-                  <a href="#footer" class="product-action"><span>Get notified when launched</span></a>
-                )}
+                <div style="margin-top: 16px; display: flex; gap: 12px; flex-wrap: wrap;">
+                  {product.link && (
+                    <a href={product.link} class="product-action"><span>{product.linkText}</span></a>
+                  )}
+                  {product.comingSoon && (
+                    <a href="#footer" class="product-action"><span>Notify me</span></a>
+                  )}
+                </div>
               </div>
             </article>
           ))}
         </div>
       </section>
     </main>
-
-    <footer class="footer" id="footer">
-      <div class="footer-card footer-card--contact">
-        <div class="footer-row">
-          <h4 class="footer-row-title">Products</h4>
-          <div class="footer-row-links">
-            <a href="#">roomio</a>
-            <a href="#">roomieVerse</a>
-            <a href="#">roomibase</a>
-          </div>
-        </div>
-        <div class="footer-row">
-          <h4 class="footer-row-title">Contact</h4>
-          <div class="footer-row-links">
-            <a href="mailto:hello@roomieverselabs.com">hello@roomieverselabs.com</a>
-          </div>
-        </div>
-        <div class="footer-row footer-row--bottom">
-          <a href="#story">About</a>
-          <a href="#">Threads</a>
-          <a href="#">Facebook</a>
-          <a href="#">X</a>
-          <a href="#">Privacy & Terms</a>
-        </div>
-      </div>
-      <div class="footer-card footer-card--logo">
-        <RoomieverseLabsLogo />
-      </div>
-    </footer>
-
-
-    <script is:inline>
-      const clamp = (value, min = 0, max = 1) => Math.min(max, Math.max(min, value));
-      const smoothstep = (value) => { const x = clamp(value); return x * x * (3 - 2 * x); };
-      const body = document.body;
-      const preloader = document.querySelector('.preloader');
-      const menu = document.querySelector('.menu-overlay');
-      const menuButton = document.querySelector('.menu-button');
-      const menuClose = document.querySelector('.menu-close');
-      const hero = document.querySelector('.hero-scroll');
-      const heroFrame = document.querySelector('.hero-frame');
-      const heroShell = document.querySelector('.hero-shell');
-      const heroCopy = document.querySelector('.hero-copy');
-      const scrollCue = document.querySelector('.scroll-cue');
-      const footer = document.querySelector('.footer');
-      const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
-      let ticking = false;
-
-      function updateHero() {
-        const progress = clamp(-hero.getBoundingClientRect().top / Math.max(1, innerHeight * .7));
-        const morph = smoothstep((progress - .04) / .58);
-        const fade = smoothstep((progress - .08) / .46);
-        const inset = innerWidth <= 700 ? 9 : 22;
-        const radius = innerWidth <= 700 ? 38 : 82;
-        
-        // Outer frame fades from dark blue to paper-blue to hide the seam with the next section
-        heroFrame.style.backgroundColor = `rgb(${Math.round(6 + 239 * morph)},${Math.round(22 + 226 * morph)},${Math.round(56 + 199 * morph)})`;
-        
-        // Inner shell fades from roomieverse-blue to paper-blue
-        heroShell.style.backgroundColor = `rgb(${Math.round(147 + 98 * morph)},${Math.round(197 + 51 * morph)},${Math.round(253 + 2 * morph)})`;
-        heroShell.style.inset = `${inset * (1 - morph)}px`;
-        heroShell.style.borderRadius = `${radius * (1 - morph)}px`;
-        heroCopy.style.opacity = String(1 - fade);
-        heroCopy.style.transform = `translate(-50%, calc(-50% - ${fade * 45}px)) scale(${1 - fade * .03})`;
-        if (scrollCue) scrollCue.style.opacity = String(1 - clamp(progress * 5));
-        
-        body.classList.toggle('past-hero', hero.getBoundingClientRect().bottom < innerHeight * .35);
-      }
-
-      function updatePage() { updateHero(); ticking = false; }
-      function requestUpdate() { if (!ticking) { ticking = true; requestAnimationFrame(updatePage); } }
-      function setMenu(open) { menu.classList.toggle('is-open', open); body.classList.toggle('menu-open', open); menu.setAttribute('aria-hidden', String(!open)); menuButton.setAttribute('aria-expanded', String(open)); if (open) menuClose.focus({ preventScroll: true }); else menuButton.focus({ preventScroll: true }); }
-
-      menuButton.addEventListener('click', () => setMenu(true));
-      menuClose.addEventListener('click', () => setMenu(false));
-      menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setMenu(false)));
-      document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && menu.classList.contains('is-open')) setMenu(false); });
-      const revealObserver = new IntersectionObserver((entries) => entries.forEach((entry) => { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); revealObserver.unobserve(entry.target); } }), { threshold: .12, rootMargin: '0px 0px -45px' });
-      document.querySelectorAll('.reveal').forEach((element) => revealObserver.observe(element));
-      const footerObserver = new IntersectionObserver(([entry]) => body.classList.toggle('at-footer', entry.isIntersecting), { threshold: .08 });
-      footerObserver.observe(footer);
-      addEventListener('scroll', requestUpdate, { passive: true });
-      addEventListener('resize', requestUpdate);
-      addEventListener('load', () => { setTimeout(() => { preloader.classList.add('is-hidden'); body.classList.add('is-loaded'); }, 680); updatePage(); });
-      updatePage();
-    </script>
-  </body>
-</html>
+</Layout>
