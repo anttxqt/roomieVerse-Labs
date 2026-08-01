@@ -1197,9 +1197,12 @@ body.is-loaded .hero-copy h1 strong {
   transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
 }
 
-.keynote-card:hover {
-  transform: scale(1.015);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.03);
+.keynote-card > * {
+  transition: opacity 0.2s ease;
+}
+
+.keynote-card:hover > * {
+  opacity: 0.7;
 }
 
 .keynote-card--centerpiece {
@@ -1965,9 +1968,12 @@ body.is-loaded .hero-copy h1 strong {
   transition: transform 0.5s var(--ease-out), filter 0.5s var(--ease-out);
 }
 
-.apple-card:hover {
-  transform: scale(1.02);
-  filter: brightness(1.1);
+.apple-card > * {
+  transition: opacity 0.2s ease;
+}
+
+.apple-card:hover > * {
+  opacity: 0.7;
 }
 
 .apple-card--large {
