@@ -6,37 +6,37 @@ import Layout from '../../layouts/Layout.astro'
 const products = [
   {
     name: 'roomio',
-    role: 'Vận hành nhà trọ',
-    description: 'Dành cho chủ trọ quản lý tòa nhà, phòng, khách thuê, hợp đồng, hóa đơn, thu tiền, sự cố và nhân viên ở cùng một nơi. Gửi thông báo nhắc nợ hàng tháng, gửi bill tự động.',
+    role: 'Rental operations & management',
+    description: 'For landlords managing buildings, rooms, tenants, contracts, invoices, payments, maintenance issues, and staff — all in one place. Automated monthly reminders and bills.',
     logo: '/brand/roomio.png',
     logoAlt: 'Roomio',
     titleLogo: '/brand/roomio.png',
     accent: 'blue',
-    metrics: ['Tòa nhà', 'Hợp đồng', 'Hóa đơn'],
+    metrics: ['Buildings', 'Contracts', 'Invoices'],
     link: '/en/roomio',
     linkText: 'Learn more',
   },
   {
     name: 'roomieverse',
-    role: 'Tìm phòng và người ở cùng',
-    description: 'Dành cho sinh viên, người đi làm xa quê muốn kiếm người ở ghép phù hợp với tiêu chí lối sống. Tìm phòng share lại trong căn hộ chung cư hay nhà nguyên căn. Tất cả trực tiếp và không qua môi giới.',
+    role: 'Find a room & a roommate',
+    description: 'For students and people working away from home looking for a roommate who matches their lifestyle. Find a shared room in an apartment or a house — all direct, no agents involved.',
     logo: '/brand/roomieverse-cropped.png',
     logoAlt: 'Roomieverse',
     titleLogo: '/brand/roomieverse.png',
     accent: 'pink',
-    metrics: ['Tìm phòng', 'Tìm bạn', 'Phòng chung'],
+    metrics: ['Find a room', 'Find a roommate', 'Shared spaces'],
     link: '/en/roomieverse',
     linkText: 'Learn more',
   },
   {
     name: 'roomibase',
-    role: 'Tìm chỗ ở trực tiếp',
-    description: 'Dành cho người muốn tìm trọ hoặc tìm nhà, căn hộ cho thuê nguyên căn. Có thể qua trung gian môi giới hoặc trực tiếp.',
+    role: 'Find a place, direct',
+    description: 'For people looking to rent a whole room, house, or apartment — through an agent or straight from the landlord.',
     logo: '/brand/roomibase-rounded.png',
     logoAlt: 'Roomibase',
     titleLogo: '/brand/roomibase-rounded.png',
     accent: 'navy',
-    metrics: ['Chủ nhà', 'Người thuê', 'Chỗ ở'],
+    metrics: ['Landlords', 'Tenants', 'Places'],
     comingSoon: true,
     link: '/en/roomieverse',
     linkText: 'Learn more',
@@ -44,9 +44,9 @@ const products = [
 ]
 
 const journey = [
-  ['01', 'Tìm chỗ ở', 'Roomibase giúp người thuê gặp trực tiếp chủ nhà và xem những lựa chọn phù hợp.'],
-  ['02', 'Cũng là tìm chỗ ở, nhưng...', 'Roomieverse giúp tìm người ở cùng dựa trên thói quen và nhịp sống.'],
-  ['03', 'Vận hành gọn', 'Roomio giúp chủ trọ quản lý mọi việc sau khi căn phòng đã có người ở.'],
+  ['01', 'Find a place', 'Roomibase connects renters directly with landlords to browse listings that fit.'],
+  ['02', 'Also about finding a place, but...', 'Roomieverse matches you with a roommate based on habits and lifestyle.'],
+  ['03', 'Effortless operations', 'Roomio helps landlords manage everything once a room is occupied.'],
 ]
 ---
 
@@ -64,8 +64,8 @@ const journey = [
       </div>
     </div>
 
-    <header class="topbar" aria-label="Điều hướng chính">
-      <a class="brand" href="#hero" aria-label="RoomieVerse Labs — về đầu trang">
+    <header class="topbar" aria-label="Main navigation">
+      <a class="brand" href="#hero" aria-label="RoomieVerse Labs — back to top">
         <RoomieverseLabsLogo />
       </a>
       <div class="topbar-actions">
@@ -90,7 +90,7 @@ const journey = [
         <button class="menu-close" type="button" aria-label="Close menu">×</button>
       </div>
       <div class="menu-body">
-        <nav aria-label="Menu trang">
+        <nav aria-label="Site menu">
           <a href="#hero"><span>01</span>Home</a>
           <a href="#products"><span>02</span>roomio</a>
           <a href="#products"><span>03</span>roomieVerse</a>
@@ -109,18 +109,18 @@ const journey = [
         <div class="hero-frame">
           <div class="hero-shell">
             <div class="hero-copy">
-              <h1>Trải nghiệm việc <em>thuê</em> và <em>cho thuê</em> chỗ ở<br />trở nên <strong style="color: var(--pink); font-size: 1.15em; font-weight: 900;">tốt hơn.</strong></h1>
+              <h1>Make <em>renting</em> and <em>hosting</em> a home<br />feel <strong style="color: var(--pink); font-size: 1.15em; font-weight: 900;">better.</strong></h1>
             </div>
-            
-            <div class="scroll-cue"><span>Cuộn để xem</span><i>↓</i></div>
+
+            <div class="scroll-cue"><span>Scroll to explore</span><i>↓</i></div>
           </div>
         </div>
       </section>
 
       <section class="menu-section">
         <div class="topping-heading reveal" id="story">
-          <h3>Một hành trình liền mạch</h3>
-          <p><mark>roomieVerse Labs</mark> sẽ đồng hành cùng mọi người trong suốt quá trình tìm chỗ ở,<br />trong lúc ở đối với người đi thuê cho tới việc quản lý chỗ ở đối với người cho thuê.</p>
+          <h3>A seamless journey</h3>
+          <p><mark>roomieVerse Labs</mark> walks with you through every step of finding a place —<br />from settling in as a tenant to managing it with ease as a host.</p>
         </div>
         <div class="toppings-grid journey-grid">
           {journey.map(([number, title, description], index) => (

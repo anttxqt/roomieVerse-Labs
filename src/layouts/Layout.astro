@@ -8,11 +8,52 @@ interface Props {
   lang?: 'vi' | 'en';
 }
 
-const { 
-  title = "Roomio · Roomieverse · Roomibase", 
-  description = "Roomio, Roomieverse và Roomibase — bộ ba sản phẩm đi cùng hành trình tìm chỗ ở, tìm người ở cùng và quản lý vận hành nhà trọ.", 
-  lang = "vi" 
+const {
+  title = "Roomio · Roomieverse · Roomibase",
+  lang = "vi",
+  description = lang === 'en'
+    ? "Roomio, Roomieverse, and Roomibase — three products walking with you through the journey of finding a place, finding a roommate, and managing a rental."
+    : "Roomio, Roomieverse và Roomibase — bộ ba sản phẩm đi cùng hành trình tìm chỗ ở, tìm người ở cùng và quản lý vận hành nhà trọ.",
 } = Astro.props;
+
+const homeHref = lang === 'en' ? '/en/' : '/';
+const t = lang === 'en'
+  ? {
+      nav: 'Main navigation',
+      backHome: 'RoomieVerse Labs — back to homepage',
+      menuLabel: 'Site menu',
+      closeMenu: 'Close menu',
+      navItems: [
+        ['01', 'Home', '/en/'],
+        ['02', 'roomio', '/en/roomio'],
+        ['03', 'roomieVerse', '/en/roomieverse'],
+        ['04', 'roomibase', '/en/roomieverse'],
+        ['05', 'Our Team', '#footer'],
+      ],
+      products: 'Products',
+      contact: 'Contact',
+      about: '/en/#story',
+      roomio: '/en/roomio',
+      roomieverse: '/en/roomieverse',
+    }
+  : {
+      nav: 'Điều hướng chính',
+      backHome: 'RoomieVerse Labs — về trang chủ',
+      menuLabel: 'Menu trang',
+      closeMenu: 'Đóng menu',
+      navItems: [
+        ['01', 'Trang chủ', '/'],
+        ['02', 'roomio', '/roomio'],
+        ['03', 'roomieVerse', '/roomieverse'],
+        ['04', 'roomibase', '/roomieverse'],
+        ['05', 'Our Team', '#footer'],
+      ],
+      products: 'Sản phẩm',
+      contact: 'Liên hệ',
+      about: '/#story',
+      roomio: '/roomio',
+      roomieverse: '/roomieverse',
+    };
 ---
 
 <!doctype html>
@@ -44,8 +85,8 @@ const {
       </div>
     </div>
 
-    <header class="topbar" aria-label="Điều hướng chính">
-      <a class="brand" href="/" aria-label="RoomieVerse Labs — về trang chủ">
+    <header class="topbar" aria-label={t.nav}>
+      <a class="brand" href={homeHref} aria-label={t.backHome}>
         <RoomieverseLabsLogo />
       </a>
       <div class="topbar-actions">
@@ -67,17 +108,15 @@ const {
           <span class="menu-divider"></span>
           <img class="menu-logo menu-logo--base" src="/brand/roomibase-rounded.png" width="1603" height="308" alt="" />
         </div>
-        <button class="menu-close" type="button" aria-label="Đóng menu">×</button>
+        <button class="menu-close" type="button" aria-label={t.closeMenu}>×</button>
       </div>
       <div class="menu-body">
-        <nav aria-label="Menu trang">
-          <a href="/"><span>01</span>Trang chủ</a>
-          <a href="/roomio"><span>02</span>roomio</a>
-          <a href="/roomieverse"><span>03</span>roomieVerse</a>
-          <a href="/roomieverse"><span>04</span>roomibase</a>
-          <a href="#footer"><span>05</span>Our Team</a>
+        <nav aria-label={t.menuLabel}>
+          {t.navItems.map(([number, label, href]) => (
+            <a href={href}><span>{number}</span>{label}</a>
+          ))}
         </nav>
-        <a class="brand brand--blue menu-brand" href="/" tabindex="-1">
+        <a class="brand brand--blue menu-brand" href={homeHref} tabindex="-1">
           <RoomieverseLabsLogo />
         </a>
       </div>
@@ -89,21 +128,21 @@ const {
     <footer class="footer" id="footer">
       <div class="footer-card footer-card--contact">
         <div class="footer-row">
-          <h4 class="footer-row-title">Sản phẩm</h4>
+          <h4 class="footer-row-title">{t.products}</h4>
           <div class="footer-row-links">
-            <a href="/roomio">roomio</a>
-            <a href="/roomieverse">roomieVerse</a>
-            <a href="/roomieverse">roomibase</a>
+            <a href={t.roomio}>roomio</a>
+            <a href={t.roomieverse}>roomieVerse</a>
+            <a href={t.roomieverse}>roomibase</a>
           </div>
         </div>
         <div class="footer-row">
-          <h4 class="footer-row-title">Liên hệ</h4>
+          <h4 class="footer-row-title">{t.contact}</h4>
           <div class="footer-row-links">
             <a href="mailto:hello@roomieverselabs.com">hello@roomieverselabs.com</a>
           </div>
         </div>
         <div class="footer-row footer-row--bottom">
-          <a href="/#story">About</a>
+          <a href={t.about}>About</a>
           <a href="#">Threads</a>
           <a href="#">Facebook</a>
           <a href="#">X</a>
