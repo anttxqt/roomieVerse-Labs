@@ -15,27 +15,49 @@ import RoomieverseLabsLogo from '../../components/RoomieverseLabsLogo.astro'
         </p>
       </div>
 
-      <div class="apple-grid">
-        <!-- Main Feature (Large) -->
-        <article class="apple-card apple-card--span-4 apple-card--row-2 reveal">
+      <div class="keynote-grid">
+        <!-- Forced Centerpiece -->
+        <article class="apple-card keynote-card--centerpiece reveal" style="display: flex; align-items: center; justify-content: center;">
+          <img src="/brand/roomieverse-stacked-cropped.png" alt="roomieverse logo" style="max-width: 70%; max-height: 70%; object-fit: contain;" />
+        </article>
+
+        <!-- 1. Big Text (R1-R2, C1-C2) -->
+        <article class="apple-card keynote-card--col-2 keynote-card--row-2 reveal">
           <h3 class="apple-gradient-text--pink">COMMUNITY.</h3>
-          <p>For students and people working away from home looking for a roommate who matches their lifestyle. All direct, no agents involved.</p>
-          <div class="apple-visual">
-            <span style="color: #fff; font-weight: bold; opacity: 0.2; font-size: 1.5rem;">[ Roommate matching illustration ]</span>
-            <div class="apple-visual-edge"></div>
-          </div>
+          <p style="margin-top: 12px; font-size: 0.95rem;">For students and people working away from home looking for a roommate who matches their lifestyle.</p>
         </article>
 
-        <!-- Secondary Feature (Normal) -->
-        <article class="apple-card apple-card--span-2 reveal" style="transition-delay: 0.1s;">
-          <h3>Similar lifestyles</h3>
-          <p>Connect roommates based on their daily habits and routines.</p>
+        <!-- 2. Chip (R1-R2, C3-C4) -->
+        <article class="apple-card keynote-card--col-2 keynote-card--row-2 reveal" style="transition-delay: 0.1s; flex-direction: column; justify-content: center; align-items: flex-start;">
+          <h3 style="font-size: 1.25rem; margin-bottom: 8px;">Similar lifestyles</h3>
+          <p style="font-size: 0.9rem;">Connect roommates based on their daily habits.</p>
         </article>
 
-        <!-- Secondary Feature (Normal) -->
-        <article class="apple-card apple-card--span-2 reveal" style="transition-delay: 0.2s;">
-          <h3>Transparency</h3>
-          <p>All pricing and room photos are clearly verified.</p>
+        <!-- 3. Chip (R1-R2, C5-C6) -->
+        <article class="apple-card keynote-card--col-2 keynote-card--row-2 reveal" style="transition-delay: 0.15s; flex-direction: column; justify-content: center; align-items: flex-start;">
+          <h3 style="font-size: 1.25rem; margin-bottom: 8px;">Transparency</h3>
+          <p style="font-size: 0.9rem;">All pricing and room photos are clearly verified.</p>
+        </article>
+
+        <!-- 4. Tall Card (R1-R4, C7-C8) -->
+        <article class="apple-card keynote-card--col-2 keynote-card--row-4 reveal" style="transition-delay: 0.2s; justify-content: flex-end;">
+          <span style="color: #fff; font-weight: bold; opacity: 0.2; font-size: 1.2rem; text-align: center; margin-bottom: 20px;">[ Verification Badge ]</span>
+        </article>
+
+        <!-- 5. Chip (R3-R4, C1-C2) -->
+        <article class="apple-card keynote-card--col-2 keynote-card--row-2 reveal" style="transition-delay: 0.25s; flex-direction: column; justify-content: center; align-items: flex-start;">
+          <h3 style="font-size: 1.25rem; margin-bottom: 8px;">Direct</h3>
+          <p style="font-size: 0.9rem;">All direct, no agents involved.</p>
+        </article>
+
+        <!-- 6. Wide Image Card (R5-R6, C1-C6) -->
+        <article class="apple-card keynote-card--col-6 keynote-card--row-2 reveal" style="transition-delay: 0.3s; align-items: center; justify-content: center;">
+          <span style="color: #fff; font-weight: bold; opacity: 0.2; font-size: 1.5rem;">[ Roommate matching illustration ]</span>
+        </article>
+
+        <!-- 7. Medium Card (R5-R6, C7-C8) -->
+        <article class="apple-card keynote-card--col-2 keynote-card--row-2 reveal" style="transition-delay: 0.35s; justify-content: flex-end;">
+          <span style="color: #fff; font-weight: bold; opacity: 0.2; font-size: 1.2rem; text-align: center; margin-bottom: 20px;">[ Community ]</span>
         </article>
       </div>
 
