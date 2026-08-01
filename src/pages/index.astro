@@ -90,12 +90,15 @@ const journey = [
                   {product.comingSoon && <span class="badge badge--coming-soon">Đang phát triển</span>}
                 </small>
                 <p>{product.description}</p>
-                <div style="margin-top: 16px; display: flex; gap: 12px; flex-wrap: wrap;">
+                <div style="margin-top: 16px; display: flex; gap: 16px; flex-wrap: wrap; align-items: center;">
                   {product.link && (
-                    <a href={product.link} class="product-action"><span>{product.linkText}</span></a>
+                    <a href={product.link} class="learn-more-link">
+                      <span class="lml-text">{product.linkText}</span>
+                      <span class="lml-arrow" aria-hidden="true">→</span>
+                    </a>
                   )}
                   {product.comingSoon && (
-                    <a href="#footer" class="product-action"><span>Nhận thông báo khi ra mắt</span></a>
+                    <a href="#footer" class="product-action" style="margin-top: 0;"><span>Nhận thông báo khi ra mắt</span></a>
                   )}
                 </div>
               </div>
