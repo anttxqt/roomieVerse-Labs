@@ -1162,8 +1162,6 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
 
 .keynote-card--centerpiece {
   padding: 40px;
-  background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
-  color: white;
   justify-content: center;
   align-items: center;
 }
