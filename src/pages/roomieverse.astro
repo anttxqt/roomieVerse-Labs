@@ -90,17 +90,23 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
             if (!grid) return;
             
             if (entranceStarted === 0) {
-              // Delay a tiny bit (200ms) then run automatically, independent of preloader
-              entranceStarted = Date.now() + 200;
+              // Wait until preloader finishes before starting the delay timer
+              if (document.body.classList.contains('is-loaded')) {
+                entranceStarted = Date.now() + 150; // 150ms delay after preload
+              }
             }
             
             let loadProgress = -1;
-            let timeElapsed = Date.now() - entranceStarted;
+            let timeElapsed = 0;
             
-            if (timeElapsed > 0) {
-              let t = Math.min(timeElapsed / 1000, 1);
-              let loadEase = 1 - Math.pow(1 - t, 3); // Cubic ease-out
-              loadProgress = -1 + loadEase;
+            if (entranceStarted > 0) {
+              timeElapsed = Date.now() - entranceStarted;
+              
+              if (timeElapsed > 0) {
+                let t = Math.min(timeElapsed / 1000, 1);
+                let loadEase = 1 - Math.pow(1 - t, 3); // Cubic ease-out
+                loadProgress = -1 + loadEase;
+              }
             }
 
             const scrollY = window.scrollY;
@@ -137,7 +143,8 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
               data.el.style.opacity = Math.max(0, opacity);
             });
             
-            if (timeElapsed < 1000) {
+            // Loop until preloader finishes AND entrance animation completes
+            if (entranceStarted === 0 || timeElapsed < 1000) {
               requestAnimationFrame(updateGather);
             }
           }
