@@ -7,57 +7,70 @@ import RoomieverseLabsLogo from '../../components/RoomieverseLabsLogo.astro'
   <main>
     <section class="keynote-bento-section" style="padding-top: 120px; min-height: 100vh;">
       <div class="keynote-grid">
-        <!-- Centerpiece -->
-        <article class="keynote-card keynote-card--centerpiece keynote-card--col-4 keynote-card--row-2 reveal">
+        <!-- Forced Centerpiece -->
+        <article class="keynote-card keynote-card--centerpiece reveal">
           <h3>roomio</h3>
         </article>
 
-        <!-- Big Text Card -->
+        <!-- 1. Big Text (R1-R2, C1-C2) -->
         <article class="keynote-card keynote-card--text-hero keynote-card--col-2 keynote-card--row-2 reveal" style="transition-delay: 0.1s;">
           <h3 class="keynote-gradient-text">FULLY<br/>AUTOMATED</h3>
           <p style="margin-top: 12px;">Calculate bills & send reminders on time, every time.</p>
         </article>
 
-        <!-- Tall Card -->
-        <article class="keynote-card keynote-card--col-2 keynote-card--row-2 reveal" style="transition-delay: 0.15s; background: #e3e3e8; justify-content: flex-end;">
-          <span style="color: #1d1d1f; font-weight: bold; opacity: 0.4; font-size: 1.2rem; text-align: center; margin-bottom: 20px;">[ Reporting ]</span>
-        </article>
-
-        <!-- Small Chip 1 -->
-        <article class="keynote-card keynote-card--chip keynote-card--col-2 reveal" style="transition-delay: 0.2s;">
+        <!-- 2. Chip (R1, C3-C4) -->
+        <article class="keynote-card keynote-card--chip keynote-card--col-2 keynote-card--row-1 reveal" style="transition-delay: 0.15s;">
           <div class="keynote-chip-icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
           </div>
           <h3>Smart Contracts</h3>
         </article>
 
-        <!-- Small Chip 2 -->
-        <article class="keynote-card keynote-card--chip keynote-card--col-2 reveal" style="transition-delay: 0.25s;">
+        <!-- 3. Chip (R1, C5-C6) -->
+        <article class="keynote-card keynote-card--chip keynote-card--col-2 keynote-card--row-1 reveal" style="transition-delay: 0.2s;">
           <div class="keynote-chip-icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
           </div>
           <h3>Staff Roles</h3>
         </article>
 
-        <!-- Small Chip 3 -->
-        <article class="keynote-card keynote-card--chip keynote-card--col-2 reveal" style="transition-delay: 0.3s;">
+        <!-- 4. Tall Card (R1-R3, C7-C8) -->
+        <article class="keynote-card keynote-card--col-2 keynote-card--row-3 reveal" style="transition-delay: 0.25s; background: #e3e3e8; justify-content: flex-end;">
+          <span style="color: #1d1d1f; font-weight: bold; opacity: 0.4; font-size: 1.2rem; text-align: center; margin-bottom: 20px;">[ Reporting ]</span>
+        </article>
+
+        <!-- 5. Chip (R3, C1-C2) -->
+        <article class="keynote-card keynote-card--chip keynote-card--col-2 keynote-card--row-1 reveal" style="transition-delay: 0.3s;">
           <div class="keynote-chip-icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
           </div>
           <h3>Issue Tracking</h3>
         </article>
 
-        <!-- Small Chip 4 -->
-        <article class="keynote-card keynote-card--chip keynote-card--col-2 reveal" style="transition-delay: 0.35s;">
+        <!-- 6. Chip (R4, C1-C2) -->
+        <article class="keynote-card keynote-card--chip keynote-card--col-2 keynote-card--row-1 reveal" style="transition-delay: 0.35s;">
           <div class="keynote-chip-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"></path><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"></path><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"></path></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"></path><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"></path></svg>
           </div>
           <h3>Payments</h3>
         </article>
 
-        <!-- Wide Image Card -->
-        <article class="keynote-card keynote-card--col-6 reveal" style="transition-delay: 0.4s; align-items: center; justify-content: center; min-height: 250px; background: #e3e3e8;">
+        <!-- 7. Chip (R4, C7-C8) -->
+        <article class="keynote-card keynote-card--chip keynote-card--col-2 keynote-card--row-1 reveal" style="transition-delay: 0.4s;">
+          <div class="keynote-chip-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <h3>History</h3>
+        </article>
+
+        <!-- 8. Wide Image Card (R5-R6, C1-C6) -->
+        <article class="keynote-card keynote-card--col-6 keynote-card--row-2 reveal" style="transition-delay: 0.45s; align-items: center; justify-content: center; background: #e3e3e8;">
           <span style="color: #1d1d1f; font-weight: bold; opacity: 0.3; font-size: 1.5rem;">[ Dashboard or Mobile App Mockup ]</span>
+        </article>
+
+        <!-- 9. Medium Card (R5-R6, C7-C8) -->
+        <article class="keynote-card keynote-card--col-2 keynote-card--row-2 reveal" style="transition-delay: 0.5s; background: #e3e3e8; justify-content: flex-end;">
+          <span style="color: #1d1d1f; font-weight: bold; opacity: 0.4; font-size: 1.2rem; text-align: center; margin-bottom: 20px;">[ Analytics ]</span>
         </article>
       </div>
     </section>

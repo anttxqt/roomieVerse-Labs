@@ -1237,20 +1237,31 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
   margin-bottom: 0;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 900px) {
   .keynote-grid {
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(8, 1fr);
+    grid-auto-rows: 90px; /* Fine-grained vertical control */
   }
   
+  /* Force the centerpiece into the middle */
+  .keynote-card--centerpiece {
+    grid-column: 3 / 7; /* Spans columns 3,4,5,6 (out of 8) */
+    grid-row: 2 / 5; /* Spans 3 rows */
+  }
+
+  /* Span utilities for dense packing */
   .keynote-card--col-1 { grid-column: span 1; }
   .keynote-card--col-2 { grid-column: span 2; }
   .keynote-card--col-3 { grid-column: span 3; }
   .keynote-card--col-4 { grid-column: span 4; }
   .keynote-card--col-5 { grid-column: span 5; }
   .keynote-card--col-6 { grid-column: span 6; }
+  .keynote-card--col-8 { grid-column: span 8; }
   
+  .keynote-card--row-1 { grid-row: span 1; }
   .keynote-card--row-2 { grid-row: span 2; }
   .keynote-card--row-3 { grid-row: span 3; }
+  .keynote-card--row-4 { grid-row: span 4; }
 }
 
 
