@@ -893,7 +893,7 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
 
 .section-title {
   max-width: 1250px;
-  margin: 250px auto 88px;
+  margin: 250px auto 140px;
 }
 
 .section-title h2 {
@@ -1577,7 +1577,7 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
   }
 
   .section-title {
-    margin-bottom: 58px;
+    margin-bottom: 90px;
   }
 
   .section-title h2 {
