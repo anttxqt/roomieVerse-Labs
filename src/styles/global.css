@@ -918,13 +918,13 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
 
 .dish-card {
   display: grid;
-  grid-template-columns: minmax(0, 1.52fr) minmax(280px, .68fr);
+  grid-template-columns: 1fr 1.2fr;
   align-items: center;
   gap: clamp(44px, 6vw, 100px);
 }
 
 .dish-card:nth-child(even) {
-  grid-template-columns: minmax(280px, .68fr) minmax(0, 1.52fr);
+  grid-template-columns: 1.2fr 1fr;
 }
 
 .dish-card:nth-child(even) .dish-media,
@@ -958,11 +958,20 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
 }
 
 .product-visual {
-  display: grid;
-  place-items: center;
-  padding: clamp(52px, 6vw, 92px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4vw;
   background: transparent;
   box-shadow: none;
+}
+
+.dish-card:nth-child(odd) .product-visual {
+  justify-content: flex-end;
+}
+
+.dish-card:nth-child(even) .product-visual {
+  justify-content: flex-start;
 }
 
 .product-hero-logo {
