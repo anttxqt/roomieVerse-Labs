@@ -960,15 +960,8 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
   display: grid;
   place-items: center;
   padding: clamp(52px, 6vw, 92px);
-  background: var(--blue);
-}
-
-.product-card--pink .product-visual {
-  background: var(--pink);
-}
-
-.product-card--navy .product-visual {
-  background: var(--roomibase);
+  background: transparent;
+  box-shadow: none;
 }
 
 .product-hero-logo {
