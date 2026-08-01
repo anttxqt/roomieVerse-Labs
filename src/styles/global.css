@@ -1152,10 +1152,8 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
   display: inline-block;
   margin-left: 12px;
   padding: 4px 10px;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
   color: white;
   background: var(--pink-ink);
   border-radius: 99px;
