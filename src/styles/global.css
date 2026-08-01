@@ -968,7 +968,7 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
 }
 
 .product-card--navy .product-visual {
-  background: var(--roomibase-soft);
+  background: var(--roomibase);
 }
 
 .product-window {
