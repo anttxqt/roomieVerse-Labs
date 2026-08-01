@@ -257,6 +257,24 @@ img {
   opacity: 1;
 }
 
+.past-hero .topbar--scroll-light {
+  background: white;
+  color: var(--blue-dark);
+}
+
+.past-hero .topbar--scroll-light .brand-logo__image--navy {
+  opacity: 1;
+}
+
+.past-hero .topbar--scroll-light .brand-logo__image--light {
+  opacity: 0;
+}
+
+.past-hero .topbar--scroll-light .menu-button {
+  background: var(--blue-dark);
+  color: white;
+}
+
 body:not(.past-hero) .topbar--dark-theme {
   color: #fff;
 }

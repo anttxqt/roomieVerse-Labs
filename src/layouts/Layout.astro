@@ -7,12 +7,14 @@ interface Props {
   description?: string;
   lang?: 'vi' | 'en';
   theme?: 'light' | 'dark';
+  scrollTheme?: 'dark' | 'light';
 }
 
 const {
   title = "Roomio · Roomieverse · Roomibase",
   lang = "vi",
   theme = "light",
+  scrollTheme = "dark",
   description = lang === 'en'
     ? "Roomio, Roomieverse, and Roomibase — three products walking with you through the journey of finding a place, finding a roommate, and managing a rental."
     : "Roomio, Roomieverse và Roomibase — bộ ba sản phẩm đi cùng hành trình tìm chỗ ở, tìm người ở cùng và quản lý vận hành nhà trọ.",
@@ -105,7 +107,7 @@ if (currentPath.startsWith('/en/')) {
       </div>
     </div>
 
-    <header class={`topbar ${theme === 'dark' ? 'topbar--dark-theme' : ''}`} aria-label={t.nav}>
+    <header class={`topbar ${theme === 'dark' ? 'topbar--dark-theme' : ''} ${scrollTheme === 'light' ? 'topbar--scroll-light' : ''}`} aria-label={t.nav}>
       <a class="brand" href={homeHref} aria-label={t.backHome}>
         <RoomieverseLabsLogo />
       </a>
