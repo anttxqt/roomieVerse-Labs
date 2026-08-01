@@ -270,6 +270,11 @@ img {
   opacity: 0;
 }
 
+.past-hero .topbar--scroll-light .menu-button {
+  background: rgba(6, 22, 56, 0.15); /* Creates a subtle border for the white pill */
+  color: var(--blue-dark);
+}
+
 body:not(.past-hero) .topbar--dark-theme {
   color: #fff;
 }
