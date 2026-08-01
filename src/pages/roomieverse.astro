@@ -84,22 +84,33 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
             updateGather();
           }
   
+          let entranceStarted = 0;
+
           function updateGather() {
             if (!grid) return;
-            const scrollY = window.scrollY;
             
-            let progress = 0;
-            if (scrollY < 100) {
-              // 0 -> 100 maps to -1 -> 0 (gather in from outside)
-              progress = (scrollY - 100) / 100;
-            } else if (scrollY < 250) {
-              // Stay in grid
-              progress = 0;
-            } else {
-              // 250 -> 500 maps to 0 -> 1 (gather into logo)
-              progress = (scrollY - 250) / 250;
+            if (entranceStarted === 0) {
+              if (document.body.classList.contains('is-loaded')) {
+                entranceStarted = Date.now();
+              }
             }
             
+            let loadProgress = -1;
+            if (entranceStarted > 0) {
+              let timeElapsed = Date.now() - entranceStarted;
+              let t = Math.min(timeElapsed / 1000, 1);
+              let loadEase = 1 - Math.pow(1 - t, 3); // Cubic ease-out
+              loadProgress = -1 + loadEase;
+            }
+
+            const scrollY = window.scrollY;
+            let scrollProgress = 0;
+            if (scrollY > 150) {
+              // 150 -> 400 maps to 0 -> 1 (gather into logo)
+              scrollProgress = (scrollY - 150) / 250;
+            }
+            
+            let progress = loadProgress < 0 ? loadProgress : scrollProgress;
             progress = Math.max(-1.5, Math.min(progress, 1.2));
   
             cardData.forEach(data => {
@@ -117,6 +128,10 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
               data.el.style.transform = `translate(${data.dx * easeP}px, ${data.dy * easeP}px) scale(${scale})`;
               data.el.style.opacity = Math.max(0, opacity);
             });
+            
+            if (entranceStarted > 0 && Date.now() - entranceStarted < 1000) {
+              requestAnimationFrame(updateGather);
+            }
           }
   
           window.addEventListener('resize', measureGrid);
