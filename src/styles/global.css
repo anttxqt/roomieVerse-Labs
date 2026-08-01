@@ -270,11 +270,6 @@ img {
   opacity: 0;
 }
 
-.past-hero .topbar--scroll-light .menu-button {
-  background: var(--blue-dark);
-  color: white;
-}
-
 body:not(.past-hero) .topbar--dark-theme {
   color: #fff;
 }
