@@ -1242,11 +1242,15 @@ body.is-loaded .hero-copy h1 em:nth-of-type(2)::before {
     grid-template-columns: repeat(6, 1fr);
   }
   
+  .keynote-card--col-1 { grid-column: span 1; }
   .keynote-card--col-2 { grid-column: span 2; }
   .keynote-card--col-3 { grid-column: span 3; }
   .keynote-card--col-4 { grid-column: span 4; }
+  .keynote-card--col-5 { grid-column: span 5; }
+  .keynote-card--col-6 { grid-column: span 6; }
   
   .keynote-card--row-2 { grid-row: span 2; }
+  .keynote-card--row-3 { grid-row: span 3; }
 }
 
 
