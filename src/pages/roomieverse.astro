@@ -214,18 +214,21 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
         <h2 style="font-size: clamp(2rem, 4vw, 3rem); color: #fff;">Lựa chọn nào dành cho bạn?</h2>
       </div>
 
-      <div class="apple-grid">
+      <div class="comparison-layout reveal">
         <!-- roomibase column -->
-        <article class="apple-card apple-card--span-3 reveal" style="align-items: center; text-align: center; justify-content: center; min-height: 300px;">
+        <div class="comparison-col">
           <img src="/brand/roomibase-rounded.png" alt="roomibase" style="height: 48px; object-fit: contain; margin-bottom: 24px;" />
-          <p style="color: rgba(255,255,255,0.5);">[ Content for roomibase ]</p>
-        </article>
+          <p style="color: rgba(255,255,255,0.5); max-width: 300px; line-height: 1.6;">[ Content for roomibase ]</p>
+        </div>
+
+        <!-- Divider -->
+        <div class="comparison-divider"></div>
 
         <!-- roomieverse column -->
-        <article class="apple-card apple-card--span-3 reveal" style="align-items: center; text-align: center; justify-content: center; min-height: 300px; transition-delay: 0.1s;">
+        <div class="comparison-col">
           <img src="/brand/roomieverse-stacked-cropped.png" alt="roomieverse" style="height: 48px; object-fit: contain; margin-bottom: 24px; transform: scale(1.6);" />
-          <p style="color: rgba(255,255,255,0.5);">[ Content for roomieverse ]</p>
-        </article>
+          <p style="color: rgba(255,255,255,0.5); max-width: 300px; line-height: 1.6;">[ Content for roomieverse ]</p>
+        </div>
       </div>
 
     </section>
