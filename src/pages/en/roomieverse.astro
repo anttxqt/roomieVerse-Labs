@@ -57,44 +57,47 @@ import RoomieverseLabsLogo from '../../components/RoomieverseLabsLogo.astro'
 
       <script is:inline>
         document.addEventListener('DOMContentLoaded', () => {
-          const grid = document.querySelector('.keynote-grid');
-          const centerpiece = grid.querySelector('.apple-card--centerpiece');
-          const cards = Array.from(grid.querySelectorAll('.apple-card:not(.apple-card--centerpiece)'));
+          const grids = document.querySelectorAll('.keynote-grid');
           
-          let cardData = [];
-
-          function measureGrid() {
-            if (!grid || !centerpiece) return;
-            const gridRect = grid.getBoundingClientRect();
-            const centerRect = centerpiece.getBoundingClientRect();
-            const targetX = centerRect.left + centerRect.width / 2;
-            const targetY = centerRect.top + centerRect.height / 2;
-
-            cardData = cards.map(card => {
-              // Remove transform temporarily to get raw layout position
-              card.style.transform = '';
-              const rect = card.getBoundingClientRect();
-              const cardX = rect.left + rect.width / 2;
-              const cardY = rect.top + rect.height / 2;
-              return {
-                el: card,
-                dx: targetX - cardX,
-                dy: targetY - cardY
-              };
-            });
+          let gridDataList = [];
+  
+          function measureGrids() {
+            gridDataList = Array.from(grids).map(grid => {
+              const centerpiece = grid.querySelector('.apple-card--centerpiece');
+              if (!centerpiece) return null;
+              
+              const cards = Array.from(grid.querySelectorAll('.apple-card:not(.apple-card--centerpiece)'));
+              
+              const centerRect = centerpiece.getBoundingClientRect();
+              const targetX = centerRect.left + centerRect.width / 2;
+              const targetY = centerRect.top + centerRect.height / 2;
+              
+              const cardData = cards.map(card => {
+                card.style.transform = '';
+                const rect = card.getBoundingClientRect();
+                const cardX = rect.left + rect.width / 2;
+                const cardY = rect.top + rect.height / 2;
+                return {
+                  el: card,
+                  dx: targetX - cardX,
+                  dy: targetY - cardY
+                };
+              });
+              
+              return { grid, cardData };
+            }).filter(Boolean);
             
             updateGather();
           }
-
+  
           let entranceStarted = 0;
 
           function updateGather() {
-            if (!grid) return;
+            if (gridDataList.length === 0) return;
             
             if (entranceStarted === 0) {
-              // Wait until preloader finishes before starting the delay timer
               if (document.body.classList.contains('is-loaded')) {
-                entranceStarted = Date.now() + 150; // 150ms delay after preload
+                entranceStarted = Date.now() + 150;
               }
             }
             
@@ -103,85 +106,106 @@ import RoomieverseLabsLogo from '../../components/RoomieverseLabsLogo.astro'
             
             if (entranceStarted > 0) {
               timeElapsed = Date.now() - entranceStarted;
-              
               if (timeElapsed > 0) {
                 let t = Math.min(timeElapsed / 1000, 1);
-                let loadEase = 1 - Math.pow(1 - t, 3); // Cubic ease-out
+                let loadEase = 1 - Math.pow(1 - t, 3);
                 loadProgress = -1 + loadEase;
               }
             }
 
-            const scrollY = window.scrollY;
-            let scrollProgress = 0;
-            if (scrollY > 500) {
-              // 500 -> 800 maps to 0 -> 1 (gather into logo)
-              scrollProgress = (scrollY - 500) / 300;
-            }
-            
-            let progress = loadProgress < 0 ? loadProgress : scrollProgress;
-            progress = Math.max(-1.5, Math.min(progress, 1.2));
-  
-            cardData.forEach(data => {
-              // Only disable CSS transition during the entrance phase (progress <= 0).
-              // This allows them to enter simultaneously, but scroll-away uses CSS delay for a cascading effect.
-              if (progress <= 0) {
-                data.el.style.transition = 'none';
-              } else {
-                data.el.style.transition = '';
+            gridDataList.forEach(({ grid, cardData }) => {
+              const gridRect = grid.getBoundingClientRect();
+              let scrollProgress = 0;
+              // Original logic: scrollY > 500 on a grid at top 180 -> gridRect.top = -320
+              if (gridRect.top < -320) {
+                scrollProgress = (-320 - gridRect.top) / 300;
               }
               
-              let p = progress;
-              let easeP = p > 0 ? p * (2 - p) : p; // ease-out when collapsing
-              
-              let scale = 1;
-              if (p > 0) scale = 1 - (easeP * 0.4); // shrink when collapsing
-              else scale = 1 - (p * 0.1); // slightly grow when pushed out
-              
-              let opacity = 1;
-              if (p > 0) opacity = 1 - (easeP * 0.5);
-              else opacity = 1 + p; // fade out when pushed out
-              
-              data.el.style.transform = `translate(${data.dx * easeP}px, ${data.dy * easeP}px) scale(${scale})`;
-              data.el.style.opacity = Math.max(0, opacity);
+              let progress = loadProgress < 0 ? loadProgress : scrollProgress;
+              progress = Math.max(-1.5, Math.min(progress, 1.2));
+    
+              cardData.forEach(data => {
+                if (progress <= 0) {
+                  data.el.style.transition = 'none';
+                } else {
+                  data.el.style.transition = '';
+                }
+                
+                let p = progress;
+                let easeP = p > 0 ? p * (2 - p) : p;
+                
+                let scale = 1;
+                if (p > 0) scale = 1 - (easeP * 0.4);
+                else scale = 1 - (p * 0.1);
+                
+                let opacity = 1;
+                if (p > 0) opacity = 1 - (easeP * 0.5);
+                else opacity = 1 + p;
+                
+                data.el.style.transform = `translate(${data.dx * easeP}px, ${data.dy * easeP}px) scale(${scale})`;
+                data.el.style.opacity = Math.max(0, opacity);
+              });
             });
             
-            // Loop until preloader finishes AND entrance animation completes
             if (entranceStarted === 0 || timeElapsed < 1000) {
               requestAnimationFrame(updateGather);
             }
           }
-
-          window.addEventListener('resize', measureGrid);
+  
+          window.addEventListener('resize', measureGrids);
           window.addEventListener('scroll', () => {
             requestAnimationFrame(updateGather);
           }, { passive: true });
 
-          // Initial measurement
-          setTimeout(measureGrid, 100);
+          setTimeout(measureGrids, 100);
         });
       </script>
 
-      <!-- Divider -->
-      <hr style="margin: 120px auto; max-width: 200px; border: 0; border-top: 2px dashed rgba(255,255,255,0.2);" />
-
       <!-- roomibase section -->
-      <div class="section-title reveal" id="roomibase" style="text-align: center; margin-bottom: 60px;">
-        <h2 style="font-size: clamp(3rem, 6vw, 5rem); color: #fff;">roomi<span style="color: var(--roomibase);">base</span></h2>
-        <p style="margin-top: 24px; font-size: 1.25rem; color: #a1a1a6; max-width: 600px; margin-inline: auto;">
-          Find rooms & homes for rent
-        </p>
-      </div>
+      <div class="keynote-grid keynote-grid--roomibase" style="grid-template-columns: repeat(10, 1fr); margin-top: 150px;">
+        <!-- Forced Centerpiece -->
+        <article class="apple-card apple-card--centerpiece" style="display: flex; align-items: center; justify-content: center; grid-column: 4 / span 4; grid-row: 3 / span 4; z-index: 2;">
+          <img src="/brand/roomibase-rounded.png" alt="roomibase logo" style="max-width: 80%; max-height: 80%; object-fit: contain;" />
+        </article>
 
-      <div class="apple-grid">
-        <!-- Main Feature (Large) -->
-        <article class="apple-card apple-card--span-6 apple-card--row-2 reveal">
-          <h3 class="apple-gradient-text--navy">DIRECT.</h3>
-          <p>For people looking to rent a whole room, house, or apartment — through an agent or straight from the landlord.</p>
-          <span class="badge badge--coming-soon" style="margin-top: 16px; align-self: flex-start;">In development</span>
-          <div class="apple-visual">
-            <span style="color: #fff; font-weight: bold; opacity: 0.2; font-size: 1.5rem;">[ Coming soon ]</span>
-            <div class="apple-visual-edge"></div>
-          </div>
+        <!-- 1. TRỰC TIẾP -->
+        <article class="apple-card" style="grid-column: span 4; grid-row: span 2; display: flex; align-items: center; justify-content: center; text-align: center;">
+          <h3 class="apple-gradient-text--navy" style="margin: 0;">DIRECT.</h3>
+        </article>
+
+        <!-- 2. Tìm phòng, nhà cho thuê -->
+        <article class="apple-card" style="grid-column: span 6; grid-row: span 2; transition-delay: 0.1s; display: flex; align-items: center; justify-content: center; text-align: center;">
+          <h3 style="margin: 0;">Find rooms & rentals</h3>
+        </article>
+
+        <!-- 3. Căn hộ -->
+        <article class="apple-card" style="grid-column: span 3; grid-row: span 2; transition-delay: 0.15s; display: flex; align-items: center; justify-content: center; text-align: center;">
+          <h3 style="margin: 0;">Apartments</h3>
+        </article>
+
+        <!-- 4. Đang phát triển -->
+        <article class="apple-card" style="grid-column: span 3; grid-row: span 1; transition-delay: 0.2s; display: flex; align-items: center; justify-content: center; text-align: center;">
+          <span class="badge badge--coming-soon" style="margin: 0;">Coming soon</span>
+        </article>
+
+        <!-- 5. An toàn -->
+        <article class="apple-card" style="grid-column: span 3; grid-row: span 3; transition-delay: 0.25s; display: flex; align-items: center; justify-content: center; text-align: center;">
+          <h3 style="margin: 0; font-size: 1.5rem;">Secure</h3>
+        </article>
+
+        <!-- 6. Feature -->
+        <article class="apple-card" style="grid-column: span 3; grid-row: span 2; transition-delay: 0.3s; display: flex; align-items: center; justify-content: center; text-align: center;">
+          <span style="color: #fff; font-weight: bold; opacity: 0.2; font-size: 1rem; text-align: center;">[ Landlord ]</span>
+        </article>
+
+        <!-- 7. Illustration -->
+        <article class="apple-card" style="grid-column: span 6; grid-row: span 2; transition-delay: 0.35s; display: flex; align-items: center; justify-content: center; text-align: center;">
+          <span style="color: #fff; font-weight: bold; opacity: 0.2; font-size: 1.5rem;">[ Property illustration ]</span>
+        </article>
+
+        <!-- 8. Tenant -->
+        <article class="apple-card" style="grid-column: span 4; grid-row: span 2; transition-delay: 0.4s; display: flex; align-items: center; justify-content: center; text-align: center;">
+          <span style="color: #fff; font-weight: bold; opacity: 0.2; font-size: 1.2rem; text-align: center;">[ Tenant ]</span>
         </article>
       </div>
 
