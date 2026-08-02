@@ -1354,14 +1354,27 @@ body.is-loaded .hero-copy h1 strong {
 .topping-card {
   position: relative;
   min-height: 385px;
-  padding: 80px 44px 44px;
   overflow: hidden;
   border-radius: 52px;
   color: var(--blue-dark);
   background: var(--roomibase);
+}
+
+.topping-card-inner {
+  position: absolute;
+  top: 50%;
+  left: 44px;
+  right: 44px;
+  transform: translateY(-50%);
+  transition: all 0.5s var(--ease-out);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+}
+
+.topping-card:hover .topping-card-inner {
+  top: 28px;
+  left: 96px;
+  transform: translateY(0);
 }
 
 .topping-card:nth-child(2) {
@@ -1407,17 +1420,15 @@ body.is-loaded .hero-copy h1 strong {
   position: relative;
   z-index: 1;
   max-width: 440px;
-  margin: 0 0 0 0.04em;
+  margin: 0;
   font-size: clamp(42px, 4.8vw, 70px);
   font-weight: 700;
   line-height: .94;
   letter-spacing: -.06em;
-  transform: translateY(10px);
-  transition: transform 0.4s var(--ease-out), margin 0.4s var(--ease-out);
+  transition: margin 0.4s var(--ease-out);
 }
 
 .topping-card:hover h3 {
-  transform: translateY(0);
   margin-bottom: 16px;
 }
 
@@ -1459,11 +1470,15 @@ body.is-loaded .hero-copy h1 strong {
 }
 
 @media (max-width: 768px) {
-  .topping-card {
-    justify-content: flex-start;
+  .topping-card-inner {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    transform: none;
+    padding: 90px 32px 44px;
   }
   .topping-card h3 {
-    transform: none;
     margin-bottom: 16px;
   }
   .topping-card-desc {
@@ -1471,6 +1486,11 @@ body.is-loaded .hero-copy h1 strong {
   }
   .topping-card p {
     opacity: .75;
+  }
+  .topping-card:hover .topping-card-inner {
+    top: auto;
+    left: auto;
+    transform: none;
   }
 }
 
