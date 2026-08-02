@@ -1360,23 +1360,6 @@ body.is-loaded .hero-copy h1 strong {
   background: var(--roomibase);
 }
 
-.topping-card-inner {
-  position: absolute;
-  top: 50%;
-  left: 44px;
-  right: 44px;
-  transform: translateY(-50%);
-  transition: all 0.5s var(--ease-out);
-  display: flex;
-  flex-direction: column;
-}
-
-.topping-card:hover .topping-card-inner {
-  top: 28px;
-  left: 96px;
-  transform: translateY(0);
-}
-
 .topping-card:nth-child(2) {
   color: var(--blue-dark);
   background: var(--pink);
@@ -1417,7 +1400,10 @@ body.is-loaded .hero-copy h1 strong {
 }
 
 .topping-card h3 {
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 44px;
+  transform: translateY(-50%);
   z-index: 1;
   max-width: 440px;
   margin: 0;
@@ -1425,69 +1411,64 @@ body.is-loaded .hero-copy h1 strong {
   font-weight: 700;
   line-height: .94;
   letter-spacing: -.06em;
-  transition: margin 0.4s var(--ease-out);
-}
-
-.topping-card:hover h3 {
-  margin-bottom: 16px;
+  transition: all 0.5s var(--ease-out);
 }
 
 .topping-card:nth-child(2) h3 {
   max-width: 900px;
 }
 
-.topping-card-desc {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 0.4s var(--ease-out);
-}
-
-.topping-card-desc > div {
-  overflow: hidden;
+.topping-card:hover h3 {
+  top: 24px;
+  left: 96px;
+  transform: translateY(0);
 }
 
 .topping-card p {
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 44px;
+  right: 44px;
+  transform: translateY(-50%);
   z-index: 1;
   max-width: 430px;
   margin: 0;
   font-size: 18px;
   line-height: 1.55;
   opacity: 0;
-  transition: opacity 0.4s var(--ease-out);
-}
-
-.topping-card:hover .topping-card-desc {
-  grid-template-rows: 1fr;
-}
-
-.topping-card:hover p {
-  opacity: .75;
+  transition: opacity 0.5s var(--ease-out);
 }
 
 .topping-card:nth-child(2) p {
   max-width: 700px;
 }
 
+.topping-card:hover p {
+  opacity: .75;
+}
+
 @media (max-width: 768px) {
-  .topping-card-inner {
+  .topping-card {
+    padding: 80px 44px 44px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .topping-card h3 {
     position: relative;
     top: auto;
     left: auto;
-    right: auto;
     transform: none;
-    padding: 90px 32px 44px;
-  }
-  .topping-card h3 {
     margin-bottom: 16px;
   }
-  .topping-card-desc {
-    grid-template-rows: 1fr;
-  }
   .topping-card p {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
     opacity: .75;
   }
-  .topping-card:hover .topping-card-inner {
+  .topping-card:hover h3 {
     top: auto;
     left: auto;
     transform: none;

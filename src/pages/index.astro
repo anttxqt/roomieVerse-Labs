@@ -73,14 +73,8 @@ const journey = [
             <article class={`topping-card journey-card journey-card--${index + 1} reveal`}>
               <span>{number}</span>
               <i aria-hidden="true"></i>
-              <div class="topping-card-inner">
-                <h3>{title}</h3>
-                <div class="topping-card-desc">
-                  <div>
-                    <p>{description}</p>
-                  </div>
-                </div>
-              </div>
+              <h3>{title}</h3>
+              <p>{description}</p>
             </article>
           ))}
         </div>
