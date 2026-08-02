@@ -177,7 +177,7 @@ if (currentPath.startsWith('/en/')) {
       <div class="menu-body">
         <nav aria-label={t.menuLabel}>
           {t.navItems.map(([number, label, href]) => (
-            <a href={href}><span>{number}</span>{label}</a>
+            <a href={href} style={lang === 'ar' ? "align-items: center;" : ""}><span>{number}</span>{label}</a>
           ))}
         </nav>
         {lang === 'ar' ? (
@@ -185,7 +185,7 @@ if (currentPath.startsWith('/en/')) {
             <a class="brand brand--blue menu-brand" href={homeHref} tabindex="-1" style="padding-bottom: 0;">
               <RoomieverseLabsLogo />
             </a>
-            <div class="menu-logos" style="width: min(350px, 45vw);">
+            <div class="menu-logos" style="width: clamp(320px, 28vw, 480px);">
               <img class="menu-logo menu-logo--roomio" src="/brand/roomio.png" width="611" height="176" alt="" />
               <span class="menu-divider"></span>
               <img class="menu-logo menu-logo--verse" src="/brand/roomieverse-stacked-cropped.png" width="813" height="397" alt="" />
