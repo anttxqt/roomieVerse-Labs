@@ -2230,6 +2230,9 @@ body.is-loaded .hero-copy h1 strong {
   z-index: 1;
   transition: color 0.25s ease;
 }
+.cta-btn:hover {
+  color: #fff !important;
+}
 .cta-btn::before {
   content: '';
   position: absolute;
