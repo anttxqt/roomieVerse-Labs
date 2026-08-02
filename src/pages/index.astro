@@ -70,7 +70,16 @@ const journey = [
         </div>
         <div class="toppings-grid journey-grid">
           {journey.map(([number, title, description], index) => (
-            <article class={`topping-card journey-card journey-card--${index + 1} reveal`}><span>{number}</span><i aria-hidden="true"></i><h3>{title}</h3><p>{description}</p></article>
+            <article class={`topping-card journey-card journey-card--${index + 1} reveal`}>
+              <span>{number}</span>
+              <i aria-hidden="true"></i>
+              <h3>{title}</h3>
+              <div class="topping-card-desc">
+                <div>
+                  <p>{description}</p>
+                </div>
+              </div>
+            </article>
           ))}
         </div>
 
