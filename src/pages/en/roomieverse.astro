@@ -84,39 +84,47 @@ import RoomieverseLabsLogo from '../../components/RoomieverseLabsLogo.astro'
                 };
               });
               
-              return { grid, cardData };
+              return { grid, cardData, entranceStarted: 0 };
             }).filter(Boolean);
             
             updateGather();
           }
   
-          let entranceStarted = 0;
-
           function updateGather() {
             if (gridDataList.length === 0) return;
             
-            if (entranceStarted === 0) {
-              if (document.body.classList.contains('is-loaded')) {
-                entranceStarted = Date.now() + 150;
-              }
-            }
-            
-            let loadProgress = -1;
-            let timeElapsed = 0;
-            
-            if (entranceStarted > 0) {
-              timeElapsed = Date.now() - entranceStarted;
-              if (timeElapsed > 0) {
-                let t = Math.min(timeElapsed / 1000, 1);
-                let loadEase = 1 - Math.pow(1 - t, 3);
-                loadProgress = -1 + loadEase;
-              }
-            }
+            let anyAnimating = false;
 
-            gridDataList.forEach(({ grid, cardData }) => {
+            gridDataList.forEach(gridObj => {
+              const { grid, cardData } = gridObj;
               const gridRect = grid.getBoundingClientRect();
+              
+              if (gridObj.entranceStarted === 0) {
+                if (document.body.classList.contains('is-loaded')) {
+                  // Start animation when grid enters the bottom 85% of viewport
+                  if (gridRect.top < window.innerHeight * 0.85) {
+                    gridObj.entranceStarted = Date.now() + 150;
+                  }
+                }
+              }
+              
+              let loadProgress = -1;
+              let timeElapsed = 0;
+              
+              if (gridObj.entranceStarted > 0) {
+                timeElapsed = Date.now() - gridObj.entranceStarted;
+                if (timeElapsed > 0) {
+                  let t = Math.min(timeElapsed / 1000, 1);
+                  let loadEase = 1 - Math.pow(1 - t, 3);
+                  loadProgress = -1 + loadEase;
+                }
+              }
+
+              if (gridObj.entranceStarted === 0 || timeElapsed < 1000) {
+                anyAnimating = true;
+              }
+
               let scrollProgress = 0;
-              // Original logic: scrollY > 500 on a grid at top 180 -> gridRect.top = -320
               if (gridRect.top < -320) {
                 scrollProgress = (-320 - gridRect.top) / 300;
               }
@@ -147,7 +155,7 @@ import RoomieverseLabsLogo from '../../components/RoomieverseLabsLogo.astro'
               });
             });
             
-            if (entranceStarted === 0 || timeElapsed < 1000) {
+            if (anyAnimating) {
               requestAnimationFrame(updateGather);
             }
           }
