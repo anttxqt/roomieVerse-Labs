@@ -177,8 +177,8 @@ if (currentPath.startsWith('/en/')) {
       <div class="menu-body">
         <nav aria-label={t.menuLabel} style={lang === 'ar' ? "align-self: center;" : ""}>
           {t.navItems.map(([number, label, href]) => (
-            <a href={href}>
-              <span style={lang === 'ar' ? "transform: translateY(-40px); display: inline-block;" : ""}>{number}</span>{label}
+            <a href={href} style={lang === 'ar' ? "font-size: clamp(32px, 4.5vw, 75px); white-space: nowrap;" : ""}>
+              <span style={lang === 'ar' ? "transform: translateY(-25px); display: inline-block;" : ""}>{number}</span>{label}
             </a>
           ))}
         </nav>
