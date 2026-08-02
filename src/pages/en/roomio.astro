@@ -1,62 +1,251 @@
 ---
 import Layout from '../../layouts/Layout.astro'
-import RoomieverseLabsLogo from '../../components/RoomieverseLabsLogo.astro'
 ---
 
 <Layout title="roomio · Property management & operations" lang="en">
   <main>
-    <section class="keynote-bento-section" style="padding-top: 180px; padding-bottom: 80px; min-height: 100vh;">
-      <div class="keynote-grid">
-        <!-- Forced Centerpiece -->
-        <article class="keynote-card keynote-card--centerpiece reveal" style="display: flex; align-items: center; justify-content: center;">
-          <img src="/brand/roomio.png" alt="roomio logo" style="max-width: 70%; max-height: 70%; object-fit: contain;" />
-        </article>
+    <div class="carousel-container" id="roomio-carousel" style="padding-top: 180px; padding-bottom: 80px; min-height: 100vh;">
+      <div class="carousel-track">
+        <!-- Page 1 -->
+        <div class="carousel-slide">
+          <div class="keynote-grid">
+            <!-- Forced Centerpiece -->
+            <article class="keynote-card keynote-card--centerpiece reveal" style="display: flex; align-items: center; justify-content: center;">
+              <img src="/brand/roomio.png" alt="roomio logo" style="max-width: 70%; max-height: 70%; object-fit: contain;" />
+            </article>
 
-        <!-- 1. Big Text (R1-R2, C1-C2) -->
-        <article class="keynote-card keynote-card--text-hero keynote-card--col-2 keynote-card--row-2 reveal" style="transition-delay: 0.1s;">
-          <h3 class="keynote-gradient-text">FULLY<br/>AUTOMATED</h3>
-          <p style="margin-top: 12px;">Calculate bills & send reminders on time, every time.</p>
-        </article>
+            <!-- 1. Big Text -->
+            <article class="keynote-card keynote-card--text-hero keynote-card--col-2 keynote-card--row-2 reveal" style="transition-delay: 0.1s;">
+              <h3 class="keynote-gradient-text" style="font-weight: 700;">FULLY<br/>AUTOMATED</h3>
+              <p style="margin-top: 12px;">Calculate bills & send reminders on time, every time.</p>
+            </article>
 
-        <!-- 2. Chip (R1-R2, C3-C4) -->
-        <article class="keynote-card keynote-card--chip keynote-card--col-2 keynote-card--row-2 reveal" style="transition-delay: 0.15s; flex-direction: column; justify-content: center;">
-          <div class="keynote-chip-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+            <!-- 2. Chip -->
+            <article class="keynote-card keynote-card--chip keynote-card--col-2 keynote-card--row-2 reveal" style="transition-delay: 0.15s; flex-direction: column; justify-content: center;">
+              <div class="keynote-chip-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+              </div>
+              <h3>Smart Contracts</h3>
+            </article>
+
+            <!-- 3. Chip -->
+            <article class="keynote-card keynote-card--chip keynote-card--col-2 keynote-card--row-2 reveal" style="transition-delay: 0.2s; flex-direction: column; justify-content: center;">
+              <div class="keynote-chip-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
+              </div>
+              <h3>Staff Roles</h3>
+            </article>
+
+            <!-- 4. Tall Card -->
+            <article class="keynote-card keynote-card--col-2 keynote-card--row-4 reveal" style="transition-delay: 0.25s; justify-content: flex-end; cursor: pointer; border: 2px solid var(--blue);" onclick="document.getElementById('pricing').scrollIntoView({behavior: 'smooth'})">
+              <span style="color: var(--blue); font-weight: bold; font-size: 1.5rem; text-align: center; margin-bottom: 20px;">View Pricing<br/>↓</span>
+            </article>
+
+            <!-- 5. Chip -->
+            <article class="keynote-card keynote-card--chip keynote-card--col-2 keynote-card--row-2 reveal" style="transition-delay: 0.3s; flex-direction: column; justify-content: center;">
+              <div class="keynote-chip-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+              </div>
+              <h3>Issue Tracking</h3>
+            </article>
+
+            <!-- 6. Wide Image Card -->
+            <article class="keynote-card keynote-card--col-6 keynote-card--row-2 reveal" style="transition-delay: 0.45s; align-items: center; justify-content: center;">
+              <span style="color: #1d1d1f; font-weight: bold; opacity: 0.3; font-size: 1.5rem;">[ App Mockup ]</span>
+            </article>
+
+            <!-- 7. Medium Card -->
+            <article class="keynote-card keynote-card--col-2 keynote-card--row-2 reveal" style="transition-delay: 0.5s; justify-content: flex-end;">
+              <span style="color: #1d1d1f; font-weight: bold; opacity: 0.4; font-size: 1.2rem; text-align: center; margin-bottom: 20px;">[ Analytics ]</span>
+            </article>
           </div>
-          <h3>Smart Contracts</h3>
-        </article>
+        </div>
 
-        <!-- 3. Chip (R1-R2, C5-C6) -->
-        <article class="keynote-card keynote-card--chip keynote-card--col-2 keynote-card--row-2 reveal" style="transition-delay: 0.2s; flex-direction: column; justify-content: center;">
-          <div class="keynote-chip-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
+        <!-- Page 2 -->
+        <div class="carousel-slide">
+          <div class="keynote-grid">
+            <article class="keynote-card keynote-card--centerpiece reveal" style="transition-delay: 0.05s; display: flex; align-items: center; justify-content: center;">
+              <img src="/brand/roomio.png" alt="roomio logo" style="max-width: 70%; max-height: 70%; object-fit: contain;" />
+            </article>
+
+            <!-- 1. Big Text -->
+            <article class="keynote-card keynote-card--text-hero keynote-card--col-2 keynote-card--row-2 reveal" style="transition-delay: 0.1s;">
+              <h3 class="keynote-gradient-text" style="font-size: 2rem; font-weight: 700;">NEW<br/>FEATURES</h3>
+              <p style="margin-top: 12px;">Continuously upgrading to bring the best experience.</p>
+            </article>
+
+            <!-- 2. Chip -->
+            <article class="keynote-card keynote-card--chip keynote-card--col-2 keynote-card--row-2 reveal" style="transition-delay: 0.15s; flex-direction: column; justify-content: center;">
+              <h3>[ Feature 1 ]</h3>
+            </article>
+
+            <!-- 3. Chip -->
+            <article class="keynote-card keynote-card--chip keynote-card--col-2 keynote-card--row-2 reveal" style="transition-delay: 0.2s; flex-direction: column; justify-content: center;">
+              <h3>[ Feature 2 ]</h3>
+            </article>
+
+            <!-- 4. Tall Card -->
+            <article class="keynote-card keynote-card--col-2 keynote-card--row-4 reveal" style="transition-delay: 0.25s; justify-content: flex-end;">
+              <span style="color: #1d1d1f; font-weight: bold; opacity: 0.4; font-size: 1.2rem; text-align: center; margin-bottom: 20px;">[ Feature 3 ]</span>
+            </article>
+
+            <!-- 5. Chip -->
+            <article class="keynote-card keynote-card--chip keynote-card--col-2 keynote-card--row-2 reveal" style="transition-delay: 0.3s; flex-direction: column; justify-content: center;">
+              <h3>VIP Plan</h3>
+            </article>
+
+            <!-- 6. Wide Image Card -->
+            <article class="keynote-card keynote-card--col-6 keynote-card--row-2 reveal" style="transition-delay: 0.45s; align-items: center; justify-content: center;">
+              <span style="color: #1d1d1f; font-weight: bold; opacity: 0.3; font-size: 1.5rem;">[ Feature illustration ]</span>
+            </article>
+
+            <!-- 7. Medium Card -->
+            <article class="keynote-card keynote-card--col-2 keynote-card--row-2 reveal" style="transition-delay: 0.5s; justify-content: flex-end;">
+              <span style="color: #1d1d1f; font-weight: bold; opacity: 0.4; font-size: 1.2rem; text-align: center; margin-bottom: 20px;">[ Statistic 5 ]</span>
+            </article>
           </div>
-          <h3>Staff Roles</h3>
-        </article>
+        </div>
 
-        <!-- 4. Tall Card (R1-R4, C7-C8) -->
-        <article class="keynote-card keynote-card--col-2 keynote-card--row-4 reveal" style="transition-delay: 0.25s; justify-content: flex-end;">
-          <span style="color: #1d1d1f; font-weight: bold; opacity: 0.4; font-size: 1.2rem; text-align: center; margin-bottom: 20px;">[ Reporting ]</span>
-        </article>
-
-        <!-- 5. Chip (R3-R4, C1-C2) -->
-        <article class="keynote-card keynote-card--chip keynote-card--col-2 keynote-card--row-2 reveal" style="transition-delay: 0.3s; flex-direction: column; justify-content: center;">
-          <div class="keynote-chip-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+        <!-- Page 3 -->
+        <div class="carousel-slide" style="align-items: center; justify-content: center; padding: 2rem;">
+          <h2 style="color: #0071e3; font-weight: 700; font-size: clamp(2rem, 5vw, 4rem); max-width: 900px; line-height: 1.2; margin-bottom: 40px; text-align: center;">
+            Experience the easiest way to manage rental properties
+          </h2>
+          <img src="/brand/roomio.png" alt="roomio logo" style="max-height: 100px; margin-bottom: 40px; object-fit: contain;" />
+          <div style="display: flex; gap: 20px; align-items: center; justify-content: center; flex-wrap: wrap;">
+            <a href="https://roomio.vn" target="_blank" class="cta-btn" style="--hover-bg: #0071e3; border: 1px solid #0071e3; color: #0071e3;" onmouseenter="const r=this.getBoundingClientRect(); this.style.setProperty('--x', event.clientX - r.left + 'px'); this.style.setProperty('--y', event.clientY - r.top + 'px');">
+              Try now
+            </a>
+            <a href="#" class="cta-btn" style="--hover-bg: #1d1d1f; border: 1px solid #1d1d1f; color: #1d1d1f;" onmouseenter="const r=this.getBoundingClientRect(); this.style.setProperty('--x', event.clientX - r.left + 'px'); this.style.setProperty('--y', event.clientY - r.top + 'px');">
+              View Demo
+            </a>
           </div>
-          <h3>Issue Tracking</h3>
+        </div>
+      </div>
+      
+      <div class="carousel-dots">
+        <button class="carousel-dot active" aria-label="Page 1"></button>
+        <button class="carousel-dot" aria-label="Page 2"></button>
+        <button class="carousel-dot" aria-label="Page 3"></button>
+      </div>
+      
+      <style>
+        #roomio-carousel .carousel-arrow {
+          color: #1d1d1f;
+          background: rgba(0,0,0,0.05);
+        }
+        #roomio-carousel .carousel-arrow:hover {
+          background: rgba(0,0,0,0.1);
+        }
+      </style>
+      <button class="carousel-arrow carousel-arrow--prev" aria-label="Previous" style="display: none;">&#10094;</button>
+      <button class="carousel-arrow carousel-arrow--next" aria-label="Next">&#10095;</button>
+    </div>
+
+    <!-- PRICING SECTION -->
+    <section id="pricing" style="padding: 120px 20px; max-width: 1200px; margin: 0 auto; background: #fff; color: #1d1d1f;">
+      <div style="text-align: center; margin-bottom: 80px;">
+        <h2 style="font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 20px;">Flexible pricing for every scale</h2>
+        <p style="font-size: 1.2rem; color: #86868b; max-width: 700px; margin: 0 auto;">Free for the first 6 months for small scale. Upgrade to VIP privileges when exceeding 50 rooms.</p>
+      </div>
+
+      <div class="apple-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-bottom: 80px;">
+        <!-- Standard -->
+        <article class="apple-card" style="background: #f5f5f7; display: flex; flex-direction: column; padding: 40px;">
+          <h3 style="font-size: 2rem; margin-bottom: 10px;">Standard</h3>
+          <p style="color: #86868b; margin-bottom: 30px;">Under 50 rooms — Self-service</p>
+          <div style="font-size: 3rem; font-weight: 700; margin-bottom: 10px; display: flex; align-items: baseline; gap: 8px;">
+            169k <span style="font-size: 1rem; color: #86868b; font-weight: 400;">VND/month</span>
+          </div>
+          <p style="font-size: 0.9rem; color: #86868b; margin-bottom: 40px;">Billing starts from the 5th room. First 6 months free for 1-4 rooms.</p>
+          <a href="#" class="cta-btn" style="text-align: center; --hover-bg: #1d1d1f; background: #fff; color: #1d1d1f; border: 1px solid #1d1d1f; margin-bottom: 40px;">Start Free Trial</a>
+          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 16px;">
+            <li style="display: flex; gap: 12px; align-items: flex-start;"><span style="color: var(--blue);">✓</span> Automated billing & notices</li>
+            <li style="display: flex; gap: 12px; align-items: flex-start;"><span style="color: var(--blue);">✓</span> Digital Contracts</li>
+            <li style="display: flex; gap: 12px; align-items: flex-start;"><span style="color: var(--blue);">✓</span> Basic Reporting</li>
+            <li style="display: flex; gap: 12px; align-items: flex-start;"><span style="color: var(--blue);">✓</span> Discounted rates for Co-living</li>
+          </ul>
         </article>
 
-        <!-- 6. Wide Image Card (R5-R6, C1-C6) -->
-        <article class="keynote-card keynote-card--col-6 keynote-card--row-2 reveal" style="transition-delay: 0.45s; align-items: center; justify-content: center;">
-          <span style="color: #1d1d1f; font-weight: bold; opacity: 0.3; font-size: 1.5rem;">[ Dashboard or Mobile App Mockup ]</span>
-        </article>
-
-        <!-- 7. Medium Card (R5-R6, C7-C8) -->
-        <article class="keynote-card keynote-card--col-2 keynote-card--row-2 reveal" style="transition-delay: 0.5s; justify-content: flex-end;">
-          <span style="color: #1d1d1f; font-weight: bold; opacity: 0.4; font-size: 1.2rem; text-align: center; margin-bottom: 20px;">[ Analytics ]</span>
+        <!-- VIP Operator -->
+        <article class="apple-card" style="background: var(--blue); color: #fff; display: flex; flex-direction: column; padding: 40px; position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; right: 0; background: var(--pink); color: var(--pink-ink); font-weight: bold; font-size: 0.8rem; padding: 8px 24px; border-bottom-left-radius: 20px;">MOST POPULAR</div>
+          <h3 style="font-size: 2rem; margin-bottom: 10px; color: #fff;">VIP Operator</h3>
+          <p style="color: rgba(255,255,255,0.7); margin-bottom: 30px;">50+ rooms — VIP Privileges</p>
+          <div style="font-size: 3rem; font-weight: 700; margin-bottom: 10px; display: flex; align-items: baseline; gap: 8px;">
+            1,489k <span style="font-size: 1rem; color: rgba(255,255,255,0.7); font-weight: 400;">VND/month</span>
+          </div>
+          <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7); margin-bottom: 40px;">50% off for the first month of experience.</p>
+          <a href="#" class="cta-btn" style="text-align: center; background: #fff; color: var(--blue); border: none; margin-bottom: 40px;">Contact Sales</a>
+          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 16px;">
+            <li style="display: flex; gap: 12px; align-items: flex-start;"><span style="color: var(--pink);">✓</span> All Standard features</li>
+            <li style="display: flex; gap: 12px; align-items: flex-start;"><span style="color: var(--pink);">✓</span> White-glove Onboarding</li>
+            <li style="display: flex; gap: 12px; align-items: flex-start;"><span style="color: var(--pink);">✓</span> 1-on-1 VIP Zalo Support (5 min SLA)</li>
+            <li style="display: flex; gap: 12px; align-items: flex-start;"><span style="color: var(--pink);">✓</span> Advanced Staff Permissions</li>
+            <li style="display: flex; gap: 12px; align-items: flex-start;"><span style="color: var(--pink);">✓</span> Advanced Cash Flow P&L Reports</li>
+          </ul>
         </article>
       </div>
+      
+      <div style="background: #f5f5f7; border-radius: 30px; padding: 40px; display: flex; flex-wrap: wrap; gap: 40px; align-items: center; justify-content: space-between;">
+        <div>
+          <h4 style="font-size: 1.5rem; margin-bottom: 10px;">Smart Pooled/Split Policy</h4>
+          <p style="color: #86868b; max-width: 600px;">For mixed portfolios (Standard + Co-living), Roomio automatically calculates both Pooled and Split options, and automatically chooses the <strong>cheaper</strong> option for you.</p>
+        </div>
+        <img src="/brand/roomio.png" alt="roomio logo" style="height: 60px; object-fit: contain;" />
+      </div>
     </section>
+
+    <script is:inline>
+      document.addEventListener('DOMContentLoaded', () => {
+        const carousels = document.querySelectorAll('.carousel-container');
+        
+        carousels.forEach(carousel => {
+          const track = carousel.querySelector('.carousel-track');
+          const slides = carousel.querySelectorAll('.carousel-slide');
+          const dots = carousel.querySelectorAll('.carousel-dot');
+          const prevBtn = carousel.querySelector('.carousel-arrow--prev');
+          const nextBtn = carousel.querySelector('.carousel-arrow--next');
+          
+          let currentIndex = 0;
+          
+          const updateCarousel = () => {
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+            
+            dots.forEach((dot, index) => {
+              dot.classList.toggle('active', index === currentIndex);
+            });
+            
+            if (prevBtn) prevBtn.style.display = currentIndex === 0 ? 'none' : 'flex';
+            if (nextBtn) nextBtn.style.display = currentIndex === slides.length - 1 ? 'none' : 'flex';
+          };
+          
+          dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+              currentIndex = index;
+              updateCarousel();
+            });
+          });
+          
+          if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+              if (currentIndex > 0) {
+                currentIndex--;
+                updateCarousel();
+              }
+            });
+          }
+          
+          if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+              if (currentIndex < slides.length - 1) {
+                currentIndex++;
+                updateCarousel();
+              }
+            });
+          }
+        });
+      });
+    </script>
   </main>
 </Layout>
