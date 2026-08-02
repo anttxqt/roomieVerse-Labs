@@ -178,7 +178,7 @@ if (currentPath.startsWith('/en/')) {
         <nav aria-label={t.menuLabel}>
           {t.navItems.map(([number, label, href]) => (
             <a href={href}>
-              <span style={lang === 'ar' ? "transform: translateY(-40px);" : ""}>{number}</span>{label}
+              <span style={lang === 'ar' ? "transform: translateY(-40px); display: inline-block;" : ""}>{number}</span>{label}
             </a>
           ))}
         </nav>
