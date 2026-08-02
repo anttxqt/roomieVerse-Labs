@@ -163,14 +163,16 @@ if (currentPath.startsWith('/en/')) {
 
     <aside class="menu-overlay" id="main-menu" aria-hidden="true">
       <div class="menu-head">
-        <div class="menu-logos">
-          <img class="menu-logo menu-logo--roomio" src="/brand/roomio.png" width="611" height="176" alt="" />
-          <span class="menu-divider"></span>
-          <img class="menu-logo menu-logo--verse" src="/brand/roomieverse-stacked-cropped.png" width="813" height="397" alt="" />
-          <span class="menu-divider"></span>
-          <img class="menu-logo menu-logo--base" src="/brand/roomibase-rounded.png" width="1603" height="308" alt="" />
-        </div>
-        <button class="menu-close" type="button" aria-label={t.closeMenu}>×</button>
+        {lang !== 'ar' && (
+          <div class="menu-logos">
+            <img class="menu-logo menu-logo--roomio" src="/brand/roomio.png" width="611" height="176" alt="" />
+            <span class="menu-divider"></span>
+            <img class="menu-logo menu-logo--verse" src="/brand/roomieverse-stacked-cropped.png" width="813" height="397" alt="" />
+            <span class="menu-divider"></span>
+            <img class="menu-logo menu-logo--base" src="/brand/roomibase-rounded.png" width="1603" height="308" alt="" />
+          </div>
+        )}
+        <button class="menu-close" type="button" aria-label={t.closeMenu} style={lang === 'ar' ? "margin-right: auto;" : ""}>×</button>
       </div>
       <div class="menu-body">
         <nav aria-label={t.menuLabel}>
@@ -178,9 +180,24 @@ if (currentPath.startsWith('/en/')) {
             <a href={href}><span>{number}</span>{label}</a>
           ))}
         </nav>
-        <a class="brand brand--blue menu-brand" href={homeHref} tabindex="-1">
-          <RoomieverseLabsLogo />
-        </a>
+        {lang === 'ar' ? (
+          <div class="menu-brand-container" style="display: flex; flex-direction: column; align-items: flex-start; gap: 4vh; transform: translateY(-4vh);">
+            <a class="brand brand--blue menu-brand" href={homeHref} tabindex="-1" style="padding-bottom: 0;">
+              <RoomieverseLabsLogo />
+            </a>
+            <div class="menu-logos" style="width: min(350px, 45vw);">
+              <img class="menu-logo menu-logo--roomio" src="/brand/roomio.png" width="611" height="176" alt="" />
+              <span class="menu-divider"></span>
+              <img class="menu-logo menu-logo--verse" src="/brand/roomieverse-stacked-cropped.png" width="813" height="397" alt="" />
+              <span class="menu-divider"></span>
+              <img class="menu-logo menu-logo--base" src="/brand/roomibase-rounded.png" width="1603" height="308" alt="" />
+            </div>
+          </div>
+        ) : (
+          <a class="brand brand--blue menu-brand" href={homeHref} tabindex="-1">
+            <RoomieverseLabsLogo />
+          </a>
+        )}
       </div>
       <div class="menu-orbits" aria-hidden="true"><i></i><i></i><i></i></div>
     </aside>
