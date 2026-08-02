@@ -1,0 +1,38 @@
+---
+import Layout from '../../layouts/Layout.astro'
+---
+
+<Layout title="roomieVerse · Find a room & roommate" lang="ar">
+  <main>
+    <section class="hero-scroll" style="min-height: 80vh; display: flex; align-items: center; justify-content: center; padding-top: 120px;">
+      <div class="hero-frame">
+        <div class="hero-shell">
+          <div class="hero-copy" style="text-align: center;">
+            <img src="/brand/roomieverse.png" alt="roomieVerse logo" style="max-height: 80px; margin-bottom: 24px;" />
+            <h1 style="font-size: clamp(3rem, 6vw, 5rem); margin-bottom: 20px;">
+              Your perfect <span style="color: var(--pink);">roommate</span> is here.
+            </h1>
+            <p style="font-size: 1.5rem; color: var(--muted); max-width: 600px; margin: 0 auto; margin-bottom: 40px;">
+              نعم، على عكس roomibase، يعد roomieVerse مكاناً أفضل للبحث عن غرف مشتركة في المنازل والشقق. كما أنه المكان المثالي للعثور على رفيق سكنك المثالي بناءً على أسلوب الحياة والعادات.
+            </p>
+            <a href="https://roomieverse.vn" target="_blank" class="cta-btn" style="--hover-bg: var(--pink-ink); border: 1px solid var(--pink-ink); color: var(--pink-ink);" onmouseenter="const r=this.getBoundingClientRect(); this.style.setProperty('--x', event.clientX - r.left + 'px'); this.style.setProperty('--y', event.clientY - r.top + 'px');">
+              ابحث عن رفيق سكن
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- App Mockup Section -->
+    <section style="padding: 80px 20px; max-width: 1200px; margin: 0 auto; text-align: center;">
+      <div class="apple-card" style="background: #f5f5f7; border-radius: 40px; padding: 60px 20px; overflow: hidden; position: relative; min-height: 500px; display: flex; align-items: center; justify-content: center;">
+        <h2 style="font-size: 2.5rem; color: #1d1d1f; max-width: 600px; margin: 0 auto; z-index: 2; position: relative;">
+          المطابقة مع زملاء السكن بناءً على التوافق والميزانية والمنطقة.
+        </h2>
+        <!-- Decorative abstract elements -->
+        <div style="position: absolute; width: 300px; height: 300px; background: rgba(255,105,180,0.1); border-radius: 50%; top: -100px; left: -100px; filter: blur(40px);"></div>
+        <div style="position: absolute; width: 400px; height: 400px; background: rgba(0,113,227,0.05); border-radius: 50%; bottom: -150px; right: -100px; filter: blur(60px);"></div>
+      </div>
+    </section>
+  </main>
+</Layout>

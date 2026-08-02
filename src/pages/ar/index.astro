@@ -1,0 +1,116 @@
+---
+import '../../styles/global.css'
+import RoomieverseLabsLogo from '../../components/RoomieverseLabsLogo.astro'
+import Layout from '../../layouts/Layout.astro'
+
+const products = [
+  {
+    name: 'roomio',
+    role: 'عمليات الإيجار والإدارة',
+    description: 'للملاك الذين يديرون المباني، والغرف، والمستأجرين، والعقود، والفواتير، والمدفوعات، وقضايا الصيانة، والموظفين — كل ذلك في مكان واحد. تذكيرات وفواتير شهرية آلية.',
+    logo: '/brand/roomio.png',
+    logoAlt: 'Roomio',
+    titleLogo: '/brand/roomio.png',
+    accent: 'blue',
+    metrics: ['Buildings', 'Contracts', 'Invoices'],
+    link: '/ar/roomio',
+    linkText: 'اعرف المزيد',
+  },
+  {
+    name: 'roomieverse',
+    role: 'ابحث عن غرفة ورفيق سكن',
+    description: 'للطلاب والأشخاص الذين يعملون بعيداً عن المنزل ويبحثون عن رفيق سكن يناسب أسلوب حياتهم. ابحث عن غرفة مشتركة في شقة أو منزل — كله مباشر، بدون وسطاء.',
+    logo: '/brand/roomieverse-cropped.png',
+    logoAlt: 'Roomieverse',
+    titleLogo: '/brand/roomieverse.png',
+    accent: 'pink',
+    metrics: ['Find a room', 'Find a roommate', 'Shared spaces'],
+    link: '/ar/roomieverse',
+    linkText: 'اعرف المزيد',
+  },
+  {
+    name: 'roomibase',
+    role: 'ابحث عن مكان، مباشرة',
+    description: 'للأشخاص الذين يبحثون عن استئجار غرفة، منزل، أو شقة كاملة — من خلال وسيط أو مباشرة من المالك.',
+    logo: '/brand/roomibase-rounded.png',
+    logoAlt: 'Roomibase',
+    titleLogo: '/brand/roomibase-rounded.png',
+    accent: 'navy',
+    metrics: ['Landlords', 'Tenants', 'Places'],
+    comingSoon: true,
+    link: '/ar/roomieverse',
+    linkText: 'اعرف المزيد',
+  },
+]
+
+const journey = [
+  ['01', 'ابحث عن مكان', "يمكنك العثور على غرف، شقق، ومنازل كاملة... من خلال roomibase. إنه مكان يمكن لأي شخص فيه إدراج العقارات للإيجار، سواء كانوا ملاكاً أو وسطاء."],
+  ['02', 'أيضاً حول البحث عن مكان، ولكن...', "نعم، على عكس roomibase، يعد roomieVerse مكاناً أفضل للبحث عن غرف مشتركة في المنازل والشقق. كما أنه المكان المثالي للعثور على رفيق سكنك المثالي."],
+  ['03', 'الإدارة', "اليوم، يمكن للملاك وأصحاب المنازل أو السكن الطلابي... إدارة جميع عقاراتهم الإيجارية مركزياً في مكان واحد. زيادة الأتمتة لمهام شهرية مثل حساب الفواتير، وإرسال الفواتير، وتذكيرات الدفع..."],
+]
+---
+
+<Layout lang="ar">
+    <main>
+      <section class="hero-scroll" id="hero">
+        <div class="hero-frame">
+          <div class="hero-shell">
+            <div class="hero-copy">
+              <h1>اجعل <em>استئجار</em> و <em>استضافة</em> غرفة<br />يبدو <strong style="color: var(--pink); font-size: 1.15em; font-weight: 900;">أفضل.</strong></h1>
+            </div>
+
+            <div class="scroll-cue"><span>قم بالتمرير للاستكشاف</span><i>↓</i></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="menu-section">
+        <div class="topping-heading reveal" id="story">
+          <h3>رحلة سلسة</h3>
+          <p><mark>roomieVerse Labs</mark> يرافقك في كل خطوة في رحلة البحث عن مكان —<br />من الاستقرار كمستأجر إلى إدارته بسهولة كمضيف.</p>
+        </div>
+        <div class="toppings-grid journey-grid">
+          {journey.map(([number, title, description], index) => (
+            <article class={`topping-card journey-card journey-card--${index + 1} reveal`}>
+              <span>{number}</span>
+              <i aria-hidden="true"></i>
+              <h3>{title}</h3>
+              <p>{description}</p>
+            </article>
+          ))}
+        </div>
+
+        <div class="section-title reveal" id="products" aria-labelledby="products-title">
+          <h2 id="products-title">إذن<span style="color: var(--roomibase)">،</span> ماذا لدينا<span style="color: var(--pink)">؟</span></h2>
+        </div>
+
+        <div class="dish-list product-list">
+          {products.map((product, index) => (
+            <article class={`dish-card product-card product-card--${product.accent} reveal`}>
+              <div class="product-visual">
+                <img src={product.logo} class="product-hero-logo" alt="" aria-hidden="true" />
+              </div>
+              <div class="dish-copy">
+                <small>
+                  {product.role}
+                  {product.comingSoon && <span class="badge badge--coming-soon">قيد التطوير</span>}
+                </small>
+                <p>{product.description}</p>
+                <div style="margin-top: 16px; display: flex; gap: 16px; flex-wrap: wrap; align-items: center;">
+                  {product.link && (
+                    <a href={product.link} class="learn-more-link">
+                      <span class="lml-text">{product.linkText}</span>
+                      <span class="lml-arrow" aria-hidden="true">→</span>
+                    </a>
+                  )}
+                  {product.comingSoon && (
+                    <a href="#footer" class="product-action" style="margin-top: 0;"><span>أعلمني</span></a>
+                  )}
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+    </main>
+</Layout>

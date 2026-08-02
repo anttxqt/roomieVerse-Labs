@@ -5,7 +5,7 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
 interface Props {
   title?: string;
   description?: string;
-  lang?: 'vi' | 'en';
+  lang?: 'vi' | 'en' | 'ar';
   theme?: 'light' | 'dark';
   scrollTheme?: 'dark' | 'light';
 }
@@ -15,13 +15,34 @@ const {
   lang = "vi",
   theme = "light",
   scrollTheme = "dark",
-  description = lang === 'en'
+  description = lang === 'ar'
+    ? "روميو، روميفيرس، وروميبايس — ثلاثة منتجات ترافقك خلال رحلة البحث عن مكان، والبحث عن رفيق سكن، وإدارة الإيجار."
+    : (lang === 'en'
     ? "Roomio, Roomieverse, and Roomibase — three products walking with you through the journey of finding a place, finding a roommate, and managing a rental."
-    : "Roomio, Roomieverse và Roomibase — bộ ba sản phẩm đi cùng hành trình tìm chỗ ở, tìm người ở cùng và quản lý vận hành nhà trọ.",
+    : "Roomio, Roomieverse và Roomibase — bộ ba sản phẩm đi cùng hành trình tìm chỗ ở, tìm người ở cùng và quản lý vận hành nhà trọ."),
 } = Astro.props;
 
-const homeHref = lang === 'en' ? '/en/' : '/';
-const t = lang === 'en'
+const homeHref = lang === 'ar' ? '/ar/' : (lang === 'en' ? '/en/' : '/');
+const t = lang === 'ar'
+  ? {
+      nav: 'التنقل الرئيسي',
+      backHome: 'RoomieVerse Labs — العودة إلى الصفحة الرئيسية',
+      menuLabel: 'قائمة الموقع',
+      closeMenu: 'إغلاق القائمة',
+      navItems: [
+        ['01', 'الرئيسية', '/ar/'],
+        ['02', 'روميو (roomio)', '/ar/roomio'],
+        ['03', 'روميفيرس (roomieVerse)', '/ar/roomieverse'],
+        ['04', 'روميبايس (roomibase)', '/ar/roomieverse'],
+        ['05', 'فريقنا', '/ar/our-team'],
+      ],
+      products: 'المنتجات',
+      contact: 'اتصل بنا',
+      about: '/ar/#story',
+      roomio: '/ar/roomio',
+      roomieverse: '/ar/roomieverse',
+    }
+  : (lang === 'en'
   ? {
       nav: 'Main navigation',
       backHome: 'RoomieVerse Labs — back to homepage',
@@ -57,43 +78,60 @@ const t = lang === 'en'
       about: '/#story',
       roomio: '/roomio',
       roomieverse: '/roomieverse',
-    };
+    });
 
 const currentPath = Astro.url.pathname;
 let viHref = '/';
 let enHref = '/en/';
+let arHref = '/ar/';
 
 if (currentPath.startsWith('/en/')) {
   viHref = currentPath.replace('/en/', '/') || '/';
   enHref = currentPath;
+  arHref = currentPath.replace('/en/', '/ar/') || '/ar/';
 } else if (currentPath === '/en') {
   viHref = '/';
   enHref = '/en/';
+  arHref = '/ar/';
 } else if (currentPath.startsWith('/en')) {
   viHref = currentPath.replace('/en', '') || '/';
   enHref = currentPath;
+  arHref = currentPath.replace('/en', '/ar') || '/ar';
+} else if (currentPath.startsWith('/ar/')) {
+  viHref = currentPath.replace('/ar/', '/') || '/';
+  enHref = currentPath.replace('/ar/', '/en/') || '/en/';
+  arHref = currentPath;
+} else if (currentPath === '/ar') {
+  viHref = '/';
+  enHref = '/en/';
+  arHref = '/ar/';
+} else if (currentPath.startsWith('/ar')) {
+  viHref = currentPath.replace('/ar', '') || '/';
+  enHref = currentPath.replace('/ar', '/en') || '/en';
+  arHref = currentPath;
 } else {
   viHref = currentPath;
   enHref = currentPath === '/' ? '/en/' : `/en${currentPath}`;
+  arHref = currentPath === '/' ? '/ar/' : `/ar${currentPath}`;
 }
 ---
 
 <!doctype html>
-<html lang={lang}>
+<html lang={lang} dir={lang === 'ar' ? 'rtl' : 'ltr'}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#2563eb" />
     <meta property="og:type" content="website" />
-    <meta property="og:locale" content={lang === 'vi' ? 'vi_VN' : 'en_US'} />
+    <meta property="og:locale" content={lang === 'ar' ? 'ar_AR' : (lang === 'vi' ? 'vi_VN' : 'en_US')} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content="/brand/roomieverse.png" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <title>{title}</title>
   </head>
-  <body>
+  <body class={theme}>
     <div class="preloader" aria-hidden="true">
       <div class="preloader-content">
         <div class="preloader-logos">
@@ -116,6 +154,8 @@ if (currentPath.startsWith('/en/')) {
           <a href={viHref} class={lang === 'vi' ? "is-active" : ""}>VI</a>
           <span class="lang-sep">|</span>
           <a href={enHref} class={lang === 'en' ? "is-active" : ""}>EN</a>
+          <span class="lang-sep">|</span>
+          <a href={arHref} class={lang === 'ar' ? "is-active" : ""}>AR</a>
         </div>
         <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-menu"><span>Menu</span><i aria-hidden="true"></i></button>
       </div>
