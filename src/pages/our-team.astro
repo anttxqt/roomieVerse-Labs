@@ -1,0 +1,49 @@
+---
+import Layout from '../layouts/Layout.astro'
+---
+
+<Layout title="Our Team - Roomieverse Labs">
+  <main>
+    <section class="hero-scroll" style="min-height: 50vh; display: flex; align-items: center; justify-content: center; padding-top: 120px;">
+      <div class="hero-frame">
+        <div class="hero-shell">
+          <div class="hero-copy" style="text-align: center;">
+            <h1 style="font-size: clamp(3rem, 6vw, 5rem); margin-bottom: 20px;">Đội ngũ của chúng tôi</h1>
+            <p style="font-size: 1.5rem; color: var(--muted); max-width: 600px; margin: 0 auto;">
+              [ Nội dung giới thiệu về đội ngũ của Roomieverse Labs sẽ được cập nhật tại đây ]
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding: 80px 20px; max-width: 1200px; margin: 0 auto;">
+      <!-- Grid for team members placeholder -->
+      <div class="apple-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+        <!-- Member 1 -->
+        <article class="apple-card reveal" style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 40px;">
+          <div style="width: 150px; height: 150px; border-radius: 50%; background: var(--line); margin-bottom: 24px;"></div>
+          <h3 style="margin-bottom: 8px;">[ Tên thành viên ]</h3>
+          <p style="color: var(--pink-ink); font-weight: 500; margin-bottom: 16px;">[ Vị trí / Chức vụ ]</p>
+          <p style="color: var(--muted); font-size: 0.95rem;">[ Thông tin mô tả ngắn gọn về thành viên này ]</p>
+        </article>
+
+        <!-- Member 2 -->
+        <article class="apple-card reveal" style="transition-delay: 0.1s; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 40px;">
+          <div style="width: 150px; height: 150px; border-radius: 50%; background: var(--line); margin-bottom: 24px;"></div>
+          <h3 style="margin-bottom: 8px;">[ Tên thành viên ]</h3>
+          <p style="color: var(--pink-ink); font-weight: 500; margin-bottom: 16px;">[ Vị trí / Chức vụ ]</p>
+          <p style="color: var(--muted); font-size: 0.95rem;">[ Thông tin mô tả ngắn gọn về thành viên này ]</p>
+        </article>
+        
+        <!-- Member 3 -->
+        <article class="apple-card reveal" style="transition-delay: 0.2s; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 40px;">
+          <div style="width: 150px; height: 150px; border-radius: 50%; background: var(--line); margin-bottom: 24px;"></div>
+          <h3 style="margin-bottom: 8px;">[ Tên thành viên ]</h3>
+          <p style="color: var(--pink-ink); font-weight: 500; margin-bottom: 16px;">[ Vị trí / Chức vụ ]</p>
+          <p style="color: var(--muted); font-size: 0.95rem;">[ Thông tin mô tả ngắn gọn về thành viên này ]</p>
+        </article>
+      </div>
+    </section>
+  </main>
+</Layout>
