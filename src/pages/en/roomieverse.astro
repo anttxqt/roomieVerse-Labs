@@ -61,11 +61,11 @@ import RoomieverseLabsLogo from '../../components/RoomieverseLabsLogo.astro'
           
           <!-- Page 2 -->
           <div class="carousel-slide" style="align-items: center; padding: 2rem;">
-            <h2 style="color: var(--pink); font-size: clamp(2rem, 5vw, 4rem); max-width: 900px; line-height: 1.2; margin-bottom: 40px; text-align: center;">
+            <h2 style="color: #ffacba; font-size: clamp(2rem, 5vw, 4rem); max-width: 900px; line-height: 1.2; margin-bottom: 40px; text-align: center;">
               Experience the easiest way to find a shared room and roommate
             </h2>
             <img src="/brand/roomieverse-cropped.png" alt="roomieverse logo" style="max-height: 100px; margin-bottom: 40px; object-fit: contain;" />
-            <a href="https://roomieverse.com" target="_blank" style="font-size: 1.2rem; padding: 16px 32px; background: var(--pink); color: var(--blue-dark); border-radius: 30px; text-decoration: none; font-weight: 600; display: inline-block; transition: opacity 0.2s ease;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">
+            <a href="https://roomieverse.com" target="_blank" style="font-size: 1.2rem; padding: 16px 32px; background: #ffacba; color: var(--blue-dark); border-radius: 30px; text-decoration: none; font-weight: 600; display: inline-block; transition: opacity 0.2s ease;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">
               Try now
             </a>
           </div>
@@ -75,6 +75,9 @@ import RoomieverseLabsLogo from '../../components/RoomieverseLabsLogo.astro'
           <button class="carousel-dot active" aria-label="Page 1"></button>
           <button class="carousel-dot" aria-label="Page 2"></button>
         </div>
+        
+        <button class="carousel-arrow carousel-arrow--prev" aria-label="Previous" style="display: none;">&#10094;</button>
+        <button class="carousel-arrow carousel-arrow--next" aria-label="Next">&#10095;</button>
       </div>
 
       <script is:inline>
@@ -83,14 +86,28 @@ import RoomieverseLabsLogo from '../../components/RoomieverseLabsLogo.astro'
           if (carousel) {
             const track = carousel.querySelector('.carousel-track');
             const dots = carousel.querySelectorAll('.carousel-dot');
+            const prevBtn = carousel.querySelector('.carousel-arrow--prev');
+            const nextBtn = carousel.querySelector('.carousel-arrow--next');
+            let currentIndex = 0;
             
+            const updateCarousel = (index) => {
+              currentIndex = index;
+              track.style.transform = `translateX(-${index * 50}%)`;
+              dots.forEach(d => d.classList.remove('active'));
+              dots[index].classList.add('active');
+              
+              if (prevBtn && nextBtn) {
+                prevBtn.style.display = index === 0 ? 'none' : 'flex';
+                nextBtn.style.display = index === dots.length - 1 ? 'none' : 'flex';
+              }
+            };
+
             dots.forEach((dot, index) => {
-              dot.addEventListener('click', () => {
-                track.style.transform = `translateX(-${index * 50}%)`;
-                dots.forEach(d => d.classList.remove('active'));
-                dot.classList.add('active');
-              });
+              dot.addEventListener('click', () => updateCarousel(index));
             });
+            
+            if (prevBtn) prevBtn.addEventListener('click', () => updateCarousel(Math.max(0, currentIndex - 1)));
+            if (nextBtn) nextBtn.addEventListener('click', () => updateCarousel(Math.min(dots.length - 1, currentIndex + 1)));
           }
           
           const grids = document.querySelectorAll('.keynote-grid');
