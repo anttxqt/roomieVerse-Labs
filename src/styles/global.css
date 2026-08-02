@@ -1470,6 +1470,12 @@ body.is-loaded .hero-copy h1 strong {
   gap: 24px;
 }
 
+@media (max-width: 768px) {
+  .desktop-only-divider {
+    display: none !important;
+  }
+}
+
 .footer-row-title {
   font-size: 16px;
   font-weight: 800;
