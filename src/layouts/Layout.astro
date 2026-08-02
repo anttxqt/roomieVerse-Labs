@@ -175,7 +175,7 @@ if (currentPath.startsWith('/en/')) {
         <button class="menu-close" type="button" aria-label={t.closeMenu} style={lang === 'ar' ? "margin-right: auto;" : ""}>×</button>
       </div>
       <div class="menu-body">
-        <nav aria-label={t.menuLabel} style={lang === 'ar' ? "margin-bottom: 10vh;" : ""}>
+        <nav aria-label={t.menuLabel} style={lang === 'ar' ? "align-self: center;" : ""}>
           {t.navItems.map(([number, label, href]) => (
             <a href={href}>
               <span style={lang === 'ar' ? "transform: translateY(-40px); display: inline-block;" : ""}>{number}</span>{label}
@@ -183,7 +183,7 @@ if (currentPath.startsWith('/en/')) {
           ))}
         </nav>
         {lang === 'ar' ? (
-          <div class="menu-brand-container" style="display: flex; flex-direction: column; align-items: center; gap: 3vh; margin-bottom: 10vh;">
+          <div class="menu-brand-container" style="display: flex; flex-direction: column; align-items: center; gap: 4vh; align-self: center;">
             <a class="brand brand--blue menu-brand" href={homeHref} tabindex="-1" style="padding-bottom: 0; width: auto;">
               <RoomieverseLabsLogo />
             </a>
