@@ -114,15 +114,15 @@ img {
 
 .preloader-logos {
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) 1px minmax(112px, .8fr) 1px minmax(0, 1.3fr);
+  grid-template-columns: minmax(0, 1.1fr) 1px minmax(200px, .8fr) 1px minmax(0, 1.3fr);
   align-items: center;
-  gap: clamp(12px, 2.4vw, 30px);
-  width: min(650px, calc(100vw - 48px));
+  gap: clamp(16px, 3.5vw, 45px);
+  width: min(1000px, calc(100vw - 48px));
 }
 
 .preloader-logo {
   width: 100%;
-  height: clamp(32px, 5vw, 56px);
+  height: clamp(56px, 9vw, 96px);
   object-fit: contain;
 }
 
@@ -133,13 +133,13 @@ img {
 
 .preloader-logo--verse {
   justify-self: center;
-  width: clamp(112px, 13vw, 140px);
+  width: clamp(200px, 23vw, 250px);
   height: auto;
 }
 
 .preloader-divider {
   width: 1px;
-  height: clamp(54px, 7vw, 72px);
+  height: clamp(96px, 12vw, 128px);
   background: rgba(7, 23, 51, .16);
 }
 
@@ -151,7 +151,7 @@ img {
 }
 
 .preloader-credit .brand-logo {
-  width: clamp(150px, 14vw, 205px);
+  width: clamp(270px, 25vw, 360px);
 }
 
 .preloader.is-hidden {
