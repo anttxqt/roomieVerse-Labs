@@ -4,57 +4,78 @@ import Layout from '../layouts/Layout.astro'
 
 <Layout title="Đội ngũ - Roomieverse Labs">
   <main>
-    <section style="padding: 180px 20px 80px; max-width: 1200px; margin: 0 auto; text-align: center;">
+    <section style="padding: 180px 20px 80px; max-width: 1000px; margin: 0 auto; text-align: start;">
       <h1 style="font-size: clamp(3rem, 6vw, 5rem); color: var(--ink);">Đội ngũ của chúng tôi</h1>
     </section>
 
-    <section style="padding: 0 20px 120px; max-width: 1200px; margin: 0 auto;">
-      <div style="display: flex; flex-direction: column; align-items: center; gap: 60px;">
+    <section style="padding: 0 20px 120px; max-width: 1000px; margin: 0 auto;">
+      <div style="display: flex; flex-direction: column; gap: 40px;">
         <!-- Member 1 -->
-        <article class="reveal" style="display: flex; flex-direction: row; align-items: center; text-align: start; gap: 40px; width: 100%; max-width: 600px;">
-          <div style="width: 140px; height: 140px; border-radius: 50%; background: #e5e5ea; flex-shrink: 0; overflow: hidden; display: flex; align-items: center; justify-content: center;">
-            <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#aeaeb2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-          </div>
-          <div>
-            <h3 style="margin-bottom: 4px; font-size: 1.8rem; color: var(--ink);">Antt</h3>
-            <p style="color: var(--muted); font-size: 1rem; margin-bottom: 8px;">@antt</p>
-            <p style="color: var(--blue); font-weight: 600; font-size: 1.1rem; margin-bottom: 12px;">Founder & CEO</p>
-            <div style="display: flex; gap: 12px; color: var(--muted);">
-              <a href="#" style="color: inherit; text-decoration: none;">X</a>
-              <a href="#" style="color: inherit; text-decoration: none;">LinkedIn</a>
+        <article style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; padding: 40px; background: #f5f5f7; border-radius: 32px; gap: 40px;">
+          <div style="display: flex; align-items: center; gap: 32px; flex: 1; min-width: 280px;">
+            <div style="width: 140px; height: 140px; border-radius: 50%; background: #e5e5ea; flex-shrink: 0; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+              <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#aeaeb2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
             </div>
+            <div>
+              <h3 style="margin-bottom: 4px; font-size: 2rem; color: var(--ink);">Antt</h3>
+              <p style="color: var(--muted); font-size: 1.1rem; margin-bottom: 12px;">@antt</p>
+              <div style="display: flex; gap: 12px; color: var(--muted);">
+                <a href="#" style="color: inherit; text-decoration: none;">X</a>
+                <a href="#" style="color: inherit; text-decoration: none;">LinkedIn</a>
+              </div>
+            </div>
+          </div>
+          <div style="flex: 1.5; min-width: 280px; text-align: start;">
+            <p style="color: var(--blue); font-weight: 600; font-size: 1.2rem; margin-bottom: 12px;">Founder & CEO</p>
+            <p style="color: var(--muted); font-size: 1.05rem; line-height: 1.6;">
+              Người thiết kế tầm nhìn, định hình chiến lược và dẫn dắt sự phát triển của hệ sinh thái Roomieverse Labs.
+            </p>
           </div>
         </article>
 
         <!-- Member 2 -->
-        <article class="reveal" style="transition-delay: 0.1s; display: flex; flex-direction: row; align-items: center; text-align: start; gap: 40px; width: 100%; max-width: 600px;">
-          <div style="width: 140px; height: 140px; border-radius: 50%; background: #e5e5ea; flex-shrink: 0; overflow: hidden; display: flex; align-items: center; justify-content: center;">
-            <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#aeaeb2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-          </div>
-          <div>
-            <h3 style="margin-bottom: 4px; font-size: 1.8rem; color: var(--ink);">Antt</h3>
-            <p style="color: var(--muted); font-size: 1rem; margin-bottom: 8px;">@antt</p>
-            <p style="color: var(--blue); font-weight: 600; font-size: 1.1rem; margin-bottom: 12px;">Lead Developer</p>
-            <div style="display: flex; gap: 12px; color: var(--muted);">
-              <a href="#" style="color: inherit; text-decoration: none;">X</a>
-              <a href="#" style="color: inherit; text-decoration: none;">LinkedIn</a>
+        <article style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; padding: 40px; background: #f5f5f7; border-radius: 32px; gap: 40px;">
+          <div style="display: flex; align-items: center; gap: 32px; flex: 1; min-width: 280px;">
+            <div style="width: 140px; height: 140px; border-radius: 50%; background: #e5e5ea; flex-shrink: 0; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+              <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#aeaeb2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
             </div>
+            <div>
+              <h3 style="margin-bottom: 4px; font-size: 2rem; color: var(--ink);">Antt</h3>
+              <p style="color: var(--muted); font-size: 1.1rem; margin-bottom: 12px;">@antt</p>
+              <div style="display: flex; gap: 12px; color: var(--muted);">
+                <a href="#" style="color: inherit; text-decoration: none;">X</a>
+                <a href="#" style="color: inherit; text-decoration: none;">LinkedIn</a>
+              </div>
+            </div>
+          </div>
+          <div style="flex: 1.5; min-width: 280px; text-align: start;">
+            <p style="color: var(--blue); font-weight: 600; font-size: 1.2rem; margin-bottom: 12px;">Lead Developer</p>
+            <p style="color: var(--muted); font-size: 1.05rem; line-height: 1.6;">
+              Phụ trách phát triển và duy trì toàn bộ kiến trúc kỹ thuật nền tảng, mang lại trải nghiệm mượt mà nhất.
+            </p>
           </div>
         </article>
         
         <!-- Member 3 -->
-        <article class="reveal" style="transition-delay: 0.2s; display: flex; flex-direction: row; align-items: center; text-align: start; gap: 40px; width: 100%; max-width: 600px;">
-          <div style="width: 140px; height: 140px; border-radius: 50%; background: #e5e5ea; flex-shrink: 0; overflow: hidden; display: flex; align-items: center; justify-content: center;">
-            <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#aeaeb2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-          </div>
-          <div>
-            <h3 style="margin-bottom: 4px; font-size: 1.8rem; color: var(--ink);">Antt</h3>
-            <p style="color: var(--muted); font-size: 1rem; margin-bottom: 8px;">@antt</p>
-            <p style="color: var(--blue); font-weight: 600; font-size: 1.1rem; margin-bottom: 12px;">Product Designer</p>
-            <div style="display: flex; gap: 12px; color: var(--muted);">
-              <a href="#" style="color: inherit; text-decoration: none;">X</a>
-              <a href="#" style="color: inherit; text-decoration: none;">LinkedIn</a>
+        <article style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; padding: 40px; background: #f5f5f7; border-radius: 32px; gap: 40px;">
+          <div style="display: flex; align-items: center; gap: 32px; flex: 1; min-width: 280px;">
+            <div style="width: 140px; height: 140px; border-radius: 50%; background: #e5e5ea; flex-shrink: 0; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+              <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#aeaeb2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
             </div>
+            <div>
+              <h3 style="margin-bottom: 4px; font-size: 2rem; color: var(--ink);">Antt</h3>
+              <p style="color: var(--muted); font-size: 1.1rem; margin-bottom: 12px;">@antt</p>
+              <div style="display: flex; gap: 12px; color: var(--muted);">
+                <a href="#" style="color: inherit; text-decoration: none;">X</a>
+                <a href="#" style="color: inherit; text-decoration: none;">LinkedIn</a>
+              </div>
+            </div>
+          </div>
+          <div style="flex: 1.5; min-width: 280px; text-align: start;">
+            <p style="color: var(--blue); font-weight: 600; font-size: 1.2rem; margin-bottom: 12px;">Product Designer</p>
+            <p style="color: var(--muted); font-size: 1.05rem; line-height: 1.6;">
+              Thiết kế giao diện và trải nghiệm người dùng, đảm bảo mọi chi tiết đều tinh tế và dễ dàng sử dụng nhất.
+            </p>
           </div>
         </article>
       </div>
