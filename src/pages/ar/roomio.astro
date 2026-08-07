@@ -208,39 +208,65 @@ import Layout from '../../layouts/Layout.astro'
         <button onclick="const el = document.getElementById('detailed-pricing'); const isHidden = el.style.display === 'none'; el.style.display = isHidden ? 'block' : 'none'; this.innerText = isHidden ? 'إخفاء التسعير المفصل' : 'عرض التسعير المفصل';" style="background: none; border: none; color: var(--blue); font-size: 1.1rem; cursor: pointer; text-decoration: underline; font-weight: 600;">عرض التسعير المفصل</button>
       </div>
 
-      <div id="detailed-pricing" style="display: none; margin-top: 40px; background: #fff; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); overflow: hidden;">
-        <div style="overflow-x: auto;">
-          <table style="width: 100%; border-collapse: collapse; text-align: right;">
-            <thead>
-              <tr style="background: #f5f5f7;">
-                <th style="padding: 20px; font-weight: 600; border-bottom: 2px solid #e5e5ea; min-width: 150px;">الحجم (غرف)</th>
-                <th style="padding: 20px; font-weight: 600; border-bottom: 2px solid #e5e5ea; min-width: 200px;">قياسي / شقق</th>
-                <th style="padding: 20px; font-weight: 600; border-bottom: 2px solid #e5e5ea; min-width: 200px;">مشاركة / سكن مشترك</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr style="border-bottom: 1px solid #e5e5ea;">
-                <td style="padding: 16px 20px; font-weight: 500;">1–4 غرف</td>
-                <td style="padding: 16px 20px; color: var(--blue);">أول 6 أشهر مجاناً</td>
-                <td style="padding: 16px 20px; color: var(--blue);">أول 6 أشهر مجاناً</td>
-              </tr>
-              <tr style="border-bottom: 1px solid #e5e5ea;"><td style="padding: 16px 20px;">5–10 غرف</td><td style="padding: 16px 20px;"><span class="ar-price" data-vnd="169,000" data-sar="25" data-aed="24" data-usd="$7">169,000</span> <span class="ar-currency" data-vnd="₫" data-sar="ر.س" data-aed="د.إ" data-usd="">₫</span> /شهر</td><td style="padding: 16px 20px;"><span class="ar-price" data-vnd="149,000" data-sar="22" data-aed="21" data-usd="$6">149,000</span> <span class="ar-currency" data-vnd="₫" data-sar="ر.س" data-aed="د.إ" data-usd="">₫</span> /شهر</td></tr>
-              <tr style="border-bottom: 1px solid #e5e5ea;"><td style="padding: 16px 20px;">11–20 غرف</td><td style="padding: 16px 20px;"><span class="ar-price" data-vnd="319,000" data-sar="47" data-aed="46" data-usd="463">319,000</span> <span class="ar-currency" data-vnd="₫" data-sar="ر.س" data-aed="د.إ" data-usd="">₫</span> /شهر</td><td style="padding: 16px 20px;"><span class="ar-price" data-vnd="290,000" data-sar="43" data-aed="42" data-usd="421">290,000</span> <span class="ar-currency" data-vnd="₫" data-sar="ر.س" data-aed="د.إ" data-usd="">₫</span> /شهر</td></tr>
-              <tr style="border-bottom: 1px solid #e5e5ea;"><td style="padding: 16px 20px;">21–30 غرف</td><td style="padding: 16px 20px;"><span class="ar-price" data-vnd="499,000" data-sar="74" data-aed="72" data-usd="$20">499,000</span> <span class="ar-currency" data-vnd="₫" data-sar="ر.س" data-aed="د.إ" data-usd="">₫</span> /شهر</td><td style="padding: 16px 20px;"><span class="ar-price" data-vnd="469,000" data-sar="69" data-aed="67" data-usd="678">469,000</span> <span class="ar-currency" data-vnd="₫" data-sar="ر.س" data-aed="د.إ" data-usd="">₫</span> /شهر</td></tr>
-              <tr style="border-bottom: 1px solid #e5e5ea;"><td style="padding: 16px 20px;">31–40 غرف</td><td style="padding: 16px 20px;"><span class="ar-price" data-vnd="679,000" data-sar="100" data-aed="98" data-usd="$27">679,000</span> <span class="ar-currency" data-vnd="₫" data-sar="ر.س" data-aed="د.إ" data-usd="">₫</span> /شهر</td><td style="padding: 16px 20px;"><span class="ar-price" data-vnd="649,000" data-sar="95" data-aed="93" data-usd="$25">649,000</span> <span class="ar-currency" data-vnd="₫" data-sar="ر.س" data-aed="د.إ" data-usd="">₫</span> /شهر</td></tr>
-              <tr style="border-bottom: 1px solid #e5e5ea;"><td style="padding: 16px 20px;">41–50 غرف</td><td style="padding: 16px 20px;"><span class="ar-price" data-vnd="859,000" data-sar="126" data-aed="124" data-usd="$34">859,000</span> <span class="ar-currency" data-vnd="₫" data-sar="ر.س" data-aed="د.إ" data-usd="">₫</span> /شهر</td><td style="padding: 16px 20px;"><span class="ar-price" data-vnd="819,000" data-sar="120" data-aed="118" data-usd="$32">819,000</span> <span class="ar-currency" data-vnd="₫" data-sar="ر.س" data-aed="د.إ" data-usd="">₫</span> /شهر</td></tr>
-              <tr style="background: var(--blue); color: #fff;">
-                <td colspan="3" style="padding: 20px; font-weight: 600; text-align: center; border-bottom: none;">VIP Operator (> 50 غرفة) — امتيازات VIP، خصم 50% الشهر الأول</td>
-              </tr>
-              <tr style="border-bottom: 1px solid #e5e5ea;"><td style="padding: 16px 20px;">51–70 غرف</td><td colspan="2" style="padding: 16px 20px;"><span class="ar-price" data-vnd="1,489,000" data-sar="219" data-aed="214" data-usd="$58">1,489,000</span> <span class="ar-currency" data-vnd="₫" data-sar="ر.س" data-aed="د.إ" data-usd="">₫</span> /شهر</td></tr>
-              <tr style="border-bottom: 1px solid #e5e5ea;"><td style="padding: 16px 20px;">71–90 غرف</td><td colspan="2" style="padding: 16px 20px;"><span class="ar-price" data-vnd="1,989,000" data-sar="293" data-aed="286" data-usd="$78">1,989,000</span> <span class="ar-currency" data-vnd="₫" data-sar="ر.س" data-aed="د.إ" data-usd="">₫</span> /شهر</td></tr>
-              <tr style="border-bottom: 1px solid #e5e5ea;"><td style="padding: 16px 20px;">91–110 غرف</td><td colspan="2" style="padding: 16px 20px;"><span class="ar-price" data-vnd="2,489,000" data-sar="366" data-aed="358" data-usd="$98">2,489,000</span> <span class="ar-currency" data-vnd="₫" data-sar="ر.س" data-aed="د.إ" data-usd="">₫</span> /شهر</td></tr>
-              <tr style="border-bottom: 1px solid #e5e5ea;"><td style="padding: 16px 20px;">111–150 غرف</td><td colspan="2" style="padding: 16px 20px;"><span class="ar-price" data-vnd="3,289,000" data-sar="484" data-aed="474" data-usd="47429">3,289,000</span> <span class="ar-currency" data-vnd="₫" data-sar="ر.س" data-aed="د.إ" data-usd="">₫</span> /شهر</td></tr>
-              <tr style="border-bottom: 1px solid #e5e5ea;"><td style="padding: 16px 20px;">151–200 غرف</td><td colspan="2" style="padding: 16px 20px;"><span class="ar-price" data-vnd="4,189,000" data-sar="616" data-aed="604" data-usd="60464">4,189,000</span> <span class="ar-currency" data-vnd="₫" data-sar="ر.س" data-aed="د.إ" data-usd="">₫</span> /شهر</td></tr>
-              <tr><td style="padding: 16px 20px; font-weight: 500;">أكثر من 200 غرفة</td><td colspan="2" style="padding: 16px 20px; color: var(--pink); font-weight: 500;">اتصل بنا (الشركات)</td></tr>
-            </tbody>
-          </table>
-          <p style="font-size: 0.9rem; color: #86868b; margin-top: 16px; margin-bottom: 20px; padding-left: 20px; padding-right: 20px;">* شروط العرض: غير متوفر مؤقتاً، سيتم توفيره قريباً.</p>
+      
+      <div id="detailed-pricing" style="display: none; margin-top: 40px; background: transparent;">
+        <!-- Standard Table -->
+        <div style="background: #fff; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); overflow: hidden; margin-bottom: 40px;">
+          <div style="padding: 24px; background: var(--blue-soft); border-bottom: 1px solid #e5e5ea;">
+            <h3 style="margin: 0; font-size: 1.25rem; font-weight: 700; color: var(--blue-dark);">الباقة القياسية (خدمة ذاتية)</h3>
+          </div>
+          <div style="overflow-x: auto;">
+            <table style="width: 100%; border-collapse: collapse; text-align: left;">
+              <thead>
+                <tr style="background: #f5f5f7;">
+                  <th style="padding: 20px; font-weight: 600; border-bottom: 2px solid #e5e5ea; min-width: 150px;">السعة (عدد الغرف)</th>
+                  <th style="padding: 20px; font-weight: 600; border-bottom: 2px solid #e5e5ea; min-width: 200px;">السعر الرسمي (Ver 2)</th>
+                  <th style="padding: 20px; font-weight: 600; border-bottom: 2px solid #e5e5ea; min-width: 200px;">السعر الترويجي (Ver 1)*</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom: 1px solid #e5e5ea;">
+                  <td style="padding: 16px 20px; font-weight: 500;">1–4</td>
+                  <td style="padding: 16px 20px; color: var(--blue); font-weight: 600;">أول 6 أشهر مجاناً</td>
+                  <td style="padding: 16px 20px; color: var(--blue); font-weight: 600;">أول 6 أشهر مجاناً</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #e5e5ea;"><td style="padding: 16px 20px;">5–10</td><td style="padding: 16px 20px;">169.000đ /شهر</td><td style="padding: 16px 20px;">149.000đ /شهر</td></tr>
+                <tr style="border-bottom: 1px solid #e5e5ea;"><td style="padding: 16px 20px;">11–20</td><td style="padding: 16px 20px;">319.000đ /شهر</td><td style="padding: 16px 20px;">290.000đ /شهر</td></tr>
+                <tr style="border-bottom: 1px solid #e5e5ea;"><td style="padding: 16px 20px;">21–30</td><td style="padding: 16px 20px;">499.000đ /شهر</td><td style="padding: 16px 20px;">469.000đ /شهر</td></tr>
+                <tr style="border-bottom: 1px solid #e5e5ea;"><td style="padding: 16px 20px;">31–40</td><td style="padding: 16px 20px;">679.000đ /شهر</td><td style="padding: 16px 20px;">649.000đ /شهر</td></tr>
+                <tr style="border-bottom: 1px solid #e5e5ea;"><td style="padding: 16px 20px;">41–50</td><td style="padding: 16px 20px;">859.000đ /شهر</td><td style="padding: 16px 20px;">819.000đ /شهر</td></tr>
+                <tr><td style="padding: 16px 20px; font-weight: 500;">أكثر من 50 غرفة</td><td colspan="2" style="padding: 16px 20px; color: var(--pink-ink); font-weight: 500;">اتصل بنا</td></tr>
+              </tbody>
+            </table>
+            <p style="font-size: 0.9rem; color: #86868b; margin-top: 16px; margin-bottom: 20px; padding-left: 20px; padding-right: 20px;">* شروط العرض: غير متوفر مؤقتاً، سيتم توفيره قريباً.</p>
+          </div>
+        </div>
+
+        <!-- VIP Operator Table -->
+        <div style="background: #fff; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); overflow: hidden;">
+          <div style="padding: 24px; background: var(--blue); border-bottom: 1px solid #e5e5ea; color: white;">
+            <h3 style="margin: 0; font-size: 1.25rem; font-weight: 700; color: white;">باقة المشغل VIP (تشمل مزايا VIP)</h3>
+            <p style="margin: 8px 0 0 0; font-size: 0.95rem; opacity: 0.9;">مزايا VIP تشمل: إعداد شامل، دعم VIP مباشر، أدوار للموظفين، إدارة عقارات متعددة، وتقارير الأرباح والخسائر.</p>
+          </div>
+          <div style="overflow-x: auto;">
+            <table style="width: 100%; border-collapse: collapse; text-align: left;">
+              <thead>
+                <tr style="background: #f5f5f7;">
+                  <th style="padding: 20px; font-weight: 600; border-bottom: 2px solid #e5e5ea; min-width: 150px;">السعة (عدد الغرف)</th>
+                  <th style="padding: 20px; font-weight: 600; border-bottom: 2px solid #e5e5ea; min-width: 200px;">سعر VIP الرسمي / شهر</th>
+                  <th style="padding: 20px; font-weight: 600; border-bottom: 2px solid #e5e5ea; min-width: 200px;">سعر الشهر الأول (خصم 50%)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom: 1px solid #e5e5ea;"><td style="padding: 16px 20px;">51–70</td><td style="padding: 16px 20px;">1.489.000đ /شهر</td><td style="padding: 16px 20px; color: var(--blue); font-weight: 600;">745.000đ</td></tr>
+                <tr style="border-bottom: 1px solid #e5e5ea;"><td style="padding: 16px 20px;">71–90</td><td style="padding: 16px 20px;">1.989.000đ /شهر</td><td style="padding: 16px 20px; color: var(--blue); font-weight: 600;">995.000đ</td></tr>
+                <tr style="border-bottom: 1px solid #e5e5ea;"><td style="padding: 16px 20px;">91–110</td><td style="padding: 16px 20px;">2.489.000đ /شهر</td><td style="padding: 16px 20px; color: var(--blue); font-weight: 600;">1.245.000đ</td></tr>
+                <tr style="border-bottom: 1px solid #e5e5ea;"><td style="padding: 16px 20px;">111–150</td><td style="padding: 16px 20px;">3.289.000đ /شهر</td><td style="padding: 16px 20px; color: var(--blue); font-weight: 600;">1.645.000đ</td></tr>
+                <tr style="border-bottom: 1px solid #e5e5ea;"><td style="padding: 16px 20px;">151–200</td><td style="padding: 16px 20px;">4.189.000đ /شهر</td><td style="padding: 16px 20px; color: var(--blue); font-weight: 600;">2.095.000đ</td></tr>
+                <tr><td style="padding: 16px 20px; font-weight: 500;">أكثر من 200 غرفة</td><td colspan="2" style="padding: 16px 20px; color: var(--pink-ink); font-weight: 500;">اتصل بنا</td></tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
   
