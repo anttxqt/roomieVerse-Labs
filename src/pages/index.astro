@@ -16,6 +16,11 @@ const products = [
     metrics: ['Tòa nhà', 'Hợp đồng', 'Hóa đơn'],
     link: '/roomio',
     linkText: 'Tìm hiểu thêm',
+    secondaryAction: {
+      text: 'Đăng ký sử dụng',
+      href: '#',
+      onclick: "event.preventDefault(); this.querySelector('.lml-text').innerText = 'Liên hệ: antt@roomieverselabs.com'; this.href='mailto:antt@roomieverselabs.com'; this.onclick=null;"
+    }
   },
   {
     name: 'roomieverse',
@@ -28,6 +33,10 @@ const products = [
     metrics: ['Tìm phòng', 'Tìm bạn', 'Phòng chung'],
     link: '/roomieverse',
     linkText: 'Tìm hiểu thêm',
+    secondaryAction: {
+      text: 'Trải nghiệm ngay',
+      href: '#'
+    }
   },
   {
     name: 'roomibase',
@@ -100,6 +109,12 @@ const journey = [
                   {product.link && (
                     <a href={product.link} class="learn-more-link">
                       <span class="lml-text">{product.linkText}</span>
+                      <span class="lml-arrow" aria-hidden="true">→</span>
+                    </a>
+                  )}
+                  {product.secondaryAction && (
+                    <a href={product.secondaryAction.href} class="learn-more-link" onclick={product.secondaryAction.onclick}>
+                      <span class="lml-text">{product.secondaryAction.text}</span>
                       <span class="lml-arrow" aria-hidden="true">→</span>
                     </a>
                   )}
