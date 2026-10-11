@@ -293,6 +293,77 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
         margin-top: clamp(8px, 1.4vw, 16px);
         margin-bottom: 0;
       }
+      
+      /* Apple Accordion (Appendix List) */
+      .apple-accordion-list {
+        border-top: 1px solid #d2d2d7;
+        width: 100%;
+      }
+      
+      .apple-accordion-item {
+        border-bottom: 1px solid #d2d2d7;
+      }
+      
+      .apple-accordion-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 24px 0;
+        cursor: pointer;
+        user-select: none;
+        list-style: none;
+      }
+      
+      .apple-accordion-header::-webkit-details-marker {
+        display: none;
+      }
+      
+      .apple-accordion-header::marker {
+        display: none;
+        content: "";
+      }
+      
+      .apple-accordion-title {
+        font-size: clamp(1.2rem, 1.8vw, 1.45rem);
+        font-weight: 700;
+        color: #1d1d1f;
+        line-height: 1.35;
+        letter-spacing: -0.015em;
+        padding-right: 24px;
+        transition: color 0.2s ease;
+      }
+      
+      .apple-accordion-header:hover .apple-accordion-title {
+        color: #0071e3;
+      }
+      
+      .apple-accordion-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #86868b;
+        flex-shrink: 0;
+        transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), color 0.2s ease;
+      }
+      
+      .apple-accordion-header:hover .apple-accordion-icon {
+        color: #1d1d1f;
+      }
+      
+      .apple-accordion-item[open] > .apple-accordion-header .apple-accordion-icon {
+        transform: rotate(180deg);
+      }
+      
+      .apple-accordion-content {
+        padding: 0 0 28px 0;
+        font-size: clamp(1.02rem, 1.4vw, 1.18rem);
+        line-height: 1.65;
+        color: #1d1d1f;
+      }
+      
+      .apple-accordion-content p {
+        margin: 0;
+      }
     </style>
   </head>
   <body>
@@ -576,32 +647,91 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
           </div>
         </div>
 
-        <div class="slide-container reveal" style="margin-top: 60px;">
-          <div class="apple-grid" style="margin-top: 0;">
-            <article class="apple-card">
-              <h3 style="font-size: 1.2rem;">Slide 2: Nỗi đau & Đối thủ</h3>
-              <p style="font-size: 1rem;">Đánh giá đối thủ bằng "Khả năng hoàn tất 1 công việc". Bấm giờ và đếm click chuột. roomio luôn tốn ít bước hơn, UX mượt hơn.</p>
-            </article>
-            <article class="apple-card">
-              <h3 style="font-size: 1.2rem;">Slide 4: Tại sao lúc này?</h3>
-              <p style="font-size: 1rem;">1. Phổ cập QR Code ngân hàng. 2. Gen Z (người thuê) đòi hỏi sự minh bạch trực tuyến thay vì ghi chép trên giấy mờ ảo.</p>
-            </article>
-            <article class="apple-card">
-              <h3 style="font-size: 1.2rem;">Slide 5: Kiến trúc</h3>
-              <p style="font-size: 1rem;">Dùng Telegram thay vì Zalo để tiết kiệm chi phí gửi tin. Kiến trúc chạy ẩn: Chủ trọ đi ngủ, bot vẫn đi nhắc nợ khách.</p>
-            </article>
-            <article class="apple-card">
-              <h3 style="font-size: 1.2rem;">Slide 7: Mô hình kinh doanh</h3>
-              <p style="font-size: 1rem;">Chỉ làm Pure SaaS. Biên lợi nhuận cực cao, mở rộng quy mô bằng Server, tuyệt đối không sa lầy vào vận hành (O2O) như Nhatrovn.</p>
-            </article>
-            <article class="apple-card">
-              <h3 style="font-size: 1.2rem;">Slide 8: Chân dung khách</h3>
-              <p style="font-size: 1rem;">Tập trung người dùng ngay: Chủ tự vận hành, phòng đang tăng, hay quên công nợ. Bỏ qua các nhà quá nhỏ hoặc DN lớn.</p>
-            </article>
-            <article class="apple-card">
-              <h3 style="font-size: 1.2rem;">Slide 11: Tiêu tiền</h3>
-              <p style="font-size: 1rem;">Không chạy Ads diện rộng. Dùng Marketing du kích (hoa hồng, quà tặng, ưu đãi pilot) để chốt sale. Chuẩn bị kịch bản Upsell nếu Quỹ mạnh.</p>
-            </article>
+        <div class="reveal" style="max-width: 960px; margin: 60px auto 0; width: 100%;">
+          <div class="apple-accordion-list">
+            <details class="apple-accordion-item">
+              <summary class="apple-accordion-header">
+                <span class="apple-accordion-title">Slide 2: Nỗi đau & Đối thủ</span>
+                <span class="apple-accordion-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </summary>
+              <div class="apple-accordion-content">
+                <p>Đánh giá đối thủ bằng "Khả năng hoàn tất 1 công việc". Bấm giờ và đếm click chuột. roomio luôn tốn ít bước hơn, UX mượt hơn.</p>
+              </div>
+            </details>
+
+            <details class="apple-accordion-item">
+              <summary class="apple-accordion-header">
+                <span class="apple-accordion-title">Slide 4: Tại sao lúc này?</span>
+                <span class="apple-accordion-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </summary>
+              <div class="apple-accordion-content">
+                <p>1. Phổ cập QR Code ngân hàng. 2. Gen Z (người thuê) đòi hỏi sự minh bạch trực tuyến thay vì ghi chép trên giấy mờ ảo.</p>
+              </div>
+            </details>
+
+            <details class="apple-accordion-item">
+              <summary class="apple-accordion-header">
+                <span class="apple-accordion-title">Slide 5: Kiến trúc</span>
+                <span class="apple-accordion-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </summary>
+              <div class="apple-accordion-content">
+                <p>Dùng Telegram thay vì Zalo để tiết kiệm chi phí gửi tin. Kiến trúc chạy ẩn: Chủ trọ đi ngủ, bot vẫn đi nhắc nợ khách.</p>
+              </div>
+            </details>
+
+            <details class="apple-accordion-item">
+              <summary class="apple-accordion-header">
+                <span class="apple-accordion-title">Slide 7: Mô hình kinh doanh</span>
+                <span class="apple-accordion-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </summary>
+              <div class="apple-accordion-content">
+                <p>Chỉ làm Pure SaaS. Biên lợi nhuận cực cao, mở rộng quy mô bằng Server, tuyệt đối không sa lầy vào vận hành (O2O) như Nhatrovn.</p>
+              </div>
+            </details>
+
+            <details class="apple-accordion-item">
+              <summary class="apple-accordion-header">
+                <span class="apple-accordion-title">Slide 8: Chân dung khách</span>
+                <span class="apple-accordion-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </summary>
+              <div class="apple-accordion-content">
+                <p>Tập trung người dùng ngay: Chủ tự vận hành, phòng đang tăng, hay quên công nợ. Bỏ qua các nhà quá nhỏ hoặc DN lớn.</p>
+              </div>
+            </details>
+
+            <details class="apple-accordion-item">
+              <summary class="apple-accordion-header">
+                <span class="apple-accordion-title">Slide 11: Tiêu tiền</span>
+                <span class="apple-accordion-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </summary>
+              <div class="apple-accordion-content">
+                <p>Không chạy Ads diện rộng. Dùng Marketing du kích (hoa hồng, quà tặng, ưu đãi pilot) để chốt sale. Chuẩn bị kịch bản Upsell nếu Quỹ mạnh.</p>
+              </div>
+            </details>
           </div>
         </div>
       </section>
