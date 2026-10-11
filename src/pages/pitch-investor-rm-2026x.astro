@@ -343,7 +343,11 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
         justify-content: center;
         color: #86868b;
         flex-shrink: 0;
-        transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), color 0.2s ease;
+        width: 32px;
+        height: 32px;
+        transform-origin: center center;
+        will-change: transform;
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.25s ease;
       }
       
       .apple-accordion-header:hover .apple-accordion-icon {
@@ -352,6 +356,21 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
       
       .apple-accordion-item[open] > .apple-accordion-header .apple-accordion-icon {
         transform: rotate(180deg);
+      }
+      
+      .apple-accordion-item[open] .apple-accordion-content {
+        animation: accordionSlideIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      
+      @keyframes accordionSlideIn {
+        from {
+          opacity: 0;
+          transform: translateY(-6px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
       
       .apple-accordion-content {
@@ -653,7 +672,7 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
               <summary class="apple-accordion-header">
                 <span class="apple-accordion-title">Slide 2: Nỗi đau & Đối thủ</span>
                 <span class="apple-accordion-icon" aria-hidden="true">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="6 9 12 15 18 9"></polyline>
                   </svg>
                 </span>
@@ -667,7 +686,7 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
               <summary class="apple-accordion-header">
                 <span class="apple-accordion-title">Slide 4: Tại sao lúc này?</span>
                 <span class="apple-accordion-icon" aria-hidden="true">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="6 9 12 15 18 9"></polyline>
                   </svg>
                 </span>
@@ -681,7 +700,7 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
               <summary class="apple-accordion-header">
                 <span class="apple-accordion-title">Slide 5: Kiến trúc</span>
                 <span class="apple-accordion-icon" aria-hidden="true">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="6 9 12 15 18 9"></polyline>
                   </svg>
                 </span>
@@ -695,7 +714,7 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
               <summary class="apple-accordion-header">
                 <span class="apple-accordion-title">Slide 7: Mô hình kinh doanh</span>
                 <span class="apple-accordion-icon" aria-hidden="true">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="6 9 12 15 18 9"></polyline>
                   </svg>
                 </span>
@@ -709,7 +728,7 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
               <summary class="apple-accordion-header">
                 <span class="apple-accordion-title">Slide 8: Chân dung khách</span>
                 <span class="apple-accordion-icon" aria-hidden="true">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="6 9 12 15 18 9"></polyline>
                   </svg>
                 </span>
@@ -723,7 +742,7 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
               <summary class="apple-accordion-header">
                 <span class="apple-accordion-title">Slide 11: Tiêu tiền</span>
                 <span class="apple-accordion-icon" aria-hidden="true">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="6 9 12 15 18 9"></polyline>
                   </svg>
                 </span>
