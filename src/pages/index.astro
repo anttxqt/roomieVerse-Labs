@@ -35,7 +35,8 @@ const products = [
     linkText: 'Tìm hiểu thêm',
     secondaryAction: {
       text: 'Trải nghiệm ngay',
-      href: '#'
+      href: 'https://roomieverse.blog',
+      target: '_blank'
     }
   },
   {
@@ -113,7 +114,13 @@ const journey = [
                     </a>
                   )}
                   {product.secondaryAction && (
-                    <a href={product.secondaryAction.href} class="learn-more-link" onclick={product.secondaryAction.onclick}>
+                    <a 
+                      href={product.secondaryAction.href} 
+                      class="learn-more-link" 
+                      onclick={product.secondaryAction.onclick}
+                      target={product.secondaryAction.target}
+                      rel={product.secondaryAction.target === '_blank' ? 'noopener noreferrer' : undefined}
+                    >
                       <span class="lml-text">{product.secondaryAction.text}</span>
                       <span class="lml-arrow" aria-hidden="true">→</span>
                     </a>
