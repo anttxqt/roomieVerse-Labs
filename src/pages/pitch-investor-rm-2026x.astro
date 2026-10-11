@@ -458,6 +458,164 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
           font-size: clamp(1.6rem, 5vw, 2.2rem);
         }
       }
+
+      /* Appendix Jump & Return Buttons */
+      @property --jump-border {
+        syntax: "<angle>";
+        inherits: false;
+        initial-value: 0deg;
+      }
+
+      .slide-section, .apple-accordion-item {
+        scroll-margin-top: 88px;
+      }
+
+      .appendix-btn-wrap {
+        display: flex;
+        justify-content: center;
+        margin-top: 36px;
+        width: 100%;
+      }
+
+      .appendix-jump-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        min-width: 112px;
+        min-height: 44px;
+        padding: 0 18px;
+        box-sizing: border-box;
+        justify-content: center;
+        border-radius: 999px;
+        color: var(--blue-dark, #0a1e4a);
+        background: transparent;
+        cursor: pointer;
+        border: 0;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        font-family: var(--font-google-sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+        font-size: 0.95rem;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        text-decoration: none;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+        transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+      }
+
+      .appendix-jump-btn:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+      }
+
+      .appendix-jump-btn:active {
+        transform: translateY(1px);
+      }
+
+      .appendix-jump-btn::before {
+        content: "";
+        position: absolute;
+        z-index: -2;
+        top: -50%; left: -50%; right: -50%; bottom: -50%;
+        background: conic-gradient(from 0deg, var(--blue-dark, #0a1e4a) var(--jump-border), rgba(10, 30, 74, 0.08) var(--jump-border), rgba(10, 30, 74, 0.08) 360deg);
+        transition: --jump-border 0.5s ease-in-out;
+      }
+
+      .appendix-jump-btn:hover::before {
+        --jump-border: 360deg;
+      }
+
+      .appendix-jump-btn::after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        inset: 2px;
+        border-radius: 999px;
+        background: #ffffff;
+        transition: background-color 0.25s ease;
+      }
+
+      .appendix-jump-btn span {
+        display: inline-block;
+        overflow: hidden;
+        max-width: 80px;
+        white-space: nowrap;
+        transition: max-width 0.3s ease, opacity 0.2s ease, margin 0.3s ease;
+      }
+
+      .appendix-jump-btn:hover span {
+        max-width: 0;
+        opacity: 0;
+        margin-right: -10px;
+      }
+
+      .appendix-btn-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 16px;
+        height: 16px;
+        color: currentColor;
+        transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .appendix-jump-btn:hover .appendix-btn-icon {
+        transform: translateY(2px) scale(1.15);
+      }
+
+      .appendix-jump-btn--return:hover .appendix-btn-icon {
+        transform: translateY(-2px) scale(1.15);
+      }
+
+      /* Dark mode section adaptation */
+      .slide-section--dark .appendix-jump-btn {
+        color: #ffffff;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+      }
+
+      .slide-section--dark .appendix-jump-btn::before {
+        background: conic-gradient(from 0deg, #2997ff var(--jump-border), rgba(255, 255, 255, 0.15) var(--jump-border), rgba(255, 255, 255, 0.15) 360deg);
+      }
+
+      .slide-section--dark .appendix-jump-btn::after {
+        background: #1c1c1e;
+      }
+
+      /* Return button container inside accordion content */
+      .appendix-return-wrap {
+        margin-top: 24px;
+        padding-top: 18px;
+        border-top: 1px solid rgba(0, 0, 0, 0.06);
+        display: flex;
+        justify-content: flex-start;
+      }
+
+      .appendix-jump-btn--return {
+        min-width: 110px;
+        min-height: 40px;
+        font-size: 0.88rem;
+      }
+
+      .appendix-jump-btn--return::after {
+        background: #fbfbfd;
+      }
+
+      /* Highlight target animation */
+      .apple-accordion-item.is-target {
+        animation: appendixGlow 1.4s ease-out;
+      }
+
+      @keyframes appendixGlow {
+        0% {
+          box-shadow: 0 0 0 0 rgba(0, 113, 227, 0.5);
+        }
+        40% {
+          box-shadow: 0 0 0 4px rgba(0, 113, 227, 0.25);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(0, 113, 227, 0);
+        }
+      }
     </style>
   </head>
   <body>
@@ -487,7 +645,7 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
       </section>
 
       <!-- Slide 2: Nỗi đau thị trường -->
-      <section class="slide-section slide-section--alt">
+      <section class="slide-section slide-section--alt" id="slide-2">
         <div class="slide-container reveal">
           <div style="text-align: center;">
             <h2 class="slide-title">Tràn ngập phần mềm quản lý, nhưng xài cực kỳ ức chế</h2>
@@ -501,6 +659,18 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
               <p><span style="color: #ff9500;">Sự thật phũ phàng:</span> Cách dùng của các app hiện tại còn phức tạp, nhức đầu và cứng nhắc hơn cả việc ghi sổ tay. Người rành công nghệ nhìn còn hoa mắt, huống hồ các cô chú lớn tuổi.</p>
             </div>
             <p style="margin-top: 24px;"><strong>Hệ quả:</strong> Chủ trọ tải app về háo hức, dùng được 3 ngày thì xoá app trong sự bực tức, quay về dùng Zalo + Sổ tay.</p>
+
+            <div class="appendix-btn-wrap">
+              <button type="button" class="appendix-jump-btn" data-target="appendix-slide-2" aria-label="Xem chi tiết phụ lục cho Slide 2">
+                <span>Phụ lục</span>
+                <i class="appendix-btn-icon" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <polyline points="19 12 12 19 5 12"></polyline>
+                  </svg>
+                </i>
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -530,7 +700,7 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
       </section>
 
       <!-- Slide 4: Sự thay đổi cách làm -->
-      <section class="slide-section slide-section--dark">
+      <section class="slide-section slide-section--dark" id="slide-4">
         <div class="slide-container reveal">
           <div style="text-align: center;">
             <h2 class="slide-title">Không chỉ "Số hoá", roomio "Làm thay" chủ trọ</h2>
@@ -551,11 +721,23 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
             </svg>
             <p><span style="color: var(--roomieverse-blue);">Bức tranh lớn:</span> roomio vận hành như một người quản gia tàng hình, giải phóng chủ trọ khỏi việc nhập liệu tẻ nhạt.</p>
           </div>
+
+          <div class="appendix-btn-wrap reveal delay-300">
+            <button type="button" class="appendix-jump-btn" data-target="appendix-slide-4" aria-label="Xem chi tiết phụ lục cho Slide 4">
+              <span>Phụ lục</span>
+              <i class="appendix-btn-icon" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <polyline points="19 12 12 19 5 12"></polyline>
+                </svg>
+              </i>
+            </button>
+          </div>
         </div>
       </section>
 
       <!-- Slide 5: Rào cản công nghệ -->
-      <section class="slide-section">
+      <section class="slide-section" id="slide-5">
         <div class="slide-container">
           <div class="reveal" style="text-align: center;">
             <h2 class="slide-title">Sự khác biệt không nằm ở tính năng, mà ở cách hệ thống giữ cùng một trạng thái.</h2>
@@ -579,6 +761,18 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
               <p>Xử lý mượt mà các ca "khó đẻ" của thị trường VN (thu nhiều tài khoản, tiền mặt ngoài luồng, trả góp).</p>
             </article>
           </div>
+
+          <div class="appendix-btn-wrap reveal delay-300">
+            <button type="button" class="appendix-jump-btn" data-target="appendix-slide-5" aria-label="Xem chi tiết phụ lục cho Slide 5">
+              <span>Phụ lục</span>
+              <i class="appendix-btn-icon" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <polyline points="19 12 12 19 5 12"></polyline>
+                </svg>
+              </i>
+            </button>
+          </div>
         </div>
       </section>
 
@@ -598,7 +792,7 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
       </section>
 
       <!-- Slide 7: Thị trường -->
-      <section class="slide-section">
+      <section class="slide-section" id="slide-7">
         <div class="slide-container">
           <div class="reveal" style="text-align: center;">
             <h2 class="slide-title">Khai thác Tệp Tỷ đô bằng mô hình thu phí phần mềm</h2>
@@ -611,12 +805,24 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
               <li><strong>Định vị rạch ròi:</strong> roomio giúp chủ nhà tự vận hành tốt hơn, <strong>tuyệt đối KHÔNG</strong> trở thành đơn vị vận hành thay chủ nhà (như Nhatrovn).</li>
               <li><strong>Lợi thế trói chân:</strong> Chi phí chuyển đổi đắt đỏ khiến chủ trọ không thể rời bỏ một khi đã đưa khách thuê vào guồng máy của roomio.</li>
             </ul>
+
+            <div class="appendix-btn-wrap">
+              <button type="button" class="appendix-jump-btn" data-target="appendix-slide-7" aria-label="Xem chi tiết phụ lục cho Slide 7">
+                <span>Phụ lục</span>
+                <i class="appendix-btn-icon" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <polyline points="19 12 12 19 5 12"></polyline>
+                  </svg>
+                </i>
+              </button>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- Slide 8: Chiến thuật -->
-      <section class="slide-section slide-section--alt">
+      <section class="slide-section slide-section--alt" id="slide-8">
         <div class="slide-container">
           <div class="reveal" style="text-align: center;">
             <h2 class="slide-title">Chiến thuật "Đánh Du Kích" & Hòn Tuyết Lăn</h2>
@@ -635,6 +841,18 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
               <h3>Đáy đại dương xanh</h3>
               <p>Tập trung gom tệp chủ trọ nhỏ lẻ (5-15 phòng) - tệp bị các phần mềm đối thủ chê và bỏ rơi.</p>
             </article>
+          </div>
+
+          <div class="appendix-btn-wrap reveal delay-300">
+            <button type="button" class="appendix-jump-btn" data-target="appendix-slide-8" aria-label="Xem chi tiết phụ lục cho Slide 8">
+              <span>Phụ lục</span>
+              <i class="appendix-btn-icon" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <polyline points="19 12 12 19 5 12"></polyline>
+                </svg>
+              </i>
+            </button>
           </div>
         </div>
       </section>
@@ -701,7 +919,7 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
       </section>
 
       <!-- Slide 12: Kế hoạch vốn -->
-      <section class="slide-section slide-section--alt">
+      <section class="slide-section slide-section--alt" id="slide-12">
         <div class="slide-container reveal">
           <div style="text-align: center;">
             <h2 class="slide-title">Biến sản phẩm thô thành "Cỗ máy kiếm khách"</h2>
@@ -723,6 +941,18 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
                 <h3>Giai đoạn 3 (Tăng tốc)</h3>
                 <p>Mở rộng kênh phân phối, thử nghiệm mức giá. Chuẩn hoá quy trình chăm sóc khách hàng.</p>
               </article>
+            </div>
+
+            <div class="appendix-btn-wrap">
+              <button type="button" class="appendix-jump-btn" data-target="appendix-slide-12" aria-label="Xem chi tiết phụ lục cho Slide 12">
+                <span>Phụ lục</span>
+                <i class="appendix-btn-icon" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <polyline points="19 12 12 19 5 12"></polyline>
+                  </svg>
+                </i>
+              </button>
             </div>
           </div>
         </div>
@@ -749,7 +979,7 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
 
         <div class="reveal" style="max-width: 960px; margin: 60px auto 0; width: 100%;">
           <div class="apple-accordion-list">
-            <details class="apple-accordion-item">
+            <details class="apple-accordion-item" id="appendix-slide-2">
               <summary class="apple-accordion-header">
                 <span class="apple-accordion-title">Slide 2: Nỗi đau & Đối thủ</span>
                 <span class="apple-accordion-icon" aria-hidden="true">
@@ -760,10 +990,21 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
               </summary>
               <div class="apple-accordion-content">
                 <p>Đánh giá đối thủ bằng "Khả năng hoàn tất 1 công việc". Bấm giờ và đếm click chuột. roomio luôn tốn ít bước hơn, UX mượt hơn.</p>
+                <div class="appendix-return-wrap">
+                  <button type="button" class="appendix-jump-btn appendix-jump-btn--return" data-return="slide-2" aria-label="Quay lại Slide 2">
+                    <span>Quay lại</span>
+                    <i class="appendix-btn-icon" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="19" x2="12" y2="5"></line>
+                        <polyline points="5 12 12 5 19 12"></polyline>
+                      </svg>
+                    </i>
+                  </button>
+                </div>
               </div>
             </details>
 
-            <details class="apple-accordion-item">
+            <details class="apple-accordion-item" id="appendix-slide-4">
               <summary class="apple-accordion-header">
                 <span class="apple-accordion-title">Slide 4: Tại sao lúc này?</span>
                 <span class="apple-accordion-icon" aria-hidden="true">
@@ -774,10 +1015,21 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
               </summary>
               <div class="apple-accordion-content">
                 <p>1. Phổ cập QR Code ngân hàng. 2. Gen Z (người thuê) đòi hỏi sự minh bạch trực tuyến thay vì ghi chép trên giấy mờ ảo.</p>
+                <div class="appendix-return-wrap">
+                  <button type="button" class="appendix-jump-btn appendix-jump-btn--return" data-return="slide-4" aria-label="Quay lại Slide 4">
+                    <span>Quay lại</span>
+                    <i class="appendix-btn-icon" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="19" x2="12" y2="5"></line>
+                        <polyline points="5 12 12 5 19 12"></polyline>
+                      </svg>
+                    </i>
+                  </button>
+                </div>
               </div>
             </details>
 
-            <details class="apple-accordion-item">
+            <details class="apple-accordion-item" id="appendix-slide-5">
               <summary class="apple-accordion-header">
                 <span class="apple-accordion-title">Slide 5: Kiến trúc</span>
                 <span class="apple-accordion-icon" aria-hidden="true">
@@ -788,10 +1040,21 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
               </summary>
               <div class="apple-accordion-content">
                 <p>Dùng Telegram thay vì Zalo để tiết kiệm chi phí gửi tin. Kiến trúc chạy ẩn: Chủ trọ đi ngủ, bot vẫn đi nhắc nợ khách.</p>
+                <div class="appendix-return-wrap">
+                  <button type="button" class="appendix-jump-btn appendix-jump-btn--return" data-return="slide-5" aria-label="Quay lại Slide 5">
+                    <span>Quay lại</span>
+                    <i class="appendix-btn-icon" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="19" x2="12" y2="5"></line>
+                        <polyline points="5 12 12 5 19 12"></polyline>
+                      </svg>
+                    </i>
+                  </button>
+                </div>
               </div>
             </details>
 
-            <details class="apple-accordion-item">
+            <details class="apple-accordion-item" id="appendix-slide-7">
               <summary class="apple-accordion-header">
                 <span class="apple-accordion-title">Slide 7: Mô hình kinh doanh</span>
                 <span class="apple-accordion-icon" aria-hidden="true">
@@ -802,10 +1065,21 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
               </summary>
               <div class="apple-accordion-content">
                 <p>Chỉ làm Pure SaaS. Biên lợi nhuận cực cao, mở rộng quy mô bằng Server, tuyệt đối không sa lầy vào vận hành (O2O) như Nhatrovn.</p>
+                <div class="appendix-return-wrap">
+                  <button type="button" class="appendix-jump-btn appendix-jump-btn--return" data-return="slide-7" aria-label="Quay lại Slide 7">
+                    <span>Quay lại</span>
+                    <i class="appendix-btn-icon" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="19" x2="12" y2="5"></line>
+                        <polyline points="5 12 12 5 19 12"></polyline>
+                      </svg>
+                    </i>
+                  </button>
+                </div>
               </div>
             </details>
 
-            <details class="apple-accordion-item">
+            <details class="apple-accordion-item" id="appendix-slide-8">
               <summary class="apple-accordion-header">
                 <span class="apple-accordion-title">Slide 8: Chân dung khách</span>
                 <span class="apple-accordion-icon" aria-hidden="true">
@@ -816,10 +1090,21 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
               </summary>
               <div class="apple-accordion-content">
                 <p>Tập trung người dùng ngay: Chủ tự vận hành, phòng đang tăng, hay quên công nợ. Bỏ qua các nhà quá nhỏ hoặc DN lớn.</p>
+                <div class="appendix-return-wrap">
+                  <button type="button" class="appendix-jump-btn appendix-jump-btn--return" data-return="slide-8" aria-label="Quay lại Slide 8">
+                    <span>Quay lại</span>
+                    <i class="appendix-btn-icon" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="19" x2="12" y2="5"></line>
+                        <polyline points="5 12 12 5 19 12"></polyline>
+                      </svg>
+                    </i>
+                  </button>
+                </div>
               </div>
             </details>
 
-            <details class="apple-accordion-item">
+            <details class="apple-accordion-item" id="appendix-slide-12">
               <summary class="apple-accordion-header">
                 <span class="apple-accordion-title">Slide 12: Tiêu tiền</span>
                 <span class="apple-accordion-icon" aria-hidden="true">
@@ -830,6 +1115,17 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
               </summary>
               <div class="apple-accordion-content">
                 <p>Không chạy Ads diện rộng. Dùng Marketing du kích (hoa hồng, quà tặng, ưu đãi pilot) để chốt sale. Chuẩn bị kịch bản Upsell nếu Quỹ mạnh.</p>
+                <div class="appendix-return-wrap">
+                  <button type="button" class="appendix-jump-btn appendix-jump-btn--return" data-return="slide-12" aria-label="Quay lại Slide 12">
+                    <span>Quay lại</span>
+                    <i class="appendix-btn-icon" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="19" x2="12" y2="5"></line>
+                        <polyline points="5 12 12 5 19 12"></polyline>
+                      </svg>
+                    </i>
+                  </button>
+                </div>
               </div>
             </details>
           </div>
@@ -879,6 +1175,48 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
 
         document.querySelectorAll('.reveal').forEach((element) => {
           revealObserver.observe(element);
+        });
+
+        // Jump to appendix dropdown & auto-open
+        document.querySelectorAll('.appendix-jump-btn[data-target]').forEach((btn) => {
+          btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = btn.getAttribute('data-target');
+            const targetDetails = document.getElementById(targetId);
+            if (!targetDetails) return;
+
+            // Automatically open dropdown
+            targetDetails.open = true;
+
+            // Highlight animation effect
+            targetDetails.classList.add('is-target');
+            setTimeout(() => targetDetails.classList.remove('is-target'), 1500);
+
+            // Smoothly scroll down to target appendix item
+            targetDetails.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          });
+        });
+
+        // Return from appendix item: auto-close dropdown & scroll back to original slide
+        document.querySelectorAll('.appendix-jump-btn[data-return]').forEach((btn) => {
+          btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const returnId = btn.getAttribute('data-return');
+            const targetSlide = document.getElementById(returnId);
+            const details = btn.closest('details');
+
+            // Scroll up to originating slide
+            if (targetSlide) {
+              targetSlide.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+
+            // Close the dropdown cleanly
+            if (details) {
+              setTimeout(() => {
+                details.open = false;
+              }, 250);
+            }
+          });
         });
       });
     </script>
