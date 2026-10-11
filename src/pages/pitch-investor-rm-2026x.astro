@@ -234,10 +234,11 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
       .delay-200 { transition-delay: 0.2s; }
       .delay-300 { transition-delay: 0.3s; }
       
-      /* Appendix Hero Slide (Apple-style expansive card) */
-      .slide-section--appendix-cover {
+      /* Appendix Section (Apple-style expansive card on gray background) */
+      .slide-section--appendix {
         max-width: 100%;
-        padding: 40px 24px 20px;
+        padding-top: 60px;
+        padding-bottom: 120px;
       }
       
       .appendix-hero-wrapper {
@@ -247,9 +248,9 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
         margin: 0 auto;
         border-radius: 36px;
         overflow: hidden;
-        background: #f0f4fc;
-        box-shadow: 0 20px 60px rgba(7, 23, 51, 0.06);
-        border: 1px solid rgba(7, 23, 51, 0.08);
+        background: #ffffff;
+        box-shadow: 0 20px 60px rgba(7, 23, 51, 0.05);
+        border: 1px solid rgba(7, 23, 51, 0.06);
       }
       
       .appendix-hero-img {
@@ -266,7 +267,7 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
         left: 8.5%;
         transform: translateY(-50%);
         text-align: left;
-        width: 44%;
+        width: 48%;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -274,20 +275,20 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
       }
       
       .appendix-hero-title {
-        font-size: clamp(2.4rem, 5.2vw, 4.5rem);
+        font-size: clamp(3rem, 6.8vw, 5.8rem);
         font-weight: 800;
         color: #071733;
-        line-height: 1.1;
-        letter-spacing: -0.03em;
+        line-height: 1.05;
+        letter-spacing: -0.04em;
         margin: 0;
       }
       
       .appendix-hero-subtitle {
-        font-size: clamp(1.1rem, 2.2vw, 1.75rem);
+        font-size: clamp(1.4rem, 2.8vw, 2.4rem);
         font-weight: 500;
         color: #86868b;
-        letter-spacing: -0.01em;
-        margin-top: clamp(8px, 1.2vw, 14px);
+        letter-spacing: -0.02em;
+        margin-top: clamp(8px, 1.4vw, 16px);
         margin-bottom: 0;
       }
     </style>
@@ -554,9 +555,9 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
         </div>
       </section>
 
-      <!-- Appendix Cover Slide -->
-      <section class="slide-section slide-section--appendix-cover">
-        <div class="reveal">
+      <!-- Appendix Section (Cover + Details wrapped in gray background) -->
+      <section class="slide-section slide-section--alt slide-section--appendix">
+        <div class="reveal" style="max-width: 1360px; margin: 0 auto; width: 100%;">
           <div class="appendix-hero-wrapper">
             <img 
               src="/pitch/appendix-cover.webp" 
@@ -572,11 +573,8 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
             </div>
           </div>
         </div>
-      </section>
 
-      <!-- Appendix Section -->
-      <section class="slide-section slide-section--alt" style="padding-top: 40px; padding-bottom: 120px;">
-        <div class="slide-container reveal">
+        <div class="slide-container reveal" style="margin-top: 60px;">
           <div class="apple-grid" style="margin-top: 0;">
             <article class="apple-card">
               <h3 style="font-size: 1.2rem;">Slide 2: Nỗi đau & Đối thủ</h3>
