@@ -233,6 +233,60 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
       .delay-100 { transition-delay: 0.1s; }
       .delay-200 { transition-delay: 0.2s; }
       .delay-300 { transition-delay: 0.3s; }
+      
+      /* Appendix Hero Slide */
+      .appendix-hero-wrapper {
+        position: relative;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        border-radius: 36px;
+        overflow: hidden;
+        background: #f0f4fc;
+        box-shadow: 0 20px 60px rgba(7, 23, 51, 0.06);
+        border: 1px solid rgba(7, 23, 51, 0.08);
+      }
+      
+      .appendix-hero-img {
+        width: 100%;
+        height: auto;
+        display: block;
+        aspect-ratio: 1672 / 941;
+        object-fit: contain;
+      }
+      
+      .appendix-hero-text {
+        position: absolute;
+        top: 40%;
+        left: 29%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 44%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        pointer-events: none;
+      }
+      
+      .appendix-hero-title {
+        font-size: clamp(2.2rem, 5.5vw, 4.6rem);
+        font-weight: 800;
+        color: #071733;
+        line-height: 1.05;
+        letter-spacing: -0.04em;
+        margin: 0;
+      }
+      
+      .appendix-hero-subtitle {
+        font-size: clamp(0.75rem, 1.6vw, 1.25rem);
+        font-weight: 700;
+        color: #66728a;
+        text-transform: uppercase;
+        letter-spacing: 0.22em;
+        margin-top: clamp(6px, 1.2vw, 14px);
+        margin-bottom: 0;
+      }
     </style>
   </head>
   <body>
@@ -497,11 +551,30 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
         </div>
       </section>
 
-      <!-- Appendix Section -->
-      <section class="slide-section slide-section--alt" style="padding-bottom: 120px;">
+      <!-- Appendix Cover Slide -->
+      <section class="slide-section" style="padding: 40px 20px 20px;">
         <div class="slide-container reveal">
-          <h2 class="slide-title" style="font-size: 2.5rem; margin-top: 40px;">Phụ Lục (Appendix)</h2>
-          <div class="apple-grid" style="margin-top: 30px;">
+          <div class="appendix-hero-wrapper">
+            <img 
+              src="/pitch/appendix-cover.png" 
+              alt="Phụ lục - roomio" 
+              class="appendix-hero-img"
+              width="1672"
+              height="941"
+              loading="lazy"
+            />
+            <div class="appendix-hero-text">
+              <h2 class="appendix-hero-title">Phụ lục</h2>
+              <p class="appendix-hero-subtitle">APPENDIX</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Appendix Section -->
+      <section class="slide-section slide-section--alt" style="padding-top: 40px; padding-bottom: 120px;">
+        <div class="slide-container reveal">
+          <div class="apple-grid" style="margin-top: 0;">
             <article class="apple-card">
               <h3 style="font-size: 1.2rem;">Slide 2: Nỗi đau & Đối thủ</h3>
               <p style="font-size: 1rem;">Đánh giá đối thủ bằng "Khả năng hoàn tất 1 công việc". Bấm giờ và đếm click chuột. roomio luôn tốn ít bước hơn, UX mượt hơn.</p>
