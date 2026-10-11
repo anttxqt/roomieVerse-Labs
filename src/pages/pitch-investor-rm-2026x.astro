@@ -383,6 +383,80 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
       .apple-accordion-content p {
         margin: 0;
       }
+      
+      /* Slide 1 Fullscreen Edge-to-edge Hero */
+      .slide-hero-fullscreen {
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background: #f0f4fc;
+      }
+      
+      .slide-hero-wrapper {
+        position: relative;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      
+      .slide-hero-img {
+        width: 100%;
+        height: auto;
+        display: block;
+        aspect-ratio: 1672 / 941;
+        object-fit: contain;
+      }
+      
+      .slide-hero-content {
+        position: absolute;
+        top: 42%;
+        left: 8%;
+        transform: translateY(-50%);
+        width: min(560px, 46%);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        pointer-events: none;
+      }
+      
+      .slide-hero-logo {
+        height: clamp(40px, 5.5vw, 68px);
+        width: auto;
+        object-fit: contain;
+        margin-bottom: clamp(14px, 2vw, 28px);
+        display: block;
+      }
+      
+      .slide-hero-title {
+        font-size: clamp(2rem, 3.8vw, 3.3rem);
+        font-weight: 800;
+        color: #071733;
+        line-height: 1.15;
+        letter-spacing: -0.035em;
+        margin: 0;
+        -webkit-text-stroke: 0.8px #071733;
+        paint-order: stroke fill;
+      }
+      
+      @media (max-width: 768px) {
+        .slide-hero-img {
+          min-height: 380px;
+          object-fit: cover;
+          object-position: 80% center;
+        }
+        .slide-hero-content {
+          top: 50%;
+          left: 6%;
+          width: 60%;
+        }
+        .slide-hero-title {
+          font-size: clamp(1.6rem, 5vw, 2.2rem);
+        }
+      }
     </style>
   </head>
   <body>
@@ -394,14 +468,20 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
     </header>
 
     <main style="padding-top: 64px;">
-      <!-- Slide 1: Mở màn -->
-      <section class="slide-section" style="min-height: 80vh; display: flex; align-items: center;">
-        <div class="slide-container reveal">
-          <img src="/brand/roomio.png" alt="roomio Logo" style="height: 80px; margin: 0 auto 40px; object-fit: contain; display: block;" />
-          <h1 class="slide-title">Ứng dụng chốt điện nước & thu tiền trọ</h1>
-          <p class="slide-content" style="font-size: clamp(1.2rem, 2vw, 1.5rem);">
-            Phần mềm duy nhất mà cô chú 50 tuổi không cần ai hướng dẫn cũng xài được.<br/>Dễ hơn ghi sổ, mượt hơn mọi đối thủ.
-          </p>
+      <!-- Slide 1: Mở màn (Full bleed edge-to-edge) -->
+      <section class="slide-hero-fullscreen">
+        <div class="slide-hero-wrapper">
+          <img 
+            src="/pitch/hero-cover.webp" 
+            alt="roomio - Ứng dụng chốt điện nước & thu tiền trọ" 
+            class="slide-hero-img"
+            width="1672"
+            height="941"
+          />
+          <div class="slide-hero-content reveal">
+            <img src="/brand/roomio.png" alt="roomio Logo" class="slide-hero-logo" />
+            <h1 class="slide-hero-title">Ứng dụng chốt điện nước & thu tiền trọ</h1>
+          </div>
         </div>
       </section>
 
