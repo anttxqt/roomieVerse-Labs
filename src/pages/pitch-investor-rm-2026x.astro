@@ -994,7 +994,7 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
 
         <div class="reveal" style="max-width: 960px; margin: 60px auto 0; width: 100%;">
           <div class="apple-accordion-list">
-            <details class="apple-accordion-item" id="appendix-slide-2">
+            <details class="apple-accordion-item" id="appendix-slide-2" name="pitch-appendix">
               <summary class="apple-accordion-header">
                 <span class="apple-accordion-title">Slide 2: Nỗi đau & Đối thủ</span>
                 <span class="apple-accordion-icon" aria-hidden="true">
@@ -1019,7 +1019,7 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
               </div>
             </details>
 
-            <details class="apple-accordion-item" id="appendix-slide-4">
+            <details class="apple-accordion-item" id="appendix-slide-4" name="pitch-appendix">
               <summary class="apple-accordion-header">
                 <span class="apple-accordion-title">Slide 4: Tại sao lúc này?</span>
                 <span class="apple-accordion-icon" aria-hidden="true">
@@ -1044,7 +1044,7 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
               </div>
             </details>
 
-            <details class="apple-accordion-item" id="appendix-slide-5">
+            <details class="apple-accordion-item" id="appendix-slide-5" name="pitch-appendix">
               <summary class="apple-accordion-header">
                 <span class="apple-accordion-title">Slide 5: Kiến trúc</span>
                 <span class="apple-accordion-icon" aria-hidden="true">
@@ -1069,7 +1069,7 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
               </div>
             </details>
 
-            <details class="apple-accordion-item" id="appendix-slide-7">
+            <details class="apple-accordion-item" id="appendix-slide-7" name="pitch-appendix">
               <summary class="apple-accordion-header">
                 <span class="apple-accordion-title">Slide 7: Mô hình kinh doanh</span>
                 <span class="apple-accordion-icon" aria-hidden="true">
@@ -1094,7 +1094,7 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
               </div>
             </details>
 
-            <details class="apple-accordion-item" id="appendix-slide-8">
+            <details class="apple-accordion-item" id="appendix-slide-8" name="pitch-appendix">
               <summary class="apple-accordion-header">
                 <span class="apple-accordion-title">Slide 8: Chân dung khách</span>
                 <span class="apple-accordion-icon" aria-hidden="true">
@@ -1119,7 +1119,7 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
               </div>
             </details>
 
-            <details class="apple-accordion-item" id="appendix-slide-12">
+            <details class="apple-accordion-item" id="appendix-slide-12" name="pitch-appendix">
               <summary class="apple-accordion-header">
                 <span class="apple-accordion-title">Slide 12: Tiêu tiền</span>
                 <span class="apple-accordion-icon" aria-hidden="true">
@@ -1199,6 +1199,13 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
             const targetId = btn.getAttribute('data-target');
             const targetDetails = document.getElementById(targetId);
             if (!targetDetails) return;
+
+            // Close all other appendix items
+            document.querySelectorAll('.apple-accordion-item').forEach((item) => {
+              if (item !== targetDetails) {
+                item.open = false;
+              }
+            });
 
             // Automatically open dropdown
             targetDetails.open = true;
