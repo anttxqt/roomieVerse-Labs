@@ -461,20 +461,43 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
       
       @media (max-width: 768px) {
         .slide-hero-img {
-          min-height: 380px;
+          min-height: 400px;
           object-fit: cover;
-          object-position: 80% center;
+          object-position: 18% center;
         }
         .slide-hero-content {
-          top: 38%;
+          top: 36%;
           left: 6%;
-          width: 68%;
+          width: min(320px, 70%);
         }
         .slide-hero-logo {
-          height: clamp(48px, 10vw, 64px);
+          height: clamp(44px, 10vw, 56px);
+          margin-bottom: 12px;
         }
         .slide-hero-title {
-          font-size: clamp(1.45rem, 4.8vw, 2rem);
+          font-size: clamp(1.25rem, 4.4vw, 1.65rem);
+          line-height: 1.2;
+          letter-spacing: -0.03em;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .slide-hero-img {
+          min-height: 390px;
+          object-position: 15% center;
+        }
+        .slide-hero-content {
+          top: 35%;
+          left: 5%;
+          width: min(280px, 72%);
+        }
+        .slide-hero-logo {
+          height: clamp(40px, 11vw, 48px);
+          margin-bottom: 10px;
+        }
+        .slide-hero-title {
+          font-size: clamp(1.15rem, 4.8vw, 1.4rem);
+          line-height: 1.22;
         }
       }
 
