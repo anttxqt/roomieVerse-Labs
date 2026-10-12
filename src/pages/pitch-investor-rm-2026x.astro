@@ -59,6 +59,52 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
         padding-left: 20px;
         padding-right: 20px;
       }
+
+      .slide-section--white {
+        background-color: #ffffff;
+        max-width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .slide-section--white .highlight-box {
+        background: #fbfbfd;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+      }
+
+      .slide-section--pattern-corners {
+        background-color: #ffffff;
+        background-image: url('/pitch/bg-pattern-corners.webp');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        max-width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .slide-section--pattern-border {
+        background-color: #ffffff;
+        background-image: url('/pitch/bg-pattern-border.webp');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        max-width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .slide-section--pattern-geometric {
+        background-color: #ffffff;
+        background-image: url('/pitch/bg-pattern-geometric.webp');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        max-width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
       
       .slide-container {
         max-width: 1200px;
@@ -160,12 +206,16 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
       }
       
-      .slide-section--alt .apple-card {
+      .slide-section--alt .apple-card,
+      .slide-section--pattern-corners .apple-card,
+      .slide-section--pattern-geometric .apple-card {
         background: white;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
       }
 
-      .slide-section--alt .apple-card:hover {
+      .slide-section--alt .apple-card:hover,
+      .slide-section--pattern-corners .apple-card:hover,
+      .slide-section--pattern-geometric .apple-card:hover {
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
       }
       
@@ -705,7 +755,7 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
       </section>
 
       <!-- Slide 2: Nỗi đau thị trường -->
-      <section class="slide-section slide-section--alt" id="slide-2">
+      <section class="slide-section slide-section--white" id="slide-2">
         <div class="slide-container reveal">
           <div style="text-align: center;">
             <h2 class="slide-title">Tràn ngập phần mềm quản lý, nhưng xài cực kỳ ức chế</h2>
@@ -738,7 +788,7 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
       </section>
 
       <!-- Slide 3: Giải pháp -->
-      <section class="slide-section">
+      <section class="slide-section slide-section--pattern-corners" id="slide-3">
         <div class="slide-container">
           <div class="reveal" style="text-align: center;">
             <h2 class="slide-title">Không phải "Phần mềm", mà là "Luồng vận hành thông suốt"</h2>
@@ -839,7 +889,7 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
       </section>
 
       <!-- Slide 6: Demo -->
-      <section class="slide-section slide-section--alt">
+      <section class="slide-section slide-section--pattern-border" id="slide-6">
         <div class="slide-container reveal">
           <div style="text-align: center;">
             <h2 class="slide-title">Đơn giản đến mức cô chú 50 tuổi cũng dùng được</h2>
@@ -884,7 +934,7 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
       </section>
 
       <!-- Slide 8: Chiến thuật -->
-      <section class="slide-section slide-section--alt" id="slide-8">
+      <section class="slide-section slide-section--pattern-geometric" id="slide-8">
         <div class="slide-container">
           <div class="reveal" style="text-align: center;">
             <h2 class="slide-title">Chiến thuật "Đánh Du Kích" & Hòn Tuyết Lăn</h2>
