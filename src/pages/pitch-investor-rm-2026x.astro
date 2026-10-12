@@ -73,40 +73,66 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
       }
 
-      .slide-section--pattern-corners {
-        background-color: #ffffff;
-        background-image: url('/pitch/bg-pattern-corners.webp');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        max-width: 100%;
-        padding-left: 20px;
-        padding-right: 20px;
-      }
-
-      .slide-section--pattern-border {
-        background-color: #ffffff;
-        background-image: url('/pitch/bg-pattern-border.webp');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        max-width: 100%;
-        padding-left: 20px;
-        padding-right: 20px;
-      }
-
+      .slide-section--pattern-corners,
+      .slide-section--pattern-border,
       .slide-section--pattern-geometric {
+        position: relative;
         background-color: #ffffff;
-        background-image: url('/pitch/bg-pattern-geometric.webp');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
         max-width: 100%;
         padding-left: 20px;
         padding-right: 20px;
+      }
+
+      .slide-section--pattern-corners::before,
+      .slide-section--pattern-border::before,
+      .slide-section--pattern-geometric::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        pointer-events: none;
+        z-index: 0;
+        -webkit-mask-image: linear-gradient(
+          to bottom,
+          transparent 0%,
+          rgba(0, 0, 0, 0.3) 50px,
+          rgba(0, 0, 0, 0.8) 110px,
+          #000000 180px,
+          #000000 calc(100% - 180px),
+          rgba(0, 0, 0, 0.8) calc(100% - 110px),
+          rgba(0, 0, 0, 0.3) calc(100% - 50px),
+          transparent 100%
+        );
+        mask-image: linear-gradient(
+          to bottom,
+          transparent 0%,
+          rgba(0, 0, 0, 0.3) 50px,
+          rgba(0, 0, 0, 0.8) 110px,
+          #000000 180px,
+          #000000 calc(100% - 180px),
+          rgba(0, 0, 0, 0.8) calc(100% - 110px),
+          rgba(0, 0, 0, 0.3) calc(100% - 50px),
+          transparent 100%
+        );
+      }
+
+      .slide-section--pattern-corners::before {
+        background-image: url('/pitch/bg-pattern-corners.webp');
+      }
+
+      .slide-section--pattern-border::before {
+        background-image: url('/pitch/bg-pattern-border.webp');
+      }
+
+      .slide-section--pattern-geometric::before {
+        background-image: url('/pitch/bg-pattern-geometric.webp');
       }
       
       .slide-container {
+        position: relative;
+        z-index: 1;
         max-width: 1200px;
         margin: 0 auto;
       }
