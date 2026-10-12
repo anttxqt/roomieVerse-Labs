@@ -578,49 +578,51 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
       }
 
       .appendix-jump-btn span {
-        display: inline-block;
-        overflow: hidden;
-        max-width: 240px;
-        white-space: nowrap;
-        transition: max-width 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease, margin 0.35s ease;
-      }
-
-      .appendix-jump-btn:hover span {
-        max-width: 0;
-        opacity: 0;
-        margin: 0;
-      }
-
-      .appendix-btn-icon {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: 0;
-        height: 0;
+        white-space: nowrap;
+        transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1), transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+        pointer-events: none;
+      }
+
+      .appendix-jump-btn:hover span {
         opacity: 0;
-        overflow: hidden;
+        transform: translateY(16px);
+      }
+
+      .appendix-jump-btn--return:hover span {
+        opacity: 0;
+        transform: translateY(-16px);
+      }
+
+      .appendix-btn-icon {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
         pointer-events: none;
         color: currentColor;
-        transform: translateY(-8px) scale(0.6);
-        transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1), height 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        transform: translateY(-22px);
+        transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
       }
 
       .appendix-jump-btn:hover .appendix-btn-icon {
-        width: 26px;
-        height: 26px;
         opacity: 1;
-        transform: translateY(0) scale(1);
+        transform: translateY(0);
       }
 
       .appendix-jump-btn--return .appendix-btn-icon {
-        transform: translateY(8px) scale(0.6);
+        transform: translateY(22px);
       }
 
       .appendix-jump-btn--return:hover .appendix-btn-icon {
-        width: 26px;
-        height: 26px;
         opacity: 1;
-        transform: translateY(0) scale(1);
+        transform: translateY(0);
       }
 
       /* Dark mode section adaptation */
