@@ -639,9 +639,7 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
 
       /* Return button container inside accordion content */
       .appendix-return-wrap {
-        margin-top: 24px;
-        padding-top: 18px;
-        border-top: 1px solid rgba(0, 0, 0, 0.06);
+        margin-top: 20px;
         display: flex;
         justify-content: flex-start;
       }
@@ -697,7 +695,7 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
             width="1672"
             height="941"
           />
-          <div class="slide-hero-content reveal">
+          <div class="slide-hero-content">
             <img src="/brand/roomio.png" alt="roomio Logo" class="slide-hero-logo" />
             <h1 class="slide-hero-title">Hệ thống tự động hoá giúp chủ nhà quản lý phòng cho thuê khoẻ re</h1>
           </div>
@@ -1226,6 +1224,71 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
 
     <script is:inline>
       document.addEventListener('DOMContentLoaded', () => {
+        // Slide 1 Hero Intro Animation: Logo starts in center, scales & moves to target as background fades in
+        const heroWrapper = document.querySelector('.slide-hero-wrapper');
+        const heroLogo = document.querySelector('.slide-hero-logo');
+        const heroImg = document.querySelector('.slide-hero-img');
+        const heroTitle = document.querySelector('.slide-hero-title');
+
+        if (heroWrapper && heroLogo && heroImg) {
+          const wrapperRect = heroWrapper.getBoundingClientRect();
+          const logoRect = heroLogo.getBoundingClientRect();
+
+          const centerX = wrapperRect.left + wrapperRect.width / 2;
+          const centerY = wrapperRect.top + wrapperRect.height / 2;
+          const logoCenterX = logoRect.left + logoRect.width / 2;
+          const logoCenterY = logoRect.top + logoRect.height / 2;
+
+          const deltaX = centerX - logoCenterX;
+          const deltaY = centerY - logoCenterY;
+          const scale = window.innerWidth <= 768 ? 1.35 : 1.65;
+
+          // Initial state: logo centered & enlarged, background & title hidden
+          heroLogo.style.transition = 'none';
+          heroLogo.style.transform = `translate3d(${deltaX}px, ${deltaY}px, 0) scale(${scale})`;
+          heroImg.style.transition = 'none';
+          heroImg.style.opacity = '0';
+          if (heroTitle) {
+            heroTitle.style.transition = 'none';
+            heroTitle.style.opacity = '0';
+            heroTitle.style.transform = 'translateY(16px)';
+          }
+
+          // Force reflow
+          heroLogo.offsetHeight;
+
+          // Animate back to original position while fading in the background
+          setTimeout(() => {
+            const ease = '1.15s cubic-bezier(0.16, 1, 0.3, 1)';
+            heroLogo.style.transition = `transform ${ease}`;
+            heroLogo.style.transform = 'translate3d(0, 0, 0) scale(1)';
+
+            heroImg.style.transition = 'opacity 1.25s cubic-bezier(0.16, 1, 0.3, 1)';
+            heroImg.style.opacity = '1';
+
+            if (heroTitle) {
+              setTimeout(() => {
+                heroTitle.style.transition = 'opacity 0.95s cubic-bezier(0.16, 1, 0.3, 1), transform 0.95s cubic-bezier(0.16, 1, 0.3, 1)';
+                heroTitle.style.opacity = '1';
+                heroTitle.style.transform = 'translateY(0)';
+              }, 120);
+            }
+
+            // Clean up inline styles after animation finishes
+            setTimeout(() => {
+              heroLogo.style.transform = '';
+              heroLogo.style.transition = '';
+              heroImg.style.opacity = '';
+              heroImg.style.transition = '';
+              if (heroTitle) {
+                heroTitle.style.opacity = '';
+                heroTitle.style.transform = '';
+                heroTitle.style.transition = '';
+              }
+            }, 1600);
+          }, 350);
+        }
+
         const revealObserver = new IntersectionObserver((entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
