@@ -36,6 +36,7 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
         border-radius: 999px;
         font-size: 13px;
         font-weight: 700;
+        white-space: nowrap;
       }
       
       .slide-section {
@@ -496,6 +497,24 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
         margin: 0;
         padding: 0;
       }
+
+      .slide-hero-wrapper::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 160px;
+        background: linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0.4) 45%,
+          rgba(255, 255, 255, 0.85) 80%,
+          #ffffff 100%
+        );
+        pointer-events: none;
+        z-index: 2;
+      }
       
       .slide-hero-img {
         width: 100%;
@@ -503,6 +522,22 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
         display: block;
         aspect-ratio: 1672 / 941;
         object-fit: contain;
+        -webkit-mask-image: linear-gradient(
+          to bottom,
+          #000000 0%,
+          #000000 calc(100% - 160px),
+          rgba(0, 0, 0, 0.75) calc(100% - 100px),
+          rgba(0, 0, 0, 0.3) calc(100% - 40px),
+          transparent 100%
+        );
+        mask-image: linear-gradient(
+          to bottom,
+          #000000 0%,
+          #000000 calc(100% - 160px),
+          rgba(0, 0, 0, 0.75) calc(100% - 100px),
+          rgba(0, 0, 0, 0.3) calc(100% - 40px),
+          transparent 100%
+        );
       }
       
       .slide-hero-content {
@@ -558,6 +593,13 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
       }
 
       @media (max-width: 480px) {
+        .pitch-header {
+          padding: 0 16px;
+        }
+        .pitch-badge {
+          font-size: 11px;
+          padding: 3px 8px;
+        }
         .slide-hero-img {
           min-height: 390px;
           object-position: 15% center;
@@ -759,7 +801,7 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
       <div style="width: 120px;">
         <img src="/brand/roomio.png" alt="roomio logo" style="width: 100%; object-fit: contain;" />
       </div>
-      <div class="pitch-badge">Pre-Seed Pitch</div>
+      <div class="pitch-badge">Pre-Seed Pre-Revenue Pitch</div>
     </header>
 
     <main style="padding-top: 64px;">

@@ -2325,4 +2325,28 @@ body.is-loaded .hero-copy h1 strong {
     min-width: 80px !important;
     padding-inline: 12px !important;
   }
+
+  /* Roomieverse & Roomibase Keynote Mobile Grids */
+  .keynote-grid--roomieverse,
+  .keynote-grid--roomibase {
+    grid-template-columns: 1fr !important;
+    grid-auto-rows: auto !important;
+    gap: 12px !important;
+    padding: 0 16px !important;
+  }
+
+  .keynote-grid--roomieverse > .apple-card,
+  .keynote-grid--roomibase > .apple-card {
+    grid-column: span 1 !important;
+    grid-row: auto !important;
+    min-height: 90px !important;
+  }
+
+  .keynote-grid--roomieverse > .apple-card--centerpiece,
+  .keynote-grid--roomibase > .apple-card--centerpiece {
+    grid-column: span 1 !important;
+    grid-row: auto !important;
+    min-height: 140px !important;
+    order: -1;
+  }
 }
