@@ -1067,8 +1067,19 @@ assertPitchFundingData()
         background: var(--blue);
       }
 
-      #slide-12 .apple-grid {
+      #slide-12 .apple-grid--stack {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
         text-align: left;
+      }
+
+      #slide-12 .apple-grid--stack .apple-card {
+        width: 100%;
+        box-sizing: border-box;
       }
 
       /* Appendix budget tables (roomio pricing-inspired) */
@@ -1527,7 +1538,7 @@ assertPitchFundingData()
               ))}
             </div>
             
-            <div class="apple-grid" style="text-align: left;">
+            <div class="apple-grid apple-grid--stack">
               <article class="apple-card reveal delay-100">
                 <h3>Giai đoạn 1 · Tháng 1–3</h3>
                 <p>Hoàn thiện quy trình lõi cùng 1 Dev freelance. Bán cho nhóm chủ trọ nhỏ ở tỉnh, làm tại nhà để giữ chi phí thấp. Mốc: ~40 chủ trọ trả phí.</p>
