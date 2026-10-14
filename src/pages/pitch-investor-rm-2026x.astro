@@ -212,6 +212,23 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
         gap: 40px;
         margin-top: 60px;
       }
+
+      .apple-grid--pair {
+        grid-template-columns: 1fr;
+      }
+
+      @media (min-width: 768px) {
+        .apple-grid--pair {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      .highlight-box--full-width {
+        max-width: none;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+      }
       
       .apple-card {
         border-radius: 36px;
@@ -861,13 +878,13 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
       </section>
 
       <!-- Slide 3: Giải pháp -->
-      <section class="slide-section slide-section--pattern-corners" id="slide-3">
+      <section class="slide-section slide-section--white" id="slide-3">
         <div class="slide-container">
           <div class="reveal" style="text-align: center;">
-            <h2 class="slide-title">Không phải "Phần mềm", mà là "Luồng vận hành thông suốt"</h2>
+            <h2 class="slide-title" style="color: var(--blue);">Không phải "Phần mềm", mà là "Luồng vận hành thông suốt"</h2>
           </div>
           
-          <div class="apple-grid">
+          <div class="apple-grid apple-grid--pair">
             <article class="apple-card reveal delay-100">
               <h3>Bản chất vấn đề</h3>
               <p>Các app hiện tại cũng có tự động hoá, cũng xuất bill. NHƯNG vì sợ tốn phí Zalo, đối thủ phải "hà tiện" tin nhắn, ép chủ trọ phải tự mò mẫm mở app lên để kiểm tra.</p>
@@ -876,10 +893,13 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
               <h3>Cách roomio làm</h3>
               <p>roomio không làm thêm 1 cái "app quản lý" rác. roomio đúc kết một luồng vận hành duy nhất, tiện nhất.</p>
             </article>
-            <article class="apple-card reveal delay-300">
-              <h3>Vũ khí cốt lõi</h3>
-              <p>Khai thác Bot Telegram làm kênh thông báo nội bộ cho Chủ trọ. Bắn thông tin liên tục, tức thì (Tiền về, xuất bill, nợ đọng) với chi phí 0 đồng. Chủ trọ cảm thấy có người đang làm việc thay mình.</p>
-            </article>
+          </div>
+
+          <div class="highlight-box highlight-box--full-width reveal delay-300">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: #ff9500; margin-bottom: 24px; display: block;">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+            <p><span style="color: #ff9500;">Vậy, roomio khác gì?</span> Khai thác Bot Telegram làm kênh thông báo nội bộ cho Chủ trọ. Bắn thông tin liên tục, tức thì (Tiền về, xuất bill, nợ đọng) với chi phí 0 đồng. Chủ trọ cảm thấy có người đang làm việc thay mình.</p>
           </div>
         </div>
       </section>
