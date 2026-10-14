@@ -2035,7 +2035,8 @@ assertPitchFundingData()
             setTimeout(() => targetDetails.classList.remove('is-target'), 2200);
 
             // Smoothly scroll down to target appendix item
-            targetDetails.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            const tall = targetDetails.offsetHeight > window.innerHeight * 0.8;
+            targetDetails.scrollIntoView({ behavior: 'smooth', block: tall ? 'start' : 'center' });
           });
         });
 
