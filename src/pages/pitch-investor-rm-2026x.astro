@@ -109,6 +109,12 @@ const pitchAssumptions = [
   'Mở rộng vòng: tháng 13–18 tính theo mức chi tháng 7–12 (96.180.000 đ/tháng), chưa tính doanh thu. 15 tháng cần 1.524.098.000 đ; $75,000 (1.927.500.000 đ) còn dư ~403 triệu. 18 tháng cần 1.812.638.000 đ; $100,000 (2.570.000.000 đ) còn dư ~757 triệu.',
 ]
 
+const pitchInvestorReturn = [
+  'Trả lại nhà đầu tư bằng cổ tức khi có lãi.',
+  'Hoà vốn hằng tháng ở khoảng 500 chủ trọ.',
+  'Không đặt mục tiêu bán công ty.',
+]
+
 function parsePitchVnd(value) {
   if (!value || value === '–') return 0
   return Number(String(value).replace(/\./g, '').replace(/[^\d]/g, '')) || 0
@@ -1061,15 +1067,6 @@ assertPitchFundingData()
         background: var(--blue);
       }
 
-      .pitch-fund-footnote {
-        margin: 32px auto 0;
-        max-width: 900px;
-        text-align: center;
-        color: #86868b;
-        font-size: 1rem;
-        line-height: 1.55;
-      }
-
       #slide-12 .apple-grid {
         text-align: left;
       }
@@ -1545,8 +1542,6 @@ assertPitchFundingData()
               </article>
             </div>
 
-            <p class="pitch-fund-footnote">Trả lại nhà đầu tư bằng cổ tức khi có lãi. Hoà vốn hằng tháng ở khoảng 500 chủ trọ. Không đặt mục tiêu bán công ty.</p>
-
             <div class="appendix-btn-wrap">
               <button type="button" class="appendix-jump-btn" data-target="appendix-slide-12" aria-label="Xem thêm phụ lục cho Slide 12">
                 <span>Xem thêm phụ lục</span>
@@ -1884,6 +1879,15 @@ assertPitchFundingData()
                   <h4 class="pitch-budget-block__title">5. Giả định chính</h4>
                   <ul class="pitch-budget-assumptions">
                     {pitchAssumptions.map((item) => (
+                      <li>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div class="pitch-budget-block">
+                  <h4 class="pitch-budget-block__title">6. Cách trả lại nhà đầu tư</h4>
+                  <ul class="pitch-budget-assumptions">
+                    {pitchInvestorReturn.map((item) => (
                       <li>{item}</li>
                     ))}
                   </ul>
