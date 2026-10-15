@@ -1263,11 +1263,11 @@ assertPitchFundingData()
           <div class="slide-3-bento">
             <article class="apple-card reveal delay-100">
               <h3>Bản chất vấn đề</h3>
-              <p>Các app hiện tại cũng có tự động hoá, cũng xuất bill. NHƯNG vì sợ tốn phí Zalo, đối thủ phải "hà tiện" tin nhắn, ép chủ trọ phải tự mò mẫm mở app lên để kiểm tra.</p>
+              <p>Các app hiện tại chỉ là nơi ghi số, ghi sổ. Chủ trọ vẫn phải chạy qua lại giữa khách và app để cập nhật thông tin.</p>
             </article>
             <article class="apple-card reveal delay-200">
               <h3>Cách roomio làm</h3>
-              <p>roomio không làm thêm 1 cái "app quản lý" rác. roomio đúc kết một luồng vận hành duy nhất, tiện nhất.</p>
+              <p>roomio không phải thêm một app quản lý kiểu đó nữa. roomio giúp chủ trọ tối đa trong luồng vận hành đó, tự động hoá nhiều nhất có thể.</p>
             </article>
 
             <div class="highlight-box highlight-box--full-width reveal delay-300">
@@ -1600,6 +1600,22 @@ assertPitchFundingData()
               </summary>
               <div class="apple-accordion-content">
                 <p>Đánh giá đối thủ bằng "Khả năng hoàn tất 1 công việc". Bấm giờ và đếm click chuột. roomio luôn tốn ít bước hơn, UX mượt hơn.</p>
+
+                <div class="pitch-budget-block">
+                  <h4 class="pitch-budget-block__title">Mình đã kiểm thế nào</h4>
+                  <p>Mình đóng vai chủ trọ, dùng thử LOZIDO, eNha, Mona House và một số app khác. Mỗi app chạy đủ một vòng, từ lúc nhận khách mới tới lúc khách trả phòng.</p>
+                </div>
+
+                <div class="pitch-budget-block">
+                  <h4 class="pitch-budget-block__title">Bản đồ đối thủ</h4>
+                  <ul class="pitch-budget-assumptions">
+                    <li>Bên lớn (Resident, AirCity): nhắm nguyên toà chung cư, chuỗi hàng trăm phòng. Không làm thuần phần mềm, mà bán thêm thiết bị như khoá thông minh nối vào hệ thống của họ.</li>
+                    <li>Phần mềm cho chủ trọ (LOZIDO, eNha, Mona House): có thâm niên, nhưng chỉ là nơi ghi số, ghi sổ. LOZIDO còn ôm cả tìm việc làm, tìm phòng trọ trong cùng một app, nên giao diện rối.</li>
+                    <li>Excel + Zalo: cách phần lớn chủ trọ đang làm. Các chủ trọ đồng ý dùng thử roomio đều đang làm theo cách này.</li>
+                    <li>Chỗ trống: chủ nhà bình thường chỉ cần một phần mềm nhẹ, làm đúng việc chính. Chưa ai làm tới nơi.</li>
+                  </ul>
+                </div>
+
                 <div class="appendix-return-wrap">
                   <button type="button" class="appendix-jump-btn appendix-jump-btn--return" data-return="slide-2" aria-label="Quay lại Slide 2">
                     <span>Quay lại</span>
@@ -1627,6 +1643,50 @@ assertPitchFundingData()
                 <p><strong>Luồng vận hành</strong> ở slide này là cách chủ nhà quản lý <strong>thông tin và công việc lặp lại trên hệ thống</strong>: hồ sơ phòng và khách thuê, chốt điện nước, xuất hoá đơn, nhắc nợ, gạch nợ, báo cáo — một chuỗi liền mạch, ít bước thừa, không phải nhảy qua lại giữa app, Zalo và sổ tay.</p>
                 <p><strong>Không phải</strong> roomio ôm việc vận hành bên ngoài phần mềm: tìm khách, sale phòng, đăng tin, chạy marketing, hay thay chủ trọ làm quản lý tại chỗ theo mô hình O2O. Các nền tảng kiểu Nhatro.vn thường kéo thêm marketplace, lead và dịch vụ vận hành — roomio <strong>không</strong> đi hướng đó.</p>
                 <p>Chủ nhà vẫn là người quyết định kinh doanh và đối ngoại; roomio chỉ làm phần “quản gia số” — giữ dữ liệu đúng, tự động hoá việc tẻ nhạt, và đẩy thông tin đến chủ trọ lúc cần. Đó là định vị Pure SaaS, tránh sa lầy chi phí vận hành ngoài sản phẩm.</p>
+
+                <div class="pitch-budget-block">
+                  <h4 class="pitch-budget-block__title">Chỗ đứt nằm ở đâu</h4>
+                  <p>Mọi việc chủ trọ phải tự làm tay đều nằm ở chỗ chủ và khách trao đổi với nhau.</p>
+                  <ul class="pitch-budget-assumptions">
+                    <li>Số điện nước: khách gửi số qua kênh riêng của chủ trọ, chủ trọ nhìn ảnh rồi tự nhập vào app. Đây là bước làm tay nặng nhất.</li>
+                    <li>Hoá đơn, nhắc nợ: app lo phần sổ sách của chủ trọ; gửi cho khách thì bỏ lại cho Zalo, hoặc bắt khách tải app riêng chỉ để nhận hoá đơn, quét QR và nhắn chủ trọ.</li>
+                    <li>Tiền: muốn biết ai đã trả, ai còn nợ, chủ trọ phải tự mở app hoặc tự dò sao kê.</li>
+                    <li>Gửi tin qua Zalo tính tiền từng tin, nên các app thường chỉ gửi những tin bắt buộc. Phần còn lại, chủ trọ tự đi hỏi, tự đi kiểm.</li>
+                    <li>Thêm tính năng không vá được chỗ đứt: dù tách các tính năng thừa ra, luồng chính vẫn rời rạc và khó hiểu.</li>
+                  </ul>
+                </div>
+
+                <div class="pitch-budget-block">
+                  <h4 class="pitch-budget-block__title">roomio nối bước chốt số như thế nào</h4>
+                  <ol class="pitch-budget-assumptions">
+                    <li>Tới ngày chốt số, bot tự nhắc khách.</li>
+                    <li>Khách chụp đồng hồ gửi vào chat. Máy đọc số từ ảnh, khách xem lại, sai thì sửa, rồi xác nhận.</li>
+                    <li>Chủ trọ nhận một bộ gồm: ảnh, số khách đã xác nhận, và số do máy đọc lại lần hai bằng một hãng AI khác.</li>
+                    <li>Chủ trọ so lại: đúng thì chốt, sai thì nhập số đúng rồi chốt.</li>
+                    <li>Nếu chủ trọ chốt khác số khách gửi, khách được báo ngay. Không ai sửa lén được.</li>
+                  </ol>
+                  <p>Không đụng tới phần cứng (ví dụ công tơ Bluetooth) thì chưa tự động hoàn toàn được. roomio chọn làm thuần phần mềm, và sẽ tiếp tục rút ngắn bước này.</p>
+                </div>
+
+                <div class="pitch-budget-block">
+                  <h4 class="pitch-budget-block__title">Vì sao chọn Telegram</h4>
+                  <ul class="pitch-budget-assumptions">
+                    <li>Telegram không phải một app làm ít việc mà vẫn bắt khách tải: có đủ chat, chatbot, mini app, nên chủ trọ với khách nói chuyện hai chiều ngay tức thì.</li>
+                    <li>Telegram được tối ưu rất sâu, máy yếu, máy cũ vẫn chạy ổn. App riêng của đối thủ khó tối ưu được như vậy.</li>
+                    <li>Gửi tin qua Telegram không tốn phí, nên có việc là roomio báo ngay.</li>
+                    <li>Khách chưa dùng Telegram: hoá đơn đã xem được qua link gửi bằng Zalo; phần gửi số không cần Telegram đang được làm.</li>
+                  </ul>
+                </div>
+
+                <div class="pitch-budget-block">
+                  <h4 class="pitch-budget-block__title">Vì sao chủ trọ ở lại</h4>
+                  <ul class="pitch-budget-assumptions">
+                    <li>Sau khoảng 2 tháng, dữ liệu khách thuê, hoá đơn và lịch sử tiền đã nằm trong roomio.</li>
+                    <li>Chủ trọ không phải mở app để kiểm tra. Việc thường thì tóm tắt mỗi sáng, việc gấp thì báo ngay. Chủ trọ luôn biết tiền bạc, phòng ốc của mình đang ra sao.</li>
+                    <li>Với những chủ trọ dùng thử đầu tiên, mình sẽ đo: sau tháng 2 còn dùng không, bao nhiêu phần trăm hoá đơn đi qua roomio, và thời gian chốt sổ mỗi tháng trước và sau khi dùng.</li>
+                  </ul>
+                </div>
+
                 <div class="appendix-return-wrap">
                   <button type="button" class="appendix-jump-btn appendix-jump-btn--return" data-return="slide-3" aria-label="Quay lại Slide 3">
                     <span>Quay lại</span>
