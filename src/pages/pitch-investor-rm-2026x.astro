@@ -631,6 +631,10 @@ assertPitchFundingData()
       .apple-accordion-header:hover .apple-accordion-title {
         color: #0071e3;
       }
+
+      .apple-accordion-item[open] > .apple-accordion-header .apple-accordion-title {
+        color: var(--blue);
+      }
       
       .apple-accordion-icon {
         display: flex;
@@ -990,7 +994,7 @@ assertPitchFundingData()
           color: var(--blue);
         }
         100% {
-          color: #1d1d1f;
+          color: var(--blue);
         }
       }
 
@@ -1263,7 +1267,7 @@ assertPitchFundingData()
           <div class="slide-3-bento">
             <article class="apple-card reveal delay-100">
               <h3>Bản chất vấn đề</h3>
-              <p>Các app hiện tại chỉ là nơi ghi số, ghi sổ. Chủ trọ vẫn phải chạy qua lại giữa khách và app để cập nhật thông tin.</p>
+              <p>Các app hiện tại chỉ là nơi ghi số, ghi sổ. Không khác gì một bản Excel khó dùng hơn cả. Chủ trọ vẫn phải chạy qua lại giữa khách và app để cập nhật thông tin.</p>
             </article>
             <article class="apple-card reveal delay-200">
               <h3>Cách roomio làm</h3>
@@ -1274,7 +1278,8 @@ assertPitchFundingData()
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--blue); margin-bottom: 24px; display: block;">
                 <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
               </svg>
-              <p><span style="color: var(--blue);">Vậy, roomio khác gì?</span> Khai thác Bot Telegram làm kênh thông báo nội bộ cho Chủ trọ. Bắn thông tin liên tục, tức thì (Tiền về, xuất bill, nợ đọng) với chi phí 0 đồng. Chủ trọ cảm thấy có người đang làm việc thay mình.</p>
+              <p><span style="color: var(--blue);">Vậy, roomio khác gì?</span></p>
+              <p>Khai thác Bot Telegram làm kênh thông báo nội bộ cho Chủ trọ. Bắn thông tin liên tục, tức thì (Tiền về, xuất bill, nợ đọng) với chi phí 0 đồng. Chủ trọ cảm thấy có người đang làm việc thay mình.</p>
             </div>
           </div>
 
