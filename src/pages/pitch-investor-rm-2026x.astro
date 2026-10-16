@@ -1620,7 +1620,7 @@ assertPitchFundingData()
                   <ul class="pitch-budget-assumptions">
                     <li>Bên lớn (Resident, AirCity): nhắm nguyên toà chung cư, chuỗi hàng trăm phòng. Không làm thuần phần mềm, mà bán thêm thiết bị như khoá thông minh nối vào hệ thống của họ.</li>
                     <li>Phần mềm cho chủ trọ (LOZIDO, eNha, Mona House): có thâm niên, nhưng chỉ là nơi ghi số, ghi sổ. LOZIDO còn ôm cả tìm việc làm, tìm phòng trọ trong cùng một app, nên giao diện rối.</li>
-                    <li>Excel + Zalo: cách phần lớn chủ trọ đang làm. Các chủ trọ đồng ý dùng thử roomio đều đang làm theo cách này.</li>
+                    <li>Excel + Zalo: cách phần lớn chủ trọ đang làm. Cả 3 chủ trọ đồng ý dùng thử roomio đều đang làm theo cách này.</li>
                     <li>Chỗ trống: chủ nhà bình thường chỉ cần một phần mềm nhẹ, làm đúng việc chính. Chưa ai làm tới nơi.</li>
                   </ul>
                 </div>
@@ -1660,8 +1660,17 @@ assertPitchFundingData()
                     <li>Số điện nước: khách gửi số qua kênh riêng của chủ trọ, chủ trọ nhìn ảnh rồi tự nhập vào app. Đây là bước làm tay nặng nhất.</li>
                     <li>Hoá đơn, nhắc nợ: app lo phần sổ sách của chủ trọ; gửi cho khách thì bỏ lại cho Zalo, hoặc bắt khách tải app riêng chỉ để nhận hoá đơn, quét QR và nhắn chủ trọ.</li>
                     <li>Tiền: muốn biết ai đã trả, ai còn nợ, chủ trọ phải tự mở app hoặc tự dò sao kê.</li>
-                    <li>Gửi tin qua Zalo tính tiền từng tin, nên các app thường chỉ gửi những tin bắt buộc. Phần còn lại, chủ trọ tự đi hỏi, tự đi kiểm.</li>
                     <li>Thêm tính năng không vá được chỗ đứt: dù tách các tính năng thừa ra, luồng chính vẫn rời rạc và khó hiểu.</li>
+                  </ul>
+                </div>
+
+                <div class="pitch-budget-block">
+                  <h4 class="pitch-budget-block__title">Chi phí gửi tin: Telegram so với Zalo</h4>
+                  <ul class="pitch-budget-assumptions">
+                    <li>Gửi tin qua Zalo (ZNS) tính tiền từng tin: khoảng 200 đồng một tin thường, 300 đồng một tin yêu cầu thanh toán; thêm nút bấm hay hình ảnh thì cộng thêm.</li>
+                    <li>Mỗi phòng mỗi tháng cần khoảng 5–6 tin: nhắc số, hoá đơn, nhắc nợ, báo đã nhận tiền. Tính ra khoảng 1.000–1.800 đồng mỗi phòng, có thể bằng tới 15% số tiền roomio thu mỗi phòng (12.000–16.000 đồng).</li>
+                    <li>Vì vậy các app gửi qua Zalo thường chỉ gửi tin bắt buộc. Phần còn lại, chủ trọ tự đi hỏi, tự đi kiểm.</li>
+                    <li>Gửi tin qua Telegram bot không tốn phí. Nên roomio báo mọi việc cho chủ trọ ngay khi xảy ra: tiền về, hoá đơn đã soạn, phòng còn nợ. Đó là lý do thông tin có thể tự tìm tới chủ cho thuê một cách liên tục, tức thì, đều.</li>
                   </ul>
                 </div>
 
@@ -1682,7 +1691,6 @@ assertPitchFundingData()
                   <ul class="pitch-budget-assumptions">
                     <li>Telegram không phải một app làm ít việc mà vẫn bắt khách tải: có đủ chat, chatbot, mini app, nên chủ trọ với khách nói chuyện hai chiều ngay tức thì.</li>
                     <li>Telegram được tối ưu rất sâu, máy yếu, máy cũ vẫn chạy ổn. App riêng của đối thủ khó tối ưu được như vậy.</li>
-                    <li>Gửi tin qua Telegram không tốn phí, nên có việc là roomio báo ngay.</li>
                     <li>Khách chưa dùng Telegram: hoá đơn đã xem được qua link gửi bằng Zalo; phần gửi số không cần Telegram đang được làm.</li>
                   </ul>
                 </div>
@@ -1692,7 +1700,7 @@ assertPitchFundingData()
                   <ul class="pitch-budget-assumptions">
                     <li>Sau khoảng 2 tháng, dữ liệu khách thuê, hoá đơn và lịch sử tiền đã nằm trong roomio.</li>
                     <li>Chủ trọ không phải mở app để kiểm tra. Việc thường thì tóm tắt mỗi sáng, việc gấp thì báo ngay. Chủ trọ luôn biết tiền bạc, phòng ốc của mình đang ra sao.</li>
-                    <li>Với những chủ trọ dùng thử đầu tiên, mình sẽ đo: sau tháng 2 còn dùng không, bao nhiêu phần trăm hoá đơn đi qua roomio, và thời gian chốt sổ mỗi tháng trước và sau khi dùng.</li>
+                    <li>Với 3 chủ trọ dùng thử đầu tiên, mình sẽ đo: sau tháng 2 còn dùng không, bao nhiêu phần trăm hoá đơn đi qua roomio, và thời gian chốt sổ mỗi tháng trước và sau khi dùng.</li>
                   </ul>
                 </div>
 
