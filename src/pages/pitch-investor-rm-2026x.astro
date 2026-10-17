@@ -1790,25 +1790,25 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
       <section class="slide-section" id="slide-5">
         <div class="slide-container">
           <div class="reveal" style="text-align: center;">
-            <h2 class="slide-title">Sự khác biệt không nằm ở tính năng, mà ở cách hệ thống giữ cùng một trạng thái.</h2>
+            <h2 class="slide-title">Đối thủ phải đổi hết cách làm hiện tại mới có thể theo "roomio"</h2>
           </div>
           
           <div class="slide-content reveal delay-100" style="margin-bottom: 40px;">
-            <p><strong>Điểm yếu đối thủ:</strong> Các app hiện tại rất nặng, giao diện cực kỳ phức tạp, bắt chủ trọ phải học rất lâu khiến cô chú lớn tuổi nhanh chóng bỏ cuộc.</p>
+            <p>Tính năng thì ai cũng chép được. Cái khó chép là cái luồng chạy song song nằm sau những tính năng đó: hệ thống gửi tin nhắn, hệ thống làm việc ngầm ban đêm, trải nghiệm liền mạch giữa các thiết bị – giữa khách và chủ...</p>
           </div>
 
           <div class="apple-grid">
             <article class="apple-card reveal delay-100">
-              <h3>1. Bề mặt sử dụng linh hoạt</h3>
-              <p>Web cho chủ trọ, Chat (Telegram/Zalo) cho khách thuê. Mỗi bên chỉ thấy phần việc của mình, không bắt ép tải chung 1 app nặng nề.</p>
+              <h3>Hệ thống gửi tin</h3>
+              <p>Nhắc số, hoá đơn, nhắc nợ, báo tiền về đều tự đi. Tin nhắn là xương sống của "roomio", gửi bao nhiêu cũng không lo chi phí.</p>
             </article>
             <article class="apple-card reveal delay-200">
-              <h3>2. Quy trình chung</h3>
-              <p>Hoá đơn, thanh toán, nhắc nợ cùng chạy trên một luồng dữ liệu duy nhất, đồng bộ liên tục.</p>
+              <h3>Chạy ngầm cả khi chủ ngủ</h3>
+              <p>Hệ thống tự soạn hoá đơn nháp, tự nhắc số, tự nhắc nợ theo lịch. Chủ mở ra là thấy việc đã xong, chỉ còn bấm duyệt.</p>
             </article>
             <article class="apple-card reveal delay-300">
-              <h3>3. Sổ quỹ linh hoạt</h3>
-              <p>Xử lý mượt mà các ca "khó đẻ" của thị trường VN (thu nhiều tài khoản, tiền mặt ngoài luồng, trả góp).</p>
+              <h3>Liền mạch hai phía</h3>
+              <p>Chủ làm trên web, khách làm trên Telegram, mọi thứ khớp nhau. Khách gửi số thì chủ thấy ngay, chủ duyệt thì khách nhận hoá đơn trên Telegram.</p>
             </article>
           </div>
 
@@ -2202,6 +2202,40 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
               </summary>
               <div class="apple-accordion-content">
                 <p>Dùng Telegram thay vì Zalo để tiết kiệm chi phí gửi tin. Kiến trúc chạy ẩn: Chủ trọ đi ngủ, bot vẫn đi nhắc nợ khách.</p>
+
+                <div class="pitch-budget-block">
+                  <h4 class="pitch-budget-block__title">Giữ dữ liệu một chỗ là chưa đủ</h4>
+                  <p>App nào tử tế cũng giữ dữ liệu một chỗ. Khác nhau ở chỗ ai ghi vào sổ. Ở các app hiện tại, chỉ chủ cho thuê ghi; phần của khách nằm ngoài hệ thống: ảnh đồng hồ gửi qua Zalo, tiền chuyển vào sao kê ngân hàng, câu hỏi qua tin nhắn. Chủ phải tự chép lại.</p>
+                </div>
+
+                <div class="pitch-budget-block">
+                  <h4 class="pitch-budget-block__title">Khách cùng ghi vào sổ của chủ</h4>
+                  <ul class="pitch-budget-assumptions">
+                    <li>Khách gửi ảnh đồng hồ và xác nhận số ngay trong chat.</li>
+                    <li>Khách nhận hoá đơn qua Telegram và chuyển tiền bằng mã QR.</li>
+                    <li>Tiền về là tự gạch nợ, sổ của chủ tự cập nhật. Không ai phải nhập lại.</li>
+                  </ul>
+                </div>
+
+                <div class="pitch-budget-block">
+                  <h4 class="pitch-budget-block__title">Mỗi người một cửa</h4>
+                  <p>Chủ cho thuê làm trên web, khách thuê làm trên Telegram. Khách chưa dùng Telegram vẫn mở được hoá đơn qua link. Không ai phải tải thêm một app nặng.</p>
+                </div>
+
+                <div class="pitch-budget-block">
+                  <h4 class="pitch-budget-block__title">Sổ quỹ theo thực tế Việt Nam</h4>
+                  <p>Thu qua nhiều tài khoản, nhận tiền mặt, khách trả thiếu hay trả dư, cấn tiền cọc vào nợ: đều vào đúng sổ.</p>
+                </div>
+
+                <div class="pitch-budget-block">
+                  <h4 class="pitch-budget-block__title">Vì sao đối thủ khó làm theo</h4>
+                  <ul class="pitch-budget-assumptions">
+                    <li>Kênh gửi tin: đổi từ Zalo hay app riêng sang Telegram nghĩa là phải kéo cả tệp khách đang dùng sang kênh mới.</li>
+                    <li>Tập trung: app đã nhồi nhiều tính năng như tìm việc làm, tìm phòng trọ thì khó cắt; cắt ra thì luồng chính vẫn rời rạc.</li>
+                    <li>Nhóm khách: bên lớn nhắm toà nhà, chuỗi hàng trăm phòng và bán kèm phần cứng. Chủ cho thuê bình thường, chỉ cần một phần mềm nhẹ, không phải nhóm họ làm.</li>
+                  </ul>
+                </div>
+
                 <div class="appendix-return-wrap">
                   <button type="button" class="appendix-jump-btn appendix-jump-btn--return" data-return="slide-5" aria-label="Quay lại Slide 5">
                     <span>Quay lại</span>
