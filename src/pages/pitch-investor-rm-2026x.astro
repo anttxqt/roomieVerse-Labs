@@ -1190,6 +1190,30 @@ assertPitchFundingData()
         font-size: 0.85em;
       }
 
+      #slide-4 {
+        --pitch-media-aspect: 16 / 9;
+      }
+
+      .pitch-media-slot {
+        width: 100%;
+      }
+
+      .pitch-media-slot__placeholder {
+        aspect-ratio: var(--pitch-media-aspect);
+        width: 100%;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.08);
+        color: rgba(255, 255, 255, 0.55);
+        font-size: 0.95rem;
+        font-weight: 600;
+        text-align: center;
+        padding: 16px;
+        box-sizing: border-box;
+      }
+
     </style>
   </head>
   <body>
@@ -1271,7 +1295,7 @@ assertPitchFundingData()
           <div class="slide-3-bento">
             <article class="apple-card reveal delay-100">
               <h3>Bản chất vấn đề</h3>
-              <p>Các app hiện tại chỉ là nơi ghi số, ghi sổ. Không khác gì một bản Excel khó dùng hơn cả. Chủ trọ vẫn phải chạy qua lại giữa khách và app để cập nhật thông tin.</p>
+              <p>Các app hiện tại chỉ là nơi ghi số, ghi sổ. Không khác gì một bản Excel khó dùng hơn cả. Chủ cho thuê vẫn phải chạy qua lại giữa khách và app để cập nhật thông tin.</p>
             </article>
             <article class="apple-card reveal delay-200">
               <h3>Cách roomio làm</h3>
@@ -1305,23 +1329,46 @@ assertPitchFundingData()
       <section class="slide-section slide-section--dark" id="slide-4">
         <div class="slide-container reveal">
           <div style="text-align: center;">
-            <h2 class="slide-title">Không chỉ "Số hoá", roomio "Làm thay" chủ trọ</h2>
+            <h2 class="slide-title">Một tháng của chủ cho thuê khi có "roomio"</h2>
           </div>
           <div class="slide-content">
-            <p>Các phần mềm ngoài kia bắt chủ trọ đi gom số rồi tự gõ tay vào app. roomio thay đổi hoàn toàn bằng cách giao việc cho Bot:</p>
-            <ul>
-              <li><strong>Chốt điện nước:</strong> Bot tự động nhắc người thuê gửi số qua chat. roomio đọc số, chủ trọ chỉ việc bấm "Duyệt". Không cần đi gõ cửa từng phòng.</li>
-              <li><strong>Đòi nợ tự động:</strong> Hệ thống liên tục "nhắc khéo" người thuê đóng tiền cho đến khi hoàn tất. Chủ trọ thoát cảnh đi đòi nợ mệt mỏi.</li>
-              <li><strong>Gạch nợ & Báo cáo:</strong> Khách chuyển khoản -> Tự gạch nợ -> Bot nội bộ báo cáo tóm tắt mỗi sáng cho chủ trọ. Chủ trọ không cần mở app lên check.</li>
-            </ul>
+            <p>Các phần mềm hiện tại vẫn để chủ cho thuê đi gom số rồi nhập tay vào app. Chỉ bằng phần mềm thì chưa thể tự động hoàn toàn, nhưng "roomio" đã giao phần việc đó cho một hệ thống chạy ngầm song song với chủ, tự động hoá tới mức cao nhất có thể hiện nay. Và "roomio" vẫn đang tiếp tục giải bài toán đó chứ không dừng lại.</p>
           </div>
+
+          <div class="apple-grid">
+            <article class="apple-card reveal delay-100">
+              <h3>Chốt điện nước</h3>
+              <!-- MEDIA SLOT: replace placeholder with <img> or <video> from /pitch/slide-4/card-1.* -->
+              <div class="pitch-media-slot" data-slot="slide-4-card-1">
+                <div class="pitch-media-slot__placeholder">Hình: Chốt điện nước</div>
+              </div>
+              <p>Bot tự động nhắc người thuê gửi số qua chat. roomio đọc số, chủ cho thuê chỉ việc bấm "Duyệt". Không cần đi gõ cửa từng phòng.</p>
+            </article>
+            <article class="apple-card reveal delay-200">
+              <h3>Đòi nợ tự động</h3>
+              <!-- MEDIA SLOT: replace placeholder with <img> or <video> from /pitch/slide-4/card-2.* -->
+              <div class="pitch-media-slot" data-slot="slide-4-card-2">
+                <div class="pitch-media-slot__placeholder">Hình: Đòi nợ</div>
+              </div>
+              <p>Hệ thống liên tục "nhắc khéo" người thuê đóng tiền cho đến khi hoàn tất. Chủ cho thuê thoát cảnh đi đòi nợ mệt mỏi.</p>
+            </article>
+            <article class="apple-card reveal delay-300">
+              <h3>Gạch nợ &amp; Báo cáo</h3>
+              <!-- MEDIA SLOT: replace placeholder with <img> or <video> from /pitch/slide-4/card-3.* -->
+              <div class="pitch-media-slot" data-slot="slide-4-card-3">
+                <div class="pitch-media-slot__placeholder">Hình: Gạch nợ</div>
+              </div>
+              <p>Khách chuyển khoản -> Tự gạch nợ -> Bot nội bộ báo cáo tóm tắt mỗi sáng cho chủ cho thuê. Chủ cho thuê không cần mở app lên check.</p>
+            </article>
+          </div>
+
           <div class="highlight-box reveal delay-200">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--roomieverse-blue); margin-bottom: 24px; display: block;">
               <circle cx="12" cy="12" r="10"></circle>
               <path d="M2 12h20"></path>
               <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
             </svg>
-            <p><span style="color: var(--roomieverse-blue);">Bức tranh lớn:</span> roomio vận hành như một người quản gia tàng hình, giải phóng chủ trọ khỏi việc nhập liệu tẻ nhạt.</p>
+            <p><span style="color: var(--roomieverse-blue);">Bức tranh lớn:</span> roomio vận hành như một người quản gia tàng hình, giải phóng chủ cho thuê khỏi việc nhập liệu tẻ nhạt.</p>
           </div>
 
           <div class="appendix-btn-wrap reveal delay-300">
