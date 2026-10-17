@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css'
+import { getImage, Picture } from 'astro:assets'
+import type { ImageMetadata } from 'astro'
 import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
 
 const pitchFundingBars = [
@@ -152,6 +154,106 @@ function assertPitchFundingData() {
 }
 
 assertPitchFundingData()
+
+const slide4ImageGlob = import.meta.glob('../assets/pitch/slide-4/*.{png,jpg,jpeg,webp}', {
+  eager: true,
+  import: 'default',
+}) as Record<string, ImageMetadata>
+
+const slide4VideoGlob = import.meta.glob('../assets/pitch/slide-4/*.mp4', {
+  eager: true,
+  query: '?url',
+  import: 'default',
+}) as Record<string, string>
+
+function slide4Basename(path: string) {
+  return path.split('/').pop()?.split('?')[0]?.toLowerCase() ?? ''
+}
+
+function slide4CardImage(n: number): ImageMetadata | undefined {
+  for (const [path, meta] of Object.entries(slide4ImageGlob)) {
+    const name = slide4Basename(path)
+    if (name === `card-${n}.png` || name === `card-${n}.jpg` || name === `card-${n}.jpeg` || name === `card-${n}.webp`) {
+      return meta
+    }
+  }
+  return undefined
+}
+
+function slide4CardPoster(n: number): ImageMetadata | undefined {
+  for (const [path, meta] of Object.entries(slide4ImageGlob)) {
+    const name = slide4Basename(path)
+    if (
+      name === `card-${n}-poster.png` ||
+      name === `card-${n}-poster.jpg` ||
+      name === `card-${n}-poster.jpeg` ||
+      name === `card-${n}-poster.webp`
+    ) {
+      return meta
+    }
+  }
+  return slide4CardImage(n)
+}
+
+function slide4CardVideo(n: number): string | undefined {
+  for (const [path, url] of Object.entries(slide4VideoGlob)) {
+    if (slide4Basename(path) === `card-${n}.mp4`) return url
+  }
+  return undefined
+}
+
+type Slide4SlotConfig = {
+  n: number
+  dataSlot: string
+  placeholder: string
+  alt: string
+  widths: number[]
+  sizes: string
+}
+
+const slide4Slots: Slide4SlotConfig[] = [
+  {
+    n: 1,
+    dataSlot: 'slide-4-card-1',
+    placeholder: 'Hình: Chốt điện nước',
+    alt: 'Bot nhắc khách gửi số điện nước và màn duyệt số của chủ cho thuê',
+    widths: [600, 900, 1200],
+    sizes: '(min-width: 768px) calc((min(100vw - 40px, 1200px) - 32px) / 2), calc(100vw - 40px)',
+  },
+  {
+    n: 2,
+    dataSlot: 'slide-4-card-2',
+    placeholder: 'Hình: Đòi nợ',
+    alt: 'Hoá đơn kèm mã QR và tin nhắc nợ trên Telegram',
+    widths: [600, 900, 1200],
+    sizes: '(min-width: 768px) calc((min(100vw - 40px, 1200px) - 32px) / 2), calc(100vw - 40px)',
+  },
+  {
+    n: 3,
+    dataSlot: 'slide-4-card-3',
+    placeholder: 'Hình: Gạch nợ',
+    alt: 'Tin báo đã nhận tiền và hoá đơn chuyển sang đã trả',
+    widths: [480, 720, 960],
+    sizes:
+      '(min-width: 768px) calc((min(100vw - 40px, 1200px) - 96px - 40px) * 0.42), calc(100vw - 120px)',
+  },
+]
+
+async function resolveSlide4SlotMedia(slot: Slide4SlotConfig) {
+  const videoUrl = slide4CardVideo(slot.n)
+  const image = slide4CardImage(slot.n)
+  const posterMeta = slide4CardPoster(slot.n)
+  let posterUrl: string | undefined
+
+  if (posterMeta) {
+    const optimized = await getImage({ src: posterMeta, width: slot.widths[slot.widths.length - 1], format: 'webp' })
+    posterUrl = optimized.src
+  }
+
+  return { videoUrl, image, posterMeta, posterUrl }
+}
+
+const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4SlotMedia(slot)))
 
 ---
 
@@ -1192,6 +1294,7 @@ assertPitchFundingData()
 
       #slide-4 {
         --slide4-row-a-cols: 1fr 1fr;
+        --slide4-caption-inset: 0px;
         --pitch-media-aspect-row-a: 4 / 3;
         --pitch-media-aspect-card-3: 16 / 9;
       }
@@ -1221,7 +1324,9 @@ assertPitchFundingData()
 
       #slide-4 .slide-4-media-tile__caption {
         margin: 0;
-        text-align: center;
+        text-align: left;
+        padding-left: var(--slide4-caption-inset);
+        padding-right: var(--slide4-caption-inset);
         font-size: clamp(1rem, 1.35vw, 1.15rem);
         line-height: 1.5;
         color: rgba(255, 255, 255, 0.7);
@@ -1244,6 +1349,73 @@ assertPitchFundingData()
 
       #slide-4 .pitch-media-slot[data-slot="slide-4-card-3"] {
         --pitch-media-aspect: var(--pitch-media-aspect-card-3);
+      }
+
+      #slide-4 .pitch-media-slot__frame {
+        aspect-ratio: var(--pitch-media-aspect, 16 / 9);
+        width: 100%;
+        max-width: 100%;
+        border-radius: 28px;
+        overflow: hidden;
+        position: relative;
+        box-sizing: border-box;
+        display: grid;
+      }
+
+      #slide-4 .pitch-media-slot__frame > :global(picture),
+      #slide-4 .pitch-media-slot__frame > .pitch-media-slot__video,
+      #slide-4 .pitch-media-slot__frame > .pitch-media-slot__video-poster {
+        grid-area: 1 / 1;
+        width: 100%;
+        height: 100%;
+        min-width: 0;
+        min-height: 0;
+      }
+
+      #slide-4 .pitch-media-slot__frame :global(img),
+      #slide-4 .pitch-media-slot__frame :global(picture) {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+
+      #slide-4 .pitch-media-slot__frame :global(img) {
+        object-fit: cover;
+        border-radius: 28px;
+      }
+
+      #slide-4 .pitch-media-slot__video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        border-radius: 28px;
+      }
+
+      #slide-4 .pitch-media-slot__video-poster {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+        pointer-events: none;
+      }
+
+      #slide-4 .pitch-media-slot__video-poster :global(img) {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 28px;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        #slide-4 .pitch-media-slot__video {
+          display: none;
+        }
+
+        #slide-4 .pitch-media-slot__video-poster {
+          display: block;
+        }
       }
 
       #slide-4 .pitch-media-slot__placeholder {
@@ -1434,16 +1606,102 @@ assertPitchFundingData()
 
           <div class="slide-4-row-a">
             <div class="slide-4-media-tile reveal delay-100">
-              <!-- MEDIA SLOT: replace placeholder with <img> or <video> from /pitch/slide-4/card-1.* -->
-              <div class="pitch-media-slot" data-slot="slide-4-card-1">
-                <div class="pitch-media-slot__placeholder">Hình: Chốt điện nước</div>
+              <!-- MEDIA SLOT: drop card-1.(png|jpg|webp) or card-1.mp4 + card-1-poster.* into src/assets/pitch/slide-4/ -->
+              <div class="pitch-media-slot" data-slot={slide4Slots[0].dataSlot}>
+                {
+                  slide4Media[0].videoUrl ? (
+                    <div class="pitch-media-slot__frame">
+                      <video
+                        class="pitch-media-slot__video"
+                        autoplay
+                        muted
+                        loop
+                        playsinline
+                        preload="metadata"
+                        poster={slide4Media[0].posterUrl}
+                        aria-label={slide4Slots[0].alt}
+                      >
+                        <source src={slide4Media[0].videoUrl} type="video/mp4" />
+                      </video>
+                      {slide4Media[0].posterMeta ? (
+                        <Picture
+                          class="pitch-media-slot__video-poster"
+                          src={slide4Media[0].posterMeta}
+                          alt={slide4Slots[0].alt}
+                          formats={['avif', 'webp']}
+                          widths={slide4Slots[0].widths}
+                          sizes={slide4Slots[0].sizes}
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      ) : null}
+                    </div>
+                  ) : slide4Media[0].image ? (
+                    <div class="pitch-media-slot__frame">
+                      <Picture
+                        src={slide4Media[0].image}
+                        alt={slide4Slots[0].alt}
+                        formats={['avif', 'webp']}
+                        widths={slide4Slots[0].widths}
+                        sizes={slide4Slots[0].sizes}
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+                  ) : (
+                    <div class="pitch-media-slot__placeholder">{slide4Slots[0].placeholder}</div>
+                  )
+                }
               </div>
               <p class="slide-4-media-tile__caption"><strong>Chốt điện nước.</strong> Bot tự động nhắc người thuê gửi số qua chat. roomio đọc số, chủ cho thuê chỉ việc bấm "Duyệt". Không cần đi gõ cửa từng phòng.</p>
             </div>
             <div class="slide-4-media-tile reveal delay-200">
-              <!-- MEDIA SLOT: replace placeholder with <img> or <video> from /pitch/slide-4/card-2.* -->
-              <div class="pitch-media-slot" data-slot="slide-4-card-2">
-                <div class="pitch-media-slot__placeholder">Hình: Đòi nợ</div>
+              <!-- MEDIA SLOT: drop card-2.(png|jpg|webp) or card-2.mp4 + card-2-poster.* into src/assets/pitch/slide-4/ -->
+              <div class="pitch-media-slot" data-slot={slide4Slots[1].dataSlot}>
+                {
+                  slide4Media[1].videoUrl ? (
+                    <div class="pitch-media-slot__frame">
+                      <video
+                        class="pitch-media-slot__video"
+                        autoplay
+                        muted
+                        loop
+                        playsinline
+                        preload="metadata"
+                        poster={slide4Media[1].posterUrl}
+                        aria-label={slide4Slots[1].alt}
+                      >
+                        <source src={slide4Media[1].videoUrl} type="video/mp4" />
+                      </video>
+                      {slide4Media[1].posterMeta ? (
+                        <Picture
+                          class="pitch-media-slot__video-poster"
+                          src={slide4Media[1].posterMeta}
+                          alt={slide4Slots[1].alt}
+                          formats={['avif', 'webp']}
+                          widths={slide4Slots[1].widths}
+                          sizes={slide4Slots[1].sizes}
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      ) : null}
+                    </div>
+                  ) : slide4Media[1].image ? (
+                    <div class="pitch-media-slot__frame">
+                      <Picture
+                        src={slide4Media[1].image}
+                        alt={slide4Slots[1].alt}
+                        formats={['avif', 'webp']}
+                        widths={slide4Slots[1].widths}
+                        sizes={slide4Slots[1].sizes}
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+                  ) : (
+                    <div class="pitch-media-slot__placeholder">{slide4Slots[1].placeholder}</div>
+                  )
+                }
               </div>
               <p class="slide-4-media-tile__caption"><strong>Đòi nợ tự động.</strong> Hệ thống liên tục "nhắc khéo" người thuê đóng tiền cho đến khi hoàn tất. Chủ cho thuê thoát cảnh đi đòi nợ mệt mỏi.</p>
             </div>
@@ -1451,9 +1709,52 @@ assertPitchFundingData()
 
           <div class="highlight-box slide-4-row-b reveal delay-300">
             <div class="slide-4-row-b__inner">
-              <!-- MEDIA SLOT: replace placeholder with <img> or <video> from /pitch/slide-4/card-3.* -->
-              <div class="pitch-media-slot" data-slot="slide-4-card-3">
-                <div class="pitch-media-slot__placeholder">Hình: Gạch nợ</div>
+              <!-- MEDIA SLOT: drop card-3.(png|jpg|webp) or card-3.mp4 + card-3-poster.* into src/assets/pitch/slide-4/ -->
+              <div class="pitch-media-slot" data-slot={slide4Slots[2].dataSlot}>
+                {
+                  slide4Media[2].videoUrl ? (
+                    <div class="pitch-media-slot__frame">
+                      <video
+                        class="pitch-media-slot__video"
+                        autoplay
+                        muted
+                        loop
+                        playsinline
+                        preload="metadata"
+                        poster={slide4Media[2].posterUrl}
+                        aria-label={slide4Slots[2].alt}
+                      >
+                        <source src={slide4Media[2].videoUrl} type="video/mp4" />
+                      </video>
+                      {slide4Media[2].posterMeta ? (
+                        <Picture
+                          class="pitch-media-slot__video-poster"
+                          src={slide4Media[2].posterMeta}
+                          alt={slide4Slots[2].alt}
+                          formats={['avif', 'webp']}
+                          widths={slide4Slots[2].widths}
+                          sizes={slide4Slots[2].sizes}
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      ) : null}
+                    </div>
+                  ) : slide4Media[2].image ? (
+                    <div class="pitch-media-slot__frame">
+                      <Picture
+                        src={slide4Media[2].image}
+                        alt={slide4Slots[2].alt}
+                        formats={['avif', 'webp']}
+                        widths={slide4Slots[2].widths}
+                        sizes={slide4Slots[2].sizes}
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+                  ) : (
+                    <div class="pitch-media-slot__placeholder">{slide4Slots[2].placeholder}</div>
+                  )
+                }
               </div>
               <div class="slide-4-row-b__text">
                 <h3>Gạch nợ &amp; Báo cáo</h3>
