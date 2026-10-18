@@ -1194,8 +1194,8 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
 
       #slide-5 {
         --slide5-head-col: 36%;
-        --slide5-accent-1: var(--blue);
-        --slide5-accent-2: #0d9488;
+        --slide5-accent-1: #ff9500;
+        --slide5-accent-2: #34c759;
         --slide5-accent-3: #7c3aed;
       }
 
@@ -1216,8 +1216,11 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
         width: 100%;
         box-sizing: border-box;
         background: #fff;
-        border: 1px solid var(--slide5-accent-1);
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+        border-style: solid;
+        border-width: 1px;
+        border-color: var(--slide5-accent-1);
+        box-shadow: none;
+        transition: border-width 0.2s ease, transform 0.3s ease, box-shadow 0.3s ease;
       }
 
       #slide-5 .apple-grid .apple-card:nth-child(1) {
@@ -1245,7 +1248,9 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
       }
 
       #slide-5 .apple-grid .apple-card:hover {
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+        border-width: 2px;
+        box-shadow: none;
+        transform: none;
       }
 
       @media (min-width: 768px) {
