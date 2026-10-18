@@ -1192,6 +1192,33 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
         box-sizing: border-box;
       }
 
+      #slide-5 {
+        --slide5-head-col: 32%;
+      }
+
+      #slide-5 .apple-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        width: 100%;
+        max-width: none;
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      #slide-5 .apple-grid .apple-card {
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      @media (min-width: 768px) {
+        #slide-5 .apple-grid .apple-card {
+          display: grid;
+          grid-template-columns: var(--slide5-head-col) 1fr;
+          align-items: center;
+          column-gap: 40px;
+        }
+      }
+
       /* Appendix budget tables (roomio pricing-inspired) */
       .pitch-budget-block {
         margin-top: 32px;
@@ -1807,8 +1834,8 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
               <p>Hệ thống tự soạn hoá đơn nháp, tự nhắc số, tự nhắc nợ theo lịch. Chủ mở ra là thấy việc đã xong, chỉ còn bấm duyệt.</p>
             </article>
             <article class="apple-card reveal delay-300">
-              <h3>Liền mạch hai phía</h3>
-              <p>Chủ làm trên web, khách làm trên Telegram, mọi thứ khớp nhau. Khách gửi số thì chủ thấy ngay, chủ duyệt thì khách nhận hoá đơn trên Telegram.</p>
+              <h3>Trải nghiệm linh hoạt</h3>
+              <p>Cùng một thông tin, xem ở đâu cũng được: chủ xem trên web hay ngay trong Telegram, khách xem trong Telegram hay qua một đường link. Không bị khoá cứng trong một app.</p>
             </article>
           </div>
 
