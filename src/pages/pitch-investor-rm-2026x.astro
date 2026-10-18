@@ -1219,6 +1219,14 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
         }
       }
 
+      #slide-6 {
+        --slide6-title-offset: 24px;
+      }
+
+      #slide-6 .slide-title {
+        padding-top: var(--slide6-title-offset);
+      }
+
       /* Appendix budget tables (roomio pricing-inspired) */
       .pitch-budget-block {
         margin-top: 32px;
