@@ -1194,6 +1194,13 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
 
       #slide-5 {
         --slide5-head-col: 36%;
+        --slide5-accent-1: var(--blue);
+        --slide5-accent-2: #0d9488;
+        --slide5-accent-3: #7c3aed;
+      }
+
+      #slide-5 .slide-title {
+        color: var(--blue);
       }
 
       #slide-5 .apple-grid {
@@ -1208,6 +1215,37 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
       #slide-5 .apple-grid .apple-card {
         width: 100%;
         box-sizing: border-box;
+        background: #fff;
+        border: 1px solid var(--slide5-accent-1);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+      }
+
+      #slide-5 .apple-grid .apple-card:nth-child(1) {
+        border-color: var(--slide5-accent-1);
+      }
+
+      #slide-5 .apple-grid .apple-card:nth-child(1) h3 {
+        color: var(--slide5-accent-1);
+      }
+
+      #slide-5 .apple-grid .apple-card:nth-child(2) {
+        border-color: var(--slide5-accent-2);
+      }
+
+      #slide-5 .apple-grid .apple-card:nth-child(2) h3 {
+        color: var(--slide5-accent-2);
+      }
+
+      #slide-5 .apple-grid .apple-card:nth-child(3) {
+        border-color: var(--slide5-accent-3);
+      }
+
+      #slide-5 .apple-grid .apple-card:nth-child(3) h3 {
+        color: var(--slide5-accent-3);
+      }
+
+      #slide-5 .apple-grid .apple-card:hover {
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
       }
 
       @media (min-width: 768px) {
