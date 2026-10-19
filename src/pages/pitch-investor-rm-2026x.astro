@@ -1305,6 +1305,32 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
         margin-bottom: 32px;
       }
 
+      #slide-7.slide-section--dark .pitch-fund-ask {
+        color: var(--roomieverse-blue);
+      }
+
+      #slide-7.slide-section--dark .pitch-fund-meta {
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      #slide-7.slide-section--dark .pitch-revenue-stat {
+        border-left-color: rgba(255, 255, 255, 0.15);
+      }
+
+      #slide-7.slide-section--dark .pitch-revenue-stat__value {
+        color: var(--roomieverse-blue);
+      }
+
+      #slide-7.slide-section--dark .pitch-revenue-stat__caption {
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      @media (max-width: 768px) {
+        #slide-7.slide-section--dark .pitch-revenue-stat {
+          border-top-color: rgba(255, 255, 255, 0.15);
+        }
+      }
+
       .pitch-revenue-stats {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1353,6 +1379,49 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
           border-top: none;
           padding-top: 0;
         }
+      }
+
+      .pitch-revenue-stats--pair {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      @media (max-width: 768px) {
+        .pitch-revenue-stats--pair {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .pitch-roadmap-pair {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0;
+        margin-top: 40px;
+        text-align: left;
+      }
+
+      @media (min-width: 768px) {
+        .pitch-roadmap-pair {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 24px;
+        }
+      }
+
+      .pitch-roadmap-pair h3,
+      .pitch-roadmap-far h3 {
+        margin: 0 0 16px;
+        color: #1d1d1f;
+        text-align: left;
+        font-size: 1.5rem;
+      }
+
+      .slide-content .pitch-roadmap-pair ul,
+      .slide-content .pitch-roadmap-far ul {
+        margin-top: 0;
+      }
+
+      .pitch-roadmap-far {
+        margin-top: 40px;
+        text-align: left;
       }
 
       .pitch-budget-table--rates {
@@ -2374,7 +2443,7 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
       </section>
 
       <!-- Slide 7: Thị trường -->
-      <section class="slide-section" id="slide-7">
+      <section class="slide-section slide-section--dark" id="slide-7">
         <div class="slide-container">
           <div class="reveal" style="text-align: center;">
             <h2 class="slide-title">Cách "roomio" kiếm tiền</h2>
@@ -2388,9 +2457,22 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
             <p class="pitch-fund-ask">~8.000 phòng</p>
             <p class="pitch-fund-meta pitch-fund-meta--stacked">là đủ hoà vốn, chưa tới 1,5% số phòng trọ ở riêng TP.HCM.</p>
 
-            <p>TP.HCM hiện có khoảng 560.000 phòng trọ, Hà Nội có khoảng 37.000 nhà trọ. Chi phí chạy dịch vụ chủ yếu là máy chủ. Tin nhắn qua Telegram không mất phí, nên phần lớn tiền thu được giữ lại.</p>
+            <div class="pitch-revenue-stats pitch-revenue-stats--pair">
+              <div class="pitch-revenue-stat">
+                <p class="pitch-revenue-stat__value">560.000</p>
+                <p class="pitch-revenue-stat__caption">phòng trọ ở TP.HCM</p>
+              </div>
+              <div class="pitch-revenue-stat">
+                <p class="pitch-revenue-stat__value">37.000</p>
+                <p class="pitch-revenue-stat__caption">nhà trọ ở Hà Nội</p>
+              </div>
+            </div>
 
-            <p class="pitch-fund-meta">Bảng giá hiện tại là bản đầu tiên, đang thử với những chủ cho thuê đầu tiên. "roomio" sẽ còn điều chỉnh cho hợp lý khi có dữ liệu thật. Bảng giá và máy tính phí ở phụ lục.</p>
+            <p>Chi phí chạy dịch vụ chủ yếu là máy chủ. Tin nhắn qua Telegram không mất phí, nên phần lớn tiền thu được giữ lại.</p>
+
+            <div class="highlight-box reveal delay-200">
+              <p><span style="color: var(--roomieverse-blue);">Về giá:</span> Bảng giá hiện tại là bản đầu tiên, đang thử với những chủ cho thuê đầu tiên. "roomio" sẽ còn điều chỉnh cho hợp lý khi có dữ liệu thật. Bảng giá và máy tính phí ở phụ lục.</p>
+            </div>
 
             <p class="pitch-fund-meta">Nguồn: Sở Xây dựng TP.HCM, Công an Hà Nội. Cách tính ở phụ lục.</p>
 
@@ -2487,12 +2569,37 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
             <h2 class="slide-title">Hoàn thiện "Quản gia tàng hình" trước khi bung sức</h2>
           </div>
           <div class="slide-content">
-            <p>roomio hiện tại mới chỉ giải quyết điểm nghẽn lớn nhất (Chốt số & Thu tiền). Hướng phát triển tiếp theo sẽ bám sát vòng đời quản lý:</p>
-            <ul>
-              <li><strong>Số hoá thủ tục:</strong> Ký hợp đồng điện tử (E-contract) và quản lý tiền cọc tự động.</li>
-              <li><strong>Xử lý sự cố:</strong> Quy trình báo cáo hư hỏng phòng ốc và gọi thợ sửa chữa trực tiếp qua Chatbot.</li>
-              <li><strong>Nghiệp vụ nâng cao:</strong> Hỗ trợ tính toán điện 3 pha, nước bậc thang phức tạp cho các toà nhà dịch vụ lớn.</li>
-            </ul>
+            <p>Luồng chính đã chạy. Số vốn này dùng để làm tiếp phần chạy ngầm, phần lớn là chi phí gọi AI (API) và thời gian phát triển.</p>
+
+            <div class="pitch-roadmap-pair">
+              <div>
+                <h3>Đã chạy được</h3>
+                <ul>
+                  <li>Web cho chủ cho thuê; bot Telegram cho khách và cho chủ; mini app cho khách; link hoá đơn cho khách chưa dùng Telegram.</li>
+                  <li>Tự soạn hoá đơn nháp mỗi tháng, nhắc gửi số 3 lần, nhắc nợ 6 lần.</li>
+                  <li>Tiền về qua PayOS thì tự gạch nợ và báo cho cả hai bên.</li>
+                  <li>Bản đầu của máy đọc số đồng hồ: AI đọc ảnh, rồi đọc lại một lần để kiểm.</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Vốn này dùng để làm tiếp</h3>
+                <ul>
+                  <li>Agent chạy ngầm: quản gia AI cho chủ cho thuê, agent nhập dữ liệu từ file Excel cũ, bot bản tin.</li>
+                  <li>Làm chắc máy đọc số: thêm một hãng AI thứ hai để đọc đối chiếu, trả phí AI khi có khách thật, đo và nâng độ chính xác.</li>
+                  <li>Báo cáo tóm tắt mỗi sáng cho chủ, và báo khách ngay khi chủ sửa số.</li>
+                  <li>Khách không dùng Telegram vẫn gửi được số.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="pitch-roadmap-far">
+              <h3>Xa hơn</h3>
+              <ul>
+                <li><strong>Số hoá thủ tục:</strong> Ký hợp đồng điện tử (E-contract) và quản lý tiền cọc tự động.</li>
+                <li><strong>Xử lý sự cố:</strong> Quy trình báo cáo hư hỏng phòng ốc và gọi thợ sửa chữa trực tiếp qua Chatbot.</li>
+                <li><strong>Nghiệp vụ nâng cao:</strong> Hỗ trợ tính toán điện 3 pha, nước bậc thang phức tạp cho các toà nhà dịch vụ lớn.</li>
+              </ul>
+            </div>
             
             <div class="highlight-box reveal delay-200">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: #34c759; margin-bottom: 24px; display: block;">
@@ -2536,7 +2643,7 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
             <div class="apple-grid apple-grid--stack">
               <article class="apple-card reveal delay-100">
                 <h3>Giai đoạn 1 · Tháng 1–3</h3>
-                <p>Hoàn thiện quy trình lõi cùng 1 Dev freelance. Bán cho nhóm chủ trọ nhỏ ở tỉnh, làm tại nhà để giữ chi phí thấp. Mốc: ~40 chủ trọ trả phí.</p>
+                <p>Hoàn thiện quy trình lõi và làm tiếp phần AI chạy ngầm cùng 1 Dev freelance. Bán cho nhóm chủ trọ nhỏ ở tỉnh, làm tại nhà để giữ chi phí thấp. Mốc: ~40 chủ trọ trả phí.</p>
               </article>
               <article class="apple-card reveal delay-200">
                 <h3>Giai đoạn 2 · Tháng 4–6</h3>
