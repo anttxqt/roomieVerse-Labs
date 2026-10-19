@@ -1378,60 +1378,177 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
         color: #1d1d1f;
       }
 
-      .pitch-fee-calc__field input[type='number'] {
-        width: 100%;
-        max-width: 100%;
-        box-sizing: border-box;
-        padding: 10px 12px;
-        border: 1px solid #d2d2d7;
-        border-radius: 12px;
-        font-size: 1rem;
-        color: #1d1d1f;
-        background: #fff;
-      }
-
-      /* Loại hình — visual match to roomio RoomioSelect trigger (native select for a11y) */
-      .pitch-fee-calc__field select {
+      /* Giá thuê — typography match roomio MoneyInput.svelte */
+      .pitch-fee-calc__field input[type='number']#pitch-fee-rent {
         width: 100%;
         max-width: 100%;
         min-width: 0;
         box-sizing: border-box;
-        min-height: 2.75rem;
-        padding: 0.5rem 2.25rem 0.5rem 0.75rem;
+        padding: 0.5rem 0.75rem;
         border: 2px solid #000;
-        border-radius: 8px;
-        font-size: 0.875rem;
-        font-weight: 600;
-        line-height: 1.25rem;
+        border-radius: 6px;
+        font-family: inherit;
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 1.5;
         color: #000;
-        background-color: #fff;
-        background-image:
-          linear-gradient(45deg, transparent 50%, #52525b 50%),
-          linear-gradient(135deg, #52525b 50%, transparent 50%);
-        background-position:
-          calc(100% - 1.125rem) calc(50% - 0.1875rem),
-          calc(100% - 0.75rem) calc(50% - 0.1875rem);
-        background-size: 0.375rem 0.375rem, 0.375rem 0.375rem;
-        background-repeat: no-repeat;
-        appearance: none;
+        background: #fff;
+        -moz-appearance: textfield;
+        appearance: textfield;
+      }
+
+      .pitch-fee-calc__field input[type='number']#pitch-fee-rent::-webkit-outer-spin-button,
+      .pitch-fee-calc__field input[type='number']#pitch-fee-rent::-webkit-inner-spin-button {
         -webkit-appearance: none;
-        cursor: pointer;
-        transition: background-color 0.15s ease, box-shadow 0.15s ease;
+        margin: 0;
       }
 
-      .pitch-fee-calc__field select:hover:not(:disabled) {
-        background-color: var(--blue-soft);
-      }
-
-      .pitch-fee-calc__field select:focus {
+      .pitch-fee-calc__field input[type='number']#pitch-fee-rent:focus {
         outline: none;
         box-shadow: 0 0 0 2px var(--blue-bright);
       }
 
-      .pitch-fee-calc__field select:disabled {
+      /* Loại hình — custom listbox (roomio RoomioSelect pattern) */
+      .pitch-fee-calc__select {
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+      }
+
+      .pitch-fee-calc__select-native {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+        pointer-events: none;
+      }
+
+      .pitch-fee-calc__select-trigger {
+        display: flex;
+        width: 100%;
+        min-width: 0;
+        min-height: 2.75rem;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+        padding: 0.5rem 0.75rem;
+        border: 2px solid #000;
+        border-radius: 8px;
+        font-family: inherit;
+        font-size: 0.875rem;
+        font-weight: 600;
+        line-height: 1.25rem;
+        color: #000;
+        text-align: left;
+        background: #fff;
+        cursor: pointer;
+        transition: background-color 0.15s ease, box-shadow 0.15s ease;
+      }
+
+      .pitch-fee-calc__select-trigger:hover:not(:disabled) {
+        background: #eff6ff;
+      }
+
+      .pitch-fee-calc__select-trigger:focus-visible {
+        outline: none;
+        box-shadow: 0 0 0 2px #93c5fd;
+      }
+
+      .pitch-fee-calc__select-trigger:disabled {
         cursor: not-allowed;
-        background-color: #f4f4f5;
+        background: #f4f4f5;
         color: #a1a1aa;
+      }
+
+      .pitch-fee-calc__select-label {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .pitch-fee-calc__select-chevron {
+        flex-shrink: 0;
+        width: 1rem;
+        height: 1rem;
+        color: #52525b;
+        transition: transform 0.15s ease;
+      }
+
+      .pitch-fee-calc__select-chevron.is-open {
+        transform: rotate(180deg);
+      }
+
+      .pitch-fee-calc__select-menu {
+        position: absolute;
+        z-index: 20;
+        top: calc(100% + 6px);
+        left: 0;
+        right: 0;
+        max-height: min(70vh, 16rem);
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        padding: 0.25rem;
+        border: 2px solid #000;
+        border-radius: 8px;
+        background: #fff;
+        box-sizing: border-box;
+      }
+
+      .pitch-fee-calc__select-menu[hidden] {
+        display: none;
+      }
+
+      .pitch-fee-calc__select-option {
+        display: flex;
+        width: 100%;
+        min-width: 0;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+        padding: 0.625rem 0.75rem;
+        border: none;
+        border-radius: 6px;
+        font-family: inherit;
+        font-size: 0.875rem;
+        font-weight: 700;
+        line-height: 1.25rem;
+        color: #000;
+        text-align: left;
+        background: transparent;
+        cursor: pointer;
+        transition: background-color 0.15s ease;
+      }
+
+      .pitch-fee-calc__select-option:hover,
+      .pitch-fee-calc__select-option.is-active {
+        background: #dbeafe;
+      }
+
+      .pitch-fee-calc__select-option.is-selected {
+        background: #dbeafe;
+      }
+
+      .pitch-fee-calc__select-option-label {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .pitch-fee-calc__select-check {
+        flex-shrink: 0;
+        width: 1rem;
+        height: 1rem;
+        color: #2563eb;
+      }
+
+      .pitch-fee-calc__select-check[hidden] {
+        display: none;
       }
 
       .pitch-fee-calc__range-head {
@@ -2713,14 +2830,78 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
                   <h4 class="pitch-budget-block__title">Máy tính phí</h4>
                   <div class="pitch-fee-calc" id="pitch-fee-calc">
                     <div class="pitch-fee-calc__field">
-                      <label for="pitch-fee-type">Loại hình</label>
-                      <select id="pitch-fee-type" name="pitch-fee-type">
-                        {pitchRateMatrix.map((row) => (
-                          <option value={row.label} selected={row.label === 'Nhà trọ' ? true : undefined}>
-                            {row.label}
-                          </option>
-                        ))}
-                      </select>
+                      <label for="pitch-fee-type-trigger">Loại hình</label>
+                      <div class="pitch-fee-calc__select">
+                        <select
+                          id="pitch-fee-type"
+                          name="pitch-fee-type"
+                          class="pitch-fee-calc__select-native"
+                          tabindex="-1"
+                          aria-hidden="true"
+                        >
+                          {pitchRateMatrix.map((row) => (
+                            <option value={row.label} selected={row.label === 'Nhà trọ' ? true : undefined}>
+                              {row.label}
+                            </option>
+                          ))}
+                        </select>
+                        <button
+                          type="button"
+                          id="pitch-fee-type-trigger"
+                          class="pitch-fee-calc__select-trigger"
+                          aria-haspopup="listbox"
+                          aria-expanded="false"
+                          aria-controls="pitch-fee-type-menu"
+                        >
+                          <span class="pitch-fee-calc__select-label">Nhà trọ</span>
+                          <svg
+                            class="pitch-fee-calc__select-chevron"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                          >
+                            <path
+                              fill="currentColor"
+                              d="M12 15.002a1 1 0 0 1-.704-.29l-6-6a1 1 0 0 1 1.414-1.414L12 12.588l5.29-5.29a1 1 0 1 1 1.414 1.414l-6 6a1 1 0 0 1-.704.293"
+                            ></path>
+                          </svg>
+                        </button>
+                        <div
+                          id="pitch-fee-type-menu"
+                          class="pitch-fee-calc__select-menu"
+                          role="listbox"
+                          tabindex="-1"
+                          hidden
+                        >
+                          {pitchRateMatrix.map((row) => (
+                            <button
+                              type="button"
+                              class="pitch-fee-calc__select-option"
+                              role="option"
+                              data-value={row.label}
+                              aria-selected={row.label === 'Nhà trọ' ? 'true' : 'false'}
+                            >
+                              <span class="pitch-fee-calc__select-option-label">{row.label}</span>
+                              <svg
+                                class="pitch-fee-calc__select-check"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                viewBox="0 0 24 24"
+                                aria-hidden="true"
+                                hidden={row.label !== 'Nhà trọ'}
+                              >
+                                <path
+                                  fill="currentColor"
+                                  d="M10.243 19.314L6.12 15.172a1 1 0 1 1 1.414-1.414l2.829 2.828l7.071-7.071a1 1 0 1 1 1.414 1.414l-7.778 7.778a1 1 0 0 1-1.414 0"
+                                ></path>
+                              </svg>
+                            </button>
+                          ))}
+                        </div>
+                      </div>
                     </div>
                     <div class="pitch-fee-calc__field">
                       <div class="pitch-fee-calc__range-head">
@@ -3157,6 +3338,13 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
 
         const rateCard = JSON.parse(rateCardEl.textContent || '{}')
         const typeSelect = document.getElementById('pitch-fee-type')
+        const typeTrigger = document.getElementById('pitch-fee-type-trigger')
+        const typeMenu = document.getElementById('pitch-fee-type-menu')
+        const typeLabel = typeTrigger?.querySelector('.pitch-fee-calc__select-label')
+        const typeChevron = typeTrigger?.querySelector('.pitch-fee-calc__select-chevron')
+        const typeOptions = typeMenu
+          ? Array.from(typeMenu.querySelectorAll('.pitch-fee-calc__select-option'))
+          : []
         const unitsInput = document.getElementById('pitch-fee-units')
         const occInput = document.getElementById('pitch-fee-occ')
         const rentInput = document.getElementById('pitch-fee-rent')
@@ -3243,6 +3431,118 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
         }
 
         const ratesByLabel = Object.fromEntries((rateCard.types || []).map((row) => [row.label, row.rates]))
+
+        let typeMenuOpen = false
+        let typeActiveIndex = typeOptions.findIndex(
+          (btn) => btn.getAttribute('data-value') === typeSelect?.value
+        )
+
+        function syncTypeSelectUi() {
+          if (!typeSelect || !typeLabel) return
+          const selected = typeSelect.options[typeSelect.selectedIndex]
+          typeLabel.textContent = selected?.textContent?.trim() || ''
+          typeOptions.forEach((btn) => {
+            const isSelected = btn.getAttribute('data-value') === typeSelect.value
+            btn.setAttribute('aria-selected', isSelected ? 'true' : 'false')
+            btn.classList.toggle('is-selected', isSelected)
+            const check = btn.querySelector('.pitch-fee-calc__select-check')
+            if (check) check.hidden = !isSelected
+          })
+        }
+
+        function setTypeMenuOpen(open) {
+          if (!typeTrigger || !typeMenu) return
+          typeMenuOpen = open
+          typeTrigger.setAttribute('aria-expanded', open ? 'true' : 'false')
+          typeMenu.hidden = !open
+          typeChevron?.classList.toggle('is-open', open)
+          if (open) {
+            typeActiveIndex = typeOptions.findIndex(
+              (btn) => btn.getAttribute('data-value') === typeSelect?.value
+            )
+            if (typeActiveIndex < 0) typeActiveIndex = 0
+            typeOptions.forEach((btn, index) => {
+              btn.classList.toggle('is-active', index === typeActiveIndex)
+            })
+          } else {
+            typeOptions.forEach((btn) => btn.classList.remove('is-active'))
+          }
+        }
+
+        function chooseTypeOption(value) {
+          if (!typeSelect) return
+          typeSelect.value = value
+          syncTypeSelectUi()
+          typeSelect.dispatchEvent(new Event('change', { bubbles: true }))
+          setTypeMenuOpen(false)
+          typeTrigger?.focus()
+        }
+
+        function moveTypeActive(direction) {
+          if (!typeOptions.length) return
+          if (!typeMenuOpen) setTypeMenuOpen(true)
+          let next = typeActiveIndex
+          for (let attempts = 0; attempts < typeOptions.length; attempts += 1) {
+            next = (next + direction + typeOptions.length) % typeOptions.length
+            typeActiveIndex = next
+            break
+          }
+          typeOptions.forEach((btn, index) => {
+            btn.classList.toggle('is-active', index === typeActiveIndex)
+          })
+          typeOptions[typeActiveIndex]?.scrollIntoView({ block: 'nearest' })
+        }
+
+        if (typeTrigger && typeMenu && typeSelect) {
+          syncTypeSelectUi()
+
+          typeTrigger.addEventListener('pointerdown', (event) => {
+            event.stopPropagation()
+          })
+
+          typeTrigger.addEventListener('click', () => {
+            setTypeMenuOpen(!typeMenuOpen)
+          })
+
+          typeTrigger.addEventListener('keydown', (event) => {
+            if (event.key === 'ArrowDown') {
+              event.preventDefault()
+              moveTypeActive(1)
+            } else if (event.key === 'ArrowUp') {
+              event.preventDefault()
+              moveTypeActive(-1)
+            } else if ((event.key === 'Enter' || event.key === ' ') && typeMenuOpen) {
+              event.preventDefault()
+              const option = typeOptions[typeActiveIndex]
+              if (option) chooseTypeOption(option.getAttribute('data-value') || '')
+            } else if (event.key === 'Enter' || event.key === ' ') {
+              event.preventDefault()
+              setTypeMenuOpen(true)
+            } else if (event.key === 'Escape') {
+              setTypeMenuOpen(false)
+            }
+          })
+
+          typeMenu.addEventListener('pointerdown', (event) => {
+            event.stopPropagation()
+          })
+
+          typeOptions.forEach((btn, index) => {
+            btn.addEventListener('pointerenter', () => {
+              typeActiveIndex = index
+              typeOptions.forEach((item, i) => {
+                item.classList.toggle('is-active', i === index)
+              })
+            })
+            btn.addEventListener('click', () => {
+              chooseTypeOption(btn.getAttribute('data-value') || '')
+            })
+          })
+
+          document.addEventListener('pointerdown', () => {
+            if (typeMenuOpen) setTypeMenuOpen(false)
+          })
+        }
 
         function bandIndex(unitPosition) {
           if (unitPosition <= 4) return 0
