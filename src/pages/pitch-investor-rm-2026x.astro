@@ -1378,7 +1378,6 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
         color: #1d1d1f;
       }
 
-      .pitch-fee-calc__field select,
       .pitch-fee-calc__field input[type='number'] {
         width: 100%;
         max-width: 100%;
@@ -1389,6 +1388,50 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
         font-size: 1rem;
         color: #1d1d1f;
         background: #fff;
+      }
+
+      /* Loại hình — visual match to roomio RoomioSelect trigger (native select for a11y) */
+      .pitch-fee-calc__field select {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+        min-height: 2.75rem;
+        padding: 0.5rem 2.25rem 0.5rem 0.75rem;
+        border: 2px solid #000;
+        border-radius: 8px;
+        font-size: 0.875rem;
+        font-weight: 600;
+        line-height: 1.25rem;
+        color: #000;
+        background-color: #fff;
+        background-image:
+          linear-gradient(45deg, transparent 50%, #52525b 50%),
+          linear-gradient(135deg, #52525b 50%, transparent 50%);
+        background-position:
+          calc(100% - 1.125rem) calc(50% - 0.1875rem),
+          calc(100% - 0.75rem) calc(50% - 0.1875rem);
+        background-size: 0.375rem 0.375rem, 0.375rem 0.375rem;
+        background-repeat: no-repeat;
+        appearance: none;
+        -webkit-appearance: none;
+        cursor: pointer;
+        transition: background-color 0.15s ease, box-shadow 0.15s ease;
+      }
+
+      .pitch-fee-calc__field select:hover:not(:disabled) {
+        background-color: var(--blue-soft);
+      }
+
+      .pitch-fee-calc__field select:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px var(--blue-bright);
+      }
+
+      .pitch-fee-calc__field select:disabled {
+        cursor: not-allowed;
+        background-color: #f4f4f5;
+        color: #a1a1aa;
       }
 
       .pitch-fee-calc__range-head {
