@@ -2383,27 +2383,16 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
           <div class="slide-content reveal delay-100">
             <p>Thu phí theo từng phòng, mỗi tháng roomio sẽ tự tổng hợp và gửi hoá đơn về cho chủ cho thuê cũng qua Telegram bot. Mức phí tuỳ loại hình và số phòng, phòng trống khách chỉ tính 5% giảm tải cho chủ nhà.</p>
 
-            <p class="pitch-fund-ask">≈ 0,5%</p>
-            <p class="pitch-fund-meta pitch-fund-meta--stacked">tiền thuê của mỗi phòng</p>
-            <p class="pitch-fund-meta">Bảng giá và máy tính phí ở phụ lục.</p>
+            <p>Không cần chiếm nhiều thị trường để "roomio" tự nuôi được mình.</p>
 
-            <div class="pitch-revenue-stats">
-              <div class="pitch-revenue-stat">
-                <p class="pitch-revenue-stat__value">60.500</p>
-                <p class="pitch-revenue-stat__caption">nhà trọ ở TP.HCM, khoảng 560.000 phòng</p>
-              </div>
-              <div class="pitch-revenue-stat">
-                <p class="pitch-revenue-stat__value">37.000</p>
-                <p class="pitch-revenue-stat__caption">cơ sở nhà trọ ở Hà Nội</p>
-              </div>
-              <div class="pitch-revenue-stat">
-                <p class="pitch-revenue-stat__value">Hơn 1 triệu</p>
-                <p class="pitch-revenue-stat__caption">căn: nhu cầu thuê nhà của công nhân, người lao động cả nước</p>
-              </div>
-            </div>
+            <p class="pitch-fund-ask">~8.000 phòng</p>
+            <p class="pitch-fund-meta pitch-fund-meta--stacked">là đủ hoà vốn, chưa tới 1,5% số phòng trọ ở riêng TP.HCM.</p>
 
-            <p>Hoà vốn ở khoảng 500 chủ, chưa tới 1% số nhà trọ của TP.HCM và Hà Nội.</p>
-            <p class="pitch-fund-meta">Nguồn: Sở Xây dựng TP.HCM, Công an Hà Nội, Bộ Xây dựng. Chi tiết ở phụ lục.</p>
+            <p>TP.HCM hiện có khoảng 560.000 phòng trọ, Hà Nội có khoảng 37.000 nhà trọ. Chi phí chạy dịch vụ chủ yếu là máy chủ. Tin nhắn qua Telegram không mất phí, nên phần lớn tiền thu được giữ lại.</p>
+
+            <p class="pitch-fund-meta">Bảng giá hiện tại là bản đầu tiên, đang thử với những chủ cho thuê đầu tiên. "roomio" sẽ còn điều chỉnh cho hợp lý khi có dữ liệu thật. Bảng giá và máy tính phí ở phụ lục.</p>
+
+            <p class="pitch-fund-meta">Nguồn: Sở Xây dựng TP.HCM, Công an Hà Nội. Cách tính ở phụ lục.</p>
 
             <div class="appendix-btn-wrap">
               <button type="button" class="appendix-jump-btn" data-target="appendix-slide-7" aria-label="Xem thêm phụ lục cho Slide 7">
@@ -2905,7 +2894,7 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
                     </div>
                     <div class="pitch-fee-calc__field">
                       <div class="pitch-fee-calc__range-head">
-                        <label for="pitch-fee-units">Số phòng / căn</label>
+                        <label for="pitch-fee-units">Số phòng / căn trong một toà</label>
                         <span class="pitch-fee-calc__range-value" id="pitch-fee-units-value">10</span>
                       </div>
                       <input
@@ -2969,7 +2958,7 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
                     </div>
                   </div>
                   <p class="pitch-budget-table-note">
-                    Ước tính theo bảng giá roomio (09/2026), đã gồm VAT. Hoá đơn thật tính theo số ngày ở thực tế.
+                    Ước tính theo bảng giá roomio (09/2026), đã gồm VAT. Hoá đơn thật tính theo số ngày ở thực tế. Mỗi toà nhà tính một thang bậc riêng.
                   </p>
                 </div>
 
@@ -2977,7 +2966,7 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
                   <h4 class="pitch-budget-block__title">Bảng giá theo loại hình</h4>
                   <p>
                     Đồng mỗi phòng hoặc căn mỗi tháng, đã gồm VAT. Tính theo bậc như giá điện: phòng thứ 1–4 tính giá cột
-                    đầu, phòng thứ 5–10 tính giá cột thứ hai, cứ thế tiếp. Phòng trống chỉ tính 5%.
+                    đầu, phòng thứ 5–10 tính giá cột thứ hai, cứ thế tiếp. Phòng trống chỉ tính 5%. Đây là bảng giá đầu tiên (09/2026), sẽ còn điều chỉnh khi có dữ liệu thật.
                   </p>
                   <div class="pitch-budget-table-shell">
                     <div class="pitch-budget-table-scroll">
@@ -3047,7 +3036,16 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
                       căn, khoảng 85% là công nhân, người lao động khu công nghiệp.
                     </li>
                     <li>
-                      Hoà vốn khoảng 500 chủ, so với khoảng 97.500 nhà trọ của hai thành phố: chỉ khoảng 0,5%.
+                      Hoà vốn: chi mỗi tháng khoảng 96 triệu đồng ÷ phí trung bình khoảng 12.000 đồng mỗi phòng ≈ 8.000 phòng, chưa tới 1,5% của 560.220 phòng trọ ở TP.HCM.
+                    </li>
+                    <li>
+                      Phí trung bình khoảng 12.000 đồng mỗi phòng mỗi tháng là mức của nhà trọ 9–15 phòng, kín 90%, theo bảng giá hiện tại.
+                    </li>
+                    <li>
+                      Hà Nội chưa có số phòng chính thức. Nếu lấy mức trung bình 9,3 phòng mỗi nhà trọ của TP.HCM thì khoảng 340.000 phòng (ước tính).
+                    </li>
+                    <li>
+                      Để hình dung độ lớn: nếu phủ hết nhà trọ ở 2 thành phố (khoảng 900.000 phòng), doanh thu tối đa khoảng 130 tỷ đồng mỗi năm. "roomio" không đặt mục tiêu này; mục tiêu gần là hoà vốn ở khoảng 8.000 phòng.
                     </li>
                   </ul>
                 </div>
@@ -3057,11 +3055,16 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
                   <p>"roomio" chưa có doanh thu thật. Các số dưới đây là giả định trong bảng dự trù.</p>
                   <ul class="pitch-budget-assumptions">
                     <li>Doanh thu tháng mục tiêu ở tháng 15 (MRR): khoảng 53 triệu đồng.</li>
-                    <li>Doanh thu trung bình mỗi chủ (ARPU): khoảng 190.000 đồng mỗi tháng.</li>
+                    <li>Doanh thu trung bình mỗi chủ (ARPU): khoảng 190.000 đồng mỗi tháng (giả định chủ khoảng 15 phòng).</li>
                     <li>Chi phí để có một chủ (CAC): 400.000–1.000.000 đồng, là hoa hồng bán hàng.</li>
                     <li>Thời gian thu lại chi phí đó: khoảng 2–5 tháng.</li>
                     <li>Tỷ lệ rời bỏ giả định (churn): 2% mỗi tháng.</li>
-                    <li>Hoà vốn: khoảng 500 chủ.</li>
+                    <li>
+                      Hoà vốn: khoảng 8.000 phòng. Tương đương khoảng 500 chủ nếu mỗi chủ có khoảng 15 phòng, hoặc khoảng 900 chủ nếu mỗi chủ khoảng 9 phòng (mức trung bình một nhà trọ ở TP.HCM).
+                    </li>
+                    <li>
+                      Chi phí chạy dịch vụ chủ yếu là máy chủ và AI đọc ảnh, 2–4 triệu đồng mỗi tháng trong bảng dự trù; gửi tin qua Telegram không mất phí. Ước tính biên lợi nhuận gộp khoảng 90%.
+                    </li>
                   </ul>
                 </div>
 
