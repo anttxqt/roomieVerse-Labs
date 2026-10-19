@@ -1485,6 +1485,53 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
         display: none;
       }
 
+      .pitch-fee-calc__rent-words {
+        margin: -2px 0 0;
+        font-size: 0.875rem;
+        font-style: italic;
+        line-height: 1.35;
+        color: #86868b;
+      }
+
+      .pitch-fee-calc__rent-words:empty {
+        display: none;
+      }
+
+      .pitch-fee-calc__rent-quick {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 2px;
+      }
+
+      .pitch-fee-calc__rent-chip {
+        flex: 0 1 auto;
+        min-width: 0;
+        padding: 6px 10px;
+        border: 1px solid #000;
+        border-radius: 8px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        line-height: 1.2;
+        color: #1d1d1f;
+        background: #f4f4f5;
+        cursor: pointer;
+        transition: background-color 0.15s ease, transform 0.1s ease;
+      }
+
+      .pitch-fee-calc__rent-chip:hover {
+        background: var(--blue-soft);
+      }
+
+      .pitch-fee-calc__rent-chip:active {
+        transform: translateY(1px);
+      }
+
+      .pitch-fee-calc__rent-chip:focus-visible {
+        outline: none;
+        box-shadow: 0 0 0 2px var(--blue-bright);
+      }
+
       #slide-5 {
         --slide5-head-col: 36%;
         --slide5-accent-1: #ff9500;
@@ -2711,9 +2758,25 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
                         id="pitch-fee-rent"
                         name="pitch-fee-rent"
                         min="0"
+                        max="50000000"
                         step="100000"
                         value="3000000"
                       />
+                      <p class="pitch-fee-calc__rent-words" id="pitch-fee-rent-words" aria-live="polite"></p>
+                      <div class="pitch-fee-calc__rent-quick" role="group" aria-label="Cộng nhanh giá thuê">
+                        <button type="button" class="pitch-fee-calc__rent-chip" data-rent-add="100000">
+                          +100k
+                        </button>
+                        <button type="button" class="pitch-fee-calc__rent-chip" data-rent-add="200000">
+                          +200k
+                        </button>
+                        <button type="button" class="pitch-fee-calc__rent-chip" data-rent-add="500000">
+                          +500k
+                        </button>
+                        <button type="button" class="pitch-fee-calc__rent-chip" data-rent-add="1000000">
+                          +1tr
+                        </button>
+                      </div>
                     </div>
                     <div class="pitch-fee-calc__outputs" aria-live="polite" aria-atomic="true">
                       <p class="pitch-fee-calc__fee-label">Chủ trả mỗi tháng</p>
@@ -3102,6 +3165,82 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
         const outMonthly = document.getElementById('pitch-fee-out-monthly')
         const outPerOccupied = document.getElementById('pitch-fee-out-per-occupied')
         const outPct = document.getElementById('pitch-fee-out-pct')
+        const rentWords = document.getElementById('pitch-fee-rent-words')
+
+        const RENT_MAX = 50_000_000
+
+        /** Adapted from roomio apps/web/src/lib/number-to-words.ts (MoneyInput.svelte) */
+        function numberToVietnameseWords(num) {
+          if (num === 0) return 'không'
+          if (num < 0) return 'âm ' + numberToVietnameseWords(Math.abs(num))
+
+          const units = ['', 'nghìn', 'triệu', 'tỉ', 'nghìn tỉ', 'triệu tỉ']
+          const words = ['không', 'một', 'hai', 'ba', 'bốn', 'năm', 'sáu', 'bảy', 'tám', 'chín']
+
+          function readGroup(n, full) {
+            let result = ''
+            const hundreds = Math.floor(n / 100)
+            const remainder = n % 100
+            const tens = Math.floor(remainder / 10)
+            const ones = remainder % 10
+
+            if (full || hundreds > 0) {
+              result += words[hundreds] + ' trăm '
+            }
+
+            if (tens > 1) {
+              result += words[tens] + ' mươi '
+              if (ones === 1) result += 'mốt '
+              else if (ones === 5) result += 'lăm '
+              else if (ones > 0) result += words[ones] + ' '
+            } else if (tens === 1) {
+              result += 'mười '
+              if (ones === 5) result += 'lăm '
+              else if (ones > 0) result += words[ones] + ' '
+            } else if (tens === 0 && ones > 0) {
+              if (full || hundreds > 0) {
+                result += 'lẻ '
+              }
+              result += words[ones] + ' '
+            }
+
+            return result.trim()
+          }
+
+          let result = ''
+          let unitIndex = 0
+          let n = num
+
+          while (n > 0) {
+            const group = n % 1000
+            if (group > 0) {
+              const groupText = readGroup(group, n > 1000)
+              result = groupText + ' ' + units[unitIndex] + ' ' + result
+            }
+            n = Math.floor(n / 1000)
+            unitIndex += 1
+          }
+
+          return result.trim().replace(/\s+/g, ' ')
+        }
+
+        function formatRentInWords(rent) {
+          if (!rent || rent <= 0) return ''
+          const spoken = numberToVietnameseWords(Math.round(rent))
+          return spoken.charAt(0).toUpperCase() + spoken.slice(1) + ' đồng'
+        }
+
+        function clampRent(raw) {
+          const n = Number(raw)
+          if (!Number.isFinite(n)) return 0
+          return Math.min(RENT_MAX, Math.max(0, Math.round(n)))
+        }
+
+        function applyRentValue(next) {
+          const clamped = clampRent(next)
+          rentInput.value = String(clamped)
+          recalc()
+        }
 
         const ratesByLabel = Object.fromEntries((rateCard.types || []).map((row) => [row.label, row.rates]))
 
@@ -3144,13 +3283,19 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
           const label = typeSelect.value
           const units = Number(unitsInput.value)
           const occPct = Number(occInput.value)
-          const rent = Number(rentInput.value) || 0
+          const rent = clampRent(rentInput.value)
+          if (Number(rentInput.value) !== rent) {
+            rentInput.value = String(rent)
+          }
           const occ = occPct / 100
           const fee = monthlyFee(label, units, occPct)
 
           unitsValue.textContent = String(units)
           occValue.textContent = `${occPct}%`
           outMonthly.textContent = `${formatVnd(fee)} đ`
+          if (rentWords) {
+            rentWords.textContent = formatRentInWords(rent)
+          }
 
           if (occ <= 0) {
             outPerOccupied.hidden = true
@@ -3175,6 +3320,14 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
         ;[typeSelect, unitsInput, occInput, rentInput].forEach((el) => {
           el.addEventListener('input', recalc)
           el.addEventListener('change', recalc)
+        })
+
+        calcRoot.querySelectorAll('[data-rent-add]').forEach((btn) => {
+          btn.addEventListener('click', () => {
+            const delta = Number(btn.getAttribute('data-rent-add'))
+            if (!Number.isFinite(delta)) return
+            applyRentValue((Number(rentInput.value) || 0) + delta)
+          })
         })
 
         recalc()
