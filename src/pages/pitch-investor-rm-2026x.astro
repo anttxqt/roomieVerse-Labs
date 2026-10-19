@@ -1401,6 +1401,7 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
       }
 
       #slide-8 .pitch-timeline {
+        --rail-x: 5px;
         position: relative;
         max-width: 900px;
         margin: 48px auto 0;
@@ -1411,11 +1412,17 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
       #slide-8 .pitch-timeline::before {
         content: '';
         position: absolute;
-        left: 5px;
+        left: var(--rail-x);
         top: 8px;
-        bottom: 8px;
+        bottom: -64px;
         width: 2px;
-        background: #d2d2d7;
+        transform: translateX(-50%);
+        background: linear-gradient(
+          to bottom,
+          #d2d2d7 0%,
+          #d2d2d7 calc(100% - 96px),
+          transparent 100%
+        );
       }
 
       #slide-8 .pitch-timeline__step {
@@ -1430,11 +1437,11 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
       #slide-8 .pitch-timeline__step::before {
         content: '';
         position: absolute;
-        left: -28px;
-        top: 0.45em;
+        left: calc(var(--rail-x) - 28px);
+        top: calc((1.35em - 10px) / 2);
         width: 10px;
         height: 10px;
-        margin-left: -1px;
+        transform: translateX(-50%);
         border-radius: 50%;
         background: var(--blue);
         box-shadow: 0 0 0 3px #fbfbfd;
