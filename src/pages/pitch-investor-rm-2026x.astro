@@ -1300,12 +1300,43 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
         box-sizing: border-box;
       }
 
-      #slide-7 .pitch-fund-ask {
+      #slide-7 .highlight-box--breakeven > p:not(.pitch-fund-ask) {
+        font-size: clamp(1.1rem, 1.5vw, 1.25rem);
+        font-weight: 400;
+        color: #86868b;
+        line-height: 1.6;
+        letter-spacing: normal;
+      }
+
+      #slide-7 .highlight-box--breakeven .pitch-fund-ask {
         margin-top: 28px;
       }
 
-      #slide-7 .pitch-fund-meta--stacked {
+      #slide-7 .highlight-box--breakeven .pitch-fund-meta--stacked {
         margin-bottom: 4px;
+        font-size: inherit;
+        font-weight: 400;
+        color: #86868b;
+      }
+
+      #slide-7 .highlight-box--breakeven .pitch-revenue-stats {
+        margin: 28px 0 24px;
+      }
+
+      #slide-7 .highlight-box--breakeven .pitch-revenue-stat__value {
+        font-size: clamp(1.35rem, 3vw, 1.85rem);
+        font-weight: 700;
+        color: var(--blue);
+      }
+
+      #slide-7 .highlight-box--breakeven .pitch-revenue-stat__caption {
+        font-size: 0.88rem;
+        font-weight: 400;
+        color: #86868b;
+      }
+
+      #slide-7 .highlight-box + .pitch-fund-meta {
+        margin-top: 28px;
       }
 
       #slide-7 .pitch-fund-meta:last-of-type {
@@ -2496,23 +2527,25 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
           <div class="slide-content reveal delay-100">
             <p>Thu phí theo từng phòng, mỗi tháng roomio sẽ tự tổng hợp và gửi hoá đơn về cho chủ cho thuê cũng qua Telegram bot. Mức phí tuỳ loại hình và số phòng, phòng trống khách chỉ tính 5% giảm tải cho chủ nhà.</p>
 
-            <p>Không cần chiếm nhiều thị trường để "roomio" tự nuôi được mình.</p>
+            <div class="highlight-box highlight-box--breakeven">
+              <p>Không cần chiếm nhiều thị trường để "roomio" tự nuôi được mình.</p>
 
-            <p class="pitch-fund-ask">~8.300 phòng</p>
-            <p class="pitch-fund-meta pitch-fund-meta--stacked">là đủ hoà vốn, chưa tới 1,5% số phòng trọ ở riêng TP.HCM.</p>
+              <p class="pitch-fund-ask">~8.300 phòng</p>
+              <p class="pitch-fund-meta pitch-fund-meta--stacked">là đủ hoà vốn, chưa tới 1,5% số phòng trọ ở riêng TP.HCM.</p>
 
-            <div class="pitch-revenue-stats pitch-revenue-stats--pair">
-              <div class="pitch-revenue-stat">
-                <p class="pitch-revenue-stat__value">560.000</p>
-                <p class="pitch-revenue-stat__caption">phòng trọ ở TP.HCM</p>
+              <div class="pitch-revenue-stats pitch-revenue-stats--pair">
+                <div class="pitch-revenue-stat">
+                  <p class="pitch-revenue-stat__value">560.000</p>
+                  <p class="pitch-revenue-stat__caption">phòng trọ ở TP.HCM</p>
+                </div>
+                <div class="pitch-revenue-stat">
+                  <p class="pitch-revenue-stat__value">37.000</p>
+                  <p class="pitch-revenue-stat__caption">nhà trọ ở Hà Nội</p>
+                </div>
               </div>
-              <div class="pitch-revenue-stat">
-                <p class="pitch-revenue-stat__value">37.000</p>
-                <p class="pitch-revenue-stat__caption">nhà trọ ở Hà Nội</p>
-              </div>
+
+              <p>Chi phí chạy dịch vụ chủ yếu là máy chủ. Tin nhắn qua Telegram không mất phí, nên phần lớn tiền thu được giữ lại.</p>
             </div>
-
-            <p>Chi phí chạy dịch vụ chủ yếu là máy chủ. Tin nhắn qua Telegram không mất phí, nên phần lớn tiền thu được giữ lại.</p>
 
             <div class="highlight-box reveal delay-200">
               <p><span style="color: var(--roomieverse-blue);">Về giá:</span> Bảng giá hiện tại là bản đầu tiên, đang thử với những chủ cho thuê đầu tiên. "roomio" sẽ còn điều chỉnh cho hợp lý khi có dữ liệu thật. Bảng giá và máy tính phí ở phụ lục.</p>
