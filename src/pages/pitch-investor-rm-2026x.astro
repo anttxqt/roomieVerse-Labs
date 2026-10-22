@@ -1799,6 +1799,82 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
         line-height: 1.6;
       }
 
+      #slide-10 .slide-title {
+        margin-bottom: 16px;
+      }
+
+      #slide-10 .slide-content {
+        margin-bottom: 48px;
+      }
+
+      #slide-10 .pitch-team-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 36px;
+        max-width: 1040px;
+        margin: 0 auto;
+        text-align: left;
+      }
+
+      @media (min-width: 768px) {
+        #slide-10 .pitch-team-grid {
+          grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+          gap: 40px;
+          align-items: start;
+        }
+      }
+
+      #slide-10 .pitch-team-col__label {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.45);
+        margin: 0 0 14px 4px;
+      }
+
+      #slide-10 .pitch-team-col .apple-card {
+        padding: 36px 40px;
+      }
+
+      #slide-10 .pitch-team-col .apple-card:hover {
+        transform: none;
+      }
+
+      #slide-10 .pitch-team-founder .apple-card h3 {
+        font-size: clamp(1.45rem, 2.4vw, 1.85rem);
+        color: #fff;
+        line-height: 1.2;
+      }
+
+      #slide-10 .pitch-team-hires {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      #slide-10 .pitch-team-hire {
+        padding: 24px 28px;
+        gap: 10px;
+      }
+
+      #slide-10 .pitch-team-hire:hover {
+        transform: none;
+      }
+
+      #slide-10 .pitch-team-hire h3 {
+        font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.35;
+      }
+
+      #slide-10 .pitch-team-meta {
+        font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+        color: rgba(255, 255, 255, 0.42) !important;
+        margin-top: 14px;
+      }
+
       .pitch-budget-table--rates {
         min-width: 880px;
       }
@@ -2985,14 +3061,37 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
       <!-- Slide 10: Đội ngũ -->
       <section class="slide-section slide-section--dark" id="slide-10">
         <div class="slide-container reveal">
-          <div style="text-align: center;">
-            <h2 class="slide-title">Đội ngũ Tinh gọn & Thực chiến</h2>
+          <h2 class="slide-title">Đội ngũ đã có người làm sản phẩm.</h2>
+          <div class="slide-content">
+            <p>Giờ cần thêm người bán và người hoàn thiện.</p>
           </div>
-          <div class="slide-content" style="text-align: left;">
-            <ul>
-              <li><strong>Founder / Kiến trúc sư hệ thống:</strong> Ôm trọn Kỹ thuật & Sản phẩm. Chuyên gia thiết kế hệ thống có khả năng chịu tải lớn.</li>
-              <li><strong>Nhu cầu nhân sự (Từ số vốn gọi):</strong> Cần bổ sung 1 Lập trình viên giỏi và 2 Sales thiện chiến để mở rộng thị trường.</li>
-            </ul>
+
+          <div class="pitch-team-grid">
+            <div class="pitch-team-col pitch-team-founder">
+              <p class="pitch-team-col__label">Đã có</p>
+              <article class="apple-card reveal delay-100">
+                <h3>An T. Tran · Founder</h3>
+                <p>Một mình làm ra phần đang chạy: web cho chủ cho thuê, bot Telegram, mini app cho khách, thu tiền qua PayOS, bản đầu của máy đọc số đồng hồ.</p>
+                <p class="pitch-team-meta">~700 lần cập nhật code, 2 lần làm lại lớn. Toàn thời gian từ 6/2026.</p>
+              </article>
+            </div>
+            <div class="pitch-team-col pitch-team-hiring">
+              <p class="pitch-team-col__label">Cần thêm (từ vốn gọi)</p>
+              <div class="pitch-team-hires">
+                <article class="apple-card pitch-team-hire reveal delay-150">
+                  <h3>Tháng 1 · Dev freelance (3 tháng)</h3>
+                  <p>Người hoàn thiện: cùng founder làm chắc luồng chính trước khi bán mạnh.</p>
+                </article>
+                <article class="apple-card pitch-team-hire reveal delay-200">
+                  <h3>Tháng 2 · Sale chính</h3>
+                  <p>Người bán toàn thời gian, đi gặp từng chủ cho thuê.</p>
+                </article>
+                <article class="apple-card pitch-team-hire reveal delay-250">
+                  <h3>Tháng 4 · CTV bán hàng</h3>
+                  <p>Bán thời gian, ở TP.HCM.</p>
+                </article>
+              </div>
+            </div>
           </div>
 
           <div class="appendix-btn-wrap reveal delay-300">
@@ -3175,19 +3274,11 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
                 </span>
               </summary>
               <div class="apple-accordion-content">
-                <p><strong>An T. Tran</strong> (@antt) là người sáng lập "roomio" tại roomieVerse Labs. Vai trò chính: Founder & Full-stack Developer — đồng thời phụ trách product, product owner và nghiên cứu thị trường (theo trang đội ngũ).</p>
+                <p>An T. Tran (@antt), người sáng lập "roomio" tại roomieVerse Labs. Làm toàn bộ phần kỹ thuật và sản phẩm: viết code, thiết kế giao diện, chọn tính năng, nghiên cứu thị trường.</p>
 
-                <p>Trong deck, founder được mô tả là <strong>Founder / Kiến trúc sư hệ thống</strong>: ôm trọn kỹ thuật và sản phẩm, với kinh nghiệm thiết kế hệ thống chịu tải lớn. Theo kế hoạch sử dụng vốn, founder hiện là người viết code duy nhất; Mac Studio vừa là máy làm việc, vừa chạy test tự động và bản thử trước khi lên production.</p>
+                <p>Hiện là người viết code duy nhất. Trong 12 tháng tới vẫn giữ vai trò này; tháng 1 tự đi bán ở Đà Lạt. Kế hoạch tuyển người: xem phụ lục 10.</p>
 
-                <p>Một số mốc gắn trực tiếp với founder (chi tiết hơn ở mục Câu chuyện sản phẩm):</p>
-                <ul class="pitch-budget-assumptions">
-                  <li><strong>8/2025</strong> · Còn đi học, cùng thầy giáo làm app quản lý đơn giản cho một chủ cho thuê thật (bạn của thầy). Hoàn thành vào 12/2025.</li>
-                  <li><strong>12/2025</strong> · Bắt đầu làm "roomio" theo hướng riêng; thời gian học hạn chế nên tiến độ chậm.</li>
-                  <li><strong>3/2026</strong> · Tốt nghiệp.</li>
-                  <li><strong>6/2026</strong> · Làm full-time: đại tu giao diện (từ mẫu có sẵn sang tự thiết kế), bổ sung và tối ưu tính năng tới nay.</li>
-                </ul>
-
-                <p>Giai đoạn gọi vốn, founder cũng tham gia trực tiếp ký khách ban đầu (theo giả định ngân sách), song song với việc hoàn thiện luồng vận hành cốt lõi.</p>
+                <p>Hành trình từ 2025 tới nay: xem mục Câu chuyện sản phẩm ngay trên.</p>
               </div>
             </details>
 
@@ -3215,6 +3306,16 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
                     <li>Phần mềm cho chủ trọ (LOZIDO, eNha, Mona House): có thâm niên, nhưng chỉ là nơi ghi số, ghi sổ. LOZIDO còn ôm cả tìm việc làm, tìm phòng trọ trong cùng một app, nên giao diện rối.</li>
                     <li>Excel + Zalo: cách phần lớn chủ trọ đang làm. Cả 3 chủ trọ đồng ý dùng thử roomio đều đang làm theo cách này.</li>
                     <li>Chỗ trống: chủ nhà bình thường chỉ cần một phần mềm nhẹ, làm đúng việc chính. Chưa ai làm tới nơi.</li>
+                  </ul>
+                </div>
+
+                <div class="pitch-budget-block">
+                  <h4 class="pitch-budget-block__title">Khác gì các app làm nhanh bằng AI</h4>
+                  <ul class="pitch-budget-assumptions">
+                    <li>"roomio" có dùng AI để viết code nhanh hơn. Nhưng làm từ 12/2025, toàn thời gian từ 6/2026, tới nay khoảng 700 lần cập nhật code.</li>
+                    <li>Đã làm lại lớn 2 lần cho hợp với thị trường hơn.</li>
+                    <li>Làm sản phẩm thì phải khó tính: thấy chưa hợp lý thì sửa tiếp, tới khi hợp lý mới thôi.</li>
+                    <li>Ví dụ những bài toán phải giải lâu: xem mục Câu chuyện sản phẩm.</li>
                   </ul>
                 </div>
 
