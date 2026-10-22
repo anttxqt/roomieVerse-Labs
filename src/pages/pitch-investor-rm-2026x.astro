@@ -1494,6 +1494,46 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
       .pitch-breakeven-grid-block {
         flex: 1 1 auto;
         min-width: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .pitch-breakeven-grid {
+        --breakeven-dot-cols: 56;
+        --breakeven-dot-rows: 20;
+        --breakeven-dot-size: 3px;
+        --breakeven-dot-gap: 1px;
+        width: calc(
+          var(--breakeven-dot-cols) * var(--breakeven-dot-size) +
+            (var(--breakeven-dot-cols) - 1) * var(--breakeven-dot-gap)
+        );
+        max-width: 100%;
+        box-sizing: border-box;
+      }
+
+      @media (min-width: 480px) {
+        .pitch-breakeven-grid {
+          --breakeven-dot-size: 4px;
+          --breakeven-dot-gap: 2px;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .pitch-breakeven-grid {
+          --breakeven-dot-size: 5px;
+          --breakeven-dot-gap: 2px;
+        }
+      }
+
+      .pitch-breakeven-dots {
+        display: grid;
+        grid-template-columns: repeat(var(--breakeven-dot-cols), var(--breakeven-dot-size));
+        grid-template-rows: repeat(var(--breakeven-dot-rows), var(--breakeven-dot-size));
+        gap: var(--breakeven-dot-gap);
+        width: 100%;
+        margin: 0;
+        box-sizing: border-box;
       }
 
       .pitch-breakeven-grid-annot-row {
@@ -1505,30 +1545,6 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
         gap: 8px 12px;
         margin-top: 8px;
         margin-bottom: 10px;
-      }
-
-      .pitch-breakeven-dot-grid {
-        --breakeven-dot-size: 3px;
-        --breakeven-dot-gap: 1px;
-        display: grid;
-        grid-template-columns: repeat(56, var(--breakeven-dot-size));
-        gap: var(--breakeven-dot-gap);
-        width: max-content;
-        max-width: 100%;
-      }
-
-      @media (min-width: 480px) {
-        .pitch-breakeven-dot-grid {
-          --breakeven-dot-size: 4px;
-          --breakeven-dot-gap: 2px;
-        }
-      }
-
-      @media (min-width: 768px) {
-        .pitch-breakeven-dot-grid {
-          --breakeven-dot-size: 5px;
-          --breakeven-dot-gap: 2px;
-        }
       }
 
       .pitch-breakeven-dot {
@@ -2754,24 +2770,26 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
               <div class="pitch-breakeven-panel">
                 <div class="pitch-breakeven-visual">
                   <div class="pitch-breakeven-grid-block">
-                    <div
-                      class="pitch-breakeven-dot-grid"
-                      role="img"
-                      aria-label="Lưới 1.120 chấm minh hoạ khoảng 560.000 phòng trọ ở TP.HCM; 17 chấm xanh ở góc trên phải tương ứng khoảng 8.300 phòng cần để hoà vốn"
-                    >
-                      {Array.from({ length: breakevenDotCount }, (_, index) => (
-                        <span
-                          class:list={[
-                            'pitch-breakeven-dot',
-                            { 'pitch-breakeven-dot--blue': breakevenDotIsBlue(index) },
-                          ]}
-                          aria-hidden="true"
-                        />
-                      ))}
-                    </div>
-                    <div class="pitch-breakeven-grid-annot-row">
-                      <span class="pitch-breakeven-grid-tag">~560.000 phòng trọ ở TP.HCM</span>
-                      <span class="pitch-breakeven-grid-tag">mỗi chấm ≈ 500 phòng</span>
+                    <div class="pitch-breakeven-grid">
+                      <div
+                        class="pitch-breakeven-dots"
+                        role="img"
+                        aria-label="Lưới 1.120 chấm minh hoạ khoảng 560.000 phòng trọ ở TP.HCM; 17 chấm xanh ở góc trên phải tương ứng khoảng 8.300 phòng cần để hoà vốn"
+                      >
+                        {Array.from({ length: breakevenDotCount }, (_, index) => (
+                          <span
+                            class:list={[
+                              'pitch-breakeven-dot',
+                              { 'pitch-breakeven-dot--blue': breakevenDotIsBlue(index) },
+                            ]}
+                            aria-hidden="true"
+                          />
+                        ))}
+                      </div>
+                      <div class="pitch-breakeven-grid-annot-row">
+                        <span class="pitch-breakeven-grid-tag">~560.000 phòng trọ ở TP.HCM</span>
+                        <span class="pitch-breakeven-grid-tag">mỗi chấm ≈ 500 phòng</span>
+                      </div>
                     </div>
                   </div>
                   <div class="pitch-breakeven-percent-block">
