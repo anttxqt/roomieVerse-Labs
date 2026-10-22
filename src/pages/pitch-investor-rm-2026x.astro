@@ -3118,13 +3118,13 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
       </section>
 
       <!-- Slide 11: Hướng phát triển sản phẩm -->
-      <section class="slide-section">
+      <section class="slide-section" id="slide-11">
         <div class="slide-container reveal">
           <div style="text-align: center;">
-            <h2 class="slide-title">Hoàn thiện "Quản gia tàng hình" trước khi bung sức</h2>
+            <h2 class="slide-title">Lõi đã chạy. Vốn này để làm phần chạy ngầm.</h2>
           </div>
           <div class="slide-content">
-            <p>Luồng chính đã chạy. Số vốn này dùng để làm tiếp phần chạy ngầm, phần lớn là chi phí gọi AI (API) và thời gian phát triển.</p>
+            <p>Vốn này chủ yếu trả cho thời gian làm, không phải tiền AI: tiền gọi AI chỉ khoảng 0,4–3,2 triệu đồng mỗi tháng.</p>
 
             <div class="pitch-roadmap-pair">
               <div>
@@ -3133,6 +3133,7 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
                   <li>Web cho chủ cho thuê; bot Telegram cho khách và cho chủ; mini app cho khách; link hoá đơn cho khách chưa dùng Telegram.</li>
                   <li>Tự soạn hoá đơn nháp mỗi tháng, nhắc gửi số 3 lần, nhắc nợ 6 lần.</li>
                   <li>Tiền về qua PayOS thì tự gạch nợ và báo cho cả hai bên.</li>
+                  <li>Hợp đồng và tiền cọc, giá điện nước bậc thang, khách báo sự cố kèm ảnh trong mini app.</li>
                   <li>Bản đầu của máy đọc số đồng hồ: AI đọc ảnh, rồi đọc lại một lần để kiểm.</li>
                 </ul>
               </div>
@@ -3150,9 +3151,10 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
             <div class="pitch-roadmap-far">
               <h3>Xa hơn</h3>
               <ul>
-                <li><strong>Số hoá thủ tục:</strong> Ký hợp đồng điện tử (E-contract) và quản lý tiền cọc tự động.</li>
-                <li><strong>Xử lý sự cố:</strong> Quy trình báo cáo hư hỏng phòng ốc và gọi thợ sửa chữa trực tiếp qua Chatbot.</li>
-                <li><strong>Nghiệp vụ nâng cao:</strong> Hỗ trợ tính toán điện 3 pha, nước bậc thang phức tạp cho các toà nhà dịch vụ lớn.</li>
+                <li>Mở rộng thêm loại hình cho thuê.</li>
+                <li>Hoàn thiện hệ sinh thái để dùng được trên ngày càng nhiều loại thiết bị.</li>
+                <li>Một thông tin có thể xem được ở nhiều chỗ hơn.</li>
+                <li>Tiếp tục giải bài toán tự động hoá, tới mức tối đa.</li>
               </ul>
             </div>
             
@@ -3162,8 +3164,20 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
                 <circle cx="12" cy="12" r="6"></circle>
                 <circle cx="12" cy="12" r="2"></circle>
               </svg>
-              <p><span style="color: #34c759;">Mục tiêu tối thượng:</span> roomio lo toàn bộ phần "giấy tờ & tính toán", chủ trọ chỉ cần tập trung vào việc lấp đầy phòng.</p>
+              <p><span style="color: #34c759;">Mục tiêu tối thượng:</span> roomio lo toàn bộ phần "giấy tờ & tính toán", chủ cho thuê chỉ cần tập trung vào việc lấp đầy phòng.</p>
             </div>
+          </div>
+
+          <div class="appendix-btn-wrap reveal delay-300">
+            <button type="button" class="appendix-jump-btn" data-target="appendix-slide-11" aria-label="Xem thêm phụ lục cho Slide 11">
+              <span>Xem thêm phụ lục</span>
+              <i class="appendix-btn-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="4" x2="12" y2="20"></line>
+                  <polyline points="19 13 12 20 5 13"></polyline>
+                </svg>
+              </i>
+            </button>
           </div>
         </div>
       </section>
@@ -3948,6 +3962,57 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
 
                 <div class="appendix-return-wrap">
                   <button type="button" class="appendix-jump-btn appendix-jump-btn--return" data-return="slide-10" aria-label="Quay lại Slide 10">
+                    <span>Quay lại</span>
+                    <i class="appendix-btn-icon" aria-hidden="true">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="20" x2="12" y2="4"></line>
+                        <polyline points="5 11 12 4 19 11"></polyline>
+                      </svg>
+                    </i>
+                  </button>
+                </div>
+              </div>
+            </details>
+
+            <details class="apple-accordion-item" id="appendix-slide-11" name="pitch-appendix">
+              <summary class="apple-accordion-header">
+                <span class="apple-accordion-title">Slide 11: Đã có gì, làm tiếp gì</span>
+                <span class="apple-accordion-icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </summary>
+              <div class="apple-accordion-content">
+                <div class="pitch-budget-block">
+                  <h4 class="pitch-budget-block__title">Đã chạy</h4>
+                  <ul class="pitch-budget-assumptions">
+                    <li>Web cho chủ cho thuê: phòng, khách, hợp đồng và tiền cọc, giá điện nước (kể cả bậc thang), hoá đơn.</li>
+                    <li>Telegram: bot cho khách và bot cho chủ; mini app cho khách xem hoá đơn và báo sự cố kèm ảnh.</li>
+                    <li>Tự động: soạn hoá đơn nháp mỗi tháng; nhắc gửi số 3 lần; nhắc đóng tiền 6 lần (ngày 0, 2, 6, 13, 20, 27 sau khi gửi hoá đơn).</li>
+                    <li>Thu tiền: tiền về qua PayOS thì tự gạch nợ và báo cho cả hai bên.</li>
+                    <li>Máy đọc số đồng hồ bản đầu: AI đọc ảnh, rồi đọc lại một lần để kiểm (hiện cùng một hãng AI).</li>
+                    <li>Link hoá đơn cho khách chưa dùng Telegram.</li>
+                  </ul>
+                </div>
+
+                <div class="pitch-budget-block">
+                  <h4 class="pitch-budget-block__title">Làm tiếp trong 12 tháng (dự kiến)</h4>
+                  <ul class="pitch-budget-assumptions">
+                    <li>Tháng 1–3, founder cùng Dev freelance: làm chắc luồng chính với những chủ đầu tiên; thêm hãng AI thứ hai để đọc số đối chiếu; báo khách ngay khi chủ sửa số; báo cáo tóm tắt mỗi sáng cho chủ; khách không dùng Telegram vẫn gửi được số.</li>
+                    <li>Từ tháng 4, founder: các agent chạy ngầm — quản gia AI cho chủ cho thuê, agent nhập dữ liệu từ file Excel cũ, bot bản tin.</li>
+                  </ul>
+                </div>
+
+                <div class="pitch-budget-block">
+                  <h4 class="pitch-budget-block__title">Tiền gọi AI</h4>
+                  <ul class="pitch-budget-assumptions">
+                    <li>Khoảng 25 triệu đồng trong 12 tháng, tức khoảng 2% tổng chi. Chi tiết từng giai đoạn: xem phụ lục 12.</li>
+                  </ul>
+                </div>
+
+                <div class="appendix-return-wrap">
+                  <button type="button" class="appendix-jump-btn appendix-jump-btn--return" data-return="slide-11" aria-label="Quay lại Slide 11">
                     <span>Quay lại</span>
                     <i class="appendix-btn-icon" aria-hidden="true">
                       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
