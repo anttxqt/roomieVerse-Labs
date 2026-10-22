@@ -1387,11 +1387,21 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
       }
 
       .pitch-rooms-bar__note {
-        margin: 8px 0 0;
+        margin: 14px 0 0;
         font-size: 0.82rem;
         font-weight: 400;
         color: #86868b;
         line-height: 1.45;
+        letter-spacing: normal;
+      }
+
+      #slide-7 .highlight-box--breakeven .pitch-rooms-bar__note {
+        margin-top: 14px;
+        font-size: 0.82rem;
+        font-weight: 400;
+        color: #86868b;
+        line-height: 1.45;
+        letter-spacing: normal;
       }
 
       @media (max-width: 768px) {
@@ -2531,8 +2541,6 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
             <p>Thu phí theo từng phòng, mỗi tháng roomio sẽ tự tổng hợp và gửi hoá đơn về cho chủ cho thuê cũng qua Telegram bot. Mức phí tuỳ loại hình và số phòng, phòng trống khách chỉ tính 5% giảm tải cho chủ nhà.</p>
 
             <div class="highlight-box highlight-box--breakeven">
-              <p>Không cần chiếm nhiều thị trường để "roomio" tự nuôi được mình.</p>
-
               <div class="pitch-rooms-bars">
                 <div class="pitch-rooms-bar">
                   <div class="pitch-rooms-bar__head">
@@ -2587,6 +2595,7 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
 
               <p>Mỗi tháng "roomio" cần khoảng 100 triệu đồng để vận hành. Khoảng 8.300 phòng là đủ, chưa tới 1,5% phòng trọ ở riêng TP.HCM.</p>
               <p>Phần lớn tiền thu được giữ lại: chi phí chính chỉ là máy chủ và AI, tin nhắn qua Telegram không mất phí.</p>
+              <p>Không cần chiếm nhiều thị trường để "roomio" tự nuôi được mình.</p>
             </div>
 
             <div class="highlight-box reveal delay-200">
