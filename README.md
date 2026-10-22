@@ -166,7 +166,7 @@ Mục nav **Roomibase** trỏ tới `/roomieverse` (vi), `/en/roomieverse` (en),
 | 5 | Rào cản công nghệ | `slide-5` | Đối thủ phải đổi hết cách làm hiện tại mới có thể theo "roomio" |
 | 6 | Demo | `slide-6` | Từ người mù công nghệ tới người rành công nghệ… ai cũng có thể dùng dễ dàng |
 | 7 | Thị trường | `slide-7` | Cách "roomio" kiếm tiền |
-| 8 | Chiến thuật | `slide-8` | Chiến thuật "Đánh Du Kích" & Hòn Tuyết Lăn |
+| 8 | Chiến thuật | `slide-8` | Chiến thuật "Đánh Du Kích" |
 | 9 | Kiểm chứng | — | Biến những lời hứa thành dữ liệu sử dụng thực tế |
 | 10 | Đội ngũ | — | Đội ngũ Tinh gọn & Thực chiến |
 | 11 | Hướng phát triển | — | Hoàn thiện "Quản gia tàng hình" trước khi bung sức |
