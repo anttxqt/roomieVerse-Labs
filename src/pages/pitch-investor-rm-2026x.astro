@@ -119,6 +119,18 @@ const pitchInvestorReturn = [
   'Không đặt mục tiêu bán công ty.',
 ]
 
+const breakevenDotGridCols = 56
+const breakevenDotGridRows = 20
+const breakevenDotCount = breakevenDotGridCols * breakevenDotGridRows
+const breakevenBlueDotCount = 17
+const breakevenBlueStartCol = breakevenDotGridCols - breakevenBlueDotCount
+
+function breakevenDotIsBlue(index: number) {
+  const col = index % breakevenDotGridCols
+  const row = Math.floor(index / breakevenDotGridCols)
+  return row === 0 && col >= breakevenBlueStartCol
+}
+
 function parsePitchVnd(value) {
   if (!value || value === '–') return 0
   return Number(String(value).replace(/\./g, '').replace(/[^\d]/g, '')) || 0
@@ -1305,6 +1317,7 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
         border: 1px solid #d2d2d7;
       }
 
+      #slide-7 .highlight-box--breakeven .pitch-breakeven-title,
       #slide-7 .highlight-box--breakeven p.pitch-rooms-bars-closing {
         margin: 0;
         color: #1d1d1f;
@@ -1314,13 +1327,286 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
         letter-spacing: -0.01em;
       }
 
-      #slide-7 .highlight-box--breakeven p.pitch-rooms-bars-closing + p.pitch-rooms-bars-closing {
-        margin-top: 20px;
+      #slide-7 .highlight-box--breakeven .pitch-breakeven-title {
+        margin-bottom: 28px;
+      }
+
+      #slide-7 .highlight-box--breakeven p.pitch-rooms-bars-closing {
+        margin-top: 28px;
       }
 
       @media (min-width: 768px) {
+        #slide-7 .highlight-box--breakeven .pitch-breakeven-title,
         #slide-7 .highlight-box--breakeven p.pitch-rooms-bars-closing {
           font-size: 1.8rem;
+        }
+      }
+
+      .pitch-breakeven-equation {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+        margin-bottom: 24px;
+      }
+
+      .pitch-breakeven-equation__row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+      }
+
+      @media (min-width: 768px) {
+        .pitch-breakeven-equation__row {
+          flex-direction: row;
+          align-items: stretch;
+          justify-content: center;
+          gap: 10px;
+        }
+      }
+
+      .pitch-breakeven-op {
+        flex-shrink: 0;
+        font-size: 1.75rem;
+        font-weight: 600;
+        color: #86868b;
+        line-height: 1;
+        padding: 4px 0;
+      }
+
+      @media (min-width: 768px) {
+        .pitch-breakeven-op {
+          align-self: center;
+          font-size: 2rem;
+          padding: 0 2px;
+        }
+      }
+
+      .pitch-breakeven-tile {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        background: #fff;
+        border: 1px solid #d2d2d7;
+        border-radius: 20px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+        padding: 16px 18px;
+        text-align: center;
+      }
+
+      @media (min-width: 768px) {
+        .pitch-breakeven-tile {
+          flex: 1 1 0;
+          min-width: 0;
+          border-radius: 24px;
+          padding: 20px 16px;
+        }
+      }
+
+      .pitch-breakeven-tile--result {
+        background: var(--blue);
+        border-color: var(--blue);
+        box-shadow: 0 4px 16px rgba(0, 113, 227, 0.2);
+      }
+
+      .pitch-breakeven-tile__value {
+        display: block;
+        font-size: 1.35rem;
+        font-weight: 700;
+        color: #1d1d1f;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        font-variant-numeric: tabular-nums;
+      }
+
+      @media (min-width: 768px) {
+        .pitch-breakeven-tile__value {
+          font-size: 1.5rem;
+        }
+      }
+
+      .pitch-breakeven-tile--result .pitch-breakeven-tile__value,
+      .pitch-breakeven-tile--result .pitch-breakeven-tile__label {
+        color: #fff;
+      }
+
+      .pitch-breakeven-tile__label {
+        display: block;
+        margin-top: 6px;
+        font-size: 0.78rem;
+        font-weight: 500;
+        color: #86868b;
+        line-height: 1.35;
+      }
+
+      @media (min-width: 768px) {
+        .pitch-breakeven-tile__label {
+          font-size: 0.82rem;
+        }
+      }
+
+      .pitch-breakeven-panel {
+        background: #fff;
+        border: 1px solid #e5e5ea;
+        border-radius: 24px;
+        padding: 20px 16px;
+        margin-bottom: 20px;
+      }
+
+      @media (min-width: 768px) {
+        .pitch-breakeven-panel {
+          padding: 24px 28px;
+        }
+      }
+
+      .pitch-breakeven-visual {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        align-items: stretch;
+      }
+
+      @media (min-width: 768px) {
+        .pitch-breakeven-visual {
+          flex-direction: row;
+          align-items: center;
+          gap: 32px;
+        }
+      }
+
+      .pitch-breakeven-grid-block {
+        flex: 1 1 auto;
+        min-width: 0;
+      }
+
+      .pitch-breakeven-grid-annot-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 10px 12px;
+        margin-bottom: 10px;
+      }
+
+      .pitch-breakeven-dot-grid {
+        --breakeven-dot-size: 3px;
+        --breakeven-dot-gap: 1px;
+        display: grid;
+        grid-template-columns: repeat(56, var(--breakeven-dot-size));
+        gap: var(--breakeven-dot-gap);
+        width: max-content;
+        max-width: 100%;
+      }
+
+      @media (min-width: 480px) {
+        .pitch-breakeven-dot-grid {
+          --breakeven-dot-size: 4px;
+          --breakeven-dot-gap: 2px;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .pitch-breakeven-dot-grid {
+          --breakeven-dot-size: 5px;
+          --breakeven-dot-gap: 2px;
+        }
+      }
+
+      .pitch-breakeven-dot {
+        width: var(--breakeven-dot-size);
+        height: var(--breakeven-dot-size);
+        border-radius: 50%;
+        background: #c7c7cc;
+      }
+
+      .pitch-breakeven-dot--blue {
+        background: var(--blue);
+      }
+
+      .pitch-breakeven-grid-tag {
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: var(--blue);
+        line-height: 1.3;
+        padding-top: 2px;
+        white-space: nowrap;
+      }
+
+      .pitch-breakeven-grid-caption {
+        margin: 0;
+        font-size: 0.78rem;
+        font-weight: 400;
+        color: #86868b;
+        line-height: 1.45;
+      }
+
+      @media (min-width: 768px) {
+        .pitch-breakeven-grid-caption {
+          font-size: 0.82rem;
+        }
+      }
+
+      .pitch-breakeven-percent-block {
+        flex-shrink: 0;
+        text-align: center;
+      }
+
+      @media (min-width: 768px) {
+        .pitch-breakeven-percent-block {
+          text-align: left;
+          max-width: 220px;
+        }
+      }
+
+      .pitch-breakeven-percent {
+        margin: 0;
+        font-size: 2.75rem;
+        font-weight: 700;
+        color: var(--blue);
+        line-height: 1;
+        letter-spacing: -0.03em;
+        font-variant-numeric: tabular-nums;
+      }
+
+      @media (min-width: 768px) {
+        .pitch-breakeven-percent {
+          font-size: 3.25rem;
+        }
+      }
+
+      .pitch-breakeven-percent-caption {
+        margin: 10px 0 0;
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #1d1d1f;
+        line-height: 1.4;
+      }
+
+      .pitch-breakeven-context {
+        margin: 0 0 10px;
+        font-size: 0.78rem;
+        font-weight: 400;
+        color: #86868b;
+        line-height: 1.5;
+      }
+
+      @media (min-width: 768px) {
+        .pitch-breakeven-context {
+          font-size: 0.82rem;
+        }
+      }
+
+      .pitch-breakeven-assumption {
+        margin: 0;
+        font-size: 0.78rem;
+        font-weight: 400;
+        color: #86868b;
+        line-height: 1.45;
+      }
+
+      @media (min-width: 768px) {
+        .pitch-breakeven-assumption {
+          font-size: 0.82rem;
         }
       }
 
@@ -1334,93 +1620,6 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
 
       #slide-7 .pitch-fund-meta:last-of-type {
         margin-bottom: 32px;
-      }
-
-      .pitch-rooms-bars {
-        display: flex;
-        flex-direction: column;
-        gap: 18px;
-        margin: 24px 0 28px;
-        text-align: left;
-      }
-
-      .pitch-rooms-bar__head {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: baseline;
-        gap: 6px 12px;
-        margin-bottom: 8px;
-      }
-
-      .pitch-rooms-bar__label {
-        font-size: 0.95rem;
-        font-weight: 600;
-        color: #1d1d1f;
-        line-height: 1.35;
-      }
-
-      .pitch-rooms-bar__value {
-        font-size: 0.9rem;
-        font-weight: 600;
-        color: var(--blue-dark);
-        font-variant-numeric: tabular-nums;
-        line-height: 1.35;
-      }
-
-      .pitch-rooms-bar__track {
-        height: 10px;
-        border-radius: 999px;
-        background: #e5e5ea;
-        overflow: hidden;
-      }
-
-      .pitch-rooms-bar__fill {
-        height: 100%;
-        width: var(--w, 0%);
-        min-width: 0;
-        border-radius: 999px;
-        background: #86868b;
-      }
-
-      .pitch-rooms-bar--assumption .pitch-rooms-bar__fill {
-        background: var(--blue-soft, #e8f0fe);
-        box-shadow: inset 0 0 0 1px #c7c7cc;
-      }
-
-      .pitch-rooms-bar--breakeven .pitch-rooms-bar__fill {
-        background: var(--blue);
-        width: max(4px, var(--w, 0%));
-      }
-
-      .pitch-rooms-bar__note {
-        margin: 14px 0 0;
-        font-size: 0.82rem;
-        font-weight: 400;
-        color: #86868b;
-        line-height: 1.45;
-        letter-spacing: normal;
-      }
-
-      #slide-7 .highlight-box--breakeven .pitch-rooms-bar__note {
-        margin-top: 14px;
-        font-size: 0.82rem;
-        font-weight: 400;
-        color: #86868b;
-        line-height: 1.45;
-        letter-spacing: normal;
-      }
-
-      @media (max-width: 768px) {
-        .pitch-rooms-bar__head {
-          flex-direction: column;
-          align-items: flex-start;
-          gap: 4px;
-        }
-
-        .pitch-rooms-bar__value {
-          text-align: left;
-        }
       }
 
       .pitch-roadmap-pair {
@@ -2548,59 +2747,60 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
             <p>Thu phí theo từng phòng, mỗi tháng roomio sẽ tự tổng hợp và gửi hoá đơn về cho chủ cho thuê cũng qua Telegram bot. Mức phí tuỳ loại hình và số phòng, phòng trống khách chỉ tính 5% giảm tải cho chủ nhà.</p>
 
             <div class="highlight-box highlight-box--breakeven">
-              <div class="pitch-rooms-bars">
-                <div class="pitch-rooms-bar">
-                  <div class="pitch-rooms-bar__head">
-                    <span class="pitch-rooms-bar__label">Cả nước (ước tính)</span>
-                    <span class="pitch-rooms-bar__value">~1.800.000 phòng</span>
+              <p class="pitch-breakeven-title">Cần bao nhiêu phòng trọ để "roomio" tự nuôi được mình?</p>
+
+              <div class="pitch-breakeven-equation">
+                <div class="pitch-breakeven-equation__row">
+                  <div class="pitch-breakeven-tile">
+                    <span class="pitch-breakeven-tile__value">~100 triệu</span>
+                    <span class="pitch-breakeven-tile__label">chi phí mỗi tháng</span>
                   </div>
-                  <div class="pitch-rooms-bar__track" aria-hidden="true">
-                    <div class="pitch-rooms-bar__fill" style="--w: 100%"></div>
+                  <span class="pitch-breakeven-op" aria-hidden="true">÷</span>
+                  <div class="pitch-breakeven-tile">
+                    <span class="pitch-breakeven-tile__value">~12.000đ</span>
+                    <span class="pitch-breakeven-tile__label">phí trung bình mỗi phòng mỗi tháng</span>
                   </div>
-                </div>
-                <div class="pitch-rooms-bar">
-                  <div class="pitch-rooms-bar__head">
-                    <span class="pitch-rooms-bar__label">TP.HCM</span>
-                    <span class="pitch-rooms-bar__value">560.000 phòng</span>
+                  <span class="pitch-breakeven-op" aria-hidden="true">=</span>
+                  <div class="pitch-breakeven-tile pitch-breakeven-tile--result">
+                    <span class="pitch-breakeven-tile__value">~8.300 phòng</span>
+                    <span class="pitch-breakeven-tile__label">là đủ hoà vốn</span>
                   </div>
-                  <div class="pitch-rooms-bar__track" aria-hidden="true">
-                    <div class="pitch-rooms-bar__fill" style="--w: 30.5%"></div>
-                  </div>
-                </div>
-                <div class="pitch-rooms-bar">
-                  <div class="pitch-rooms-bar__head">
-                    <span class="pitch-rooms-bar__label">Hà Nội (ước tính)</span>
-                    <span class="pitch-rooms-bar__value">~340.000 phòng</span>
-                  </div>
-                  <div class="pitch-rooms-bar__track" aria-hidden="true">
-                    <div class="pitch-rooms-bar__fill" style="--w: 18.5%"></div>
-                  </div>
-                </div>
-                <div class="pitch-rooms-bar pitch-rooms-bar--assumption">
-                  <div class="pitch-rooms-bar__head">
-                    <span class="pitch-rooms-bar__label">Nhóm đủ đau để trả tiền (giả định)</span>
-                    <span class="pitch-rooms-bar__value">~357.000 phòng</span>
-                  </div>
-                  <div class="pitch-rooms-bar__track" aria-hidden="true">
-                    <div class="pitch-rooms-bar__fill" style="--w: 19.5%"></div>
-                  </div>
-                  <p class="pitch-rooms-bar__note">
-                    Giả định: dãy trọ từ khoảng 10 phòng trở lên mới đủ đau để trả tiền; mới có số ở TP.HCM. Sẽ kiểm chứng với những chủ đầu tiên.
-                  </p>
-                </div>
-                <div class="pitch-rooms-bar pitch-rooms-bar--breakeven">
-                  <div class="pitch-rooms-bar__head">
-                    <span class="pitch-rooms-bar__label">Đủ để "roomio" hoà vốn</span>
-                    <span class="pitch-rooms-bar__value">~8.300 phòng</span>
-                  </div>
-                  <div class="pitch-rooms-bar__track" aria-hidden="true">
-                    <div class="pitch-rooms-bar__fill" style="--w: 0.45%"></div>
-                  </div>
-                  <p class="pitch-rooms-bar__note">= chi ~100 triệu/tháng ÷ phí trung bình ~12.000 đ/phòng</p>
                 </div>
               </div>
 
-              <p class="pitch-rooms-bars-closing">Mỗi tháng "roomio" cần khoảng 100 triệu đồng để vận hành. Khoảng 8.300 phòng là đủ, chưa tới 1,5% phòng trọ ở riêng TP.HCM. Không cần chiếm nhiều thị trường để "roomio" tự nuôi được mình.</p>
+              <div class="pitch-breakeven-panel">
+                <div class="pitch-breakeven-visual">
+                  <div class="pitch-breakeven-grid-block">
+                    <div class="pitch-breakeven-grid-annot-row">
+                      <div
+                        class="pitch-breakeven-dot-grid"
+                        role="img"
+                        aria-label="Lưới 1.120 chấm minh hoạ khoảng 560.000 phòng trọ ở TP.HCM; 17 chấm xanh ở góc trên phải tương ứng khoảng 8.300 phòng cần để hoà vốn"
+                      >
+                        {Array.from({ length: breakevenDotCount }, (_, index) => (
+                          <span
+                            class:list={[
+                              'pitch-breakeven-dot',
+                              { 'pitch-breakeven-dot--blue': breakevenDotIsBlue(index) },
+                            ]}
+                            aria-hidden="true"
+                          />
+                        ))}
+                      </div>
+                      <span class="pitch-breakeven-grid-tag">8.300 phòng</span>
+                    </div>
+                    <p class="pitch-breakeven-grid-caption">~560.000 phòng trọ ở TP.HCM · mỗi chấm ≈ 500 phòng</p>
+                  </div>
+                  <div class="pitch-breakeven-percent-block">
+                    <p class="pitch-breakeven-percent">~1,5%</p>
+                    <p class="pitch-breakeven-percent-caption">phòng trọ ở TP.HCM là đủ để "roomio" sống được</p>
+                  </div>
+                </div>
+              </div>
+
+              <p class="pitch-breakeven-context">Cả nước ~1,8 triệu phòng (ước tính) · Hà Nội ~340.000 phòng (ước tính) · Nhóm đủ đau để trả tiền ở TP.HCM ~357.000 phòng (giả định)</p>
+              <p class="pitch-breakeven-assumption">Giả định: dãy trọ từ khoảng 10 phòng trở lên mới đủ đau để trả tiền; mới có số ở TP.HCM. Sẽ kiểm chứng với những chủ đầu tiên.</p>
+
               <p class="pitch-rooms-bars-closing">Phần lớn tiền thu được giữ lại: chi phí chính chỉ là máy chủ và AI, tin nhắn qua Telegram không mất phí.</p>
             </div>
 
