@@ -1825,10 +1825,12 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
       }
 
       #slide-10 .pitch-team-col__label {
-        font-size: 0.72rem;
-        font-weight: 700;
-        letter-spacing: 0.08em;
-        color: rgba(255, 255, 255, 0.45);
+        font-family: inherit;
+        font-size: clamp(1rem, 1.25vw, 1.15rem);
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        line-height: 1.35;
+        color: rgba(255, 255, 255, 0.58);
         margin: 0 0 14px 4px;
       }
 
