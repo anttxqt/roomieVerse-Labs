@@ -1332,23 +1332,22 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
         }
       }
 
+      #slide-7 .highlight-box--breakeven .pitch-breakeven-notes {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
       #slide-7 .highlight-box--breakeven .pitch-breakeven-context,
       #slide-7 .highlight-box--breakeven .pitch-breakeven-assumption,
+      #slide-7 .highlight-box--breakeven .pitch-breakeven-pricing-note,
       #slide-7 .highlight-box--breakeven p.pitch-rooms-bars-closing {
         margin: 0;
         color: #86868b;
         font-weight: 400;
-        font-size: clamp(1.1rem, 1.5vw, 1.25rem);
+        font-size: clamp(1rem, 1.35vw, 1.1rem);
         line-height: 1.6;
         letter-spacing: normal;
-      }
-
-      #slide-7 .highlight-box--breakeven .pitch-breakeven-context {
-        margin-bottom: 10px;
-      }
-
-      #slide-7 .highlight-box--breakeven p.pitch-rooms-bars-closing {
-        margin-top: 28px;
       }
 
       .pitch-breakeven-equation {
@@ -2784,10 +2783,12 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
                 </div>
               </div>
 
-              <p class="pitch-breakeven-context">Cả nước ~1,8 triệu phòng (ước tính) · Hà Nội ~340.000 phòng (ước tính) · Nhóm đủ đau để trả tiền ở TP.HCM ~357.000 phòng (giả định)</p>
-              <p class="pitch-breakeven-assumption">Giả định: dãy trọ từ khoảng 10 phòng trở lên mới đủ đau để trả tiền; mới có số ở TP.HCM. Sẽ kiểm chứng với những chủ đầu tiên.</p>
-
-              <p class="pitch-rooms-bars-closing">Phần lớn tiền thu được giữ lại: chi phí chính chỉ là máy chủ và AI, tin nhắn qua Telegram không mất phí.</p>
+              <div class="pitch-breakeven-notes">
+                <p class="pitch-breakeven-context">Cả nước ~1,8 triệu phòng (ước tính) · Hà Nội ~340.000 phòng (ước tính) · Nhóm đủ đau để trả tiền ở TP.HCM ~357.000 phòng (giả định)</p>
+                <p class="pitch-breakeven-assumption">Giả định: dãy trọ từ khoảng 10 phòng trở lên mới đủ đau để trả tiền; mới có số ở TP.HCM. Sẽ kiểm chứng với những chủ đầu tiên.</p>
+                <p class="pitch-breakeven-pricing-note">12.000đ là mức tính thận trọng: giá của nhà trọ nhỏ, nhóm rẻ gần nhất trong bảng giá. Căn hộ dịch vụ, chung cư mini, căn hộ cho thuê có giá cao gấp khoảng 2 lần; nhà càng nhiều phòng thì các phòng sau tính bậc giá cao hơn. Giá trung bình thực tế cao hơn thì cần ít phòng hơn để hoà vốn.</p>
+                <p class="pitch-rooms-bars-closing">Phần lớn tiền thu được giữ lại: chi phí chính chỉ là máy chủ và AI, tin nhắn qua Telegram không mất phí.</p>
+              </div>
             </div>
 
             <div class="highlight-box reveal delay-200">
@@ -3519,7 +3520,7 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
                       Hoà vốn: chi mỗi tháng khoảng 99 triệu đồng ÷ phí trung bình khoảng 12.000 đồng mỗi phòng ≈ 8.300 phòng, chưa tới 1,5% của 560.220 phòng trọ ở TP.HCM.
                     </li>
                     <li>
-                      Phí trung bình khoảng 12.000 đồng mỗi phòng mỗi tháng là mức của nhà trọ 9–15 phòng, kín 90%, theo bảng giá hiện tại.
+                      Phí trung bình khoảng 12.000 đồng mỗi phòng mỗi tháng là mức của nhà trọ 9–15 phòng, kín 90%, theo bảng giá hiện tại. Đây là mức thận trọng; loại hình khác và nhà nhiều phòng có giá trung bình cao hơn.
                     </li>
                     <li>
                       Hà Nội chưa có số phòng chính thức. Nếu lấy mức trung bình 9,3 phòng mỗi nhà trọ của TP.HCM thì khoảng 340.000 phòng (ước tính).
