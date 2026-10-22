@@ -82,21 +82,18 @@ const pitchTableC = [
 ]
 
 const pitchTableD = [
-  { thang: '1', chuTro: '~8', doanhThu: '~1.500.000', chi: '210.078.000', quy: '1.152.022.000' },
-  { thang: '2', chuTro: '~24', doanhThu: '~4.600.000', chi: '81.090.000', quy: '1.070.932.000' },
-  { thang: '3', chuTro: '~40', doanhThu: '~7.700.000', chi: '77.090.000', quy: '993.842.000' },
-  { thang: '4', chuTro: '~62', doanhThu: '~11.700.000', chi: '117.840.000', quy: '876.002.000' },
-  { thang: '5', chuTro: '~83', doanhThu: '~15.800.000', chi: '87.840.000', quy: '788.162.000' },
-  { thang: '6', chuTro: '~105', doanhThu: '~20.000.000', chi: '87.840.000', quy: '700.322.000' },
-  { thang: '7', chuTro: '~126', doanhThu: '~24.000.000', chi: '99.380.000', quy: '600.942.000' },
-  { thang: '8', chuTro: '~147', doanhThu: '~28.000.000', chi: '99.380.000', quy: '501.562.000' },
-  { thang: '9', chuTro: '~169', doanhThu: '~32.100.000', chi: '99.380.000', quy: '402.182.000' },
-  { thang: '10', chuTro: '~191', doanhThu: '~36.200.000', chi: '99.380.000', quy: '302.802.000' },
-  { thang: '11', chuTro: '~213', doanhThu: '~40.400.000', chi: '99.380.000', quy: '203.422.000' },
-  { thang: '12', chuTro: '~235', doanhThu: '~44.600.000', chi: '102.380.000', quy: '101.042.000' },
-  { thang: '13', chuTro: '~257', doanhThu: '~48.800.000', chi: '99.380.000', quy: '–' },
-  { thang: '14', chuTro: '~280', doanhThu: '~53.100.000', chi: '99.380.000', quy: '–' },
-  { thang: '15', chuTro: '~302', doanhThu: '~57.500.000', chi: '99.380.000', quy: '–' },
+  { thang: '1', chuTro: '~4', doanhThu: '~800.000', chi: '210.078.000', quy: '1.152.022.000' },
+  { thang: '2', chuTro: '~11', doanhThu: '~2.100.000', chi: '81.090.000', quy: '1.070.932.000' },
+  { thang: '3', chuTro: '~18', doanhThu: '~3.400.000', chi: '77.090.000', quy: '993.842.000' },
+  { thang: '4', chuTro: '~40', doanhThu: '~7.700.000', chi: '117.840.000', quy: '876.002.000' },
+  { thang: '5', chuTro: '~63', doanhThu: '~11.900.000', chi: '87.840.000', quy: '788.162.000' },
+  { thang: '6', chuTro: '~85', doanhThu: '~16.200.000', chi: '87.840.000', quy: '700.322.000' },
+  { thang: '7', chuTro: '~106', doanhThu: '~20.200.000', chi: '99.380.000', quy: '600.942.000' },
+  { thang: '8', chuTro: '~127', doanhThu: '~24.200.000', chi: '99.380.000', quy: '501.562.000' },
+  { thang: '9', chuTro: '~149', doanhThu: '~28.200.000', chi: '99.380.000', quy: '402.182.000' },
+  { thang: '10', chuTro: '~170', doanhThu: '~32.300.000', chi: '99.380.000', quy: '302.802.000' },
+  { thang: '11', chuTro: '~192', doanhThu: '~36.400.000', chi: '99.380.000', quy: '203.422.000' },
+  { thang: '12', chuTro: '~214', doanhThu: '~40.600.000', chi: '102.380.000', quy: '101.042.000' },
 ]
 
 const pitchAssumptions = [
@@ -106,7 +103,7 @@ const pitchAssumptions = [
   'Hoa hồng chỉ tính khi chủ trọ đã trả phí tháng đầu. Chủ trọ rời roomio trong 60 ngày đầu thì trừ lại hoa hồng.',
   'Sale chính: khách 1–5: 400.000 đ; khách 6–7: 600.000 đ; khách 8–9: 800.000 đ; từ khách 10: 1.000.000 đ.',
   'CTV: khách 1–4: 400.000 đ; khách 5: 600.000 đ; từ khách 6: 1.000.000 đ.',
-  'Dự phóng khách: Founder tự ký 8 chủ ở tháng 1, 4 chủ/tháng ở tháng 2–6, 3 chủ/tháng sau đó; Sale 12 chủ/tháng từ tháng 2; CTV 5 chủ/tháng từ tháng 4; mỗi tháng +3% nhờ giới thiệu, −2% khách rời.',
+  'Dự phóng khách: tháng 1–3 ở Đà Lạt, Founder tự ký 4 chủ ở tháng 1 rồi 3 chủ/tháng, Sale chính 4 chủ/tháng; tháng 4–6 ở TP.HCM, Founder 5, Sale chính 12, CTV 5 chủ/tháng; từ tháng 7, Founder 3, Sale chính 12, CTV 5 chủ/tháng; mỗi tháng +3% nhờ giới thiệu, −2% khách rời.',
   'Chỗ làm Sài Gòn: căn 2PN ~12 triệu/tháng. Founder ở 1 phòng và tự trả 4 triệu; công ty trả 8 triệu. Địa chỉ đăng ký công ty là văn phòng ảo.',
   'Mac Studio: Founder là người viết code duy nhất. Máy kiêm 3 việc: máy làm việc, máy chạy test tự động, và bản chạy thử trước khi lên production. Chi một lần thay cho thuê máy cloud hằng tháng.',
   'Mở rộng vòng: tháng 13–18 tính theo mức chi tháng 7–12 (99.380.000 đ/tháng), chưa tính doanh thu. 15 tháng cần 1.559.198.000 đ; $75,000 (1.927.500.000 đ) còn dư ~368 triệu. 18 tháng cần 1.857.338.000 đ; $100,000 (2.570.000.000 đ) còn dư ~713 triệu.',
@@ -2821,7 +2818,7 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
 
               <div class="pitch-breakeven-notes">
                 <p class="pitch-breakeven-context">Cả nước ~1,8 triệu phòng (ước tính) · Hà Nội ~340.000 phòng (ước tính) · dãy trọ từ khoảng 10 phòng trở lên mới đủ đau để trả tiền, nhóm này ở TP.HCM khoảng ~357.000 phòng (mới có số tại đây), em sẽ kiểm chứng với những chủ đầu tiên.</p>
-                <p class="pitch-breakeven-pricing-note">Phí 12.000đ là mức rẻ nhất trong bảng giá. Em cố ý tính theo mức thấp nhất để không xem là lạc quan. Thực tế giá trung bình sẽ cao hơn do thông thường chủ cho thuê nhà có nhiều phòng, hoặc căn hộ dịch vụ giá cao hơn, nên con số thật sẽ nhẹ hơn phần nào.</p>
+                <p class="pitch-breakeven-pricing-note">Phí 12.000đ là mức thấp nhất của nhà trọ trong bảng giá. Em cố ý tính theo mức thấp nhất để không xem là lạc quan. Thực tế giá trung bình sẽ cao hơn do thông thường chủ cho thuê nhà có nhiều phòng, hoặc căn hộ dịch vụ giá cao hơn, nên con số thật sẽ nhẹ hơn phần nào.</p>
                 <p class="pitch-rooms-bars-closing">Còn về hệ thống, phần lớn tiền thu giữ lại được nhờ không tốn phí gửi tin nhắn qua Telegram, chi phí chính chỉ còn là máy chủ và AI.</p>
               </div>
             </div>
@@ -2856,7 +2853,7 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
           
           <div class="pitch-timeline">
             <article class="pitch-timeline__step reveal delay-100">
-              <p class="pitch-timeline__label"><strong>Tháng 1–3 · ở tỉnh · ~40 chủ</strong></p>
+              <p class="pitch-timeline__label"><strong>Tháng 1–3 · quê nhà Đà Lạt · 15–20 chủ</strong></p>
               <p class="pitch-timeline__text">Gặp tận nhà từng chủ cho thuê, cài đặt giúp 1-1, có ưu đãi cho những chủ đầu tiên. Vừa có doanh thu đầu, vừa kiểm chứng app với khách thật.</p>
             </article>
             <article class="pitch-timeline__step reveal delay-200">
@@ -2864,7 +2861,7 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
               <p class="pitch-timeline__text">Về TP.HCM, Sale chính và CTV đi từng khu. Mang theo cách bán đã đúc kết ở giai đoạn đầu.</p>
             </article>
             <article class="pitch-timeline__step reveal delay-300">
-              <p class="pitch-timeline__label"><strong>Tháng 7–15 · hòn tuyết lăn · 280 chủ</strong></p>
+              <p class="pitch-timeline__label"><strong>Tháng 7–12 · hòn tuyết lăn · ~220 chủ</strong></p>
               <p class="pitch-timeline__text">Chủ cũ giới thiệu chủ mới và được thưởng. Mỗi chủ dùng tốt trở thành một người bán hàng cho "roomio".</p>
             </article>
           </div>
@@ -2999,15 +2996,15 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
             <div class="apple-grid apple-grid--stack">
               <article class="apple-card reveal delay-100">
                 <h3>Giai đoạn 1 · Tháng 1–3</h3>
-                <p>Hoàn thiện quy trình lõi và làm tiếp phần AI chạy ngầm cùng 1 Dev freelance. Bán cho nhóm chủ trọ nhỏ ở tỉnh, làm tại nhà để giữ chi phí thấp. Mốc: ~40 chủ trọ trả phí.</p>
+                <p>Hoàn thiện quy trình lõi và làm tiếp phần AI chạy ngầm cùng 1 Dev freelance. Bán cho chủ cho thuê ở quê nhà Đà Lạt, làm tại nhà để giữ chi phí thấp. Mốc: 15–20 chủ cho thuê trả phí.</p>
               </article>
               <article class="apple-card reveal delay-200">
                 <h3>Giai đoạn 2 · Tháng 4–6</h3>
-                <p>Về TP.HCM: thuê chỗ làm, thêm 1 CTV bán hàng cạnh Sale chính. Đúc kết cẩm nang bán hàng. Mốc: ~90 chủ trọ.</p>
+                <p>Về TP.HCM: thuê chỗ làm, thêm 1 CTV bán hàng cạnh Sale chính. Đúc kết cẩm nang bán hàng. Mốc: ~90 chủ cho thuê.</p>
               </article>
               <article class="apple-card reveal delay-300">
                 <h3>Giai đoạn 3 · Tháng 7–12</h3>
-                <p>Tăng tốc bằng chương trình giới thiệu và marketing. Mốc: ~220 chủ trọ ở tháng 12, 280 chủ ở tháng 15 (~53 triệu đồng/tháng).</p>
+                <p>Tăng tốc bằng chương trình giới thiệu và marketing. Mốc: ~220 chủ cho thuê ở tháng 12 (~42 triệu đồng/tháng).</p>
               </article>
             </div>
 
@@ -3329,7 +3326,7 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
                 </span>
               </summary>
               <div class="apple-accordion-content">
-                <p>Chỉ làm Pure SaaS. Biên lợi nhuận cực cao, mở rộng quy mô bằng Server, tuyệt đối không sa lầy vào vận hành (O2O) như Nhatrovn.</p>
+                <p>"roomio" chỉ bán phần mềm (SaaS), không làm môi giới hay vận hành nhà thay chủ. Có thêm khách thì chủ yếu tăng máy chủ, không phải tăng người theo, nên biên lợi nhuận gộp ước khoảng 80–85% (xem Chỉ số kinh doanh bên dưới).</p>
 
                 <div class="pitch-budget-block">
                   <h4 class="pitch-budget-block__title">Máy tính phí</h4>
@@ -3548,10 +3545,6 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
                     </li>
                     <li>Hà Nội: khoảng 37.000 cơ sở nhà trọ (Công an Hà Nội). Chưa có số phòng chính thức.</li>
                     <li>
-                      Cả nước: chưa có thống kê số phòng trọ. Bộ Xây dựng cho biết nhu cầu nhà ở cho thuê hơn 1 triệu
-                      căn, khoảng 85% là công nhân, người lao động khu công nghiệp.
-                    </li>
-                    <li>
                       Hoà vốn: chi mỗi tháng khoảng 99 triệu đồng ÷ phí trung bình khoảng 12.000 đồng mỗi phòng ≈ 8.300 phòng, chưa tới 1,5% của 560.220 phòng trọ ở TP.HCM.
                     </li>
                     <li>
@@ -3579,13 +3572,13 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
                   <h4 class="pitch-budget-block__title">Chỉ số kinh doanh (giả định)</h4>
                   <p>"roomio" chưa có doanh thu thật. Các số dưới đây là giả định trong bảng dự trù.</p>
                   <ul class="pitch-budget-assumptions">
-                    <li>Doanh thu tháng mục tiêu ở tháng 15 (MRR): khoảng 53 triệu đồng.</li>
+                    <li>Doanh thu tháng mục tiêu ở tháng 12 (MRR): khoảng 42 triệu đồng.</li>
                     <li>Doanh thu trung bình mỗi chủ (ARPU): khoảng 190.000 đồng mỗi tháng (giả định chủ khoảng 15 phòng).</li>
                     <li>Chi phí để có một chủ (CAC): 400.000–1.000.000 đồng, là hoa hồng bán hàng.</li>
-                    <li>Thời gian thu lại chi phí đó: khoảng 2–5 tháng.</li>
+                    <li>Thời gian thu lại chi phí đó: khoảng 2–5 tháng với chủ khoảng 15 phòng, khoảng 4–9 tháng với chủ khoảng 9 phòng.</li>
                     <li>Tỷ lệ rời bỏ giả định (churn): 2% mỗi tháng.</li>
                     <li>
-                      Hoà vốn: khoảng 8.300 phòng. Tương đương khoảng 520 chủ nếu mỗi chủ có khoảng 15 phòng, hoặc khoảng 930 chủ nếu mỗi chủ khoảng 9 phòng (mức trung bình một nhà trọ ở TP.HCM). Chi phí lấy theo mức tháng 7–12 trong bảng dự trù (lương, bán hàng, marketing, chỗ làm, máy chủ, API AI). Chưa tính khách rời bỏ và ưu đãi cho những chủ đầu tiên. Bảng giá đã gồm VAT; nếu phải nộp VAT 8–10% trên phí thì cần khoảng 9.000 phòng.
+                      Hoà vốn: khoảng 8.300 phòng. Tương đương khoảng 520 chủ nếu mỗi chủ có khoảng 15 phòng, hoặc khoảng 930 chủ nếu mỗi chủ khoảng 9 phòng (mức trung bình một nhà trọ ở TP.HCM). Chi phí lấy theo mức tháng 7–12 trong bảng dự trù (lương, bán hàng, marketing, chỗ làm, máy chủ, API AI). Chưa tính khách rời bỏ và ưu đãi cho những chủ đầu tiên. Bảng giá đã gồm VAT; nếu phải nộp VAT 8–10% trên phí thì cần khoảng 9.000 phòng. Theo dự phóng trong bảng dự trù (chủ khoảng 15 phòng), mức này tới vào khoảng tháng 26; xem phụ lục 12.
                     </li>
                     <li>
                       Chi phí chạy dịch vụ: máy chủ 2–4 triệu đồng mỗi tháng, cộng API AI (đọc số bằng 2 hãng và các agent) khoảng 8,5% doanh thu; gửi tin qua Telegram không mất phí. Ước tính biên lợi nhuận gộp khoảng 80–85% khi agent chạy đủ.
@@ -3761,7 +3754,7 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
                 </div>
 
                 <div class="pitch-budget-block">
-                  <h4 class="pitch-budget-block__title">4. Dòng tiền và dự phóng 15 tháng</h4>
+                  <h4 class="pitch-budget-block__title">4. Dòng tiền và dự phóng 12 tháng</h4>
                   <div class="pitch-budget-table-shell">
                     <div class="pitch-budget-table-scroll">
                       <table class="pitch-budget-table pitch-budget-table--cashflow">
@@ -3788,7 +3781,7 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
                       </table>
                     </div>
                   </div>
-                  <p class="pitch-budget-table-note">Quỹ còn lại tính khi chưa cộng doanh thu, cho thận trọng. Nếu không có doanh thu, $53,000 đủ khoảng 13 tháng. Tính cả doanh thu dự phóng thì quỹ không cạn, hoà vốn khoảng tháng 25. Mốc cam kết với nhà đầu tư (bằng hoặc thấp hơn dự phóng): tháng 3 ~40, tháng 6 ~90, tháng 12 ~220, tháng 15: 280 chủ trọ.</p>
+                  <p class="pitch-budget-table-note">Quỹ còn lại tính khi chưa cộng doanh thu, cho thận trọng. Nếu không có doanh thu, $53,000 đủ khoảng 13 tháng. Tính cả doanh thu dự phóng thì đủ tới khoảng tháng 20; hoà vốn dự phóng khoảng tháng 26, nên sẽ cần mức mở rộng (~$75,000) hoặc vòng tiếp theo vào khoảng tháng 12–15. Mốc cam kết với nhà đầu tư: tháng 3 là 15–20 chủ ở Đà Lạt, tháng 6 khoảng 90, tháng 12 khoảng 220.</p>
                 </div>
 
                 <div class="pitch-budget-block">
