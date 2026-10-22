@@ -1746,6 +1746,46 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
         margin-top: 24px;
       }
 
+      #slide-9 {
+        --slide9-accent-1: #ff9500;
+        --slide9-accent-2: #34c759;
+      }
+
+      #slide-9 .apple-grid .apple-card {
+        background: #fff;
+        border-style: solid;
+        border-width: 1px;
+        box-shadow: none;
+        transition: border-width 0.2s ease;
+      }
+
+      #slide-9 .apple-grid .apple-card:nth-child(1) {
+        border-color: var(--slide9-accent-1);
+      }
+
+      #slide-9 .apple-grid .apple-card:nth-child(1) h3 {
+        color: var(--slide9-accent-1);
+      }
+
+      #slide-9 .apple-grid .apple-card:nth-child(2) {
+        border-color: var(--slide9-accent-2);
+      }
+
+      #slide-9 .apple-grid .apple-card:nth-child(2) h3 {
+        color: var(--slide9-accent-2);
+      }
+
+      #slide-9 .apple-grid .apple-card:hover {
+        border-width: 2px;
+        box-shadow: none;
+        transform: none;
+      }
+
+      #slide-9 .apple-grid .apple-card p {
+        color: #1d1d1f;
+        line-height: 1.6;
+      }
+
       .pitch-budget-table--rates {
         min-width: 880px;
       }
