@@ -1305,7 +1305,7 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
         border: 1px solid #d2d2d7;
       }
 
-      #slide-7 .highlight-box--breakeven > p:not(.pitch-fund-ask) {
+      #slide-7 .highlight-box--breakeven > p {
         font-size: clamp(1.1rem, 1.5vw, 1.25rem);
         font-weight: 400;
         color: #86868b;
@@ -1313,36 +1313,8 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
         letter-spacing: normal;
       }
 
-      #slide-7 .highlight-box--breakeven .pitch-fund-ask {
-        margin-top: 28px;
-        color: var(--blue);
-      }
-
       #slide-7 .highlight-box .pitch-label--roomio {
         color: var(--roomibase);
-      }
-
-      #slide-7 .highlight-box--breakeven .pitch-fund-meta--stacked {
-        margin-bottom: 4px;
-        font-size: inherit;
-        font-weight: 400;
-        color: #86868b;
-      }
-
-      #slide-7 .highlight-box--breakeven .pitch-revenue-stats {
-        margin: 28px 0 24px;
-      }
-
-      #slide-7 .highlight-box--breakeven .pitch-revenue-stat__value {
-        font-size: clamp(1.35rem, 3vw, 1.85rem);
-        font-weight: 700;
-        color: var(--blue);
-      }
-
-      #slide-7 .highlight-box--breakeven .pitch-revenue-stat__caption {
-        font-size: 0.88rem;
-        font-weight: 400;
-        color: #86868b;
       }
 
       #slide-7 .highlight-box + .pitch-fund-meta {
@@ -1353,63 +1325,76 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
         margin-bottom: 32px;
       }
 
-      .pitch-revenue-stats {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 0;
-        margin: 36px 0 32px;
-        max-width: 100%;
+      .pitch-rooms-bars {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        margin: 24px 0 28px;
+        text-align: left;
       }
 
-      .pitch-revenue-stat {
-        text-align: center;
-        padding: 0 12px;
-        border-left: 1px solid #e5e5ea;
+      .pitch-rooms-bar__head {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 6px 12px;
+        margin-bottom: 8px;
       }
 
-      .pitch-revenue-stat:first-child {
-        border-left: none;
+      .pitch-rooms-bar__label {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: #1d1d1f;
+        line-height: 1.35;
       }
 
-      .pitch-revenue-stat__value {
-        font-size: clamp(1.35rem, 3vw, 1.85rem);
-        font-weight: 700;
-        color: var(--blue);
-        margin: 0 0 8px;
-        line-height: 1.2;
+      .pitch-rooms-bar__value {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--blue-dark);
+        font-variant-numeric: tabular-nums;
+        line-height: 1.35;
       }
 
-      .pitch-revenue-stat__caption {
-        margin: 0;
-        font-size: 0.88rem;
+      .pitch-rooms-bar__track {
+        height: 10px;
+        border-radius: 999px;
+        background: #e5e5ea;
+        overflow: hidden;
+      }
+
+      .pitch-rooms-bar__fill {
+        height: 100%;
+        width: var(--w, 0%);
+        min-width: 0;
+        border-radius: 999px;
+        background: var(--blue);
+      }
+
+      .pitch-rooms-bar--assumption .pitch-rooms-bar__fill {
+        background: #d1d1d6;
+        opacity: 0.85;
+      }
+
+      .pitch-rooms-bar--breakeven .pitch-rooms-bar__fill {
+        background: var(--blue);
+        min-width: 4px;
+      }
+
+      .pitch-rooms-bar__note {
+        margin: 8px 0 0;
+        font-size: 0.82rem;
+        font-weight: 400;
         color: #86868b;
         line-height: 1.45;
       }
 
       @media (max-width: 768px) {
-        .pitch-revenue-stats {
-          grid-template-columns: 1fr;
-        }
-
-        .pitch-revenue-stat {
-          border-left: none;
-          border-top: 1px solid #e5e5ea;
-          padding: 20px 0;
-        }
-
-        .pitch-revenue-stat:first-child {
-          border-top: none;
-          padding-top: 0;
-        }
-      }
-
-      .pitch-revenue-stats--pair {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      @media (max-width: 768px) {
-        .pitch-revenue-stats--pair {
-          grid-template-columns: 1fr;
+        .pitch-rooms-bar__head {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 4px;
         }
       }
 
@@ -2538,29 +2523,69 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
             <p>Thu phí theo từng phòng, mỗi tháng roomio sẽ tự tổng hợp và gửi hoá đơn về cho chủ cho thuê cũng qua Telegram bot. Mức phí tuỳ loại hình và số phòng, phòng trống khách chỉ tính 5% giảm tải cho chủ nhà.</p>
 
             <div class="highlight-box highlight-box--breakeven">
-              <p class="pitch-fund-ask">~8.300 phòng</p>
-              <p class="pitch-fund-meta pitch-fund-meta--stacked">là đủ hoà vốn, chưa tới 1,5% số phòng trọ ở riêng TP.HCM.</p>
+              <p>Không cần chiếm nhiều thị trường để "roomio" tự nuôi được mình.</p>
 
-              <div class="pitch-revenue-stats pitch-revenue-stats--pair">
-                <div class="pitch-revenue-stat">
-                  <p class="pitch-revenue-stat__value">560.000</p>
-                  <p class="pitch-revenue-stat__caption">phòng trọ ở TP.HCM</p>
+              <div class="pitch-rooms-bars">
+                <div class="pitch-rooms-bar">
+                  <div class="pitch-rooms-bar__head">
+                    <span class="pitch-rooms-bar__label">Cả nước (ước tính)</span>
+                    <span class="pitch-rooms-bar__value">~1.800.000 phòng</span>
+                  </div>
+                  <div class="pitch-rooms-bar__track" aria-hidden="true">
+                    <div class="pitch-rooms-bar__fill" style="--w: 100%"></div>
+                  </div>
                 </div>
-                <div class="pitch-revenue-stat">
-                  <p class="pitch-revenue-stat__value">37.000</p>
-                  <p class="pitch-revenue-stat__caption">nhà trọ ở Hà Nội</p>
+                <div class="pitch-rooms-bar">
+                  <div class="pitch-rooms-bar__head">
+                    <span class="pitch-rooms-bar__label">TP.HCM</span>
+                    <span class="pitch-rooms-bar__value">560.000 phòng</span>
+                  </div>
+                  <div class="pitch-rooms-bar__track" aria-hidden="true">
+                    <div class="pitch-rooms-bar__fill" style="--w: 30.5%"></div>
+                  </div>
+                </div>
+                <div class="pitch-rooms-bar">
+                  <div class="pitch-rooms-bar__head">
+                    <span class="pitch-rooms-bar__label">Hà Nội (ước tính)</span>
+                    <span class="pitch-rooms-bar__value">~340.000 phòng</span>
+                  </div>
+                  <div class="pitch-rooms-bar__track" aria-hidden="true">
+                    <div class="pitch-rooms-bar__fill" style="--w: 18.5%"></div>
+                  </div>
+                </div>
+                <div class="pitch-rooms-bar pitch-rooms-bar--assumption">
+                  <div class="pitch-rooms-bar__head">
+                    <span class="pitch-rooms-bar__label">Nhóm đủ đau để trả tiền (giả định)</span>
+                    <span class="pitch-rooms-bar__value">~357.000 phòng</span>
+                  </div>
+                  <div class="pitch-rooms-bar__track" aria-hidden="true">
+                    <div class="pitch-rooms-bar__fill" style="--w: 19.5%"></div>
+                  </div>
+                  <p class="pitch-rooms-bar__note">
+                    Giả định: dãy trọ từ khoảng 10 phòng trở lên mới đủ đau để trả tiền; mới có số ở TP.HCM. Sẽ kiểm chứng với những chủ đầu tiên.
+                  </p>
+                </div>
+                <div class="pitch-rooms-bar pitch-rooms-bar--breakeven">
+                  <div class="pitch-rooms-bar__head">
+                    <span class="pitch-rooms-bar__label">Đủ để "roomio" hoà vốn</span>
+                    <span class="pitch-rooms-bar__value">~8.300 phòng</span>
+                  </div>
+                  <div class="pitch-rooms-bar__track" aria-hidden="true">
+                    <div class="pitch-rooms-bar__fill" style="--w: 0.45%"></div>
+                  </div>
+                  <p class="pitch-rooms-bar__note">= chi ~100 triệu/tháng ÷ phí trung bình ~12.000 đ/phòng</p>
                 </div>
               </div>
 
-              <p>Không cần chiếm nhiều thị trường để "roomio" tự nuôi được mình.</p>
-              <p>Chi phí chạy dịch vụ chủ yếu là máy chủ. Tin nhắn qua Telegram không mất phí, nên phần lớn tiền thu được giữ lại.</p>
+              <p>Mỗi tháng "roomio" cần khoảng 100 triệu đồng để vận hành. Khoảng 8.300 phòng là đủ, chưa tới 1,5% phòng trọ ở riêng TP.HCM.</p>
+              <p>Phần lớn tiền thu được giữ lại: chi phí chính chỉ là máy chủ và AI, tin nhắn qua Telegram không mất phí.</p>
             </div>
 
             <div class="highlight-box reveal delay-200">
               <p><span class="pitch-label--roomio">Về giá:</span> Bảng giá hiện tại là bản đầu tiên, đang thử với những chủ cho thuê đầu tiên. "roomio" sẽ còn điều chỉnh cho hợp lý khi có dữ liệu thật. Bảng giá và máy tính phí ở phụ lục.</p>
             </div>
 
-            <p class="pitch-fund-meta">Nguồn: Sở Xây dựng TP.HCM, Công an Hà Nội. Cách tính ở phụ lục.</p>
+            <p class="pitch-fund-meta">Nguồn: Sở Xây dựng TP.HCM, Công an Hà Nội, Tổng Liên đoàn Lao động Việt Nam, Bộ Xây dựng. Số cả nước và Hà Nội là ước tính. Cách tính ở phụ lục.</p>
 
             <div class="appendix-btn-wrap">
               <button type="button" class="appendix-jump-btn" data-target="appendix-slide-7" aria-label="Xem thêm phụ lục cho Slide 7">
@@ -3291,7 +3316,16 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
                       Hà Nội chưa có số phòng chính thức. Nếu lấy mức trung bình 9,3 phòng mỗi nhà trọ của TP.HCM thì khoảng 340.000 phòng (ước tính).
                     </li>
                     <li>
-                      Để hình dung độ lớn: nếu phủ hết nhà trọ ở 2 thành phố (khoảng 900.000 phòng), doanh thu tối đa khoảng 130 tỷ đồng mỗi năm. "roomio" không đặt mục tiêu này; mục tiêu gần là hoà vốn ở khoảng 8.300 phòng.
+                      Nếu phủ hết nhóm đủ đau để trả tiền (giả định) ở TP.HCM: khoảng 357.000 phòng × 12.000 đồng × 12 tháng ≈ 50 tỷ đồng mỗi năm.
+                    </li>
+                    <li>
+                      Cả nước chưa có thống kê số phòng trọ. Ước tính khoảng 1,8 triệu phòng = TP.HCM 560.000 + Hà Nội khoảng 340.000 + công nhân khu công nghiệp ở các tỉnh khác khoảng 930.000 phòng.
+                    </li>
+                    <li>
+                      Cách tính phần các tỉnh khác: khoảng 4,5–5 triệu công nhân khu công nghiệp cả nước (Tổng Liên đoàn Lao động), trừ TP.HCM (khoảng 918.000) và Hà Nội (khoảng 165.000), còn khoảng 3,7 triệu người; khoảng 65% ở trọ (Hà Nội hơn 70%, khảo sát HoREA ở TP.HCM khoảng 60%); khoảng 2,5 người mỗi phòng (TP.HCM: hơn 1,4 triệu người thuê trong 560.000 phòng). Ra khoảng 930.000 phòng. Chưa tính sinh viên và người đi làm văn phòng ở trọ.
+                    </li>
+                    <li>
+                      Nhóm đủ đau để trả tiền là giả định: dãy phòng trọ ở TP.HCM có 34.800 dãy, khoảng 357.000 phòng, trung bình khoảng 10 phòng mỗi dãy (Sở Xây dựng TP.HCM). Nhà ngăn chia phòng (25.670 nhà, khoảng 203.000 phòng, trung bình khoảng 8 phòng) được giả định là chưa đủ đau. Sẽ kiểm chứng với những chủ đầu tiên.
                     </li>
                   </ul>
                 </div>
@@ -3306,7 +3340,7 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
                     <li>Thời gian thu lại chi phí đó: khoảng 2–5 tháng.</li>
                     <li>Tỷ lệ rời bỏ giả định (churn): 2% mỗi tháng.</li>
                     <li>
-                      Hoà vốn: khoảng 8.300 phòng. Tương đương khoảng 520 chủ nếu mỗi chủ có khoảng 15 phòng, hoặc khoảng 930 chủ nếu mỗi chủ khoảng 9 phòng (mức trung bình một nhà trọ ở TP.HCM).
+                      Hoà vốn: khoảng 8.300 phòng. Tương đương khoảng 520 chủ nếu mỗi chủ có khoảng 15 phòng, hoặc khoảng 930 chủ nếu mỗi chủ khoảng 9 phòng (mức trung bình một nhà trọ ở TP.HCM). Chi phí lấy theo mức tháng 7–12 trong bảng dự trù (lương, bán hàng, marketing, chỗ làm, máy chủ, API AI). Chưa tính khách rời bỏ và ưu đãi cho những chủ đầu tiên. Bảng giá đã gồm VAT; nếu phải nộp VAT 8–10% trên phí thì cần khoảng 9.000 phòng.
                     </li>
                     <li>
                       Chi phí chạy dịch vụ: máy chủ 2–4 triệu đồng mỗi tháng, cộng API AI (đọc số bằng 2 hãng và các agent) khoảng 8,5% doanh thu; gửi tin qua Telegram không mất phí. Ước tính biên lợi nhuận gộp khoảng 80–85% khi agent chạy đủ.
