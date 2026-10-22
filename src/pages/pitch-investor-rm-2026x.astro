@@ -1307,15 +1307,21 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
 
       #slide-7 .highlight-box--breakeven p.pitch-rooms-bars-closing {
         margin: 0;
-        font-size: clamp(1.1rem, 1.5vw, 1.25rem);
-        font-weight: 400;
-        color: #86868b;
-        line-height: 1.6;
-        letter-spacing: normal;
+        color: #1d1d1f;
+        font-weight: 600;
+        font-size: 1.5rem;
+        line-height: 1.4;
+        letter-spacing: -0.01em;
       }
 
       #slide-7 .highlight-box--breakeven p.pitch-rooms-bars-closing + p.pitch-rooms-bars-closing {
         margin-top: 20px;
+      }
+
+      @media (min-width: 768px) {
+        #slide-7 .highlight-box--breakeven p.pitch-rooms-bars-closing {
+          font-size: 1.8rem;
+        }
       }
 
       #slide-7 .highlight-box .pitch-label--roomio {
