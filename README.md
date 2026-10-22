@@ -169,10 +169,10 @@ Mục nav **Roomibase** trỏ tới `/roomieverse` (vi), `/en/roomieverse` (en),
 | 8 | Chiến thuật | `slide-8` | Chiến thuật "Đánh Du Kích" |
 | 9 | Kiểm chứng | — | Biến những lời hứa thành dữ liệu sử dụng thực tế |
 | 10 | Đội ngũ | `slide-10` | Đội ngũ đã có người làm sản phẩm |
-| 11 | Hướng phát triển | — | Hoàn thiện "Quản gia tàng hình" trước khi bung sức |
+| 11 | Hướng phát triển | `slide-11` | Lõi đã chạy. Vốn này để làm phần chạy ngầm |
 | 12 | Kế hoạch vốn | `slide-12` | Biến sản phẩm thô thành "Cỗ máy kiếm khách" |
 
-**Phụ lục (accordion)** — không có mục cho slide 6, 11:
+**Phụ lục (accordion)** — không có mục cho slide 6:
 
 | `id` phụ lục | Tiêu đề accordion |
 |--------------|-------------------|
@@ -185,6 +185,7 @@ Mục nav **Roomibase** trỏ tới `/roomieverse` (vi), `/en/roomieverse` (en),
 | `appendix-slide-8` | Slide 8: Cách đi thị trường |
 | `appendix-slide-9` | Slide 9: Kiểm chứng bằng số |
 | `appendix-slide-10` | Slide 10: Đội ngũ trong 12 tháng |
+| `appendix-slide-11` | Slide 11: Đã có gì, làm tiếp gì |
 | `appendix-slide-12` | Slide 12: Kế hoạch vốn và dự trù chi phí |
 
 Media slide 4 (tùy chọn): đặt `card-1`…`card-3` dạng png/jpg/webp hoặc `card-N.mp4` trong `src/assets/pitch/slide-4/`. Hero/phụ lục pitch dùng asset tĩnh trong `public/pitch/`.
