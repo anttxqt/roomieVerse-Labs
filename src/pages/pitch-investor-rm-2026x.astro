@@ -1317,9 +1317,8 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
         border: 1px solid #d2d2d7;
       }
 
-      #slide-7 .highlight-box--breakeven .pitch-breakeven-title,
-      #slide-7 .highlight-box--breakeven p.pitch-rooms-bars-closing {
-        margin: 0;
+      #slide-7 .highlight-box--breakeven .pitch-breakeven-title {
+        margin: 0 0 28px;
         color: #1d1d1f;
         font-weight: 600;
         font-size: 1.5rem;
@@ -1327,19 +1326,29 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
         letter-spacing: -0.01em;
       }
 
-      #slide-7 .highlight-box--breakeven .pitch-breakeven-title {
-        margin-bottom: 28px;
+      @media (min-width: 768px) {
+        #slide-7 .highlight-box--breakeven .pitch-breakeven-title {
+          font-size: 1.8rem;
+        }
+      }
+
+      #slide-7 .highlight-box--breakeven .pitch-breakeven-context,
+      #slide-7 .highlight-box--breakeven .pitch-breakeven-assumption,
+      #slide-7 .highlight-box--breakeven p.pitch-rooms-bars-closing {
+        margin: 0;
+        color: #86868b;
+        font-weight: 400;
+        font-size: clamp(1.1rem, 1.5vw, 1.25rem);
+        line-height: 1.6;
+        letter-spacing: normal;
+      }
+
+      #slide-7 .highlight-box--breakeven .pitch-breakeven-context {
+        margin-bottom: 10px;
       }
 
       #slide-7 .highlight-box--breakeven p.pitch-rooms-bars-closing {
         margin-top: 28px;
-      }
-
-      @media (min-width: 768px) {
-        #slide-7 .highlight-box--breakeven .pitch-breakeven-title,
-        #slide-7 .highlight-box--breakeven p.pitch-rooms-bars-closing {
-          font-size: 1.8rem;
-        }
       }
 
       .pitch-breakeven-equation {
@@ -1582,32 +1591,9 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
         line-height: 1.4;
       }
 
-      .pitch-breakeven-context {
-        margin: 0 0 10px;
-        font-size: 0.78rem;
-        font-weight: 400;
-        color: #86868b;
-        line-height: 1.5;
-      }
-
-      @media (min-width: 768px) {
-        .pitch-breakeven-context {
-          font-size: 0.82rem;
-        }
-      }
-
+      .pitch-breakeven-context,
       .pitch-breakeven-assumption {
         margin: 0;
-        font-size: 0.78rem;
-        font-weight: 400;
-        color: #86868b;
-        line-height: 1.45;
-      }
-
-      @media (min-width: 768px) {
-        .pitch-breakeven-assumption {
-          font-size: 0.82rem;
-        }
       }
 
       #slide-7 .highlight-box .pitch-label--roomio {
