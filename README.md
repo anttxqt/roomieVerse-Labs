@@ -168,7 +168,7 @@ Mục nav **Roomibase** trỏ tới `/roomieverse` (vi), `/en/roomieverse` (en),
 | 7 | Thị trường | `slide-7` | Cách "roomio" kiếm tiền |
 | 8 | Chiến thuật | `slide-8` | Chiến thuật "Đánh Du Kích" |
 | 9 | Kiểm chứng | — | Biến những lời hứa thành dữ liệu sử dụng thực tế |
-| 10 | Đội ngũ | — | Đội ngũ Tinh gọn & Thực chiến |
+| 10 | Đội ngũ | `slide-10` | Đội ngũ đã có người làm sản phẩm |
 | 11 | Hướng phát triển | — | Hoàn thiện "Quản gia tàng hình" trước khi bung sức |
 | 12 | Kế hoạch vốn | `slide-12` | Biến sản phẩm thô thành "Cỗ máy kiếm khách" |
 
