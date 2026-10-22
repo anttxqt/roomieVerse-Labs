@@ -177,7 +177,6 @@ Mục nav **Roomibase** trỏ tới `/roomieverse` (vi), `/en/roomieverse` (en),
 | `id` phụ lục | Tiêu đề accordion |
 |--------------|-------------------|
 | `appendix-story` | Câu chuyện sản phẩm |
-| `appendix-founder` | Người sáng lập |
 | `appendix-slide-2` | Slide 2: Nỗi đau & Đối thủ |
 | `appendix-slide-3` | Slide 3: Luồng vận hành trơn tru là gì? |
 | `appendix-slide-4` | Slide 4: Một tháng của chủ cho thuê |
