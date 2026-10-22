@@ -1312,9 +1312,23 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
         box-sizing: border-box;
       }
 
+      #slide-7 .slide-content {
+        max-width: min(1100px, 92vw);
+        width: 100%;
+        box-sizing: border-box;
+      }
+
       #slide-7 .highlight-box {
         box-shadow: none;
         border: 1px solid #d2d2d7;
+      }
+
+      #slide-7 .highlight-box--breakeven {
+        max-width: none;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        box-sizing: border-box;
       }
 
       #slide-7 .highlight-box--breakeven .pitch-breakeven-title {
@@ -1544,7 +1558,9 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
       @media (min-width: 768px) {
         .pitch-breakeven-percent-block {
           text-align: left;
-          max-width: 220px;
+          flex: 0 1 min(340px, 38%);
+          min-width: 0;
+          max-width: min(340px, 38%);
         }
       }
 
