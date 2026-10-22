@@ -2881,7 +2881,7 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
       </section>
 
       <!-- Slide 9: Kiểm chứng -->
-      <section class="slide-section">
+      <section class="slide-section" id="slide-9">
         <div class="slide-container reveal">
           <div style="text-align: center;">
             <h2 class="slide-title">Biến những lời hứa thành dữ liệu sử dụng thực tế</h2>
@@ -2897,11 +2897,23 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
               <li>4. Tín hiệu trả tiền -> Chuyển đổi thành khách trả phí và giới thiệu người mới.</li>
             </ul>
           </div>
+
+          <div class="appendix-btn-wrap reveal delay-300">
+            <button type="button" class="appendix-jump-btn" data-target="appendix-slide-9" aria-label="Xem thêm phụ lục cho Slide 9">
+              <span>Xem thêm phụ lục</span>
+              <i class="appendix-btn-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="4" x2="12" y2="20"></line>
+                  <polyline points="19 13 12 20 5 13"></polyline>
+                </svg>
+              </i>
+            </button>
+          </div>
         </div>
       </section>
 
       <!-- Slide 10: Đội ngũ -->
-      <section class="slide-section slide-section--dark">
+      <section class="slide-section slide-section--dark" id="slide-10">
         <div class="slide-container reveal">
           <div style="text-align: center;">
             <h2 class="slide-title">Đội ngũ Tinh gọn & Thực chiến</h2>
@@ -2911,6 +2923,18 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
               <li><strong>Founder / Kiến trúc sư hệ thống:</strong> Ôm trọn Kỹ thuật & Sản phẩm. Chuyên gia thiết kế hệ thống có khả năng chịu tải lớn.</li>
               <li><strong>Nhu cầu nhân sự (Từ số vốn gọi):</strong> Cần bổ sung 1 Lập trình viên giỏi và 2 Sales thiện chiến để mở rộng thị trường.</li>
             </ul>
+          </div>
+
+          <div class="appendix-btn-wrap reveal delay-300">
+            <button type="button" class="appendix-jump-btn" data-target="appendix-slide-10" aria-label="Xem thêm phụ lục cho Slide 10">
+              <span>Xem thêm phụ lục</span>
+              <i class="appendix-btn-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="4" x2="12" y2="20"></line>
+                  <polyline points="19 13 12 20 5 13"></polyline>
+                </svg>
+              </i>
+            </button>
           </div>
         </div>
       </section>
@@ -3616,7 +3640,7 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
 
             <details class="apple-accordion-item" id="appendix-slide-8" name="pitch-appendix">
               <summary class="apple-accordion-header">
-                <span class="apple-accordion-title">Slide 8: Chân dung khách</span>
+                <span class="apple-accordion-title">Slide 8: Cách đi thị trường</span>
                 <span class="apple-accordion-icon" aria-hidden="true">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="6 9 12 15 18 9"></polyline>
@@ -3624,9 +3648,137 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
                 </span>
               </summary>
               <div class="apple-accordion-content">
-                <p>Tập trung người dùng ngay: Chủ tự vận hành, phòng đang tăng, hay quên công nợ. Bỏ qua các nhà quá nhỏ hoặc DN lớn.</p>
+                <div class="pitch-budget-block">
+                  <h4 class="pitch-budget-block__title">Vì sao bắt đầu ở Đà Lạt</h4>
+                  <ul class="pitch-budget-assumptions">
+                    <li>Đà Lạt là quê nhà của founder. Ba tháng đầu làm tại nhà, chưa thuê chỗ làm, nên chi phí thấp.</li>
+                    <li>Gặp tận nhà từng chủ cho thuê được, và sửa app ngay với khách thật trước khi vào TP.HCM, nơi chi phí cao hơn.</li>
+                  </ul>
+                </div>
+
+                <div class="pitch-budget-block">
+                  <h4 class="pitch-budget-block__title">Ai bán, bán thế nào</h4>
+                  <ul class="pitch-budget-assumptions">
+                    <li>Tháng 1 founder tự đi bán. Từ tháng 2 có Sale chính. Từ tháng 4 thêm 1 CTV bán hàng ở TP.HCM.</li>
+                    <li>Gặp tận nhà, cài đặt giúp 1-1. Có ưu đãi cho những chủ đầu tiên; mức cụ thể sẽ chốt khi bắt đầu bán.</li>
+                    <li>Không chạy quảng cáo diện rộng. Tiền marketing dùng cho thưởng giới thiệu, quà tặng và ưu đãi cho chủ đầu tiên.</li>
+                    <li>Từ tháng 4, đội bán làm khoảng 20 chủ mới mỗi tháng. Đây là phần chính của mốc ~220 chủ ở tháng 12. Số chủ từng người, hoa hồng và tiền marketing: xem phụ lục 12.</li>
+                  </ul>
+                </div>
+
+                <div class="pitch-budget-block">
+                  <h4 class="pitch-budget-block__title">Hòn tuyết lăn là phần cộng thêm</h4>
+                  <ul class="pitch-budget-assumptions">
+                    <li>Chủ cũ giới thiệu chủ mới thì được thưởng.</li>
+                    <li>Trong dự phóng, phần này chỉ tính thêm khoảng 3% mỗi tháng, và trừ 2% chủ rời đi. Kế hoạch không dựa vào giới thiệu; nếu giới thiệu chạy tốt hơn thì mốc tới sớm hơn.</li>
+                  </ul>
+                </div>
+
+                <div class="pitch-budget-block">
+                  <h4 class="pitch-budget-block__title">Khách nhắm tới (giả định)</h4>
+                  <ul class="pitch-budget-assumptions">
+                    <li>Chủ cho thuê tự quản lý nhà, chưa thuê người quản lý.</li>
+                    <li>Trước mắt là dãy trọ khoảng 10 phòng trở lên (giả định ở phụ lục 7), sẽ kiểm chứng với những chủ đầu tiên.</li>
+                    <li>Chưa nhắm chuỗi lớn hay toà nhà hàng trăm phòng; nhóm này đã có các bên như Resident, AirCity.</li>
+                  </ul>
+                </div>
+
                 <div class="appendix-return-wrap">
                   <button type="button" class="appendix-jump-btn appendix-jump-btn--return" data-return="slide-8" aria-label="Quay lại Slide 8">
+                    <span>Quay lại</span>
+                    <i class="appendix-btn-icon" aria-hidden="true">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="20" x2="12" y2="4"></line>
+                        <polyline points="5 11 12 4 19 11"></polyline>
+                      </svg>
+                    </i>
+                  </button>
+                </div>
+              </div>
+            </details>
+
+            <details class="apple-accordion-item" id="appendix-slide-9" name="pitch-appendix">
+              <summary class="apple-accordion-header">
+                <span class="apple-accordion-title">Slide 9: Kiểm chứng bằng số</span>
+                <span class="apple-accordion-icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </summary>
+              <div class="apple-accordion-content">
+                <div class="pitch-budget-block">
+                  <h4 class="pitch-budget-block__title">Tín hiệu hiện tại</h4>
+                  <ul class="pitch-budget-assumptions">
+                    <li>Có 3 chủ cho thuê đồng ý dùng thật. Cả 3 đang quản lý bằng Excel và Zalo, không ai dùng sổ tay nữa.</li>
+                    <li>Họ đồng ý vì mong đỡ việc nhắc nhở, tính tiền và kiểm tra tiền chuyển khoản.</li>
+                    <li>Đây mới là lời đồng ý, chưa phải dữ liệu dùng thật.</li>
+                  </ul>
+                </div>
+
+                <div class="pitch-budget-block">
+                  <h4 class="pitch-budget-block__title">Mỗi bước đo bằng gì</h4>
+                  <ul class="pitch-budget-assumptions">
+                    <li>Chạy xuyên suốt: đủ một vòng nhắc gửi số → chốt số → hoá đơn → tiền về → gạch nợ. Đo: số lần founder phải sửa tay trong một vòng.</li>
+                    <li>Khách đầu tiên qua một kỳ hoá đơn thật. Đo: bao nhiêu phòng tự gửi số trước khi hết 3 lần nhắc; máy đọc số đúng bao nhiêu % (so số máy đọc với số được chốt); bao nhiêu hoá đơn trả qua PayOS và tự gạch nợ.</li>
+                    <li>Dùng lặp lại. Đo: bao nhiêu chủ còn dùng sau 2 tháng; thời gian làm sổ mỗi tháng trước và sau khi dùng (hỏi trực tiếp chủ).</li>
+                    <li>Trả tiền và giới thiệu. Đo: bao nhiêu chủ trả phí khi hết ưu đãi; bao nhiêu chủ giới thiệu chủ mới.</li>
+                  </ul>
+                </div>
+
+                <div class="pitch-budget-block">
+                  <h4 class="pitch-budget-block__title">So với giả định trong kế hoạch</h4>
+                  <ul class="pitch-budget-assumptions">
+                    <li>Bảng dự trù đang giả định: chủ rời 2% mỗi tháng, giới thiệu thêm 3% mỗi tháng, Sale chính ký khoảng 12 chủ mỗi tháng. Số thật lệch nhiều thì kế hoạch sẽ được chỉnh theo số thật.</li>
+                  </ul>
+                </div>
+
+                <div class="appendix-return-wrap">
+                  <button type="button" class="appendix-jump-btn appendix-jump-btn--return" data-return="slide-9" aria-label="Quay lại Slide 9">
+                    <span>Quay lại</span>
+                    <i class="appendix-btn-icon" aria-hidden="true">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="20" x2="12" y2="4"></line>
+                        <polyline points="5 11 12 4 19 11"></polyline>
+                      </svg>
+                    </i>
+                  </button>
+                </div>
+              </div>
+            </details>
+
+            <details class="apple-accordion-item" id="appendix-slide-10" name="pitch-appendix">
+              <summary class="apple-accordion-header">
+                <span class="apple-accordion-title">Slide 10: Đội ngũ trong 12 tháng</span>
+                <span class="apple-accordion-icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </summary>
+              <div class="apple-accordion-content">
+                <div class="pitch-budget-block">
+                  <h4 class="pitch-budget-block__title">Ai làm gì</h4>
+                  <ul class="pitch-budget-assumptions">
+                    <li>Founder: người viết code duy nhất, kiêm sản phẩm. Tháng 1 tự đi bán ở Đà Lạt, sau đó vẫn ký thêm vài chủ mỗi tháng.</li>
+                    <li>Dev freelance (tháng 1–3): hợp đồng theo đầu việc, cùng founder hoàn thiện luồng chính trước khi bán mạnh.</li>
+                    <li>Sale chính (từ tháng 2): toàn thời gian, lương cứng cộng hoa hồng theo từng chủ ký được.</li>
+                    <li>CTV bán hàng (từ tháng 4, TP.HCM): bán thời gian, phí cứng nhỏ cộng hoa hồng.</li>
+                    <li>Kế toán thuê ngoài. Trong 12 tháng chưa tuyển thêm ai khác.</li>
+                  </ul>
+                </div>
+
+                <div class="pitch-budget-block">
+                  <h4 class="pitch-budget-block__title">Chỗ làm</h4>
+                  <ul class="pitch-budget-assumptions">
+                    <li>Tháng 1–3 làm tại nhà ở Đà Lạt. Từ tháng 4 thuê một căn 2PN ở TP.HCM làm chỗ làm chung.</li>
+                  </ul>
+                </div>
+
+                <p>Đội nhỏ để giữ chi phí trong 12 tháng. Lương, hoa hồng và chi phí từng người: xem phụ lục 12. Về founder: xem mục Người sáng lập ở đầu phụ lục.</p>
+
+                <div class="appendix-return-wrap">
+                  <button type="button" class="appendix-jump-btn appendix-jump-btn--return" data-return="slide-10" aria-label="Quay lại Slide 10">
                     <span>Quay lại</span>
                     <i class="appendix-btn-icon" aria-hidden="true">
                       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
@@ -3649,8 +3801,6 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
                 </span>
               </summary>
               <div class="apple-accordion-content">
-                <p>Không chạy Ads diện rộng. Dùng Marketing du kích (hoa hồng, quà tặng, ưu đãi pilot) để chốt sale. Chuẩn bị kịch bản Upsell nếu Quỹ mạnh.</p>
-
                 <div class="pitch-budget-block">
                   <h4 class="pitch-budget-block__title">1. Phân bổ vốn $53,000</h4>
                   <div class="pitch-budget-table-shell">
