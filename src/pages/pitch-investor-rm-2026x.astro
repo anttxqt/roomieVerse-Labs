@@ -367,6 +367,91 @@ async function resolveSlide4SlotMedia(slot: Slide4SlotConfig) {
 
 const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4SlotMedia(slot)))
 
+const slide6ImageGlob = import.meta.glob('../assets/pitch/slide-6/*.{png,jpg,jpeg,webp}', {
+  eager: true,
+  import: 'default',
+}) as Record<string, ImageMetadata>
+
+function slide6Basename(path: string) {
+  return path.split('/').pop()?.split('?')[0]?.toLowerCase() ?? ''
+}
+
+function slide6StepImage(lane: 'chu' | 'khach', n: number): ImageMetadata | undefined {
+  const base = `${lane}-${n}`
+  for (const [path, meta] of Object.entries(slide6ImageGlob)) {
+    const name = slide6Basename(path)
+    if (
+      name === `${base}.png` ||
+      name === `${base}.jpg` ||
+      name === `${base}.jpeg` ||
+      name === `${base}.webp`
+    ) {
+      return meta
+    }
+  }
+  return undefined
+}
+
+type Slide6TileConfig = {
+  lane: 'chu' | 'khach'
+  n: number
+  dataSlot: string
+  caption: string
+}
+
+const slide6Lanes: { label: string; tiles: Slide6TileConfig[] }[] = [
+  {
+    label: 'Chủ cho thuê',
+    tiles: [
+      {
+        lane: 'chu',
+        n: 1,
+        dataSlot: 'slide-6-chu-1',
+        caption: 'Đăng nhập web, thêm nhà và phòng.',
+      },
+      {
+        lane: 'chu',
+        n: 2,
+        dataSlot: 'slide-6-chu-2',
+        caption: 'Thêm khách, gửi link mời qua Zalo hay tin nhắn.',
+      },
+      {
+        lane: 'chu',
+        n: 3,
+        dataSlot: 'slide-6-chu-3',
+        caption: 'Mỗi tháng chỉ cần bấm "Duyệt & gửi".',
+      },
+    ],
+  },
+  {
+    label: 'Khách thuê',
+    tiles: [
+      {
+        lane: 'khach',
+        n: 1,
+        dataSlot: 'slide-6-khach-1',
+        caption: 'Bấm link mời, Telegram mở ra, bấm "Bắt đầu".',
+      },
+      {
+        lane: 'khach',
+        n: 2,
+        dataSlot: 'slide-6-khach-2',
+        caption: 'Mỗi tháng chụp đồng hồ gửi bot.',
+      },
+      {
+        lane: 'khach',
+        n: 3,
+        dataSlot: 'slide-6-khach-3',
+        caption: 'Quét mã QR để trả tiền.',
+      },
+    ],
+  },
+]
+
+const slide6TileWidths = [400, 800, 1200]
+const slide6TileSizes =
+  '(min-width: 768px) calc((min(100vw - 40px, 1100px) - 126px - 24px) / 3), 80vw'
+
 ---
 
 <!doctype html>
@@ -2294,10 +2379,168 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
 
       #slide-6 {
         --slide6-title-offset: 24px;
+        overflow-x: clip;
       }
 
       #slide-6 .slide-title {
         padding-top: var(--slide6-title-offset);
+      }
+
+      #slide-6 .slide-6-howto {
+        width: 100%;
+        max-width: 1100px;
+        margin: 20px auto 0;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        min-width: 0;
+      }
+
+      #slide-6 .slide-6-lane {
+        display: grid;
+        grid-template-columns: minmax(72px, 96px) minmax(0, 1fr);
+        gap: 10px 14px;
+        align-items: center;
+        min-width: 0;
+      }
+
+      #slide-6 .slide-6-lane__label {
+        margin: 0;
+        font-size: clamp(0.88rem, 1.05vw, 0.98rem);
+        font-weight: 600;
+        line-height: 1.35;
+        color: #1d1d1f;
+      }
+
+      #slide-6 .slide-6-lane__steps {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+        min-width: 0;
+      }
+
+      #slide-6 .slide-6-step {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        min-width: 0;
+      }
+
+      #slide-6 .pitch-media-slot {
+        width: 100%;
+        min-width: 0;
+      }
+
+      #slide-6 .pitch-media-slot__frame {
+        aspect-ratio: 7 / 3;
+        width: 100%;
+        max-width: 100%;
+        border-radius: 20px;
+        overflow: hidden;
+        position: relative;
+        box-sizing: border-box;
+        display: grid;
+      }
+
+      #slide-6 .pitch-media-slot__frame :global(picture) {
+        grid-area: 1 / 1;
+        width: 100%;
+        height: 100%;
+        min-width: 0;
+        min-height: 0;
+      }
+
+      #slide-6 .pitch-media-slot__frame :global(img),
+      #slide-6 .pitch-media-slot__frame :global(picture) {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+
+      #slide-6 .pitch-media-slot__frame :global(img) {
+        object-fit: cover;
+        border-radius: 20px;
+      }
+
+      #slide-6 .pitch-media-slot__placeholder {
+        aspect-ratio: 7 / 3;
+        width: 100%;
+        max-width: 100%;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.04);
+        color: rgba(0, 0, 0, 0.42);
+        font-size: 0.85rem;
+        font-weight: 600;
+        text-align: center;
+        padding: 12px;
+        box-sizing: border-box;
+      }
+
+      #slide-6 .slide-6-step__body {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        min-width: 0;
+      }
+
+      #slide-6 .slide-6-step__num {
+        color: var(--blue);
+        font-weight: bold;
+        font-size: 1.05rem;
+        line-height: 1.2;
+      }
+
+      #slide-6 .slide-6-step__caption {
+        margin: 0;
+        font-size: clamp(0.72rem, 0.95vw, 0.82rem);
+        line-height: 1.35;
+        color: #424245;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+      }
+
+      @media (max-width: 767px) {
+        #slide-6 .slide-6-howto {
+          margin-top: 24px;
+          gap: 20px;
+        }
+
+        #slide-6 .slide-6-lane {
+          grid-template-columns: minmax(0, 1fr);
+          gap: 8px;
+          align-items: stretch;
+        }
+
+        #slide-6 .slide-6-lane__steps {
+          display: flex;
+          flex-direction: row;
+          gap: 12px;
+          overflow-x: auto;
+          overscroll-behavior-x: contain;
+          scroll-snap-type: x mandatory;
+          -webkit-overflow-scrolling: touch;
+          scrollbar-width: none;
+          padding-bottom: 2px;
+        }
+
+        #slide-6 .slide-6-lane__steps::-webkit-scrollbar {
+          display: none;
+        }
+
+        #slide-6 .slide-6-step {
+          flex: 0 0 80vw;
+          max-width: 80vw;
+          scroll-snap-align: start;
+        }
+
+        #slide-6 .slide-6-step__caption {
+          font-size: 0.82rem;
+        }
       }
 
       /* Appendix budget tables (roomio pricing-inspired) */
@@ -3140,8 +3383,45 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
           <div style="text-align: center;">
             <h2 class="slide-title">Từ người mù công nghệ tới người rành công nghệ, già tới trẻ... ai cũng có thể dùng dễ dàng</h2>
           </div>
-          <div class="reveal delay-200" style="width: 100%; max-width: 800px; aspect-ratio: 16/9; background: #1d1d1f; border-radius: 24px; margin: 40px auto 0; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; overflow: hidden; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);">
-            <span>[ Video Demo Thực Tế Sẽ Chèn Tại Đây ]</span>
+          <!-- MEDIA SLOTS: drop chu-1..3 / khach-1..3 (png|jpg|webp, ~1400×600, tight crop on the key UI) into src/assets/pitch/slide-6/ -->
+          <div class="slide-6-howto reveal delay-200">
+            {
+              slide6Lanes.map((lane) => (
+                <div class="slide-6-lane">
+                  <p class="slide-6-lane__label">{lane.label}</p>
+                  <div class="slide-6-lane__steps">
+                    {lane.tiles.map((tile) => {
+                      const image = slide6StepImage(tile.lane, tile.n)
+                      return (
+                        <article class="slide-6-step">
+                          <div class="pitch-media-slot" data-slot={tile.dataSlot}>
+                            {image ? (
+                              <div class="pitch-media-slot__frame">
+                                <Picture
+                                  src={image}
+                                  alt={tile.caption}
+                                  formats={['avif', 'webp']}
+                                  widths={slide6TileWidths}
+                                  sizes={slide6TileSizes}
+                                  loading="lazy"
+                                  decoding="async"
+                                />
+                              </div>
+                            ) : (
+                              <div class="pitch-media-slot__placeholder">Hình bước {tile.n}</div>
+                            )}
+                          </div>
+                          <div class="slide-6-step__body">
+                            <span class="slide-6-step__num">{tile.n}</span>
+                            <p class="slide-6-step__caption">{tile.caption}</p>
+                          </div>
+                        </article>
+                      )
+                    })}
+                  </div>
+                </div>
+              ))
+            }
           </div>
         </div>
       </section>
