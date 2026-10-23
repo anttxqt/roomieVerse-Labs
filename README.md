@@ -169,7 +169,7 @@ Mục nav **Roomibase** trỏ tới `/roomieverse` (vi), `/en/roomieverse` (en),
 | 8 | Chiến thuật | `slide-8` | Chiến thuật "Đánh Du Kích" |
 | 9 | Kiểm chứng | — | Biến những lời hứa thành dữ liệu sử dụng thực tế |
 | 10 | Đội ngũ | `slide-10` | Đội ngũ đã có người làm sản phẩm |
-| 11 | Hướng phát triển | `slide-11` | Lõi tối thiểu đã chạy. Vốn này để đánh chiếm thị trường |
+| 11 | Hướng phát triển | `slide-11` | Lõi tối thiểu đã hoàn thành. Vốn này để đánh chiếm thị trường |
 | 12 | Kế hoạch vốn | `slide-12` | Biến sản phẩm thô thành "Cỗ máy kiếm khách" |
 
 **Phụ lục (accordion)** — không có mục cho slide 6:
