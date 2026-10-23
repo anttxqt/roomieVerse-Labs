@@ -1671,6 +1671,44 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
         text-align: left;
       }
 
+      #slide-11 .slide-content {
+        max-width: 1200px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      #slide-11 .slide-content > p:first-of-type {
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      @media (min-width: 768px) {
+        #slide-11 .pitch-roadmap-pair {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 32px;
+        }
+      }
+
+      #slide-11 .slide-content ul {
+        counter-reset: slide11-item;
+      }
+
+      #slide-11 .slide-content li {
+        counter-increment: slide11-item;
+      }
+
+      #slide-11 .slide-content li::before {
+        content: counter(slide11-item);
+        position: absolute;
+        left: 20px;
+        top: 22px;
+        color: var(--blue);
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+
       #slide-8 .pitch-timeline {
         --rail-x: 6px;
         --timeline-pad: 28px;
