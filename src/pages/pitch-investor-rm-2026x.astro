@@ -2392,6 +2392,205 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
         font-size: 0.85em;
       }
 
+      #appendix-system .sys-arch-diagram {
+        margin-top: 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        min-width: 0;
+      }
+
+      #appendix-system .sys-arch-tier {
+        min-width: 0;
+      }
+
+      #appendix-system .sys-arch-tier__label {
+        margin: 0 0 10px;
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: #86868b;
+      }
+
+      #appendix-system .sys-arch-tier__row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        min-width: 0;
+      }
+
+      #appendix-system .sys-arch-node {
+        flex: 1 1 140px;
+        min-width: 0;
+        padding: 12px 14px;
+        border-radius: 14px;
+        border: 1px solid #e5e5ea;
+        background: #fbfbfd;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+      }
+
+      #appendix-system .sys-arch-node__title {
+        margin: 0;
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: #1d1d1f;
+        line-height: 1.35;
+      }
+
+      #appendix-system .sys-arch-node__sub {
+        margin: 6px 0 0;
+        font-size: 0.88rem;
+        line-height: 1.45;
+        color: #515154;
+      }
+
+      #appendix-system .sys-arch-connector {
+        display: flex;
+        justify-content: center;
+        padding: 10px 0;
+        color: #86868b;
+        font-size: 0.85rem;
+        line-height: 1;
+      }
+
+      #appendix-system .sys-arch-connector::before {
+        content: "↓";
+      }
+
+      #appendix-system .sys-arch-why-title {
+        margin-top: 28px;
+      }
+
+      #appendix-system .sys-arch-tech-note {
+        margin: 14px 0 0;
+        font-size: 0.88rem;
+        line-height: 1.5;
+        color: #86868b;
+      }
+
+      #appendix-system .sys-flow {
+        margin: 8px 0 0;
+        padding: 0;
+        list-style: none;
+        counter-reset: sys-flow;
+        min-width: 0;
+      }
+
+      #appendix-system .sys-flow__step {
+        position: relative;
+        margin: 0;
+        padding: 0 0 18px 2.4rem;
+        min-width: 0;
+      }
+
+      #appendix-system .sys-flow__step:last-child {
+        padding-bottom: 0;
+      }
+
+      #appendix-system .sys-flow__step::before {
+        counter-increment: sys-flow;
+        content: counter(sys-flow);
+        position: absolute;
+        left: 0;
+        top: 2px;
+        width: 1.55rem;
+        height: 1.55rem;
+        border-radius: 999px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.78rem;
+        font-weight: 700;
+        color: var(--blue-dark, #0a1e4a);
+        background: rgba(10, 30, 74, 0.08);
+        border: 1px solid rgba(10, 30, 74, 0.12);
+      }
+
+      #appendix-system .sys-flow__step:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        left: 0.72rem;
+        top: 1.85rem;
+        bottom: 0;
+        width: 2px;
+        background: #e5e5ea;
+      }
+
+      #appendix-system .sys-flow__actors {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin: 0 0 6px;
+      }
+
+      #appendix-system .sys-flow__actor {
+        display: inline-block;
+        padding: 2px 8px;
+        border-radius: 999px;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        color: var(--blue-dark, #0a1e4a);
+        background: rgba(10, 30, 74, 0.07);
+        border: 1px solid rgba(10, 30, 74, 0.1);
+      }
+
+      #appendix-system .sys-flow__text {
+        margin: 0;
+        font-size: inherit;
+        line-height: 1.55;
+        color: #1d1d1f;
+      }
+
+      #appendix-system .sys-flow__soon {
+        margin: 10px 0 0;
+        padding: 10px 12px;
+        border-radius: 12px;
+        border: 1px dashed #c7c7cc;
+        background: rgba(245, 245, 247, 0.85);
+        list-style: none;
+      }
+
+      #appendix-system .sys-flow__soon li {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 8px;
+        margin: 0 0 8px;
+        font-size: 0.92rem;
+        line-height: 1.5;
+        color: #515154;
+      }
+
+      #appendix-system .sys-flow__soon li:last-child {
+        margin-bottom: 0;
+      }
+
+      #appendix-system .sys-flow__tag {
+        flex-shrink: 0;
+        padding: 1px 7px;
+        border-radius: 6px;
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        color: #86868b;
+        background: #fff;
+        border: 1px solid #d2d2d7;
+      }
+
+      @media (max-width: 480px) {
+        #appendix-system .sys-arch-tier__row {
+          flex-direction: column;
+        }
+
+        #appendix-system .sys-arch-node {
+          flex: 1 1 auto;
+          width: 100%;
+        }
+      }
+
       #slide-4 {
         --slide4-row-a-cols: 1fr 1fr;
         --slide4-caption-inset: 0px;
@@ -3307,6 +3506,138 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
               </div>
             </details>
 
+            <details class="apple-accordion-item" id="appendix-system" name="pitch-appendix">
+              <summary class="apple-accordion-header">
+                <span class="apple-accordion-title">Sơ đồ kiến trúc hệ thống</span>
+                <span class="apple-accordion-icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </summary>
+              <div class="apple-accordion-content">
+                <div class="pitch-budget-block">
+                  <h4 class="pitch-budget-block__title">1. Hệ thống gồm những phần nào</h4>
+                  <div class="sys-arch-diagram">
+                    <div class="sys-arch-tier">
+                      <p class="sys-arch-tier__label">Người dùng</p>
+                      <div class="sys-arch-tier__row">
+                        <div class="sys-arch-node">
+                          <p class="sys-arch-node__title">Chủ cho thuê</p>
+                          <p class="sys-arch-node__sub">Web quản lý · bot Telegram cho chủ</p>
+                        </div>
+                        <div class="sys-arch-node">
+                          <p class="sys-arch-node__title">Khách thuê</p>
+                          <p class="sys-arch-node__sub">Bot Telegram · mini app · link hoá đơn (khách chưa dùng Telegram)</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="sys-arch-connector" aria-hidden="true"></div>
+                    <div class="sys-arch-tier">
+                      <p class="sys-arch-tier__label">roomio</p>
+                      <div class="sys-arch-tier__row">
+                        <div class="sys-arch-node">
+                          <p class="sys-arch-node__title">Web và API</p>
+                          <p class="sys-arch-node__sub">Nơi duy nhất giữ tiền và dữ liệu</p>
+                        </div>
+                        <div class="sys-arch-node">
+                          <p class="sys-arch-node__title">Cơ sở dữ liệu</p>
+                        </div>
+                        <div class="sys-arch-node">
+                          <p class="sys-arch-node__title">Hàng đợi việc chạy ngầm</p>
+                          <p class="sys-arch-node__sub">Nhắc gửi số, nhắc đóng tiền, soạn hoá đơn nháp, gửi tin</p>
+                        </div>
+                        <div class="sys-arch-node">
+                          <p class="sys-arch-node__title">Máy đọc ảnh đồng hồ</p>
+                        </div>
+                        <div class="sys-arch-node">
+                          <p class="sys-arch-node__title">Máy xử lý viết bằng Go</p>
+                          <p class="sys-arch-node__sub">Nén ảnh, xuất dữ liệu; không đụng tới tiền</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="sys-arch-connector" aria-hidden="true"></div>
+                    <div class="sys-arch-tier">
+                      <p class="sys-arch-tier__label">Dịch vụ bên ngoài</p>
+                      <div class="sys-arch-tier__row">
+                        <div class="sys-arch-node">
+                          <p class="sys-arch-node__title">Telegram</p>
+                          <p class="sys-arch-node__sub">Gửi tin, không mất phí</p>
+                        </div>
+                        <div class="sys-arch-node">
+                          <p class="sys-arch-node__title">PayOS</p>
+                          <p class="sys-arch-node__sub">Báo tiền về</p>
+                        </div>
+                        <div class="sys-arch-node">
+                          <p class="sys-arch-node__title">AI đọc số</p>
+                          <p class="sys-arch-node__sub">Hiện 1 hãng, sắp thêm hãng thứ 2</p>
+                        </div>
+                        <div class="sys-arch-node">
+                          <p class="sys-arch-node__title">Cloudflare</p>
+                          <p class="sys-arch-node__sub">Cổng vào và kho lưu ảnh</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <h4 class="pitch-budget-block__title sys-arch-why-title">Vì sao chắc</h4>
+                  <ul class="pitch-budget-assumptions">
+                    <li>Tiền và dữ liệu chỉ nằm một chỗ. Các máy phụ chỉ nhận việc, tính rồi trả kết quả, không tự ghi vào sổ tiền.</li>
+                    <li>Việc chạy ngầm đi qua hàng đợi: lỗi thì tự thử lại, và không chạy trùng nên không nhắc hay gửi tin hai lần.</li>
+                    <li>Mỗi phần chỉ giữ khoá nó cần. Ví dụ máy xử lý Go không giữ khoá Telegram, PayOS hay cơ sở dữ liệu.</li>
+                    <li>Mỗi lần sửa code đều chạy kiểm tra tự động trước khi lên bản thật.</li>
+                  </ul>
+                  <p class="sys-arch-tech-note">Công nghệ: SvelteKit, PostgreSQL, hàng đợi pg-boss, Go (gRPC), Docker.</p>
+                </div>
+
+                <div class="pitch-budget-block">
+                  <h4 class="pitch-budget-block__title">2. Dữ liệu đi thế nào trong một tháng</h4>
+                  <ol class="sys-flow">
+                    <li class="sys-flow__step">
+                      <div class="sys-flow__actors"><span class="sys-flow__actor">roomio</span></div>
+                      <p class="sys-flow__text">Nhắc khách gửi số điện nước lúc 9 giờ, tối đa 3 lần.</p>
+                    </li>
+                    <li class="sys-flow__step">
+                      <div class="sys-flow__actors"><span class="sys-flow__actor">Khách</span></div>
+                      <p class="sys-flow__text">Chụp đồng hồ, gửi ảnh vào bot Telegram.</p>
+                    </li>
+                    <li class="sys-flow__step">
+                      <div class="sys-flow__actors"><span class="sys-flow__actor">roomio</span></div>
+                      <p class="sys-flow__text">Lưu ảnh, AI đọc ra số, bot hỏi khách xác nhận. Đọc sai thì khách gõ lại số.</p>
+                    </li>
+                    <li class="sys-flow__step">
+                      <div class="sys-flow__actors"><span class="sys-flow__actor">Chủ</span></div>
+                      <p class="sys-flow__text">Xem ảnh và số khách đã chốt, đúng thì chốt, sai thì sửa.</p>
+                      <ul class="sys-flow__soon">
+                        <li><span class="sys-flow__tag">Sắp làm</span> Hãng AI thứ 2 đọc lại ảnh để chủ đối chiếu.</li>
+                        <li><span class="sys-flow__tag">Sắp làm</span> Chủ chốt khác số khách gửi thì khách được báo ngay.</li>
+                      </ul>
+                    </li>
+                    <li class="sys-flow__step">
+                      <div class="sys-flow__actors"><span class="sys-flow__actor">roomio</span></div>
+                      <p class="sys-flow__text">Tự soạn hoá đơn nháp.</p>
+                    </li>
+                    <li class="sys-flow__step">
+                      <div class="sys-flow__actors"><span class="sys-flow__actor">Chủ</span></div>
+                      <p class="sys-flow__text">Bấm Duyệt &amp; gửi. Hoá đơn tới khách qua Telegram hoặc link.</p>
+                    </li>
+                    <li class="sys-flow__step">
+                      <div class="sys-flow__actors"><span class="sys-flow__actor">Khách</span></div>
+                      <p class="sys-flow__text">Quét mã QR để chuyển khoản.</p>
+                    </li>
+                    <li class="sys-flow__step">
+                      <div class="sys-flow__actors"><span class="sys-flow__actor">PayOS</span><span class="sys-flow__actor">roomio</span></div>
+                      <p class="sys-flow__text">Tiền về thì tự gạch nợ, báo cho cả chủ và khách.</p>
+                    </li>
+                    <li class="sys-flow__step">
+                      <div class="sys-flow__actors"><span class="sys-flow__actor">roomio</span></div>
+                      <p class="sys-flow__text">Chưa trả thì nhắc đóng tiền, tối đa 6 lần.</p>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </details>
+
             <details class="apple-accordion-item" id="appendix-slide-2" name="pitch-appendix">
               <summary class="apple-accordion-header">
                 <span class="apple-accordion-title">Slide 2: Nỗi đau & Đối thủ</span>
@@ -3341,6 +3672,7 @@ const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4Slo
                     <li>Đã làm lại lớn 2 lần cho hợp với thị trường hơn.</li>
                     <li>Làm sản phẩm thì phải khó tính: thấy chưa hợp lý thì sửa tiếp, tới khi hợp lý mới thôi.</li>
                     <li>Ví dụ những bài toán phải giải lâu: xem mục Câu chuyện sản phẩm.</li>
+                    <li>Hệ thống gồm những phần nào và dữ liệu đi ra sao: xem mục Sơ đồ kiến trúc hệ thống.</li>
                   </ul>
                 </div>
 
