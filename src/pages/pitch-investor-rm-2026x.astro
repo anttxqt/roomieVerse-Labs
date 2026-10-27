@@ -3656,7 +3656,7 @@ const slide6TileSizes =
                 <ul>
                   <li>Web cho chủ cho thuê; bot Telegram cho khách và cho chủ; mini app cho khách; link hoá đơn cho khách chưa dùng Telegram.</li>
                   <li>Tự soạn hoá đơn nháp mỗi tháng, nhắc gửi số 3 lần, nhắc nợ 6 lần.</li>
-                  <li>Tiền về qua PayOS thì tự gạch nợ và báo cho cả hai bên.</li>
+                  <li>Khách quét mã QR, tiền vào thẳng tài khoản của chủ. Chủ bấm xác nhận là gạch nợ; phần tự gạch nợ đã làm sẵn, chờ nối SePay.</li>
                   <li>Hợp đồng và tiền cọc, giá điện nước bậc thang, khách báo sự cố kèm ảnh trong mini app.</li>
                   <li>Bản đầu của máy đọc số đồng hồ: AI đọc ảnh, rồi đọc lại một lần để kiểm.</li>
                 </ul>
@@ -3664,6 +3664,7 @@ const slide6TileSizes =
               <div>
                 <h3>Vốn này dùng để làm tiếp</h3>
                 <ul>
+                  <li>Nối SePay khi lập công ty xong (tháng 1): tiền về là tự gạch nợ. Chủ chỉ liên kết ngân hàng bằng OTP ngay trong roomio.</li>
                   <li>Phần chạy ngầm bổ trợ cho lõi, chưa thấy ở các app mình đã dùng thử: quản gia AI cho chủ cho thuê, agent nhập dữ liệu từ file Excel cũ, bot bản tin, báo cáo tóm tắt mỗi sáng.</li>
                   <li>Làm chắc máy đọc số: thêm một hãng AI thứ hai để đọc đối chiếu, báo khách ngay khi chủ sửa số.</li>
                   <li>Khách không dùng Telegram vẫn gửi được số.</li>
@@ -3789,7 +3790,7 @@ const slide6TileSizes =
                 <ul class="pitch-budget-assumptions">
                   <li>Tính phí theo số ngày ở thực tế và theo từng toà nhà.</li>
                   <li>Hai lịch nhắc (gửi số và đóng tiền) không bao giờ chồng lên nhau.</li>
-                  <li>Nhận tiền qua PayOS mà vẫn gạch nợ đúng, kể cả khi dữ liệu đang thay đổi lúc tiền về.</li>
+                  <li>Tự gạch nợ đúng khi tiền về, kể cả lúc dữ liệu đang thay đổi. Đã làm xong với PayOS, sẽ dùng lại khi nối SePay.</li>
                   <li>Đọc số đồng hồ bằng AI, có bước đọc lại để kiểm.</li>
                 </ul>
               </div>
@@ -3854,8 +3855,8 @@ const slide6TileSizes =
                           <p class="sys-arch-node__sub">Gửi tin, không mất phí</p>
                         </div>
                         <div class="sys-arch-node">
-                          <p class="sys-arch-node__title">PayOS</p>
-                          <p class="sys-arch-node__sub">Báo tiền về</p>
+                          <p class="sys-arch-node__title">SePay</p>
+                          <p class="sys-arch-node__sub">Báo tiền về, bật khi lập công ty</p>
                         </div>
                         <div class="sys-arch-node">
                           <p class="sys-arch-node__title">AI đọc số</p>
@@ -3915,8 +3916,8 @@ const slide6TileSizes =
                       <p class="sys-flow__text">Quét mã QR để chuyển khoản.</p>
                     </li>
                     <li class="sys-flow__step">
-                      <div class="sys-flow__actors"><span class="sys-flow__actor">PayOS</span><span class="sys-flow__actor">roomio</span></div>
-                      <p class="sys-flow__text">Tiền về thì tự gạch nợ, báo cho cả chủ và khách.</p>
+                      <div class="sys-flow__actors"><span class="sys-flow__actor">Chủ</span><span class="sys-flow__actor">roomio</span></div>
+                      <p class="sys-flow__text">Chủ xem ảnh chuyển khoản rồi bấm xác nhận là gạch nợ, khách được báo. Nối SePay xong thì tiền về là tự gạch nợ.</p>
                     </li>
                     <li class="sys-flow__step">
                       <div class="sys-flow__actors"><span class="sys-flow__actor">roomio</span></div>
@@ -4081,7 +4082,7 @@ const slide6TileSizes =
 
                 <div class="pitch-budget-block">
                   <h4 class="pitch-budget-block__title">Tiền về</h4>
-                  <p>Khách trả bằng mã QR, tiền vào thẳng tài khoản của chủ cho thuê và tự gạch nợ. Trả thiếu hay trả dư thì cả chủ lẫn khách đều được báo đúng số.</p>
+                  <p>Khách trả bằng mã QR, tiền vào thẳng tài khoản của chủ cho thuê. Hiện tại khách gửi ảnh chuyển khoản trong mini app, chủ xem rồi bấm xác nhận; hoá đơn tự chuyển sang đã trả hoặc còn thiếu, và khách được báo. Khi lập công ty xong, roomio nối SePay: tiền về là tự gạch nợ, trả thiếu hay trả dư thì cả chủ lẫn khách đều được báo đúng số.</p>
                 </div>
 
                 <div class="appendix-return-wrap">
@@ -4120,7 +4121,7 @@ const slide6TileSizes =
                   <ul class="pitch-budget-assumptions">
                     <li>Khách gửi ảnh đồng hồ và xác nhận số ngay trong chat.</li>
                     <li>Khách nhận hoá đơn qua Telegram và chuyển tiền bằng mã QR.</li>
-                    <li>Tiền về là tự gạch nợ, sổ của chủ tự cập nhật. Không ai phải nhập lại.</li>
+                    <li>Khách gửi ảnh chuyển khoản, chủ chỉ bấm xác nhận, không ai phải nhập lại. Nối SePay xong thì tiền về là tự gạch nợ.</li>
                   </ul>
                 </div>
 
@@ -4537,7 +4538,7 @@ const slide6TileSizes =
                   <h4 class="pitch-budget-block__title">Mỗi bước đo bằng gì</h4>
                   <ul class="pitch-budget-assumptions">
                     <li>Chạy xuyên suốt: đủ một vòng nhắc gửi số → chốt số → hoá đơn → tiền về → gạch nợ. Đo: số lần founder phải sửa tay trong một vòng.</li>
-                    <li>Khách đầu tiên qua một kỳ hoá đơn thật. Đo: bao nhiêu phòng tự gửi số trước khi hết 3 lần nhắc; máy đọc số đúng bao nhiêu % (so số máy đọc với số được chốt); bao nhiêu hoá đơn trả qua PayOS và tự gạch nợ.</li>
+                    <li>Khách đầu tiên qua một kỳ hoá đơn thật. Đo: bao nhiêu phòng tự gửi số trước khi hết 3 lần nhắc; máy đọc số đúng bao nhiêu % (so số máy đọc với số được chốt); bao nhiêu hoá đơn trả bằng mã QR.</li>
                     <li>Dùng lặp lại. Đo: bao nhiêu chủ còn dùng sau 2 tháng; thời gian làm sổ mỗi tháng trước và sau khi dùng (hỏi trực tiếp chủ).</li>
                     <li>Trả tiền và giới thiệu. Đo: bao nhiêu chủ trả phí khi hết ưu đãi; bao nhiêu chủ giới thiệu chủ mới.</li>
                   </ul>
@@ -4631,7 +4632,7 @@ const slide6TileSizes =
                     <li>Web cho chủ cho thuê: phòng, khách, hợp đồng và tiền cọc, giá điện nước (kể cả bậc thang), hoá đơn.</li>
                     <li>Telegram: bot cho khách và bot cho chủ; mini app cho khách xem hoá đơn và báo sự cố kèm ảnh.</li>
                     <li>Tự động: soạn hoá đơn nháp mỗi tháng; nhắc gửi số 3 lần; nhắc đóng tiền 6 lần (ngày 0, 2, 6, 13, 20, 27 sau khi gửi hoá đơn).</li>
-                    <li>Thu tiền: tiền về qua PayOS thì tự gạch nợ và báo cho cả hai bên.</li>
+                    <li>Thu tiền: khách quét mã QR, tiền vào thẳng tài khoản của chủ; khách gửi ảnh chuyển khoản, chủ bấm xác nhận là gạch nợ và khách được báo.</li>
                     <li>Máy đọc số đồng hồ bản đầu: AI đọc ảnh, rồi đọc lại một lần để kiểm (hiện cùng một hãng AI).</li>
                     <li>Link hoá đơn cho khách chưa dùng Telegram.</li>
                   </ul>
@@ -4640,7 +4641,7 @@ const slide6TileSizes =
                 <div class="pitch-budget-block">
                   <h4 class="pitch-budget-block__title">Làm tiếp trong 12 tháng (dự kiến)</h4>
                   <ul class="pitch-budget-assumptions">
-                    <li>Tháng 1–3, founder cùng Dev freelance: làm chắc luồng chính với những chủ đầu tiên; thêm hãng AI thứ hai để đọc số đối chiếu; báo khách ngay khi chủ sửa số; báo cáo tóm tắt mỗi sáng cho chủ; khách không dùng Telegram vẫn gửi được số.</li>
+                    <li>Tháng 1–3, founder cùng Dev freelance: làm chắc luồng chính với những chủ đầu tiên; nối SePay để tự gạch nợ ngay khi lập công ty xong; thêm hãng AI thứ hai để đọc số đối chiếu; báo khách ngay khi chủ sửa số; báo cáo tóm tắt mỗi sáng cho chủ; khách không dùng Telegram vẫn gửi được số.</li>
                     <li>Từ tháng 4, founder: các agent chạy ngầm — quản gia AI cho chủ cho thuê, agent nhập dữ liệu từ file Excel cũ, bot bản tin.</li>
                     <li>Mở rộng thêm loại hình cho thuê.</li>
                   </ul>
