@@ -392,65 +392,54 @@ function slide6StepImage(lane: 'chu' | 'khach', n: number): ImageMetadata | unde
   return undefined
 }
 
-type Slide6TileConfig = {
-  lane: 'chu' | 'khach'
+type Slide6LandlordTile = {
   n: number
   dataSlot: string
   caption: string
 }
 
-const slide6Lanes: { label: string; tiles: Slide6TileConfig[] }[] = [
+const slide6LandlordLabel = 'Chủ cho thuê'
+
+const slide6LandlordSteps: Slide6LandlordTile[] = [
   {
-    label: 'Chủ cho thuê',
-    tiles: [
-      {
-        lane: 'chu',
-        n: 1,
-        dataSlot: 'slide-6-chu-1',
-        caption: 'Đăng nhập web, thêm nhà và phòng.',
-      },
-      {
-        lane: 'chu',
-        n: 2,
-        dataSlot: 'slide-6-chu-2',
-        caption: 'Thêm khách, gửi link mời qua Zalo hay tin nhắn.',
-      },
-      {
-        lane: 'chu',
-        n: 3,
-        dataSlot: 'slide-6-chu-3',
-        caption: 'Mỗi tháng chỉ cần bấm "Duyệt & gửi".',
-      },
-    ],
+    n: 1,
+    dataSlot: 'slide-6-chu-1',
+    caption: 'Đăng nhập web, thêm nhà, phòng và tài khoản nhận tiền.',
   },
   {
-    label: 'Khách thuê',
-    tiles: [
-      {
-        lane: 'khach',
-        n: 1,
-        dataSlot: 'slide-6-khach-1',
-        caption: 'Bấm link mời, Telegram mở ra, bấm "Bắt đầu".',
-      },
-      {
-        lane: 'khach',
-        n: 2,
-        dataSlot: 'slide-6-khach-2',
-        caption: 'Mỗi tháng chụp đồng hồ gửi bot.',
-      },
-      {
-        lane: 'khach',
-        n: 3,
-        dataSlot: 'slide-6-khach-3',
-        caption: 'Quét mã QR để trả tiền.',
-      },
-    ],
+    n: 2,
+    dataSlot: 'slide-6-chu-2',
+    caption: 'Thêm khách, gửi link mời qua Zalo hay tin nhắn.',
+  },
+  {
+    n: 3,
+    dataSlot: 'slide-6-chu-3',
+    caption: 'Mỗi tháng bấm "Duyệt & gửi", tiền về thì bấm xác nhận.',
   },
 ]
 
+const slide6AppendixChuSteps = [
+  'Đăng nhập web. Tài khoản do roomio tạo cho chủ.',
+  'Thêm nhà, phòng và tài khoản nhận tiền. Có tài khoản thì hoá đơn mới có mã QR.',
+  'Thêm khách vào phòng, gửi link mời qua Zalo hay tin nhắn.',
+  'Mỗi tháng, hoá đơn nháp tự soạn từ số khách gửi. Chủ xem, sửa số nếu cần, rồi bấm "Duyệt & gửi".',
+  'Tiền về thì chủ xem ảnh chuyển khoản và bấm xác nhận. Nối SePay xong thì việc này tự động.',
+  'Mỗi sáng nhận báo cáo tóm tắt qua Telegram.',
+]
+
+const slide6AppendixKhachSteps = [
+  'Bấm link mời, Telegram mở ra, bấm "Bắt đầu".',
+  'Bot nhắc thì chụp đồng hồ gửi bot, xem số máy đọc rồi xác nhận hoặc gõ lại.',
+  'Nhận hoá đơn có mã QR, quét để trả, rồi gửi ảnh chuyển khoản trong mini app.',
+  'Có sự cố thì báo kèm ảnh trong mini app.',
+  'Khách chưa dùng Telegram vẫn xem được hoá đơn qua link.',
+]
+
+const slide6KhachTileNs = [1, 2, 3] as const
+
 const slide6TileWidths = [400, 800, 1200]
-const slide6TileSizes =
-  '(min-width: 768px) calc((min(100vw - 40px, 1100px) - 126px - 24px) / 3), 80vw'
+const slide6LandlordTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 1100px) - 20px) / 3), 80vw'
+const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) - 20px) / 3), 70vw'
 
 ---
 
@@ -2392,15 +2381,7 @@ const slide6TileSizes =
         margin: 20px auto 0;
         display: flex;
         flex-direction: column;
-        gap: 14px;
-        min-width: 0;
-      }
-
-      #slide-6 .slide-6-lane {
-        display: grid;
-        grid-template-columns: minmax(72px, 96px) minmax(0, 1fr);
-        gap: 10px 14px;
-        align-items: center;
+        gap: 8px;
         min-width: 0;
       }
 
@@ -2410,9 +2391,10 @@ const slide6TileSizes =
         font-weight: 600;
         line-height: 1.35;
         color: #1d1d1f;
+        text-align: center;
       }
 
-      #slide-6 .slide-6-lane__steps {
+      #slide-6 .slide-6-steps {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 10px;
@@ -2432,7 +2414,7 @@ const slide6TileSizes =
       }
 
       #slide-6 .pitch-media-slot__frame {
-        aspect-ratio: 7 / 3;
+        aspect-ratio: 4 / 3;
         width: 100%;
         max-width: 100%;
         border-radius: 20px;
@@ -2463,7 +2445,7 @@ const slide6TileSizes =
       }
 
       #slide-6 .pitch-media-slot__placeholder {
-        aspect-ratio: 7 / 3;
+        aspect-ratio: 4 / 3;
         width: 100%;
         max-width: 100%;
         border-radius: 20px;
@@ -2498,25 +2480,18 @@ const slide6TileSizes =
         font-size: clamp(0.72rem, 0.95vw, 0.82rem);
         line-height: 1.35;
         color: #424245;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 2;
-        overflow: hidden;
+      }
+
+      #slide-6 .appendix-btn-wrap {
+        margin-top: 28px;
       }
 
       @media (max-width: 767px) {
         #slide-6 .slide-6-howto {
           margin-top: 24px;
-          gap: 20px;
         }
 
-        #slide-6 .slide-6-lane {
-          grid-template-columns: minmax(0, 1fr);
-          gap: 8px;
-          align-items: stretch;
-        }
-
-        #slide-6 .slide-6-lane__steps {
+        #slide-6 .slide-6-steps {
           display: flex;
           flex-direction: row;
           gap: 12px;
@@ -2528,7 +2503,7 @@ const slide6TileSizes =
           padding-bottom: 2px;
         }
 
-        #slide-6 .slide-6-lane__steps::-webkit-scrollbar {
+        #slide-6 .slide-6-steps::-webkit-scrollbar {
           display: none;
         }
 
@@ -2540,6 +2515,115 @@ const slide6TileSizes =
 
         #slide-6 .slide-6-step__caption {
           font-size: 0.82rem;
+        }
+      }
+
+      #appendix-slide-6 {
+        overflow-x: clip;
+      }
+
+      #appendix-slide-6 .appendix-slide-6__steps {
+        margin: 0;
+        padding-left: 1.35em;
+        list-style: decimal;
+      }
+
+      #appendix-slide-6 .appendix-slide-6__steps li {
+        margin-bottom: 0.65em;
+        line-height: 1.45;
+        color: #424245;
+      }
+
+      #appendix-slide-6 .appendix-slide-6__steps li::before {
+        content: none;
+        display: none;
+      }
+
+      #appendix-slide-6 .appendix-slide-6__khach-strip {
+        width: 100%;
+        max-width: 720px;
+        margin: 12px auto 16px;
+        min-width: 0;
+      }
+
+      #appendix-slide-6 .appendix-slide-6__khach-tiles {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+        min-width: 0;
+      }
+
+      #appendix-slide-6 .appendix-slide-6__khach-tile {
+        min-width: 0;
+      }
+
+      #appendix-slide-6 .appendix-slide-6__khach-frame {
+        aspect-ratio: 3 / 4;
+        width: 100%;
+        border-radius: 20px;
+        overflow: hidden;
+        position: relative;
+        display: grid;
+        background: rgba(0, 0, 0, 0.04);
+      }
+
+      #appendix-slide-6 .appendix-slide-6__khach-frame :global(picture) {
+        grid-area: 1 / 1;
+        width: 100%;
+        height: 100%;
+        min-width: 0;
+        min-height: 0;
+      }
+
+      #appendix-slide-6 .appendix-slide-6__khach-frame :global(img),
+      #appendix-slide-6 .appendix-slide-6__khach-frame :global(picture) {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+
+      #appendix-slide-6 .appendix-slide-6__khach-frame :global(img) {
+        object-fit: cover;
+        border-radius: 20px;
+      }
+
+      #appendix-slide-6 .appendix-slide-6__khach-placeholder {
+        aspect-ratio: 3 / 4;
+        width: 100%;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.04);
+        color: rgba(0, 0, 0, 0.42);
+        font-size: 0.85rem;
+        font-weight: 600;
+        text-align: center;
+        padding: 12px;
+        box-sizing: border-box;
+      }
+
+      @media (max-width: 767px) {
+        #appendix-slide-6 .appendix-slide-6__khach-tiles {
+          display: flex;
+          flex-direction: row;
+          gap: 12px;
+          overflow-x: auto;
+          overscroll-behavior-x: contain;
+          scroll-snap-type: x mandatory;
+          -webkit-overflow-scrolling: touch;
+          scrollbar-width: none;
+          padding-bottom: 2px;
+        }
+
+        #appendix-slide-6 .appendix-slide-6__khach-tiles::-webkit-scrollbar {
+          display: none;
+        }
+
+        #appendix-slide-6 .appendix-slide-6__khach-tile {
+          flex: 0 0 70vw;
+          max-width: 70vw;
+          scroll-snap-align: start;
         }
       }
 
@@ -3383,45 +3467,51 @@ const slide6TileSizes =
           <div style="text-align: center;">
             <h2 class="slide-title">Từ người mù công nghệ tới người rành công nghệ, già tới trẻ... ai cũng có thể dùng dễ dàng</h2>
           </div>
-          <!-- MEDIA SLOTS: drop chu-1..3 / khach-1..3 (png|jpg|webp, ~1400×600, tight crop on the key UI) into src/assets/pitch/slide-6/ -->
+          <!-- MEDIA SLOTS: drop chu-1..3 (png|jpg|webp, ~1800×1350, 4:3, tight crop on key UI) and khach-1..3 (portrait 3:4, appendix 6) into src/assets/pitch/slide-6/ -->
           <div class="slide-6-howto reveal delay-200">
-            {
-              slide6Lanes.map((lane) => (
-                <div class="slide-6-lane">
-                  <p class="slide-6-lane__label">{lane.label}</p>
-                  <div class="slide-6-lane__steps">
-                    {lane.tiles.map((tile) => {
-                      const image = slide6StepImage(tile.lane, tile.n)
-                      return (
-                        <article class="slide-6-step">
-                          <div class="pitch-media-slot" data-slot={tile.dataSlot}>
-                            {image ? (
-                              <div class="pitch-media-slot__frame">
-                                <Picture
-                                  src={image}
-                                  alt={tile.caption}
-                                  formats={['avif', 'webp']}
-                                  widths={slide6TileWidths}
-                                  sizes={slide6TileSizes}
-                                  loading="lazy"
-                                  decoding="async"
-                                />
-                              </div>
-                            ) : (
-                              <div class="pitch-media-slot__placeholder">Hình bước {tile.n}</div>
-                            )}
-                          </div>
-                          <div class="slide-6-step__body">
-                            <span class="slide-6-step__num">{tile.n}</span>
-                            <p class="slide-6-step__caption">{tile.caption}</p>
-                          </div>
-                        </article>
-                      )
-                    })}
-                  </div>
-                </div>
-              ))
-            }
+            <p class="slide-6-lane__label">{slide6LandlordLabel}</p>
+            <div class="slide-6-steps">
+              {slide6LandlordSteps.map((tile) => {
+                const image = slide6StepImage('chu', tile.n)
+                return (
+                  <article class="slide-6-step">
+                    <div class="pitch-media-slot" data-slot={tile.dataSlot}>
+                      {image ? (
+                        <div class="pitch-media-slot__frame">
+                          <Picture
+                            src={image}
+                            alt={tile.caption}
+                            formats={['avif', 'webp']}
+                            widths={slide6TileWidths}
+                            sizes={slide6LandlordTileSizes}
+                            loading="lazy"
+                            decoding="async"
+                          />
+                        </div>
+                      ) : (
+                        <div class="pitch-media-slot__placeholder">Hình bước {tile.n}</div>
+                      )}
+                    </div>
+                    <div class="slide-6-step__body">
+                      <span class="slide-6-step__num">{tile.n}</span>
+                      <p class="slide-6-step__caption">{tile.caption}</p>
+                    </div>
+                  </article>
+                )
+              })}
+            </div>
+          </div>
+
+          <div class="appendix-btn-wrap reveal delay-300">
+            <button type="button" class="appendix-jump-btn" data-target="appendix-slide-6" aria-label="Xem thêm phụ lục cho Slide 6">
+              <span>Xem thêm phụ lục</span>
+              <i class="appendix-btn-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="4" x2="12" y2="20"></line>
+                  <polyline points="19 13 12 20 5 13"></polyline>
+                </svg>
+              </i>
+            </button>
           </div>
         </div>
       </section>
@@ -4146,6 +4236,76 @@ const slide6TileSizes =
 
                 <div class="appendix-return-wrap">
                   <button type="button" class="appendix-jump-btn appendix-jump-btn--return" data-return="slide-5" aria-label="Quay lại Slide 5">
+                    <span>Quay lại</span>
+                    <i class="appendix-btn-icon" aria-hidden="true">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="20" x2="12" y2="4"></line>
+                        <polyline points="5 11 12 4 19 11"></polyline>
+                      </svg>
+                    </i>
+                  </button>
+                </div>
+              </div>
+            </details>
+
+            <details class="apple-accordion-item" id="appendix-slide-6" name="pitch-appendix">
+              <summary class="apple-accordion-header">
+                <span class="apple-accordion-title">Slide 6: Cách dùng</span>
+                <span class="apple-accordion-icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </summary>
+              <div class="apple-accordion-content">
+                <div class="pitch-budget-block">
+                  <h4 class="pitch-budget-block__title">Chủ cho thuê</h4>
+                  <ol class="appendix-slide-6__steps">
+                    {slide6AppendixChuSteps.map((step) => (
+                      <li>{step}</li>
+                    ))}
+                  </ol>
+                </div>
+
+                <div class="pitch-budget-block">
+                  <h4 class="pitch-budget-block__title">Khách thuê</h4>
+                  <div class="appendix-slide-6__khach-strip">
+                    <div class="appendix-slide-6__khach-tiles">
+                      {slide6KhachTileNs.map((n) => {
+                        const image = slide6StepImage('khach', n)
+                        return (
+                          <div class="appendix-slide-6__khach-tile">
+                            <div class="pitch-media-slot" data-slot={`slide-6-khach-${n}`}>
+                              {image ? (
+                                <div class="appendix-slide-6__khach-frame">
+                                  <Picture
+                                    src={image}
+                                    alt={`Khách thuê bước ${n}`}
+                                    formats={['avif', 'webp']}
+                                    widths={slide6TileWidths}
+                                    sizes={slide6KhachTileSizes}
+                                    loading="lazy"
+                                    decoding="async"
+                                  />
+                                </div>
+                              ) : (
+                                <div class="appendix-slide-6__khach-placeholder">Hình bước {n}</div>
+                              )}
+                            </div>
+                          </div>
+                        )
+                      })}
+                    </div>
+                  </div>
+                  <ol class="appendix-slide-6__steps">
+                    {slide6AppendixKhachSteps.map((step) => (
+                      <li>{step}</li>
+                    ))}
+                  </ol>
+                </div>
+
+                <div class="appendix-return-wrap">
+                  <button type="button" class="appendix-jump-btn appendix-jump-btn--return" data-return="slide-6" aria-label="Quay lại Slide 6">
                     <span>Quay lại</span>
                     <i class="appendix-btn-icon" aria-hidden="true">
                       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
