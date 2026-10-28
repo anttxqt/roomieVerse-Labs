@@ -3309,7 +3309,7 @@ const slide6TileSizes =
               </div>
               <div class="slide-4-row-b__text">
                 <h3>Thanh toán xong và báo cáo</h3>
-                <p>Khách sau khi chuyển đủ tiền thì hệ thống tự đánh dấu hoàn thành, không nhắc nhở nữa. Và báo cáo sẽ được gửi mỗi sáng về chủ trọ để biết tình hình toàn bộ nhà/phòng cho thuê mà không cần vào app xem liên tục.</p>
+                <p>Hiện tại khách chuyển đủ tiền rồi gửi ảnh chuyển khoản, chủ bấm xác nhận là xong, hệ thống thôi nhắc. Gọi vốn xong và lập công ty, "roomio" sẽ làm việc với SePay và dùng nền tảng của họ để tự nhận biết chuyển khoản thành công. Lúc đó khách quét mã QR là tiền về tự gạch nợ, chủ không cần bấm gì. Và báo cáo sẽ được gửi mỗi sáng về chủ cho thuê để biết tình hình toàn bộ nhà/phòng cho thuê mà không cần vào app xem liên tục.</p>
               </div>
             </div>
           </div>
@@ -3655,7 +3655,7 @@ const slide6TileSizes =
                 <h3>Lõi tối thiểu đã hoàn thành</h3>
                 <ul>
                   <li>Web cho chủ cho thuê; bot Telegram cho khách và cho chủ; mini app cho khách; link hoá đơn cho khách chưa dùng Telegram.</li>
-                  <li>Tự soạn hoá đơn nháp mỗi tháng, nhắc gửi số 3 lần, nhắc nợ 6 lần.</li>
+                  <li>Tự soạn hoá đơn nháp mỗi tháng, nhắc gửi số 3 lần, nhắc nợ 6 lần, báo cáo cho chủ mỗi sáng.</li>
                   <li>Khách quét mã QR, tiền vào thẳng tài khoản của chủ. Chủ bấm xác nhận là gạch nợ; phần tự gạch nợ đã làm sẵn, chờ nối SePay.</li>
                   <li>Hợp đồng và tiền cọc, giá điện nước bậc thang, khách báo sự cố kèm ảnh trong mini app.</li>
                   <li>Bản đầu của máy đọc số đồng hồ: AI đọc ảnh, rồi đọc lại một lần để kiểm.</li>
@@ -3665,7 +3665,7 @@ const slide6TileSizes =
                 <h3>Vốn này dùng để làm tiếp</h3>
                 <ul>
                   <li>Nối SePay khi lập công ty xong (tháng 1): tiền về là tự gạch nợ. Chủ chỉ liên kết ngân hàng bằng OTP ngay trong roomio.</li>
-                  <li>Phần chạy ngầm bổ trợ cho lõi, chưa thấy ở các app mình đã dùng thử: quản gia AI cho chủ cho thuê, agent nhập dữ liệu từ file Excel cũ, bot bản tin, báo cáo tóm tắt mỗi sáng.</li>
+                  <li>Phần chạy ngầm bổ trợ cho lõi, chưa thấy ở các app mình đã dùng thử: quản gia AI cho chủ cho thuê, agent nhập dữ liệu từ file Excel cũ, bot bản tin.</li>
                   <li>Làm chắc máy đọc số: thêm một hãng AI thứ hai để đọc đối chiếu, báo khách ngay khi chủ sửa số.</li>
                   <li>Khách không dùng Telegram vẫn gửi được số.</li>
                   <li>Mở rộng thêm loại hình cho thuê.</li>
@@ -4020,7 +4020,7 @@ const slide6TileSizes =
                   <ul class="pitch-budget-assumptions">
                     <li>Telegram không phải một app làm ít việc mà vẫn bắt khách tải: có đủ chat, chatbot, mini app, nên chủ trọ với khách nói chuyện hai chiều ngay tức thì.</li>
                     <li>Telegram được tối ưu rất sâu, máy yếu, máy cũ vẫn chạy ổn. App riêng của đối thủ khó tối ưu được như vậy.</li>
-                    <li>Khách chưa dùng Telegram: hoá đơn đã xem được qua link gửi bằng Zalo; phần gửi số không cần Telegram đang được làm.</li>
+                    <li>Khách chưa dùng Telegram: hoá đơn đã xem được qua link gửi bằng Zalo; phần gửi số không cần Telegram sẽ làm trong 3 tháng đầu.</li>
                   </ul>
                 </div>
 
@@ -4631,7 +4631,7 @@ const slide6TileSizes =
                   <ul class="pitch-budget-assumptions">
                     <li>Web cho chủ cho thuê: phòng, khách, hợp đồng và tiền cọc, giá điện nước (kể cả bậc thang), hoá đơn.</li>
                     <li>Telegram: bot cho khách và bot cho chủ; mini app cho khách xem hoá đơn và báo sự cố kèm ảnh.</li>
-                    <li>Tự động: soạn hoá đơn nháp mỗi tháng; nhắc gửi số 3 lần; nhắc đóng tiền 6 lần (ngày 0, 2, 6, 13, 20, 27 sau khi gửi hoá đơn).</li>
+                    <li>Tự động: soạn hoá đơn nháp mỗi tháng; nhắc gửi số 3 lần; nhắc đóng tiền 6 lần (ngày 0, 2, 6, 13, 20, 27 sau khi gửi hoá đơn); báo cáo tóm tắt cho chủ mỗi sáng qua Telegram.</li>
                     <li>Thu tiền: khách quét mã QR, tiền vào thẳng tài khoản của chủ; khách gửi ảnh chuyển khoản, chủ bấm xác nhận là gạch nợ và khách được báo.</li>
                     <li>Máy đọc số đồng hồ bản đầu: AI đọc ảnh, rồi đọc lại một lần để kiểm (hiện cùng một hãng AI).</li>
                     <li>Link hoá đơn cho khách chưa dùng Telegram.</li>
@@ -4641,7 +4641,7 @@ const slide6TileSizes =
                 <div class="pitch-budget-block">
                   <h4 class="pitch-budget-block__title">Làm tiếp trong 12 tháng (dự kiến)</h4>
                   <ul class="pitch-budget-assumptions">
-                    <li>Tháng 1–3, founder cùng Dev freelance: làm chắc luồng chính với những chủ đầu tiên; nối SePay để tự gạch nợ ngay khi lập công ty xong; thêm hãng AI thứ hai để đọc số đối chiếu; báo khách ngay khi chủ sửa số; báo cáo tóm tắt mỗi sáng cho chủ; khách không dùng Telegram vẫn gửi được số.</li>
+                    <li>Tháng 1–3, founder cùng Dev freelance: làm chắc luồng chính với những chủ đầu tiên; nối SePay để tự gạch nợ ngay khi lập công ty xong; thêm hãng AI thứ hai để đọc số đối chiếu; báo khách ngay khi chủ sửa số; khách không dùng Telegram vẫn gửi được số.</li>
                     <li>Từ tháng 4, founder: các agent chạy ngầm — quản gia AI cho chủ cho thuê, agent nhập dữ liệu từ file Excel cũ, bot bản tin.</li>
                     <li>Mở rộng thêm loại hình cho thuê.</li>
                   </ul>
