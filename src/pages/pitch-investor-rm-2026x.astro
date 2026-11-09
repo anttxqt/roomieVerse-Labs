@@ -2426,7 +2426,7 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
         overflow: visible;
         background: #fff;
         border: 1px solid #e5e5ea;
-        margin-bottom: 2.25rem;
+        margin-bottom: 0;
       }
 
       @media (min-width: 768px) {
@@ -2437,10 +2437,7 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
 
       #slide-6 .pitch-position__plane {
         position: absolute;
-        top: clamp(2.35rem, 10%, 3rem);
-        right: clamp(0.5rem, 1.5%, 0.75rem);
-        bottom: clamp(0.35rem, 1.5%, 0.5rem);
-        left: clamp(6.25rem, 16%, 9.5rem);
+        inset: 0;
       }
 
       #slide-6 .pitch-position__quad {
@@ -2470,7 +2467,7 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
 
       #slide-6 .pitch-position__cross-v {
         top: 0;
-        bottom: 0;
+        bottom: 2.6rem;
         left: 50%;
         width: 1px;
         transform: translateX(-0.5px);
@@ -2496,8 +2493,21 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
         top: 8px;
       }
 
-      #slide-6 .pitch-position__y-bottom {
-        bottom: 8px;
+      #slide-6 .pitch-position__axis-bl {
+        position: absolute;
+        left: 12px;
+        bottom: 12px;
+        z-index: 4;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+        margin: 0;
+        font-size: clamp(0.72rem, 1.8vw, 0.85rem);
+        font-weight: 500;
+        line-height: 1.25;
+        color: #636366;
+        text-align: left;
       }
 
       #slide-6 .pitch-position__y-caption {
@@ -2592,7 +2602,7 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
       #slide-6 .pitch-position__label--below {
         left: 0;
         bottom: 0;
-        transform: translate(-50%, calc(-100% - 14px));
+        transform: translate(-50%, -14px);
         text-align: center;
         max-width: 16rem;
       }
@@ -2617,14 +2627,37 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
         bottom: 85%;
       }
 
+      #slide-6 .pitch-position__plot--scatter .pitch-position__x {
+        position: absolute;
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        z-index: 2;
+        margin: 0;
+        padding: 0;
+      }
+
+      #slide-6 .pitch-position__grid-cells .pitch-position__x {
+        position: absolute;
+        left: 8px;
+        right: 8px;
+        bottom: 8px;
+        z-index: 3;
+        margin: 0;
+        padding: 0;
+      }
+
+      #slide-6 .pitch-position__grid-cells {
+        padding-bottom: 2.4rem;
+      }
+
       #slide-6 .pitch-position__x {
         display: grid;
         grid-template-columns: 1fr auto 1fr;
-        align-items: start;
+        align-items: end;
         gap: 6px 8px;
-        margin-top: 12px;
-        padding-left: clamp(6.25rem, 16%, 9.5rem);
-        padding-right: clamp(0.5rem, 1.5%, 0.75rem);
+        margin: 0;
+        padding: 0;
         box-sizing: border-box;
         font-size: clamp(0.72rem, 1.8vw, 0.85rem);
         font-weight: 500;
@@ -2632,6 +2665,10 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
         color: #636366;
         text-transform: none;
         letter-spacing: normal;
+      }
+
+      #slide-6 .pitch-position__x .pitch-position__axis-bl {
+        position: static;
       }
 
       #slide-6 .pitch-position__x > :first-child {
@@ -2811,9 +2848,9 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
         }
 
         #slide-6 .pitch-position__x {
-          padding-left: calc(4.5rem + 8px);
+          padding-left: 0;
           padding-right: 0;
-          margin-top: 10px;
+          margin-top: 0;
         }
       }
 
@@ -4017,8 +4054,11 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
               aria-label="Trục toạ độ: roomio ở ô tiết kiệm thời gian và dễ bắt đầu. Excel và Zalo dễ bắt đầu nhất nhưng tốn thời gian nhất. App quản lý ở giữa. Bên lớn tiết kiệm thời gian nhưng khó bắt đầu nhất."
             >
               <span class="pitch-position__y-top" aria-hidden="true">Tiết kiệm thời gian</span>
-              <span class="pitch-position__y-bottom" aria-hidden="true">Tốn thời gian</span>
               <p class="pitch-position__y-caption" aria-hidden="true">Thời gian chủ bỏ ra mỗi tháng</p>
+              <p class="pitch-position__axis-bl" aria-hidden="true">
+                <span>Tốn thời gian</span>
+                <span>Khó bắt đầu</span>
+              </p>
               <div class="pitch-position__plane" aria-hidden="true">
                 <div class="pitch-position__quad"></div>
                 <div class="pitch-position__cross-h"></div>
@@ -4040,6 +4080,11 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
                   <span class="pitch-position__label pitch-position__label--left pitch-position__label--roomio">roomio</span>
                 </div>
               </div>
+              <div class="pitch-position__x" aria-hidden="true">
+                <span></span>
+                <p class="pitch-position__x-caption">Rào cản lúc bắt đầu</p>
+                <span>Dễ bắt đầu</span>
+              </div>
             </div>
             <div
               class="pitch-position__plot pitch-position__plot--grid"
@@ -4052,7 +4097,6 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
                     <span>Tiết kiệm thời gian</span>
                     <p class="pitch-position__grid-y-cap">Thời gian chủ bỏ ra mỗi tháng</p>
                   </div>
-                  <span>Tốn thời gian</span>
                 </div>
                 <div class="pitch-position__grid-cells" aria-hidden="true">
                   <div class="pitch-position__grid-cell pitch-position__grid-cell--tl">
@@ -4080,13 +4124,16 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
                       <span>App quản lý<br />(LOZIDO, eNha, Mona House)</span>
                     </p>
                   </div>
+                  <div class="pitch-position__x" aria-hidden="true">
+                    <span class="pitch-position__axis-bl">
+                      <span>Tốn thời gian</span>
+                      <span>Khó bắt đầu</span>
+                    </span>
+                    <p class="pitch-position__x-caption">Rào cản lúc bắt đầu</p>
+                    <span>Dễ bắt đầu</span>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="pitch-position__x" aria-hidden="true">
-              <span>Khó bắt đầu</span>
-              <p class="pitch-position__x-caption">Rào cản lúc bắt đầu</p>
-              <span>Dễ bắt đầu</span>
             </div>
             <p class="pitch-position__note">
               Vị trí dựa trên lúc em tự đóng vai chủ cho thuê, chạy thử đủ một vòng tháng trên LOZIDO, eNha, Mona House; bên lớn em tìm hiểu qua cách họ bán. Excel + Zalo dễ bắt đầu nhất vì ai cũng có sẵn, nhưng tốn công nhất. "roomio" cần khách dùng Telegram; khách chưa dùng Telegram vẫn mở hoá đơn qua link, chủ nhập số tay trên web.
