@@ -2557,19 +2557,15 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
 
       #slide-6 .pitch-position__label {
         position: absolute;
-        font-size: clamp(0.72rem, 1.85vw, 0.88rem);
+        font-size: clamp(0.78rem, 1.4vw, 0.95rem);
         font-weight: 500;
-        line-height: 1.25;
+        line-height: 1.3;
         color: #1d1d1f;
         text-transform: none;
         letter-spacing: normal;
-        max-width: min(11.5rem, 34vw);
-      }
-
-      @media (min-width: 768px) {
-        #slide-6 .pitch-position__label {
-          max-width: min(15rem, 28%);
-        }
+        width: max-content;
+        max-width: 16rem;
+        white-space: normal;
       }
 
       #slide-6 .pitch-position__label--roomio {
@@ -2596,20 +2592,9 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
       #slide-6 .pitch-position__label--below {
         left: 0;
         bottom: 0;
-        transform: translate(-50%, calc(100% + 12px));
+        transform: translate(-50%, calc(-100% - 14px));
         text-align: center;
-        max-width: min(14rem, 52vw);
-        width: max-content;
-      }
-
-      @media (min-width: 768px) {
-        #slide-6 .pitch-position__label--below {
-          max-width: min(18rem, 38%);
-        }
-
-        #slide-6 .pitch-position__marker--apps .pitch-position__label--below {
-          transform: translate(-50%, calc(-100% - 14px));
-        }
+        max-width: 16rem;
       }
 
       #slide-6 .pitch-position__marker--excel {
