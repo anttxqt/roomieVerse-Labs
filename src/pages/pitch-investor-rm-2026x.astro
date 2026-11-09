@@ -2678,6 +2678,95 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
         max-width: none;
       }
 
+      @media (max-width: 767px) {
+        #slide-6 .pitch-position__plane {
+          top: 4.1rem;
+          right: 6px;
+          bottom: 8px;
+          left: 6px;
+        }
+
+        #slide-6 .pitch-position__y-top,
+        #slide-6 .pitch-position__y-bottom {
+          left: 6px;
+          max-width: 5.5rem;
+          font-size: 0.64rem;
+          line-height: 1.25;
+        }
+
+        #slide-6 .pitch-position__y-top {
+          top: 6px;
+        }
+
+        #slide-6 .pitch-position__y-caption {
+          left: 6px;
+          top: 1.55rem;
+          max-width: 5.5rem;
+          font-size: 0.58rem;
+          line-height: 1.25;
+        }
+
+        #slide-6 .pitch-position__x {
+          padding-left: 6px;
+          padding-right: 6px;
+        }
+
+        #slide-6 .pitch-position__label {
+          font-size: 0.64rem;
+          line-height: 1.2;
+          max-width: 7.25rem;
+        }
+
+        #slide-6 .pitch-position__marker--excel {
+          left: 86%;
+          bottom: 12%;
+        }
+
+        #slide-6 .pitch-position__marker--apps {
+          left: 50%;
+          bottom: 33%;
+        }
+
+        #slide-6 .pitch-position__marker--enterprise {
+          left: 16%;
+          bottom: 70%;
+        }
+
+        #slide-6 .pitch-position__marker--roomio {
+          left: 74%;
+          bottom: 80%;
+        }
+
+        #slide-6 .pitch-position__marker--excel .pitch-position__label--left,
+        #slide-6 .pitch-position__marker--roomio .pitch-position__label--left {
+          transform: translate(-50%, calc(-100% - 8px));
+          left: 0;
+          text-align: center;
+        }
+
+        #slide-6 .pitch-position__marker--excel .pitch-position__label--left {
+          white-space: nowrap;
+          max-width: none;
+        }
+
+        #slide-6 .pitch-position__marker--enterprise .pitch-position__label--right {
+          transform: translate(-50%, calc(-100% - 8px));
+          left: 0;
+          text-align: center;
+        }
+
+        #slide-6 .pitch-position__marker--apps .pitch-position__label--below {
+          transform: translate(10px, 50%);
+          left: 0;
+          text-align: left;
+          max-width: 6.75rem;
+        }
+
+        #slide-6 .pitch-position__plot {
+          margin-bottom: 2.75rem;
+        }
+      }
+
       #slide-6 .apple-grid {
         grid-template-columns: 1fr;
         gap: 16px;
@@ -3890,11 +3979,11 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
                 </div>
                 <div class="pitch-position__marker pitch-position__marker--apps">
                   <span class="pitch-position__dot"></span>
-                  <span class="pitch-position__label pitch-position__label--below">App quản lý (LOZIDO, eNha, Mona House)</span>
+                  <span class="pitch-position__label pitch-position__label--below">App quản lý<br />(LOZIDO, eNha, Mona House)</span>
                 </div>
                 <div class="pitch-position__marker pitch-position__marker--enterprise">
                   <span class="pitch-position__dot"></span>
-                  <span class="pitch-position__label pitch-position__label--right">Bên lớn (Resident, AirCity)</span>
+                  <span class="pitch-position__label pitch-position__label--right">Bên lớn<br />(Resident, AirCity)</span>
                 </div>
                 <div class="pitch-position__marker pitch-position__marker--roomio">
                   <span class="pitch-position__dot pitch-position__dot--roomio"></span>
