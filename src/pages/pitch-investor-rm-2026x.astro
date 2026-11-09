@@ -3925,18 +3925,19 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
               </summary>
               <div class="apple-accordion-content">
                 <ul class="pitch-budget-assumptions">
-                  <li><strong>8/2025</strong> · Còn đi học, mình cùng thầy giáo làm một app quản lý đơn giản cho một chủ cho thuê thật (bạn của thầy). Hoàn thành vào 12/2025.</li>
-                  <li><strong>12/2025</strong> · Thấy bài toán còn đi xa được, mình bắt đầu làm "roomio" theo ý mình. Việc học còn nhiều nên làm chậm.</li>
-                  <li><strong>3/2026</strong> · Tốt nghiệp.</li>
-                  <li><strong>6/2026</strong> · Làm lại toàn thời gian. Đại tu giao diện, từ giao diện mẫu có sẵn, khô khan, sang giao diện tự thiết kế. Bổ sung và tối ưu dần các tính năng tới nay.</li>
+                  <li><strong>8/2025</strong> · Lúc còn đi học, thầy giáo của em ở trường có nhận một dự án về làm và cho em làm cùng để lấy kinh nghiệm thêm vô CV. Cụ thể, dự án đó là làm một hệ thống quản lý các phòng trọ đang cho thuê của một người bạn của thầy ở quận 7. Anh bạn đó của thầy có 5 toà nhà và khoảng 36-40 phòng đang cho thuê. Mình với thầy phát triển một hệ thống đơn giản và hoàn thành vào tháng 12/2025. Hiện nó vẫn hoạt động tới giờ mà không cần bảo trì gì do em có thiết kế cơ chế dọn rác hàng quý rồi, và nó cứ chạy thôi. À, em với thầy thống nhất đặt tên cho nó là The Room.</li>
+                  <li><strong>12/2025</strong> · Nhận thấy hệ thống này có quá nhiều bài toán cần giải quyết cho nó, cũng như là bài toán lớn nhất của chủ cho thuê phòng. Cũng như việc The Room còn nhiều thiếu sót (cũng không hẳn là thiếu sót mà là làm đáp ứng đủ với yêu cầu của anh chủ trọ bên quận 7 thôi). Do đó, mình quyết định tự mình phát triển một dự án riêng, tên roomio. Ban đầu, nó chưa có tên roomio, và cũng chỉ là bản nháp em dựng lại từ The Room rồi thêm một vài tính năng khác, trông không khác gì mấy app quản lý hiện tại trên thị trường.</li>
+                  <li><strong>3/2026</strong> · Giữ bản draft với ý tưởng làm lại đó cho tới khoảng tháng 3/2026, khi này em vừa tốt nghiệp trên trường xong, ngành công nghệ thông tin. Mới bắt đầu lên một số ý tưởng mới cho hệ thống. Và nếu cứ tiếp tục với những tính năng vậy thì chẳng khác gì app hiện có, chẳng khác gì bản excel kiểu khác cả. Nên là dồn suy nghĩ của mình đi nghiên cứu, tìm cách sao cho việc quản lý nó nhàn hết sức có thể cho chủ cho thuê, mà vẫn phát triển theo hướng thuần phần mềm (saas) chứ không ôm đồm cả việc vận hành bằng con người, tìm khách cho phòng như một số đối thủ khác, như vậy nó quá loãng, em chỉ tìm cách tối đa có thể sự tự động hoá ở hệ thống của mình.</li>
+                  <li><strong>6/2026</strong> · Quyết định dành toàn thời gian, công sức vô để xây dựng hệ thống cho tới hiện tại, đại tu lại giao diện hoàn toàn theo ý mình. Xây dựng lại một luồng sử dụng mới hoàn toàn sau khoảng 2 tháng trời nghiên cứu cách các chủ cho thuê cần gì, cách các ứng dụng hiện tại ngoài thị trường đang hoạt động ra sao.</li>
                 </ul>
 
-                <p>Những tính năng này không phải gõ một câu lệnh cho AI là xong. Mỗi cái là một bài toán phải giải trong thời gian dài, ví dụ:</p>
+                <p>Và ở thời đại AI, AI Agent, Vibe Coding như vậy thì việc những ứng dụng ngoài thị trường sao chép nhau, mọc như nấm là không ít. Tuy nhiên, những tính năng của roomio không phải gõ một câu lệnh cho AI là xong, tất nhiên là vẫn có sự trợ giúp của AI để tăng tốc độ phát triển, mà nó trải qua nhiều quá trình, em làm với tâm thế đặt em vào chủ cho thuê, và đặt họ vào em (nhìn vậy thôi chứ hai cái nó khác nhau hoàn toàn) ở mỗi giai đoạn của việc phát triển hệ thống. Mỗi tính năng là một bài toán phải giải trong thời gian dài, ví dụ:</p>
+
                 <ul class="pitch-budget-assumptions">
-                  <li>Tính phí theo số ngày ở thực tế và theo từng toà nhà.</li>
-                  <li>Hai lịch nhắc (gửi số và đóng tiền) không bao giờ chồng lên nhau.</li>
-                  <li>Tự gạch nợ đúng khi tiền về, kể cả lúc dữ liệu đang thay đổi. Đã làm xong với PayOS, sẽ dùng lại khi nối SePay.</li>
-                  <li>Đọc số đồng hồ bằng AI, có bước đọc lại để kiểm.</li>
+                  <li>Tính phí theo số ngày ở thực tế và theo từng toà nhà nhằm tránh việc thu tiền khi không có khách ở, việc này ảnh hưởng xấu tới người dùng.</li>
+                  <li>Hai lịch nhắc gửi số điện và nhắc đóng tiền không bao giờ chồng lên nhau. Nó là hai thứ chạy song song khác nhau hoàn toàn.</li>
+                  <li>Tự đánh dấu thanh toán đúng khi tiền về, kể cả lúc dữ liệu đang thay đổi. Đã làm xong với PayOS cho hướng roomio thu tiền chủ trọ, và sắp tới nếu gọi thành công vốn sẽ dùng SePay để tự động đánh dấu thanh toán cho việc khách thuê phòng thanh toán cho chủ trọ.</li>
+                  <li>Đọc số đồng hồ bằng AI, cái này nhiều đối thủ cũng có rồi. Tuy nhiên roomio thiết kế theo hướng để tăng độ chính xác tối đa có thể bằng một máy xử lý ảnh riêng, trong đó sẽ có một AI Agent tìm ô số trước, máy cắt ra, sau đó mới có AI khác đọc số từ đó. Và một AI thứ 2 đọc số ở phía chủ trọ. Việc dùng vậy hạn chế việc đọc số sai hơn so với việc đối thủ đang làm. Và tuy có AI đọc số, nó là bước để hỗ trợ khách thuê, cũng như chủ trọ nhanh hơn, tiện hơn trong việc gửi số và kiểm số với nhau chứ không thay thế hoàn toàn, bởi hiện nay AI vẫn còn sai sót nhiều chứ không hoàn toàn chính xác 100% nên chưa thể thay thế con người hẳn được, chỉ support thôi.</li>
                 </ul>
               </div>
             </details>
