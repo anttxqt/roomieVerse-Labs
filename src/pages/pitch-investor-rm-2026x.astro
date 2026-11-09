@@ -97,9 +97,9 @@ const pitchTableD = [
 ]
 
 const pitchScenarioIntro =
-  'Số chính trong pitch là kịch bản thấp nhất: chỉ tính phòng trọ, giá thấp nhất trong bảng giá. Trong lúc xây sản phẩm, "roomio" sẽ mở rộng sang chung cư mini, căn hộ dịch vụ và tìm chủ cho thuê lớn; bảng giá cho các loại hình này đã có sẵn ở trên. Ba kịch bản dưới đây dùng cùng đội bán, cùng số chủ, cùng chi phí; chỉ khác loại khách.'
+  'Số chính trong pitch là kịch bản thấp nhất: chỉ tính phòng trọ, giá thấp nhất trong bảng giá. Trong lúc xây sản phẩm, "roomio" sẽ mở rộng sang chung cư mini, căn hộ dịch vụ và tìm chủ cho thuê lớn; bảng giá cho các loại hình này đã có sẵn ở trên. Bốn kịch bản dưới đây dùng cùng đội bán, cùng số chủ, cùng chi phí; chỉ khác loại khách.'
 
-const pitchScenarioColumns = ['', 'Thấp (số chính trong pitch)', 'Vừa', 'Lạc quan']
+const pitchScenarioColumns = ['', 'Thấp (số chính trong pitch)', 'Vừa', 'Khá', 'Lạc quan']
 
 const pitchScenarioRows = [
   {
@@ -107,45 +107,47 @@ const pitchScenarioRows = [
     cells: [
       'Toàn phòng trọ, mỗi chủ ~15 phòng',
       '70% phòng trọ ~15 phòng, 20% dãy trọ ~30 phòng, 10% chung cư mini ~25 phòng',
+      '60% phòng trọ ~15 phòng, 20% dãy trọ ~30 phòng, 10% chung cư mini ~25 phòng, 7% căn hộ dịch vụ ~20 căn, 3% chuỗi ~100 phòng',
       '50% phòng trọ ~15 phòng, 25% dãy trọ ~30 phòng, 10% chung cư mini ~25 phòng, 10% căn hộ dịch vụ ~20 căn, 5% chuỗi ~100 phòng',
     ],
   },
   {
     label: 'Phí trung bình mỗi chủ/tháng (sau VAT)',
-    cells: ['~190.000đ', '~270.000đ', '~385.000đ'],
+    cells: ['~190.000đ', '~270.000đ', '~340.000đ', '~385.000đ'],
   },
   {
     label: 'Doanh thu tháng 12',
-    cells: ['~41 triệu', '~57 triệu', '~79 triệu'],
+    cells: ['~41 triệu', '~57 triệu', '~69 triệu', '~79 triệu'],
   },
   {
     label: 'Hoà vốn hằng tháng',
-    cells: ['~tháng 26', '~tháng 19', '~tháng 15'],
+    cells: ['~tháng 26', '~tháng 19', '~tháng 16', '~tháng 15'],
   },
   {
     label: 'Vốn $53,000',
     cells: [
       'Cần mở rộng vòng (~$75,000) hoặc vòng sau vào tháng 12–15',
       'Đủ, không cần gọi thêm; lúc thấp nhất quỹ còn ~280 triệu',
+      'Đủ; lúc thấp nhất quỹ còn ~425 triệu',
       'Đủ; lúc thấp nhất quỹ còn ~500 triệu',
     ],
   },
   {
     label: 'Cổ tức đầu tiên',
-    cells: ['Năm thứ 4', 'Năm thứ 4', 'Năm thứ 3'],
+    cells: ['Năm thứ 4', 'Năm thứ 4', 'Năm thứ 3', 'Năm thứ 3'],
   },
   {
     label: 'Nhà đầu tư nhận lại đủ vốn',
-    cells: ['Năm thứ 6', 'Năm thứ 5', 'Năm thứ 4'],
+    cells: ['Năm thứ 6', 'Năm thứ 5', 'Năm thứ 4', 'Năm thứ 4'],
   },
   {
     label: 'Nhà đầu tư nhận tới năm thứ 10',
-    cells: ['~2,9 tỷ (~2,1 lần vốn)', '~3,9 tỷ (~2,9 lần vốn)', '~5,4 tỷ (~4 lần vốn)'],
+    cells: ['~2,9 tỷ (~2,1 lần vốn)', '~3,9 tỷ (~2,9 lần vốn)', '~4,8 tỷ (~3,5 lần vốn)', '~5,4 tỷ (~4 lần vốn)'],
   },
 ]
 
 const pitchScenarioNote =
-  'Cả 3 kịch bản: khoảng 214 chủ ở tháng 12, sau đó mỗi tháng thêm 20 chủ, +3% nhờ giới thiệu, −2% khách rời. Chi phí từ tháng 13 giữ mức tháng 7–12. Giá theo bảng giá hiện tại, tính kín phòng. Tiền về nhà đầu tư tính theo điều khoản ở phụ lục 12, mục 6; thuế thu nhập doanh nghiệp tính 20%; luật bắt bù hết lỗ trước rồi mới được chia cổ tức. Năm tính từ lúc nhận vốn. Chưa tính vòng gọi thêm. Nhà đầu tư vẫn giữ 15% cổ phần sau khi nhận lại vốn.'
+  'Cả 4 kịch bản: khoảng 214 chủ ở tháng 12, sau đó mỗi tháng thêm 20 chủ, +3% nhờ giới thiệu, −2% khách rời. Chi phí từ tháng 13 giữ mức tháng 7–12. Giá theo bảng giá hiện tại, tính kín phòng. Tiền về nhà đầu tư tính theo điều khoản ở phụ lục 12, mục 6; thuế thu nhập doanh nghiệp tính 20%; luật bắt bù hết lỗ trước rồi mới được chia cổ tức. Năm tính từ lúc nhận vốn. Chưa tính vòng gọi thêm. Nhà đầu tư vẫn giữ 15% cổ phần sau khi nhận lại vốn.'
 
 const pitchAssumptions = [
   'Tỷ giá 25.700 đ/USD (Vietcombank mua vào, 14/10/2026). Lúc tiền về sẽ tính lại.',
@@ -168,7 +170,7 @@ const pitchInvestorReturn = [
   'Trả lại nhà đầu tư bằng cổ tức khi có lãi, chia ít nhất 50% lãi sau thuế. Founder nhường phần cổ tức của mình cho tới khi nhà đầu tư nhận lại đủ vốn; sau đó chia theo tỷ lệ cổ phần.',
   'Không ép bán công ty. Nếu sau này có người mua, nhà đầu tư bán cùng giá, cùng lúc với founder.',
   'Chi tiết do luật sư soạn vào thoả thuận cổ đông và điều lệ.',
-  'Hoà vốn và tiền về nhà đầu tư theo 3 kịch bản: xem phụ lục 7.',
+  'Hoà vốn và tiền về nhà đầu tư theo 4 kịch bản: xem phụ lục 7.',
 ]
 
 const breakevenDotGridCols = 56
@@ -3861,7 +3863,7 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
             <p class="pitch-fund-ask">$53,000</p>
             <p class="pitch-fund-meta pitch-fund-meta--stacked">Khoảng 1,36 tỷ đồng cho 12 tháng runway.</p>
             <p class="pitch-fund-meta">Vòng có thể mở rộng đến ~$100,000 (18 tháng) hoặc ~$75,000 (15 tháng) nếu anh/chị đầu tư muốn đi xa hơn.</p>
-            <p class="pitch-fund-meta">Số trong pitch là kịch bản thấp nhất: chỉ tính phòng trọ, giá thấp nhất. Có thêm chung cư mini, căn hộ dịch vụ và chủ lớn thì hoà vốn sớm hơn, kịch bản lạc quan khoảng tháng 15. Xem 3 kịch bản ở phụ lục 7.</p>
+            <p class="pitch-fund-meta">Số trong pitch là kịch bản thấp nhất: chỉ tính phòng trọ, giá thấp nhất. Có thêm chung cư mini, căn hộ dịch vụ và chủ lớn thì hoà vốn sớm hơn, kịch bản lạc quan khoảng tháng 15. Xem 4 kịch bản ở phụ lục 7.</p>
 
             <h3 class="pitch-fund-section-title">Tiền dùng vào đâu</h3>
             <div class="pitch-fund-bars">
@@ -4636,7 +4638,7 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
                     <li>Thời gian thu lại chi phí đó: khoảng 2–5 tháng với chủ khoảng 15 phòng, khoảng 4–9 tháng với chủ khoảng 9 phòng.</li>
                     <li>Tỷ lệ rời bỏ giả định (churn): 2% mỗi tháng.</li>
                     <li>
-                      Hoà vốn: khoảng 8.300 phòng. Tương đương khoảng 520 chủ nếu mỗi chủ có khoảng 15 phòng, hoặc khoảng 930 chủ nếu mỗi chủ khoảng 9 phòng (mức trung bình một nhà trọ ở TP.HCM). Chi phí lấy theo mức tháng 7–12 trong bảng dự trù (lương, bán hàng, marketing, chỗ làm, máy chủ, API AI). Chưa tính khách rời bỏ và ưu đãi cho những chủ đầu tiên. Bảng giá đã gồm VAT; nếu phải nộp VAT 8–10% trên phí thì cần khoảng 9.000 phòng. Theo dự phóng trong bảng dự trù (chủ khoảng 15 phòng), mức này tới vào khoảng tháng 26; xem phụ lục 12. Đây là kịch bản thấp nhất; 3 kịch bản ở mục ngay dưới.
+                      Hoà vốn: khoảng 8.300 phòng. Tương đương khoảng 520 chủ nếu mỗi chủ có khoảng 15 phòng, hoặc khoảng 930 chủ nếu mỗi chủ khoảng 9 phòng (mức trung bình một nhà trọ ở TP.HCM). Chi phí lấy theo mức tháng 7–12 trong bảng dự trù (lương, bán hàng, marketing, chỗ làm, máy chủ, API AI). Chưa tính khách rời bỏ và ưu đãi cho những chủ đầu tiên. Bảng giá đã gồm VAT; nếu phải nộp VAT 8–10% trên phí thì cần khoảng 9.000 phòng. Theo dự phóng trong bảng dự trù (chủ khoảng 15 phòng), mức này tới vào khoảng tháng 26; xem phụ lục 12. Đây là kịch bản thấp nhất; 4 kịch bản ở mục ngay dưới.
                     </li>
                     <li>
                       Chi phí chạy dịch vụ: máy chủ 2–4 triệu đồng mỗi tháng, cộng API AI (đọc số bằng 2 hãng và các agent) khoảng 8,5% doanh thu; gửi tin qua Telegram không mất phí. Ước tính biên lợi nhuận gộp khoảng 80–85% khi agent chạy đủ.
@@ -4645,7 +4647,7 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
                 </div>
 
                 <div class="pitch-budget-block">
-                  <h4 class="pitch-budget-block__title">Ba kịch bản</h4>
+                  <h4 class="pitch-budget-block__title">Bốn kịch bản</h4>
                   <p>{pitchScenarioIntro}</p>
                   <div class="pitch-budget-table-shell">
                     <div class="pitch-budget-table-scroll">
