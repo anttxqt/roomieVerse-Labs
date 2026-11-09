@@ -149,6 +149,49 @@ const pitchScenarioRows = [
 const pitchScenarioNote =
   'Cả 4 kịch bản: khoảng 214 chủ ở tháng 12, sau đó mỗi tháng thêm 20 chủ, +3% nhờ giới thiệu, −2% khách rời. Chi phí từ tháng 13 giữ mức tháng 7–12. Giá theo bảng giá hiện tại, tính kín phòng. Tiền về nhà đầu tư tính theo điều khoản ở phụ lục 12, mục 6; thuế thu nhập doanh nghiệp tính 20%; luật bắt bù hết lỗ trước rồi mới được chia cổ tức. Năm tính từ lúc nhận vốn. Chưa tính vòng gọi thêm. Nhà đầu tư vẫn giữ 15% cổ phần sau khi nhận lại vốn.'
 
+const pitchPriceLeverIntro =
+  'Tăng giá là cách riêng, áp được lên cả 4 kịch bản. Cùng số chủ, cùng chi phí; chỉ tăng cả bảng giá thêm 10% hoặc 20%. Mỗi ô ghi tháng hoà vốn, năm nhà đầu tư nhận lại đủ vốn, và tổng nhận tới năm thứ 10.'
+
+const pitchPriceLeverColumns = ['', 'Giá hiện tại', 'Tăng giá 10%', 'Tăng giá 20%']
+
+const pitchPriceLeverRows = [
+  {
+    label: 'Thấp',
+    cells: [
+      ['Hoà vốn ~tháng 26', 'Đủ vốn năm thứ 6', 'Năm 10: ~2,1 lần vốn'],
+      ['Hoà vốn ~tháng 24', 'Đủ vốn năm thứ 6', 'Năm 10: ~2,3 lần vốn'],
+      ['Hoà vốn ~tháng 22', 'Đủ vốn năm thứ 5', 'Năm 10: ~2,5 lần vốn'],
+    ],
+  },
+  {
+    label: 'Vừa',
+    cells: [
+      ['Hoà vốn ~tháng 19', 'Đủ vốn năm thứ 5', 'Năm 10: ~2,9 lần vốn'],
+      ['Hoà vốn ~tháng 18', 'Đủ vốn năm thứ 5', 'Năm 10: ~3,2 lần vốn'],
+      ['Hoà vốn ~tháng 17', 'Đủ vốn năm thứ 5', 'Năm 10: ~3,4 lần vốn'],
+    ],
+  },
+  {
+    label: 'Khá',
+    cells: [
+      ['Hoà vốn ~tháng 16', 'Đủ vốn năm thứ 4', 'Năm 10: ~3,5 lần vốn'],
+      ['Hoà vốn ~tháng 15', 'Đủ vốn năm thứ 4', 'Năm 10: ~3,8 lần vốn'],
+      ['Hoà vốn ~tháng 14', 'Đủ vốn năm thứ 4', 'Năm 10: ~4,2 lần vốn'],
+    ],
+  },
+  {
+    label: 'Lạc quan',
+    cells: [
+      ['Hoà vốn ~tháng 15', 'Đủ vốn năm thứ 4', 'Năm 10: ~4,0 lần vốn'],
+      ['Hoà vốn ~tháng 14', 'Đủ vốn năm thứ 4', 'Năm 10: ~4,3 lần vốn'],
+      ['Hoà vốn ~tháng 13', 'Đủ vốn năm thứ 4', 'Năm 10: ~4,7 lần vốn'],
+    ],
+  },
+]
+
+const pitchPriceLeverNote =
+  'Giả định số chủ không giảm khi tăng giá. Chỉ kịch bản Thấp với giá hiện tại cần gọi thêm vốn; mọi ô còn lại thì $53,000 đều đủ. Các giả định khác như bảng trên.'
+
 const pitchAssumptions = [
   'Tỷ giá 25.700 đ/USD (Vietcombank mua vào, 14/10/2026). Lúc tiền về sẽ tính lại.',
   'Giá roomio: 12.000–16.000 đ/phòng/tháng tuỳ số phòng, đã gồm VAT; phòng trống tính 5%. Trung bình ~190.000 đ/chủ trọ/tháng sau VAT.',
@@ -4541,6 +4584,10 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
                     Đồng mỗi phòng hoặc căn mỗi tháng, đã gồm VAT. Tính theo bậc như giá điện: phòng thứ 1–4 tính giá cột
                     đầu, phòng thứ 5–10 tính giá cột thứ hai, cứ thế tiếp. Phòng trống chỉ tính 5%. Đây là bảng giá đầu tiên (09/2026), sẽ còn điều chỉnh khi có dữ liệu thật.
                   </p>
+                  <p>
+                    Giá mỗi phòng tăng theo bậc, giống giá điện bậc thang. Em cố ý để chủ ít phòng, phần lớn là cô chú
+                    lớn tuổi, trả thấp nhất; chủ nhiều phòng trả cao hơn. Mỗi toà nhà tính bậc riêng.
+                  </p>
                   <div class="pitch-budget-table-shell">
                     <div class="pitch-budget-table-scroll">
                       <table class="pitch-budget-table pitch-budget-table--rates">
@@ -4673,6 +4720,35 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
                     </div>
                   </div>
                   <p class="pitch-budget-table-note">{pitchScenarioNote}</p>
+                </div>
+
+                <div class="pitch-budget-block">
+                  <h4 class="pitch-budget-block__title">Nếu tăng giá</h4>
+                  <p>{pitchPriceLeverIntro}</p>
+                  <div class="pitch-budget-table-shell">
+                    <div class="pitch-budget-table-scroll">
+                      <table class="pitch-budget-table pitch-budget-table--wide">
+                        <thead>
+                          <tr>
+                            {pitchPriceLeverColumns.map((col) => (
+                              <th>{col}</th>
+                            ))}
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {pitchPriceLeverRows.map((row) => (
+                            <tr>
+                              <td>{row.label}</td>
+                              {row.cells.map((cell) => (
+                                <td set:html={cell.join('<br />')} />
+                              ))}
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <p class="pitch-budget-table-note">{pitchPriceLeverNote}</p>
                 </div>
 
                 <div class="pitch-budget-block">
