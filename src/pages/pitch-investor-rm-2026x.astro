@@ -213,7 +213,7 @@ const pitchInvestorReturn = [
   'Trả lại nhà đầu tư bằng cổ tức khi có lãi, chia ít nhất 50% lãi sau thuế. Founder nhường phần cổ tức của mình cho tới khi nhà đầu tư nhận lại đủ vốn; sau đó chia theo tỷ lệ cổ phần.',
   'Không ép bán công ty. Nếu sau này có người mua, nhà đầu tư bán cùng giá, cùng lúc với founder.',
   'Chi tiết do luật sư soạn vào thoả thuận cổ đông và điều lệ.',
-  'Hoà vốn và tiền về nhà đầu tư theo 4 kịch bản: xem phụ lục 7.',
+  'Hoà vốn và tiền về nhà đầu tư theo 4 kịch bản: xem phụ lục 8.',
 ]
 
 const breakevenDotGridCols = 56
@@ -467,6 +467,7 @@ async function resolveSlide4SlotMedia(slot: Slide4SlotConfig) {
 
 const slide4Media = await Promise.all(slide4Slots.map((slot) => resolveSlide4SlotMedia(slot)))
 
+// Slide order changed 11/2026: internal names keep old numbers. slide6* + assets/pitch/slide-6 render on slide 5; --slide5-* styles belong to slide 6; --slide9-* to slide 7.
 const slide6ImageGlob = import.meta.glob('../assets/pitch/slide-6/*.{png,jpg,jpeg,webp}', {
   eager: true,
   import: 'default',
@@ -1468,22 +1469,22 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
         background: var(--blue);
       }
 
-      #slide-7 .slide-title {
+      #slide-8 .slide-title {
         color: var(--blue);
       }
 
-      #slide-7 .slide-content {
+      #slide-8 .slide-content {
         max-width: min(1100px, 92vw);
         width: 100%;
         box-sizing: border-box;
       }
 
-      #slide-7 .highlight-box {
+      #slide-8 .highlight-box {
         box-shadow: none;
         border: 1px solid #d2d2d7;
       }
 
-      #slide-7 .highlight-box--breakeven {
+      #slide-8 .highlight-box--breakeven {
         max-width: none;
         width: 100%;
         margin-left: 0;
@@ -1491,7 +1492,7 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
         box-sizing: border-box;
       }
 
-      #slide-7 .highlight-box--breakeven .pitch-breakeven-title {
+      #slide-8 .highlight-box--breakeven .pitch-breakeven-title {
         margin: 0 0 28px;
         color: #1d1d1f;
         font-weight: 600;
@@ -1501,20 +1502,20 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
       }
 
       @media (min-width: 768px) {
-        #slide-7 .highlight-box--breakeven .pitch-breakeven-title {
+        #slide-8 .highlight-box--breakeven .pitch-breakeven-title {
           font-size: 1.8rem;
         }
       }
 
-      #slide-7 .highlight-box--breakeven .pitch-breakeven-notes {
+      #slide-8 .highlight-box--breakeven .pitch-breakeven-notes {
         display: flex;
         flex-direction: column;
         gap: 12px;
       }
 
-      #slide-7 .highlight-box--breakeven .pitch-breakeven-context,
-      #slide-7 .highlight-box--breakeven .pitch-breakeven-pricing-note,
-      #slide-7 .highlight-box--breakeven p.pitch-rooms-bars-closing {
+      #slide-8 .highlight-box--breakeven .pitch-breakeven-context,
+      #slide-8 .highlight-box--breakeven .pitch-breakeven-pricing-note,
+      #slide-8 .highlight-box--breakeven p.pitch-rooms-bars-closing {
         margin: 0;
         color: #86868b;
         font-weight: 400;
@@ -1789,15 +1790,15 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
         }
       }
 
-      #slide-7 .highlight-box .pitch-label--roomio {
+      #slide-8 .highlight-box .pitch-label--roomio {
         color: var(--roomibase);
       }
 
-      #slide-7 .highlight-box + .pitch-fund-meta {
+      #slide-8 .highlight-box + .pitch-fund-meta {
         margin-top: 28px;
       }
 
-      #slide-7 .pitch-fund-meta:last-of-type {
+      #slide-8 .pitch-fund-meta:last-of-type {
         margin-bottom: 32px;
       }
 
@@ -1885,7 +1886,7 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
         color: var(--slide11-accent-2);
       }
 
-      #slide-8 .pitch-timeline {
+      #slide-9 .pitch-timeline {
         --rail-x: 6px;
         --timeline-pad: 28px;
         position: relative;
@@ -1895,7 +1896,7 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
         text-align: left;
       }
 
-      #slide-8 .pitch-timeline::before {
+      #slide-9 .pitch-timeline::before {
         content: '';
         position: absolute;
         left: var(--rail-x);
@@ -1911,16 +1912,16 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
         );
       }
 
-      #slide-8 .pitch-timeline__step {
+      #slide-9 .pitch-timeline__step {
         position: relative;
         padding: 0 0 48px;
       }
 
-      #slide-8 .pitch-timeline__step:last-child {
+      #slide-9 .pitch-timeline__step:last-child {
         padding-bottom: 0;
       }
 
-      #slide-8 .pitch-timeline__label {
+      #slide-9 .pitch-timeline__label {
         position: relative;
         margin: 0 0 12px;
         font-size: 1.8rem;
@@ -1928,7 +1929,7 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
         line-height: 1.25;
       }
 
-      #slide-8 .pitch-timeline__label::before {
+      #slide-9 .pitch-timeline__label::before {
         content: '';
         position: absolute;
         left: calc(var(--rail-x) - var(--timeline-pad));
@@ -1941,14 +1942,14 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
         box-shadow: 0 0 0 3px #fbfbfd;
       }
 
-      #slide-8 .pitch-timeline__text {
+      #slide-9 .pitch-timeline__text {
         margin: 0;
         font-size: clamp(1.1rem, 1.5vw, 1.25rem);
         line-height: 1.6;
         color: #86868b;
       }
 
-      #slide-9 .pitch-validation-heading {
+      #slide-7 .pitch-validation-heading {
         text-align: center;
         color: #1d1d1f;
         font-size: 1.5rem;
@@ -1956,23 +1957,23 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
         margin-bottom: 0;
       }
 
-      #slide-9 .apple-grid {
+      #slide-7 .apple-grid {
         margin-top: 24px;
       }
 
       @media (min-width: 768px) {
-        #slide-9 .apple-grid {
+        #slide-7 .apple-grid {
           grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
           align-items: stretch;
         }
       }
 
-      #slide-9 {
+      #slide-7 {
         --slide9-accent-1: #ff9500;
         --slide9-accent-2: #34c759;
       }
 
-      #slide-9 .apple-grid .apple-card {
+      #slide-7 .apple-grid .apple-card {
         background: #fff;
         border: 2px solid #fff;
         box-sizing: border-box;
@@ -1980,35 +1981,35 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
         transition: box-shadow 0.2s ease;
       }
 
-      #slide-9 .apple-grid .apple-card:nth-child(1) {
+      #slide-7 .apple-grid .apple-card:nth-child(1) {
         box-shadow: inset 0 0 0 1px var(--slide9-accent-1);
       }
 
-      #slide-9 .apple-grid .apple-card:nth-child(1) h3 {
+      #slide-7 .apple-grid .apple-card:nth-child(1) h3 {
         color: var(--slide9-accent-1);
       }
 
-      #slide-9 .apple-grid .apple-card:nth-child(2) {
+      #slide-7 .apple-grid .apple-card:nth-child(2) {
         box-shadow: inset 0 0 0 1px var(--slide9-accent-2);
       }
 
-      #slide-9 .apple-grid .apple-card:nth-child(2) h3 {
+      #slide-7 .apple-grid .apple-card:nth-child(2) h3 {
         color: var(--slide9-accent-2);
       }
 
-      #slide-9 .apple-grid .apple-card:hover {
+      #slide-7 .apple-grid .apple-card:hover {
         transform: none;
       }
 
-      #slide-9 .apple-grid .apple-card:nth-child(1):hover {
+      #slide-7 .apple-grid .apple-card:nth-child(1):hover {
         box-shadow: inset 0 0 0 2px var(--slide9-accent-1);
       }
 
-      #slide-9 .apple-grid .apple-card:nth-child(2):hover {
+      #slide-7 .apple-grid .apple-card:nth-child(2):hover {
         box-shadow: inset 0 0 0 2px var(--slide9-accent-2);
       }
 
-      #slide-9 .apple-grid .apple-card p {
+      #slide-7 .apple-grid .apple-card p {
         color: #1d1d1f;
         line-height: 1.6;
       }
@@ -2384,18 +2385,18 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
         box-shadow: 0 0 0 2px var(--blue-bright);
       }
 
-      #slide-5 {
+      #slide-6 {
         --slide5-head-col: 36%;
         --slide5-accent-1: #ff9500;
         --slide5-accent-2: #34c759;
         --slide5-accent-3: #7c3aed;
       }
 
-      #slide-5 .slide-title {
+      #slide-6 .slide-title {
         color: var(--blue);
       }
 
-      #slide-5 .apple-grid {
+      #slide-6 .apple-grid {
         grid-template-columns: 1fr;
         gap: 16px;
         width: 100%;
@@ -2404,7 +2405,7 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
         margin-right: 0;
       }
 
-      #slide-5 .apple-grid .apple-card {
+      #slide-6 .apple-grid .apple-card {
         width: 100%;
         box-sizing: border-box;
         background: #fff;
@@ -2413,52 +2414,52 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
         transition: box-shadow 0.2s ease, transform 0.3s ease;
       }
 
-      #slide-5 .apple-grid .apple-card:nth-child(1) {
+      #slide-6 .apple-grid .apple-card:nth-child(1) {
         box-shadow: inset 0 0 0 1px var(--slide5-accent-1);
       }
 
-      #slide-5 .apple-grid .apple-card:nth-child(1) h3 {
+      #slide-6 .apple-grid .apple-card:nth-child(1) h3 {
         color: var(--slide5-accent-1);
       }
 
-      #slide-5 .apple-grid .apple-card:nth-child(2) {
+      #slide-6 .apple-grid .apple-card:nth-child(2) {
         box-shadow: inset 0 0 0 1px var(--slide5-accent-2);
       }
 
-      #slide-5 .apple-grid .apple-card:nth-child(2) h3 {
+      #slide-6 .apple-grid .apple-card:nth-child(2) h3 {
         color: var(--slide5-accent-2);
       }
 
-      #slide-5 .apple-grid .apple-card:nth-child(3) {
+      #slide-6 .apple-grid .apple-card:nth-child(3) {
         box-shadow: inset 0 0 0 1px var(--slide5-accent-3);
       }
 
-      #slide-5 .apple-grid .apple-card:nth-child(3) h3 {
+      #slide-6 .apple-grid .apple-card:nth-child(3) h3 {
         color: var(--slide5-accent-3);
       }
 
-      #slide-5 .apple-grid .apple-card p {
+      #slide-6 .apple-grid .apple-card p {
         color: #1d1d1f;
       }
 
-      #slide-5 .apple-grid .apple-card:hover {
+      #slide-6 .apple-grid .apple-card:hover {
         transform: none;
       }
 
-      #slide-5 .apple-grid .apple-card:nth-child(1):hover {
+      #slide-6 .apple-grid .apple-card:nth-child(1):hover {
         box-shadow: inset 0 0 0 2px var(--slide5-accent-1);
       }
 
-      #slide-5 .apple-grid .apple-card:nth-child(2):hover {
+      #slide-6 .apple-grid .apple-card:nth-child(2):hover {
         box-shadow: inset 0 0 0 2px var(--slide5-accent-2);
       }
 
-      #slide-5 .apple-grid .apple-card:nth-child(3):hover {
+      #slide-6 .apple-grid .apple-card:nth-child(3):hover {
         box-shadow: inset 0 0 0 2px var(--slide5-accent-3);
       }
 
       @media (min-width: 768px) {
-        #slide-5 .apple-grid .apple-card {
+        #slide-6 .apple-grid .apple-card {
           display: grid;
           grid-template-columns: var(--slide5-head-col) 1fr;
           align-items: center;
@@ -2466,16 +2467,16 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
         }
       }
 
-      #slide-6 {
+      #slide-5 {
         --slide6-title-offset: 24px;
         overflow-x: clip;
       }
 
-      #slide-6 .slide-title {
+      #slide-5 .slide-title {
         padding-top: var(--slide6-title-offset);
       }
 
-      #slide-6 .slide-6-howto {
+      #slide-5 .slide-6-howto {
         width: 100%;
         max-width: 1100px;
         margin: 20px auto 0;
@@ -2485,7 +2486,7 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
         min-width: 0;
       }
 
-      #slide-6 .slide-6-lane__label {
+      #slide-5 .slide-6-lane__label {
         margin: 0;
         font-size: clamp(0.88rem, 1.05vw, 0.98rem);
         font-weight: 600;
@@ -2494,26 +2495,26 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
         text-align: center;
       }
 
-      #slide-6 .slide-6-steps {
+      #slide-5 .slide-6-steps {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 10px;
         min-width: 0;
       }
 
-      #slide-6 .slide-6-step {
+      #slide-5 .slide-6-step {
         display: flex;
         flex-direction: column;
         gap: 6px;
         min-width: 0;
       }
 
-      #slide-6 .pitch-media-slot {
+      #slide-5 .pitch-media-slot {
         width: 100%;
         min-width: 0;
       }
 
-      #slide-6 .pitch-media-slot__frame {
+      #slide-5 .pitch-media-slot__frame {
         aspect-ratio: 4 / 3;
         width: 100%;
         max-width: 100%;
@@ -2524,7 +2525,7 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
         display: grid;
       }
 
-      #slide-6 .pitch-media-slot__frame :global(picture) {
+      #slide-5 .pitch-media-slot__frame :global(picture) {
         grid-area: 1 / 1;
         width: 100%;
         height: 100%;
@@ -2532,19 +2533,19 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
         min-height: 0;
       }
 
-      #slide-6 .pitch-media-slot__frame :global(img),
-      #slide-6 .pitch-media-slot__frame :global(picture) {
+      #slide-5 .pitch-media-slot__frame :global(img),
+      #slide-5 .pitch-media-slot__frame :global(picture) {
         display: block;
         width: 100%;
         height: 100%;
       }
 
-      #slide-6 .pitch-media-slot__frame :global(img) {
+      #slide-5 .pitch-media-slot__frame :global(img) {
         object-fit: cover;
         border-radius: 20px;
       }
 
-      #slide-6 .pitch-media-slot__placeholder {
+      #slide-5 .pitch-media-slot__placeholder {
         aspect-ratio: 4 / 3;
         width: 100%;
         max-width: 100%;
@@ -2561,37 +2562,37 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
         box-sizing: border-box;
       }
 
-      #slide-6 .slide-6-step__body {
+      #slide-5 .slide-6-step__body {
         display: flex;
         flex-direction: column;
         gap: 2px;
         min-width: 0;
       }
 
-      #slide-6 .slide-6-step__num {
+      #slide-5 .slide-6-step__num {
         color: var(--blue);
         font-weight: bold;
         font-size: 1.05rem;
         line-height: 1.2;
       }
 
-      #slide-6 .slide-6-step__caption {
+      #slide-5 .slide-6-step__caption {
         margin: 0;
         font-size: clamp(0.72rem, 0.95vw, 0.82rem);
         line-height: 1.35;
         color: #424245;
       }
 
-      #slide-6 .appendix-btn-wrap {
+      #slide-5 .appendix-btn-wrap {
         margin-top: 28px;
       }
 
       @media (max-width: 767px) {
-        #slide-6 .slide-6-howto {
+        #slide-5 .slide-6-howto {
           margin-top: 24px;
         }
 
-        #slide-6 .slide-6-steps {
+        #slide-5 .slide-6-steps {
           display: flex;
           flex-direction: row;
           gap: 12px;
@@ -2603,61 +2604,61 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
           padding-bottom: 2px;
         }
 
-        #slide-6 .slide-6-steps::-webkit-scrollbar {
+        #slide-5 .slide-6-steps::-webkit-scrollbar {
           display: none;
         }
 
-        #slide-6 .slide-6-step {
+        #slide-5 .slide-6-step {
           flex: 0 0 80vw;
           max-width: 80vw;
           scroll-snap-align: start;
         }
 
-        #slide-6 .slide-6-step__caption {
+        #slide-5 .slide-6-step__caption {
           font-size: 0.82rem;
         }
       }
 
-      #appendix-slide-6 {
+      #appendix-slide-5 {
         overflow-x: clip;
       }
 
-      #appendix-slide-6 .appendix-slide-6__steps {
+      #appendix-slide-5 .appendix-slide-6__steps {
         margin: 0;
         padding-left: 1.35em;
         list-style: decimal;
       }
 
-      #appendix-slide-6 .appendix-slide-6__steps li {
+      #appendix-slide-5 .appendix-slide-6__steps li {
         margin-bottom: 0.65em;
         line-height: 1.45;
         color: #424245;
       }
 
-      #appendix-slide-6 .appendix-slide-6__steps li::before {
+      #appendix-slide-5 .appendix-slide-6__steps li::before {
         content: none;
         display: none;
       }
 
-      #appendix-slide-6 .appendix-slide-6__khach-strip {
+      #appendix-slide-5 .appendix-slide-6__khach-strip {
         width: 100%;
         max-width: 720px;
         margin: 12px auto 16px;
         min-width: 0;
       }
 
-      #appendix-slide-6 .appendix-slide-6__khach-tiles {
+      #appendix-slide-5 .appendix-slide-6__khach-tiles {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 10px;
         min-width: 0;
       }
 
-      #appendix-slide-6 .appendix-slide-6__khach-tile {
+      #appendix-slide-5 .appendix-slide-6__khach-tile {
         min-width: 0;
       }
 
-      #appendix-slide-6 .appendix-slide-6__khach-frame {
+      #appendix-slide-5 .appendix-slide-6__khach-frame {
         aspect-ratio: 3 / 4;
         width: 100%;
         border-radius: 20px;
@@ -2667,7 +2668,7 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
         background: rgba(0, 0, 0, 0.04);
       }
 
-      #appendix-slide-6 .appendix-slide-6__khach-frame :global(picture) {
+      #appendix-slide-5 .appendix-slide-6__khach-frame :global(picture) {
         grid-area: 1 / 1;
         width: 100%;
         height: 100%;
@@ -2675,19 +2676,19 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
         min-height: 0;
       }
 
-      #appendix-slide-6 .appendix-slide-6__khach-frame :global(img),
-      #appendix-slide-6 .appendix-slide-6__khach-frame :global(picture) {
+      #appendix-slide-5 .appendix-slide-6__khach-frame :global(img),
+      #appendix-slide-5 .appendix-slide-6__khach-frame :global(picture) {
         display: block;
         width: 100%;
         height: 100%;
       }
 
-      #appendix-slide-6 .appendix-slide-6__khach-frame :global(img) {
+      #appendix-slide-5 .appendix-slide-6__khach-frame :global(img) {
         object-fit: cover;
         border-radius: 20px;
       }
 
-      #appendix-slide-6 .appendix-slide-6__khach-placeholder {
+      #appendix-slide-5 .appendix-slide-6__khach-placeholder {
         aspect-ratio: 3 / 4;
         width: 100%;
         border-radius: 20px;
@@ -2704,7 +2705,7 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
       }
 
       @media (max-width: 767px) {
-        #appendix-slide-6 .appendix-slide-6__khach-tiles {
+        #appendix-slide-5 .appendix-slide-6__khach-tiles {
           display: flex;
           flex-direction: row;
           gap: 12px;
@@ -2716,11 +2717,11 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
           padding-bottom: 2px;
         }
 
-        #appendix-slide-6 .appendix-slide-6__khach-tiles::-webkit-scrollbar {
+        #appendix-slide-5 .appendix-slide-6__khach-tiles::-webkit-scrollbar {
           display: none;
         }
 
-        #appendix-slide-6 .appendix-slide-6__khach-tile {
+        #appendix-slide-5 .appendix-slide-6__khach-tile {
           flex: 0 0 70vw;
           max-width: 70vw;
           scroll-snap-align: start;
@@ -3521,53 +3522,28 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
         </div>
       </section>
 
-      <!-- Slide 5: Rào cản công nghệ -->
-      <section class="slide-section" id="slide-5">
-        <div class="slide-container">
-          <div class="reveal" style="text-align: center;">
-            <h2 class="slide-title">Đối thủ phải đổi hết cách làm hiện tại mới có thể theo "roomio"</h2>
-          </div>
-          
-          <div class="slide-content reveal delay-100" style="margin-bottom: 40px;">
-            <p>Tính năng thì ai cũng chép được. Cái khó chép là cái luồng chạy song song nằm sau những tính năng đó: hệ thống gửi tin nhắn, hệ thống làm việc ngầm ban đêm, trải nghiệm liền mạch giữa các thiết bị – giữa khách và chủ...</p>
-          </div>
+      <!-- Slide 6: Rào cản công nghệ -->
+      
 
-          <div class="apple-grid">
-            <article class="apple-card reveal delay-100">
-              <h3>Hệ thống gửi tin</h3>
-              <p>Nhắc gửi số, gửi hoá đơn trước và sau thanh toán, nhắc nợ đều tự động. Gửi bao nhiêu cũng không còn lo chi phí vì có hệ sinh thái miễn phí của Telegram. Tương tác ngược lại với chủ cho thuê và hệ thống trực tiếp trên đoạn chat.</p>
-            </article>
-            <article class="apple-card reveal delay-200">
-              <h3>Chạy ngầm khi chủ ngủ</h3>
-              <p>Hệ thống có các luồng chạy ngầm: tự soạn hoá đơn nháp chờ chủ cho thuê duyệt, tự lên hàng đợi nhắc gửi số, đóng tiền. Chủ ngủ dậy hay vào app thì mọi thứ đã sẵn sàng, chỉ việc bấm duyệt bản nháp đó.</p>
-            </article>
-            <article class="apple-card reveal delay-300">
-              <h3>Trải nghiệm linh hoạt</h3>
-              <p>Cùng một thông tin, chủ cho thuê có thể xem bằng nhiều kiểu khác nhau (qua telegram chat, web), trên nhiều thiết bị khác nhau. Và gần đây, Telegram vừa ra mắt app cho đồng hồ thông minh, từ đó "roomio" được hưởng ké một đặc quyền cực xịn: "Đưa thông báo tới tận cổ tay chủ cho thuê"</p>
-            </article>
-          </div>
+      <!-- Slide 5: Demo -->
+      
 
-          <div class="appendix-btn-wrap reveal delay-300">
-            <button type="button" class="appendix-jump-btn" data-target="appendix-slide-5" aria-label="Xem thêm phụ lục cho Slide 5">
-              <span>Xem thêm phụ lục</span>
-              <i class="appendix-btn-icon" aria-hidden="true">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="12" y1="4" x2="12" y2="20"></line>
-                  <polyline points="19 13 12 20 5 13"></polyline>
-                </svg>
-              </i>
-            </button>
-          </div>
-        </div>
-      </section>
+      <!-- Slide 8: Thị trường -->
+      
 
-      <!-- Slide 6: Demo -->
-      <section class="slide-section slide-section--pattern-border" id="slide-6">
+      <!-- Slide 9: Chiến thuật -->
+      
+
+      <!-- Slide 7: Kiểm chứng -->
+      
+
+      <!-- Slide 10: Đội ngũ -->
+      <section class="slide-section slide-section--pattern-border" id="slide-5">
         <div class="slide-container reveal">
           <div style="text-align: center;">
             <h2 class="slide-title">Từ người mù công nghệ tới người rành công nghệ, già tới trẻ... ai cũng có thể dùng dễ dàng</h2>
           </div>
-          <!-- MEDIA SLOTS: drop chu-1..3 (png|jpg|webp, ~1800×1350, 4:3, tight crop on key UI) and khach-1..3 (portrait 3:4, appendix 6) into src/assets/pitch/slide-6/ -->
+          <!-- MEDIA SLOTS: drop chu-1..3 (png|jpg|webp, ~1800×1350, 4:3, tight crop on key UI) and khach-1..3 (portrait 3:4, appendix 5) into src/assets/pitch/slide-6/ -->
           <div class="slide-6-howto reveal delay-200">
             <p class="slide-6-lane__label">{slide6LandlordLabel}</p>
             <div class="slide-6-steps">
@@ -3603,6 +3579,45 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
           </div>
 
           <div class="appendix-btn-wrap reveal delay-300">
+            <button type="button" class="appendix-jump-btn" data-target="appendix-slide-5" aria-label="Xem thêm phụ lục cho Slide 5">
+              <span>Xem thêm phụ lục</span>
+              <i class="appendix-btn-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="4" x2="12" y2="20"></line>
+                  <polyline points="19 13 12 20 5 13"></polyline>
+                </svg>
+              </i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+<section class="slide-section" id="slide-6">
+        <div class="slide-container">
+          <div class="reveal" style="text-align: center;">
+            <h2 class="slide-title">Đối thủ phải đổi hết cách làm hiện tại mới có thể theo "roomio"</h2>
+          </div>
+          
+          <div class="slide-content reveal delay-100" style="margin-bottom: 40px;">
+            <p>Tính năng thì ai cũng chép được. Cái khó chép là cái luồng chạy song song nằm sau những tính năng đó: hệ thống gửi tin nhắn, hệ thống làm việc ngầm ban đêm, trải nghiệm liền mạch giữa các thiết bị – giữa khách và chủ...</p>
+          </div>
+
+          <div class="apple-grid">
+            <article class="apple-card reveal delay-100">
+              <h3>Hệ thống gửi tin</h3>
+              <p>Nhắc gửi số, gửi hoá đơn trước và sau thanh toán, nhắc nợ đều tự động. Gửi bao nhiêu cũng không còn lo chi phí vì có hệ sinh thái miễn phí của Telegram. Tương tác ngược lại với chủ cho thuê và hệ thống trực tiếp trên đoạn chat.</p>
+            </article>
+            <article class="apple-card reveal delay-200">
+              <h3>Chạy ngầm khi chủ ngủ</h3>
+              <p>Hệ thống có các luồng chạy ngầm: tự soạn hoá đơn nháp chờ chủ cho thuê duyệt, tự lên hàng đợi nhắc gửi số, đóng tiền. Chủ ngủ dậy hay vào app thì mọi thứ đã sẵn sàng, chỉ việc bấm duyệt bản nháp đó.</p>
+            </article>
+            <article class="apple-card reveal delay-300">
+              <h3>Trải nghiệm linh hoạt</h3>
+              <p>Cùng một thông tin, chủ cho thuê có thể xem bằng nhiều kiểu khác nhau (qua telegram chat, web), trên nhiều thiết bị khác nhau. Và gần đây, Telegram vừa ra mắt app cho đồng hồ thông minh, từ đó "roomio" được hưởng ké một đặc quyền cực xịn: "Đưa thông báo tới tận cổ tay chủ cho thuê"</p>
+            </article>
+          </div>
+
+          <div class="appendix-btn-wrap reveal delay-300">
             <button type="button" class="appendix-jump-btn" data-target="appendix-slide-6" aria-label="Xem thêm phụ lục cho Slide 6">
               <span>Xem thêm phụ lục</span>
               <i class="appendix-btn-icon" aria-hidden="true">
@@ -3616,8 +3631,43 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
         </div>
       </section>
 
-      <!-- Slide 7: Thị trường -->
-      <section class="slide-section" id="slide-7">
+<section class="slide-section" id="slide-7">
+        <div class="slide-container reveal">
+          <div style="text-align: center;">
+            <h2 class="slide-title">Biến những lời hứa thành dữ liệu sử dụng thực tế</h2>
+          </div>
+          <div class="slide-content">
+            <p>Tín hiệu hiện tại là đang có 3 chủ cho thuê đồng ý dùng thử khi lõi chạy ổn định (1 ở Đà Lạt, 2 ở Sài Gòn). Mục tiêu trong những ngày đầu tiên của "roomio" và mình là cho họ trở thành những người đầu tiên sử dụng hệ thống.</p>
+          </div>
+
+          <h3 class="pitch-validation-heading">Chuỗi kiểm chứng sắp tới</h3>
+
+          <div class="apple-grid">
+            <article class="apple-card reveal delay-100">
+              <h3>Chạy một kỳ hoá đơn thực tế</h3>
+              <p>Cho 3 chủ đầu tiên chạy trọn vẹn một luồng từ đầu kì tới cuối kì trong tháng: nhắc gửi số, chốt số, gửi hoá đơn tạm tính, hoá đơn đã thanh toán, tiền về và tích thanh toán thành công. Kèm các tính năng phụ như báo cáo mỗi ngày, báo cáo sự cố.... Coi xem có bị rơi hay vướng đoạn nào không để tiếp tục hoàn thiện.</p>
+            </article>
+            <article class="apple-card reveal delay-200">
+              <h3>Khả năng giữ chân chủ cho thuê</h3>
+              <p>Coi thử chủ còn dùng sau khi hết ưu đãi không, có bị nghiện app không. Và từ khi có "roomio" thì họ đã khoẻ hơn ra sao.</p>
+            </article>
+          </div>
+
+          <div class="appendix-btn-wrap reveal delay-300">
+            <button type="button" class="appendix-jump-btn" data-target="appendix-slide-7" aria-label="Xem thêm phụ lục cho Slide 7">
+              <span>Xem thêm phụ lục</span>
+              <i class="appendix-btn-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="4" x2="12" y2="20"></line>
+                  <polyline points="19 13 12 20 5 13"></polyline>
+                </svg>
+              </i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+<section class="slide-section slide-section--pattern-geometric" id="slide-8">
         <div class="slide-container">
           <div class="reveal" style="text-align: center;">
             <h2 class="slide-title">Cách "roomio" kiếm tiền</h2>
@@ -3694,7 +3744,7 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
             <p class="pitch-fund-meta">Nguồn: Sở Xây dựng TP.HCM, Công an Hà Nội, Tổng Liên đoàn Lao động Việt Nam, Bộ Xây dựng. Số cả nước và Hà Nội là ước tính. Cách tính ở phụ lục.</p>
 
             <div class="appendix-btn-wrap">
-              <button type="button" class="appendix-jump-btn" data-target="appendix-slide-7" aria-label="Xem thêm phụ lục cho Slide 7">
+              <button type="button" class="appendix-jump-btn" data-target="appendix-slide-8" aria-label="Xem thêm phụ lục cho Slide 8">
                 <span>Xem thêm phụ lục</span>
                 <i class="appendix-btn-icon" aria-hidden="true">
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
@@ -3708,8 +3758,7 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
         </div>
       </section>
 
-      <!-- Slide 8: Chiến thuật -->
-      <section class="slide-section slide-section--pattern-geometric" id="slide-8">
+<section class="slide-section" id="slide-9">
         <div class="slide-container">
           <div class="reveal" style="text-align: center;">
             <h2 class="slide-title">Chiến thuật "Đánh Du Kích"</h2>
@@ -3731,43 +3780,6 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
           </div>
 
           <div class="appendix-btn-wrap reveal delay-300">
-            <button type="button" class="appendix-jump-btn" data-target="appendix-slide-8" aria-label="Xem thêm phụ lục cho Slide 8">
-              <span>Xem thêm phụ lục</span>
-              <i class="appendix-btn-icon" aria-hidden="true">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="12" y1="4" x2="12" y2="20"></line>
-                  <polyline points="19 13 12 20 5 13"></polyline>
-                </svg>
-              </i>
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <!-- Slide 9: Kiểm chứng -->
-      <section class="slide-section" id="slide-9">
-        <div class="slide-container reveal">
-          <div style="text-align: center;">
-            <h2 class="slide-title">Biến những lời hứa thành dữ liệu sử dụng thực tế</h2>
-          </div>
-          <div class="slide-content">
-            <p>Tín hiệu hiện tại là đang có 3 chủ cho thuê đồng ý dùng thử khi lõi chạy ổn định (1 ở Đà Lạt, 2 ở Sài Gòn). Mục tiêu trong những ngày đầu tiên của "roomio" và mình là cho họ trở thành những người đầu tiên sử dụng hệ thống.</p>
-          </div>
-
-          <h3 class="pitch-validation-heading">Chuỗi kiểm chứng sắp tới</h3>
-
-          <div class="apple-grid">
-            <article class="apple-card reveal delay-100">
-              <h3>Chạy một kỳ hoá đơn thực tế</h3>
-              <p>Cho 3 chủ đầu tiên chạy trọn vẹn một luồng từ đầu kì tới cuối kì trong tháng: nhắc gửi số, chốt số, gửi hoá đơn tạm tính, hoá đơn đã thanh toán, tiền về và tích thanh toán thành công. Kèm các tính năng phụ như báo cáo mỗi ngày, báo cáo sự cố.... Coi xem có bị rơi hay vướng đoạn nào không để tiếp tục hoàn thiện.</p>
-            </article>
-            <article class="apple-card reveal delay-200">
-              <h3>Khả năng giữ chân chủ cho thuê</h3>
-              <p>Coi thử chủ còn dùng sau khi hết ưu đãi không, có bị nghiện app không. Và từ khi có "roomio" thì họ đã khoẻ hơn ra sao.</p>
-            </article>
-          </div>
-
-          <div class="appendix-btn-wrap reveal delay-300">
             <button type="button" class="appendix-jump-btn" data-target="appendix-slide-9" aria-label="Xem thêm phụ lục cho Slide 9">
               <span>Xem thêm phụ lục</span>
               <i class="appendix-btn-icon" aria-hidden="true">
@@ -3781,7 +3793,6 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
         </div>
       </section>
 
-      <!-- Slide 10: Đội ngũ -->
       <section class="slide-section slide-section--dark" id="slide-10">
         <div class="slide-container reveal">
           <h2 class="slide-title">Đội ngũ đã có người làm sản phẩm.</h2>
@@ -3906,7 +3917,7 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
             <p class="pitch-fund-ask">$53,000</p>
             <p class="pitch-fund-meta pitch-fund-meta--stacked">Khoảng 1,36 tỷ đồng cho 12 tháng runway.</p>
             <p class="pitch-fund-meta">Vòng có thể mở rộng đến ~$100,000 (18 tháng) hoặc ~$75,000 (15 tháng) nếu anh/chị đầu tư muốn đi xa hơn.</p>
-            <p class="pitch-fund-meta">Số trong pitch là kịch bản thấp nhất: chỉ tính phòng trọ, giá thấp nhất. Có thêm chung cư mini, căn hộ dịch vụ và chủ lớn thì hoà vốn sớm hơn, kịch bản lạc quan khoảng tháng 15. Xem 4 kịch bản ở phụ lục 7.</p>
+            <p class="pitch-fund-meta">Số trong pitch là kịch bản thấp nhất: chỉ tính phòng trọ, giá thấp nhất. Có thêm chung cư mini, căn hộ dịch vụ và chủ lớn thì hoà vốn sớm hơn, kịch bản lạc quan khoảng tháng 15. Xem 4 kịch bản ở phụ lục 8.</p>
 
             <h3 class="pitch-fund-section-title">Tiền dùng vào đâu</h3>
             <div class="pitch-fund-bars">
@@ -4290,68 +4301,19 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
               </div>
             </details>
 
+            
+
+            
+
+            
+
+            
+
+            
+
             <details class="apple-accordion-item" id="appendix-slide-5" name="pitch-appendix">
               <summary class="apple-accordion-header">
-                <span class="apple-accordion-title">Slide 5: Kiến trúc</span>
-                <span class="apple-accordion-icon" aria-hidden="true">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="6 9 12 15 18 9"></polyline>
-                  </svg>
-                </span>
-              </summary>
-              <div class="apple-accordion-content">
-                <p>Dùng Telegram thay vì Zalo để tiết kiệm chi phí gửi tin. Kiến trúc chạy ẩn: Chủ trọ đi ngủ, bot vẫn đi nhắc nợ khách.</p>
-
-                <div class="pitch-budget-block">
-                  <h4 class="pitch-budget-block__title">Giữ dữ liệu một chỗ là chưa đủ</h4>
-                  <p>App nào tử tế cũng giữ dữ liệu một chỗ. Khác nhau ở chỗ ai ghi vào sổ. Ở các app hiện tại, chỉ chủ cho thuê ghi; phần của khách nằm ngoài hệ thống: ảnh đồng hồ gửi qua Zalo, tiền chuyển vào sao kê ngân hàng, câu hỏi qua tin nhắn. Chủ phải tự chép lại.</p>
-                </div>
-
-                <div class="pitch-budget-block">
-                  <h4 class="pitch-budget-block__title">Khách cùng ghi vào sổ của chủ</h4>
-                  <ul class="pitch-budget-assumptions">
-                    <li>Khách gửi ảnh đồng hồ và xác nhận số ngay trong chat.</li>
-                    <li>Khách nhận hoá đơn qua Telegram và chuyển tiền bằng mã QR.</li>
-                    <li>Khách gửi ảnh chuyển khoản, chủ chỉ bấm xác nhận, không ai phải nhập lại. Nối SePay xong thì tiền về là tự gạch nợ.</li>
-                  </ul>
-                </div>
-
-                <div class="pitch-budget-block">
-                  <h4 class="pitch-budget-block__title">Mỗi người một cửa</h4>
-                  <p>Chủ cho thuê làm trên web, khách thuê làm trên Telegram. Khách chưa dùng Telegram vẫn mở được hoá đơn qua link. Không ai phải tải thêm một app nặng.</p>
-                </div>
-
-                <div class="pitch-budget-block">
-                  <h4 class="pitch-budget-block__title">Sổ quỹ theo thực tế Việt Nam</h4>
-                  <p>Thu qua nhiều tài khoản, nhận tiền mặt, khách trả thiếu hay trả dư, cấn tiền cọc vào nợ: đều vào đúng sổ.</p>
-                </div>
-
-                <div class="pitch-budget-block">
-                  <h4 class="pitch-budget-block__title">Vì sao đối thủ khó làm theo</h4>
-                  <ul class="pitch-budget-assumptions">
-                    <li>Kênh gửi tin: đổi từ Zalo hay app riêng sang Telegram nghĩa là phải kéo cả tệp khách đang dùng sang kênh mới.</li>
-                    <li>Tập trung: app đã nhồi nhiều tính năng như tìm việc làm, tìm phòng trọ thì khó cắt; cắt ra thì luồng chính vẫn rời rạc.</li>
-                    <li>Nhóm khách: bên lớn nhắm toà nhà, chuỗi hàng trăm phòng và bán kèm phần cứng. Chủ cho thuê bình thường, chỉ cần một phần mềm nhẹ, không phải nhóm họ làm.</li>
-                  </ul>
-                </div>
-
-                <div class="appendix-return-wrap">
-                  <button type="button" class="appendix-jump-btn appendix-jump-btn--return" data-return="slide-5" aria-label="Quay lại Slide 5">
-                    <span>Quay lại</span>
-                    <i class="appendix-btn-icon" aria-hidden="true">
-                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="12" y1="20" x2="12" y2="4"></line>
-                        <polyline points="5 11 12 4 19 11"></polyline>
-                      </svg>
-                    </i>
-                  </button>
-                </div>
-              </div>
-            </details>
-
-            <details class="apple-accordion-item" id="appendix-slide-6" name="pitch-appendix">
-              <summary class="apple-accordion-header">
-                <span class="apple-accordion-title">Slide 6: Cách dùng</span>
+                <span class="apple-accordion-title">Slide 5: Cách dùng</span>
                 <span class="apple-accordion-icon" aria-hidden="true">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="6 9 12 15 18 9"></polyline>
@@ -4406,6 +4368,65 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
                 </div>
 
                 <div class="appendix-return-wrap">
+                  <button type="button" class="appendix-jump-btn appendix-jump-btn--return" data-return="slide-5" aria-label="Quay lại Slide 5">
+                    <span>Quay lại</span>
+                    <i class="appendix-btn-icon" aria-hidden="true">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="20" x2="12" y2="4"></line>
+                        <polyline points="5 11 12 4 19 11"></polyline>
+                      </svg>
+                    </i>
+                  </button>
+                </div>
+              </div>
+            </details>
+
+            <details class="apple-accordion-item" id="appendix-slide-6" name="pitch-appendix">
+              <summary class="apple-accordion-header">
+                <span class="apple-accordion-title">Slide 6: Kiến trúc</span>
+                <span class="apple-accordion-icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </summary>
+              <div class="apple-accordion-content">
+                <p>Dùng Telegram thay vì Zalo để tiết kiệm chi phí gửi tin. Kiến trúc chạy ẩn: Chủ trọ đi ngủ, bot vẫn đi nhắc nợ khách.</p>
+
+                <div class="pitch-budget-block">
+                  <h4 class="pitch-budget-block__title">Giữ dữ liệu một chỗ là chưa đủ</h4>
+                  <p>App nào tử tế cũng giữ dữ liệu một chỗ. Khác nhau ở chỗ ai ghi vào sổ. Ở các app hiện tại, chỉ chủ cho thuê ghi; phần của khách nằm ngoài hệ thống: ảnh đồng hồ gửi qua Zalo, tiền chuyển vào sao kê ngân hàng, câu hỏi qua tin nhắn. Chủ phải tự chép lại.</p>
+                </div>
+
+                <div class="pitch-budget-block">
+                  <h4 class="pitch-budget-block__title">Khách cùng ghi vào sổ của chủ</h4>
+                  <ul class="pitch-budget-assumptions">
+                    <li>Khách gửi ảnh đồng hồ và xác nhận số ngay trong chat.</li>
+                    <li>Khách nhận hoá đơn qua Telegram và chuyển tiền bằng mã QR.</li>
+                    <li>Khách gửi ảnh chuyển khoản, chủ chỉ bấm xác nhận, không ai phải nhập lại. Nối SePay xong thì tiền về là tự gạch nợ.</li>
+                  </ul>
+                </div>
+
+                <div class="pitch-budget-block">
+                  <h4 class="pitch-budget-block__title">Mỗi người một cửa</h4>
+                  <p>Chủ cho thuê làm trên web, khách thuê làm trên Telegram. Khách chưa dùng Telegram vẫn mở được hoá đơn qua link. Không ai phải tải thêm một app nặng.</p>
+                </div>
+
+                <div class="pitch-budget-block">
+                  <h4 class="pitch-budget-block__title">Sổ quỹ theo thực tế Việt Nam</h4>
+                  <p>Thu qua nhiều tài khoản, nhận tiền mặt, khách trả thiếu hay trả dư, cấn tiền cọc vào nợ: đều vào đúng sổ.</p>
+                </div>
+
+                <div class="pitch-budget-block">
+                  <h4 class="pitch-budget-block__title">Vì sao đối thủ khó làm theo</h4>
+                  <ul class="pitch-budget-assumptions">
+                    <li>Kênh gửi tin: đổi từ Zalo hay app riêng sang Telegram nghĩa là phải kéo cả tệp khách đang dùng sang kênh mới.</li>
+                    <li>Tập trung: app đã nhồi nhiều tính năng như tìm việc làm, tìm phòng trọ thì khó cắt; cắt ra thì luồng chính vẫn rời rạc.</li>
+                    <li>Nhóm khách: bên lớn nhắm toà nhà, chuỗi hàng trăm phòng và bán kèm phần cứng. Chủ cho thuê bình thường, chỉ cần một phần mềm nhẹ, không phải nhóm họ làm.</li>
+                  </ul>
+                </div>
+
+                <div class="appendix-return-wrap">
                   <button type="button" class="appendix-jump-btn appendix-jump-btn--return" data-return="slide-6" aria-label="Quay lại Slide 6">
                     <span>Quay lại</span>
                     <i class="appendix-btn-icon" aria-hidden="true">
@@ -4421,7 +4442,57 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
 
             <details class="apple-accordion-item" id="appendix-slide-7" name="pitch-appendix">
               <summary class="apple-accordion-header">
-                <span class="apple-accordion-title">Slide 7: Mô hình kinh doanh</span>
+                <span class="apple-accordion-title">Slide 7: Kiểm chứng bằng số</span>
+                <span class="apple-accordion-icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </summary>
+              <div class="apple-accordion-content">
+                <div class="pitch-budget-block">
+                  <h4 class="pitch-budget-block__title">Tín hiệu hiện tại</h4>
+                  <ul class="pitch-budget-assumptions">
+                    <li>Có 3 chủ cho thuê đồng ý dùng thật. Cả 3 đang quản lý bằng Excel và Zalo, không ai dùng sổ tay nữa.</li>
+                    <li>Họ đồng ý vì mong đỡ việc nhắc nhở, tính tiền và kiểm tra tiền chuyển khoản.</li>
+                    <li>Đây mới là lời đồng ý, chưa phải dữ liệu dùng thật.</li>
+                  </ul>
+                </div>
+
+                <div class="pitch-budget-block">
+                  <h4 class="pitch-budget-block__title">Mỗi bước đo bằng gì</h4>
+                  <ul class="pitch-budget-assumptions">
+                    <li>Chạy xuyên suốt: đủ một vòng nhắc gửi số → chốt số → hoá đơn → tiền về → gạch nợ. Đo: số lần founder phải sửa tay trong một vòng.</li>
+                    <li>Khách đầu tiên qua một kỳ hoá đơn thật. Đo: bao nhiêu phòng tự gửi số trước khi hết 3 lần nhắc; máy đọc số đúng bao nhiêu % (so số máy đọc với số được chốt); bao nhiêu hoá đơn trả bằng mã QR.</li>
+                    <li>Dùng lặp lại. Đo: bao nhiêu chủ còn dùng sau 2 tháng; thời gian làm sổ mỗi tháng trước và sau khi dùng (hỏi trực tiếp chủ).</li>
+                    <li>Trả tiền và giới thiệu. Đo: bao nhiêu chủ trả phí khi hết ưu đãi; bao nhiêu chủ giới thiệu chủ mới.</li>
+                  </ul>
+                </div>
+
+                <div class="pitch-budget-block">
+                  <h4 class="pitch-budget-block__title">So với giả định trong kế hoạch</h4>
+                  <ul class="pitch-budget-assumptions">
+                    <li>Bảng dự trù đang giả định: chủ rời 2% mỗi tháng, giới thiệu thêm 3% mỗi tháng, Sale chính ký khoảng 12 chủ mỗi tháng. Số thật lệch nhiều thì kế hoạch sẽ được chỉnh theo số thật.</li>
+                  </ul>
+                </div>
+
+                <div class="appendix-return-wrap">
+                  <button type="button" class="appendix-jump-btn appendix-jump-btn--return" data-return="slide-7" aria-label="Quay lại Slide 7">
+                    <span>Quay lại</span>
+                    <i class="appendix-btn-icon" aria-hidden="true">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="20" x2="12" y2="4"></line>
+                        <polyline points="5 11 12 4 19 11"></polyline>
+                      </svg>
+                    </i>
+                  </button>
+                </div>
+              </div>
+            </details>
+
+            <details class="apple-accordion-item" id="appendix-slide-8" name="pitch-appendix">
+              <summary class="apple-accordion-header">
+                <span class="apple-accordion-title">Slide 8: Mô hình kinh doanh</span>
                 <span class="apple-accordion-icon" aria-hidden="true">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="6 9 12 15 18 9"></polyline>
@@ -4766,7 +4837,7 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
                 </div>
 
                 <div class="appendix-return-wrap">
-                  <button type="button" class="appendix-jump-btn appendix-jump-btn--return" data-return="slide-7" aria-label="Quay lại Slide 7">
+                  <button type="button" class="appendix-jump-btn appendix-jump-btn--return" data-return="slide-8" aria-label="Quay lại Slide 8">
                     <span>Quay lại</span>
                     <i class="appendix-btn-icon" aria-hidden="true">
                       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
@@ -4779,9 +4850,9 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
               </div>
             </details>
 
-            <details class="apple-accordion-item" id="appendix-slide-8" name="pitch-appendix">
+            <details class="apple-accordion-item" id="appendix-slide-9" name="pitch-appendix">
               <summary class="apple-accordion-header">
-                <span class="apple-accordion-title">Slide 8: Cách đi thị trường</span>
+                <span class="apple-accordion-title">Slide 9: Cách đi thị trường</span>
                 <span class="apple-accordion-icon" aria-hidden="true">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="6 9 12 15 18 9"></polyline>
@@ -4819,58 +4890,8 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
                   <h4 class="pitch-budget-block__title">Khách nhắm tới (giả định)</h4>
                   <ul class="pitch-budget-assumptions">
                     <li>Chủ cho thuê tự quản lý nhà, chưa thuê người quản lý.</li>
-                    <li>Trước mắt là dãy trọ khoảng 10 phòng trở lên (giả định ở phụ lục 7), sẽ kiểm chứng với những chủ đầu tiên.</li>
+                    <li>Trước mắt là dãy trọ khoảng 10 phòng trở lên (giả định ở phụ lục 8), sẽ kiểm chứng với những chủ đầu tiên.</li>
                     <li>Chưa nhắm chuỗi lớn hay toà nhà hàng trăm phòng; nhóm này đã có các bên như Resident, AirCity.</li>
-                  </ul>
-                </div>
-
-                <div class="appendix-return-wrap">
-                  <button type="button" class="appendix-jump-btn appendix-jump-btn--return" data-return="slide-8" aria-label="Quay lại Slide 8">
-                    <span>Quay lại</span>
-                    <i class="appendix-btn-icon" aria-hidden="true">
-                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="12" y1="20" x2="12" y2="4"></line>
-                        <polyline points="5 11 12 4 19 11"></polyline>
-                      </svg>
-                    </i>
-                  </button>
-                </div>
-              </div>
-            </details>
-
-            <details class="apple-accordion-item" id="appendix-slide-9" name="pitch-appendix">
-              <summary class="apple-accordion-header">
-                <span class="apple-accordion-title">Slide 9: Kiểm chứng bằng số</span>
-                <span class="apple-accordion-icon" aria-hidden="true">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="6 9 12 15 18 9"></polyline>
-                  </svg>
-                </span>
-              </summary>
-              <div class="apple-accordion-content">
-                <div class="pitch-budget-block">
-                  <h4 class="pitch-budget-block__title">Tín hiệu hiện tại</h4>
-                  <ul class="pitch-budget-assumptions">
-                    <li>Có 3 chủ cho thuê đồng ý dùng thật. Cả 3 đang quản lý bằng Excel và Zalo, không ai dùng sổ tay nữa.</li>
-                    <li>Họ đồng ý vì mong đỡ việc nhắc nhở, tính tiền và kiểm tra tiền chuyển khoản.</li>
-                    <li>Đây mới là lời đồng ý, chưa phải dữ liệu dùng thật.</li>
-                  </ul>
-                </div>
-
-                <div class="pitch-budget-block">
-                  <h4 class="pitch-budget-block__title">Mỗi bước đo bằng gì</h4>
-                  <ul class="pitch-budget-assumptions">
-                    <li>Chạy xuyên suốt: đủ một vòng nhắc gửi số → chốt số → hoá đơn → tiền về → gạch nợ. Đo: số lần founder phải sửa tay trong một vòng.</li>
-                    <li>Khách đầu tiên qua một kỳ hoá đơn thật. Đo: bao nhiêu phòng tự gửi số trước khi hết 3 lần nhắc; máy đọc số đúng bao nhiêu % (so số máy đọc với số được chốt); bao nhiêu hoá đơn trả bằng mã QR.</li>
-                    <li>Dùng lặp lại. Đo: bao nhiêu chủ còn dùng sau 2 tháng; thời gian làm sổ mỗi tháng trước và sau khi dùng (hỏi trực tiếp chủ).</li>
-                    <li>Trả tiền và giới thiệu. Đo: bao nhiêu chủ trả phí khi hết ưu đãi; bao nhiêu chủ giới thiệu chủ mới.</li>
-                  </ul>
-                </div>
-
-                <div class="pitch-budget-block">
-                  <h4 class="pitch-budget-block__title">So với giả định trong kế hoạch</h4>
-                  <ul class="pitch-budget-assumptions">
-                    <li>Bảng dự trù đang giả định: chủ rời 2% mỗi tháng, giới thiệu thêm 3% mỗi tháng, Sale chính ký khoảng 12 chủ mỗi tháng. Số thật lệch nhiều thì kế hoạch sẽ được chỉnh theo số thật.</li>
                   </ul>
                 </div>
 
