@@ -2678,92 +2678,157 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
         max-width: none;
       }
 
+      #slide-6 .pitch-position__plot--grid {
+        display: none;
+      }
+
+      #slide-6 .pitch-position__grid-wrap {
+        display: grid;
+        grid-template-columns: minmax(4.5rem, 22%) 1fr;
+        gap: 8px;
+        align-items: stretch;
+      }
+
+      #slide-6 .pitch-position__grid-y {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        font-size: 0.64rem;
+        font-weight: 500;
+        line-height: 1.25;
+        color: #636366;
+        padding: 6px 0 2px;
+      }
+
+      #slide-6 .pitch-position__grid-y-cap {
+        margin: 10px 0 0;
+        font-size: 0.58rem;
+        font-weight: 400;
+        line-height: 1.25;
+        color: #8e8e93;
+      }
+
+      #slide-6 .pitch-position__grid-cells {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: minmax(7.5rem, 1fr) minmax(7.5rem, 1fr);
+        border: 1px solid #e5e5ea;
+        border-radius: 12px;
+        overflow: hidden;
+        background: #fff;
+        min-height: min(76vw, 340px);
+      }
+
+      #slide-6 .pitch-position__grid-cells::before,
+      #slide-6 .pitch-position__grid-cells::after {
+        content: "";
+        position: absolute;
+        background: #e5e5ea;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      #slide-6 .pitch-position__grid-cells::before {
+        left: 0;
+        right: 0;
+        top: 50%;
+        height: 1px;
+        transform: translateY(-0.5px);
+      }
+
+      #slide-6 .pitch-position__grid-cells::after {
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        width: 1px;
+        transform: translateX(-0.5px);
+      }
+
+      #slide-6 .pitch-position__grid-cell--tr {
+        background: color-mix(in srgb, var(--blue) 6%, transparent);
+      }
+
+      #slide-6 .pitch-position__grid-cell {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+
+      #slide-6 .pitch-position__grid-cell--tl {
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+
+      #slide-6 .pitch-position__grid-cell--tr {
+        align-items: flex-start;
+        justify-content: flex-end;
+        text-align: right;
+      }
+
+      #slide-6 .pitch-position__grid-cell--bl {
+        pointer-events: none;
+      }
+
+      #slide-6 .pitch-position__grid-cell--br {
+        align-items: flex-end;
+        justify-content: flex-end;
+        text-align: right;
+      }
+
+      #slide-6 .pitch-position__grid-mid {
+        position: absolute;
+        left: 50%;
+        top: 56%;
+        z-index: 3;
+        transform: translate(-50%, -50%);
+        max-width: min(11.5rem, 78%);
+        text-align: center;
+      }
+
+      #slide-6 .pitch-position__grid-point {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: inherit;
+        gap: 6px;
+        font-size: 0.68rem;
+        font-weight: 500;
+        line-height: 1.25;
+        color: #1d1d1f;
+        text-align: inherit;
+      }
+
+      #slide-6 .pitch-position__grid-mid .pitch-position__grid-point {
+        align-items: center;
+      }
+
+      #slide-6 .pitch-position__grid-point .pitch-position__dot {
+        position: static;
+        left: auto;
+        bottom: auto;
+        transform: none;
+      }
+
       @media (max-width: 767px) {
-        #slide-6 .pitch-position__plane {
-          top: 4.1rem;
-          right: 6px;
-          bottom: 8px;
-          left: 6px;
+        #slide-6 .pitch-position__plot--scatter {
+          display: none;
         }
 
-        #slide-6 .pitch-position__y-top,
-        #slide-6 .pitch-position__y-bottom {
-          left: 6px;
-          max-width: 5.5rem;
-          font-size: 0.64rem;
-          line-height: 1.25;
-        }
-
-        #slide-6 .pitch-position__y-top {
-          top: 6px;
-        }
-
-        #slide-6 .pitch-position__y-caption {
-          left: 6px;
-          top: 1.55rem;
-          max-width: 5.5rem;
-          font-size: 0.58rem;
-          line-height: 1.25;
+        #slide-6 .pitch-position__plot--grid {
+          display: block;
+          aspect-ratio: auto;
+          margin-bottom: 0;
+          border: none;
+          background: transparent;
         }
 
         #slide-6 .pitch-position__x {
-          padding-left: 6px;
-          padding-right: 6px;
-        }
-
-        #slide-6 .pitch-position__label {
-          font-size: 0.64rem;
-          line-height: 1.2;
-          max-width: 7.25rem;
-        }
-
-        #slide-6 .pitch-position__marker--excel {
-          left: 86%;
-          bottom: 12%;
-        }
-
-        #slide-6 .pitch-position__marker--apps {
-          left: 50%;
-          bottom: 33%;
-        }
-
-        #slide-6 .pitch-position__marker--enterprise {
-          left: 16%;
-          bottom: 70%;
-        }
-
-        #slide-6 .pitch-position__marker--roomio {
-          left: 74%;
-          bottom: 80%;
-        }
-
-        #slide-6 .pitch-position__marker--excel .pitch-position__label--left,
-        #slide-6 .pitch-position__marker--roomio .pitch-position__label--left {
-          transform: translate(-50%, calc(-100% - 8px));
-          left: 0;
-          text-align: center;
-        }
-
-        #slide-6 .pitch-position__marker--excel .pitch-position__label--left {
-          white-space: nowrap;
-          max-width: none;
-        }
-
-        #slide-6 .pitch-position__marker--enterprise .pitch-position__label--right {
-          transform: translate(-50%, calc(-100% - 8px));
-          left: 0;
-          text-align: center;
-        }
-
-        #slide-6 .pitch-position__marker--apps .pitch-position__label--below {
-          transform: translate(10px, 50%);
-          left: 0;
-          text-align: left;
-          max-width: 6.75rem;
-        }
-
-        #slide-6 .pitch-position__plot {
-          margin-bottom: 2.75rem;
+          padding-left: calc(4.5rem + 8px);
+          padding-right: 0;
+          margin-top: 10px;
         }
       }
 
@@ -3962,7 +4027,7 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
           <div class="reveal delay-100 pitch-position">
             <p class="pitch-position__title">Tốn bao nhiêu thời gian mỗi tháng, và khó bắt đầu tới đâu</p>
             <div
-              class="pitch-position__plot"
+              class="pitch-position__plot pitch-position__plot--scatter"
               role="img"
               aria-label="Trục toạ độ: roomio ở ô tiết kiệm thời gian và dễ bắt đầu. Excel và Zalo dễ bắt đầu nhất nhưng tốn thời gian nhất. App quản lý ở giữa. Bên lớn tiết kiệm thời gian nhưng khó bắt đầu nhất."
             >
@@ -3988,6 +4053,48 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
                 <div class="pitch-position__marker pitch-position__marker--roomio">
                   <span class="pitch-position__dot pitch-position__dot--roomio"></span>
                   <span class="pitch-position__label pitch-position__label--left pitch-position__label--roomio">roomio</span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="pitch-position__plot pitch-position__plot--grid"
+              role="img"
+              aria-label="Trục toạ độ: roomio ở ô tiết kiệm thời gian và dễ bắt đầu. Excel và Zalo dễ bắt đầu nhất nhưng tốn thời gian nhất. App quản lý ở giữa. Bên lớn tiết kiệm thời gian nhưng khó bắt đầu nhất."
+            >
+              <div class="pitch-position__grid-wrap">
+                <div class="pitch-position__grid-y" aria-hidden="true">
+                  <div>
+                    <span>Tiết kiệm thời gian</span>
+                    <p class="pitch-position__grid-y-cap">Thời gian chủ bỏ ra mỗi tháng</p>
+                  </div>
+                  <span>Tốn thời gian</span>
+                </div>
+                <div class="pitch-position__grid-cells" aria-hidden="true">
+                  <div class="pitch-position__grid-cell pitch-position__grid-cell--tl">
+                    <p class="pitch-position__grid-point">
+                      <span class="pitch-position__dot"></span>
+                      <span>Bên lớn<br />(Resident, AirCity)</span>
+                    </p>
+                  </div>
+                  <div class="pitch-position__grid-cell pitch-position__grid-cell--tr">
+                    <p class="pitch-position__grid-point">
+                      <span class="pitch-position__dot pitch-position__dot--roomio"></span>
+                      <span class="pitch-position__label--roomio">roomio</span>
+                    </p>
+                  </div>
+                  <div class="pitch-position__grid-cell pitch-position__grid-cell--bl" aria-hidden="true"></div>
+                  <div class="pitch-position__grid-cell pitch-position__grid-cell--br">
+                    <p class="pitch-position__grid-point">
+                      <span class="pitch-position__dot"></span>
+                      <span>Excel + Zalo</span>
+                    </p>
+                  </div>
+                  <div class="pitch-position__grid-mid">
+                    <p class="pitch-position__grid-point">
+                      <span class="pitch-position__dot"></span>
+                      <span>App quản lý<br />(LOZIDO, eNha, Mona House)</span>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
