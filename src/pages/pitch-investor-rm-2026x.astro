@@ -2390,10 +2390,282 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
         --slide5-accent-1: #ff9500;
         --slide5-accent-2: #34c759;
         --slide5-accent-3: #7c3aed;
+        overflow-x: clip;
       }
 
       #slide-6 .slide-title {
         color: var(--blue);
+      }
+
+      #slide-6 .pitch-position {
+        width: 100%;
+        max-width: 640px;
+        margin: 0 auto 36px;
+        box-sizing: border-box;
+      }
+
+      #slide-6 .pitch-position__title {
+        margin: 0 0 16px;
+        padding: 0;
+        font-size: clamp(1rem, 2.8vw, 1.15rem);
+        font-weight: 600;
+        line-height: 1.35;
+        text-align: center;
+        color: #1d1d1f;
+        background: none;
+        text-transform: none;
+        letter-spacing: normal;
+      }
+
+      #slide-6 .pitch-position__plot {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        border-radius: 12px;
+        box-sizing: border-box;
+        overflow: visible;
+        background: #fff;
+        border: 1px solid #e5e5ea;
+        margin-bottom: 2.25rem;
+      }
+
+      @media (min-width: 768px) {
+        #slide-6 .pitch-position__plot {
+          aspect-ratio: 4 / 3;
+        }
+      }
+
+      #slide-6 .pitch-position__quad {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 50%;
+        background: color-mix(in srgb, var(--blue) 6%, transparent);
+        pointer-events: none;
+      }
+
+      #slide-6 .pitch-position__cross-h,
+      #slide-6 .pitch-position__cross-v {
+        position: absolute;
+        background: #e5e5ea;
+        pointer-events: none;
+      }
+
+      #slide-6 .pitch-position__cross-h {
+        left: 0;
+        right: 0;
+        top: 50%;
+        height: 1px;
+        transform: translateY(-0.5px);
+      }
+
+      #slide-6 .pitch-position__cross-v {
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        width: 1px;
+        transform: translateX(-0.5px);
+      }
+
+      #slide-6 .pitch-position__y-top,
+      #slide-6 .pitch-position__y-bottom {
+        position: absolute;
+        left: 8px;
+        z-index: 2;
+        max-width: min(11rem, 46%);
+        font-size: 0.68rem;
+        font-weight: 500;
+        line-height: 1.25;
+        color: #636366;
+        text-align: left;
+        text-transform: none;
+        letter-spacing: normal;
+        pointer-events: none;
+      }
+
+      #slide-6 .pitch-position__y-top {
+        top: 8px;
+      }
+
+      #slide-6 .pitch-position__y-bottom {
+        bottom: 8px;
+      }
+
+      #slide-6 .pitch-position__y-caption {
+        position: absolute;
+        left: 8px;
+        top: 24px;
+        z-index: 2;
+        max-width: min(9.5rem, 44%);
+        margin: 0;
+        font-size: 0.62rem;
+        font-weight: 400;
+        line-height: 1.25;
+        color: #8e8e93;
+        text-align: left;
+        text-transform: none;
+        letter-spacing: normal;
+        pointer-events: none;
+      }
+
+      @media (min-width: 768px) {
+        #slide-6 .pitch-position__y-top,
+        #slide-6 .pitch-position__y-bottom {
+          font-size: 0.75rem;
+          left: 12px;
+        }
+
+        #slide-6 .pitch-position__y-caption {
+          font-size: 0.7rem;
+          left: 12px;
+        }
+      }
+
+      #slide-6 .pitch-position__marker {
+        position: absolute;
+        z-index: 3;
+        transform: translate(-50%, 50%);
+      }
+
+      #slide-6 .pitch-position__dot {
+        display: block;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #8e8e93;
+        flex-shrink: 0;
+      }
+
+      #slide-6 .pitch-position__dot--roomio {
+        width: 18px;
+        height: 18px;
+        background: var(--blue);
+      }
+
+      #slide-6 .pitch-position__label {
+        position: absolute;
+        font-size: 0.62rem;
+        font-weight: 500;
+        line-height: 1.2;
+        color: #1d1d1f;
+        text-transform: none;
+        letter-spacing: normal;
+        max-width: min(9.75rem, 38vw);
+      }
+
+      @media (min-width: 768px) {
+        #slide-6 .pitch-position__label {
+          font-size: 0.72rem;
+          max-width: 11rem;
+        }
+      }
+
+      #slide-6 .pitch-position__label--roomio {
+        font-weight: 700;
+        color: var(--blue);
+      }
+
+      #slide-6 .pitch-position__label--left {
+        right: calc(100% + 5px);
+        top: 50%;
+        transform: translateY(-50%);
+        text-align: right;
+      }
+
+      #slide-6 .pitch-position__label--right {
+        left: calc(100% + 5px);
+        top: 50%;
+        transform: translateY(-50%);
+        text-align: left;
+      }
+
+      #slide-6 .pitch-position__label--below {
+        left: 50%;
+        top: calc(100% + 6px);
+        transform: translateX(-50%);
+        text-align: center;
+        max-width: min(10.5rem, 42vw);
+      }
+
+      #slide-6 .pitch-position__marker--excel {
+        left: 90%;
+        bottom: 10%;
+      }
+
+      #slide-6 .pitch-position__marker--apps {
+        left: 50%;
+        bottom: 35%;
+      }
+
+      #slide-6 .pitch-position__marker--enterprise {
+        left: 12%;
+        bottom: 72%;
+      }
+
+      #slide-6 .pitch-position__marker--roomio {
+        left: 78%;
+        bottom: 85%;
+      }
+
+      #slide-6 .pitch-position__x {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: start;
+        gap: 6px 8px;
+        margin-top: 10px;
+        font-size: 0.68rem;
+        font-weight: 500;
+        line-height: 1.25;
+        color: #636366;
+        text-transform: none;
+        letter-spacing: normal;
+      }
+
+      @media (min-width: 768px) {
+        #slide-6 .pitch-position__x {
+          font-size: 0.75rem;
+        }
+      }
+
+      #slide-6 .pitch-position__x > :first-child {
+        text-align: left;
+      }
+
+      #slide-6 .pitch-position__x > :last-child {
+        text-align: right;
+      }
+
+      #slide-6 .pitch-position__x-caption {
+        margin: 0;
+        font-size: 0.62rem;
+        font-weight: 400;
+        color: #8e8e93;
+        text-align: center;
+        text-transform: none;
+        letter-spacing: normal;
+      }
+
+      @media (min-width: 768px) {
+        #slide-6 .pitch-position__x-caption {
+          font-size: 0.7rem;
+        }
+      }
+
+      #slide-6 .pitch-position__note {
+        margin: 14px 0 0;
+        font-size: 0.72rem;
+        line-height: 1.45;
+        color: #86868b;
+        text-align: left;
+        text-transform: none;
+        letter-spacing: normal;
+      }
+
+      @media (min-width: 768px) {
+        #slide-6 .pitch-position__note {
+          font-size: 0.8rem;
+        }
       }
 
       #slide-6 .apple-grid {
@@ -3586,6 +3858,46 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
           
           <div class="slide-content reveal delay-100" style="margin-bottom: 40px;">
             <p>Tính năng thì ai cũng chép được. Cái khó chép là cái luồng chạy song song nằm sau những tính năng đó: hệ thống gửi tin nhắn, hệ thống làm việc ngầm ban đêm, trải nghiệm liền mạch giữa các thiết bị – giữa khách và chủ...</p>
+          </div>
+
+          <div class="reveal delay-100 pitch-position">
+            <p class="pitch-position__title">Tốn bao nhiêu thời gian mỗi tháng, và khó bắt đầu tới đâu</p>
+            <div
+              class="pitch-position__plot"
+              role="img"
+              aria-label="Trục toạ độ: roomio ở ô tiết kiệm thời gian và dễ bắt đầu. Excel và Zalo dễ bắt đầu nhất nhưng tốn thời gian nhất. App quản lý ở giữa. Bên lớn tiết kiệm thời gian nhưng khó bắt đầu nhất."
+            >
+              <div class="pitch-position__quad" aria-hidden="true"></div>
+              <div class="pitch-position__cross-h" aria-hidden="true"></div>
+              <div class="pitch-position__cross-v" aria-hidden="true"></div>
+              <span class="pitch-position__y-top" aria-hidden="true">Tiết kiệm thời gian</span>
+              <span class="pitch-position__y-bottom" aria-hidden="true">Tốn thời gian</span>
+              <p class="pitch-position__y-caption" aria-hidden="true">Thời gian chủ bỏ ra mỗi tháng</p>
+              <div class="pitch-position__marker pitch-position__marker--excel" aria-hidden="true">
+                <span class="pitch-position__label pitch-position__label--left">Excel + Zalo</span>
+                <span class="pitch-position__dot"></span>
+              </div>
+              <div class="pitch-position__marker pitch-position__marker--apps" aria-hidden="true">
+                <span class="pitch-position__dot"></span>
+                <span class="pitch-position__label pitch-position__label--below">App quản lý (LOZIDO, eNha, Mona House)</span>
+              </div>
+              <div class="pitch-position__marker pitch-position__marker--enterprise" aria-hidden="true">
+                <span class="pitch-position__dot"></span>
+                <span class="pitch-position__label pitch-position__label--right">Bên lớn (Resident, AirCity)</span>
+              </div>
+              <div class="pitch-position__marker pitch-position__marker--roomio" aria-hidden="true">
+                <span class="pitch-position__label pitch-position__label--left pitch-position__label--roomio">roomio</span>
+                <span class="pitch-position__dot pitch-position__dot--roomio"></span>
+              </div>
+            </div>
+            <div class="pitch-position__x" aria-hidden="true">
+              <span>Khó bắt đầu</span>
+              <p class="pitch-position__x-caption">Rào cản lúc bắt đầu</p>
+              <span>Dễ bắt đầu</span>
+            </div>
+            <p class="pitch-position__note">
+              Vị trí dựa trên lúc em tự đóng vai chủ cho thuê, chạy thử đủ một vòng tháng trên LOZIDO, eNha, Mona House; bên lớn em tìm hiểu qua cách họ bán. Excel + Zalo dễ bắt đầu nhất vì ai cũng có sẵn, nhưng tốn công nhất. "roomio" cần khách dùng Telegram; khách chưa dùng Telegram vẫn mở hoá đơn qua link, chủ nhập số tay trên web.
+            </p>
           </div>
 
           <div class="apple-grid">
