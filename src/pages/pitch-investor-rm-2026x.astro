@@ -4603,14 +4603,15 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
                         <div class="sys-arch-node">
                           <p class="sys-arch-node__title">Chủ cho thuê</p>
                           <p class="sys-arch-node__sub">Web quản lý · bot Telegram cho chủ</p>
+                          <p class="sys-arch-node__sub">Telegram mini app chức năng nhanh trong tương lai</p>
                         </div>
                         <div class="sys-arch-node">
                           <p class="sys-arch-node__title">Khách thuê</p>
-                          <p class="sys-arch-node__sub">Bot Telegram · mini app · link hoá đơn (khách chưa dùng Telegram)</p>
+                          <p class="sys-arch-node__sub">Bot Telegram · mini app · link hoá đơn (cho khách chưa dùng Telegram)</p>
                         </div>
                         <div class="sys-arch-node">
                           <p class="sys-arch-node__title">Đội roomio</p>
-                          <p class="sys-arch-node__sub">Trang quản trị · soát ảnh đồng hồ đọc sai · bot báo lỗi máy chủ</p>
+                          <p class="sys-arch-node__sub">Trang quản trị · soát ảnh đồng hồ đọc sai để cải thiện · bot báo lỗi máy chủ</p>
                         </div>
                       </div>
                     </div>
@@ -4620,10 +4621,11 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
                       <div class="sys-arch-tier__row">
                         <div class="sys-arch-node">
                           <p class="sys-arch-node__title">Web và API</p>
-                          <p class="sys-arch-node__sub">Nơi duy nhất giữ tiền và dữ liệu</p>
+                          <p class="sys-arch-node__sub">Một bộ quy tắc tính tiền duy nhất, máy chạy ngầm cũng dùng chung. roomio không giữ tiền: khách chuyển thẳng cho chủ.</p>
                         </div>
                         <div class="sys-arch-node">
                           <p class="sys-arch-node__title">Cơ sở dữ liệu</p>
+                          <p class="sys-arch-node__sub">Lưu hoá đơn, số điện nước, thanh toán; có lịch sử ai sửa gì, lúc nào.</p>
                         </div>
                         <div class="sys-arch-node">
                           <p class="sys-arch-node__title">Máy việc chạy ngầm</p>
@@ -4671,9 +4673,9 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
                     </div>
                   </div>
 
-                  <h4 class="pitch-budget-block__title sys-arch-why-title">Vì sao chắc</h4>
+                  <h4 class="pitch-budget-block__title sys-arch-why-title">roomio sẽ tốt hơn bên khác vì:</h4>
                   <ul class="pitch-budget-assumptions">
-                    <li>Tiền và dữ liệu chỉ nằm một chỗ. Các máy phụ chỉ nhận việc, tính rồi trả kết quả, không tự ghi vào sổ tiền.</li>
+                    <li>Tiền chỉ tính theo một bộ quy tắc, web và máy chạy ngầm dùng chung, nên không có hai cách tính lệch nhau. Máy đọc ảnh và máy Go không đụng tới hoá đơn hay tiền.</li>
                     <li>Việc chạy ngầm đi qua hàng đợi: lỗi thì tự thử lại, và không chạy trùng nên không nhắc hay gửi tin hai lần.</li>
                     <li>Mỗi phần chỉ giữ khoá nó cần. Ví dụ máy xử lý Go không giữ khoá Telegram, PayOS hay cơ sở dữ liệu.</li>
                     <li>Mỗi lần sửa code đều chạy kiểm tra tự động trước khi lên bản thật.</li>
