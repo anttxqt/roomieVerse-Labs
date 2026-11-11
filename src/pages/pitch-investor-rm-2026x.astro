@@ -4608,6 +4608,10 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
                           <p class="sys-arch-node__title">Khách thuê</p>
                           <p class="sys-arch-node__sub">Bot Telegram · mini app · link hoá đơn (khách chưa dùng Telegram)</p>
                         </div>
+                        <div class="sys-arch-node">
+                          <p class="sys-arch-node__title">Đội roomio</p>
+                          <p class="sys-arch-node__sub">Trang quản trị · soát ảnh đồng hồ đọc sai · bot báo lỗi máy chủ</p>
+                        </div>
                       </div>
                     </div>
                     <div class="sys-arch-connector" aria-hidden="true"></div>
@@ -4622,15 +4626,20 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
                           <p class="sys-arch-node__title">Cơ sở dữ liệu</p>
                         </div>
                         <div class="sys-arch-node">
-                          <p class="sys-arch-node__title">Hàng đợi việc chạy ngầm</p>
-                          <p class="sys-arch-node__sub">Nhắc gửi số, nhắc đóng tiền, soạn hoá đơn nháp, gửi tin</p>
+                          <p class="sys-arch-node__title">Máy việc chạy ngầm</p>
+                          <p class="sys-arch-node__sub">Nhắc gửi số, nhắc đóng tiền, soạn hoá đơn nháp, báo cáo mỗi sáng, gửi tin</p>
                         </div>
                         <div class="sys-arch-node">
                           <p class="sys-arch-node__title">Máy đọc ảnh đồng hồ</p>
+                          <p class="sys-arch-node__sub">Nén ảnh, agent tìm ô số rồi cắt, máy đọc số 1 gợi ý cho khách, máy đọc số 2 đọc lại ảnh gốc cho chủ</p>
+                        </div>
+                        <div class="sys-arch-node">
+                          <p class="sys-arch-node__title">Máy trợ lý AI</p>
+                          <p class="sys-arch-node__sub">Chạy riêng các lượt gọi AI chậm, không chen hàng với việc tiền và ảnh</p>
                         </div>
                         <div class="sys-arch-node">
                           <p class="sys-arch-node__title">Máy xử lý viết bằng Go</p>
-                          <p class="sys-arch-node__sub">Nén ảnh, xuất dữ liệu; không đụng tới tiền</p>
+                          <p class="sys-arch-node__sub">Dọn file cũ, xuất dữ liệu; không giữ khoá nào</p>
                         </div>
                       </div>
                     </div>
@@ -4643,12 +4652,16 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
                           <p class="sys-arch-node__sub">Gửi tin, không mất phí</p>
                         </div>
                         <div class="sys-arch-node">
+                          <p class="sys-arch-node__title">PayOS</p>
+                          <p class="sys-arch-node__sub">Chủ trả phí roomio, đang chạy</p>
+                        </div>
+                        <div class="sys-arch-node">
                           <p class="sys-arch-node__title">SePay</p>
-                          <p class="sys-arch-node__sub">Báo tiền về, bật khi lập công ty</p>
+                          <p class="sys-arch-node__sub">Báo tiền thuê về, bật khi lập công ty</p>
                         </div>
                         <div class="sys-arch-node">
                           <p class="sys-arch-node__title">AI đọc số</p>
-                          <p class="sys-arch-node__sub">Hiện 1 hãng, sắp thêm hãng thứ 2</p>
+                          <p class="sys-arch-node__sub">Hai máy đọc đang dùng chung 1 hãng, sắp đổi máy 2 sang hãng khác</p>
                         </div>
                         <div class="sys-arch-node">
                           <p class="sys-arch-node__title">Cloudflare</p>
@@ -4664,6 +4677,9 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
                     <li>Việc chạy ngầm đi qua hàng đợi: lỗi thì tự thử lại, và không chạy trùng nên không nhắc hay gửi tin hai lần.</li>
                     <li>Mỗi phần chỉ giữ khoá nó cần. Ví dụ máy xử lý Go không giữ khoá Telegram, PayOS hay cơ sở dữ liệu.</li>
                     <li>Mỗi lần sửa code đều chạy kiểm tra tự động trước khi lên bản thật.</li>
+                    <li>Ảnh đồng hồ và các lượt gọi AI chạy ở máy riêng, nên việc tiền không bị nghẽn khi nhiều khách gửi ảnh cùng lúc.</li>
+                    <li>Hai máy đọc số làm độc lập: máy 1 gợi ý số cho khách, máy 2 đọc lại ảnh gốc để chủ đối chiếu. Chủ luôn là người chốt.</li>
+                    <li>Máy chủ lỗi là bot báo ngay cho đội roomio. Có màn riêng để đội roomio soát ảnh đồng hồ đọc sai và sửa cách đọc.</li>
                   </ul>
                   <p class="sys-arch-tech-note">Công nghệ: SvelteKit, PostgreSQL, hàng đợi pg-boss, Go (gRPC), Docker.</p>
                 </div>
@@ -4681,26 +4697,30 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
                     </li>
                     <li class="sys-flow__step">
                       <div class="sys-flow__actors"><span class="sys-flow__actor">roomio</span></div>
-                      <p class="sys-flow__text">Lưu ảnh, AI đọc ra số, bot hỏi khách xác nhận. Đọc sai thì khách gõ lại số.</p>
+                      <p class="sys-flow__text">Nén và cất ảnh. Một agent tìm ô số, máy cắt đúng ô đó rồi máy đọc số 1 đọc; bot hỏi khách xác nhận. Ảnh không đọc được thì bot nói lý do để khách chụp lại, hoặc khách gõ số.</p>
                     </li>
                     <li class="sys-flow__step">
                       <div class="sys-flow__actors"><span class="sys-flow__actor">Chủ</span></div>
-                      <p class="sys-flow__text">Xem ảnh và số khách đã chốt, đúng thì chốt, sai thì sửa. Chốt khác số khách gửi thì khách được báo ngay.</p>
+                      <p class="sys-flow__text">Xem ảnh đã cắt đúng ô số, số khách chốt, và số máy đọc số 2 đọc lại từ ảnh gốc. Đúng thì duyệt, sai thì sửa. Chốt khác số khách gửi thì khách được báo ngay.</p>
                       <ul class="sys-flow__soon">
-                        <li><span class="sys-flow__tag">Sắp làm</span> Hãng AI thứ 2 đọc lại ảnh để chủ đối chiếu.</li>
+                        <li><span class="sys-flow__tag">Sắp làm</span> Đổi máy đọc số 2 sang hãng AI khác để hai bên kiểm chéo.</li>
                       </ul>
                     </li>
                     <li class="sys-flow__step">
                       <div class="sys-flow__actors"><span class="sys-flow__actor">roomio</span></div>
-                      <p class="sys-flow__text">Tự soạn hoá đơn nháp.</p>
+                      <p class="sys-flow__text">Tự soạn hoá đơn nháp lúc 9 giờ và 17 giờ. Chủ cần sớm thì bấm soạn ngay; thêm giảm giá, phụ thu ngay trên nháp.</p>
+                    </li>
+                    <li class="sys-flow__step">
+                      <div class="sys-flow__actors"><span class="sys-flow__actor">roomio</span></div>
+                      <p class="sys-flow__text">9 giờ 15 mỗi sáng gửi chủ báo cáo qua Telegram: tiền đã thu trong tháng, và việc cần làm như nháp chờ duyệt, phòng chưa gửi số, khách chưa nhận được hoá đơn, hợp đồng sắp hết hạn.</p>
                     </li>
                     <li class="sys-flow__step">
                       <div class="sys-flow__actors"><span class="sys-flow__actor">Chủ</span></div>
-                      <p class="sys-flow__text">Bấm Duyệt &amp; gửi. Hoá đơn tới khách qua Telegram hoặc link.</p>
+                      <p class="sys-flow__text">Bấm Duyệt &amp; gửi. Hoá đơn tới khách qua Telegram kèm mã QR và nút sao chép số tài khoản, hoặc qua link cho khách chưa dùng Telegram. Gửi nhầm thì bấm Thu hồi: link và mã QR cũ thôi dùng được.</p>
                     </li>
                     <li class="sys-flow__step">
                       <div class="sys-flow__actors"><span class="sys-flow__actor">Khách</span></div>
-                      <p class="sys-flow__text">Quét mã QR để chuyển khoản.</p>
+                      <p class="sys-flow__text">Quét mã QR để chuyển khoản, rồi gửi ảnh chuyển khoản.</p>
                     </li>
                     <li class="sys-flow__step">
                       <div class="sys-flow__actors"><span class="sys-flow__actor">Chủ</span><span class="sys-flow__actor">roomio</span></div>
@@ -4709,6 +4729,10 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
                     <li class="sys-flow__step">
                       <div class="sys-flow__actors"><span class="sys-flow__actor">roomio</span></div>
                       <p class="sys-flow__text">Chưa trả thì nhắc đóng tiền, tối đa 6 lần.</p>
+                    </li>
+                    <li class="sys-flow__step">
+                      <div class="sys-flow__actors"><span class="sys-flow__actor">roomio</span></div>
+                      <p class="sys-flow__text">Ngày 1 tháng sau gửi chủ sổ thu chi của tháng trước qua Telegram, nếu chủ bật.</p>
                     </li>
                   </ol>
                 </div>
