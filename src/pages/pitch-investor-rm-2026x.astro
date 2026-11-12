@@ -542,6 +542,67 @@ const slide6TileWidths = [400, 800, 1200]
 const slide6LandlordTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 1100px) - 20px) / 3), 80vw'
 const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) - 20px) / 3), 70vw'
 
+const appendix2ImageGlob = import.meta.glob('../assets/pitch/appendix-2/*.{png,jpg,jpeg,webp}', {
+  eager: true,
+  import: 'default',
+}) as Record<string, ImageMetadata>
+
+function appendix2Basename(path: string) {
+  return path.split('/').pop()?.split('?')[0]?.toLowerCase() ?? ''
+}
+
+function appendix2CompetitorImage(n: number): ImageMetadata | undefined {
+  const base = `doi-thu-${n}`
+  for (const [path, meta] of Object.entries(appendix2ImageGlob)) {
+    const name = appendix2Basename(path)
+    if (
+      name === `${base}.png` ||
+      name === `${base}.jpg` ||
+      name === `${base}.jpeg` ||
+      name === `${base}.webp`
+    ) {
+      return meta
+    }
+  }
+  return undefined
+}
+
+type Appendix2CompetitorSlot = {
+  n: number
+  caption: string
+  alt: string
+}
+
+const appendix2CompetitorSlots: Appendix2CompetitorSlot[] = [
+  { n: 1, caption: '', alt: '' },
+  { n: 2, caption: '', alt: '' },
+  { n: 3, caption: '', alt: '' },
+]
+
+const appendix2DoiThuWidths = [480, 960, 1440]
+const appendix2DoiThuSizes =
+  '(min-width: 768px) calc((min(100vw - 40px, 720px) - 16px) / 2), 85vw'
+
+async function resolveAppendix2CompetitorSlot(slot: Appendix2CompetitorSlot) {
+  const image = appendix2CompetitorImage(slot.n)
+  let fullUrl: string | undefined
+
+  if (image) {
+    const optimized = await getImage({
+      src: image,
+      width: image.width ? Math.min(image.width, 2560) : 1440,
+      format: 'webp',
+    })
+    fullUrl = optimized.src
+  }
+
+  return { ...slot, image, fullUrl }
+}
+
+const appendix2CompetitorMedia = await Promise.all(
+  appendix2CompetitorSlots.map((slot) => resolveAppendix2CompetitorSlot(slot)),
+)
+
 ---
 
 <!doctype html>
@@ -3227,6 +3288,114 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
         }
       }
 
+      #appendix-slide-2 {
+        overflow-x: clip;
+      }
+
+      #appendix-slide-2 .appendix-slide-2__doi-thu-strip {
+        width: 100%;
+        max-width: 720px;
+        margin: 12px auto 16px;
+        min-width: 0;
+      }
+
+      #appendix-slide-2 .appendix-slide-2__doi-thu-tiles {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+        min-width: 0;
+      }
+
+      #appendix-slide-2 .appendix-slide-2__doi-thu-tile {
+        min-width: 0;
+      }
+
+      #appendix-slide-2 .appendix-slide-2__doi-thu-link {
+        display: block;
+        color: inherit;
+        text-decoration: none;
+      }
+
+      #appendix-slide-2 .appendix-slide-2__doi-thu-link:focus-visible {
+        outline: 2px solid var(--blue);
+        outline-offset: 3px;
+        border-radius: 22px;
+      }
+
+      #appendix-slide-2 .appendix-slide-2__doi-thu-frame {
+        width: 100%;
+        border-radius: 20px;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.04);
+        min-height: 120px;
+      }
+
+      #appendix-slide-2 .appendix-slide-2__doi-thu-frame :global(picture) {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      #appendix-slide-2 .appendix-slide-2__doi-thu-frame :global(img) {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        object-fit: contain;
+        border-radius: 20px;
+      }
+
+      #appendix-slide-2 .appendix-slide-2__doi-thu-placeholder {
+        aspect-ratio: 16 / 10;
+        width: 100%;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.04);
+        color: rgba(0, 0, 0, 0.42);
+        font-size: 0.85rem;
+        font-weight: 600;
+        text-align: center;
+        padding: 12px;
+        box-sizing: border-box;
+      }
+
+      #appendix-slide-2 .appendix-slide-2__doi-thu-caption {
+        margin: 8px 0 0;
+        font-size: 0.88rem;
+        line-height: 1.4;
+        color: #515154;
+        text-align: center;
+      }
+
+      @media (max-width: 767px) {
+        #appendix-slide-2 .appendix-slide-2__doi-thu-tiles {
+          display: flex;
+          flex-direction: row;
+          gap: 12px;
+          overflow-x: auto;
+          overscroll-behavior-x: contain;
+          scroll-snap-type: x mandatory;
+          -webkit-overflow-scrolling: touch;
+          scrollbar-width: none;
+          padding-bottom: 2px;
+        }
+
+        #appendix-slide-2 .appendix-slide-2__doi-thu-tiles::-webkit-scrollbar {
+          display: none;
+        }
+
+        #appendix-slide-2 .appendix-slide-2__doi-thu-tile {
+          flex: 0 0 85vw;
+          max-width: 85vw;
+          scroll-snap-align: start;
+        }
+      }
+
       /* Appendix budget tables (roomio pricing-inspired) */
       .pitch-budget-block {
         margin-top: 32px;
@@ -4751,7 +4920,50 @@ const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) 
                 </span>
               </summary>
               <div class="apple-accordion-content">
-                <p>Đánh giá đối thủ bằng "Khả năng hoàn tất 1 công việc". Bấm giờ và đếm click chuột. roomio luôn tốn ít bước hơn, UX mượt hơn.</p>
+                <div class="pitch-budget-block">
+                  <h4 class="pitch-budget-block__title">Đầu tiên là về giao diện và trải nghiệm người dùng.</h4>
+                  <div class="appendix-slide-2__doi-thu-strip">
+                    <div class="appendix-slide-2__doi-thu-tiles">
+                      {appendix2CompetitorMedia.map((slot) => (
+                        <div class="appendix-slide-2__doi-thu-tile">
+                          {slot.image && slot.fullUrl ? (
+                            <>
+                              <a
+                                class="appendix-slide-2__doi-thu-link"
+                                href={slot.fullUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                <div class="appendix-slide-2__doi-thu-frame">
+                                  <Picture
+                                    src={slot.image}
+                                    alt={slot.alt || `Hình đối thủ ${slot.n}`}
+                                    formats={['avif', 'webp']}
+                                    widths={appendix2DoiThuWidths}
+                                    sizes={appendix2DoiThuSizes}
+                                    loading="lazy"
+                                    decoding="async"
+                                  />
+                                </div>
+                              </a>
+                              {slot.caption ? (
+                                <p class="appendix-slide-2__doi-thu-caption">{slot.caption}</p>
+                              ) : null}
+                            </>
+                          ) : (
+                            <div class="appendix-slide-2__doi-thu-placeholder">Hình đối thủ {slot.n}</div>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <p>
+                    Về giao diện, từ hệ thống trên web và mobile app các nút bấm rất phức tạp, khó hiểu. Một phần là vì người xây dựng sản phẩm bên đó không nghiên cứu sâu, phần còn lại là họ để AI tự quyết (cái này em sẽ nói rõ hơn ở phần phân tích về các app từ AI ở phía dưới mục này). Như anh/chị thấy trong hình, bố trí các nút bấm kiểu này khi nhìn vào thật sự không biết nên vào đâu trước, bấm nút nào trước trừ khi xài một thời gian và có thói quen cơ bắp thì may ra.
+                  </p>
+                  <p>
+                    Về trải nghiệm người dùng, việc sử dụng app em đã nghiên cứu kỹ ở đối thủ là việc chuyển giữa các trạng thái không rõ ràng.
+                  </p>
+                </div>
 
                 <div class="pitch-budget-block">
                   <h4 class="pitch-budget-block__title">Mình đã kiểm thế nào</h4>
