@@ -628,7 +628,7 @@ type Appendix2AppSlotConfig = {
 
 type Appendix2AppConfig = {
   name: string
-  text: string | null
+  text: string[] | null
   textPlaceholder: string
   slots: [Appendix2AppSlotConfig, Appendix2AppSlotConfig]
 }
@@ -645,8 +645,10 @@ const appendix2Apps: Appendix2AppConfig[] = [
   },
   {
     name: 'eNha',
-    text:
+    text: [
       'Hoá đơn phải tự tạo bằng tay. Tháng nào chủ cũng phải vô màn tạo kỳ phí, gõ số điện nước từng phòng, xác nhận rồi mới ra hoá đơn. Có nút chụp ảnh đồng hồ để máy đọc số, nhưng người chụp là chủ. Vậy là chủ phải lặn lội qua trọ chụp từng cái đồng hồ, hoặc vô Zalo tải hình khách gửi về rồi up lên lại, chỉ để máy đọc số.',
+      'Thêm một chuyện nữa: mỗi lần mở một bảng trên eNha (như hình trên), cả màn hình phía sau bị làm mờ. Kiểu làm mờ này tốn tài nguyên máy khủng khiếp, dùng một lúc là máy em nóng lên. "roomio" cũng từng làm mờ như vậy, nhưng đã bỏ hẳn từ tháng 10/2026, giờ mở bảng thì nền phía sau chỉ tối lại thôi.',
+    ],
     textPlaceholder: '',
     slots: [
       {
@@ -5151,7 +5153,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                         </div>
                       </div>
                       {app.text ? (
-                        <p>{app.text}</p>
+                        app.text.map((paragraph) => <p>{paragraph}</p>)
                       ) : (
                         <div class="appendix-slide-2__text-placeholder">{app.textPlaceholder}</div>
                       )}
