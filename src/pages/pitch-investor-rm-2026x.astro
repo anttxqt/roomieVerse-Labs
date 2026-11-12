@@ -551,6 +551,22 @@ function appendix2Basename(path: string) {
   return path.split('/').pop()?.split('?')[0]?.toLowerCase() ?? ''
 }
 
+function appendix2ImageByBase(base: string): ImageMetadata | undefined {
+  const lower = base.toLowerCase()
+  for (const [path, meta] of Object.entries(appendix2ImageGlob)) {
+    const name = appendix2Basename(path)
+    if (
+      name === `${lower}.png` ||
+      name === `${lower}.jpg` ||
+      name === `${lower}.jpeg` ||
+      name === `${lower}.webp`
+    ) {
+      return meta
+    }
+  }
+  return undefined
+}
+
 function appendix2CompetitorImage(n: number): ImageMetadata | undefined {
   const base = `doi-thu-${n}`
   for (const [path, meta] of Object.entries(appendix2ImageGlob)) {
@@ -602,6 +618,79 @@ async function resolveAppendix2CompetitorSlot(slot: Appendix2CompetitorSlot) {
 const appendix2CompetitorMedia = await Promise.all(
   appendix2CompetitorSlots.map((slot) => resolveAppendix2CompetitorSlot(slot)),
 )
+
+type Appendix2AppSlotConfig = {
+  base: string
+  placeholder: string
+  caption: string
+  alt: string
+}
+
+type Appendix2AppConfig = {
+  name: string
+  text: string | null
+  textPlaceholder: string
+  slots: [Appendix2AppSlotConfig, Appendix2AppSlotConfig]
+}
+
+const appendix2Apps: Appendix2AppConfig[] = [
+  {
+    name: 'LOZIDO',
+    text: null,
+    textPlaceholder: 'Chỗ viết về LOZIDO',
+    slots: [
+      { base: 'lozido-1', placeholder: 'Hình LOZIDO 1', caption: '', alt: '' },
+      { base: 'lozido-2', placeholder: 'Hình LOZIDO 2', caption: '', alt: '' },
+    ],
+  },
+  {
+    name: 'eNha',
+    text:
+      'Hoá đơn phải tự tạo bằng tay. Tháng nào chủ cũng phải vô màn tạo kỳ phí, gõ số điện nước từng phòng, xác nhận rồi mới ra hoá đơn. Có nút chụp ảnh đồng hồ để máy đọc số, nhưng người chụp là chủ. Vậy là chủ phải lặn lội qua trọ chụp từng cái đồng hồ, hoặc vô Zalo tải hình khách gửi về rồi up lên lại, chỉ để máy đọc số.',
+    textPlaceholder: '',
+    slots: [
+      {
+        base: 'enha-1',
+        placeholder: 'Hình eNha 1',
+        caption: 'Màn tạo kỳ phí của eNha',
+        alt: 'Màn tạo kỳ phí của eNha: chủ tự gõ số điện nước từng phòng rồi mới ra hoá đơn',
+      },
+      { base: 'enha-2', placeholder: 'Hình eNha 2', caption: '', alt: '' },
+    ],
+  },
+  {
+    name: 'Mona House',
+    text: null,
+    textPlaceholder: 'Chỗ viết về Mona House',
+    slots: [
+      { base: 'mona-house-1', placeholder: 'Hình Mona House 1', caption: '', alt: '' },
+      { base: 'mona-house-2', placeholder: 'Hình Mona House 2', caption: '', alt: '' },
+    ],
+  },
+]
+
+async function resolveAppendix2AppSlot(slot: Appendix2AppSlotConfig) {
+  const image = appendix2ImageByBase(slot.base)
+  let fullUrl: string | undefined
+
+  if (image) {
+    const optimized = await getImage({
+      src: image,
+      width: image.width ? Math.min(image.width, 2560) : 1440,
+      format: 'webp',
+    })
+    fullUrl = optimized.src
+  }
+
+  return { ...slot, image, fullUrl }
+}
+
+async function resolveAppendix2App(app: Appendix2AppConfig) {
+  const slots = await Promise.all(app.slots.map((slot) => resolveAppendix2AppSlot(slot)))
+  return { ...app, slots }
+}
+
+const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveAppendix2App(app)))
 
 ---
 
@@ -3396,6 +3485,32 @@ const appendix2CompetitorMedia = await Promise.all(
         }
       }
 
+      #appendix-slide-2 .appendix-slide-2__app-part + .appendix-slide-2__app-part {
+        margin-top: 28px;
+      }
+
+      #appendix-slide-2 .appendix-slide-2__app-name {
+        margin: 0 0 12px;
+        font-size: 1rem;
+        font-weight: 700;
+        color: #1d1d1f;
+        letter-spacing: normal;
+      }
+
+      #appendix-slide-2 .appendix-slide-2__text-placeholder {
+        width: 100%;
+        border-radius: 20px;
+        display: block;
+        background: rgba(0, 0, 0, 0.04);
+        color: rgba(0, 0, 0, 0.42);
+        font-size: 0.85rem;
+        font-weight: 600;
+        text-align: left;
+        padding: 16px;
+        box-sizing: border-box;
+        line-height: 1.45;
+      }
+
       /* Appendix budget tables (roomio pricing-inspired) */
       .pitch-budget-block {
         margin-top: 32px;
@@ -4993,6 +5108,55 @@ const appendix2CompetitorMedia = await Promise.all(
                     <li>Excel + Zalo: cách phần lớn chủ cho thuê đang làm. Cả 3 chủ cho thuê đồng ý dùng thử roomio đều đang làm theo cách này.</li>
                     <li>Chỗ trống: chủ nhà bình thường chỉ cần một phần mềm nhẹ, làm đúng việc chính. Chưa ai làm tới nơi.</li>
                   </ul>
+                </div>
+
+                <div class="pitch-budget-block">
+                  <h4 class="pitch-budget-block__title">Cụ thể từng app em đã dùng thử</h4>
+                  {appendix2AppsMedia.map((app) => (
+                    <div class="appendix-slide-2__app-part">
+                      <p class="appendix-slide-2__app-name">{app.name}</p>
+                      <div class="appendix-slide-2__doi-thu-strip">
+                        <div class="appendix-slide-2__doi-thu-tiles">
+                          {app.slots.map((slot) => (
+                            <div class="appendix-slide-2__doi-thu-tile">
+                              {slot.image && slot.fullUrl ? (
+                                <>
+                                  <a
+                                    class="appendix-slide-2__doi-thu-link"
+                                    href={slot.fullUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                  >
+                                    <div class="appendix-slide-2__doi-thu-frame">
+                                      <Picture
+                                        src={slot.image}
+                                        alt={slot.alt || slot.placeholder}
+                                        formats={['avif', 'webp']}
+                                        widths={appendix2DoiThuWidths}
+                                        sizes={appendix2DoiThuSizes}
+                                        loading="lazy"
+                                        decoding="async"
+                                      />
+                                    </div>
+                                  </a>
+                                  {slot.caption ? (
+                                    <p class="appendix-slide-2__doi-thu-caption">{slot.caption}</p>
+                                  ) : null}
+                                </>
+                              ) : (
+                                <div class="appendix-slide-2__doi-thu-placeholder">{slot.placeholder}</div>
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                      {app.text ? (
+                        <p>{app.text}</p>
+                      ) : (
+                        <div class="appendix-slide-2__text-placeholder">{app.textPlaceholder}</div>
+                      )}
+                    </div>
+                  ))}
                 </div>
 
                 <div class="pitch-budget-block">
