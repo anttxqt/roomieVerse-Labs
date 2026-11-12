@@ -6434,6 +6434,21 @@ const appendix2CompetitorMedia = await Promise.all(
           revealObserver.observe(element);
         });
 
+        const appendixScrollBehavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+          ? 'auto'
+          : 'smooth';
+
+        document.querySelectorAll('.apple-accordion-item').forEach((item) => {
+          item.addEventListener('toggle', () => {
+            if (!item.open) return;
+            if (item.dataset.jumpOpen) {
+              delete item.dataset.jumpOpen;
+              return;
+            }
+            item.scrollIntoView({ block: 'start', behavior: appendixScrollBehavior });
+          });
+        });
+
         // Jump to appendix dropdown & auto-open
         document.querySelectorAll('.appendix-jump-btn[data-target]').forEach((btn) => {
           btn.addEventListener('click', (e) => {
@@ -6450,6 +6465,9 @@ const appendix2CompetitorMedia = await Promise.all(
             });
 
             // Automatically open dropdown
+            if (!targetDetails.open) {
+              targetDetails.dataset.jumpOpen = '1';
+            }
             targetDetails.open = true;
 
             // Highlight animation effect: flash title blue then transition back to black
