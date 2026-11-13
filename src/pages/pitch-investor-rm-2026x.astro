@@ -132,60 +132,32 @@ const pitchScenarioRows = [
       'Đủ; lúc thấp nhất quỹ còn ~500 triệu',
     ],
   },
-  {
-    label: 'Cổ tức đầu tiên',
-    cells: ['Năm thứ 4', 'Năm thứ 4', 'Năm thứ 3', 'Năm thứ 3'],
-  },
-  {
-    label: 'Nhà đầu tư nhận lại đủ vốn',
-    cells: ['Năm thứ 6', 'Năm thứ 5', 'Năm thứ 4', 'Năm thứ 4'],
-  },
-  {
-    label: 'Nhà đầu tư nhận tới năm thứ 10',
-    cells: ['~2,9 tỷ (~2,1 lần vốn)', '~3,9 tỷ (~2,9 lần vốn)', '~4,8 tỷ (~3,5 lần vốn)', '~5,4 tỷ (~4 lần vốn)'],
-  },
 ]
 
 const pitchScenarioNote =
-  'Cả 4 kịch bản: khoảng 214 chủ ở tháng 12, sau đó mỗi tháng thêm 20 chủ, +3% nhờ giới thiệu, −2% khách rời. Chi phí từ tháng 13 giữ mức tháng 7–12. Giá theo bảng giá hiện tại, tính kín phòng. Tiền về nhà đầu tư tính theo điều khoản ở phụ lục 12, mục 6; thuế thu nhập doanh nghiệp tính 20%; luật bắt bù hết lỗ trước rồi mới được chia cổ tức. Năm tính từ lúc nhận vốn. Chưa tính vòng gọi thêm. Nhà đầu tư vẫn giữ 15% cổ phần sau khi nhận lại vốn.'
+  'Cả 4 kịch bản: khoảng 214 chủ ở tháng 12, sau đó mỗi tháng thêm 20 chủ, +3% nhờ giới thiệu, −2% khách rời. Chi phí từ tháng 13 giữ mức tháng 7–12. Giá theo bảng giá hiện tại, tính kín phòng. Chưa tính vòng gọi thêm.'
 
 const pitchPriceLeverIntro =
-  'Tăng giá là cách riêng, áp được lên cả 4 kịch bản. Cùng số chủ, cùng chi phí; chỉ tăng cả bảng giá thêm 10% hoặc 20%. Mỗi ô ghi tháng hoà vốn, năm nhà đầu tư nhận lại đủ vốn, và tổng nhận tới năm thứ 10.'
+  'Tăng giá là cách riêng, áp được lên cả 4 kịch bản. Cùng số chủ, cùng chi phí; chỉ tăng cả bảng giá thêm 10% hoặc 20%. Mỗi ô ghi tháng hoà vốn.'
 
 const pitchPriceLeverColumns = ['', 'Giá hiện tại', 'Tăng giá 10%', 'Tăng giá 20%']
 
 const pitchPriceLeverRows = [
   {
     label: 'Thấp',
-    cells: [
-      ['Hoà vốn ~tháng 26', 'Đủ vốn năm thứ 6', 'Năm 10: ~2,1 lần vốn'],
-      ['Hoà vốn ~tháng 24', 'Đủ vốn năm thứ 6', 'Năm 10: ~2,3 lần vốn'],
-      ['Hoà vốn ~tháng 22', 'Đủ vốn năm thứ 5', 'Năm 10: ~2,5 lần vốn'],
-    ],
+    cells: [['Hoà vốn ~tháng 26'], ['Hoà vốn ~tháng 24'], ['Hoà vốn ~tháng 22']],
   },
   {
     label: 'Vừa',
-    cells: [
-      ['Hoà vốn ~tháng 19', 'Đủ vốn năm thứ 5', 'Năm 10: ~2,9 lần vốn'],
-      ['Hoà vốn ~tháng 18', 'Đủ vốn năm thứ 5', 'Năm 10: ~3,2 lần vốn'],
-      ['Hoà vốn ~tháng 17', 'Đủ vốn năm thứ 5', 'Năm 10: ~3,4 lần vốn'],
-    ],
+    cells: [['Hoà vốn ~tháng 19'], ['Hoà vốn ~tháng 18'], ['Hoà vốn ~tháng 17']],
   },
   {
     label: 'Khá',
-    cells: [
-      ['Hoà vốn ~tháng 16', 'Đủ vốn năm thứ 4', 'Năm 10: ~3,5 lần vốn'],
-      ['Hoà vốn ~tháng 15', 'Đủ vốn năm thứ 4', 'Năm 10: ~3,8 lần vốn'],
-      ['Hoà vốn ~tháng 14', 'Đủ vốn năm thứ 4', 'Năm 10: ~4,2 lần vốn'],
-    ],
+    cells: [['Hoà vốn ~tháng 16'], ['Hoà vốn ~tháng 15'], ['Hoà vốn ~tháng 14']],
   },
   {
     label: 'Lạc quan',
-    cells: [
-      ['Hoà vốn ~tháng 15', 'Đủ vốn năm thứ 4', 'Năm 10: ~4,0 lần vốn'],
-      ['Hoà vốn ~tháng 14', 'Đủ vốn năm thứ 4', 'Năm 10: ~4,3 lần vốn'],
-      ['Hoà vốn ~tháng 13', 'Đủ vốn năm thứ 4', 'Năm 10: ~4,7 lần vốn'],
-    ],
+    cells: [['Hoà vốn ~tháng 15'], ['Hoà vốn ~tháng 14'], ['Hoà vốn ~tháng 13']],
   },
 ]
 
@@ -202,18 +174,16 @@ const pitchAssumptions = [
   'Dự phóng khách: tháng 1–3 ở Đà Lạt, Founder tự ký 4 chủ ở tháng 1 rồi 3 chủ/tháng, Sale chính 4 chủ/tháng; tháng 4–6 ở TP.HCM, Founder 5, Sale chính 12, CTV 5 chủ/tháng; từ tháng 7, Founder 3, Sale chính 12, CTV 5 chủ/tháng; mỗi tháng +3% nhờ giới thiệu, −2% khách rời.',
   'Chỗ làm Sài Gòn: căn 2PN ~12 triệu/tháng. Founder ở 1 phòng và tự trả 4 triệu; công ty trả 8 triệu. Địa chỉ đăng ký công ty là văn phòng ảo.',
   'Mac Studio: Founder là người viết code duy nhất. Máy kiêm 3 việc: máy làm việc, máy chạy test tự động, và bản chạy thử trước khi lên production. Chi một lần thay cho thuê máy cloud hằng tháng.',
-  'Mở rộng vòng: tháng 13–18 tính theo mức chi tháng 7–12 (99.380.000 đ/tháng), chưa tính doanh thu. 15 tháng cần 1.559.198.000 đ; $75,000 (1.927.500.000 đ) còn dư ~368 triệu. 18 tháng cần 1.857.338.000 đ; $100,000 (2.570.000.000 đ) còn dư ~713 triệu.',
   'API AI (đọc số bằng 2 hãng và các agent làm thay chủ cho thuê): 0,4 triệu/tháng ở tháng 1–3, 1,7 triệu ở tháng 4–6, 3,2 triệu ở tháng 7–12; khoảng 8,5% doanh thu khi chạy đủ.',
 ]
 
 const pitchInvestorReturn = [
-  '$53,000 (khoảng 1,36 tỷ đồng) đổi lấy 15% cổ phần phổ thông. Định giá sau vốn khoảng 9,1 tỷ đồng (~$353,000).',
+  '$100,000 (khoảng 2,57 tỷ đồng) đổi lấy 10% cổ phần phổ thông. Định giá sau vốn $1,000,000 (khoảng 25,7 tỷ đồng).',
   'Chừa khoảng 10% cổ phần cho người kế cận CEO và đội ngũ chủ chốt.',
   'Bây giờ ký bản thoả thuận điều khoản ngắn, chưa ràng buộc. Tháng 1 lập công ty cổ phần, nhà đầu tư là cổ đông sáng lập. Tiền chuyển sau khi có giấy chứng nhận đăng ký doanh nghiệp và điều lệ, trong 90 ngày theo luật.',
-  'Trả lại nhà đầu tư bằng cổ tức khi có lãi, chia ít nhất 50% lãi sau thuế. Founder nhường phần cổ tức của mình cho tới khi nhà đầu tư nhận lại đủ vốn; sau đó chia theo tỷ lệ cổ phần.',
-  'Không ép bán công ty. Nếu sau này có người mua, nhà đầu tư bán cùng giá, cùng lúc với founder.',
+  'Nếu sau này có người mua, nhà đầu tư bán cùng giá, cùng lúc với founder.',
   'Chi tiết do luật sư soạn vào thoả thuận cổ đông và điều lệ.',
-  'Hoà vốn và tiền về nhà đầu tư theo 4 kịch bản: xem phụ lục 8.',
+  'Hoà vốn theo 4 kịch bản: xem phụ lục 8.',
 ]
 
 const breakevenDotGridCols = 56
@@ -4814,9 +4784,8 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
             <h2 class="slide-title">Vốn "roomio" cần để kéo từ 3 chủ dùng thử tới khoảng 220 chủ trong 12 tháng</h2>
           </div>
           <div class="slide-content">
-            <p class="pitch-fund-ask">$53,000</p>
-            <p class="pitch-fund-meta pitch-fund-meta--stacked">Khoảng 1,36 tỷ đồng cho 12 tháng runway.</p>
-            <p class="pitch-fund-meta">Vòng có thể mở rộng đến ~$100,000 (18 tháng) hoặc ~$75,000 (15 tháng) nếu anh/chị đầu tư muốn đi xa hơn.</p>
+            <p class="pitch-fund-ask">$100,000</p>
+            <p class="pitch-fund-meta pitch-fund-meta--stacked">Khoảng 2,57 tỷ đồng cho 18 tháng runway.</p>
             <p class="pitch-fund-meta">Số trong pitch là kịch bản thấp nhất: chỉ tính phòng trọ, giá thấp nhất. Có thêm chung cư mini, căn hộ dịch vụ và chủ lớn thì hoà vốn sớm hơn, kịch bản lạc quan khoảng tháng 15. Xem 4 kịch bản ở phụ lục 8.</p>
 
             <h3 class="pitch-fund-section-title">Tiền dùng vào đâu</h3>
@@ -6213,7 +6182,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                 </div>
 
                 <div class="pitch-budget-block">
-                  <h4 class="pitch-budget-block__title">6. Điều khoản và cách trả lại nhà đầu tư</h4>
+                  <h4 class="pitch-budget-block__title">6. Điều khoản</h4>
                   <ul class="pitch-budget-assumptions">
                     {pitchInvestorReturn.map((item) => (
                       <li>{item}</li>
