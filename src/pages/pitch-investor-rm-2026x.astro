@@ -667,11 +667,25 @@ const appendix2Apps: Appendix2AppConfig[] = [
   },
   {
     name: 'Mona House',
-    text: null,
+    text: [
+      'Cũng như eNha, Mona House để chủ tự đi lấy số rồi nhập vô. Ngay màn ghi điện còn ghi to câu "Đi 1 vòng, ghi 1 lượt." (hình 1), tức là chủ phải tự đi một vòng qua từng phòng để ghi số.',
+      'Giao diện thì khá ổn, dễ nhìn, thoáng. Nhưng trải nghiệm thì ngược lại, quá ngợp, mỗi lần thêm phòng mới là không biết phải làm gì trước.',
+      'Mấy khung nổi như chat, trợ lý AI thì làm màn hình rùm beng, mất tập trung, che mất cả thông báo (hình 2). Chữ dùng tiếng Việt nhưng đọc khó hiểu.',
+    ],
     textPlaceholder: 'Chỗ viết về Mona House',
     slots: [
-      { base: 'mona-house-1', placeholder: 'Hình Mona House 1', caption: '', alt: '' },
-      { base: 'mona-house-2', placeholder: 'Hình Mona House 2', caption: '', alt: '' },
+      {
+        base: 'mona-house-1',
+        placeholder: 'Hình Mona House 1',
+        caption: 'Màn ghi điện của Mona House',
+        alt: 'Màn ghi điện của Mona House với câu "Đi 1 vòng, ghi 1 lượt.": chủ tự gõ số cũ, số mới cho từng phòng',
+      },
+      {
+        base: 'mona-house-2',
+        placeholder: 'Hình Mona House 2',
+        caption: 'Khung chat nổi che thông báo',
+        alt: 'Màn ghi điện của Mona House: khung chat và trợ lý AI nổi lên che thông báo gói đã hết hạn',
+      },
     ],
   },
 ]
