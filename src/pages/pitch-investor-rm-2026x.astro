@@ -6,27 +6,27 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
 
 const pitchFundingBars = [
   { label: 'Đội ngũ (Founder, Dev, CEO dự phòng)', percent: 41, amount: '~1,26 tỷ' },
-  { label: 'Bán hàng và marketing (2 Sale chính, 1 CTV, hoa hồng, marketing)', percent: 22, amount: '~665 triệu' },
+  { label: 'Bán hàng và marketing (2 Sale chính, 1 CTV, hoa hồng, marketing)', percent: 22, amount: '~683 triệu' },
   { label: 'Máy móc (Mac Studio, iMac cho Dev, màn hình)', percent: 7, amount: '~231 triệu' },
   { label: 'Chạy sản phẩm (máy chủ, staging, API AI, gói AI viết code)', percent: 8, amount: '~246 triệu' },
   { label: 'Chỗ làm và vận hành công ty', percent: 10, amount: '~297 triệu' },
   { label: 'Pháp lý', percent: 1, amount: '~35 triệu' },
-  { label: 'Dự phòng', percent: 11, amount: '~353 triệu' },
+  { label: 'Dự phòng', percent: 11, amount: '~336 triệu' },
 ]
 
 const pitchTableA = [
   { khoan: 'Founder (lương, bảo hiểm, phụ cấp làm việc tại nhà)', vnd: '552.895.000', usd: '~$21,513', tyLe: '18%' },
   { khoan: 'Dev toàn thời gian (lương, bảo hiểm, tuyển dụng)', vnd: '375.935.000', usd: '~$14,628', tyLe: '12%' },
   { khoan: 'CEO dự phòng, từ tháng 3 (lương, bảo hiểm)', vnd: '328.050.000', usd: '~$12,765', tyLe: '11%' },
-  { khoan: 'Sale chính, 2 người từ tháng 6 (lương, bảo hiểm, phụ cấp, hoa hồng, tuyển dụng, thưởng Tết)', vnd: '362.375.000', usd: '~$14,100', tyLe: '12%' },
-  { khoan: 'CTV bán hàng, 1 người (phí cứng, hoa hồng, phụ cấp, tuyển dụng)', vnd: '78.800.000', usd: '~$3,066', tyLe: '3%' },
+  { khoan: 'Sale chính, 2 người từ tháng 6 (lương, bảo hiểm, phụ cấp, hoa hồng, tuyển dụng, thưởng Tết)', vnd: '378.175.000', usd: '~$14,715', tyLe: '12%' },
+  { khoan: 'CTV bán hàng, 1 người (phí cứng, hoa hồng, phụ cấp, tuyển dụng)', vnd: '80.400.000', usd: '~$3,128', tyLe: '3%' },
   { khoan: 'Marketing', vnd: '224.000.000', usd: '~$8,716', tyLe: '7%' },
   { khoan: 'Chỗ làm Sài Gòn từ tháng 6 (căn 2PN phần công ty, điện nước, phí quản lý, setup, cọc)', vnd: '188.000.000', usd: '~$7,315', tyLe: '6%' },
   { khoan: 'Vận hành công ty (văn phòng ảo, kế toán, ngân hàng, email, công đoàn, chữ ký số, hoá đơn, quyết toán, khác)', vnd: '108.840.000', usd: '~$4,235', tyLe: '4%' },
   { khoan: 'Máy móc (Mac Studio, màn hình, phụ kiện, iMac cho Dev)', vnd: '231.248.000', usd: '~$8,998', tyLe: '7%' },
   { khoan: 'Chạy sản phẩm (máy chủ, staging, API AI, gói AI viết code)', vnd: '245.780.000', usd: '~$9,563', tyLe: '8%' },
   { khoan: 'Pháp lý (thành lập, vòng gọi vốn, nhãn hiệu, dữ liệu cá nhân)', vnd: '35.000.000', usd: '~$1,362', tyLe: '1%' },
-  { khoan: 'Dự phòng', vnd: '353.077.000', usd: '~$13,738', tyLe: '11%' },
+  { khoan: 'Dự phòng', vnd: '335.677.000', usd: '~$13,061', tyLe: '11%' },
   { khoan: 'TỔNG GỌI VỐN', vnd: '3.084.000.000', usd: '$120,000', tyLe: '100%', total: true },
 ]
 
@@ -41,9 +41,9 @@ const pitchTableB = [
   { kind: 'data', label: 'Sale chính: lương cứng (thử việc tháng 2, 2 người từ tháng 6)', c: ['–', '5.000.000', '12.000.000', '16.000.000'] },
   { kind: 'data', label: 'Sale chính: bảo hiểm bắt buộc', c: ['–', '1.075.000', '2.580.000', '3.440.000'] },
   { kind: 'data', label: 'Sale chính: phụ cấp đi lại', c: ['–', '500.000', '1.600.000', '2.000.000'] },
-  { kind: 'data', label: 'Sale chính: hoa hồng (mục tiêu 4 khách/tháng ở Đà Lạt, 6 khách/tháng mỗi người ở TP.HCM)', c: ['–', '1.600.000', '5.200.000', '5.200.000'] },
+  { kind: 'data', label: 'Sale chính: hoa hồng (theo số chủ ký, tăng dần; trung bình mỗi tháng)', c: ['–', '1.067.000', '3.629.000', '10.133.000'] },
   { kind: 'data', label: 'CTV: phí cứng', c: ['–', '3.000.000', '3.000.000', '3.000.000'] },
-  { kind: 'data', label: 'CTV: hoa hồng (mục tiêu 2 khách/tháng ở Đà Lạt, 3 ở TP.HCM)', c: ['–', '800.000', '1.200.000', '1.200.000'] },
+  { kind: 'data', label: 'CTV: hoa hồng (theo số chủ ký, tăng dần; trung bình mỗi tháng)', c: ['–', '533.000', '857.000', '2.067.000'] },
   { kind: 'data', label: 'CTV: phụ cấp đi lại', c: ['–', '500.000', '500.000', '500.000'] },
   { kind: 'data', label: 'Phụ cấp làm việc tại nhà (Founder, ở Đà Lạt)', c: ['500.000', '500.000', '–', '–'] },
   { kind: 'data', label: 'Kinh phí công đoàn (2%)', c: ['740.000', '1.140.000', '1.400.000', '1.640.000'] },
@@ -63,9 +63,9 @@ const pitchTableB = [
   { kind: 'data', label: 'Gói AI viết code Dev', c: ['1.720.000', '1.720.000', '1.720.000', '1.720.000'] },
   { kind: 'group', label: 'THỊ TRƯỜNG' },
   { kind: 'data', label: 'Marketing (thưởng giới thiệu, quà tặng, chiến dịch)', c: ['10.000.000', '10.000.000', '12.000.000', '15.000.000'] },
-  { kind: 'total', label: 'CỘNG MỖI THÁNG', c: ['66.705.000', '99.205.000', '140.560.000', '162.780.000'] },
+  { kind: 'total', label: 'CỘNG MỖI THÁNG', c: ['66.705.000', '98.405.000', '138.646.000', '168.580.000'] },
   { kind: 'meta', label: 'Số tháng', c: ['1', '4', '7', '6'] },
-  { kind: 'total', label: 'CỘNG GIAI ĐOẠN', c: ['66.705.000', '376.370.000', '983.920.000', '976.680.000'] },
+  { kind: 'total', label: 'CỘNG GIAI ĐOẠN', c: ['66.705.000', '372.370.000', '970.520.000', '1.011.480.000'] },
 ]
 
 const pitchTableC = [
@@ -93,23 +93,23 @@ const pitchTableC = [
 
 const pitchTableD = [
   { thang: '1', chi: '332.453.000', quy: '2.751.547.000' },
-  { thang: '2', chi: '83.755.000', quy: '2.667.792.000' },
-  { thang: '3', chi: '99.205.000', quy: '2.568.587.000' },
-  { thang: '4', chi: '104.205.000', quy: '2.464.382.000' },
-  { thang: '5', chi: '99.705.000', quy: '2.364.677.000' },
-  { thang: '6', chi: '172.560.000', quy: '2.192.117.000' },
-  { thang: '7', chi: '140.560.000', quy: '2.051.557.000' },
-  { thang: '8', chi: '140.560.000', quy: '1.910.997.000' },
-  { thang: '9', chi: '140.560.000', quy: '1.770.437.000' },
-  { thang: '10', chi: '140.560.000', quy: '1.629.877.000' },
-  { thang: '11', chi: '140.560.000', quy: '1.489.317.000' },
-  { thang: '12', chi: '143.560.000', quy: '1.345.757.000' },
-  { thang: '13', chi: '162.780.000', quy: '1.182.977.000' },
-  { thang: '14', chi: '162.780.000', quy: '1.020.197.000' },
-  { thang: '15', chi: '162.780.000', quy: '857.417.000' },
-  { thang: '16', chi: '178.780.000', quy: '678.637.000' },
-  { thang: '17', chi: '162.780.000', quy: '515.857.000' },
-  { thang: '18', chi: '162.780.000', quy: '353.077.000' },
+  { thang: '2', chi: '82.155.000', quy: '2.669.392.000' },
+  { thang: '3', chi: '98.005.000', quy: '2.571.387.000' },
+  { thang: '4', chi: '103.405.000', quy: '2.467.982.000' },
+  { thang: '5', chi: '99.305.000', quy: '2.368.677.000' },
+  { thang: '6', chi: '168.160.000', quy: '2.200.517.000' },
+  { thang: '7', chi: '136.960.000', quy: '2.063.557.000' },
+  { thang: '8', chi: '137.760.000', quy: '1.925.797.000' },
+  { thang: '9', chi: '138.560.000', quy: '1.787.237.000' },
+  { thang: '10', chi: '139.360.000', quy: '1.647.877.000' },
+  { thang: '11', chi: '140.560.000', quy: '1.507.317.000' },
+  { thang: '12', chi: '144.160.000', quy: '1.363.157.000' },
+  { thang: '13', chi: '164.380.000', quy: '1.198.777.000' },
+  { thang: '14', chi: '165.980.000', quy: '1.032.797.000' },
+  { thang: '15', chi: '167.580.000', quy: '865.217.000' },
+  { thang: '16', chi: '185.180.000', quy: '680.037.000' },
+  { thang: '17', chi: '171.180.000', quy: '508.857.000' },
+  { thang: '18', chi: '173.180.000', quy: '335.677.000' },
 ]
 
 const pitchRevenueIntro =
@@ -120,36 +120,36 @@ const pitchRevenueCaseColumns = ['', 'Bình thường', 'Hơn mức bình thư�
 const pitchRevenueCaseRows = [
   { label: 'Loại khách', cells: ['Toàn phòng trọ, mỗi chủ ~15 phòng', '70% phòng trọ ~15 phòng, 20% dãy trọ ~30 phòng, 10% chung cư mini ~25 phòng', '50% phòng trọ ~15 phòng, 25% dãy trọ ~30 phòng, 10% chung cư mini ~25 phòng, 10% căn hộ dịch vụ ~20 căn, 5% chuỗi ~100 phòng'] },
   { label: 'Phí trung bình mỗi chủ/tháng (sau VAT)', cells: ['~190.000đ', '~270.000đ', '~385.000đ'] },
-  { label: 'Chủ trả phí tháng 12 / tháng 18', cells: ['~162 / ~276', '~162 / ~276', '~162 / ~276'] },
-  { label: 'Doanh thu tháng 18', cells: ['~52 triệu', '~71 triệu', '~98 triệu'] },
-  { label: 'Quỹ còn cuối tháng 18', cells: ['~775 triệu', '~904 triệu', '~1,09 tỷ'] },
-  { label: 'Hoà vốn hằng tháng', cells: ['~tháng 44', '~tháng 34', '~tháng 27'] },
-  { label: 'Cần gọi thêm vốn để tới hoà vốn?', cells: ['Có; quỹ cạn khoảng tháng 27 nếu không gọi thêm, nên gọi vòng sau khoảng tháng 18–24', 'Không; quỹ thấp nhất ~199 triệu ở tháng 33', 'Không; quỹ thấp nhất ~851 triệu ở tháng 26'] },
+  { label: 'Chủ trả phí tháng 12 / tháng 18', cells: ['~119 / ~280', '~119 / ~280', '~119 / ~280'] },
+  { label: 'Doanh thu tháng 18', cells: ['~53 triệu', '~73 triệu', '~102 triệu'] },
+  { label: 'Quỹ còn cuối tháng 18', cells: ['~678 triệu', '~789 triệu', '~948 triệu'] },
+  { label: 'Hoà vốn hằng tháng', cells: ['~tháng 36', '~tháng 29', '~tháng 24'] },
+  { label: 'Cần gọi thêm vốn để tới hoà vốn?', cells: ['Có; quỹ cạn khoảng tháng 26 nếu không gọi thêm, nên gọi vòng sau khoảng tháng 18–24', 'Không; quỹ thấp nhất ~291 triệu ở tháng 28', 'Không; quỹ thấp nhất ~784 triệu ở tháng 23'] },
 ]
 
 const pitchRevenueRows = [
-  { thang: '1', chuTro: '~4', binhThuong: '~2.752 triệu', honBinhThuong: '~2.752 triệu', mauHong: '~2.752 triệu' },
-  { thang: '2', chuTro: '~12', binhThuong: '~2.671 triệu', honBinhThuong: '~2.671 triệu', mauHong: '~2.671 triệu' },
-  { thang: '3', chuTro: '~20', binhThuong: '~2.576 triệu', honBinhThuong: '~2.576 triệu', mauHong: '~2.576 triệu' },
-  { thang: '4', chuTro: '~28', binhThuong: '~2.477 triệu', honBinhThuong: '~2.477 triệu', mauHong: '~2.477 triệu' },
-  { thang: '5', chuTro: '~37', binhThuong: '~2.384 triệu', honBinhThuong: '~2.384 triệu', mauHong: '~2.384 triệu' },
-  { thang: '6', chuTro: '~54', binhThuong: '~2.222 triệu', honBinhThuong: '~2.223 triệu', mauHong: '~2.225 triệu' },
-  { thang: '7', chuTro: '~72', binhThuong: '~2.095 triệu', honBinhThuong: '~2.099 triệu', mauHong: '~2.105 triệu' },
-  { thang: '8', chuTro: '~89', binhThuong: '~1.971 triệu', honBinhThuong: '~1.979 triệu', mauHong: '~1.991 triệu' },
-  { thang: '9', chuTro: '~107', binhThuong: '~1.851 triệu', honBinhThuong: '~1.865 triệu', mauHong: '~1.884 triệu' },
-  { thang: '10', chuTro: '~125', binhThuong: '~1.734 triệu', honBinhThuong: '~1.755 triệu', mauHong: '~1.784 triệu' },
-  { thang: '11', chuTro: '~143', binhThuong: '~1.621 triệu', honBinhThuong: '~1.650 triệu', mauHong: '~1.692 triệu' },
-  { thang: '12', chuTro: '~162', binhThuong: '~1.508 triệu', honBinhThuong: '~1.547 triệu', mauHong: '~1.603 triệu' },
-  { thang: '13', chuTro: '~181', binhThuong: '~1.380 triệu', honBinhThuong: '~1.430 triệu', mauHong: '~1.502 triệu' },
-  { thang: '14', chuTro: '~199', binhThuong: '~1.255 triệu', honBinhThuong: '~1.318 triệu', mauHong: '~1.408 triệu' },
-  { thang: '15', chuTro: '~218', binhThuong: '~1.133 triệu', honBinhThuong: '~1.210 triệu', mauHong: '~1.321 triệu' },
-  { thang: '16', chuTro: '~238', binhThuong: '~1.000 triệu', honBinhThuong: '~1.092 triệu', mauHong: '~1.226 triệu' },
-  { thang: '17', chuTro: '~257', binhThuong: '~886 triệu', honBinhThuong: '~996 triệu', mauHong: '~1.154 triệu' },
-  { thang: '18', chuTro: '~276', binhThuong: '~775 triệu', honBinhThuong: '~904 triệu', mauHong: '~1.090 triệu' },
+  { thang: '1', chuTro: '~3', binhThuong: '~2.752 triệu', honBinhThuong: '~2.752 triệu', mauHong: '~2.752 triệu' },
+  { thang: '2', chuTro: '~7', binhThuong: '~2.671 triệu', honBinhThuong: '~2.671 triệu', mauHong: '~2.671 triệu' },
+  { thang: '3', chuTro: '~12', binhThuong: '~2.576 triệu', honBinhThuong: '~2.576 triệu', mauHong: '~2.576 triệu' },
+  { thang: '4', chuTro: '~18', binhThuong: '~2.476 triệu', honBinhThuong: '~2.476 triệu', mauHong: '~2.476 triệu' },
+  { thang: '5', chuTro: '~25', binhThuong: '~2.381 triệu', honBinhThuong: '~2.381 triệu', mauHong: '~2.381 triệu' },
+  { thang: '6', chuTro: '~33', binhThuong: '~2.219 triệu', honBinhThuong: '~2.220 triệu', mauHong: '~2.221 triệu' },
+  { thang: '7', chuTro: '~42', binhThuong: '~2.090 triệu', honBinhThuong: '~2.092 triệu', mauHong: '~2.095 triệu' },
+  { thang: '8', chuTro: '~53', binhThuong: '~1.963 triệu', honBinhThuong: '~1.967 triệu', mauHong: '~1.972 triệu' },
+  { thang: '9', chuTro: '~67', binhThuong: '~1.837 triệu', honBinhThuong: '~1.844 triệu', mauHong: '~1.854 triệu' },
+  { thang: '10', chuTro: '~83', binhThuong: '~1.713 triệu', honBinhThuong: '~1.725 triệu', mauHong: '~1.742 triệu' },
+  { thang: '11', chuTro: '~100', binhThuong: '~1.592 triệu', honBinhThuong: '~1.609 triệu', mauHong: '~1.635 triệu' },
+  { thang: '12', chuTro: '~119', binhThuong: '~1.470 triệu', honBinhThuong: '~1.495 triệu', mauHong: '~1.531 triệu' },
+  { thang: '13', chuTro: '~141', binhThuong: '~1.332 triệu', honBinhThuong: '~1.366 triệu', mauHong: '~1.416 triệu' },
+  { thang: '14', chuTro: '~164', binhThuong: '~1.198 triệu', honBinhThuong: '~1.243 triệu', mauHong: '~1.307 triệu' },
+  { thang: '15', chuTro: '~190', binhThuong: '~1.066 triệu', honBinhThuong: '~1.124 triệu', mauHong: '~1.207 triệu' },
+  { thang: '16', chuTro: '~218', binhThuong: '~922 triệu', honBinhThuong: '~995 triệu', mauHong: '~1.100 triệu' },
+  { thang: '17', chuTro: '~248', binhThuong: '~798 triệu', honBinhThuong: '~889 triệu', mauHong: '~1.019 triệu' },
+  { thang: '18', chuTro: '~280', binhThuong: '~678 triệu', honBinhThuong: '~789 triệu', mauHong: '~948 triệu' },
 ]
 
 const pitchRevenueNote =
-  'Chủ ký ở Đà Lạt (tháng 1–5) tính giá phòng trọ nhỏ ở cả 3 trường hợp. Khách mới mỗi tháng: tháng 1 khoảng 4 chủ, tháng 2–5 khoảng 8 chủ (Founder 2, Sale chính 4, CTV 2), từ tháng 6 khoảng 17 chủ (Founder 2, mỗi Sale chính 6, CTV 3); mỗi tháng +3% nhờ giới thiệu, −2% khách rời. Không tính khách CEO dự phòng ký. Sau tháng 18 giữ nguyên đội và mức chi tháng 13–18.'
+  'Chủ ký ở Đà Lạt (tháng 1–5) tính giá phòng trọ nhỏ ở cả 3 trường hợp. Đánh du kích nên khách mới tăng dần: 3, 4, 5, 6, 7 chủ mỗi tháng ở Đà Lạt; từ tháng 6 ở TP.HCM 7, 9, 11, 13, 15, 17, 18, 20, 22, 24, 26, 28, 30 chủ. Mỗi tháng +3% nhờ giới thiệu, −2% khách rời. Không tính khách CEO dự phòng ký. Sau tháng 18 giữ nguyên đội, mức chi và nhịp 30 chủ mới mỗi tháng.'
 
 
 const pitchPriceLeverIntro =
@@ -158,13 +158,13 @@ const pitchPriceLeverIntro =
 const pitchPriceLeverColumns = ['', 'Giá hiện tại', 'Tăng giá 10%', 'Tăng giá 20%']
 
 const pitchPriceLeverRows = [
-  { label: 'Bình thường', cells: [['Hoà vốn ~tháng 44'], ['Hoà vốn ~tháng 41'], ['Hoà vốn ~tháng 39']] },
-  { label: 'Hơn mức bình thường', cells: [['Hoà vốn ~tháng 34'], ['Hoà vốn ~tháng 32'], ['Hoà vốn ~tháng 30']] },
-  { label: 'Màu hồng', cells: [['Hoà vốn ~tháng 27'], ['Hoà vốn ~tháng 25'], ['Hoà vốn ~tháng 23']] },
+  { label: 'Bình thường', cells: [['Hoà vốn ~tháng 36'], ['Hoà vốn ~tháng 34'], ['Hoà vốn ~tháng 32']] },
+  { label: 'Hơn mức bình thường', cells: [['Hoà vốn ~tháng 29'], ['Hoà vốn ~tháng 28'], ['Hoà vốn ~tháng 26']] },
+  { label: 'Màu hồng', cells: [['Hoà vốn ~tháng 24'], ['Hoà vốn ~tháng 23'], ['Hoà vốn ~tháng 22']] },
 ]
 
 const pitchPriceLeverNote =
-  'Giả định số chủ không giảm khi tăng giá. Trường hợp bình thường cần gọi vòng sau ở mọi mức giá; hai trường hợp còn lại thì $120,000 đủ tới hoà vốn. Cách tính như phụ lục 12, mục 5.'
+  'Giả định số chủ không giảm khi tăng giá. Trường hợp bình thường với giá hiện tại hoặc tăng 10% cần gọi vòng sau; các ô còn lại thì $120,000 đủ tới hoà vốn. Cách tính như phụ lục 12, mục 5.'
 
 const pitchAssumptions = [
   'Tỷ giá 25.700 đ/USD (Vietcombank mua vào, 14/10/2026). Lúc tiền về sẽ tính lại.',
@@ -174,7 +174,7 @@ const pitchAssumptions = [
   'Hoa hồng chỉ tính khi chủ trọ đã trả phí tháng đầu. Chủ trọ rời roomio trong 60 ngày đầu thì trừ lại hoa hồng.',
   'Sale chính: khách 1–5: 400.000 đ; khách 6–7: 600.000 đ; khách 8–9: 800.000 đ; từ khách 10: 1.000.000 đ.',
   'CTV: khách 1–4: 400.000 đ; khách 5: 600.000 đ; từ khách 6: 1.000.000 đ.',
-  'Dự phóng khách: tháng 1 Founder ký 4 chủ; tháng 2–5 ở Đà Lạt, Founder 2, Sale chính 4, CTV 2 chủ/tháng; từ tháng 6 ở TP.HCM, Founder 2, mỗi Sale chính 6 (2 người), CTV 3 chủ/tháng; mỗi tháng +3% nhờ giới thiệu, −2% khách rời. Không tính khách CEO dự phòng ký.',
+  'Dự phóng khách: đánh du kích nên tăng dần. Khách mới cả đội mỗi tháng: 3, 4, 5, 6, 7 ở Đà Lạt (tháng 1–5); 7, 9, 11, 13, 15, 17, 18, 20, 22, 24, 26, 28, 30 ở TP.HCM (tháng 6–18). Founder ký 2 chủ/tháng từ tháng 2, CTV khoảng 1/3 phần còn lại ở Đà Lạt và 1/5 ở TP.HCM, còn lại chia cho Sale chính; cuối kỳ mỗi Sale khoảng 12 chủ/tháng. Mỗi tháng +3% nhờ giới thiệu, −2% khách rời. Không tính khách CEO dự phòng ký.',
   'Chỗ làm Sài Gòn từ tháng 6: căn 2PN ~17 triệu/tháng, phòng khách làm văn phòng cho Founder và Dev. Một phòng share cho người ngoài 5 triệu; Founder ở phòng còn lại, tự trả 3,5 triệu; công ty trả 8,5 triệu. Địa chỉ đăng ký công ty là văn phòng ảo.',
   'Mac Studio kiêm 4 việc: máy làm việc của Founder, máy chạy test tự động, chạy AI ngay trên máy, và chỗ Dev chạy test chung. Staging chạy trên một máy chủ riêng cho giống production. Founder và Dev được cấp máy; CEO dự phòng, Sale, CTV dùng máy riêng, mỗi người một tài khoản, nghỉ là khoá.',
   'API AI (đọc số bằng 2 hãng và các agent làm thay chủ cho thuê): 0,4 triệu ở tháng 1, 0,8 triệu/tháng ở tháng 2–5, 3,2 triệu ở tháng 6–12, 4,7 triệu ở tháng 13–18; khoảng 8,5% doanh thu khi chạy đủ.',
@@ -193,7 +193,7 @@ const pitchInvestorReturn = [
 const breakevenDotGridCols = 56
 const breakevenDotGridRows = 20
 const breakevenDotCount = breakevenDotGridCols * breakevenDotGridRows
-const breakevenBlueDotCount = 27
+const breakevenBlueDotCount = 29
 const breakevenBlueStartCol = breakevenDotGridCols - breakevenBlueDotCount
 
 function breakevenDotIsBlue(index: number) {
@@ -231,17 +231,17 @@ function assertPitchFundingData() {
   const phaseTotals = pitchTableB.find((row) => row.kind === 'total' && row.label === 'CỘNG GIAI ĐOẠN')
   if (!phaseTotals) throw new Error('pitchTableB missing phase totals')
   const sumPhases = phaseTotals.c.reduce((acc, cell) => acc + parsePitchVnd(cell), 0)
-  if (sumPhases !== 2403675000) throw new Error('pitchTableB phase totals mismatch')
+  if (sumPhases !== 2421075000) throw new Error('pitchTableB phase totals mismatch')
 
   const sumC = pitchTableC.filter((row) => !row.total).reduce((acc, row) => acc + parsePitchVnd(row.vnd), 0)
   if (sumC !== 327248000) throw new Error('pitchTableC total mismatch')
 
-  if (2403675000 + 327248000 !== 2730923000) {
+  if (2421075000 + 327248000 !== 2748323000) {
     throw new Error('18-month budget identity mismatch')
   }
 
   const sumDChi = pitchTableD.reduce((acc, row) => acc + parsePitchVnd(row.chi), 0)
-  if (sumDChi !== 2730923000) throw new Error('pitchTableD chi sum mismatch')
+  if (sumDChi !== 2748323000) throw new Error('pitchTableD chi sum mismatch')
 }
 
 assertPitchFundingData()
@@ -4560,7 +4560,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
               <div class="pitch-breakeven-equation">
                 <div class="pitch-breakeven-equation__row">
                   <div class="pitch-breakeven-tile">
-                    <span class="pitch-breakeven-tile__value">~163 triệu</span>
+                    <span class="pitch-breakeven-tile__value">~173 triệu</span>
                     <span class="pitch-breakeven-tile__label">chi phí mỗi tháng</span>
                   </div>
                   <span class="pitch-breakeven-op" aria-hidden="true">÷</span>
@@ -4570,7 +4570,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                   </div>
                   <span class="pitch-breakeven-op" aria-hidden="true">=</span>
                   <div class="pitch-breakeven-tile pitch-breakeven-tile--result">
-                    <span class="pitch-breakeven-tile__value">~13.600 phòng</span>
+                    <span class="pitch-breakeven-tile__value">~14.400 phòng</span>
                     <span class="pitch-breakeven-tile__label">là đủ hoà vốn</span>
                   </div>
                 </div>
@@ -4583,7 +4583,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                       <div
                         class="pitch-breakeven-dots"
                         role="img"
-                        aria-label="Lưới 1.120 chấm minh hoạ khoảng 560.000 phòng trọ ở TP.HCM; 27 chấm xanh ở góc trên phải tương ứng khoảng 13.600 phòng cần để hoà vốn"
+                        aria-label="Lưới 1.120 chấm minh hoạ khoảng 560.000 phòng trọ ở TP.HCM; 29 chấm xanh ở góc trên phải tương ứng khoảng 14.400 phòng cần để hoà vốn"
                       >
                         {Array.from({ length: breakevenDotCount }, (_, index) => (
                           <span
@@ -4602,7 +4602,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                     </div>
                   </div>
                   <div class="pitch-breakeven-percent-block">
-                    <p class="pitch-breakeven-percent">~2,4%</p>
+                    <p class="pitch-breakeven-percent">~2,6%</p>
                     <p class="pitch-breakeven-percent-caption">phòng trọ ở TP.HCM là đủ để "roomio" sống được</p>
                   </div>
                 </div>
@@ -4645,11 +4645,11 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
           
           <div class="pitch-timeline">
             <article class="pitch-timeline__step reveal delay-100">
-              <p class="pitch-timeline__label"><strong>Tháng 1–5 · quê nhà Đà Lạt · ~37 chủ</strong></p>
+              <p class="pitch-timeline__label"><strong>Tháng 1–5 · quê nhà Đà Lạt · ~25 chủ</strong></p>
               <p class="pitch-timeline__text">Gặp, nhắn tin, gọi điện trực tiếp các chủ cho thuê. Cài đặt giúp, hướng dẫn sử dụng tận tay cho họ. Từ đó kiểm chứng hệ thống với khách hàng thật mà vừa có doanh thu đầu tiên.</p>
             </article>
             <article class="pitch-timeline__step reveal delay-200">
-              <p class="pitch-timeline__label"><strong>Tháng 6–12 · TP.HCM · ~160 chủ</strong></p>
+              <p class="pitch-timeline__label"><strong>Tháng 6–12 · TP.HCM · ~120 chủ</strong></p>
               <p class="pitch-timeline__text">Từ cách bán đúc kết ở giai đoạn đầu, kiếm thêm sale để đánh về thị trường lớn hơn là TP.HCM</p>
             </article>
             <article class="pitch-timeline__step reveal delay-300">
@@ -4804,8 +4804,8 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
           <div class="slide-content">
             <p class="pitch-fund-ask">$120,000</p>
             <p class="pitch-fund-meta pitch-fund-meta--stacked">Khoảng 3,08 tỷ đồng cho 18 tháng runway.</p>
-            <p class="pitch-fund-meta">Chưa tính doanh thu thì vốn vẫn đủ 18 tháng, còn dư khoảng 353 triệu làm dự phòng.</p>
-            <p class="pitch-fund-meta">Bảng chi tính khi chưa có doanh thu. Có doanh thu thì cuối tháng 18 quỹ còn khoảng 775 triệu (bình thường), 904 triệu (hơn mức bình thường) hoặc 1,09 tỷ (màu hồng). Trường hợp bình thường cần gọi vòng sau khoảng tháng 18–24. Xem phụ lục 12, mục 5.</p>
+            <p class="pitch-fund-meta">Chưa tính doanh thu thì vốn vẫn đủ 18 tháng, còn dư khoảng 336 triệu làm dự phòng.</p>
+            <p class="pitch-fund-meta">Bảng chi tính khi chưa có doanh thu. Có doanh thu thì cuối tháng 18 quỹ còn khoảng 678 triệu (bình thường), 789 triệu (hơn mức bình thường) hoặc 948 triệu (màu hồng). Trường hợp bình thường cần gọi vòng sau khoảng tháng 18–24. Xem phụ lục 12, mục 5.</p>
 
             <h3 class="pitch-fund-section-title">Tiền dùng vào đâu</h3>
             <div class="pitch-fund-bars">
@@ -5759,7 +5759,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                     </li>
                     <li>Hà Nội: khoảng 37.000 cơ sở nhà trọ (Công an Hà Nội). Chưa có số phòng chính thức.</li>
                     <li>
-                      Hoà vốn: chi mỗi tháng khoảng 163 triệu đồng (mức tháng 13–18, đủ đội) ÷ phí trung bình khoảng 12.000 đồng mỗi phòng ≈ 13.600 phòng, chưa tới 2,5% của 560.220 phòng trọ ở TP.HCM.
+                      Hoà vốn: chi mỗi tháng khoảng 173 triệu đồng (mức từ tháng 18, đủ đội) ÷ phí trung bình khoảng 12.000 đồng mỗi phòng ≈ 14.400 phòng, chưa tới 3% của 560.220 phòng trọ ở TP.HCM.
                     </li>
                     <li>
                       Phí trung bình khoảng 12.000 đồng mỗi phòng mỗi tháng là mức của nhà trọ 9–15 phòng, kín 90%, theo bảng giá hiện tại. Đây là mức thận trọng; loại hình khác và nhà nhiều phòng có giá trung bình cao hơn.
@@ -5786,13 +5786,13 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                   <h4 class="pitch-budget-block__title">Chỉ số kinh doanh (giả định)</h4>
                   <p>"roomio" chưa có doanh thu thật. Các số dưới đây là giả định trong bảng dự trù.</p>
                   <ul class="pitch-budget-assumptions">
-                    <li>Doanh thu tháng mục tiêu (MRR), trường hợp bình thường: khoảng 31 triệu đồng ở tháng 12, khoảng 52 triệu ở tháng 18.</li>
+                    <li>Doanh thu tháng mục tiêu (MRR), trường hợp bình thường: khoảng 23 triệu đồng ở tháng 12, khoảng 53 triệu ở tháng 18.</li>
                     <li>Doanh thu trung bình mỗi chủ (ARPU): khoảng 190.000 đồng mỗi tháng (giả định chủ khoảng 15 phòng).</li>
                     <li>Chi phí để có một chủ (CAC): 400.000–1.000.000 đồng, là hoa hồng bán hàng.</li>
                     <li>Thời gian thu lại chi phí đó: khoảng 2–5 tháng với chủ khoảng 15 phòng, khoảng 4–9 tháng với chủ khoảng 9 phòng.</li>
                     <li>Tỷ lệ rời bỏ giả định (churn): 2% mỗi tháng.</li>
                     <li>
-                      Hoà vốn: khoảng 13.600 phòng. Tương đương khoảng 860 chủ nếu mỗi chủ có khoảng 15 phòng, hoặc khoảng 1.520 chủ nếu mỗi chủ khoảng 9 phòng (mức trung bình một nhà trọ ở TP.HCM). Chi phí lấy theo mức tháng 13–18 trong bảng dự trù (đủ đội: founder, dev, CEO dự phòng, 2 sale chính, 1 CTV; lương tính theo mức đạt số), cộng chỗ làm, máy chủ, API AI và marketing. Chưa tính khách rời bỏ và ưu đãi cho những chủ đầu tiên. Bảng giá đã gồm VAT; nếu phải nộp VAT 8–10% trên phí thì cần khoảng 15.000 phòng. Với nhịp bán trong bảng dự trù và toàn phòng trọ giá thấp nhất, mức này tới vào khoảng tháng 44, nên trường hợp này cần gọi vòng sau khoảng tháng 18–24; xem phụ lục 12, mục 5.
+                      Hoà vốn: khoảng 14.400 phòng. Tương đương khoảng 910 chủ nếu mỗi chủ có khoảng 15 phòng, hoặc khoảng 1.620 chủ nếu mỗi chủ khoảng 9 phòng (mức trung bình một nhà trọ ở TP.HCM). Chi phí lấy theo mức từ tháng 18 trong bảng dự trù (đủ đội: founder, dev, CEO dự phòng, 2 sale chính, 1 CTV; lương tính theo mức đạt số), cộng chỗ làm, máy chủ, API AI và marketing. Chưa tính khách rời bỏ và ưu đãi cho những chủ đầu tiên. Bảng giá đã gồm VAT; nếu phải nộp VAT 8–10% trên phí thì cần khoảng 16.000 phòng. Với nhịp bán trong bảng dự trù và toàn phòng trọ giá thấp nhất, mức này tới vào khoảng tháng 36, nên trường hợp này cần gọi vòng sau khoảng tháng 18–24; xem phụ lục 12, mục 5.
                     </li>
                     <li>
                       Chi phí chạy dịch vụ: máy chủ 3–5 triệu đồng mỗi tháng, cộng 1,5 triệu cho máy chạy thử (staging), cộng API AI (đọc số bằng 2 hãng và các agent) khoảng 8,5% doanh thu; gửi tin qua Telegram không mất phí. Ước tính biên lợi nhuận gộp khoảng 80–85% khi agent chạy đủ.
@@ -5881,7 +5881,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                     <li>Tháng 1 founder tự đi bán. Từ tháng 2 có Sale chính và 1 CTV bán hàng ở Đà Lạt. Từ tháng 3 có CEO dự phòng cùng bán và onboarding khách. Từ tháng 6 về TP.HCM, thêm Sale chính thứ 2.</li>
                     <li>Gặp tận nhà, cài đặt giúp 1-1. Có ưu đãi cho những chủ đầu tiên; mức cụ thể sẽ chốt khi bắt đầu bán.</li>
                     <li>Không chạy quảng cáo diện rộng. Tiền marketing dùng cho thưởng giới thiệu, quà tặng và ưu đãi cho chủ đầu tiên.</li>
-                    <li>Ở Đà Lạt (tháng 2–5) đội bán làm khoảng 8 chủ mới mỗi tháng; từ tháng 6 ở TP.HCM khoảng 17 chủ mới mỗi tháng (founder 2, mỗi sale chính 6, CTV 3). Đây là phần chính của mốc ~160 chủ ở tháng 12 và ~280 chủ ở tháng 18, không tính khách CEO dự phòng ký. Số chủ từng người, hoa hồng và tiền marketing: xem phụ lục 12.</li>
+                    <li>Đánh du kích nên khách mới tăng dần: ở Đà Lạt từ 3 lên 7 chủ mỗi tháng; từ tháng 6 ở TP.HCM từ 7 lên khoảng 30 chủ mỗi tháng ở tháng 18. Đây là phần chính của mốc ~120 chủ ở tháng 12 và ~280 chủ ở tháng 18, không tính khách CEO dự phòng ký. Số chủ từng người, hoa hồng và tiền marketing: xem phụ lục 12.</li>
                   </ul>
                 </div>
 
@@ -6057,7 +6057,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                       </table>
                     </div>
                   </div>
-                  <p class="pitch-budget-table-note">Bảng này tính khi chưa có đồng doanh thu nào: chi 18 tháng 2.730.923.000 đ, còn dư khoảng 353 triệu làm dự phòng.</p>
+                  <p class="pitch-budget-table-note">Bảng này tính khi chưa có đồng doanh thu nào: chi 18 tháng 2.748.323.000 đ, còn dư khoảng 336 triệu làm dự phòng.</p>
                 </div>
 
                 <div class="pitch-budget-block">
@@ -6104,7 +6104,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                       </table>
                     </div>
                   </div>
-                  <p class="pitch-budget-table-note">Tổng chi hằng tháng 18 tháng: 2.403.675.000 đ. Tháng 2 chưa có CEO dự phòng và Sale còn thử việc (85% lương, chưa đóng bảo hiểm), nên cộng giai đoạn tháng 2–5 = 78.755.000 + 3 × 99.205.000. Lương có điều kiện (Founder 25 rồi 28 triệu, Dev 18 triệu, CEO dự phòng 20 triệu, Sale 8 triệu) tính theo mức đạt số.</p>
+                  <p class="pitch-budget-table-note">Tổng chi hằng tháng 18 tháng: 2.421.075.000 đ. Cột tháng 2–5 là mức tháng 3–5; tháng 2 chưa có CEO dự phòng và Sale còn thử việc (85% lương, chưa đóng bảo hiểm), chi 77.155.000 đ. Hoa hồng là trung bình mỗi tháng của giai đoạn, tăng dần theo số chủ ký được. Lương có điều kiện (Founder 25 rồi 28 triệu, Dev 18 triệu, CEO dự phòng 20 triệu, Sale 8 triệu) tính theo mức đạt số.</p>
                 </div>
 
                 <div class="pitch-budget-block">
@@ -6131,7 +6131,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                       </table>
                     </div>
                   </div>
-                  <p class="pitch-budget-table-note">Tổng chi 18 tháng (hằng tháng + một lần): 2.730.923.000 đ, chưa tính doanh thu.</p>
+                  <p class="pitch-budget-table-note">Tổng chi 18 tháng (hằng tháng + một lần): 2.748.323.000 đ, chưa tính doanh thu.</p>
                 </div>
 
                 <div class="pitch-budget-block">
@@ -6158,7 +6158,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                       </table>
                     </div>
                   </div>
-                  <p class="pitch-budget-table-note">Đây là trường hợp chưa có đồng doanh thu nào: vốn $120,000 vẫn đủ 18 tháng, cuối tháng 18 còn khoảng 353 triệu dự phòng. Có doanh thu thì khác, xem mục 5.</p>
+                  <p class="pitch-budget-table-note">Đây là trường hợp chưa có đồng doanh thu nào: vốn $120,000 vẫn đủ 18 tháng, cuối tháng 18 còn khoảng 336 triệu dự phòng. Có doanh thu thì khác, xem mục 5.</p>
                 </div>
 
                 <div class="pitch-budget-block">
