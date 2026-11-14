@@ -626,18 +626,29 @@ const appendix2Apps: Appendix2AppConfig[] = [
     text: [
       'LOZIDO buộc phải tải app riêng, mà app cũng không mượt bằng dùng sẵn nền Telegram như "roomio". Một thông tin chỉ coi được ở một nơi duy nhất, không linh hoạt.',
       'LOZIDO còn ôm đồm nhiều thứ: tìm việc làm, rồi cả vận hành nhà cho thuê (cho sale đi rao phòng, tự lấp phòng giùm chủ luôn). Vậy là không tập trung hẳn vào một mảng nào.',
-      'Quên mật khẩu thì chỉ gửi mã về Zalo, không còn cách nào khác để lấy lại (hình 1).',
+      'Giao diện trên điện thoại thì thập cẩm, màu mè, khung khuyến mãi, cảnh báo, nút chat nổi chồng lên nhau, nhìn vô là mất tập trung (hình 1). Màn danh sách phòng trống thì khó dùng: mỗi phòng một đống nhãn, nhãn "Hoả tốc", "Nhanh" còn đè lên nút bấm (hình 2).',
+      'Quên mật khẩu thì chỉ gửi mã về Zalo, không còn cách nào khác để lấy lại (hình 3).',
     ],
     textPlaceholder: 'Chỗ viết về LOZIDO',
     slots: [
       {
-        base: 'lozido-1',
+        base: 'lozido-2',
         placeholder: 'Hình LOZIDO 1',
+        caption: 'Trang chủ trên điện thoại, nhiều thứ chen nhau',
+        alt: 'Trang chủ app LOZIDO trên điện thoại: nhiều màu, khung khuyến mãi, cảnh báo và nút chat nổi chồng lên nhau',
+      },
+      {
+        base: 'lozido-3',
+        placeholder: 'Hình LOZIDO 2',
+        caption: 'Danh sách phòng trống, nhãn đè lên nút bấm',
+        alt: 'Danh sách phòng trống trên app LOZIDO: mỗi phòng nhiều nhãn trạng thái, nhãn Hoả tốc và Nhanh đè lên nút Lấp phòng, Đăng tin',
+      },
+      {
+        base: 'lozido-1',
+        placeholder: 'Hình LOZIDO 3',
         caption: 'Quên mật khẩu chỉ nhận mã qua Zalo',
         alt: 'Trang quên mật khẩu của LOZIDO: chỉ gửi mã xác nhận về Zalo qua số điện thoại',
       },
-      { base: 'lozido-2', placeholder: 'Hình LOZIDO 2', caption: '', alt: '' },
-      { base: 'lozido-3', placeholder: 'Hình LOZIDO 3', caption: '', alt: '' },
     ],
   },
   {
