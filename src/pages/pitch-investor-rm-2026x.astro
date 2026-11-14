@@ -113,39 +113,39 @@ const pitchTableD = [
 ]
 
 const pitchRevenueIntro =
-  'Bảng ở trên em tính khi chưa có đồng doanh thu nào, cho chắc. Có doanh thu thì khác. Dưới đây là 3 trường hợp: cùng số chủ, cùng chi phí, chỉ khác loại khách nên phí trung bình mỗi chủ khác nhau.'
+  'Bảng ở trên em tính khi chưa có đồng doanh thu nào, cho chắc. Có doanh thu thì khác. Dưới đây là 4 trường hợp: cùng số chủ, cùng chi phí, chỉ khác loại khách nên phí trung bình mỗi chủ khác nhau.'
 
-const pitchRevenueCaseColumns = ['', 'Bình thường', 'Hơn mức bình thường', 'Màu hồng']
+const pitchRevenueCaseColumns = ['', 'Bình thường', 'Hơn mức bình thường', 'Khá', 'Màu hồng']
 
 const pitchRevenueCaseRows = [
-  { label: 'Loại khách', cells: ['Toàn phòng trọ, mỗi chủ ~15 phòng', '70% phòng trọ ~15 phòng, 20% dãy trọ ~30 phòng, 10% chung cư mini ~25 phòng', '50% phòng trọ ~15 phòng, 25% dãy trọ ~30 phòng, 10% chung cư mini ~25 phòng, 10% căn hộ dịch vụ ~20 căn, 5% chuỗi ~100 phòng'] },
-  { label: 'Phí trung bình mỗi chủ/tháng (sau VAT)', cells: ['~190.000đ', '~270.000đ', '~385.000đ'] },
-  { label: 'Chủ trả phí tháng 12 / tháng 18', cells: ['~119 / ~280', '~119 / ~280', '~119 / ~280'] },
-  { label: 'Doanh thu tháng 18', cells: ['~53 triệu', '~73 triệu', '~102 triệu'] },
-  { label: 'Quỹ còn cuối tháng 18', cells: ['~678 triệu', '~789 triệu', '~948 triệu'] },
-  { label: 'Hoà vốn hằng tháng', cells: ['~tháng 36', '~tháng 29', '~tháng 24'] },
-  { label: 'Cần gọi thêm vốn để tới hoà vốn?', cells: ['Có; quỹ cạn khoảng tháng 26 nếu không gọi thêm, nên gọi vòng sau khoảng tháng 18–24', 'Không; quỹ thấp nhất ~291 triệu ở tháng 28', 'Không; quỹ thấp nhất ~784 triệu ở tháng 23'] },
+  { label: 'Loại khách', cells: ['Toàn phòng trọ, mỗi chủ ~15 phòng', '70% phòng trọ ~15 phòng, 20% dãy trọ ~30 phòng, 10% chung cư mini ~25 phòng', '60% phòng trọ ~15 phòng, 20% dãy trọ ~30 phòng, 10% chung cư mini ~25 phòng, 7% căn hộ dịch vụ ~20 căn, 3% chuỗi ~100 phòng', '50% phòng trọ ~15 phòng, 25% dãy trọ ~30 phòng, 10% chung cư mini ~25 phòng, 10% căn hộ dịch vụ ~20 căn, 5% chuỗi ~100 phòng'] },
+  { label: 'Phí trung bình mỗi chủ/tháng (sau VAT)', cells: ['~190.000đ', '~270.000đ', '~340.000đ', '~385.000đ'] },
+  { label: 'Chủ trả phí tháng 12 / tháng 18', cells: ['~119 / ~280', '~119 / ~280', '~119 / ~280', '~119 / ~280'] },
+  { label: 'Doanh thu tháng 18', cells: ['~53 triệu', '~73 triệu', '~91 triệu', '~102 triệu'] },
+  { label: 'Quỹ còn cuối tháng 18', cells: ['~678 triệu', '~789 triệu', '~886 triệu', '~948 triệu'] },
+  { label: 'Hoà vốn hằng tháng', cells: ['~tháng 36', '~tháng 29', '~tháng 26', '~tháng 24'] },
+  { label: 'Cần gọi thêm vốn để tới hoà vốn?', cells: ['Có; quỹ cạn khoảng tháng 26 nếu không gọi thêm, nên gọi vòng sau khoảng tháng 18–24', 'Không; quỹ thấp nhất ~291 triệu ở tháng 28', 'Không; quỹ thấp nhất ~627 triệu ở tháng 25', 'Không; quỹ thấp nhất ~784 triệu ở tháng 23'] },
 ]
 
 const pitchRevenueRows = [
-  { thang: '1', chuTro: '~3', binhThuong: '~2.752 triệu', honBinhThuong: '~2.752 triệu', mauHong: '~2.752 triệu' },
-  { thang: '2', chuTro: '~7', binhThuong: '~2.671 triệu', honBinhThuong: '~2.671 triệu', mauHong: '~2.671 triệu' },
-  { thang: '3', chuTro: '~12', binhThuong: '~2.576 triệu', honBinhThuong: '~2.576 triệu', mauHong: '~2.576 triệu' },
-  { thang: '4', chuTro: '~18', binhThuong: '~2.476 triệu', honBinhThuong: '~2.476 triệu', mauHong: '~2.476 triệu' },
-  { thang: '5', chuTro: '~25', binhThuong: '~2.381 triệu', honBinhThuong: '~2.381 triệu', mauHong: '~2.381 triệu' },
-  { thang: '6', chuTro: '~33', binhThuong: '~2.219 triệu', honBinhThuong: '~2.220 triệu', mauHong: '~2.221 triệu' },
-  { thang: '7', chuTro: '~42', binhThuong: '~2.090 triệu', honBinhThuong: '~2.092 triệu', mauHong: '~2.095 triệu' },
-  { thang: '8', chuTro: '~53', binhThuong: '~1.963 triệu', honBinhThuong: '~1.967 triệu', mauHong: '~1.972 triệu' },
-  { thang: '9', chuTro: '~67', binhThuong: '~1.837 triệu', honBinhThuong: '~1.844 triệu', mauHong: '~1.854 triệu' },
-  { thang: '10', chuTro: '~83', binhThuong: '~1.713 triệu', honBinhThuong: '~1.725 triệu', mauHong: '~1.742 triệu' },
-  { thang: '11', chuTro: '~100', binhThuong: '~1.592 triệu', honBinhThuong: '~1.609 triệu', mauHong: '~1.635 triệu' },
-  { thang: '12', chuTro: '~119', binhThuong: '~1.470 triệu', honBinhThuong: '~1.495 triệu', mauHong: '~1.531 triệu' },
-  { thang: '13', chuTro: '~141', binhThuong: '~1.332 triệu', honBinhThuong: '~1.366 triệu', mauHong: '~1.416 triệu' },
-  { thang: '14', chuTro: '~164', binhThuong: '~1.198 triệu', honBinhThuong: '~1.243 triệu', mauHong: '~1.307 triệu' },
-  { thang: '15', chuTro: '~190', binhThuong: '~1.066 triệu', honBinhThuong: '~1.124 triệu', mauHong: '~1.207 triệu' },
-  { thang: '16', chuTro: '~218', binhThuong: '~922 triệu', honBinhThuong: '~995 triệu', mauHong: '~1.100 triệu' },
-  { thang: '17', chuTro: '~248', binhThuong: '~798 triệu', honBinhThuong: '~889 triệu', mauHong: '~1.019 triệu' },
-  { thang: '18', chuTro: '~280', binhThuong: '~678 triệu', honBinhThuong: '~789 triệu', mauHong: '~948 triệu' },
+  { thang: '1', chuTro: '~3', binhThuong: '~2.752 triệu', honBinhThuong: '~2.752 triệu', kha: '~2.752 triệu', mauHong: '~2.752 triệu' },
+  { thang: '2', chuTro: '~7', binhThuong: '~2.671 triệu', honBinhThuong: '~2.671 triệu', kha: '~2.671 triệu', mauHong: '~2.671 triệu' },
+  { thang: '3', chuTro: '~12', binhThuong: '~2.576 triệu', honBinhThuong: '~2.576 triệu', kha: '~2.576 triệu', mauHong: '~2.576 triệu' },
+  { thang: '4', chuTro: '~18', binhThuong: '~2.476 triệu', honBinhThuong: '~2.476 triệu', kha: '~2.476 triệu', mauHong: '~2.476 triệu' },
+  { thang: '5', chuTro: '~25', binhThuong: '~2.381 triệu', honBinhThuong: '~2.381 triệu', kha: '~2.381 triệu', mauHong: '~2.381 triệu' },
+  { thang: '6', chuTro: '~33', binhThuong: '~2.219 triệu', honBinhThuong: '~2.220 triệu', kha: '~2.220 triệu', mauHong: '~2.221 triệu' },
+  { thang: '7', chuTro: '~42', binhThuong: '~2.090 triệu', honBinhThuong: '~2.092 triệu', kha: '~2.094 triệu', mauHong: '~2.095 triệu' },
+  { thang: '8', chuTro: '~53', binhThuong: '~1.963 triệu', honBinhThuong: '~1.967 triệu', kha: '~1.970 triệu', mauHong: '~1.972 triệu' },
+  { thang: '9', chuTro: '~67', binhThuong: '~1.837 triệu', honBinhThuong: '~1.844 triệu', kha: '~1.850 triệu', mauHong: '~1.854 triệu' },
+  { thang: '10', chuTro: '~83', binhThuong: '~1.713 triệu', honBinhThuong: '~1.725 triệu', kha: '~1.735 triệu', mauHong: '~1.742 triệu' },
+  { thang: '11', chuTro: '~100', binhThuong: '~1.592 triệu', honBinhThuong: '~1.609 triệu', kha: '~1.625 triệu', mauHong: '~1.635 triệu' },
+  { thang: '12', chuTro: '~119', binhThuong: '~1.470 triệu', honBinhThuong: '~1.495 triệu', kha: '~1.517 triệu', mauHong: '~1.531 triệu' },
+  { thang: '13', chuTro: '~141', binhThuong: '~1.332 triệu', honBinhThuong: '~1.366 triệu', kha: '~1.396 triệu', mauHong: '~1.416 triệu' },
+  { thang: '14', chuTro: '~164', binhThuong: '~1.198 triệu', honBinhThuong: '~1.243 triệu', kha: '~1.282 triệu', mauHong: '~1.307 triệu' },
+  { thang: '15', chuTro: '~190', binhThuong: '~1.066 triệu', honBinhThuong: '~1.124 triệu', kha: '~1.175 triệu', mauHong: '~1.207 triệu' },
+  { thang: '16', chuTro: '~218', binhThuong: '~922 triệu', honBinhThuong: '~995 triệu', kha: '~1.059 triệu', mauHong: '~1.100 triệu' },
+  { thang: '17', chuTro: '~248', binhThuong: '~798 triệu', honBinhThuong: '~889 triệu', kha: '~968 triệu', mauHong: '~1.019 triệu' },
+  { thang: '18', chuTro: '~280', binhThuong: '~678 triệu', honBinhThuong: '~789 triệu', kha: '~886 triệu', mauHong: '~948 triệu' },
 ]
 
 const pitchRevenueNote =
@@ -153,13 +153,14 @@ const pitchRevenueNote =
 
 
 const pitchPriceLeverIntro =
-  'Tăng giá là cách riêng, áp được lên cả 3 trường hợp ở phụ lục 12, mục 5. Cùng số chủ, cùng chi phí; chỉ tăng cả bảng giá thêm 10% hoặc 20%. Mỗi ô ghi tháng hoà vốn.'
+  'Tăng giá là cách riêng, áp được lên cả 4 trường hợp ở phụ lục 12, mục 5. Cùng số chủ, cùng chi phí; chỉ tăng cả bảng giá thêm 10% hoặc 20%. Mỗi ô ghi tháng hoà vốn.'
 
 const pitchPriceLeverColumns = ['', 'Giá hiện tại', 'Tăng giá 10%', 'Tăng giá 20%']
 
 const pitchPriceLeverRows = [
   { label: 'Bình thường', cells: [['Hoà vốn ~tháng 36'], ['Hoà vốn ~tháng 34'], ['Hoà vốn ~tháng 32']] },
   { label: 'Hơn mức bình thường', cells: [['Hoà vốn ~tháng 29'], ['Hoà vốn ~tháng 28'], ['Hoà vốn ~tháng 26']] },
+  { label: 'Khá', cells: [['Hoà vốn ~tháng 26'], ['Hoà vốn ~tháng 24'], ['Hoà vốn ~tháng 23']] },
   { label: 'Màu hồng', cells: [['Hoà vốn ~tháng 24'], ['Hoà vốn ~tháng 23'], ['Hoà vốn ~tháng 22']] },
 ]
 
@@ -4805,7 +4806,8 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
             <p class="pitch-fund-ask">$120,000</p>
             <p class="pitch-fund-meta pitch-fund-meta--stacked">Khoảng 3,08 tỷ đồng cho 18 tháng runway.</p>
             <p class="pitch-fund-meta">Chưa tính doanh thu thì vốn vẫn đủ 18 tháng, còn dư khoảng 336 triệu làm dự phòng.</p>
-            <p class="pitch-fund-meta">Bảng chi tính khi chưa có doanh thu. Có doanh thu thì cuối tháng 18 quỹ còn khoảng 678 triệu (bình thường), 789 triệu (hơn mức bình thường) hoặc 948 triệu (màu hồng). Trường hợp bình thường cần gọi vòng sau khoảng tháng 18–24. Xem phụ lục 12, mục 5.</p>
+            <p class="pitch-fund-meta">Bảng chi tính khi chưa có doanh thu. Có doanh thu thì cuối tháng 18 quỹ còn khoảng 678 triệu (bình thường), 789 triệu (hơn mức bình thường), 886 triệu (khá) hoặc 948 triệu (màu hồng). Xem phụ lục 12, mục 5.</p>
+            <p class="pitch-fund-meta">Tiền này đủ để em đưa "roomio" tới khoảng 280 chủ trả phí ở tháng 18. Tới đó em lấy số chủ thật, doanh thu thật để gọi vòng tiếp theo, khoảng tháng 18–24. Còn nếu chủ nhiều phòng, nhiều loại hình vào sớm (từ trường hợp hơn mức bình thường trở lên) thì "roomio" tự đi tới hoà vốn, không cần gọi thêm.</p>
 
             <h3 class="pitch-fund-section-title">Tiền dùng vào đâu</h3>
             <div class="pitch-fund-bars">
@@ -6196,6 +6198,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                             <th class="pitch-budget-table__num">Chủ trả phí</th>
                             <th class="pitch-budget-table__num">Quỹ còn: Bình thường</th>
                             <th class="pitch-budget-table__num">Quỹ còn: Hơn mức bình thường</th>
+                            <th class="pitch-budget-table__num">Quỹ còn: Khá</th>
                             <th class="pitch-budget-table__num">Quỹ còn: Màu hồng</th>
                           </tr>
                         </thead>
@@ -6206,6 +6209,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                               <td class="pitch-budget-table__num">{row.chuTro}</td>
                               <td class="pitch-budget-table__num">{row.binhThuong}</td>
                               <td class="pitch-budget-table__num">{row.honBinhThuong}</td>
+                              <td class="pitch-budget-table__num">{row.kha}</td>
                               <td class="pitch-budget-table__num">{row.mauHong}</td>
                             </tr>
                           ))}
