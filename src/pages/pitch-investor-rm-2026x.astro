@@ -158,13 +158,13 @@ const pitchPriceLeverIntro =
 const pitchPriceLeverColumns = ['', 'Giá hiện tại', 'Tăng giá 10%', 'Tăng giá 20%']
 
 const pitchPriceLeverRows = [
-  { label: 'Bình thường', cells: [['Hoà vốn ~tháng 29'], ['Hoà vốn ~tháng 27'], ['Hoà vốn ~tháng 26']] },
-  { label: 'Hơn mức bình thường', cells: [['Hoà vốn ~tháng 23'], ['Hoà vốn ~tháng 21'], ['Hoà vốn ~tháng 20']] },
-  { label: 'Màu hồng', cells: [['Hoà vốn ~tháng 18'], ['Hoà vốn ~tháng 17'], ['Hoà vốn ~tháng 16']] },
+  { label: 'Bình thường', cells: [['Hoà vốn ~tháng 44'], ['Hoà vốn ~tháng 41'], ['Hoà vốn ~tháng 39']] },
+  { label: 'Hơn mức bình thường', cells: [['Hoà vốn ~tháng 34'], ['Hoà vốn ~tháng 32'], ['Hoà vốn ~tháng 30']] },
+  { label: 'Màu hồng', cells: [['Hoà vốn ~tháng 27'], ['Hoà vốn ~tháng 25'], ['Hoà vốn ~tháng 23']] },
 ]
 
 const pitchPriceLeverNote =
-  'Giả định số chủ không giảm khi tăng giá. Ô nào vốn $120,000 cũng đủ tới hoà vốn, không cần gọi thêm. Cách tính như phụ lục 12, mục 5.'
+  'Giả định số chủ không giảm khi tăng giá. Trường hợp bình thường cần gọi vòng sau ở mọi mức giá; hai trường hợp còn lại thì $120,000 đủ tới hoà vốn. Cách tính như phụ lục 12, mục 5.'
 
 const pitchAssumptions = [
   'Tỷ giá 25.700 đ/USD (Vietcombank mua vào, 14/10/2026). Lúc tiền về sẽ tính lại.',
@@ -193,7 +193,7 @@ const pitchInvestorReturn = [
 const breakevenDotGridCols = 56
 const breakevenDotGridRows = 20
 const breakevenDotCount = breakevenDotGridCols * breakevenDotGridRows
-const breakevenBlueDotCount = 29
+const breakevenBlueDotCount = 27
 const breakevenBlueStartCol = breakevenDotGridCols - breakevenBlueDotCount
 
 function breakevenDotIsBlue(index: number) {
@@ -4560,7 +4560,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
               <div class="pitch-breakeven-equation">
                 <div class="pitch-breakeven-equation__row">
                   <div class="pitch-breakeven-tile">
-                    <span class="pitch-breakeven-tile__value">~174 triệu</span>
+                    <span class="pitch-breakeven-tile__value">~163 triệu</span>
                     <span class="pitch-breakeven-tile__label">chi phí mỗi tháng</span>
                   </div>
                   <span class="pitch-breakeven-op" aria-hidden="true">÷</span>
@@ -4570,7 +4570,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                   </div>
                   <span class="pitch-breakeven-op" aria-hidden="true">=</span>
                   <div class="pitch-breakeven-tile pitch-breakeven-tile--result">
-                    <span class="pitch-breakeven-tile__value">~14.500 phòng</span>
+                    <span class="pitch-breakeven-tile__value">~13.600 phòng</span>
                     <span class="pitch-breakeven-tile__label">là đủ hoà vốn</span>
                   </div>
                 </div>
@@ -4583,7 +4583,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                       <div
                         class="pitch-breakeven-dots"
                         role="img"
-                        aria-label="Lưới 1.120 chấm minh hoạ khoảng 560.000 phòng trọ ở TP.HCM; 29 chấm xanh ở góc trên phải tương ứng khoảng 14.500 phòng cần để hoà vốn"
+                        aria-label="Lưới 1.120 chấm minh hoạ khoảng 560.000 phòng trọ ở TP.HCM; 27 chấm xanh ở góc trên phải tương ứng khoảng 13.600 phòng cần để hoà vốn"
                       >
                         {Array.from({ length: breakevenDotCount }, (_, index) => (
                           <span
@@ -4602,7 +4602,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                     </div>
                   </div>
                   <div class="pitch-breakeven-percent-block">
-                    <p class="pitch-breakeven-percent">~2,6%</p>
+                    <p class="pitch-breakeven-percent">~2,4%</p>
                     <p class="pitch-breakeven-percent-caption">phòng trọ ở TP.HCM là đủ để "roomio" sống được</p>
                   </div>
                 </div>
@@ -4645,15 +4645,15 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
           
           <div class="pitch-timeline">
             <article class="pitch-timeline__step reveal delay-100">
-              <p class="pitch-timeline__label"><strong>Tháng 1–5 · quê nhà Đà Lạt · ~45 chủ</strong></p>
+              <p class="pitch-timeline__label"><strong>Tháng 1–5 · quê nhà Đà Lạt · ~37 chủ</strong></p>
               <p class="pitch-timeline__text">Gặp, nhắn tin, gọi điện trực tiếp các chủ cho thuê. Cài đặt giúp, hướng dẫn sử dụng tận tay cho họ. Từ đó kiểm chứng hệ thống với khách hàng thật mà vừa có doanh thu đầu tiên.</p>
             </article>
             <article class="pitch-timeline__step reveal delay-200">
-              <p class="pitch-timeline__label"><strong>Tháng 6–12 · TP.HCM · ~280 chủ</strong></p>
+              <p class="pitch-timeline__label"><strong>Tháng 6–12 · TP.HCM · ~160 chủ</strong></p>
               <p class="pitch-timeline__text">Từ cách bán đúc kết ở giai đoạn đầu, kiếm thêm sale để đánh về thị trường lớn hơn là TP.HCM</p>
             </article>
             <article class="pitch-timeline__step reveal delay-300">
-              <p class="pitch-timeline__label"><strong>Tháng 13–18 · hòn tuyết lăn · ~490 chủ</strong></p>
+              <p class="pitch-timeline__label"><strong>Tháng 13–18 · hòn tuyết lăn · ~280 chủ</strong></p>
               <p class="pitch-timeline__text">Bên cạnh việc bán cùng sale ở giai đoạn trước, giai đoạn này thúc đẩy việc chủ cũ giới thiệu chủ mới qua các chương trình thưởng giới thiệu.</p>
             </article>
           </div>
@@ -5759,7 +5759,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                     </li>
                     <li>Hà Nội: khoảng 37.000 cơ sở nhà trọ (Công an Hà Nội). Chưa có số phòng chính thức.</li>
                     <li>
-                      Hoà vốn: chi mỗi tháng khoảng 174 triệu đồng (mức tháng 13–18, đủ đội) ÷ phí trung bình khoảng 12.000 đồng mỗi phòng ≈ 14.500 phòng, chưa tới 3% của 560.220 phòng trọ ở TP.HCM.
+                      Hoà vốn: chi mỗi tháng khoảng 163 triệu đồng (mức tháng 13–18, đủ đội) ÷ phí trung bình khoảng 12.000 đồng mỗi phòng ≈ 13.600 phòng, chưa tới 2,5% của 560.220 phòng trọ ở TP.HCM.
                     </li>
                     <li>
                       Phí trung bình khoảng 12.000 đồng mỗi phòng mỗi tháng là mức của nhà trọ 9–15 phòng, kín 90%, theo bảng giá hiện tại. Đây là mức thận trọng; loại hình khác và nhà nhiều phòng có giá trung bình cao hơn.
@@ -5786,13 +5786,13 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                   <h4 class="pitch-budget-block__title">Chỉ số kinh doanh (giả định)</h4>
                   <p>"roomio" chưa có doanh thu thật. Các số dưới đây là giả định trong bảng dự trù.</p>
                   <ul class="pitch-budget-assumptions">
-                    <li>Doanh thu tháng mục tiêu (MRR), trường hợp bình thường: khoảng 53 triệu đồng ở tháng 12, khoảng 94 triệu ở tháng 18.</li>
+                    <li>Doanh thu tháng mục tiêu (MRR), trường hợp bình thường: khoảng 31 triệu đồng ở tháng 12, khoảng 52 triệu ở tháng 18.</li>
                     <li>Doanh thu trung bình mỗi chủ (ARPU): khoảng 190.000 đồng mỗi tháng (giả định chủ khoảng 15 phòng).</li>
                     <li>Chi phí để có một chủ (CAC): 400.000–1.000.000 đồng, là hoa hồng bán hàng.</li>
                     <li>Thời gian thu lại chi phí đó: khoảng 2–5 tháng với chủ khoảng 15 phòng, khoảng 4–9 tháng với chủ khoảng 9 phòng.</li>
                     <li>Tỷ lệ rời bỏ giả định (churn): 2% mỗi tháng.</li>
                     <li>
-                      Hoà vốn: khoảng 14.500 phòng. Tương đương khoảng 920 chủ nếu mỗi chủ có khoảng 15 phòng, hoặc khoảng 1.630 chủ nếu mỗi chủ khoảng 9 phòng (mức trung bình một nhà trọ ở TP.HCM). Chi phí lấy theo mức tháng 13–18 trong bảng dự trù (đủ đội: founder, dev, CEO dự phòng, 2 sale chính, 1 CTV; lương tính theo mức đạt số), cộng chỗ làm, máy chủ, API AI và marketing. Chưa tính khách rời bỏ và ưu đãi cho những chủ đầu tiên. Bảng giá đã gồm VAT; nếu phải nộp VAT 8–10% trên phí thì cần khoảng 16.000 phòng. Theo dự phóng trong bảng dự trù (chủ khoảng 15 phòng), mức này tới vào khoảng tháng 29; xem phụ lục 12, mục 5.
+                      Hoà vốn: khoảng 13.600 phòng. Tương đương khoảng 860 chủ nếu mỗi chủ có khoảng 15 phòng, hoặc khoảng 1.520 chủ nếu mỗi chủ khoảng 9 phòng (mức trung bình một nhà trọ ở TP.HCM). Chi phí lấy theo mức tháng 13–18 trong bảng dự trù (đủ đội: founder, dev, CEO dự phòng, 2 sale chính, 1 CTV; lương tính theo mức đạt số), cộng chỗ làm, máy chủ, API AI và marketing. Chưa tính khách rời bỏ và ưu đãi cho những chủ đầu tiên. Bảng giá đã gồm VAT; nếu phải nộp VAT 8–10% trên phí thì cần khoảng 15.000 phòng. Với nhịp bán trong bảng dự trù và toàn phòng trọ giá thấp nhất, mức này tới vào khoảng tháng 44, nên trường hợp này cần gọi vòng sau khoảng tháng 18–24; xem phụ lục 12, mục 5.
                     </li>
                     <li>
                       Chi phí chạy dịch vụ: máy chủ 3–5 triệu đồng mỗi tháng, cộng 1,5 triệu cho máy chạy thử (staging), cộng API AI (đọc số bằng 2 hãng và các agent) khoảng 8,5% doanh thu; gửi tin qua Telegram không mất phí. Ước tính biên lợi nhuận gộp khoảng 80–85% khi agent chạy đủ.
@@ -5881,7 +5881,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                     <li>Tháng 1 founder tự đi bán. Từ tháng 2 có Sale chính và 1 CTV bán hàng ở Đà Lạt. Từ tháng 3 có CEO dự phòng cùng bán và onboarding khách. Từ tháng 6 về TP.HCM, thêm Sale chính thứ 2.</li>
                     <li>Gặp tận nhà, cài đặt giúp 1-1. Có ưu đãi cho những chủ đầu tiên; mức cụ thể sẽ chốt khi bắt đầu bán.</li>
                     <li>Không chạy quảng cáo diện rộng. Tiền marketing dùng cho thưởng giới thiệu, quà tặng và ưu đãi cho chủ đầu tiên.</li>
-                    <li>Ở Đà Lạt (tháng 2–5) đội bán làm khoảng 10 chủ mới mỗi tháng; từ tháng 6 ở TP.HCM khoảng 32 chủ mới mỗi tháng. Đây là phần chính của mốc ~280 chủ ở tháng 12 và ~490 chủ ở tháng 18, chưa tính khách CEO dự phòng ký. Số chủ từng người, hoa hồng và tiền marketing: xem phụ lục 12.</li>
+                    <li>Ở Đà Lạt (tháng 2–5) đội bán làm khoảng 8 chủ mới mỗi tháng; từ tháng 6 ở TP.HCM khoảng 17 chủ mới mỗi tháng (founder 2, mỗi sale chính 6, CTV 3). Đây là phần chính của mốc ~160 chủ ở tháng 12 và ~280 chủ ở tháng 18, không tính khách CEO dự phòng ký. Số chủ từng người, hoa hồng và tiền marketing: xem phụ lục 12.</li>
                   </ul>
                 </div>
 
