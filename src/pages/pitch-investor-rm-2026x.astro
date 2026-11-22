@@ -5,29 +5,29 @@ import type { ImageMetadata } from 'astro'
 import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
 
 const pitchFundingBars = [
-  { label: 'Đội ngũ (Founder, Dev, CEO)', percent: 44, amount: '~1,13 tỷ' },
-  { label: 'Bán hàng và marketing (Sale chính, 2 CTV, hoa hồng, marketing)', percent: 25, amount: '~644 triệu' },
-  { label: 'Máy trạm và thiết bị (Founder và Dev)', percent: 4, amount: '~103 triệu' },
-  { label: 'Hạ tầng cloud, staging, API AI và công cụ phát triển', percent: 10, amount: '~246 triệu' },
-  { label: 'Văn phòng và vận hành công ty', percent: 11, amount: '~293 triệu' },
-  { label: 'Pháp lý', percent: 1, amount: '~35 triệu' },
-  { label: 'Dự phòng', percent: 5, amount: '~116 triệu' },
+  { label: 'Đội ngũ (Founder, Dev, CEO)', percent: 44.1, amount: '~1,13 tỷ' },
+  { label: 'Bán hàng và marketing (Sale chính, 2 CTV, hoa hồng, marketing)', percent: 25.1, amount: '~644 triệu' },
+  { label: 'Máy trạm và thiết bị (Founder và Dev)', percent: 4.0, amount: '~103 triệu' },
+  { label: 'Hạ tầng cloud, staging, API AI và công cụ phát triển', percent: 9.6, amount: '~246 triệu' },
+  { label: 'Văn phòng và vận hành công ty', percent: 11.4, amount: '~293 triệu' },
+  { label: 'Pháp lý', percent: 1.4, amount: '~35 triệu' },
+  { label: 'Dự phòng', percent: 4.5, amount: '~116 triệu' },
 ]
 
 const pitchTableA = [
-  { khoan: 'Founder (lương, bảo hiểm, phụ cấp làm việc tại nhà)', vnd: '552.895.000', usd: '~$21,513', tyLe: '22%' },
-  { khoan: 'Dev toàn thời gian (lương, bảo hiểm, tuyển dụng)', vnd: '346.775.000', usd: '~$13,493', tyLe: '13%' },
-  { khoan: 'CEO, từ tháng 3 (lương thấp bù bằng cổ phần, bảo hiểm)', vnd: '233.280.000', usd: '~$9,077', tyLe: '9%' },
-  { khoan: 'Sale chính, từ tháng 2 (lương, bảo hiểm, phụ cấp, hoa hồng, tuyển dụng, thưởng Tết)', vnd: '210.290.000', usd: '~$8,182', tyLe: '8%' },
-  { khoan: 'CTV bán hàng thứ nhất, từ tháng 2 (phí cứng, hoa hồng, phụ cấp, tuyển dụng)', vnd: '80.400.000', usd: '~$3,128', tyLe: '3%' },
-  { khoan: 'CTV bán hàng thứ 2, từ tháng 6 (phí cứng, hoa hồng, phụ cấp, tuyển dụng)', vnd: '64.400.000', usd: '~$2,506', tyLe: '3%' },
-  { khoan: 'Marketing', vnd: '289.000.000', usd: '~$11,245', tyLe: '11%' },
-  { khoan: 'Văn phòng làm việc TP.HCM, từ tháng 6 (thuê, điện nước, phí quản lý, setup, cọc)', vnd: '188.000.000', usd: '~$7,315', tyLe: '7%' },
-  { khoan: 'Vận hành công ty (văn phòng ảo, kế toán, ngân hàng, email, công đoàn, chữ ký số, hoá đơn, quyết toán, khác)', vnd: '105.020.000', usd: '~$4,086', tyLe: '4%' },
-  { khoan: '02 bộ máy trạm và thiết bị làm việc (Founder và Dev)', vnd: '102.800.000', usd: '~$4,000', tyLe: '4%' },
-  { khoan: 'Hạ tầng cloud, staging, API AI và công cụ phát triển', vnd: '245.780.000', usd: '~$9,563', tyLe: '10%' },
-  { khoan: 'Pháp lý (thành lập, vòng gọi vốn, nhãn hiệu, dữ liệu cá nhân)', vnd: '35.000.000', usd: '~$1,362', tyLe: '1%' },
-  { khoan: 'Dự phòng', vnd: '116.360.000', usd: '~$4,528', tyLe: '5%' },
+  { khoan: 'Founder (lương, bảo hiểm, phụ cấp làm việc tại nhà)', vnd: '552.895.000', usd: '~$21,513', tyLe: '21,5%' },
+  { khoan: 'Dev toàn thời gian (lương, bảo hiểm, tuyển dụng)', vnd: '346.775.000', usd: '~$13,493', tyLe: '13,5%' },
+  { khoan: 'CEO, từ tháng 3 (lương thấp bù bằng cổ phần, bảo hiểm)', vnd: '233.280.000', usd: '~$9,077', tyLe: '9,1%' },
+  { khoan: 'Sale chính, từ tháng 2 (lương, bảo hiểm, phụ cấp, hoa hồng, tuyển dụng, thưởng Tết)', vnd: '210.290.000', usd: '~$8,182', tyLe: '8,2%' },
+  { khoan: 'CTV bán hàng thứ nhất, từ tháng 2 (phí cứng, hoa hồng, phụ cấp, tuyển dụng)', vnd: '80.400.000', usd: '~$3,128', tyLe: '3,1%' },
+  { khoan: 'CTV bán hàng thứ 2, từ tháng 6 (phí cứng, hoa hồng, phụ cấp, tuyển dụng)', vnd: '64.400.000', usd: '~$2,506', tyLe: '2,5%' },
+  { khoan: 'Marketing', vnd: '289.000.000', usd: '~$11,245', tyLe: '11,2%' },
+  { khoan: 'Văn phòng làm việc TP.HCM, từ tháng 6 (thuê, điện nước, phí quản lý, setup, cọc)', vnd: '188.000.000', usd: '~$7,315', tyLe: '7,3%' },
+  { khoan: 'Vận hành công ty (văn phòng ảo, kế toán, ngân hàng, email, công đoàn, chữ ký số, hoá đơn, quyết toán, khác)', vnd: '105.020.000', usd: '~$4,086', tyLe: '4,1%' },
+  { khoan: '02 bộ máy trạm và thiết bị làm việc (Founder và Dev)', vnd: '102.800.000', usd: '~$4,000', tyLe: '4,0%' },
+  { khoan: 'Hạ tầng cloud, staging, API AI và công cụ phát triển', vnd: '245.780.000', usd: '~$9,563', tyLe: '9,6%' },
+  { khoan: 'Pháp lý (thành lập, vòng gọi vốn, nhãn hiệu, dữ liệu cá nhân)', vnd: '35.000.000', usd: '~$1,362', tyLe: '1,4%' },
+  { khoan: 'Dự phòng', vnd: '116.360.000', usd: '~$4,528', tyLe: '4,5%' },
   { khoan: 'TỔNG GỌI VỐN', vnd: '2.570.000.000', usd: '$100,000', tyLe: '100%', total: true },
 ]
 
@@ -239,18 +239,6 @@ function pitchFocusWeightsForKhoan(khoan) {
   throw new Error(`pitchTableA row has no focus prefix: ${khoan}`)
 }
 
-function pitchFocusLargestRemainderPercents(amounts, totalVnd) {
-  const raw = amounts.map((amount) => (amount / totalVnd) * 100)
-  const floors = raw.map((value) => Math.floor(value))
-  const remainders = raw.map((value, index) => ({ index, remainder: value - floors[index] }))
-  const percents = [...floors]
-  let remainder = 100 - floors.reduce((acc, value) => acc + value, 0)
-  remainders.sort((a, b) => b.remainder - a.remainder)
-  for (let i = 0; i < remainder; i += 1) {
-    percents[remainders[i].index] += 1
-  }
-  return percents
-}
 
 function formatPitchFocusAmount(vnd) {
   if (vnd >= 1e9) {
@@ -276,20 +264,22 @@ function buildPitchFocusChart() {
   }
   const totalVnd = pitchFocusGroups.reduce((acc, group) => acc + sums[group.key], 0)
   const amounts = pitchFocusGroups.map((group) => sums[group.key])
-  const percents = pitchFocusLargestRemainderPercents(amounts, totalVnd)
+  // Làm tròn thường tới 0,1% (giống bảng phân bổ), nên tổng có thể lệch 0,1–0,2.
+  const percents = amounts.map((amount) => Math.round((amount / totalVnd) * 1000) / 10)
   const percentSum = percents.reduce((acc, value) => acc + value, 0)
-  if (percentSum !== 100) throw new Error('pitchFocusChart percent sum mismatch')
+  if (Math.abs(percentSum - 100) > 0.3) throw new Error('pitchFocusChart percent sum mismatch')
 
   let cursor = 0
   const stops = []
   const chart = pitchFocusGroups.map((group, index) => {
     const percent = percents[index]
     const start = cursor
-    cursor += percent
+    cursor = index === pitchFocusGroups.length - 1 ? 100 : Math.round((cursor + percent) * 10) / 10
     stops.push(`${group.color} ${start}% ${cursor}%`)
     return {
       ...group,
       percent,
+      percentText: `${percent.toFixed(1).replace('.', ',')}%`,
       amount: formatPitchFocusAmount(sums[group.key]),
       vnd: sums[group.key],
     }
@@ -299,7 +289,7 @@ function buildPitchFocusChart() {
   return {
     groups: chart,
     conicGradient: `conic-gradient(from 0deg, ${stops.join(', ')})`,
-    ariaLabel: `Biểu đồ tròn: ${chart.map((group) => `${group.label} ${group.percent}%`).join(', ')}`,
+    ariaLabel: `Biểu đồ tròn: ${chart.map((group) => `${group.label} ${group.percentText}`).join(', ')}`,
   }
 }
 
@@ -307,13 +297,13 @@ const pitchFocusChart = buildPitchFocusChart()
 
 function assertPitchFundingData() {
   const sumA = pitchTableA.filter((row) => !row.total).reduce((acc, row) => acc + parsePitchVnd(row.vnd), 0)
-  const pctA = pitchTableA.filter((row) => !row.total).reduce((acc, row) => acc + parseInt(row.tyLe, 10), 0)
-  if (sumA !== 2570000000 || pctA !== 100) {
+  const pctA = pitchTableA.filter((row) => !row.total).reduce((acc, row) => acc + parseFloat(row.tyLe.replace(',', '.')), 0)
+  if (sumA !== 2570000000 || Math.abs(pctA - 100) > 0.3) {
     throw new Error('pitchTableA totals mismatch')
   }
 
   const barPct = pitchFundingBars.reduce((acc, row) => acc + row.percent, 0)
-  if (barPct !== 100) throw new Error('pitchFundingBars percent mismatch')
+  if (Math.abs(barPct - 100) > 0.3) throw new Error('pitchFundingBars percent mismatch')
 
   const monthlyTotals = pitchTableB.find((row) => row.kind === 'total' && row.label === 'CỘNG MỖI THÁNG')
   if (!monthlyTotals) throw new Error('pitchTableB missing monthly totals')
@@ -5046,7 +5036,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                 <div class="pitch-fund-bar">
                   <div class="pitch-fund-bar__label">{bar.label}</div>
                   <div class="pitch-fund-bar__meta">
-                    <span>{bar.percent}%</span>
+                    <span>{bar.percent.toFixed(1).replace('.', ',')}%</span>
                     <span>{bar.amount}</span>
                   </div>
                   <div class="pitch-fund-bar__track" aria-hidden="true">
@@ -6308,7 +6298,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                               <span class="pitch-focus__legend-head">
                                 <strong>{group.label}</strong>
                                 <span class="pitch-focus__legend-stats">
-                                  {group.percent}% · {group.amount}
+                                  {group.percentText} · {group.amount}
                                 </span>
                               </span>
                               {group.note ? <span class="pitch-focus__legend-note">{group.note}</span> : null}
