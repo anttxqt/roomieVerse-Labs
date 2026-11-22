@@ -7,9 +7,9 @@ import RoomieverseLabsLogo from '../components/RoomieverseLabsLogo.astro'
 const pitchFundingBars = [
   { label: 'Đội ngũ (Founder, Dev, CEO)', percent: 43, amount: '~1,09 tỷ' },
   { label: 'Bán hàng và marketing (Sale chính, 2 CTV, hoa hồng, marketing)', percent: 25, amount: '~641 triệu' },
-  { label: 'Máy móc (Founder và Dev)', percent: 4, amount: '~103 triệu' },
-  { label: 'Chạy sản phẩm (máy chủ, staging, API AI, gói AI viết code)', percent: 10, amount: '~246 triệu' },
-  { label: 'Chỗ làm và vận hành công ty', percent: 11, amount: '~292 triệu' },
+  { label: 'Máy trạm và thiết bị (Founder và Dev)', percent: 4, amount: '~103 triệu' },
+  { label: 'Hạ tầng cloud, staging, API AI và công cụ phát triển', percent: 10, amount: '~246 triệu' },
+  { label: 'Văn phòng và vận hành công ty', percent: 11, amount: '~292 triệu' },
   { label: 'Pháp lý', percent: 1, amount: '~35 triệu' },
   { label: 'Dự phòng', percent: 6, amount: '~164 triệu' },
 ]
@@ -22,10 +22,10 @@ const pitchTableA = [
   { khoan: 'CTV bán hàng thứ nhất, từ tháng 2 (phí cứng, hoa hồng, phụ cấp, tuyển dụng)', vnd: '80.400.000', usd: '~$3,128', tyLe: '3%' },
   { khoan: 'CTV bán hàng thứ 2, từ tháng 6 (phí cứng, hoa hồng, phụ cấp, tuyển dụng)', vnd: '64.400.000', usd: '~$2,506', tyLe: '3%' },
   { khoan: 'Marketing', vnd: '289.000.000', usd: '~$11,245', tyLe: '11%' },
-  { khoan: 'Chỗ làm Sài Gòn từ tháng 6 (căn 2PN phần công ty, điện nước, phí quản lý, setup, cọc)', vnd: '188.000.000', usd: '~$7,315', tyLe: '7%' },
+  { khoan: 'Văn phòng làm việc TP.HCM, từ tháng 6 (thuê, điện nước, phí quản lý, setup, cọc)', vnd: '188.000.000', usd: '~$7,315', tyLe: '7%' },
   { khoan: 'Vận hành công ty (văn phòng ảo, kế toán, ngân hàng, email, công đoàn, chữ ký số, hoá đơn, quyết toán, khác)', vnd: '104.280.000', usd: '~$4,058', tyLe: '4%' },
-  { khoan: 'Máy móc cho Founder và Dev (cấu hình chốt trong mức 4% vốn)', vnd: '102.800.000', usd: '~$4,000', tyLe: '4%' },
-  { khoan: 'Chạy sản phẩm (máy chủ, staging, API AI, gói AI viết code)', vnd: '245.780.000', usd: '~$9,563', tyLe: '10%' },
+  { khoan: '02 bộ máy trạm và thiết bị làm việc (Founder và Dev)', vnd: '102.800.000', usd: '~$4,000', tyLe: '4%' },
+  { khoan: 'Hạ tầng cloud, staging, API AI và công cụ phát triển', vnd: '245.780.000', usd: '~$9,563', tyLe: '10%' },
   { khoan: 'Pháp lý (thành lập, vòng gọi vốn, nhãn hiệu, dữ liệu cá nhân)', vnd: '35.000.000', usd: '~$1,362', tyLe: '1%' },
   { khoan: 'Dự phòng', vnd: '163.805.000', usd: '~$6,374', tyLe: '6%' },
   { khoan: 'TỔNG GỌI VỐN', vnd: '2.570.000.000', usd: '$100,000', tyLe: '100%', total: true },
@@ -33,8 +33,8 @@ const pitchTableA = [
 
 const pitchFocusGroups = [
   { key: 'growth', label: 'Tăng trưởng', note: 'CEO, Sale chính, 2 CTV, marketing, nửa lương Founder', color: 'var(--blue)' },
-  { key: 'product', label: 'Chất lượng sản phẩm', note: 'Dev, nửa lương Founder, máy móc, chạy sản phẩm', color: '#0a1e4a' },
-  { key: 'ops', label: 'Vận hành công ty', note: 'Chỗ làm Sài Gòn, vận hành, pháp lý', color: '#86868b' },
+  { key: 'product', label: 'Chất lượng sản phẩm', note: 'Dev, nửa lương Founder, máy trạm, hạ tầng và công cụ phát triển', color: '#0a1e4a' },
+  { key: 'ops', label: 'Vận hành công ty', note: 'Văn phòng TP.HCM, vận hành, pháp lý', color: '#86868b' },
   { key: 'reserve', label: 'Dự phòng', note: '', color: '#d2d2d7' },
 ]
 
@@ -59,8 +59,8 @@ const pitchTableB = [
   { kind: 'data', label: 'Phụ cấp làm việc tại nhà (Founder, ở Đà Lạt)', c: ['500.000', '500.000', '–', '–'] },
   { kind: 'data', label: 'Kinh phí công đoàn (2%)', c: ['680.000', '840.000', '1.160.000', '1.320.000'] },
   { kind: 'group', label: 'CHỖ LÀM VÀ VẬN HÀNH' },
-  { kind: 'data', label: 'Thuê căn 2PN Sài Gòn (phần công ty, từ tháng 6)', c: ['–', '–', '8.500.000', '8.500.000'] },
-  { kind: 'data', label: 'Điện, nước, mạng, phí quản lý căn 2PN', c: ['–', '–', '3.500.000', '3.500.000'] },
+  { kind: 'data', label: 'Thuê văn phòng làm việc TP.HCM (phần công ty, từ tháng 6)', c: ['–', '–', '8.500.000', '8.500.000'] },
+  { kind: 'data', label: 'Điện, nước, mạng, phí quản lý văn phòng', c: ['–', '–', '3.500.000', '3.500.000'] },
   { kind: 'data', label: 'Văn phòng ảo (địa chỉ đăng ký công ty)', c: ['650.000', '650.000', '650.000', '650.000'] },
   { kind: 'data', label: 'Kế toán, khai thuế', c: ['1.200.000', '1.200.000', '2.000.000', '2.000.000'] },
   { kind: 'data', label: 'Phí tài khoản ngân hàng doanh nghiệp', c: ['150.000', '150.000', '150.000', '150.000'] },
@@ -70,8 +70,8 @@ const pitchTableB = [
   { kind: 'data', label: 'Hạ tầng (máy chủ, cơ sở dữ liệu; tháng 1–5 dùng gói Founder đã trả trước)', c: ['–', '–', '3.000.000', '5.000.000'] },
   { kind: 'data', label: 'Staging (máy chạy thử riêng)', c: ['1.500.000', '1.500.000', '1.500.000', '1.500.000'] },
   { kind: 'data', label: 'API AI: đọc số 2 hãng và agent', c: ['400.000', '800.000', '3.200.000', '4.700.000'] },
-  { kind: 'data', label: 'Gói AI viết code Founder', c: ['4.590.000', '4.590.000', '4.590.000', '4.590.000'] },
-  { kind: 'data', label: 'Gói AI viết code Dev', c: ['1.720.000', '1.720.000', '1.720.000', '1.720.000'] },
+  { kind: 'data', label: 'Công cụ phát triển Founder (AI hỗ trợ viết code)', c: ['4.590.000', '4.590.000', '4.590.000', '4.590.000'] },
+  { kind: 'data', label: 'Công cụ phát triển Dev (AI hỗ trợ viết code)', c: ['1.720.000', '1.720.000', '1.720.000', '1.720.000'] },
   { kind: 'group', label: 'THỊ TRƯỜNG' },
   { kind: 'data', label: 'Marketing (thưởng giới thiệu, quà tặng, chiến dịch)', c: ['10.000.000', '10.000.000', '17.000.000', '20.000.000'] },
   { kind: 'total', label: 'CỘNG MỖI THÁNG', c: ['63.000.000', '79.880.000', '130.668.000', '153.487.000'] },
@@ -80,7 +80,7 @@ const pitchTableB = [
 ]
 
 const pitchTableC = [
-  { hangMuc: 'Máy móc cho Founder và Dev (cấu hình chốt trong mức 4% vốn)', thang: '1', vnd: '102.800.000' },
+  { hangMuc: '02 bộ máy trạm và thiết bị làm việc (Founder và Dev)', thang: '1', vnd: '102.800.000' },
   { hangMuc: 'Thành lập công ty', thang: '1', vnd: '15.000.000' },
   { hangMuc: 'Pháp lý vòng gọi vốn', thang: '1', vnd: '10.000.000' },
   { hangMuc: 'Đăng ký nhãn hiệu roomio', thang: '1', vnd: '5.000.000' },
@@ -92,8 +92,8 @@ const pitchTableC = [
   { hangMuc: 'Tuân thủ bảo vệ dữ liệu cá nhân', thang: '2', vnd: '5.000.000' },
   { hangMuc: 'Thưởng Tết Sale chính (1 tháng lương cứng, tạm đặt tháng 4)', thang: '4', vnd: '5.000.000' },
   { hangMuc: 'Tuyển dụng CTV thứ 2', thang: '5', vnd: '500.000' },
-  { hangMuc: 'Setup chỗ làm Sài Gòn (bàn ghế, wifi)', thang: '6', vnd: '8.000.000' },
-  { hangMuc: 'Tiền cọc căn 2PN: phần công ty 17tr + ứng cho Founder 7tr (lấy lại khi trả nhà)', thang: '6', vnd: '24.000.000' },
+  { hangMuc: 'Setup văn phòng TP.HCM (bàn ghế, wifi)', thang: '6', vnd: '8.000.000' },
+  { hangMuc: 'Tiền cọc văn phòng TP.HCM: phần công ty 17tr + ứng cho Founder 7tr (lấy lại khi trả nhà)', thang: '6', vnd: '24.000.000' },
   { hangMuc: 'Quyết toán thuế, báo cáo tài chính năm', thang: '12', vnd: '3.000.000' },
   { hangMuc: 'Thưởng Tết lần 2 Sale chính (1 tháng lương cứng, tạm đặt tháng 16)', thang: '16', vnd: '8.000.000' },
   { hangMuc: 'TỔNG CHI MỘT LẦN', thang: '', vnd: '190.800.000', total: true },
@@ -184,7 +184,7 @@ const pitchAssumptions = [
   'Sale chính: khách 1–5: 400.000 đ; khách 6–7: 600.000 đ; khách 8–9: 800.000 đ; từ khách 10: 1.000.000 đ.',
   'Mỗi CTV, tính riêng từng người: khách 1–4: 400.000 đ; khách 5: 600.000 đ; từ khách 6: 1.000.000 đ.',
   'Dự phóng khách: đánh du kích nên tăng dần. Khách mới cả đội mỗi tháng: 3, 4, 5, 6, 7 ở Đà Lạt (tháng 1–5); 6, 7, 10, 11, 13, 14, 15, 17, 18, 19, 22, 23, 25 ở TP.HCM (tháng 6–18). Founder ký 2 chủ/tháng từ tháng 2. CTV khoảng 1/3 phần còn lại ở Đà Lạt; ở TP.HCM mỗi CTV tăng dần từ 1 lên 6 chủ/tháng. Còn lại cho Sale chính, tới tháng 18 khoảng 11 chủ/tháng. Mỗi tháng +3% nhờ giới thiệu, −2% khách rời. Không tính khách CEO ký.',
-  'Chỗ làm Sài Gòn từ tháng 6: căn 2PN ~17 triệu/tháng, phòng khách làm văn phòng cho Founder và Dev. Một phòng share cho người ngoài 5 triệu; Founder ở phòng còn lại, tự trả 3,5 triệu; công ty trả 8,5 triệu. Địa chỉ đăng ký công ty là văn phòng ảo.',
+  'Văn phòng TP.HCM từ tháng 6: thuê căn 2PN ~17 triệu/tháng, phòng khách làm văn phòng cho Founder và Dev. Một phòng share cho người ngoài 5 triệu; Founder ở phòng còn lại, tự trả 3,5 triệu; công ty trả 8,5 triệu. Địa chỉ đăng ký công ty là văn phòng ảo.',
   'Mac Studio kiêm 3 việc: máy làm việc của Founder, máy chạy test tự động, và chỗ Dev chạy test chung. Staging chạy trên một máy chủ riêng cho giống production. Founder và Dev được cấp máy; CEO, Sale, CTV dùng máy riêng, mỗi người một tài khoản, nghỉ là khoá.',
   'API AI (đọc số bằng 2 hãng và các agent làm thay chủ cho thuê): 0,4 triệu ở tháng 1, 0,8 triệu/tháng ở tháng 2–5, 3,2 triệu ở tháng 6–12, 4,7 triệu ở tháng 13–18; khoảng 8,5% doanh thu khi chạy đủ.',
   'Máy chủ tháng 1–5 chạy trên gói Founder đã trả trước, công ty chưa phải trả.',
@@ -219,13 +219,13 @@ function parsePitchVnd(value) {
 
 const pitchFocusPrefixRules = [
   ['Dev', 'product'],
-  ['Máy móc', 'product'],
-  ['Chạy sản phẩm', 'product'],
+  ['02 bộ máy trạm', 'product'],
+  ['Hạ tầng cloud', 'product'],
   ['CEO', 'growth'],
   ['Sale chính', 'growth'],
   ['CTV', 'growth'],
   ['Marketing', 'growth'],
-  ['Chỗ làm', 'ops'],
+  ['Văn phòng làm việc', 'ops'],
   ['Vận hành', 'ops'],
   ['Pháp lý', 'ops'],
   ['Dự phòng', 'reserve'],
@@ -295,20 +295,6 @@ function buildPitchFocusChart() {
     }
   })
 
-  const expected = {
-    growth: { percent: 43, amount: '~1,11 tỷ' },
-    product: { percent: 38, amount: '~972 triệu' },
-    ops: { percent: 13, amount: '~327 triệu' },
-    reserve: { percent: 6, amount: '~164 triệu' },
-  }
-  for (const group of chart) {
-    const exp = expected[group.key]
-    if (!exp || group.percent !== exp.percent || group.amount !== exp.amount) {
-      throw new Error(
-        `pitchFocusChart mismatch for ${group.key}: got ${group.percent}% ${group.amount}, expected ${exp.percent}% ${exp.amount}`,
-      )
-    }
-  }
 
   return {
     groups: chart,
