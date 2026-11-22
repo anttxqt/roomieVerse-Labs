@@ -31,6 +31,13 @@ const pitchTableA = [
   { khoan: 'TỔNG GỌI VỐN', vnd: '2.570.000.000', usd: '$100,000', tyLe: '100%', total: true },
 ]
 
+const pitchFocusGroups = [
+  { key: 'growth', label: 'Tăng trưởng', note: 'CEO, Sale chính, 2 CTV, marketing, nửa lương Founder', color: 'var(--blue)' },
+  { key: 'product', label: 'Chất lượng sản phẩm', note: 'Dev, nửa lương Founder, máy móc, chạy sản phẩm', color: '#0a1e4a' },
+  { key: 'ops', label: 'Vận hành công ty', note: 'Chỗ làm Sài Gòn, vận hành, pháp lý', color: '#86868b' },
+  { key: 'reserve', label: 'Dự phòng', note: '', color: '#d2d2d7' },
+]
+
 const pitchTableB = [
   { kind: 'group', label: 'NHÂN SỰ' },
   { kind: 'data', label: 'Lương Founder (gộp, theo KPI)', c: ['22.000.000', '22.000.000', '25.000.000', '28.000.000'] },
@@ -209,6 +216,108 @@ function parsePitchVnd(value) {
   if (!value || value === '–') return 0
   return Number(String(value).replace(/\./g, '').replace(/[^\d]/g, '')) || 0
 }
+
+const pitchFocusPrefixRules = [
+  ['Dev', 'product'],
+  ['Máy móc', 'product'],
+  ['Chạy sản phẩm', 'product'],
+  ['CEO', 'growth'],
+  ['Sale chính', 'growth'],
+  ['CTV', 'growth'],
+  ['Marketing', 'growth'],
+  ['Chỗ làm', 'ops'],
+  ['Vận hành', 'ops'],
+  ['Pháp lý', 'ops'],
+  ['Dự phòng', 'reserve'],
+] as const
+
+function pitchFocusWeightsForKhoan(khoan) {
+  if (khoan.startsWith('Founder')) return { growth: 0.5, product: 0.5 }
+  for (const [prefix, key] of pitchFocusPrefixRules) {
+    if (khoan.startsWith(prefix)) return { [key]: 1 }
+  }
+  throw new Error(`pitchTableA row has no focus prefix: ${khoan}`)
+}
+
+function pitchFocusLargestRemainderPercents(amounts, totalVnd) {
+  const raw = amounts.map((amount) => (amount / totalVnd) * 100)
+  const floors = raw.map((value) => Math.floor(value))
+  const remainders = raw.map((value, index) => ({ index, remainder: value - floors[index] }))
+  const percents = [...floors]
+  let remainder = 100 - floors.reduce((acc, value) => acc + value, 0)
+  remainders.sort((a, b) => b.remainder - a.remainder)
+  for (let i = 0; i < remainder; i += 1) {
+    percents[remainders[i].index] += 1
+  }
+  return percents
+}
+
+function formatPitchFocusAmount(vnd) {
+  if (vnd >= 1e9) {
+    const tyRounded = Math.round(vnd / 1e7) / 100
+    const intPart = Math.floor(tyRounded)
+    const decPart = Math.round((tyRounded - intPart) * 100)
+    const decText = String(decPart).padStart(2, '0')
+    return decText === '00' ? `~${intPart} tỷ` : `~${intPart},${decText} tỷ`
+  }
+  const trieu = Math.round(vnd / 1e6)
+  return `~${trieu} triệu`
+}
+
+function buildPitchFocusChart() {
+  const sums = Object.fromEntries(pitchFocusGroups.map((group) => [group.key, 0]))
+  for (const row of pitchTableA) {
+    if (row.total) continue
+    const vnd = parsePitchVnd(row.vnd)
+    const weights = pitchFocusWeightsForKhoan(row.khoan)
+    for (const [key, weight] of Object.entries(weights)) {
+      sums[key] += vnd * weight
+    }
+  }
+  const totalVnd = pitchFocusGroups.reduce((acc, group) => acc + sums[group.key], 0)
+  const amounts = pitchFocusGroups.map((group) => sums[group.key])
+  const percents = pitchFocusLargestRemainderPercents(amounts, totalVnd)
+  const percentSum = percents.reduce((acc, value) => acc + value, 0)
+  if (percentSum !== 100) throw new Error('pitchFocusChart percent sum mismatch')
+
+  let cursor = 0
+  const stops = []
+  const chart = pitchFocusGroups.map((group, index) => {
+    const percent = percents[index]
+    const start = cursor
+    cursor += percent
+    stops.push(`${group.color} ${start}% ${cursor}%`)
+    return {
+      ...group,
+      percent,
+      amount: formatPitchFocusAmount(sums[group.key]),
+      vnd: sums[group.key],
+    }
+  })
+
+  const expected = {
+    growth: { percent: 43, amount: '~1,11 tỷ' },
+    product: { percent: 38, amount: '~972 triệu' },
+    ops: { percent: 13, amount: '~327 triệu' },
+    reserve: { percent: 6, amount: '~164 triệu' },
+  }
+  for (const group of chart) {
+    const exp = expected[group.key]
+    if (!exp || group.percent !== exp.percent || group.amount !== exp.amount) {
+      throw new Error(
+        `pitchFocusChart mismatch for ${group.key}: got ${group.percent}% ${group.amount}, expected ${exp.percent}% ${exp.amount}`,
+      )
+    }
+  }
+
+  return {
+    groups: chart,
+    conicGradient: `conic-gradient(from 0deg, ${stops.join(', ')})`,
+    ariaLabel: `Biểu đồ tròn: ${chart.map((group) => `${group.label} ${group.percent}%`).join(', ')}`,
+  }
+}
+
+const pitchFocusChart = buildPitchFocusChart()
 
 function assertPitchFundingData() {
   const sumA = pitchTableA.filter((row) => !row.total).reduce((acc, row) => acc + parsePitchVnd(row.vnd), 0)
@@ -3651,6 +3760,97 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
         color: #86868b;
       }
 
+      .pitch-focus {
+        margin-top: 28px;
+      }
+
+      .pitch-focus__title {
+        margin: 0 0 16px;
+        font-size: clamp(1.1rem, 1.6vw, 1.3rem);
+        font-weight: 700;
+        color: var(--blue-dark);
+        line-height: 1.35;
+        text-transform: none;
+        letter-spacing: normal;
+      }
+
+      .pitch-focus__body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+      }
+
+      @media (min-width: 768px) {
+        .pitch-focus__body {
+          flex-direction: row;
+          align-items: center;
+        }
+      }
+
+      .pitch-focus__pie {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        flex-shrink: 0;
+      }
+
+      @media (min-width: 400px) {
+        .pitch-focus__pie {
+          width: 200px;
+          height: 200px;
+        }
+      }
+
+      .pitch-focus__legend {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        flex: 1;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .pitch-focus__legend li {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+      }
+
+      .pitch-focus__swatch {
+        width: 12px;
+        height: 12px;
+        border-radius: 3px;
+        flex-shrink: 0;
+        margin-top: 4px;
+      }
+
+      .pitch-focus__legend-body {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        min-width: 0;
+      }
+
+      .pitch-focus__legend-head {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        align-items: baseline;
+      }
+
+      .pitch-focus__legend-stats {
+        font-variant-numeric: tabular-nums;
+      }
+
+      .pitch-focus__legend-note {
+        font-size: 0.85rem;
+        color: #86868b;
+        line-height: 1.45;
+      }
+
       .pitch-budget-assumptions {
         margin: 8px 0 0;
         padding-left: 1.2rem;
@@ -6105,6 +6305,36 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                     </div>
                   </div>
                   <p class="pitch-budget-table-note">Bảng này tính khi chưa có đồng doanh thu nào: chi 18 tháng 2.406.195.000 đ, còn dư khoảng 164 triệu làm dự phòng.</p>
+                  <div class="pitch-focus">
+                    <h5 class="pitch-focus__title">Vốn dồn vào đâu</h5>
+                    <div class="pitch-focus__body">
+                      <div
+                        class="pitch-focus__pie"
+                        role="img"
+                        aria-label={pitchFocusChart.ariaLabel}
+                        style={`background: ${pitchFocusChart.conicGradient}`}
+                      />
+                      <ul class="pitch-focus__legend">
+                        {pitchFocusChart.groups.map((group) => (
+                          <li>
+                            <span class="pitch-focus__swatch" style={`background: ${group.color}`} />
+                            <span class="pitch-focus__legend-body">
+                              <span class="pitch-focus__legend-head">
+                                <strong>{group.label}</strong>
+                                <span class="pitch-focus__legend-stats">
+                                  {group.percent}% · {group.amount}
+                                </span>
+                              </span>
+                              {group.note ? <span class="pitch-focus__legend-note">{group.note}</span> : null}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <p class="pitch-budget-table-note">
+                      Lương Founder chia đôi: nửa cho sản phẩm (vai PO, cùng Dev viết code), nửa cho tăng trưởng (vẫn đi bán, ký khoảng 2 chủ mỗi tháng). CEO tính vào tăng trưởng. Số lấy thẳng từ bảng trên.
+                    </p>
+                  </div>
                 </div>
 
                 <div class="pitch-budget-block">
