@@ -2200,10 +2200,31 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
 
       @media (min-width: 768px) {
         #slide-10 .pitch-team-grid {
-          grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
           gap: 40px;
-          align-items: start;
         }
+      }
+
+      #slide-10 .pitch-team-top {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+
+      @media (min-width: 768px) {
+        #slide-10 .pitch-team-top {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 40px;
+          align-items: stretch;
+        }
+      }
+
+      #slide-10 .pitch-team-top .pitch-team-col {
+        display: flex;
+        flex-direction: column;
+      }
+
+      #slide-10 .pitch-team-top .pitch-team-col .apple-card {
+        flex: 1;
       }
 
       #slide-10 .pitch-team-col__label {
@@ -2224,7 +2245,8 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
         transform: none;
       }
 
-      #slide-10 .pitch-team-founder .apple-card h3 {
+      #slide-10 .pitch-team-founder .apple-card h3,
+      #slide-10 .pitch-team-seeking .apple-card h3 {
         font-size: clamp(1.45rem, 2.4vw, 1.85rem);
         color: #fff;
         line-height: 1.2;
@@ -2234,6 +2256,15 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
         display: flex;
         flex-direction: column;
         gap: 14px;
+      }
+
+      @media (min-width: 960px) {
+        #slide-10 .pitch-team-hires {
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 20px;
+          align-items: stretch;
+        }
       }
 
       #slide-10 .pitch-team-hire {
@@ -4687,26 +4718,35 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
           </div>
 
           <div class="pitch-team-grid">
-            <div class="pitch-team-col pitch-team-founder">
-              <p class="pitch-team-col__label">Hiện tại</p>
-              <article class="apple-card reveal delay-100">
-                <h3>Trần Thiên Ân</h3>
-                <p>Hoàn thành tất cả phần hiện tại của hệ thống (~700 lần cập nhật code, 2 lần làm lại lớn. Toàn thời gian từ 6/2026), lên kế hoạch phát triển sản phẩm lâu dài, lên chiến thuật đánh chiếm thị trường khác với đối thủ,...</p>
-                <p class="pitch-team-meta">Các vị trí: Product Owner, System design, UX reseacher, Tech Lead - Architecture, Sale, Product Strategist, Developer</p>
-              </article>
+            <div class="pitch-team-top">
+              <div class="pitch-team-col pitch-team-founder">
+                <p class="pitch-team-col__label">Hiện tại</p>
+                <article class="apple-card reveal delay-100">
+                  <h3>Trần Thiên Ân</h3>
+                  <p>Hoàn thành tất cả phần hiện tại của hệ thống (~700 lần cập nhật code, 2 lần làm lại lớn. Toàn thời gian từ 6/2026), lên kế hoạch phát triển sản phẩm lâu dài, lên chiến thuật đánh chiếm thị trường khác với đối thủ,...</p>
+                  <p class="pitch-team-meta">Các vị trí: Product Owner, System design, UX reseacher, Tech Lead - Architecture, Sale, Product Strategist, Developer</p>
+                </article>
+              </div>
+              <div class="pitch-team-col pitch-team-seeking">
+                <p class="pitch-team-col__label">Đang tìm</p>
+                <article class="apple-card reveal delay-150">
+                  <h3>CEO</h3>
+                  <p>Cùng em lo bán hàng, điều hành, và trực tiếp onboarding khách nên hiểu sản phẩm kỹ. Lỡ em có chuyện gì thì người này đứng ra được.</p>
+                </article>
+              </div>
             </div>
             <div class="pitch-team-col pitch-team-hiring">
               <p class="pitch-team-col__label">Cần thêm (từ vốn gọi)</p>
               <div class="pitch-team-hires">
-                <article class="apple-card pitch-team-hire reveal delay-150">
+                <article class="apple-card pitch-team-hire reveal delay-200">
                   <h3>Tháng 1 · Developer toàn thời gian</h3>
                   <p>Bạn dev này sẽ là "người hoàn thiện" em cần. Bạn sẽ cùng em làm chắc luồng chính từ những bản chốt kiến trúc từ em. Và làm những thứ nhỏ xung quanh phục vụ luồng chính đó.</p>
                 </article>
-                <article class="apple-card pitch-team-hire reveal delay-200">
+                <article class="apple-card pitch-team-hire reveal delay-250">
                   <h3>Tháng 2 · Sale chính</h3>
                   <p>Người bán toàn thời gian, đi gặp từng chủ cho thuê.</p>
                 </article>
-                <article class="apple-card pitch-team-hire reveal delay-250">
+                <article class="apple-card pitch-team-hire reveal delay-300">
                   <h3>Tháng 2 · CTV bán hàng (Sale Part-time)</h3>
                   <p>Dùng để mở rộng thị trường lớn là TP.HCM song song với bạn sale chính</p>
                 </article>
