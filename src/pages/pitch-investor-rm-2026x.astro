@@ -157,7 +157,7 @@ const pitchRevenueRows = [
 ]
 
 const pitchRevenueNote =
-  'Chủ ký ở Đà Lạt (tháng 1–5) tính giá phòng trọ nhỏ ở cả 4 trường hợp. Đánh du kích nên khách mới tăng dần: 3, 4, 5, 6, 7 chủ mỗi tháng ở Đà Lạt; từ tháng 6 ở TP.HCM 6, 7, 10, 11, 13, 14, 15, 17, 18, 19, 22, 23, 25 chủ. Mỗi tháng +3% nhờ giới thiệu, −2% khách rời. Không tính khách CEO ký. Sau tháng 18 giữ nguyên đội, mức chi và nhịp 25 chủ mới mỗi tháng.'
+  'Chủ ký ở Đà Lạt (tháng 1–5) tính giá phòng trọ nhỏ ở cả 4 trường hợp. Đánh du kích nên khách mới tăng dần: 3, 4, 5, 6, 7 chủ mỗi tháng ở Đà Lạt; từ tháng 6 ở TP.HCM 6, 7, 10, 11, 13, 14, 15, 17, 18, 19, 22, 23, 25 chủ. Mỗi tháng +3% nhờ giới thiệu, −2% khách rời. Không tính khách CEO ký. Sau tháng 18 giữ nguyên đội, mức chi và nhịp 25 chủ mới mỗi tháng. Bảng tính chủ trả phí từ tháng đầu; chủ được miễn phí 1–2 tháng thì doanh thu thấp hơn một chút.'
 
 
 const pitchPriceLeverIntro =
@@ -177,10 +177,10 @@ const pitchPriceLeverNote =
 
 const pitchAssumptions = [
   'Tỷ giá 25.700 đ/USD (Vietcombank mua vào, 14/10/2026). Lúc tiền về sẽ tính lại.',
-  'Giá roomio: 12.000–16.000 đ/phòng/tháng tuỳ số phòng, đã gồm VAT; phòng trống tính 5%. Trung bình ~190.000 đ/chủ trọ/tháng sau VAT.',
+  'Giá roomio: 12.000–16.000 đ/phòng/tháng tuỳ số phòng, đã gồm VAT; phòng trống tính 5%. Trung bình ~190.000 đ/chủ/tháng sau VAT.',
   'Lương Founder theo KPI: 22 triệu ở Đà Lạt (tháng 1–5), 25 triệu (tháng 6–12), 28 triệu (tháng 13–18). Không đạt KPI thì giữ mức cũ.',
   'Dev toàn thời gian từ tháng 1: 12 triệu ở tháng đầu, 15 triệu ở tháng 2–12, lên 18 triệu ở tháng 13–18 nếu còn gắn bó. CEO từ khoảng tháng 2–3 (bảng tính từ tháng 3): 12 triệu/tháng, lương thấp bù bằng cổ phần; lo bán hàng, điều hành cùng Founder và onboarding khách; dư giờ thì đi bán thêm như một CTV, không giao chỉ tiêu. Sale chính vào từ tháng 2: thử việc tháng 2 nhận đủ 5,5 triệu cộng hoa hồng; tháng 3–6: 5,5 triệu; tháng 7–12: 6 triệu; gắn bó và làm tốt thì 8 triệu ở tháng 13–18. CTV thứ 2 vào từ tháng 6, cùng mức với CTV thứ nhất.',
-  'Hoa hồng chỉ tính khi chủ trọ đã trả phí tháng đầu. Chủ trọ rời roomio trong 60 ngày đầu thì trừ lại hoa hồng.',
+  'Hoa hồng chỉ tính khi chủ cho thuê đã trả tháng phí đầu tiên, tức sau phần miễn phí nếu có. Chủ cho thuê rời roomio trong 60 ngày đầu thì trừ lại hoa hồng.',
   'Sale chính: khách 1–5: 400.000 đ; khách 6–7: 600.000 đ; khách 8–9: 800.000 đ; từ khách 10: 1.000.000 đ.',
   'Mỗi CTV, tính riêng từng người: khách 1–4: 400.000 đ; khách 5: 600.000 đ; từ khách 6: 1.000.000 đ.',
   'Dự phóng khách: đánh du kích nên tăng dần. Khách mới cả đội mỗi tháng: 3, 4, 5, 6, 7 ở Đà Lạt (tháng 1–5); 6, 7, 10, 11, 13, 14, 15, 17, 18, 19, 22, 23, 25 ở TP.HCM (tháng 6–18). Founder ký 2 chủ/tháng từ tháng 2. CTV khoảng 1/3 phần còn lại ở Đà Lạt; ở TP.HCM mỗi CTV tăng dần từ 1 lên 6 chủ/tháng. Còn lại cho Sale chính, tới tháng 18 khoảng 11 chủ/tháng. Mỗi tháng +3% nhờ giới thiệu, −2% khách rời. Không tính khách CEO ký.',
@@ -4285,7 +4285,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                 <line x1="12" y1="9" x2="12" y2="13"></line>
                 <line x1="12" y1="17" x2="12.01" y2="17"></line>
               </svg>
-              <p><span style="color: #ff3b30;">Hệ quả:</span> Chủ trọ háo hức tải app trên điện thoại, hay đăng ký hệ thống trên máy tính. Dùng được vài hôm thì bỏ app trong sự bực tức, quay về như cũ dùng sổ tay hoặc Excel kèm Zalo. Và từ đó có cái nhìn xấu về thị trường app quản lý phòng.</p>
+              <p><span style="color: #ff3b30;">Hệ quả:</span> Chủ cho thuê háo hức tải app trên điện thoại, hay đăng ký hệ thống trên máy tính. Dùng được vài hôm thì bỏ app trong sự bực tức, quay về như cũ dùng sổ tay hoặc Excel kèm Zalo. Và từ đó có cái nhìn xấu về thị trường app quản lý phòng.</p>
             </div>
           </div>
 
@@ -4999,7 +4999,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                 <circle cx="12" cy="12" r="6"></circle>
                 <circle cx="12" cy="12" r="2"></circle>
               </svg>
-              <p><span class="pitch-label--accent-green">Mục tiêu lớn nhất</span> của roomio là lo toàn bộ phần tính toán, quản lý, nhắc nhở... nơi mà chủ trọ tốn thời gian vào nó ít nhiều mỗi ngày. Giờ đây, chủ cho thuê chỉ cần tập trung vào việc tìm khách thuê phòng.</p>
+              <p><span class="pitch-label--accent-green">Mục tiêu lớn nhất</span> của roomio là lo toàn bộ phần tính toán, quản lý, nhắc nhở... nơi mà chủ cho thuê tốn thời gian vào nó ít nhiều mỗi ngày. Giờ đây, chủ cho thuê chỉ cần tập trung vào việc tìm khách thuê phòng.</p>
             </div>
           </div>
 
@@ -5094,7 +5094,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
               <div class="apple-accordion-content">
                 <ul class="pitch-budget-assumptions">
                   <li><strong>8/2025</strong> · Lúc còn đi học, thầy giáo của em ở trường có nhận một dự án về làm và cho em làm cùng để lấy kinh nghiệm thêm vô CV. Cụ thể, dự án đó là làm một hệ thống quản lý các phòng trọ đang cho thuê của một người bạn của thầy ở quận 7. Anh bạn đó của thầy có 5 toà nhà và khoảng 36-40 phòng đang cho thuê. Em với thầy phát triển một hệ thống đơn giản và hoàn thành vào tháng 12/2025. Hiện nó vẫn hoạt động tới giờ mà không cần bảo trì gì do em có thiết kế cơ chế dọn rác hàng quý rồi, và nó cứ chạy thôi. À, em với thầy thống nhất đặt tên cho nó là The Room.</li>
-                  <li><strong>12/2025</strong> · Nhận thấy hệ thống này có quá nhiều bài toán cần giải quyết cho nó, cũng như là bài toán lớn nhất của chủ cho thuê phòng. Cũng như việc The Room còn nhiều thiếu sót (cũng không hẳn là thiếu sót mà là làm đáp ứng đủ với yêu cầu của anh chủ trọ bên quận 7 thôi). Do đó, em quyết định tự mình phát triển một dự án riêng, tên roomio. Ban đầu, nó chưa có tên roomio, và cũng chỉ là bản nháp em dựng lại từ The Room rồi thêm một vài tính năng khác, trông không khác gì mấy app quản lý hiện tại trên thị trường.</li>
+                  <li><strong>12/2025</strong> · Nhận thấy hệ thống này có quá nhiều bài toán cần giải quyết cho nó, cũng như là bài toán lớn nhất của chủ cho thuê phòng. Cũng như việc The Room còn nhiều thiếu sót (cũng không hẳn là thiếu sót mà là làm đáp ứng đủ với yêu cầu của anh chủ cho thuê bên quận 7 thôi). Do đó, em quyết định tự mình phát triển một dự án riêng, tên roomio. Ban đầu, nó chưa có tên roomio, và cũng chỉ là bản nháp em dựng lại từ The Room rồi thêm một vài tính năng khác, trông không khác gì mấy app quản lý hiện tại trên thị trường.</li>
                   <li><strong>3/2026</strong> · Giữ bản draft với ý tưởng làm lại đó cho tới khoảng tháng 3/2026, khi này em vừa tốt nghiệp trên trường xong, ngành công nghệ thông tin. Mới bắt đầu lên một số ý tưởng mới cho hệ thống. Và nếu cứ tiếp tục với những tính năng vậy thì chẳng khác gì app hiện có, chẳng khác gì bản excel kiểu khác cả. Nên là dồn suy nghĩ của em đi nghiên cứu, tìm cách sao cho việc quản lý nó nhàn hết sức có thể cho chủ cho thuê, mà vẫn phát triển theo hướng thuần phần mềm (saas) chứ không ôm đồm cả việc vận hành bằng con người, tìm khách cho phòng như một số đối thủ khác, như vậy nó quá loãng, em chỉ tìm cách tối đa có thể sự tự động hoá ở hệ thống của em.</li>
                   <li><strong>6/2026</strong> · Quyết định dành toàn thời gian, công sức vô để xây dựng hệ thống cho tới hiện tại, đại tu lại giao diện hoàn toàn theo ý em. Xây dựng lại một luồng sử dụng mới hoàn toàn sau khoảng 2 tháng trời nghiên cứu cách các chủ cho thuê cần gì, cách các ứng dụng hiện tại ngoài thị trường đang hoạt động ra sao.</li>
                 </ul>
@@ -5104,8 +5104,8 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                 <ul class="pitch-budget-assumptions">
                   <li>Tính phí theo số ngày ở thực tế và theo từng toà nhà nhằm tránh việc thu tiền khi không có khách ở, việc này ảnh hưởng xấu tới người dùng.</li>
                   <li>Hai lịch nhắc gửi số điện và nhắc đóng tiền không bao giờ chồng lên nhau. Nó là hai thứ chạy song song khác nhau hoàn toàn.</li>
-                  <li>Tự đánh dấu thanh toán đúng khi tiền về, kể cả lúc dữ liệu đang thay đổi. Đã làm xong với PayOS cho hướng roomio thu tiền chủ trọ, và sắp tới nếu gọi thành công vốn sẽ dùng SePay để tự động đánh dấu thanh toán cho việc khách thuê phòng thanh toán cho chủ trọ.</li>
-                  <li>Đọc số đồng hồ bằng AI, cái này nhiều đối thủ cũng có rồi. Tuy nhiên roomio thiết kế theo hướng để tăng độ chính xác tối đa có thể bằng một máy xử lý ảnh riêng, trong đó sẽ có một AI Agent tìm ô số trước, máy cắt ra, sau đó mới có AI khác đọc số từ đó. Và một AI thứ 2 đọc số ở phía chủ trọ. Việc dùng vậy hạn chế việc đọc số sai hơn so với việc đối thủ đang làm. Và tuy có AI đọc số, nó là bước để hỗ trợ khách thuê, cũng như chủ trọ nhanh hơn, tiện hơn trong việc gửi số và kiểm số với nhau chứ không thay thế hoàn toàn, bởi hiện nay AI vẫn còn sai sót nhiều chứ không hoàn toàn chính xác 100% nên chưa thể thay thế con người hẳn được, chỉ support thôi.</li>
+                  <li>Tự đánh dấu thanh toán đúng khi tiền về, kể cả lúc dữ liệu đang thay đổi. Đã làm xong với PayOS cho hướng roomio thu tiền chủ cho thuê, và sắp tới nếu gọi thành công vốn sẽ dùng SePay để tự động đánh dấu thanh toán cho việc khách thuê phòng thanh toán cho chủ cho thuê.</li>
+                  <li>Đọc số đồng hồ bằng AI, cái này nhiều đối thủ cũng có rồi. Tuy nhiên roomio thiết kế theo hướng để tăng độ chính xác tối đa có thể bằng một máy xử lý ảnh riêng, trong đó sẽ có một AI Agent tìm ô số trước, máy cắt ra, sau đó mới có AI khác đọc số từ đó. Và một AI thứ 2 đọc số ở phía chủ cho thuê. Việc dùng vậy hạn chế việc đọc số sai hơn so với việc đối thủ đang làm. Và tuy có AI đọc số, nó là bước để hỗ trợ khách thuê, cũng như chủ cho thuê nhanh hơn, tiện hơn trong việc gửi số và kiểm số với nhau chứ không thay thế hoàn toàn, bởi hiện nay AI vẫn còn sai sót nhiều chứ không hoàn toàn chính xác 100% nên chưa thể thay thế con người hẳn được, chỉ support thôi.</li>
                 </ul>
               </div>
             </details>
@@ -5405,13 +5405,13 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                   <h4 class="pitch-budget-block__title">Các hệ thống khác xây dựng bằng AI hiện nay</h4>
                   <ul class="pitch-budget-assumptions">
                     <li>
-                      Ở thời Vibe Coding và AI Agent, app quản lý phòng mọc nhanh: mô tả ý tưởng, để AI dựng giao diện và luồng màn hình, rồi tung lên thị trường — ít khi có ai ngồi lại đóng vai chủ cho thuê đủ một vòng tháng.
+                      Thời Vibe Coding, AI Agent bây giờ, app quản lý phòng mọc ra rất nhanh. Chỉ cần mô tả ý tưởng là AI dựng giao diện và luồng màn hình, rồi tung lên thị trường. Ít ai ngồi lại đóng vai chủ cho thuê, dùng thử đủ một tháng.
                     </li>
                     <li>
-                      Vì vậy nhiều app trông “đủ tính năng” nhưng bố cục do AI hoặc mẫu chung quyết: nút nhồi thêm, màn hình chồng màn hình, khó biết bước nào là việc chính mỗi ngày (như ở phần hình đối thủ ở trên).
+                      Nên nhiều app nhìn thì "đủ tính năng", nhưng bố cục là do AI hoặc mẫu có sẵn quyết. Nút nhồi thêm, màn này chồng màn kia, khó biết việc chính mỗi ngày nằm ở đâu (như hình đối thủ ở trên).
                     </li>
                     <li>
-                      Đối thủ cạnh tranh chủ yếu ở mặt tính năng liệt kê trên store; phần khó hơn — dữ liệu chạy ngầm, tự động hoá việc lặp, độ tin cậy khi vận hành thật — thường bị làm qua loa hoặc không có.
+                      Các app chủ yếu đua nhau về số tính năng ghi trên store. Còn phần khó hơn, như dữ liệu chạy ngầm, tự động làm thay việc lặp lại, chạy ổn khi dùng thật, thì thường làm sơ sài hoặc không có.
                     </li>
                   </ul>
                 </div>
@@ -5452,16 +5452,16 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
               </summary>
               <div class="apple-accordion-content">
                 <p><strong>Luồng vận hành</strong> ở slide này là cách chủ nhà quản lý <strong>thông tin và công việc lặp lại trên hệ thống</strong>: hồ sơ phòng và khách thuê, chốt điện nước, xuất hoá đơn, nhắc nợ, gạch nợ, báo cáo — một chuỗi liền mạch, ít bước thừa, không phải nhảy qua lại giữa app, Zalo và sổ tay.</p>
-                <p><strong>Không phải</strong> roomio ôm việc vận hành bên ngoài phần mềm: tìm khách, sale phòng, đăng tin, chạy marketing, hay thay chủ trọ làm quản lý tại chỗ theo mô hình O2O. Các nền tảng kiểu Nhatro.vn thường kéo thêm marketplace, lead và dịch vụ vận hành — roomio <strong>không</strong> đi hướng đó.</p>
-                <p>Chủ nhà vẫn là người quyết định kinh doanh và đối ngoại; roomio chỉ làm phần “quản gia số” — giữ dữ liệu đúng, tự động hoá việc tẻ nhạt, và đẩy thông tin đến chủ trọ lúc cần. Đó là định vị chỉ bán phần mềm (SaaS), tránh sa lầy chi phí vận hành ngoài sản phẩm.</p>
+                <p><strong>Không phải</strong> roomio ôm việc vận hành bên ngoài phần mềm: tìm khách, sale phòng, đăng tin, chạy marketing, hay thay chủ cho thuê làm quản lý tại chỗ theo mô hình O2O. Các nền tảng kiểu Nhatro.vn thường kéo thêm marketplace, lead và dịch vụ vận hành — roomio <strong>không</strong> đi hướng đó.</p>
+                <p>Chủ nhà vẫn là người quyết định kinh doanh và đối ngoại; roomio chỉ làm phần “quản gia số” — giữ dữ liệu đúng, tự động hoá việc tẻ nhạt, và đẩy thông tin đến chủ cho thuê lúc cần. Đó là định vị chỉ bán phần mềm (SaaS), tránh sa lầy chi phí vận hành ngoài sản phẩm.</p>
 
                 <div class="pitch-budget-block">
                   <h4 class="pitch-budget-block__title">Chỗ đứt nằm ở đâu</h4>
-                  <p>Mọi việc chủ trọ phải tự làm tay đều nằm ở chỗ chủ và khách trao đổi với nhau.</p>
+                  <p>Mọi việc chủ cho thuê phải tự làm tay đều nằm ở chỗ chủ và khách trao đổi với nhau.</p>
                   <ul class="pitch-budget-assumptions">
-                    <li>Số điện nước: khách gửi số qua kênh riêng của chủ trọ, chủ trọ nhìn ảnh rồi tự nhập vào app. Đây là bước làm tay nặng nhất.</li>
-                    <li>Hoá đơn, nhắc nợ: app lo phần sổ sách của chủ trọ; gửi cho khách thì bỏ lại cho Zalo, hoặc bắt khách tải app riêng chỉ để nhận hoá đơn, quét QR và nhắn chủ trọ.</li>
-                    <li>Tiền: muốn biết ai đã trả, ai còn nợ, chủ trọ phải tự mở app hoặc tự dò sao kê.</li>
+                    <li>Số điện nước: khách gửi số qua kênh riêng của chủ cho thuê, chủ cho thuê nhìn ảnh rồi tự nhập vào app. Đây là bước làm tay nặng nhất.</li>
+                    <li>Hoá đơn, nhắc nợ: app lo phần sổ sách của chủ cho thuê; gửi cho khách thì bỏ lại cho Zalo, hoặc bắt khách tải app riêng chỉ để nhận hoá đơn, quét QR và nhắn chủ cho thuê.</li>
+                    <li>Tiền: muốn biết ai đã trả, ai còn nợ, chủ cho thuê phải tự mở app hoặc tự dò sao kê.</li>
                     <li>Thêm tính năng không vá được chỗ đứt: dù tách các tính năng thừa ra, luồng chính vẫn rời rạc và khó hiểu.</li>
                   </ul>
                 </div>
@@ -5471,26 +5471,26 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                   <ul class="pitch-budget-assumptions">
                     <li>Gửi tin qua Zalo (ZNS) tính tiền từng tin: khoảng 200 đồng một tin thường, 300 đồng một tin yêu cầu thanh toán; thêm nút bấm hay hình ảnh thì cộng thêm.</li>
                     <li>Mỗi phòng mỗi tháng cần khoảng 5–6 tin: nhắc số, hoá đơn, nhắc nợ, báo đã nhận tiền. Tính ra khoảng 1.000–1.800 đồng mỗi phòng, có thể bằng tới 15% số tiền roomio thu mỗi phòng (12.000–16.000 đồng).</li>
-                    <li>Vì vậy các app gửi qua Zalo thường chỉ gửi tin bắt buộc. Phần còn lại, chủ trọ tự đi hỏi, tự đi kiểm.</li>
-                    <li>Gửi tin qua Telegram bot không tốn phí. Nên roomio báo mọi việc cho chủ trọ ngay khi xảy ra: tiền về, hoá đơn đã soạn, phòng còn nợ. Đó là lý do thông tin có thể tự tìm tới chủ cho thuê một cách liên tục, tức thì, đều.</li>
+                    <li>Vì vậy các app gửi qua Zalo thường chỉ gửi tin bắt buộc. Phần còn lại, chủ cho thuê tự đi hỏi, tự đi kiểm.</li>
+                    <li>Gửi tin qua Telegram bot không tốn phí. Nên roomio báo mọi việc cho chủ cho thuê ngay khi xảy ra: tiền về, hoá đơn đã soạn, phòng còn nợ. Đó là lý do thông tin có thể tự tìm tới chủ cho thuê một cách liên tục, tức thì, đều.</li>
                   </ul>
                 </div>
 
                 <div class="pitch-budget-block">
                   <h4 class="pitch-budget-block__title">Vì sao chọn Telegram</h4>
                   <ul class="pitch-budget-assumptions">
-                    <li>Telegram không phải một app làm ít việc mà vẫn bắt khách tải: có đủ chat, chatbot, mini app, nên chủ trọ với khách nói chuyện hai chiều ngay tức thì.</li>
+                    <li>Telegram không phải một app làm ít việc mà vẫn bắt khách tải: có đủ chat, chatbot, mini app, nên chủ cho thuê với khách nói chuyện hai chiều ngay tức thì.</li>
                     <li>Telegram được tối ưu rất sâu, máy yếu, máy cũ vẫn chạy ổn. App riêng của đối thủ khó tối ưu được như vậy.</li>
                     <li>Khách chưa dùng Telegram: hoá đơn đã xem được qua link gửi bằng Zalo; phần gửi số không cần Telegram sẽ làm trong 3 tháng đầu.</li>
                   </ul>
                 </div>
 
                 <div class="pitch-budget-block">
-                  <h4 class="pitch-budget-block__title">Vì sao chủ trọ ở lại</h4>
+                  <h4 class="pitch-budget-block__title">Vì sao chủ cho thuê ở lại</h4>
                   <ul class="pitch-budget-assumptions">
                     <li>Sau khoảng 2 tháng, dữ liệu khách thuê, hoá đơn và lịch sử tiền đã nằm trong roomio.</li>
-                    <li>Chủ trọ không phải mở app để kiểm tra. Việc thường thì tóm tắt mỗi sáng, việc gấp thì báo ngay. Chủ trọ luôn biết tiền bạc, phòng ốc của mình đang ra sao.</li>
-                    <li>Với 3 chủ trọ dùng thử đầu tiên, em sẽ đo: sau tháng 2 còn dùng không, bao nhiêu phần trăm hoá đơn đi qua roomio, và thời gian chốt sổ mỗi tháng trước và sau khi dùng.</li>
+                    <li>Chủ cho thuê không phải mở app để kiểm tra. Việc thường thì tóm tắt mỗi sáng, việc gấp thì báo ngay. Chủ cho thuê luôn biết tiền bạc, phòng ốc của mình đang ra sao.</li>
+                    <li>Với 3 chủ cho thuê dùng thử đầu tiên, em sẽ đo: sau tháng 2 còn dùng không, bao nhiêu phần trăm hoá đơn đi qua roomio, và thời gian chốt sổ mỗi tháng trước và sau khi dùng.</li>
                   </ul>
                 </div>
 
@@ -5528,9 +5528,9 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                   <ol class="pitch-budget-assumptions">
                     <li>Tới ngày chốt số, bot tự nhắc khách.</li>
                     <li>Khách chụp đồng hồ gửi vào chat. Máy đọc số từ ảnh, khách xem lại, sai thì sửa, rồi xác nhận.</li>
-                    <li>Chủ trọ nhận một bộ gồm: ảnh, số khách đã xác nhận, và số do máy đọc lại lần hai bằng một hãng AI khác.</li>
-                    <li>Chủ trọ so lại: đúng thì chốt, sai thì nhập số đúng rồi chốt.</li>
-                    <li>Nếu chủ trọ chốt khác số khách gửi, khách được báo ngay. Không ai sửa lén được.</li>
+                    <li>Chủ cho thuê nhận một bộ gồm: ảnh, số khách đã xác nhận, và số do máy đọc lại lần hai bằng một hãng AI khác.</li>
+                    <li>Chủ cho thuê so lại: đúng thì chốt, sai thì nhập số đúng rồi chốt.</li>
+                    <li>Nếu chủ cho thuê chốt khác số khách gửi, khách được báo ngay. Không ai sửa lén được.</li>
                   </ol>
                   <p>Không đụng tới phần cứng (ví dụ công tơ Bluetooth) thì chưa tự động hoàn toàn được. roomio chọn làm thuần phần mềm, và sẽ tiếp tục rút ngắn bước này.</p>
                 </div>
@@ -5650,7 +5650,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                 </span>
               </summary>
               <div class="apple-accordion-content">
-                <p>Dùng Telegram thay vì Zalo để tiết kiệm chi phí gửi tin. Kiến trúc chạy ẩn: Chủ trọ đi ngủ, bot vẫn đi nhắc nợ khách.</p>
+                <p>Dùng Telegram thay vì Zalo để tiết kiệm chi phí gửi tin. Kiến trúc chạy ẩn: Chủ cho thuê đi ngủ, bot vẫn đi nhắc nợ khách.</p>
 
                 <div class="pitch-budget-block">
                   <h4 class="pitch-budget-block__title">Giữ dữ liệu một chỗ là chưa đủ</h4>
@@ -5722,6 +5722,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                   <h4 class="pitch-budget-block__title">Mỗi bước đo bằng gì</h4>
                   <ul class="pitch-budget-assumptions">
                     <li>Chạy xuyên suốt: đủ một vòng nhắc gửi số → chốt số → hoá đơn → tiền về → gạch nợ. Đo: số lần founder phải sửa tay trong một vòng.</li>
+                    <li>Cài đặt và hướng dẫn. Đo thử mỗi chủ cần hướng dẫn mấy lần thì tự làm được một vòng tháng.</li>
                     <li>Khách đầu tiên qua một kỳ hoá đơn thật. Đo: bao nhiêu phòng tự gửi số trước khi hết 3 lần nhắc; máy đọc số đúng bao nhiêu % (so số máy đọc với số được chốt); bao nhiêu hoá đơn trả bằng mã QR.</li>
                     <li>Dùng lặp lại. Đo: bao nhiêu chủ còn dùng sau 2 tháng; thời gian làm sổ mỗi tháng trước và sau khi dùng (hỏi trực tiếp chủ).</li>
                     <li>Trả tiền và giới thiệu. Đo: bao nhiêu chủ trả phí khi hết ưu đãi; bao nhiêu chủ giới thiệu chủ mới.</li>
@@ -6102,7 +6103,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                   <h4 class="pitch-budget-block__title">Ai bán, bán thế nào</h4>
                   <ul class="pitch-budget-assumptions">
                     <li>Tháng 1 founder tự đi bán. Từ tháng 2 có Sale chính và 1 CTV bán hàng ở Đà Lạt. Từ khoảng tháng 2–3 có thêm CEO cùng điều hành, onboarding khách và dư giờ thì bán thêm. Từ tháng 6 về TP.HCM, thêm CTV thứ 2.</li>
-                    <li>Gặp tận nhà, cài đặt giúp 1-1. Có ưu đãi cho những chủ đầu tiên; mức cụ thể sẽ chốt khi bắt đầu bán.</li>
+                    <li>Gặp tận nhà, cài đặt giúp 1-1. Ưu đãi tuỳ từng chủ, chủ còn ngại thì cho dùng miễn phí 1-2 tháng hoặc giảm 30–50% một tháng, chủ sẵn sàng thì trả giá thường đôi khi kèm quà tặng nho nhỏ tháng tiếp theo giữ chân. Các mức này đã có sẵn nút giảm trong trang quản trị của roomio.</li>
                     <li>Không chạy quảng cáo diện rộng. Tiền marketing dùng cho thưởng giới thiệu, quà tặng và ưu đãi cho chủ đầu tiên.</li>
                     <li>Đánh du kích nên khách mới tăng dần: ở Đà Lạt từ 3 lên 7 chủ mỗi tháng; từ tháng 6 ở TP.HCM từ 6 lên khoảng 25 chủ mỗi tháng ở tháng 18. Đây là phần chính của mốc ~105 chủ ở tháng 12 và ~240 chủ ở tháng 18, không tính khách CEO ký. Số chủ từng người, hoa hồng và tiền marketing: xem phụ lục 12.</li>
                   </ul>
