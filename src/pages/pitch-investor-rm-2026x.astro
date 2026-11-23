@@ -132,7 +132,7 @@ const pitchRevenueCaseRows = [
   { label: 'Doanh thu tháng 18', cells: ['~45 triệu', '~62 triệu', '~77 triệu', '~86 triệu'] },
   { label: 'Quỹ còn cuối tháng 18', cells: ['~429 triệu', '~522 triệu', '~603 triệu', '~656 triệu'] },
   { label: 'Hoà vốn hằng tháng', cells: ['~tháng 38', '~tháng 31', '~tháng 27', '~tháng 25'] },
-  { label: 'Cần gọi thêm vốn để tới hoà vốn?', cells: ['Có; quỹ cạn khoảng tháng 23 nếu không gọi thêm, nên gọi vòng sau khoảng tháng 18–24', 'Có; quỹ cạn khoảng tháng 28 nếu không gọi thêm, nên gọi vòng sau khoảng tháng 18–24', 'Không; quỹ thấp nhất ~300 triệu ở tháng 26', 'Không; quỹ thấp nhất ~452 triệu ở tháng 24'] },
+  { label: 'Cần gọi thêm vốn để tới hoà vốn?', cells: ['Có; quỹ cạn khoảng tháng 23 nếu không gọi thêm, nên bắt đầu gọi vòng sau khoảng tháng 13–14 (xem mục 6)', 'Có; quỹ cạn khoảng tháng 28 nếu không gọi thêm, nên bắt đầu gọi vòng sau khoảng tháng 13–14 (xem mục 6)', 'Không; quỹ thấp nhất ~300 triệu ở tháng 26', 'Không; quỹ thấp nhất ~452 triệu ở tháng 24'] },
 ]
 
 const pitchRevenueRows = [
@@ -5028,7 +5028,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
             <p class="pitch-fund-meta pitch-fund-meta--stacked">Khoảng 2,57 tỷ đồng cho 18 tháng runway.</p>
             <p class="pitch-fund-meta">Chưa tính doanh thu thì vốn vẫn đủ 18 tháng, còn dư khoảng 129 triệu làm dự phòng.</p>
             <p class="pitch-fund-meta">Bảng chi tính khi chưa có doanh thu. Có doanh thu thì cuối tháng 18 quỹ còn khoảng 429 triệu (bình thường), 522 triệu (hơn mức bình thường), 603 triệu (khá) hoặc 656 triệu (màu hồng). Xem phụ lục 12, mục 5.</p>
-            <p class="pitch-fund-meta">Tiền này đủ để em đưa "roomio" tới khoảng 240 chủ trả phí ở tháng 18. Tới đó em lấy số chủ thật, doanh thu thật để gọi vòng tiếp theo, khoảng tháng 18–24. Còn nếu chủ nhiều phòng, nhiều loại hình vào sớm (từ trường hợp khá trở lên) thì "roomio" tự đi tới hoà vốn, không cần gọi thêm.</p>
+            <p class="pitch-fund-meta">Tiền này đủ để em đưa "roomio" tới khoảng 240 chủ trả phí ở tháng 18. Khoảng tháng 13–14, khi đã có số chủ thật, doanh thu thật, em gọi vòng tiếp theo (điều kiện ở phụ lục 12, mục 6). Còn nếu chủ nhiều phòng, nhiều loại hình vào sớm (từ trường hợp khá trở lên) thì "roomio" tự đi tới hoà vốn, không cần gọi thêm.</p>
 
             <h3 class="pitch-fund-section-title">Tiền dùng vào đâu</h3>
             <div class="pitch-fund-bars">
@@ -6016,7 +6016,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                     <li>Thời gian thu lại chi phí đó: khoảng 2–5 tháng với chủ khoảng 15 phòng, khoảng 4–9 tháng với chủ khoảng 9 phòng.</li>
                     <li>Tỷ lệ rời bỏ giả định (churn): 2% mỗi tháng.</li>
                     <li>
-                      Hoà vốn: khoảng 13.100 phòng. Tương đương khoảng 830 chủ nếu mỗi chủ có khoảng 15 phòng, hoặc khoảng 1.470 chủ nếu mỗi chủ khoảng 9 phòng (mức trung bình một nhà trọ ở TP.HCM). Chi phí lấy theo mức từ tháng 18 trong bảng dự trù (đủ đội: founder, dev, CEO, sale chính, 2 CTV; lương tính theo mức đạt số), cộng chỗ làm, máy chủ, API AI và marketing. Chưa tính khách rời bỏ và ưu đãi cho những chủ đầu tiên. Bảng giá đã gồm VAT; nếu phải nộp VAT 8–10% trên phí thì cần khoảng 14.400 phòng. Với nhịp bán trong bảng dự trù và toàn phòng trọ giá thấp nhất, mức này tới vào khoảng tháng 38, nên trường hợp này cần gọi vòng sau khoảng tháng 18–24; xem phụ lục 12, mục 5.
+                      Hoà vốn: khoảng 13.100 phòng. Tương đương khoảng 830 chủ nếu mỗi chủ có khoảng 15 phòng, hoặc khoảng 1.470 chủ nếu mỗi chủ khoảng 9 phòng (mức trung bình một nhà trọ ở TP.HCM). Chi phí lấy theo mức từ tháng 18 trong bảng dự trù (đủ đội: founder, dev, CEO, sale chính, 2 CTV; lương tính theo mức đạt số), cộng chỗ làm, máy chủ, API AI và marketing. Chưa tính khách rời bỏ và ưu đãi cho những chủ đầu tiên. Bảng giá đã gồm VAT; nếu phải nộp VAT 8–10% trên phí thì cần khoảng 14.400 phòng. Với nhịp bán trong bảng dự trù và toàn phòng trọ giá thấp nhất, mức này tới vào khoảng tháng 38, nên trường hợp này cần bắt đầu gọi vòng sau khoảng tháng 13–14; xem phụ lục 12, mục 5 và 6.
                     </li>
                     <li>
                       Chi phí chạy dịch vụ: máy chủ 3–5 triệu đồng mỗi tháng, cộng 1,5 triệu cho máy chạy thử (staging), cộng API AI (đọc số bằng 2 hãng và các agent) khoảng 8,5% doanh thu; gửi tin qua Telegram không mất phí. Ước tính biên lợi nhuận gộp khoảng 80–85% khi agent chạy đủ.
@@ -6485,7 +6485,17 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                 </div>
 
                 <div class="pitch-budget-block">
-                  <h4 class="pitch-budget-block__title">6. Giả định chính</h4>
+                  <h4 class="pitch-budget-block__title">6. Khi nào gọi vòng tiếp theo</h4>
+                  <p>"roomio" và team sẽ gọi vòng tiếp theo khi đạt một trong hai điều kiện sau, tuỳ điều kiện nào tới trước:</p>
+                  <ul class="pitch-budget-assumptions">
+                    <li>Đạt đủ cụm mốc: từ 120 chủ cho thuê trả phí trở lên; doanh thu tháng từ 25 triệu trở lên và tăng ít nhất 10% mỗi tháng trong 3 tháng liền; ít nhất 85% chủ còn trả phí sau 3 tháng dùng. Theo bảng, cụm này tới khoảng tháng 13–14.</li>
+                    <li>Quỹ chỉ còn đủ khoảng 9 tháng chi. Gọi vốn thường mất 4–6 tháng, cộng thêm thời gian làm thủ tục tăng vốn, nên phải bắt đầu sớm. Ở trường hợp bình thường, mốc này tới khoảng tháng 14.</li>
+                  </ul>
+                  <p class="pitch-budget-table-note">Vòng tiếp theo là vòng hạt giống (seed). Ở Việt Nam vòng này thường từ khoảng $0,5 triệu tới $3 triệu.</p>
+                </div>
+
+                <div class="pitch-budget-block">
+                  <h4 class="pitch-budget-block__title">7. Giả định chính</h4>
                   <ul class="pitch-budget-assumptions">
                     {pitchAssumptions.map((item) => (
                       <li>{item}</li>
@@ -6494,7 +6504,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                 </div>
 
                 <div class="pitch-budget-block">
-                  <h4 class="pitch-budget-block__title">7. Điều khoản</h4>
+                  <h4 class="pitch-budget-block__title">8. Điều khoản</h4>
                   <ul class="pitch-budget-assumptions">
                     {pitchInvestorReturn.map((item) => (
                       <li>{item}</li>
