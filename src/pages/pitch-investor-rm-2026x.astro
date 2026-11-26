@@ -93,7 +93,7 @@ const pitchTableC = [
   { hangMuc: 'Thưởng Tết Sale chính (1 tháng lương cứng, tạm đặt tháng 4)', thang: '4', vnd: '5.500.000' },
   { hangMuc: 'Tuyển dụng CTV 2', thang: '5', vnd: '500.000' },
   { hangMuc: 'Setup văn phòng TP.HCM (bàn ghế, wifi)', thang: '6', vnd: '8.000.000' },
-  { hangMuc: 'Tiền cọc văn phòng TP.HCM: phần công ty 17tr + ứng cho Founder 7tr cọc chỗ ở (Founder hoàn lại đủ cho công ty khi nhận lại cọc)', thang: '6', vnd: '24.000.000' },
+  { hangMuc: 'Tiền cọc văn phòng TP.HCM, gồm 17tr phần công ty và 7tr ứng cho Founder cọc chỗ ở. Founder hoàn lại đủ 7tr khi nhận lại cọc', thang: '6', vnd: '24.000.000' },
   { hangMuc: 'Quyết toán thuế, báo cáo tài chính năm', thang: '12', vnd: '3.000.000' },
   { hangMuc: 'Thưởng Tết lần 2 Sale chính (1 tháng lương cứng, tạm đặt tháng 16)', thang: '16', vnd: '8.000.000' },
   { hangMuc: 'TỔNG CHI MỘT LẦN', thang: '', vnd: '178.450.000', total: true },
@@ -121,7 +121,7 @@ const pitchTableD = [
 ]
 
 const pitchRevenueIntro =
-  'Bảng ở trên em tính khi chưa có đồng doanh thu nào, cho chắc. Có doanh thu thì khác. Dưới đây là 4 trường hợp: cùng số chủ, cùng chi phí, chỉ khác loại khách nên phí trung bình mỗi chủ khác nhau.'
+  'Bảng ở trên em tính khi chưa có đồng doanh thu nào, cho chắc. Có doanh thu thì khác. Dưới đây là 4 trường hợp. Cả 4 có cùng số chủ và cùng chi phí. Chỉ khác loại khách, nên phí trung bình mỗi chủ khác nhau.'
 
 const pitchRevenueCaseColumns = ['', 'Bình thường', 'Hơn mức bình thường', 'Khá', 'Màu hồng']
 
@@ -132,7 +132,7 @@ const pitchRevenueCaseRows = [
   { label: 'Doanh thu tháng 18', cells: ['~45 triệu', '~62 triệu', '~77 triệu', '~86 triệu'] },
   { label: 'Quỹ còn cuối tháng 18', cells: ['~429 triệu', '~522 triệu', '~603 triệu', '~656 triệu'] },
   { label: 'Hoà vốn hằng tháng', cells: ['~tháng 38', '~tháng 31', '~tháng 27', '~tháng 25'] },
-  { label: 'Cần gọi thêm vốn để tới hoà vốn?', cells: ['Có; quỹ cạn khoảng tháng 23 nếu không gọi thêm, nên gọi vòng sau trong khoảng tháng 15–18 (xem mục 6)', 'Có; quỹ cạn khoảng tháng 28 nếu không gọi thêm, nên gọi vòng sau trong khoảng tháng 15–18 (xem mục 6)', 'Không; quỹ thấp nhất ~300 triệu ở tháng 26', 'Không; quỹ thấp nhất ~452 triệu ở tháng 24'] },
+  { label: 'Cần gọi thêm vốn để tới hoà vốn?', cells: ['Có. Không gọi thêm thì quỹ cạn khoảng tháng 23. Nên gọi vòng sau trong khoảng tháng 15–18 (xem mục 6)', 'Có. Không gọi thêm thì quỹ cạn khoảng tháng 28. Nên gọi vòng sau trong khoảng tháng 15–18 (xem mục 6)', 'Không. Quỹ thấp nhất còn ~300 triệu ở tháng 26', 'Không. Quỹ thấp nhất còn ~452 triệu ở tháng 24'] },
 ]
 
 const pitchRevenueRows = [
@@ -157,11 +157,11 @@ const pitchRevenueRows = [
 ]
 
 const pitchRevenueNote =
-  'Chủ ký ở Đà Lạt (tháng 1–5) tính giá phòng trọ nhỏ ở cả 4 trường hợp. Đánh du kích nên khách mới tăng dần: 3, 4, 5, 6, 7 chủ mỗi tháng ở Đà Lạt; từ tháng 6 ở TP.HCM 6, 7, 10, 11, 13, 14, 15, 17, 18, 19, 22, 23, 25 chủ. Mỗi tháng +3% nhờ giới thiệu, −2% khách rời. Không tính khách CEO ký. Sau tháng 18 giữ nguyên đội, mức chi và nhịp 25 chủ mới mỗi tháng. Bảng tính chủ trả phí từ tháng đầu. Chủ nào được miễn phí 1–2 tháng thì doanh thu sẽ thấp hơn một chút.'
+  'Chủ ký ở Đà Lạt (tháng 1–5) tính giá phòng trọ nhỏ ở cả 4 trường hợp. Đánh du kích nên khách mới tăng dần. Ở Đà Lạt là 3, 4, 5, 6, 7 chủ mỗi tháng. Từ tháng 6 ở TP.HCM là 6, 7, 10, 11, 13, 14, 15, 17, 18, 19, 22, 23, 25 chủ. Mỗi tháng +3% nhờ giới thiệu, −2% khách rời. Không tính khách CEO ký. Sau tháng 18 giữ nguyên đội, mức chi và nhịp 25 chủ mới mỗi tháng. Bảng tính chủ trả phí từ tháng đầu. Chủ nào được miễn phí 1–2 tháng thì doanh thu sẽ thấp hơn một chút.'
 
 
 const pitchPriceLeverIntro =
-  'Tăng giá là cách riêng, áp được lên cả 4 trường hợp ở phụ lục 12, mục 5. Cùng số chủ, cùng chi phí; chỉ tăng cả bảng giá thêm 10% hoặc 20%. Mỗi ô ghi tháng hoà vốn.'
+  'Tăng giá là cách riêng, áp được lên cả 4 trường hợp ở phụ lục 12, mục 5. Số chủ và chi phí giữ nguyên. Chỉ tăng cả bảng giá thêm 10% hoặc 20%. Mỗi ô ghi tháng hoà vốn.'
 
 const pitchPriceLeverColumns = ['', 'Giá hiện tại', 'Tăng giá 10%', 'Tăng giá 20%']
 
@@ -173,20 +173,20 @@ const pitchPriceLeverRows = [
 ]
 
 const pitchPriceLeverNote =
-  'Giả định số chủ không giảm khi tăng giá. Trường hợp bình thường cần gọi vòng sau ở cả 3 mức giá; hơn mức bình thường cần gọi vòng sau ở giá hiện tại; các ô còn lại thì $100,000 đủ tới hoà vốn. Cách tính như phụ lục 12, mục 5.'
+  'Giả định số chủ không giảm khi tăng giá. Trường hợp bình thường cần gọi vòng sau ở cả 3 mức giá. Trường hợp hơn mức bình thường cần gọi vòng sau ở giá hiện tại. Các ô còn lại thì $100,000 đủ tới hoà vốn. Cách tính như phụ lục 12, mục 5.'
 
 const pitchAssumptions = [
   'Tỷ giá 25.700 đ/USD (Vietcombank mua vào, 14/10/2026). Lúc tiền về sẽ tính lại.',
-  'Giá roomio: 12.000–16.000 đ/phòng/tháng tuỳ số phòng, đã gồm VAT; phòng trống tính 5%. Trung bình ~190.000 đ/chủ/tháng sau VAT.',
-  'Lương Founder theo KPI: 22 triệu ở Đà Lạt (tháng 1–5), 25 triệu (tháng 6–12), 28 triệu (tháng 13–18). Không đạt KPI thì giữ mức cũ.',
-  'Dev toàn thời gian từ tháng 1: 12 triệu ở tháng đầu, 15 triệu ở tháng 2–12, lên 18 triệu ở tháng 13–18 nếu còn gắn bó. CEO từ khoảng tháng 2–3 (bảng tính từ tháng 3): 12 triệu/tháng, lương thấp bù bằng cổ phần; lo bán hàng, điều hành cùng Founder và onboarding khách; dư giờ thì đi bán thêm như một CTV, không giao chỉ tiêu. Sale chính vào từ tháng 2: thử việc tháng 2 nhận đủ 5,5 triệu cộng hoa hồng; tháng 3–6: 5,5 triệu; tháng 7–12: 6 triệu; gắn bó và làm tốt thì 8 triệu ở tháng 13–18. CTV thứ 2 vào từ tháng 6, cùng mức với CTV thứ nhất.',
+  'Giá roomio là 12.000–16.000 đ/phòng/tháng tuỳ số phòng, đã gồm VAT. Phòng trống chỉ tính 5%. Trung bình mỗi chủ trả ~190.000 đ/tháng sau VAT.',
+  'Lương Founder đi theo KPI. Tháng 1–5 ở Đà Lạt là 22 triệu. Tháng 6–12 là 25 triệu. Tháng 13–18 là 28 triệu. Không đạt KPI thì giữ mức cũ.',
+  'Dev toàn thời gian vào từ tháng 1. Lương tháng đầu 12 triệu, tháng 2–12 là 15 triệu. Nếu còn gắn bó thì lên 18 triệu ở tháng 13–18. CEO vào khoảng tháng 2–3, bảng tính từ tháng 3. Lương CEO 12 triệu/tháng, thấp nên bù bằng cổ phần. CEO lo bán hàng, điều hành cùng Founder và onboarding khách. Dư giờ thì CEO đi bán thêm như một CTV, không giao chỉ tiêu. Sale chính vào từ tháng 2. Tháng 2 thử việc vẫn nhận đủ 5,5 triệu cộng hoa hồng. Tháng 3–6 là 5,5 triệu, tháng 7–12 là 6 triệu. Gắn bó và làm tốt thì lên 8 triệu ở tháng 13–18. CTV thứ 2 vào từ tháng 6, cùng mức với CTV thứ nhất.',
   'Hoa hồng chỉ tính khi chủ cho thuê đã trả tháng phí đầu tiên, tức sau phần miễn phí nếu có. Chủ cho thuê rời roomio trong 60 ngày đầu thì trừ lại hoa hồng.',
-  'Sale chính: khách 1–5: 400.000 đ; khách 6–7: 600.000 đ; khách 8–9: 800.000 đ; từ khách 10: 1.000.000 đ.',
-  'Mỗi CTV, tính riêng từng người: khách 1–4: 400.000 đ; khách 5: 600.000 đ; từ khách 6: 1.000.000 đ.',
-  'Dự phóng khách: đánh du kích nên tăng dần. Khách mới cả đội mỗi tháng: 3, 4, 5, 6, 7 ở Đà Lạt (tháng 1–5); 6, 7, 10, 11, 13, 14, 15, 17, 18, 19, 22, 23, 25 ở TP.HCM (tháng 6–18). Founder ký 2 chủ/tháng từ tháng 2. CTV khoảng 1/3 phần còn lại ở Đà Lạt; ở TP.HCM mỗi CTV tăng dần từ 1 lên 6 chủ/tháng. Còn lại cho Sale chính, tới tháng 18 khoảng 11 chủ/tháng. Mỗi tháng +3% nhờ giới thiệu, −2% khách rời. Không tính khách CEO ký.',
-  'Văn phòng TP.HCM từ tháng 6: thuê căn 2PN ~17 triệu/tháng, phòng khách làm văn phòng cho Founder và Dev. Một phòng share cho người ngoài 5 triệu; Founder ở phòng còn lại, tự trả 3,5 triệu; công ty trả 8,5 triệu. Địa chỉ đăng ký công ty là văn phòng ảo.',
-  'Staging đặt trên một máy chủ riêng cho giống production. Máy trong bảng chỉ cấp cho Dev; Founder dùng máy đang có (xem phụ lục 10, mục Chỗ làm). CEO, Sale, CTV dùng máy riêng, mỗi người một tài khoản, nghỉ là khoá.',
-  'API AI (đọc số bằng 2 hãng và các agent làm thay chủ cho thuê): 0,4 triệu ở tháng 1, 0,8 triệu/tháng ở tháng 2–5, 3,2 triệu ở tháng 6–12, 4,7 triệu ở tháng 13–18; khoảng 8,5% doanh thu khi các agent hoạt động đầy đủ.',
+  'Hoa hồng Sale chính tính theo từng chủ ký được trong tháng. Chủ thứ 1 tới 5 được 400.000 đ mỗi chủ. Chủ thứ 6 và 7 được 600.000 đ. Chủ thứ 8 và 9 được 800.000 đ. Từ chủ thứ 10 trở đi được 1.000.000 đ.',
+  'Hoa hồng CTV tính riêng từng người. Chủ thứ 1 tới 4 được 400.000 đ mỗi chủ. Chủ thứ 5 được 600.000 đ. Từ chủ thứ 6 trở đi được 1.000.000 đ.',
+  'Dự phóng khách đi theo kiểu đánh du kích nên tăng dần. Khách mới cả đội mỗi tháng ở Đà Lạt (tháng 1–5) là 3, 4, 5, 6, 7. Ở TP.HCM (tháng 6–18) là 6, 7, 10, 11, 13, 14, 15, 17, 18, 19, 22, 23, 25. Founder ký 2 chủ mỗi tháng từ tháng 2. Ở Đà Lạt, CTV ký khoảng 1/3 phần còn lại. Ở TP.HCM, mỗi CTV tăng dần từ 1 lên 6 chủ mỗi tháng. Phần còn lại là của Sale chính, tới tháng 18 khoảng 11 chủ mỗi tháng. Mỗi tháng +3% nhờ giới thiệu, −2% khách rời. Không tính khách CEO ký.',
+  'Từ tháng 6, văn phòng TP.HCM là một căn 2PN ~17 triệu/tháng. Phòng khách làm văn phòng cho Founder và Dev. Một phòng share cho người ngoài 5 triệu. Founder ở phòng còn lại, tự trả 3,5 triệu. Công ty trả 8,5 triệu. Địa chỉ đăng ký công ty là văn phòng ảo.',
+  'Staging đặt trên một máy chủ riêng cho giống production. Máy trong bảng chỉ cấp cho Dev. Founder dùng máy đang có (xem phụ lục 10, mục Chỗ làm). CEO, Sale, CTV dùng máy riêng, mỗi người một tài khoản, nghỉ là khoá.',
+  'API AI dùng để đọc số bằng 2 hãng và chạy các agent làm thay chủ cho thuê. Tháng 1 tốn 0,4 triệu. Tháng 2–5 tốn 0,8 triệu mỗi tháng. Tháng 6–12 tốn 3,2 triệu. Tháng 13–18 tốn 4,7 triệu. Khi các agent hoạt động đầy đủ thì khoản này bằng khoảng 8,5% doanh thu.',
   'Máy chủ tháng 1–5 dùng gói Founder đã trả trước, công ty chưa phải trả.',
 ]
 
@@ -194,10 +194,10 @@ const pitchInvestorReturn = [
   '$100,000 (khoảng 2,57 tỷ đồng) đổi lấy 10% cổ phần phổ thông. Định giá sau vốn $1,000,000 (khoảng 25,7 tỷ đồng).',
   'Chừa khoảng 10% cổ phần cho CEO và đội ngũ chủ chốt.',
   'Bây giờ ký bản thoả thuận điều khoản ngắn, chưa ràng buộc. Tháng 1 lập công ty cổ phần, nhà đầu tư là cổ đông sáng lập. Tiền chuyển sau khi có giấy chứng nhận đăng ký doanh nghiệp và điều lệ, trong 90 ngày theo luật.',
-  'Nhà đầu tư lời khi phần 10% được mua lại với giá cao hơn lúc vào: ở các vòng gọi vốn sau, khi "roomio" được định giá cao hơn, hoặc khi có công ty lớn mua lại "roomio".',
+  'Nhà đầu tư lời khi phần 10% được mua lại với giá cao hơn lúc vào. Chuyện đó xảy ra ở các vòng gọi vốn sau, khi "roomio" được định giá cao hơn. Hoặc khi có công ty lớn mua lại "roomio".',
   'Nếu sau này có người mua, nhà đầu tư bán cùng giá, cùng lúc với founder.',
   'Chi tiết do luật sư soạn vào thoả thuận cổ đông và điều lệ.',
-  'Dòng tiền khi có doanh thu: xem mục 5 ở trên. Hoà vốn nếu tăng giá: xem phụ lục 8.',
+  'Dòng tiền khi có doanh thu nằm ở mục 5 ở trên. Hoà vốn nếu tăng giá nằm ở phụ lục 8.',
 ]
 
 const breakevenDotGridCols = 56
@@ -635,57 +635,9 @@ function appendix2ImageByBase(base: string): ImageMetadata | undefined {
   return undefined
 }
 
-function appendix2CompetitorImage(n: number): ImageMetadata | undefined {
-  const base = `doi-thu-${n}`
-  for (const [path, meta] of Object.entries(appendix2ImageGlob)) {
-    const name = appendix2Basename(path)
-    if (
-      name === `${base}.png` ||
-      name === `${base}.jpg` ||
-      name === `${base}.jpeg` ||
-      name === `${base}.webp`
-    ) {
-      return meta
-    }
-  }
-  return undefined
-}
-
-type Appendix2CompetitorSlot = {
-  n: number
-  caption: string
-  alt: string
-}
-
-const appendix2CompetitorSlots: Appendix2CompetitorSlot[] = [
-  { n: 1, caption: '', alt: '' },
-  { n: 2, caption: '', alt: '' },
-  { n: 3, caption: '', alt: '' },
-]
-
 const appendix2DoiThuWidths = [480, 960, 1440]
 const appendix2DoiThuSizes =
   '(min-width: 768px) calc((min(100vw - 40px, 720px) - 16px) / 2), 85vw'
-
-async function resolveAppendix2CompetitorSlot(slot: Appendix2CompetitorSlot) {
-  const image = appendix2CompetitorImage(slot.n)
-  let fullUrl: string | undefined
-
-  if (image) {
-    const optimized = await getImage({
-      src: image,
-      width: image.width ? Math.min(image.width, 2560) : 1440,
-      format: 'webp',
-    })
-    fullUrl = optimized.src
-  }
-
-  return { ...slot, image, fullUrl }
-}
-
-const appendix2CompetitorMedia = await Promise.all(
-  appendix2CompetitorSlots.map((slot) => resolveAppendix2CompetitorSlot(slot)),
-)
 
 type Appendix2AppSlotConfig = {
   base: string
@@ -4695,7 +4647,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
               <p class="pitch-position__grid-barrier">Rào cản lúc bắt đầu</p>
             </div>
             <p class="pitch-position__note">
-              Vị trí dựa trên lúc em tự đóng vai chủ cho thuê, dùng thử đủ một vòng tháng trên LOZIDO, eNha, Mona House; bên lớn em tìm hiểu qua cách họ bán. Excel + Zalo dễ bắt đầu nhất vì ai cũng có sẵn, nhưng tốn công nhất. "roomio" cần khách dùng Telegram; khách chưa dùng Telegram vẫn mở hoá đơn qua link, chủ nhập số tay trên web.
+              Vị trí dựa trên lúc em tự đóng vai chủ cho thuê, dùng thử đủ một vòng tháng trên LOZIDO, eNha, Mona House. Bên lớn thì em tìm hiểu qua cách họ bán. Excel + Zalo dễ bắt đầu nhất vì ai cũng có sẵn, nhưng tốn công nhất. "roomio" cần khách dùng Telegram. Khách chưa dùng Telegram vẫn mở hoá đơn qua link, còn chủ nhập số tay trên web.
             </p>
           </div>
 
@@ -4840,7 +4792,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
               <p><span class="pitch-label--roomio">Về giá:</span> Bảng giá hiện tại là bản đầu tiên, đang thử với những chủ cho thuê đầu tiên. "roomio" sẽ còn điều chỉnh cho hợp lý khi có dữ liệu sử dụng từ những chủ đầu tiên. Bảng giá và máy tính phí ở phụ lục.</p>
             </div>
 
-            <p class="pitch-fund-meta">Nguồn: Sở Xây dựng TP.HCM, Công an Hà Nội, Tổng Liên đoàn Lao động Việt Nam, Bộ Xây dựng. Số cả nước và Hà Nội là ước tính. Cách tính ở phụ lục.</p>
+            <p class="pitch-fund-meta">Số liệu lấy từ Sở Xây dựng TP.HCM, Công an Hà Nội, Tổng Liên đoàn Lao động Việt Nam, Bộ Xây dựng. Số cả nước và Hà Nội là ước tính. Cách tính ở phụ lục.</p>
 
             <div class="appendix-btn-wrap">
               <button type="button" class="appendix-jump-btn" data-target="appendix-slide-8" aria-label="Xem thêm phụ lục cho Slide 8">
@@ -4965,19 +4917,19 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
               <div>
                 <h3>Lõi tối thiểu đã hoàn thành</h3>
                 <ul>
-                  <li>Web cho chủ cho thuê; bot Telegram cho khách và cho chủ; mini app cho khách; link hoá đơn cho khách chưa dùng Telegram.</li>
+                  <li>Chủ cho thuê dùng web. Khách và chủ đều có bot Telegram. Khách có thêm mini app. Khách chưa dùng Telegram thì mở hoá đơn qua link.</li>
                   <li>Tự soạn hoá đơn nháp mỗi tháng, nhắc gửi số 3 lần, nhắc nợ 6 lần, báo cáo cho chủ mỗi sáng.</li>
-                  <li>Khách quét mã QR, tiền vào thẳng tài khoản của chủ. Chủ bấm xác nhận là gạch nợ; phần tự gạch nợ đã làm sẵn, chờ nối SePay.</li>
+                  <li>Khách quét mã QR, tiền vào thẳng tài khoản của chủ. Chủ bấm xác nhận là gạch nợ. Phần tự gạch nợ đã làm sẵn, chỉ chờ nối SePay.</li>
                   <li>Hợp đồng và tiền cọc, giá điện nước bậc thang, khách báo sự cố kèm ảnh trong mini app.</li>
-                  <li>Bản đầu của máy đọc số đồng hồ: AI đọc ảnh, rồi đọc lại một lần để kiểm. Chủ sửa số thì khách được báo ngay.</li>
+                  <li>Máy đọc số đồng hồ đã có bản đầu. AI đọc ảnh, rồi đọc lại một lần để kiểm. Chủ sửa số thì khách được báo ngay.</li>
                 </ul>
               </div>
               <div>
                 <h3>Vốn này dùng để làm tiếp</h3>
                 <ul>
-                  <li>Nối SePay khi lập công ty xong (tháng 1): tiền về là tự gạch nợ. Chủ chỉ liên kết ngân hàng bằng OTP ngay trong roomio.</li>
-                  <li>Phần chạy ngầm bổ trợ cho lõi, chưa thấy ở các app em đã dùng thử: quản gia AI cho chủ cho thuê, agent nhập dữ liệu từ file Excel cũ, bot bản tin.</li>
-                  <li>Làm chắc máy đọc số: thêm một hãng AI thứ hai để đọc đối chiếu.</li>
+                  <li>Nối SePay khi lập công ty xong ở tháng 1. Từ đó tiền về là tự gạch nợ. Chủ chỉ liên kết ngân hàng bằng OTP ngay trong roomio.</li>
+                  <li>Thêm các phần chạy ngầm bổ trợ cho lõi mà em chưa thấy ở app nào em đã dùng thử. Đó là quản gia AI cho chủ cho thuê, agent nhập dữ liệu từ file Excel cũ và bot bản tin.</li>
+                  <li>Làm chắc máy đọc số bằng cách thêm một hãng AI thứ hai để đọc đối chiếu.</li>
                   <li>Khách không dùng Telegram vẫn gửi được số.</li>
                   <li>Mở rộng thêm loại hình cho thuê.</li>
                 </ul>
@@ -5147,11 +5099,11 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                       <div class="sys-arch-tier__row">
                         <div class="sys-arch-node">
                           <p class="sys-arch-node__title">Web và API</p>
-                          <p class="sys-arch-node__sub">Một bộ quy tắc tính tiền duy nhất, máy chạy ngầm cũng dùng chung. roomio không giữ tiền: khách chuyển thẳng cho chủ.</p>
+                          <p class="sys-arch-node__sub">Một bộ quy tắc tính tiền duy nhất, máy chạy ngầm cũng dùng chung. roomio không giữ tiền. Khách chuyển thẳng cho chủ.</p>
                         </div>
                         <div class="sys-arch-node">
                           <p class="sys-arch-node__title">Cơ sở dữ liệu</p>
-                          <p class="sys-arch-node__sub">Lưu hoá đơn, số điện nước, thanh toán; có lịch sử ai sửa gì, lúc nào.</p>
+                          <p class="sys-arch-node__sub">Lưu hoá đơn, số điện nước và thanh toán. Có lịch sử ai sửa gì, lúc nào.</p>
                         </div>
                         <div class="sys-arch-node">
                           <p class="sys-arch-node__title">Máy việc chạy ngầm</p>
@@ -5167,7 +5119,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                         </div>
                         <div class="sys-arch-node">
                           <p class="sys-arch-node__title">Máy xử lý viết bằng Go</p>
-                          <p class="sys-arch-node__sub">Dọn file cũ, xuất dữ liệu; không giữ khoá nào</p>
+                          <p class="sys-arch-node__sub">Dọn file cũ, xuất dữ liệu. Không giữ khoá nào.</p>
                         </div>
                       </div>
                     </div>
@@ -5202,14 +5154,14 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                   <h4 class="pitch-budget-block__title sys-arch-why-title">roomio sẽ tốt hơn bên khác vì:</h4>
                   <ul class="pitch-budget-assumptions">
                     <li>Tiền chỉ tính theo một bộ quy tắc, web và máy chạy ngầm dùng chung, nên không có hai cách tính lệch nhau. Máy đọc ảnh và máy Go không đụng tới hoá đơn hay tiền.</li>
-                    <li>Việc chạy ngầm đi qua hàng đợi: lỗi thì tự thử lại, và không làm trùng nên không nhắc hay gửi tin hai lần.</li>
+                    <li>Việc chạy ngầm đi qua hàng đợi. Lỗi thì tự thử lại. Không làm trùng, nên không nhắc hay gửi tin hai lần.</li>
                     <li>Mỗi phần chỉ giữ khoá nó cần. Ví dụ máy xử lý Go không giữ khoá Telegram, PayOS hay cơ sở dữ liệu.</li>
                     <li>Mỗi lần sửa code đều qua kiểm tra tự động trước khi lên bản chính thức.</li>
                     <li>Ảnh đồng hồ và các lượt gọi AI được xử lý ở máy riêng, nên việc tiền không bị nghẽn khi nhiều khách gửi ảnh cùng lúc.</li>
-                    <li>Hai máy đọc số làm độc lập: máy 1 gợi ý số cho khách, máy 2 đọc lại ảnh gốc để chủ đối chiếu. Chủ luôn là người chốt.</li>
+                    <li>Hai máy đọc số làm độc lập. Máy 1 gợi ý số cho khách. Máy 2 đọc lại ảnh gốc để chủ đối chiếu. Chủ luôn là người chốt.</li>
                     <li>Máy chủ lỗi là bot báo ngay cho đội roomio. Có màn riêng để đội roomio soát ảnh đồng hồ đọc sai và sửa cách đọc.</li>
                   </ul>
-                  <p class="sys-arch-tech-note">Công nghệ: SvelteKit, PostgreSQL, hàng đợi pg-boss, Go (gRPC), Docker.</p>
+                  <p class="sys-arch-tech-note">Công nghệ dùng SvelteKit, PostgreSQL, hàng đợi pg-boss, Go (gRPC) và Docker.</p>
                 </div>
 
                 <div class="pitch-budget-block">
@@ -5225,7 +5177,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                     </li>
                     <li class="sys-flow__step">
                       <div class="sys-flow__actors"><span class="sys-flow__actor">roomio</span></div>
-                      <p class="sys-flow__text">Nén và cất ảnh. Một agent tìm ô số, máy cắt đúng ô đó rồi máy đọc số 1 đọc; bot hỏi khách xác nhận. Ảnh không đọc được thì bot nói lý do để khách chụp lại, hoặc khách gõ số.</p>
+                      <p class="sys-flow__text">Nén và cất ảnh. Một agent tìm ô số, máy cắt đúng ô đó rồi máy đọc số 1 đọc. Bot hỏi khách xác nhận. Ảnh không đọc được thì bot nói lý do để khách chụp lại, hoặc khách gõ số.</p>
                     </li>
                     <li class="sys-flow__step">
                       <div class="sys-flow__actors"><span class="sys-flow__actor">Chủ</span></div>
@@ -5236,15 +5188,15 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                     </li>
                     <li class="sys-flow__step">
                       <div class="sys-flow__actors"><span class="sys-flow__actor">roomio</span></div>
-                      <p class="sys-flow__text">Tự soạn hoá đơn nháp lúc 9 giờ và 17 giờ. Chủ cần sớm thì bấm soạn ngay; thêm giảm giá, phụ thu ngay trên nháp.</p>
+                      <p class="sys-flow__text">Tự soạn hoá đơn nháp lúc 9 giờ và 17 giờ. Chủ cần sớm thì bấm soạn ngay. Giảm giá hay phụ thu thì thêm ngay trên nháp.</p>
                     </li>
                     <li class="sys-flow__step">
                       <div class="sys-flow__actors"><span class="sys-flow__actor">roomio</span></div>
-                      <p class="sys-flow__text">9 giờ 15 mỗi sáng gửi chủ báo cáo qua Telegram: tiền đã thu trong tháng, và việc cần làm như nháp chờ duyệt, phòng chưa gửi số, khách chưa nhận được hoá đơn, hợp đồng sắp hết hạn.</p>
+                      <p class="sys-flow__text">9 giờ 15 mỗi sáng gửi chủ báo cáo qua Telegram. Báo cáo có tiền đã thu trong tháng và việc cần làm. Ví dụ nháp chờ duyệt, phòng chưa gửi số, khách chưa nhận được hoá đơn, hợp đồng sắp hết hạn.</p>
                     </li>
                     <li class="sys-flow__step">
                       <div class="sys-flow__actors"><span class="sys-flow__actor">Chủ</span></div>
-                      <p class="sys-flow__text">Bấm Duyệt &amp; gửi. Hoá đơn tới khách qua Telegram kèm mã QR và nút sao chép số tài khoản, hoặc qua link cho khách chưa dùng Telegram. Gửi nhầm thì bấm Thu hồi: link và mã QR cũ thôi dùng được.</p>
+                      <p class="sys-flow__text">Bấm Duyệt &amp; gửi. Hoá đơn tới khách qua Telegram kèm mã QR và nút sao chép số tài khoản, hoặc qua link cho khách chưa dùng Telegram. Gửi nhầm thì bấm Thu hồi, link và mã QR cũ sẽ thôi dùng được.</p>
                     </li>
                     <li class="sys-flow__step">
                       <div class="sys-flow__actors"><span class="sys-flow__actor">Khách</span></div>
@@ -5279,44 +5231,9 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
               <div class="apple-accordion-content">
                 <div class="pitch-budget-block">
                   <h4 class="pitch-budget-block__title">Đầu tiên là về giao diện, trải nghiệm người dùng và tự động hoá.</h4>
-                  <div class="appendix-slide-2__doi-thu-strip">
-                    <div class="appendix-slide-2__doi-thu-tiles">
-                      {appendix2CompetitorMedia.map((slot) => (
-                        <div class="appendix-slide-2__doi-thu-tile">
-                          {slot.image && slot.fullUrl ? (
-                            <>
-                              <a
-                                class="appendix-slide-2__doi-thu-link"
-                                href={slot.fullUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                              >
-                                <div class="appendix-slide-2__doi-thu-frame">
-                                  <Picture
-                                    src={slot.image}
-                                    alt={slot.alt || `Hình đối thủ ${slot.n}`}
-                                    formats={['avif', 'webp']}
-                                    widths={appendix2DoiThuWidths}
-                                    sizes={appendix2DoiThuSizes}
-                                    loading="lazy"
-                                    decoding="async"
-                                  />
-                                </div>
-                              </a>
-                              {slot.caption ? (
-                                <p class="appendix-slide-2__doi-thu-caption">{slot.caption}</p>
-                              ) : null}
-                            </>
-                          ) : (
-                            <div class="appendix-slide-2__doi-thu-placeholder">Hình đối thủ {slot.n}</div>
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
                   <ul class="pitch-budget-assumptions">
                     <li>
-                      Về giao diện, từ hệ thống trên web và mobile app các nút bấm rất phức tạp, khó hiểu. Một phần là vì người xây dựng sản phẩm bên đó không nghiên cứu sâu, phần còn lại là về sau làm lại app thì họ toàn để AI tự quyết, nên app lộn xộn (cái này em sẽ nói rõ hơn ở phần phân tích về các app từ AI ở phía dưới mục này). Như anh/chị thấy trong hình, bố trí các nút bấm kiểu này khi nhìn vào thật sự không biết nên vào đâu trước, bấm nút nào trước trừ khi xài một thời gian và có thói quen cơ bắp thì may ra.
+                      Về giao diện, từ hệ thống trên web và mobile app các nút bấm rất phức tạp, khó hiểu. Một phần là vì người xây dựng sản phẩm bên đó không nghiên cứu sâu, phần còn lại là về sau làm lại app thì họ toàn để AI tự quyết, nên app lộn xộn (cái này em sẽ nói rõ hơn ở phần phân tích về các app từ AI ở phía dưới mục này). Như anh/chị thấy trong hình của từng app ở phía dưới, bố trí các nút bấm kiểu này khi nhìn vào thật sự không biết nên vào đâu trước, bấm nút nào trước trừ khi xài một thời gian và có thói quen cơ bắp thì may ra.
                     </li>
                     <li>
                       Về trải nghiệm người dùng, việc sử dụng app em đã nghiên cứu kỹ ở đối thủ là việc chuyển giữa các trạng thái không rõ ràng. Lấy LOZIDO làm ví dụ: trang chủ chia phòng ra nhiều kiểu như đang thuê, sắp kết thúc hợp đồng, báo kết thúc hợp đồng, quá hạn hợp đồng, đang nợ tiền, cọc giữ chỗ, nhưng không chỗ nào cho thấy phòng đi từ kiểu này sang kiểu kia bằng cách nào, phải bấm ở đâu. Còn một phòng trống thì lại mang cùng lúc 2 nhãn "Đang trống" và "Chưa thể thu tiền", đọc xong không rõ phòng đang ở trạng thái nào, phải làm gì tiếp (xem hình 1, 2 của LOZIDO ở phần dưới).
@@ -5345,10 +5262,10 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                 <div class="pitch-budget-block">
                   <h4 class="pitch-budget-block__title">Bản đồ đối thủ</h4>
                   <ul class="pitch-budget-assumptions">
-                    <li>Bên lớn (Resident, AirCity): nhắm nguyên toà chung cư, chuỗi hàng trăm phòng. Không làm thuần phần mềm, mà bán thêm thiết bị như khoá thông minh nối vào hệ thống của họ.</li>
-                    <li>Phần mềm cho chủ cho thuê (LOZIDO, eNha, Mona House): có thâm niên, nhưng chỉ là nơi ghi số, ghi sổ. LOZIDO còn ôm cả tìm việc làm, tìm phòng trọ trong cùng một app, nên giao diện rối.</li>
-                    <li>Excel + Zalo: cách phần lớn chủ cho thuê đang làm. Cả 3 chủ cho thuê đồng ý dùng thử roomio đều đang làm theo cách này.</li>
-                    <li>Chỗ trống: chủ nhà bình thường chỉ cần một phần mềm nhẹ, làm đúng việc chính. Chưa ai làm tới nơi.</li>
+                    <li>Bên lớn (Resident, AirCity) nhắm nguyên toà chung cư, chuỗi hàng trăm phòng. Không làm thuần phần mềm, mà bán thêm thiết bị như khoá thông minh nối vào hệ thống của họ.</li>
+                    <li>Phần mềm cho chủ cho thuê (LOZIDO, eNha, Mona House) có thâm niên, nhưng chỉ là nơi ghi số, ghi sổ. LOZIDO còn ôm cả tìm việc làm, tìm phòng trọ trong cùng một app, nên giao diện rối.</li>
+                    <li>Excel + Zalo là cách phần lớn chủ cho thuê đang làm. Cả 3 chủ cho thuê đồng ý dùng thử roomio đều đang làm theo cách này.</li>
+                    <li>Chỗ còn trống là chủ nhà bình thường. Họ chỉ cần một phần mềm nhẹ, làm đúng việc chính. Chưa ai làm tới nơi.</li>
                   </ul>
                 </div>
 
@@ -5421,9 +5338,9 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                   <ul class="pitch-budget-assumptions">
                     <li>"roomio" có dùng AI để viết code nhanh hơn. Nhưng làm từ 12/2025, toàn thời gian từ 6/2026, tới nay khoảng 700 lần cập nhật code.</li>
                     <li>Đã làm lại lớn 2 lần cho hợp với thị trường hơn.</li>
-                    <li>Làm sản phẩm thì phải khó tính: thấy chưa hợp lý thì sửa tiếp, tới khi hợp lý mới thôi.</li>
-                    <li>Ví dụ những bài toán phải giải lâu: xem mục Câu chuyện sản phẩm.</li>
-                    <li>Hệ thống gồm những phần nào và dữ liệu đi ra sao: xem mục Sơ đồ kiến trúc hệ thống.</li>
+                    <li>Làm sản phẩm thì phải khó tính. Thấy chưa hợp lý thì sửa tiếp, tới khi hợp lý mới thôi.</li>
+                    <li>Ví dụ những bài toán phải giải lâu nằm ở mục Câu chuyện sản phẩm.</li>
+                    <li>Hệ thống gồm những phần nào và dữ liệu đi ra sao thì xem mục Sơ đồ kiến trúc hệ thống.</li>
                   </ul>
                 </div>
 
@@ -5451,37 +5368,37 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                 </span>
               </summary>
               <div class="apple-accordion-content">
-                <p><strong>Luồng vận hành</strong> ở slide này là cách chủ nhà quản lý <strong>thông tin và công việc lặp lại trên hệ thống</strong>: hồ sơ phòng và khách thuê, chốt điện nước, xuất hoá đơn, nhắc nợ, gạch nợ, báo cáo. Đó là một chuỗi liền mạch, ít bước thừa, không phải nhảy qua lại giữa app, Zalo và sổ tay.</p>
-                <p><strong>Không phải</strong> roomio ôm việc vận hành bên ngoài phần mềm: tìm khách, sale phòng, đăng tin, chạy marketing, hay thay chủ cho thuê làm quản lý tại chỗ theo mô hình O2O. Các nền tảng kiểu Nhatro.vn thường kéo thêm marketplace, lead và dịch vụ vận hành; roomio <strong>không</strong> đi hướng đó.</p>
-                <p>Chủ nhà vẫn là người quyết định kinh doanh và đối ngoại; roomio chỉ làm phần "quản gia số": giữ dữ liệu đúng, tự động hoá việc tẻ nhạt, và đẩy thông tin đến chủ cho thuê lúc cần. Đó là định vị chỉ bán phần mềm (SaaS), tránh sa lầy chi phí vận hành ngoài sản phẩm.</p>
+                <p><strong>Luồng vận hành</strong> ở slide này là cách chủ nhà quản lý <strong>thông tin và công việc lặp lại trên hệ thống</strong>. Đó là hồ sơ phòng và khách thuê, chốt điện nước, xuất hoá đơn, nhắc nợ, gạch nợ, báo cáo. Tất cả đi thành một chuỗi liền mạch, ít bước thừa, không phải nhảy qua lại giữa app, Zalo và sổ tay.</p>
+                <p><strong>Không phải</strong> roomio ôm việc vận hành bên ngoài phần mềm. roomio không tìm khách, không sale phòng, không đăng tin, không chạy marketing thay chủ. roomio cũng không thay chủ cho thuê làm quản lý tại chỗ theo mô hình O2O. Các nền tảng kiểu Nhatro.vn thường kéo thêm marketplace, lead và dịch vụ vận hành. roomio <strong>không</strong> đi hướng đó.</p>
+                <p>Chủ nhà vẫn là người quyết định kinh doanh và đối ngoại. roomio chỉ làm phần "quản gia số". Tức là giữ dữ liệu đúng, tự động hoá việc tẻ nhạt và đẩy thông tin đến chủ cho thuê lúc cần. Đó là định vị chỉ bán phần mềm (SaaS), tránh sa lầy chi phí vận hành ngoài sản phẩm.</p>
 
                 <div class="pitch-budget-block">
                   <h4 class="pitch-budget-block__title">Chỗ đứt nằm ở đâu</h4>
                   <p>Mọi việc chủ cho thuê phải tự làm tay đều nằm ở chỗ chủ và khách trao đổi với nhau.</p>
                   <ul class="pitch-budget-assumptions">
-                    <li>Số điện nước: khách gửi số qua kênh riêng của chủ cho thuê, chủ cho thuê nhìn ảnh rồi tự nhập vào app. Đây là bước làm tay nặng nhất.</li>
-                    <li>Hoá đơn, nhắc nợ: app lo phần sổ sách của chủ cho thuê; gửi cho khách thì bỏ lại cho Zalo, hoặc bắt khách tải app riêng chỉ để nhận hoá đơn, quét QR và nhắn chủ cho thuê.</li>
-                    <li>Tiền: muốn biết ai đã trả, ai còn nợ, chủ cho thuê phải tự mở app hoặc tự dò sao kê.</li>
-                    <li>Thêm tính năng không vá được chỗ đứt: dù tách các tính năng thừa ra, luồng chính vẫn rời rạc và khó hiểu.</li>
+                    <li>Với số điện nước, khách gửi số qua kênh riêng của chủ cho thuê. Chủ nhìn ảnh rồi tự nhập vào app. Đây là bước làm tay nặng nhất.</li>
+                    <li>Với hoá đơn và nhắc nợ, app chỉ lo phần sổ sách của chủ cho thuê. Phần gửi cho khách thì bỏ lại cho Zalo. Hoặc app bắt khách tải app riêng chỉ để nhận hoá đơn, quét QR và nhắn chủ.</li>
+                    <li>Với tiền, muốn biết ai đã trả, ai còn nợ thì chủ phải tự mở app hoặc tự dò sao kê.</li>
+                    <li>Thêm tính năng không vá được chỗ đứt. Dù có tách các tính năng thừa ra thì luồng chính vẫn rời rạc và khó hiểu.</li>
                   </ul>
                 </div>
 
                 <div class="pitch-budget-block">
-                  <h4 class="pitch-budget-block__title">Chi phí gửi tin: Telegram so với Zalo</h4>
+                  <h4 class="pitch-budget-block__title">Chi phí gửi tin Telegram so với Zalo</h4>
                   <ul class="pitch-budget-assumptions">
-                    <li>Gửi tin qua Zalo (ZNS) tính tiền từng tin: khoảng 200 đồng một tin thường, 300 đồng một tin yêu cầu thanh toán; thêm nút bấm hay hình ảnh thì cộng thêm.</li>
-                    <li>Mỗi phòng mỗi tháng cần khoảng 5–6 tin: nhắc số, hoá đơn, nhắc nợ, báo đã nhận tiền. Tính ra khoảng 1.000–1.800 đồng mỗi phòng, có thể bằng tới 15% số tiền roomio thu mỗi phòng (12.000–16.000 đồng).</li>
+                    <li>Gửi tin qua Zalo (ZNS) tính tiền từng tin. Tin thường khoảng 200 đồng, tin yêu cầu thanh toán khoảng 300 đồng. Thêm nút bấm hay hình ảnh thì cộng thêm tiền.</li>
+                    <li>Mỗi phòng mỗi tháng cần khoảng 5–6 tin, gồm nhắc số, hoá đơn, nhắc nợ và báo đã nhận tiền. Tính ra khoảng 1.000–1.800 đồng mỗi phòng, có thể bằng tới 15% số tiền roomio thu mỗi phòng (12.000–16.000 đồng).</li>
                     <li>Vì vậy các app gửi qua Zalo thường chỉ gửi tin bắt buộc. Phần còn lại, chủ cho thuê tự đi hỏi, tự đi kiểm.</li>
-                    <li>Gửi tin qua Telegram bot không tốn phí. Nên roomio báo mọi việc cho chủ cho thuê ngay khi xảy ra: tiền về, hoá đơn đã soạn, phòng còn nợ. Đó là lý do thông tin có thể tự tìm tới chủ cho thuê một cách liên tục, tức thì, đều.</li>
+                    <li>Gửi tin qua Telegram bot không tốn phí. Nên roomio báo mọi việc cho chủ cho thuê ngay khi xảy ra, như tiền về, hoá đơn đã soạn, phòng còn nợ. Đó là lý do thông tin có thể tự tìm tới chủ cho thuê một cách liên tục, tức thì, đều.</li>
                   </ul>
                 </div>
 
                 <div class="pitch-budget-block">
                   <h4 class="pitch-budget-block__title">Vì sao chọn Telegram</h4>
                   <ul class="pitch-budget-assumptions">
-                    <li>Telegram không phải một app làm ít việc mà vẫn bắt khách tải: có đủ chat, chatbot, mini app, nên chủ cho thuê với khách nói chuyện hai chiều ngay tức thì.</li>
+                    <li>Telegram không phải một app làm ít việc mà vẫn bắt khách tải. Trong đó có đủ chat, chatbot và mini app. Nên chủ cho thuê với khách nói chuyện hai chiều ngay tức thì.</li>
                     <li>Telegram được tối ưu rất sâu, máy yếu, máy cũ vẫn dùng mượt. App riêng của đối thủ khó tối ưu được như vậy.</li>
-                    <li>Khách chưa dùng Telegram: hoá đơn đã xem được qua link gửi bằng Zalo; phần gửi số không cần Telegram sẽ làm trong 3 tháng đầu.</li>
+                    <li>Khách chưa dùng Telegram vẫn xem được hoá đơn qua link gửi bằng Zalo. Phần gửi số không cần Telegram sẽ làm trong 3 tháng đầu.</li>
                   </ul>
                 </div>
 
@@ -5490,7 +5407,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                   <ul class="pitch-budget-assumptions">
                     <li>Sau khoảng 2 tháng, dữ liệu khách thuê, hoá đơn và lịch sử tiền đã nằm trong roomio.</li>
                     <li>Chủ cho thuê không phải mở app để kiểm tra. Việc thường thì tóm tắt mỗi sáng, việc gấp thì báo ngay. Chủ cho thuê luôn biết tiền bạc, phòng ốc của mình đang ra sao.</li>
-                    <li>Với 3 chủ cho thuê dùng thử đầu tiên, em sẽ đo: sau tháng 2 còn dùng không, bao nhiêu phần trăm hoá đơn đi qua roomio, và thời gian chốt sổ mỗi tháng trước và sau khi dùng.</li>
+                    <li>Với 3 chủ cho thuê dùng thử đầu tiên, em sẽ đo 3 thứ. Sau tháng 2 họ còn dùng không. Bao nhiêu phần trăm hoá đơn đi qua roomio. Và thời gian chốt sổ mỗi tháng trước và sau khi dùng.</li>
                   </ul>
                 </div>
 
@@ -5529,7 +5446,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                     <li>Tới ngày chốt số, bot tự nhắc khách.</li>
                     <li>Khách chụp đồng hồ gửi vào chat. Máy đọc số từ ảnh, khách xem lại, sai thì sửa, rồi xác nhận.</li>
                     <li>Chủ cho thuê nhận một bộ gồm ảnh, số khách đã xác nhận và số do máy đọc thứ hai đọc lại. Sau khi gọi vốn, máy thứ hai sẽ đổi sang hãng AI khác để tự đọc đúng nhiều hơn.</li>
-                    <li>Chủ cho thuê so lại: đúng thì chốt, sai thì nhập số đúng rồi chốt.</li>
+                    <li>Chủ cho thuê so lại. Đúng thì chốt, sai thì nhập số đúng rồi chốt.</li>
                     <li>Nếu chủ cho thuê chốt khác số khách gửi, khách được báo ngay. Không ai sửa lén được.</li>
                   </ol>
                   <p>Không đụng tới phần cứng (ví dụ công tơ Bluetooth) thì chưa tự động hoàn toàn được. roomio chọn làm thuần phần mềm, và sẽ tiếp tục rút ngắn bước này.</p>
@@ -5538,13 +5455,13 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                 <div class="pitch-budget-block">
                   <h4 class="pitch-budget-block__title">Nhắc nợ</h4>
                   <p>Tới hạn mà khách chưa trả thì bot nhắc tối đa 6 lần. Lần đầu đúng ngày hạn. Các lần sau cách ngày hạn 2, 6, 13, 20 và 27 ngày. Giờ nhắc xen kẽ 9 giờ sáng và 9 giờ tối. Khách trả xong thì bot thôi nhắc.</p>
-                  <p>Hai lịch nhắc không chồng nhau: phòng chưa có số thì chưa có hoá đơn, nên khách không bị vừa nhắc số vừa nhắc nợ.</p>
+                  <p>Hai lịch nhắc không chồng nhau. Phòng chưa có số thì chưa có hoá đơn, nên khách không bị vừa nhắc số vừa nhắc nợ.</p>
                   <p>Em sẽ tiếp tục cải thiện cách nhắc đóng tiền để hợp với mọi kiểu người dùng.</p>
                 </div>
 
                 <div class="pitch-budget-block">
                   <h4 class="pitch-budget-block__title">Tiền về</h4>
-                  <p>Khách trả bằng mã QR, tiền vào thẳng tài khoản của chủ cho thuê. Hiện tại khách gửi ảnh chuyển khoản trong mini app, chủ xem rồi bấm xác nhận; hoá đơn tự chuyển sang đã trả hoặc còn thiếu, và khách được báo. Khi lập công ty xong, roomio nối SePay: tiền về là tự gạch nợ, trả thiếu hay trả dư thì cả chủ lẫn khách đều được báo đúng số.</p>
+                  <p>Khách trả bằng mã QR, tiền vào thẳng tài khoản của chủ cho thuê. Hiện tại khách gửi ảnh chuyển khoản trong mini app, chủ xem rồi bấm xác nhận. Hoá đơn tự chuyển sang đã trả hoặc còn thiếu, và khách được báo. Khi lập công ty xong, roomio nối SePay. Lúc đó tiền về là tự gạch nợ. Trả thiếu hay trả dư thì cả chủ lẫn khách đều được báo đúng số.</p>
                 </div>
 
                 <div class="appendix-return-wrap">
@@ -5651,11 +5568,11 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                 </span>
               </summary>
               <div class="apple-accordion-content">
-                <p>Dùng Telegram thay vì Zalo để tiết kiệm chi phí gửi tin. Hệ thống làm việc ngầm: Chủ cho thuê đi ngủ, bot vẫn đi nhắc nợ khách.</p>
+                <p>Dùng Telegram thay vì Zalo để tiết kiệm chi phí gửi tin. Hệ thống làm việc ngầm. Chủ cho thuê đi ngủ thì bot vẫn đi nhắc nợ khách.</p>
 
                 <div class="pitch-budget-block">
                   <h4 class="pitch-budget-block__title">Giữ dữ liệu một chỗ là chưa đủ</h4>
-                  <p>App nào tử tế cũng giữ dữ liệu một chỗ. Khác nhau ở chỗ ai ghi vào sổ. Ở các app hiện tại, chỉ chủ cho thuê ghi; phần của khách nằm ngoài hệ thống: ảnh đồng hồ gửi qua Zalo, tiền chuyển vào sao kê ngân hàng, câu hỏi qua tin nhắn. Chủ phải tự chép lại.</p>
+                  <p>App nào tử tế cũng giữ dữ liệu một chỗ. Khác nhau ở chỗ ai ghi vào sổ. Ở các app hiện tại, chỉ chủ cho thuê ghi. Phần của khách nằm ngoài hệ thống, như ảnh đồng hồ gửi qua Zalo, tiền chuyển vào sao kê ngân hàng, câu hỏi qua tin nhắn. Chủ phải tự chép lại.</p>
                 </div>
 
                 <div class="pitch-budget-block">
@@ -5674,15 +5591,15 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
 
                 <div class="pitch-budget-block">
                   <h4 class="pitch-budget-block__title">Sổ quỹ theo thực tế Việt Nam</h4>
-                  <p>Thu qua nhiều tài khoản, nhận tiền mặt, khách trả thiếu hay trả dư, cấn tiền cọc vào nợ: đều vào đúng sổ.</p>
+                  <p>Thu qua nhiều tài khoản, nhận tiền mặt, khách trả thiếu hay trả dư, cấn tiền cọc vào nợ. Trường hợp nào cũng vào đúng sổ.</p>
                 </div>
 
                 <div class="pitch-budget-block">
                   <h4 class="pitch-budget-block__title">Vì sao đối thủ khó làm theo</h4>
                   <ul class="pitch-budget-assumptions">
-                    <li>Kênh gửi tin: đổi từ Zalo hay app riêng sang Telegram nghĩa là phải kéo cả tệp khách đang dùng sang kênh mới.</li>
-                    <li>Tập trung: app đã nhồi nhiều tính năng như tìm việc làm, tìm phòng trọ thì khó cắt; cắt ra thì luồng chính vẫn rời rạc.</li>
-                    <li>Nhóm khách: bên lớn nhắm toà nhà, chuỗi hàng trăm phòng và bán kèm phần cứng. Chủ cho thuê bình thường, chỉ cần một phần mềm nhẹ, không phải nhóm họ làm.</li>
+                    <li>Về kênh gửi tin, đổi từ Zalo hay app riêng sang Telegram nghĩa là phải kéo cả tệp khách đang dùng sang kênh mới.</li>
+                    <li>Về sự tập trung, app đã nhồi nhiều tính năng như tìm việc làm, tìm phòng trọ thì khó cắt. Cắt ra rồi thì luồng chính vẫn rời rạc.</li>
+                    <li>Về nhóm khách, bên lớn nhắm toà nhà, chuỗi hàng trăm phòng và bán kèm phần cứng. Chủ cho thuê bình thường, chỉ cần một phần mềm nhẹ, không phải nhóm họ làm.</li>
                   </ul>
                 </div>
 
@@ -5722,18 +5639,18 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                 <div class="pitch-budget-block">
                   <h4 class="pitch-budget-block__title">Mỗi bước đo bằng gì</h4>
                   <ul class="pitch-budget-assumptions">
-                    <li>Dùng xuyên suốt: đủ một vòng nhắc gửi số → chốt số → hoá đơn → tiền về → gạch nợ. Đo: số lần founder phải sửa tay trong một vòng.</li>
+                    <li>Dùng xuyên suốt đủ một vòng nhắc gửi số → chốt số → hoá đơn → tiền về → gạch nợ. Đo số lần founder phải sửa tay trong một vòng.</li>
                     <li>Cài đặt và hướng dẫn. Đo thử mỗi chủ cần hướng dẫn mấy lần thì tự làm được một vòng tháng.</li>
-                    <li>Khách đầu tiên qua trọn một kỳ hoá đơn. Đo: bao nhiêu phòng tự gửi số trước khi hết 3 lần nhắc; máy đọc số đúng bao nhiêu % (so số máy đọc với số được chốt); bao nhiêu hoá đơn trả bằng mã QR.</li>
-                    <li>Dùng lặp lại. Đo: bao nhiêu chủ còn dùng sau 2 tháng; thời gian làm sổ mỗi tháng trước và sau khi dùng (hỏi trực tiếp chủ).</li>
-                    <li>Trả tiền và giới thiệu. Đo: bao nhiêu chủ trả phí khi hết ưu đãi; bao nhiêu chủ giới thiệu chủ mới.</li>
+                    <li>Khách đầu tiên qua trọn một kỳ hoá đơn. Đo bao nhiêu phòng tự gửi số trước khi hết 3 lần nhắc. Đo máy đọc số đúng bao nhiêu %, bằng cách so số máy đọc với số được chốt. Đo bao nhiêu hoá đơn trả bằng mã QR.</li>
+                    <li>Dùng lặp lại. Đo bao nhiêu chủ còn dùng sau 2 tháng. Hỏi trực tiếp chủ xem thời gian làm sổ mỗi tháng trước và sau khi dùng.</li>
+                    <li>Trả tiền và giới thiệu. Đo bao nhiêu chủ trả phí khi hết ưu đãi, và bao nhiêu chủ giới thiệu chủ mới.</li>
                   </ul>
                 </div>
 
                 <div class="pitch-budget-block">
                   <h4 class="pitch-budget-block__title">So với giả định trong kế hoạch</h4>
                   <ul class="pitch-budget-assumptions">
-                    <li>Bảng dự trù đang giả định: chủ rời 2% mỗi tháng, giới thiệu thêm 3% mỗi tháng, Sale chính ký tăng dần, tới tháng 18 khoảng 11 chủ mỗi tháng. Số đo được lệch nhiều thì kế hoạch sẽ được chỉnh theo số đo được.</li>
+                    <li>Bảng dự trù đang giả định mỗi tháng có 2% chủ rời đi và 3% chủ mới nhờ giới thiệu. Sale chính ký tăng dần, tới tháng 18 khoảng 11 chủ mỗi tháng. Số đo được lệch nhiều thì kế hoạch sẽ được chỉnh theo số đo được.</li>
                   </ul>
                 </div>
 
@@ -5913,12 +5830,12 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                 <div class="pitch-budget-block">
                   <h4 class="pitch-budget-block__title">Bảng giá theo loại hình</h4>
                   <p>
-                    Đồng mỗi phòng hoặc căn mỗi tháng, đã gồm VAT. Tính theo bậc như giá điện: phòng thứ 1–4 tính giá cột
+                    Đồng mỗi phòng hoặc căn mỗi tháng, đã gồm VAT. Tính theo bậc như giá điện. Phòng thứ 1–4 tính giá cột
                     đầu, phòng thứ 5–10 tính giá cột thứ hai, cứ thế tiếp. Phòng trống chỉ tính 5%. Đây là bảng giá đầu tiên (09/2026), sẽ còn điều chỉnh khi có dữ liệu sử dụng.
                   </p>
                   <p>
                     Giá mỗi phòng tăng theo bậc, giống giá điện bậc thang. Em cố ý để chủ ít phòng, phần lớn là cô chú
-                    lớn tuổi, trả thấp nhất; chủ nhiều phòng trả cao hơn. Mỗi toà nhà tính bậc riêng.
+                    lớn tuổi, trả thấp nhất. Chủ nhiều phòng trả cao hơn. Mỗi toà nhà tính bậc riêng.
                   </p>
                   <div class="pitch-budget-table-shell">
                     <div class="pitch-budget-table-scroll">
@@ -5979,30 +5896,30 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                   <h4 class="pitch-budget-block__title">Thị trường và nguồn số liệu</h4>
                   <ul class="pitch-budget-assumptions">
                     <li>
-                      TP.HCM: khoảng 60.500 nhà trọ, 560.220 phòng, hơn 1,4 triệu người thuê (khảo sát của Sở Xây dựng
+                      TP.HCM có khoảng 60.500 nhà trọ, 560.220 phòng, hơn 1,4 triệu người thuê (khảo sát của Sở Xây dựng
                       TP.HCM).
                     </li>
-                    <li>Hà Nội: khoảng 37.000 cơ sở nhà trọ (Công an Hà Nội). Chưa có số phòng chính thức.</li>
+                    <li>Hà Nội có khoảng 37.000 cơ sở nhà trọ (Công an Hà Nội). Chưa có số phòng chính thức.</li>
                     <li>
-                      Hoà vốn: chi mỗi tháng 157 triệu ÷ phí trung bình khoảng 12.000 đồng mỗi phòng ≈ 13.100 phòng, chưa tới 3% của 560.220 phòng trọ ở TP.HCM.
+                      Hoà vốn tính bằng chi mỗi tháng 157 triệu ÷ phí trung bình khoảng 12.000 đồng mỗi phòng ≈ 13.100 phòng, chưa tới 3% của 560.220 phòng trọ ở TP.HCM.
                     </li>
                     <li>
-                      Phí trung bình khoảng 12.000 đồng mỗi phòng mỗi tháng là mức của nhà trọ 9–15 phòng, kín 90%, theo bảng giá hiện tại. Đây là mức thận trọng; loại hình khác và nhà nhiều phòng có giá trung bình cao hơn.
+                      Phí trung bình khoảng 12.000 đồng mỗi phòng mỗi tháng là mức của nhà trọ 9–15 phòng, kín 90%, theo bảng giá hiện tại. Đây là mức thận trọng. Loại hình khác và nhà nhiều phòng có giá trung bình cao hơn.
                     </li>
                     <li>
                       Hà Nội chưa có số phòng chính thức. Nếu lấy mức trung bình 9,3 phòng mỗi nhà trọ của TP.HCM thì khoảng 340.000 phòng (ước tính).
                     </li>
                     <li>
-                      Nếu phủ hết nhóm đủ đau để trả tiền (giả định) ở TP.HCM: khoảng 357.000 phòng × 12.000 đồng × 12 tháng ≈ 50 tỷ đồng mỗi năm.
+                      Nếu phủ hết nhóm đủ đau để trả tiền (giả định) ở TP.HCM thì tính ra khoảng 357.000 phòng × 12.000 đồng × 12 tháng ≈ 50 tỷ đồng mỗi năm.
                     </li>
                     <li>
                       Cả nước chưa có thống kê số phòng trọ. Ước tính khoảng 1,8 triệu phòng = TP.HCM 560.000 + Hà Nội khoảng 340.000 + công nhân khu công nghiệp ở các tỉnh khác khoảng 930.000 phòng.
                     </li>
                     <li>
-                      Cách tính phần các tỉnh khác: khoảng 4,5–5 triệu công nhân khu công nghiệp cả nước (Tổng Liên đoàn Lao động), trừ TP.HCM (khoảng 918.000) và Hà Nội (khoảng 165.000), còn khoảng 3,7 triệu người; khoảng 65% ở trọ (Hà Nội hơn 70%, khảo sát HoREA ở TP.HCM khoảng 60%); khoảng 2,5 người mỗi phòng (TP.HCM: hơn 1,4 triệu người thuê trong 560.000 phòng). Ra khoảng 930.000 phòng. Chưa tính sinh viên và người đi làm văn phòng ở trọ.
+                      Cách tính phần các tỉnh khác như sau. Cả nước có khoảng 4,5–5 triệu công nhân khu công nghiệp (Tổng Liên đoàn Lao động). Trừ TP.HCM (khoảng 918.000) và Hà Nội (khoảng 165.000) thì còn khoảng 3,7 triệu người. Khoảng 65% trong số đó ở trọ (Hà Nội hơn 70%, khảo sát HoREA ở TP.HCM khoảng 60%). Mỗi phòng khoảng 2,5 người (TP.HCM có hơn 1,4 triệu người thuê trong 560.000 phòng). Ra khoảng 930.000 phòng. Chưa tính sinh viên và người đi làm văn phòng ở trọ.
                     </li>
                     <li>
-                      Nhóm đủ đau để trả tiền là giả định: dãy phòng trọ ở TP.HCM có 34.800 dãy, khoảng 357.000 phòng, trung bình khoảng 10 phòng mỗi dãy (Sở Xây dựng TP.HCM). Nhà ngăn chia phòng (25.670 nhà, khoảng 203.000 phòng, trung bình khoảng 8 phòng) được giả định là chưa đủ đau. Sẽ kiểm chứng với những chủ đầu tiên.
+                      Nhóm đủ đau để trả tiền là giả định. Dãy phòng trọ ở TP.HCM có 34.800 dãy, khoảng 357.000 phòng, trung bình khoảng 10 phòng mỗi dãy (Sở Xây dựng TP.HCM). Nhà ngăn chia phòng (25.670 nhà, khoảng 203.000 phòng, trung bình khoảng 8 phòng) được giả định là chưa đủ đau. Sẽ kiểm chứng với những chủ đầu tiên.
                     </li>
                   </ul>
                 </div>
@@ -6011,16 +5928,16 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                   <h4 class="pitch-budget-block__title">Chỉ số kinh doanh (giả định)</h4>
                   <p>"roomio" chưa có doanh thu. Các số dưới đây là giả định trong bảng dự trù.</p>
                   <ul class="pitch-budget-assumptions">
-                    <li>Doanh thu tháng mục tiêu (MRR), trường hợp bình thường: khoảng 20 triệu đồng ở tháng 12, khoảng 45 triệu ở tháng 18.</li>
-                    <li>Doanh thu trung bình mỗi chủ (ARPU): khoảng 190.000 đồng mỗi tháng (giả định chủ khoảng 15 phòng).</li>
-                    <li>Chi phí để có một chủ (CAC): khoảng 2,3 triệu đồng ở mức tháng 13–18. Con số này tính đủ lương Sale, CTV, hoa hồng và marketing. Riêng hoa hồng là 400.000–1.000.000 đồng.</li>
-                    <li>Thời gian thu lại chi phí đó: khoảng 12 tháng với chủ khoảng 15 phòng. Mỗi tháng có 2% chủ rời đi, nên một chủ ở lại trung bình khoảng 50 tháng. Trừ chi phí vận hành dịch vụ, một chủ mang về khoảng 7,6 triệu. Số này gấp khoảng 3,3 lần chi phí để có chủ đó. Tăng giá 15–20% thì lên khoảng 3,8–4 lần.</li>
-                    <li>Tỷ lệ rời bỏ giả định (churn): 2% mỗi tháng.</li>
+                    <li>Doanh thu tháng mục tiêu (MRR) ở trường hợp bình thường là khoảng 20 triệu đồng ở tháng 12 và khoảng 45 triệu ở tháng 18.</li>
+                    <li>Doanh thu trung bình mỗi chủ (ARPU) khoảng 190.000 đồng mỗi tháng, giả định mỗi chủ có khoảng 15 phòng.</li>
+                    <li>Chi phí để có một chủ (CAC) khoảng 2,3 triệu đồng ở mức tháng 13–18. Con số này tính đủ lương Sale, CTV, hoa hồng và marketing. Riêng hoa hồng là 400.000–1.000.000 đồng.</li>
+                    <li>Với chủ khoảng 15 phòng thì mất khoảng 12 tháng để thu lại chi phí đó. Mỗi tháng có 2% chủ rời đi, nên một chủ ở lại trung bình khoảng 50 tháng. Trừ chi phí vận hành dịch vụ, một chủ mang về khoảng 7,6 triệu. Số này gấp khoảng 3,3 lần chi phí để có chủ đó. Tăng giá 15–20% thì lên khoảng 3,8–4 lần.</li>
+                    <li>Tỷ lệ rời bỏ (churn) giả định là 2% mỗi tháng.</li>
                     <li>
-                      Hoà vốn: khoảng 13.100 phòng. Tương đương khoảng 830 chủ nếu mỗi chủ có khoảng 15 phòng, hoặc khoảng 1.470 chủ nếu mỗi chủ khoảng 9 phòng (mức trung bình một nhà trọ ở TP.HCM). Chi phí lấy theo mức từ tháng 18 trong bảng dự trù (đủ đội: founder, dev, CEO, sale chính, 2 CTV; lương tính theo mức đạt số), cộng chỗ làm, máy chủ, API AI và marketing. Chưa tính khách rời bỏ và ưu đãi cho những chủ đầu tiên. Bảng giá đã gồm VAT; nếu phải nộp VAT 8–10% trên phí thì cần khoảng 14.400 phòng. Với nhịp bán trong bảng dự trù và toàn phòng trọ giá thấp nhất, mức này tới vào khoảng tháng 38, nên trường hợp này cần gọi vòng sau trong khoảng tháng 15–18; xem phụ lục 12, mục 5 và 6.
+                      Hoà vốn ở khoảng 13.100 phòng. Tương đương khoảng 830 chủ nếu mỗi chủ có khoảng 15 phòng, hoặc khoảng 1.470 chủ nếu mỗi chủ khoảng 9 phòng (mức trung bình một nhà trọ ở TP.HCM). Chi phí lấy theo mức từ tháng 18 trong bảng dự trù (đủ đội gồm founder, dev, CEO, sale chính và 2 CTV, lương tính theo mức đạt số), cộng chỗ làm, máy chủ, API AI và marketing. Chưa tính khách rời bỏ và ưu đãi cho những chủ đầu tiên. Bảng giá đã gồm VAT. Nếu phải nộp VAT 8–10% trên phí thì cần khoảng 14.400 phòng. Với nhịp bán trong bảng dự trù và toàn phòng trọ giá thấp nhất, mức này tới vào khoảng tháng 38, nên trường hợp này cần gọi vòng sau trong khoảng tháng 15–18. Xem phụ lục 12, mục 5 và 6.
                     </li>
                     <li>
-                      Chi phí vận hành dịch vụ: máy chủ 3–5 triệu đồng mỗi tháng, cộng 1,5 triệu cho máy thử nghiệm (staging), cộng API AI (đọc số bằng 2 hãng và các agent) khoảng 8,5% doanh thu; gửi tin qua Telegram không mất phí. Ước tính biên lợi nhuận gộp khoảng 80–85% khi các agent hoạt động đầy đủ.
+                      Chi phí vận hành dịch vụ gồm máy chủ 3–5 triệu đồng mỗi tháng, 1,5 triệu cho máy thử nghiệm (staging) và API AI khoảng 8,5% doanh thu. API AI dùng để đọc số bằng 2 hãng và chạy các agent. Gửi tin qua Telegram không mất phí. Ước tính biên lợi nhuận gộp khoảng 80–85% khi các agent hoạt động đầy đủ.
                     </li>
                   </ul>
                 </div>
@@ -6028,7 +5945,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                 <div class="pitch-budget-block">
                   <h4 class="pitch-budget-block__title">Điều em lo và cách giải</h4>
                   <ul class="pitch-budget-assumptions">
-                    <li>Em lo nhất là chủ không chịu rời app cũ để qua "roomio". Cách giải là ưu đãi tuỳ chủ: miễn phí 1-2 tháng hoặc giảm 30–50% một tháng. Em gặp tận nhà để cài đặt và hướng dẫn 1-1, kèm quà nhỏ để giữ chân. Em cũng đo thử mỗi chủ cần hướng dẫn mấy lần thì tự làm được một vòng tháng.</li>
+                    <li>Em lo nhất là chủ không chịu rời app cũ để qua "roomio". Cách giải là ưu đãi tuỳ chủ, miễn phí 1-2 tháng hoặc giảm 30–50% một tháng. Em gặp tận nhà để cài đặt và hướng dẫn 1-1, kèm quà nhỏ để giữ chân. Em cũng đo thử mỗi chủ cần hướng dẫn mấy lần thì tự làm được một vòng tháng.</li>
                     <li>Để có một chủ thì tốn khoảng 2,3 triệu. Gần 12 tháng mới thu lại số tiền đó. Thu lại hơi lâu nhưng chắc. Chủ đã dùng 2–3 tháng thì sẽ ở lại. Có thử app khác thì rồi cũng quay về. Em đo chuyện này bằng tỷ lệ chủ còn trả phí sau 3 tháng, với mốc 85% ở phụ lục 12, mục 6.</li>
                     <li>Để thu lại nhanh hơn thì có hai cách. Cách thứ nhất là tăng giá. Giá bây giờ là giá để thử thị trường, sau này sẽ tăng (xem bảng "Nếu tăng giá" ngay dưới). Cách thứ hai là bán kèm món khác cho chủ đang dùng, kiểu "bia kèm lạc". Món cụ thể sẽ chốt sau.</li>
                   </ul>
@@ -6066,9 +5983,9 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                 <div class="pitch-budget-block">
                   <h4 class="pitch-budget-block__title">So giá với các bên khác</h4>
                   <p>
-                    Theo bảng giá công khai do các bên tổng hợp, có thể đã thay đổi: ITRO 199.000 đ/tháng cho tối đa 20
-                    phòng; Smartos 360.000 đ/tháng cho 20 phòng; Mona House khoảng 150.000–300.000 đ/tháng. "roomio", nhà
-                    trọ 20 phòng kín 90%: khoảng 255.000 đ/tháng.
+                    Theo bảng giá công khai do các bên tổng hợp, có thể đã thay đổi. ITRO 199.000 đ/tháng cho tối đa 20
+                    phòng. Smartos 360.000 đ/tháng cho 20 phòng; Mona House khoảng 150.000–300.000 đ/tháng. "roomio" với nhà
+                    trọ 20 phòng kín 90% là khoảng 255.000 đ/tháng.
                   </p>
                 </div>
 
@@ -6115,7 +6032,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                     <li>Tháng 1 founder tự đi bán. Từ tháng 2 có Sale chính và 1 CTV bán hàng ở Đà Lạt. Từ khoảng tháng 2–3 có thêm CEO cùng điều hành, onboarding khách và dư giờ thì bán thêm. Từ tháng 6 đội về TP.HCM và thêm CTV thứ 2. CTV thứ nhất nếu được thì ở lại Đà Lạt để mở rộng tiếp.</li>
                     <li>Gặp tận nhà, cài đặt giúp 1-1. Ưu đãi tuỳ từng chủ, chủ còn ngại thì cho dùng miễn phí 1-2 tháng hoặc giảm 30–50% một tháng, chủ sẵn sàng thì trả giá thường đôi khi kèm quà tặng nho nhỏ tháng tiếp theo giữ chân. Các mức này đã có sẵn nút giảm trong trang quản trị của roomio.</li>
                     <li>Không chạy quảng cáo diện rộng. Tiền marketing dùng cho thưởng giới thiệu và quà tặng giữ chân chủ.</li>
-                    <li>Đánh du kích nên khách mới tăng dần: ở Đà Lạt từ 3 lên 7 chủ mỗi tháng; từ tháng 6 ở TP.HCM từ 6 lên khoảng 25 chủ mỗi tháng ở tháng 18. Đây là phần chính của mốc ~105 chủ ở tháng 12 và ~240 chủ ở tháng 18, không tính khách CEO ký. Số chủ từng người, hoa hồng và tiền marketing: xem phụ lục 12.</li>
+                    <li>Đánh du kích nên khách mới tăng dần. Ở Đà Lạt từ 3 lên 7 chủ mỗi tháng. Từ tháng 6 ở TP.HCM, từ 6 lên khoảng 25 chủ mỗi tháng ở tháng 18. Đây là phần chính của mốc ~105 chủ ở tháng 12 và ~240 chủ ở tháng 18, không tính khách CEO ký. Số chủ từng người, hoa hồng và tiền marketing nằm ở phụ lục 12.</li>
                   </ul>
                 </div>
 
@@ -6123,7 +6040,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                   <h4 class="pitch-budget-block__title">Hòn tuyết lăn là phần cộng thêm</h4>
                   <ul class="pitch-budget-assumptions">
                     <li>Chủ cũ giới thiệu chủ mới thì được thưởng.</li>
-                    <li>Trong dự phóng, phần này chỉ tính thêm khoảng 3% mỗi tháng, và trừ 2% chủ rời đi. Kế hoạch không dựa vào giới thiệu; nếu giới thiệu hiệu quả hơn thì mốc tới sớm hơn.</li>
+                    <li>Trong dự phóng, phần này chỉ tính thêm khoảng 3% mỗi tháng, và trừ 2% chủ rời đi. Kế hoạch không dựa vào giới thiệu. Nếu giới thiệu hiệu quả hơn thì mốc tới sớm hơn.</li>
                   </ul>
                 </div>
 
@@ -6132,7 +6049,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                   <ul class="pitch-budget-assumptions">
                     <li>Chủ cho thuê tự quản lý nhà, chưa thuê người quản lý.</li>
                     <li>Trước mắt là dãy trọ khoảng 10 phòng trở lên (giả định ở phụ lục 8), sẽ kiểm chứng với những chủ đầu tiên.</li>
-                    <li>Chưa nhắm chuỗi lớn hay toà nhà hàng trăm phòng; nhóm này đã có các bên như Resident, AirCity.</li>
+                    <li>Chưa nhắm chuỗi lớn hay toà nhà hàng trăm phòng. Nhóm này đã có các bên như Resident, AirCity.</li>
                   </ul>
                 </div>
 
@@ -6162,9 +6079,9 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
               <div class="apple-accordion-content">
                 <div class="pitch-budget-block">
                   <h4 class="pitch-budget-block__title">Người sáng lập</h4>
-                  <p>An T. Tran (@antt), người sáng lập "roomio" tại roomieVerse Labs. Làm toàn bộ phần kỹ thuật và sản phẩm: viết code, thiết kế giao diện, chọn tính năng, nghiên cứu thị trường.</p>
-                  <p>Hiện là người viết code duy nhất. Có vốn thì về mặt sản phẩm làm tròn vai PO, cùng Dev toàn thời gian viết code; bán hàng và điều hành làm song song với CEO từ khoảng tháng 2–3. Tháng 1 tự đi bán ở Đà Lạt. Kế hoạch tuyển người: xem mục Ai làm gì bên dưới.</p>
-                  <p>Hành trình từ 2025 tới nay: xem mục Câu chuyện sản phẩm ngay trên.</p>
+                  <p>An T. Tran (@antt), người sáng lập "roomio" tại roomieVerse Labs. Làm toàn bộ phần kỹ thuật và sản phẩm, từ viết code, thiết kế giao diện, chọn tính năng tới nghiên cứu thị trường.</p>
+                  <p>Hiện là người viết code duy nhất. Có vốn thì về mặt sản phẩm làm tròn vai PO, cùng Dev toàn thời gian viết code. Bán hàng và điều hành thì làm song song với CEO từ khoảng tháng 2–3. Tháng 1 tự đi bán ở Đà Lạt. Kế hoạch tuyển người nằm ở mục Ai làm gì bên dưới.</p>
+                  <p>Hành trình từ 2025 tới nay nằm ở mục Câu chuyện sản phẩm ngay trên.</p>
                 </div>
 
                 <div class="pitch-budget-block">
@@ -6179,11 +6096,11 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                 <div class="pitch-budget-block">
                   <h4 class="pitch-budget-block__title">Ai làm gì</h4>
                   <ul class="pitch-budget-assumptions">
-                    <li>Founder: lo sản phẩm (PO), cùng Dev viết code; cùng CEO lo bán hàng, điều hành. Tháng 1 tự đi bán ở Đà Lạt, sau đó vẫn ký thêm vài chủ mỗi tháng.</li>
-                    <li>Dev toàn thời gian (từ tháng 1): cùng founder làm chắc luồng chính và các phần chạy ngầm; code xong chạy test ngay trên máy của mình.</li>
-                    <li>CEO (từ khoảng tháng 2–3, đang tìm): lo bán hàng, điều hành song song với founder và trực tiếp onboarding khách, nên hiểu sản phẩm kỹ. Lỡ founder có chuyện thì người này đứng ra được. Dư giờ thì đi bán thêm như một CTV, không giao chỉ tiêu. Lương thấp, bù bằng cổ phần.</li>
-                    <li>Sale chính (từ tháng 2): toàn thời gian, lương cứng cộng hoa hồng theo từng chủ mình ký được.</li>
-                    <li>CTV bán hàng (từ tháng 2): bán thời gian, phí cứng nhỏ cộng hoa hồng. CTV thứ 2 vào từ tháng 6, cùng cách trả.</li>
+                    <li>Founder lo sản phẩm (PO) và cùng Dev viết code. Founder cũng cùng CEO lo bán hàng, điều hành. Tháng 1 tự đi bán ở Đà Lạt, sau đó vẫn ký thêm vài chủ mỗi tháng.</li>
+                    <li>Dev toàn thời gian vào từ tháng 1, cùng founder làm chắc luồng chính và các phần chạy ngầm. Code xong thì chạy test ngay trên máy của mình.</li>
+                    <li>CEO vào từ khoảng tháng 2–3 (đang tìm). CEO lo bán hàng, điều hành song song với founder và trực tiếp onboarding khách, nên hiểu sản phẩm kỹ. Lỡ founder có chuyện thì người này đứng ra được. Dư giờ thì đi bán thêm như một CTV, không giao chỉ tiêu. Lương thấp, bù bằng cổ phần.</li>
+                    <li>Sale chính vào từ tháng 2, làm toàn thời gian. Lương cứng cộng hoa hồng theo từng chủ mình ký được.</li>
+                    <li>CTV bán hàng vào từ tháng 2, làm bán thời gian. Phí cứng nhỏ cộng hoa hồng. CTV thứ 2 vào từ tháng 6, cùng cách trả.</li>
                     <li>Kế toán thuê ngoài. Trong 18 tháng chưa tuyển thêm ai khác.</li>
                   </ul>
                 </div>
@@ -6191,11 +6108,11 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                 <div class="pitch-budget-block">
                   <h4 class="pitch-budget-block__title">Nếu phải thay người</h4>
                   <ul class="pitch-budget-assumptions">
-                    <li>Dự trù thay Dev 1 lần trong 18 tháng: tuyển lại khoảng 0,5 triệu, cộng 1 tháng hai người làm chồng để bàn giao (khoảng 18 triệu). Founder mất khoảng 1 tháng kèm người mới, nên sản phẩm chậm lại.</li>
-                    <li>Dự trù thay Sale chính 2 lần: mỗi lần tuyển lại khoảng 0,5 triệu. Người mới thử việc vẫn nhận đủ lương, 2 tháng đầu ký được khoảng nửa nhịp. Cả hai lần làm mất khoảng 13 chủ ở tháng 18.</li>
+                    <li>Dự trù thay Dev 1 lần trong 18 tháng. Tuyển lại tốn khoảng 0,5 triệu, cộng 1 tháng hai người làm chồng để bàn giao (khoảng 18 triệu). Founder mất khoảng 1 tháng kèm người mới, nên sản phẩm chậm lại.</li>
+                    <li>Dự trù thay Sale chính 2 lần, mỗi lần tuyển lại tốn khoảng 0,5 triệu. Người mới thử việc vẫn nhận đủ lương, 2 tháng đầu ký được khoảng nửa nhịp. Cả hai lần làm mất khoảng 13 chủ ở tháng 18.</li>
                     <li>CTV trả theo số khách, phí cứng thấp, nên thay CTV không tính riêng.</li>
                     <li>Tổng khoảng 20 triệu, lấy từ dự phòng 129 triệu (xem phụ lục 12). Bảng chi chưa trừ khoản này.</li>
-                    <li>Để mỗi lần thay người không phải dạy lại từ đầu: làm sẵn tài liệu onboarding (cách bán, cách cài cho chủ, cách đọc code) trước khi tuyển.</li>
+                    <li>Để mỗi lần thay người không phải dạy lại từ đầu, em làm sẵn tài liệu onboarding trước khi tuyển. Tài liệu gồm cách bán, cách cài cho chủ và cách đọc code.</li>
                   </ul>
                 </div>
 
@@ -6208,7 +6125,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                   </ul>
                 </div>
 
-                <p>Đội nhỏ để giữ chi phí trong 18 tháng. Lương, hoa hồng và chi phí từng người: xem phụ lục 12.</p>
+                <p>Đội nhỏ để giữ chi phí trong 18 tháng. Lương, hoa hồng và chi phí từng người nằm ở phụ lục 12.</p>
 
                 <div class="appendix-return-wrap">
                   <button type="button" class="appendix-jump-btn appendix-jump-btn--return" data-return="slide-10" aria-label="Quay lại Slide 10">
@@ -6237,11 +6154,11 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                 <div class="pitch-budget-block">
                   <h4 class="pitch-budget-block__title">Đã hoạt động</h4>
                   <ul class="pitch-budget-assumptions">
-                    <li>Web cho chủ cho thuê: phòng, khách, hợp đồng và tiền cọc, giá điện nước (kể cả bậc thang), hoá đơn.</li>
-                    <li>Telegram: bot cho khách và bot cho chủ; mini app cho khách xem hoá đơn và báo sự cố kèm ảnh.</li>
-                    <li>Tự động: soạn hoá đơn nháp mỗi tháng; nhắc gửi số 3 lần; nhắc đóng tiền 6 lần (tính từ ngày hạn đóng tiền: ngày 0, 2, 6, 13, 20, 27); báo cáo tóm tắt cho chủ mỗi sáng qua Telegram.</li>
-                    <li>Thu tiền: khách quét mã QR, tiền vào thẳng tài khoản của chủ; khách gửi ảnh chuyển khoản, chủ bấm xác nhận là gạch nợ và khách được báo.</li>
-                    <li>Máy đọc số đồng hồ bản đầu: AI đọc ảnh, rồi đọc lại một lần để kiểm (hiện cùng một hãng AI).</li>
+                    <li>Web cho chủ cho thuê quản lý phòng, khách, hợp đồng và tiền cọc, giá điện nước (kể cả bậc thang) và hoá đơn.</li>
+                    <li>Trên Telegram có bot cho khách và bot cho chủ. Khách có mini app để xem hoá đơn và báo sự cố kèm ảnh.</li>
+                    <li>Hệ thống tự soạn hoá đơn nháp mỗi tháng và nhắc gửi số 3 lần. Nhắc đóng tiền 6 lần, vào ngày 0, 2, 6, 13, 20 và 27 tính từ ngày hạn. Mỗi sáng gửi chủ báo cáo tóm tắt qua Telegram.</li>
+                    <li>Khách quét mã QR thì tiền vào thẳng tài khoản của chủ. Khách gửi ảnh chuyển khoản, chủ bấm xác nhận là gạch nợ, rồi khách được báo.</li>
+                    <li>Máy đọc số đồng hồ đã có bản đầu. AI đọc ảnh, rồi đọc lại một lần để kiểm (hiện cùng một hãng AI).</li>
                     <li>Link hoá đơn cho khách chưa dùng Telegram.</li>
                   </ul>
                 </div>
@@ -6249,8 +6166,8 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                 <div class="pitch-budget-block">
                   <h4 class="pitch-budget-block__title">Làm tiếp trong 18 tháng (dự kiến)</h4>
                   <ul class="pitch-budget-assumptions">
-                    <li>Tháng 1–5, founder cùng Dev: làm chắc luồng chính với những chủ đầu tiên; nối SePay để tự gạch nợ ngay khi lập công ty xong; thêm hãng AI thứ hai để đọc số đối chiếu; khách không dùng Telegram vẫn gửi được số.</li>
-                    <li>Từ tháng 6, founder cùng Dev: các agent chạy ngầm như quản gia AI cho chủ cho thuê, agent nhập dữ liệu từ file Excel cũ, bot bản tin.</li>
+                    <li>Tháng 1–5, founder cùng Dev làm chắc luồng chính với những chủ đầu tiên. Nối SePay để tự gạch nợ ngay khi lập công ty xong. Thêm hãng AI thứ hai để đọc số đối chiếu. Làm cho khách không dùng Telegram vẫn gửi được số.</li>
+                    <li>Từ tháng 6, founder cùng Dev làm các agent chạy ngầm như quản gia AI cho chủ cho thuê, agent nhập dữ liệu từ file Excel cũ, bot bản tin.</li>
                     <li>Mở rộng thêm loại hình cho thuê.</li>
                   </ul>
                 </div>
@@ -6258,7 +6175,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                 <div class="pitch-budget-block">
                   <h4 class="pitch-budget-block__title">Tiền gọi AI</h4>
                   <ul class="pitch-budget-assumptions">
-                    <li>Khoảng 54 triệu đồng trong 18 tháng, tức khoảng 2% tổng chi. Chi tiết từng giai đoạn: xem phụ lục 12.</li>
+                    <li>Khoảng 54 triệu đồng trong 18 tháng, tức khoảng 2% tổng chi. Chi tiết từng giai đoạn nằm ở phụ lục 12.</li>
                   </ul>
                 </div>
 
@@ -6312,7 +6229,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                       </table>
                     </div>
                   </div>
-                  <p class="pitch-budget-table-note">Bảng này tính khi chưa có đồng doanh thu nào: chi 18 tháng 2.440.790.000 đ, còn dư khoảng 129 triệu làm dự phòng.</p>
+                  <p class="pitch-budget-table-note">Bảng này tính khi chưa có đồng doanh thu nào. Chi 18 tháng là 2.440.790.000 đ, còn dư khoảng 129 triệu làm dự phòng.</p>
                   <div class="pitch-focus">
                     <h5 class="pitch-focus__title">Vốn dồn vào đâu</h5>
                     <div class="pitch-focus__body">
@@ -6340,7 +6257,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                       </ul>
                     </div>
                     <p class="pitch-budget-table-note">
-                      Lương Founder chia đôi: nửa cho sản phẩm (vai PO, cùng Dev viết code), nửa cho tăng trưởng (vẫn đi bán, ký khoảng 2 chủ mỗi tháng). CEO tính vào tăng trưởng. Số lấy thẳng từ bảng trên.
+                      Lương Founder chia đôi. Một nửa tính cho sản phẩm (vai PO, cùng Dev viết code). Nửa còn lại tính cho tăng trưởng (vẫn đi bán, ký khoảng 2 chủ mỗi tháng). CEO tính vào tăng trưởng. Số lấy thẳng từ bảng trên.
                     </p>
                   </div>
                 </div>
@@ -6389,7 +6306,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                       </table>
                     </div>
                   </div>
-                  <p class="pitch-budget-table-note">Tổng chi hằng tháng 18 tháng: 2.262.340.000 đ. Cột tháng 2–5 là mức tháng 3–5; tháng 2 chưa có CEO và Sale còn thử việc (đủ lương, chưa đóng bảo hiểm), chi 78.405.000 đ. Hoa hồng là trung bình mỗi tháng của giai đoạn, tăng dần theo số chủ ký được. Lương Sale chính ở cột tháng 6–12 cũng là trung bình: 5,5 triệu ở tháng 6, 6 triệu ở tháng 7–12. Lương có điều kiện (Founder 25 rồi 28 triệu, Dev 18 triệu ở tháng 13–18, Sale chính 8 triệu) tính theo mức đạt số.</p>
+                  <p class="pitch-budget-table-note">Tổng chi hằng tháng của 18 tháng là 2.262.340.000 đ. Cột tháng 2–5 là mức tháng 3–5. Tháng 2 chưa có CEO và Sale còn thử việc (đủ lương, chưa đóng bảo hiểm), nên chi 78.405.000 đ. Hoa hồng là trung bình mỗi tháng của giai đoạn, tăng dần theo số chủ ký được. Lương Sale chính ở cột tháng 6–12 cũng là trung bình, vì tháng 6 là 5,5 triệu còn tháng 7–12 là 6 triệu. Lương có điều kiện (Founder 25 rồi 28 triệu, Dev 18 triệu ở tháng 13–18, Sale chính 8 triệu) tính theo mức đạt số.</p>
                 </div>
 
                 <div class="pitch-budget-block">
@@ -6416,7 +6333,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                       </table>
                     </div>
                   </div>
-                  <p class="pitch-budget-table-note">Tổng chi 18 tháng (hằng tháng + một lần): 2.440.790.000 đ, chưa tính doanh thu.</p>
+                  <p class="pitch-budget-table-note">Tổng chi 18 tháng, gồm hằng tháng và một lần, là 2.440.790.000 đ. Số này chưa tính doanh thu.</p>
                 </div>
 
                 <div class="pitch-budget-block">
@@ -6443,7 +6360,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                       </table>
                     </div>
                   </div>
-                  <p class="pitch-budget-table-note">Đây là trường hợp chưa có đồng doanh thu nào: vốn $100,000 vẫn đủ 18 tháng, cuối tháng 18 còn khoảng 129 triệu dự phòng. Có doanh thu thì khác, xem mục 5.</p>
+                  <p class="pitch-budget-table-note">Đây là trường hợp chưa có đồng doanh thu nào. Vốn $100,000 vẫn đủ 18 tháng, cuối tháng 18 còn khoảng 129 triệu dự phòng. Có doanh thu thì khác, xem mục 5.</p>
                 </div>
 
                 <div class="pitch-budget-block">
@@ -6479,10 +6396,10 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                           <tr>
                             <th class="pitch-budget-table__num">Tháng</th>
                             <th class="pitch-budget-table__num">Chủ trả phí</th>
-                            <th class="pitch-budget-table__num">Quỹ còn: Bình thường</th>
-                            <th class="pitch-budget-table__num">Quỹ còn: Hơn mức bình thường</th>
-                            <th class="pitch-budget-table__num">Quỹ còn: Khá</th>
-                            <th class="pitch-budget-table__num">Quỹ còn: Màu hồng</th>
+                            <th class="pitch-budget-table__num">Quỹ còn (bình thường)</th>
+                            <th class="pitch-budget-table__num">Quỹ còn (hơn mức bình thường)</th>
+                            <th class="pitch-budget-table__num">Quỹ còn (khá)</th>
+                            <th class="pitch-budget-table__num">Quỹ còn (màu hồng)</th>
                           </tr>
                         </thead>
                         <tbody>
