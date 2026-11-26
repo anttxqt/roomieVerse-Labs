@@ -3648,6 +3648,16 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
         min-width: 680px;
       }
 
+      .pitch-budget-table--cases {
+        min-width: 860px;
+      }
+
+      .pitch-budget-table--cases th:first-child,
+      .pitch-budget-table--cases td:first-child {
+        width: 20%;
+        min-width: 170px;
+      }
+
       .pitch-budget-table th {
         padding: 14px 16px;
         font-weight: 700;
@@ -6368,7 +6378,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                   <p>{pitchRevenueIntro}</p>
                   <div class="pitch-budget-table-shell">
                     <div class="pitch-budget-table-scroll">
-                      <table class="pitch-budget-table pitch-budget-table--wide">
+                      <table class="pitch-budget-table pitch-budget-table--wide pitch-budget-table--cases">
                         <thead>
                           <tr>
                             {pitchRevenueCaseColumns.map((col) => (
