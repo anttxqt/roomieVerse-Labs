@@ -2358,7 +2358,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
       }
 
       /* Giá thuê — typography match roomio MoneyInput.svelte */
-      .pitch-fee-calc__field input[type='number']#pitch-fee-rent {
+      .pitch-fee-calc__rent-input {
         width: 100%;
         max-width: 100%;
         min-width: 0;
@@ -2376,13 +2376,13 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
         appearance: textfield;
       }
 
-      .pitch-fee-calc__field input[type='number']#pitch-fee-rent::-webkit-outer-spin-button,
-      .pitch-fee-calc__field input[type='number']#pitch-fee-rent::-webkit-inner-spin-button {
+      .pitch-fee-calc__rent-input::-webkit-outer-spin-button,
+      .pitch-fee-calc__rent-input::-webkit-inner-spin-button {
         -webkit-appearance: none;
         margin: 0;
       }
 
-      .pitch-fee-calc__field input[type='number']#pitch-fee-rent:focus {
+      .pitch-fee-calc__rent-input:focus {
         outline: none;
         box-shadow: 0 0 0 2px var(--blue-bright);
       }
@@ -2624,6 +2624,98 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
       }
 
       .pitch-fee-calc__rent-chip:focus-visible {
+        outline: none;
+        box-shadow: 0 0 0 2px var(--blue-bright);
+      }
+
+      /* Nhiều toà — mỗi toà một khối, cách nhau bằng một đường kẻ */
+      .pitch-fee-calc__buildings {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .pitch-fee-calc__building {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        min-width: 0;
+      }
+
+      .pitch-fee-calc__building + .pitch-fee-calc__building {
+        padding-top: 20px;
+        border-top: 1px solid #e5e5ea;
+      }
+
+      .pitch-fee-calc__building-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        min-height: 2rem;
+      }
+
+      .pitch-fee-calc__building-title {
+        margin: 0;
+        font-size: 1rem;
+        font-weight: 700;
+        color: #1d1d1f;
+      }
+
+      .pitch-fee-calc__building-fee {
+        margin: 0;
+        font-size: 0.95rem;
+        color: #1d1d1f;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .pitch-fee-calc__building-fee[hidden] {
+        display: none;
+      }
+
+      .pitch-fee-calc__remove,
+      .pitch-fee-calc__add {
+        font-family: inherit;
+        color: #000;
+        background: #fff;
+        cursor: pointer;
+        transition: background-color 0.15s ease;
+      }
+
+      .pitch-fee-calc__remove {
+        padding: 4px 10px;
+        border: 1px solid #000;
+        border-radius: 8px;
+        font-size: 0.8125rem;
+        font-weight: 600;
+      }
+
+      .pitch-fee-calc__remove[hidden],
+      .pitch-fee-calc__add[hidden] {
+        display: none;
+      }
+
+      .pitch-fee-calc__add-row {
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .pitch-fee-calc__add {
+        min-height: 2.75rem;
+        padding: 0.5rem 1rem;
+        border: 2px solid #000;
+        border-radius: 8px;
+        font-size: 0.875rem;
+        font-weight: 700;
+      }
+
+      .pitch-fee-calc__remove:hover,
+      .pitch-fee-calc__add:hover {
+        background: var(--blue-soft);
+      }
+
+      .pitch-fee-calc__remove:focus-visible,
+      .pitch-fee-calc__add:focus-visible {
         outline: none;
         box-shadow: 0 0 0 2px var(--blue-bright);
       }
@@ -5694,140 +5786,144 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
 
                 <div class="pitch-budget-block">
                   <h4 class="pitch-budget-block__title">Máy tính phí</h4>
+                  <p>Chủ có nhiều toà hoặc nhiều loại hình thì bấm "Thêm toà". Mỗi toà tính bậc riêng, rồi cộng lại.</p>
                   <div class="pitch-fee-calc" id="pitch-fee-calc">
-                    <div class="pitch-fee-calc__field">
-                      <label for="pitch-fee-type-trigger">Loại hình</label>
-                      <div class="pitch-fee-calc__select">
-                        <select
-                          id="pitch-fee-type"
-                          name="pitch-fee-type"
-                          class="pitch-fee-calc__select-native"
-                          tabindex="-1"
-                          aria-hidden="true"
-                        >
-                          {pitchRateMatrix.map((row) => (
-                            <option value={row.label} selected={row.label === 'Nhà trọ' ? true : undefined}>
-                              {row.label}
-                            </option>
-                          ))}
-                        </select>
-                        <button
-                          type="button"
-                          id="pitch-fee-type-trigger"
-                          class="pitch-fee-calc__select-trigger"
-                          aria-haspopup="listbox"
-                          aria-expanded="false"
-                          aria-controls="pitch-fee-type-menu"
-                        >
-                          <span class="pitch-fee-calc__select-label">Nhà trọ</span>
-                          <svg
-                            class="pitch-fee-calc__select-chevron"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            viewBox="0 0 24 24"
-                            aria-hidden="true"
-                          >
-                            <path
-                              fill="currentColor"
-                              d="M12 15.002a1 1 0 0 1-.704-.29l-6-6a1 1 0 0 1 1.414-1.414L12 12.588l5.29-5.29a1 1 0 1 1 1.414 1.414l-6 6a1 1 0 0 1-.704.293"
-                            ></path>
-                          </svg>
-                        </button>
-                        <div
-                          id="pitch-fee-type-menu"
-                          class="pitch-fee-calc__select-menu"
-                          role="listbox"
-                          tabindex="-1"
-                          hidden
-                        >
-                          {pitchRateMatrix.map((row) => (
+                    <div class="pitch-fee-calc__buildings" data-fee-buildings>
+                      <section class="pitch-fee-calc__building" data-fee-building aria-labelledby="pitch-fee-b1-title">
+                        <div class="pitch-fee-calc__building-head">
+                          <h5 class="pitch-fee-calc__building-title" id="pitch-fee-b1-title" data-fee-title>Toà 1</h5>
+                          <button type="button" class="pitch-fee-calc__remove" data-fee-remove hidden>Bỏ toà này</button>
+                        </div>
+                        <div class="pitch-fee-calc__field">
+                          <label for="pitch-fee-b1-type-trigger">Loại hình</label>
+                          <div class="pitch-fee-calc__select">
+                            <select
+                              id="pitch-fee-b1-type"
+                              class="pitch-fee-calc__select-native"
+                              tabindex="-1"
+                              aria-hidden="true"
+                              data-fee-type
+                            >
+                              {pitchRateMatrix.map((row) => (
+                                <option value={row.label} selected={row.label === 'Nhà trọ' ? true : undefined}>
+                                  {row.label}
+                                </option>
+                              ))}
+                            </select>
                             <button
                               type="button"
-                              class="pitch-fee-calc__select-option"
-                              role="option"
-                              data-value={row.label}
-                              aria-selected={row.label === 'Nhà trọ' ? 'true' : 'false'}
+                              id="pitch-fee-b1-type-trigger"
+                              class="pitch-fee-calc__select-trigger"
+                              aria-haspopup="listbox"
+                              aria-expanded="false"
+                              aria-controls="pitch-fee-b1-type-menu"
+                              data-fee-type-trigger
                             >
-                              <span class="pitch-fee-calc__select-option-label">{row.label}</span>
+                              <span class="pitch-fee-calc__select-label">Nhà trọ</span>
                               <svg
-                                class="pitch-fee-calc__select-check"
+                                class="pitch-fee-calc__select-chevron"
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="16"
                                 height="16"
                                 viewBox="0 0 24 24"
                                 aria-hidden="true"
-                                hidden={row.label !== 'Nhà trọ'}
                               >
                                 <path
                                   fill="currentColor"
-                                  d="M10.243 19.314L6.12 15.172a1 1 0 1 1 1.414-1.414l2.829 2.828l7.071-7.071a1 1 0 1 1 1.414 1.414l-7.778 7.778a1 1 0 0 1-1.414 0"
+                                  d="M12 15.002a1 1 0 0 1-.704-.29l-6-6a1 1 0 0 1 1.414-1.414L12 12.588l5.29-5.29a1 1 0 1 1 1.414 1.414l-6 6a1 1 0 0 1-.704.293"
                                 ></path>
                               </svg>
                             </button>
-                          ))}
+                            <div
+                              id="pitch-fee-b1-type-menu"
+                              class="pitch-fee-calc__select-menu"
+                              role="listbox"
+                              tabindex="-1"
+                              data-fee-type-menu
+                              hidden
+                            >
+                              {pitchRateMatrix.map((row) => (
+                                <button
+                                  type="button"
+                                  class="pitch-fee-calc__select-option"
+                                  role="option"
+                                  data-value={row.label}
+                                  aria-selected={row.label === 'Nhà trọ' ? 'true' : 'false'}
+                                >
+                                  <span class="pitch-fee-calc__select-option-label">{row.label}</span>
+                                  <svg
+                                    class="pitch-fee-calc__select-check"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    viewBox="0 0 24 24"
+                                    aria-hidden="true"
+                                    hidden={row.label !== 'Nhà trọ'}
+                                  >
+                                    <path
+                                      fill="currentColor"
+                                      d="M10.243 19.314L6.12 15.172a1 1 0 1 1 1.414-1.414l2.829 2.828l7.071-7.071a1 1 0 1 1 1.414 1.414l-7.778 7.778a1 1 0 0 1-1.414 0"
+                                    ></path>
+                                  </svg>
+                                </button>
+                              ))}
+                            </div>
+                          </div>
                         </div>
-                      </div>
+                        <div class="pitch-fee-calc__field">
+                          <div class="pitch-fee-calc__range-head">
+                            <label for="pitch-fee-b1-units">Số phòng / căn trong toà này</label>
+                            <span class="pitch-fee-calc__range-value" data-fee-units-value>10</span>
+                          </div>
+                          <input type="range" id="pitch-fee-b1-units" min="1" max="300" value="10" data-fee-units />
+                        </div>
+                        <div class="pitch-fee-calc__field">
+                          <div class="pitch-fee-calc__range-head">
+                            <label for="pitch-fee-b1-occ">Tỷ lệ lấp đầy</label>
+                            <span class="pitch-fee-calc__range-value" data-fee-occ-value>90%</span>
+                          </div>
+                          <input type="range" id="pitch-fee-b1-occ" min="0" max="100" step="5" value="90" data-fee-occ />
+                        </div>
+                        <div class="pitch-fee-calc__field">
+                          <label for="pitch-fee-b1-rent">Giá thuê trung bình mỗi phòng</label>
+                          <input
+                            type="number"
+                            id="pitch-fee-b1-rent"
+                            class="pitch-fee-calc__rent-input"
+                            min="0"
+                            max="50000000"
+                            step="100000"
+                            value="3000000"
+                            data-fee-rent
+                          />
+                          <p class="pitch-fee-calc__rent-words" aria-live="polite" data-fee-rent-words></p>
+                          <div class="pitch-fee-calc__rent-quick" role="group" aria-label="Cộng nhanh giá thuê">
+                            <button type="button" class="pitch-fee-calc__rent-chip" data-rent-add="100000">
+                              +100k
+                            </button>
+                            <button type="button" class="pitch-fee-calc__rent-chip" data-rent-add="200000">
+                              +200k
+                            </button>
+                            <button type="button" class="pitch-fee-calc__rent-chip" data-rent-add="500000">
+                              +500k
+                            </button>
+                            <button type="button" class="pitch-fee-calc__rent-chip" data-rent-add="1000000">
+                              +1tr
+                            </button>
+                          </div>
+                        </div>
+                        <p class="pitch-fee-calc__building-fee" data-fee-building-fee hidden>
+                          Phí toà này: <strong data-fee-building-fee-value>119.460 đ</strong>
+                        </p>
+                      </section>
                     </div>
-                    <div class="pitch-fee-calc__field">
-                      <div class="pitch-fee-calc__range-head">
-                        <label for="pitch-fee-units">Số phòng / căn trong một toà</label>
-                        <span class="pitch-fee-calc__range-value" id="pitch-fee-units-value">10</span>
-                      </div>
-                      <input
-                        type="range"
-                        id="pitch-fee-units"
-                        name="pitch-fee-units"
-                        min="1"
-                        max="300"
-                        value="10"
-                      />
-                    </div>
-                    <div class="pitch-fee-calc__field">
-                      <div class="pitch-fee-calc__range-head">
-                        <label for="pitch-fee-occ">Tỷ lệ lấp đầy</label>
-                        <span class="pitch-fee-calc__range-value" id="pitch-fee-occ-value">90%</span>
-                      </div>
-                      <input
-                        type="range"
-                        id="pitch-fee-occ"
-                        name="pitch-fee-occ"
-                        min="0"
-                        max="100"
-                        step="5"
-                        value="90"
-                      />
-                    </div>
-                    <div class="pitch-fee-calc__field">
-                      <label for="pitch-fee-rent">Giá thuê trung bình mỗi phòng</label>
-                      <input
-                        type="number"
-                        id="pitch-fee-rent"
-                        name="pitch-fee-rent"
-                        min="0"
-                        max="50000000"
-                        step="100000"
-                        value="3000000"
-                      />
-                      <p class="pitch-fee-calc__rent-words" id="pitch-fee-rent-words" aria-live="polite"></p>
-                      <div class="pitch-fee-calc__rent-quick" role="group" aria-label="Cộng nhanh giá thuê">
-                        <button type="button" class="pitch-fee-calc__rent-chip" data-rent-add="100000">
-                          +100k
-                        </button>
-                        <button type="button" class="pitch-fee-calc__rent-chip" data-rent-add="200000">
-                          +200k
-                        </button>
-                        <button type="button" class="pitch-fee-calc__rent-chip" data-rent-add="500000">
-                          +500k
-                        </button>
-                        <button type="button" class="pitch-fee-calc__rent-chip" data-rent-add="1000000">
-                          +1tr
-                        </button>
-                      </div>
+                    <div class="pitch-fee-calc__add-row">
+                      <button type="button" class="pitch-fee-calc__add" data-fee-add>Thêm toà</button>
                     </div>
                     <div class="pitch-fee-calc__outputs" aria-live="polite" aria-atomic="true">
                       <p class="pitch-fee-calc__fee-label">Chủ trả mỗi tháng</p>
                       <p class="pitch-fee-calc__fee" id="pitch-fee-out-monthly">119.460 đ</p>
+                      <p class="pitch-fee-calc__sub" id="pitch-fee-out-scope" hidden></p>
                       <p class="pitch-fee-calc__sub" id="pitch-fee-out-per-occupied">
                         Trung bình mỗi phòng có khách: 13.273 đ
                       </p>
@@ -6515,23 +6611,19 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
         if (!rateCardEl || !calcRoot) return
 
         const rateCard = JSON.parse(rateCardEl.textContent || '{}')
-        const typeSelect = document.getElementById('pitch-fee-type')
-        const typeTrigger = document.getElementById('pitch-fee-type-trigger')
-        const typeMenu = document.getElementById('pitch-fee-type-menu')
-        const typeLabel = typeTrigger?.querySelector('.pitch-fee-calc__select-label')
-        const typeChevron = typeTrigger?.querySelector('.pitch-fee-calc__select-chevron')
-        const typeOptions = typeMenu
-          ? Array.from(typeMenu.querySelectorAll('.pitch-fee-calc__select-option'))
-          : []
-        const unitsInput = document.getElementById('pitch-fee-units')
-        const occInput = document.getElementById('pitch-fee-occ')
-        const rentInput = document.getElementById('pitch-fee-rent')
-        const unitsValue = document.getElementById('pitch-fee-units-value')
-        const occValue = document.getElementById('pitch-fee-occ-value')
+        const buildingsRoot = calcRoot.querySelector('[data-fee-buildings]')
+        const addButton = calcRoot.querySelector('[data-fee-add]')
+        const firstBuilding = buildingsRoot?.querySelector('[data-fee-building]')
         const outMonthly = document.getElementById('pitch-fee-out-monthly')
+        const outScope = document.getElementById('pitch-fee-out-scope')
         const outPerOccupied = document.getElementById('pitch-fee-out-per-occupied')
         const outPct = document.getElementById('pitch-fee-out-pct')
-        const rentWords = document.getElementById('pitch-fee-rent-words')
+        if (!buildingsRoot || !addButton || !firstBuilding) return
+
+        // Bản sao sạch của toà 1, dùng để tạo toà mới
+        const blankBuilding = firstBuilding.cloneNode(true)
+        const MAX_BUILDINGS = 10
+        const NEW_BUILDING = { type: 'Nhà trọ', units: '10', occ: '90', rent: '3000000' }
 
         const RENT_MAX = 50_000_000
 
@@ -6602,125 +6694,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
           return Math.min(RENT_MAX, Math.max(0, Math.round(n)))
         }
 
-        function applyRentValue(next) {
-          const clamped = clampRent(next)
-          rentInput.value = String(clamped)
-          recalc()
-        }
-
         const ratesByLabel = Object.fromEntries((rateCard.types || []).map((row) => [row.label, row.rates]))
-
-        let typeMenuOpen = false
-        let typeActiveIndex = typeOptions.findIndex(
-          (btn) => btn.getAttribute('data-value') === typeSelect?.value
-        )
-
-        function syncTypeSelectUi() {
-          if (!typeSelect || !typeLabel) return
-          const selected = typeSelect.options[typeSelect.selectedIndex]
-          typeLabel.textContent = selected?.textContent?.trim() || ''
-          typeOptions.forEach((btn) => {
-            const isSelected = btn.getAttribute('data-value') === typeSelect.value
-            btn.setAttribute('aria-selected', isSelected ? 'true' : 'false')
-            btn.classList.toggle('is-selected', isSelected)
-            const check = btn.querySelector('.pitch-fee-calc__select-check')
-            if (check) check.hidden = !isSelected
-          })
-        }
-
-        function setTypeMenuOpen(open) {
-          if (!typeTrigger || !typeMenu) return
-          typeMenuOpen = open
-          typeTrigger.setAttribute('aria-expanded', open ? 'true' : 'false')
-          typeMenu.hidden = !open
-          typeChevron?.classList.toggle('is-open', open)
-          if (open) {
-            typeActiveIndex = typeOptions.findIndex(
-              (btn) => btn.getAttribute('data-value') === typeSelect?.value
-            )
-            if (typeActiveIndex < 0) typeActiveIndex = 0
-            typeOptions.forEach((btn, index) => {
-              btn.classList.toggle('is-active', index === typeActiveIndex)
-            })
-          } else {
-            typeOptions.forEach((btn) => btn.classList.remove('is-active'))
-          }
-        }
-
-        function chooseTypeOption(value) {
-          if (!typeSelect) return
-          typeSelect.value = value
-          syncTypeSelectUi()
-          typeSelect.dispatchEvent(new Event('change', { bubbles: true }))
-          setTypeMenuOpen(false)
-          typeTrigger?.focus()
-        }
-
-        function moveTypeActive(direction) {
-          if (!typeOptions.length) return
-          if (!typeMenuOpen) setTypeMenuOpen(true)
-          let next = typeActiveIndex
-          for (let attempts = 0; attempts < typeOptions.length; attempts += 1) {
-            next = (next + direction + typeOptions.length) % typeOptions.length
-            typeActiveIndex = next
-            break
-          }
-          typeOptions.forEach((btn, index) => {
-            btn.classList.toggle('is-active', index === typeActiveIndex)
-          })
-          typeOptions[typeActiveIndex]?.scrollIntoView({ block: 'nearest' })
-        }
-
-        if (typeTrigger && typeMenu && typeSelect) {
-          syncTypeSelectUi()
-
-          typeTrigger.addEventListener('pointerdown', (event) => {
-            event.stopPropagation()
-          })
-
-          typeTrigger.addEventListener('click', () => {
-            setTypeMenuOpen(!typeMenuOpen)
-          })
-
-          typeTrigger.addEventListener('keydown', (event) => {
-            if (event.key === 'ArrowDown') {
-              event.preventDefault()
-              moveTypeActive(1)
-            } else if (event.key === 'ArrowUp') {
-              event.preventDefault()
-              moveTypeActive(-1)
-            } else if ((event.key === 'Enter' || event.key === ' ') && typeMenuOpen) {
-              event.preventDefault()
-              const option = typeOptions[typeActiveIndex]
-              if (option) chooseTypeOption(option.getAttribute('data-value') || '')
-            } else if (event.key === 'Enter' || event.key === ' ') {
-              event.preventDefault()
-              setTypeMenuOpen(true)
-            } else if (event.key === 'Escape') {
-              setTypeMenuOpen(false)
-            }
-          })
-
-          typeMenu.addEventListener('pointerdown', (event) => {
-            event.stopPropagation()
-          })
-
-          typeOptions.forEach((btn, index) => {
-            btn.addEventListener('pointerenter', () => {
-              typeActiveIndex = index
-              typeOptions.forEach((item, i) => {
-                item.classList.toggle('is-active', i === index)
-              })
-            })
-            btn.addEventListener('click', () => {
-              chooseTypeOption(btn.getAttribute('data-value') || '')
-            })
-          })
-
-          document.addEventListener('pointerdown', () => {
-            if (typeMenuOpen) setTypeMenuOpen(false)
-          })
-        }
 
         function bandIndex(unitPosition) {
           if (unitPosition <= 4) return 0
@@ -6757,58 +6731,267 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
           return value.toFixed(2).replace('.', ',')
         }
 
-        function recalc() {
-          const label = typeSelect.value
-          const units = Number(unitsInput.value)
-          const occPct = Number(occInput.value)
-          const rent = clampRent(rentInput.value)
-          if (Number(rentInput.value) !== rent) {
-            rentInput.value = String(rent)
-          }
-          const occ = occPct / 100
-          const fee = monthlyFee(label, units, occPct)
+        const buildings = []
+        let nextBuildingNumber = 2
 
-          unitsValue.textContent = String(units)
-          occValue.textContent = `${occPct}%`
-          outMonthly.textContent = `${formatVnd(fee)} đ`
-          if (rentWords) {
-            rentWords.textContent = formatRentInWords(rent)
+        function closeAllTypeMenus(except) {
+          buildings.forEach((item) => {
+            if (item !== except) item.closeMenu()
+          })
+        }
+
+        function setupBuilding(root) {
+          const typeSelect = root.querySelector('[data-fee-type]')
+          const typeTrigger = root.querySelector('[data-fee-type-trigger]')
+          const typeMenu = root.querySelector('[data-fee-type-menu]')
+          const typeLabel = typeTrigger?.querySelector('.pitch-fee-calc__select-label')
+          const typeChevron = typeTrigger?.querySelector('.pitch-fee-calc__select-chevron')
+          const typeOptions = typeMenu
+            ? Array.from(typeMenu.querySelectorAll('.pitch-fee-calc__select-option'))
+            : []
+          const unitsInput = root.querySelector('[data-fee-units]')
+          const occInput = root.querySelector('[data-fee-occ]')
+          const rentInput = root.querySelector('[data-fee-rent]')
+          const unitsValue = root.querySelector('[data-fee-units-value]')
+          const occValue = root.querySelector('[data-fee-occ-value]')
+          const rentWords = root.querySelector('[data-fee-rent-words]')
+          const titleEl = root.querySelector('[data-fee-title]')
+          const removeButton = root.querySelector('[data-fee-remove]')
+          const feeLine = root.querySelector('[data-fee-building-fee]')
+          const feeValue = root.querySelector('[data-fee-building-fee-value]')
+
+          const building = { root }
+
+          let typeMenuOpen = false
+          let typeActiveIndex = typeOptions.findIndex(
+            (btn) => btn.getAttribute('data-value') === typeSelect?.value
+          )
+
+          function syncTypeSelectUi() {
+            if (!typeSelect || !typeLabel) return
+            const selected = typeSelect.options[typeSelect.selectedIndex]
+            typeLabel.textContent = selected?.textContent?.trim() || ''
+            typeOptions.forEach((btn) => {
+              const isSelected = btn.getAttribute('data-value') === typeSelect.value
+              btn.setAttribute('aria-selected', isSelected ? 'true' : 'false')
+              btn.classList.toggle('is-selected', isSelected)
+              const check = btn.querySelector('.pitch-fee-calc__select-check')
+              if (check) check.hidden = !isSelected
+            })
           }
 
-          if (occ <= 0) {
+          function setTypeMenuOpen(open) {
+            if (!typeTrigger || !typeMenu) return
+            if (open) closeAllTypeMenus(building)
+            typeMenuOpen = open
+            typeTrigger.setAttribute('aria-expanded', open ? 'true' : 'false')
+            typeMenu.hidden = !open
+            typeChevron?.classList.toggle('is-open', open)
+            if (open) {
+              typeActiveIndex = typeOptions.findIndex(
+                (btn) => btn.getAttribute('data-value') === typeSelect?.value
+              )
+              if (typeActiveIndex < 0) typeActiveIndex = 0
+              typeOptions.forEach((btn, index) => {
+                btn.classList.toggle('is-active', index === typeActiveIndex)
+              })
+            } else {
+              typeOptions.forEach((btn) => btn.classList.remove('is-active'))
+            }
+          }
+
+          function chooseTypeOption(value) {
+            if (!typeSelect) return
+            typeSelect.value = value
+            syncTypeSelectUi()
+            typeSelect.dispatchEvent(new Event('change', { bubbles: true }))
+            setTypeMenuOpen(false)
+            typeTrigger?.focus()
+          }
+
+          function moveTypeActive(direction) {
+            if (!typeOptions.length) return
+            if (!typeMenuOpen) setTypeMenuOpen(true)
+            typeActiveIndex = (typeActiveIndex + direction + typeOptions.length) % typeOptions.length
+            typeOptions.forEach((btn, index) => {
+              btn.classList.toggle('is-active', index === typeActiveIndex)
+            })
+            typeOptions[typeActiveIndex]?.scrollIntoView({ block: 'nearest' })
+          }
+
+          if (typeTrigger && typeMenu && typeSelect) {
+            syncTypeSelectUi()
+
+            typeTrigger.addEventListener('pointerdown', (event) => {
+              event.stopPropagation()
+            })
+
+            typeTrigger.addEventListener('click', () => {
+              setTypeMenuOpen(!typeMenuOpen)
+            })
+
+            typeTrigger.addEventListener('keydown', (event) => {
+              if (event.key === 'ArrowDown') {
+                event.preventDefault()
+                moveTypeActive(1)
+              } else if (event.key === 'ArrowUp') {
+                event.preventDefault()
+                moveTypeActive(-1)
+              } else if ((event.key === 'Enter' || event.key === ' ') && typeMenuOpen) {
+                event.preventDefault()
+                const option = typeOptions[typeActiveIndex]
+                if (option) chooseTypeOption(option.getAttribute('data-value') || '')
+              } else if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault()
+                setTypeMenuOpen(true)
+              } else if (event.key === 'Escape') {
+                setTypeMenuOpen(false)
+              }
+            })
+
+            typeMenu.addEventListener('pointerdown', (event) => {
+              event.stopPropagation()
+            })
+
+            typeOptions.forEach((btn, index) => {
+              btn.addEventListener('pointerenter', () => {
+                typeActiveIndex = index
+                typeOptions.forEach((item, i) => {
+                  item.classList.toggle('is-active', i === index)
+                })
+              })
+              btn.addEventListener('click', () => {
+                chooseTypeOption(btn.getAttribute('data-value') || '')
+              })
+            })
+          }
+
+          ;[typeSelect, unitsInput, occInput, rentInput].forEach((el) => {
+            el.addEventListener('input', recalcAll)
+            el.addEventListener('change', recalcAll)
+          })
+
+          root.querySelectorAll('[data-rent-add]').forEach((btn) => {
+            btn.addEventListener('click', () => {
+              const delta = Number(btn.getAttribute('data-rent-add'))
+              if (!Number.isFinite(delta)) return
+              rentInput.value = String(clampRent((Number(rentInput.value) || 0) + delta))
+              recalcAll()
+            })
+          })
+
+          removeButton?.addEventListener('click', () => removeBuilding(building))
+
+          building.closeMenu = () => {
+            if (typeMenuOpen) setTypeMenuOpen(false)
+          }
+          building.focus = () => typeTrigger?.focus()
+          building.read = () => {
+            const rent = clampRent(rentInput.value)
+            if (Number(rentInput.value) !== rent) {
+              rentInput.value = String(rent)
+            }
+            const units = Number(unitsInput.value)
+            const occPct = Number(occInput.value)
+            return {
+              units,
+              occPct,
+              rent,
+              occupied: units * (occPct / 100),
+              fee: monthlyFee(typeSelect.value, units, occPct),
+            }
+          }
+          building.render = (data, index, many) => {
+            if (titleEl) titleEl.textContent = `Toà ${index + 1}`
+            if (removeButton) removeButton.hidden = !many
+            unitsValue.textContent = String(data.units)
+            occValue.textContent = `${data.occPct}%`
+            if (rentWords) rentWords.textContent = formatRentInWords(data.rent)
+            if (feeLine) feeLine.hidden = !many
+            if (feeValue) feeValue.textContent = `${formatVnd(data.fee)} đ`
+          }
+          return building
+        }
+
+        function recalcAll() {
+          const rows = buildings.map((item) => item.read())
+          const many = buildings.length > 1
+          buildings.forEach((item, index) => item.render(rows[index], index, many))
+
+          const totalFee = rows.reduce((acc, row) => acc + row.fee, 0)
+          const totalUnits = rows.reduce((acc, row) => acc + row.units, 0)
+          const totalOccupied = rows.reduce((acc, row) => acc + row.occupied, 0)
+          const totalRent = rows.reduce((acc, row) => acc + row.rent * row.occupied, 0)
+          const rentMissing = rows.some((row) => row.occupied > 0 && row.rent <= 0)
+
+          outMonthly.textContent = `${formatVnd(totalFee)} đ`
+          addButton.hidden = buildings.length >= MAX_BUILDINGS
+
+          if (outScope) {
+            outScope.hidden = !many
+            outScope.textContent = `${buildings.length} toà, tổng ${totalUnits} phòng / căn`
+          }
+
+          if (totalOccupied <= 0) {
             outPerOccupied.hidden = true
             outPct.hidden = true
             return
           }
 
-          const perOccupied = Math.round(fee / (units * occ))
+          const perOccupied = Math.round(totalFee / totalOccupied)
           outPerOccupied.hidden = false
           outPerOccupied.textContent = `Trung bình mỗi phòng có khách: ${formatVnd(perOccupied)} đ`
 
-          if (rent <= 0) {
+          if (rentMissing || totalRent <= 0) {
             outPct.hidden = true
             return
           }
 
-          const pct = (fee / (rent * units * occ)) * 100
+          const pct = (totalFee / totalRent) * 100
           outPct.hidden = false
           outPct.textContent = `≈ ${formatPct(pct)}% tiền thuê`
         }
 
-        ;[typeSelect, unitsInput, occInput, rentInput].forEach((el) => {
-          el.addEventListener('input', recalc)
-          el.addEventListener('change', recalc)
-        })
-
-        calcRoot.querySelectorAll('[data-rent-add]').forEach((btn) => {
-          btn.addEventListener('click', () => {
-            const delta = Number(btn.getAttribute('data-rent-add'))
-            if (!Number.isFinite(delta)) return
-            applyRentValue((Number(rentInput.value) || 0) + delta)
+        function addBuilding() {
+          if (buildings.length >= MAX_BUILDINGS) return
+          const number = nextBuildingNumber
+          nextBuildingNumber += 1
+          const root = blankBuilding.cloneNode(true)
+          const renumber = (value) => value.replace('pitch-fee-b1-', `pitch-fee-b${number}-`)
+          ;[root, ...root.querySelectorAll('[id], [for], [aria-controls], [aria-labelledby]')].forEach((el) => {
+            ;['id', 'for', 'aria-controls', 'aria-labelledby'].forEach((attr) => {
+              const value = el.getAttribute(attr)
+              if (value) el.setAttribute(attr, renumber(value))
+            })
           })
-        })
+          root.querySelector('[data-fee-type]').value = NEW_BUILDING.type
+          root.querySelector('[data-fee-units]').value = NEW_BUILDING.units
+          root.querySelector('[data-fee-occ]').value = NEW_BUILDING.occ
+          root.querySelector('[data-fee-rent]').value = NEW_BUILDING.rent
+          root.querySelector('[data-fee-type-menu]').hidden = true
+          buildingsRoot.appendChild(root)
+          const building = setupBuilding(root)
+          buildings.push(building)
+          recalcAll()
+          building.focus()
+        }
 
-        recalc()
+        function removeBuilding(building) {
+          if (buildings.length <= 1) return
+          const index = buildings.indexOf(building)
+          if (index < 0) return
+          buildings.splice(index, 1)
+          building.root.remove()
+          recalcAll()
+          addButton.focus()
+        }
+
+        addButton.addEventListener('click', addBuilding)
+
+        document.addEventListener('pointerdown', () => closeAllTypeMenus())
+
+        buildings.push(setupBuilding(firstBuilding))
+        recalcAll()
       })
     </script>
 
