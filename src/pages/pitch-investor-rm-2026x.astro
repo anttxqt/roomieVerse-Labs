@@ -9,9 +9,9 @@ const pitchFundingBars = [
   { label: 'Bán hàng và marketing (Sale chính, 2 CTV, hoa hồng, marketing)', percent: 25.1, amount: '~644 triệu' },
   { label: 'Máy trạm và thiết bị cho Dev', percent: 3.5, amount: '~90 triệu' },
   { label: 'Hạ tầng cloud, staging, API AI và công cụ phát triển', percent: 9.6, amount: '~246 triệu' },
-  { label: 'Văn phòng và vận hành công ty', percent: 11.4, amount: '~293 triệu' },
+  { label: 'Văn phòng và vận hành công ty', percent: 10.9, amount: '~280 triệu' },
   { label: 'Pháp lý', percent: 1.4, amount: '~35 triệu' },
-  { label: 'Dự phòng', percent: 5.0, amount: '~129 triệu' },
+  { label: 'Dự phòng', percent: 5.6, amount: '~143 triệu' },
 ]
 
 const pitchTableA = [
@@ -22,12 +22,12 @@ const pitchTableA = [
   { khoan: 'CTV bán hàng thứ nhất, từ tháng 2 (phí cứng, hoa hồng, phụ cấp, tuyển dụng)', vnd: '80.400.000', usd: '~$3,128', tyLe: '3,1%' },
   { khoan: 'CTV bán hàng thứ 2, từ tháng 6 (phí cứng, hoa hồng, phụ cấp, tuyển dụng)', vnd: '64.400.000', usd: '~$2,506', tyLe: '2,5%' },
   { khoan: 'Marketing', vnd: '289.000.000', usd: '~$11,245', tyLe: '11,2%' },
-  { khoan: 'Văn phòng làm việc TP.HCM, từ tháng 6 (thuê, điện nước, phí quản lý, setup, cọc)', vnd: '188.000.000', usd: '~$7,315', tyLe: '7,3%' },
+  { khoan: 'Văn phòng làm việc TP.HCM, từ tháng 6 (thuê, điện nước, phí quản lý, setup, cọc)', vnd: '174.500.000', usd: '~$6,790', tyLe: '6,8%' },
   { khoan: 'Vận hành công ty (văn phòng ảo, kế toán, ngân hàng, email, công đoàn, chữ ký số, hoá đơn, quyết toán, khác)', vnd: '105.020.000', usd: '~$4,086', tyLe: '4,1%' },
   { khoan: 'Máy trạm và thiết bị làm việc cho Dev', vnd: '89.950.000', usd: '~$3,500', tyLe: '3,5%' },
   { khoan: 'Hạ tầng cloud, staging, API AI và công cụ phát triển', vnd: '245.780.000', usd: '~$9,563', tyLe: '9,6%' },
   { khoan: 'Pháp lý (thành lập, vòng gọi vốn, nhãn hiệu, dữ liệu cá nhân)', vnd: '35.000.000', usd: '~$1,362', tyLe: '1,4%' },
-  { khoan: 'Dự phòng', vnd: '129.210.000', usd: '~$5,028', tyLe: '5,0%' },
+  { khoan: 'Dự phòng', vnd: '142.710.000', usd: '~$5,553', tyLe: '5,6%' },
   { khoan: 'TỔNG GỌI VỐN', vnd: '2.570.000.000', usd: '$100,000', tyLe: '100%', total: true },
 ]
 
@@ -59,7 +59,7 @@ const pitchTableB = [
   { kind: 'data', label: 'Phụ cấp làm việc tại nhà (Founder, ở Đà Lạt)', c: ['500.000', '500.000', '–', '–'] },
   { kind: 'data', label: 'Kinh phí công đoàn (2%)', c: ['680.000', '1.090.000', '1.159.000', '1.320.000'] },
   { kind: 'group', label: 'CHỖ LÀM VÀ VẬN HÀNH' },
-  { kind: 'data', label: 'Thuê văn phòng làm việc TP.HCM (phần công ty, từ tháng 6)', c: ['–', '–', '8.500.000', '8.500.000'] },
+  { kind: 'data', label: 'Thuê văn phòng làm việc TP.HCM (phần công ty, từ tháng 6)', c: ['–', '–', '8.000.000', '8.000.000'] },
   { kind: 'data', label: 'Điện, nước, mạng, phí quản lý văn phòng', c: ['–', '–', '3.500.000', '3.500.000'] },
   { kind: 'data', label: 'Văn phòng ảo (địa chỉ đăng ký công ty)', c: ['650.000', '650.000', '650.000', '650.000'] },
   { kind: 'data', label: 'Kế toán, khai thuế', c: ['1.200.000', '1.200.000', '2.000.000', '2.000.000'] },
@@ -74,9 +74,9 @@ const pitchTableB = [
   { kind: 'data', label: 'Công cụ phát triển Dev (AI hỗ trợ viết code)', c: ['1.720.000', '1.720.000', '1.720.000', '1.720.000'] },
   { kind: 'group', label: 'THỊ TRƯỜNG' },
   { kind: 'data', label: 'Marketing (thưởng giới thiệu, quà tặng, chiến dịch)', c: ['10.000.000', '10.000.000', '17.000.000', '20.000.000'] },
-  { kind: 'total', label: 'CỘNG MỖI THÁNG', c: ['63.000.000', '95.317.000', '130.581.000', '153.487.000'] },
+  { kind: 'total', label: 'CỘNG MỖI THÁNG', c: ['63.000.000', '95.317.000', '130.081.000', '152.987.000'] },
   { kind: 'meta', label: 'Số tháng', c: ['1', '4', '7', '6'] },
-  { kind: 'total', label: 'CỘNG GIAI ĐOẠN', c: ['63.000.000', '364.357.500', '914.062.500', '920.920.000'] },
+  { kind: 'total', label: 'CỘNG GIAI ĐOẠN', c: ['63.000.000', '364.357.500', '910.562.500', '917.920.000'] },
 ]
 
 const pitchTableC = [
@@ -93,10 +93,10 @@ const pitchTableC = [
   { hangMuc: 'Thưởng Tết Sale chính (1 tháng lương cứng, tạm đặt tháng 4)', thang: '4', vnd: '5.500.000' },
   { hangMuc: 'Tuyển dụng CTV 2', thang: '5', vnd: '500.000' },
   { hangMuc: 'Setup văn phòng TP.HCM (bàn ghế, wifi)', thang: '6', vnd: '8.000.000' },
-  { hangMuc: 'Tiền cọc văn phòng TP.HCM, gồm 17tr phần công ty và 7tr ứng cho Founder cọc chỗ ở. Founder hoàn lại đủ 7tr khi nhận lại cọc', thang: '6', vnd: '24.000.000' },
+  { hangMuc: 'Tiền cọc văn phòng TP.HCM (phần công ty)', thang: '6', vnd: '17.000.000' },
   { hangMuc: 'Quyết toán thuế, báo cáo tài chính năm', thang: '12', vnd: '3.000.000' },
   { hangMuc: 'Thưởng Tết lần 2 Sale chính (1 tháng lương cứng, tạm đặt tháng 16)', thang: '16', vnd: '8.000.000' },
-  { hangMuc: 'TỔNG CHI MỘT LẦN', thang: '', vnd: '178.450.000', total: true },
+  { hangMuc: 'TỔNG CHI MỘT LẦN', thang: '', vnd: '171.450.000', total: true },
 ]
 
 const pitchTableD = [
@@ -105,19 +105,19 @@ const pitchTableD = [
   { thang: '3', chi: '94.917.500', quy: '2.204.227.500' },
   { thang: '4', chi: '100.817.500', quy: '2.103.410.000' },
   { thang: '5', chi: '96.217.500', quy: '2.007.192.500' },
-  { thang: '6', chi: '160.022.500', quy: '1.847.170.000' },
-  { thang: '7', chi: '129.040.000', quy: '1.718.130.000' },
-  { thang: '8', chi: '130.240.000', quy: '1.587.890.000' },
-  { thang: '9', chi: '130.640.000', quy: '1.457.250.000' },
-  { thang: '10', chi: '131.440.000', quy: '1.325.810.000' },
-  { thang: '11', chi: '132.040.000', quy: '1.193.770.000' },
-  { thang: '12', chi: '135.640.000', quy: '1.058.130.000' },
-  { thang: '13', chi: '150.520.000', quy: '907.610.000' },
-  { thang: '14', chi: '151.320.000', quy: '756.290.000' },
-  { thang: '15', chi: '152.120.000', quy: '604.170.000' },
-  { thang: '16', chi: '162.320.000', quy: '441.850.000' },
-  { thang: '17', chi: '155.320.000', quy: '286.530.000' },
-  { thang: '18', chi: '157.320.000', quy: '129.210.000' },
+  { thang: '6', chi: '152.522.500', quy: '1.854.670.000' },
+  { thang: '7', chi: '128.540.000', quy: '1.726.130.000' },
+  { thang: '8', chi: '129.740.000', quy: '1.596.390.000' },
+  { thang: '9', chi: '130.140.000', quy: '1.466.250.000' },
+  { thang: '10', chi: '130.940.000', quy: '1.335.310.000' },
+  { thang: '11', chi: '131.540.000', quy: '1.203.770.000' },
+  { thang: '12', chi: '135.140.000', quy: '1.068.630.000' },
+  { thang: '13', chi: '150.020.000', quy: '918.610.000' },
+  { thang: '14', chi: '150.820.000', quy: '767.790.000' },
+  { thang: '15', chi: '151.620.000', quy: '616.170.000' },
+  { thang: '16', chi: '161.820.000', quy: '454.350.000' },
+  { thang: '17', chi: '154.820.000', quy: '299.530.000' },
+  { thang: '18', chi: '156.820.000', quy: '142.710.000' },
 ]
 
 const pitchRevenueIntro =
@@ -130,9 +130,9 @@ const pitchRevenueCaseRows = [
   { label: 'Phí trung bình mỗi chủ/tháng (sau VAT)', cells: ['~190.000đ', '~270.000đ', '~340.000đ', '~385.000đ'] },
   { label: 'Chủ trả phí tháng 12 / tháng 18', cells: ['~105 / ~238', '~105 / ~238', '~105 / ~238', '~105 / ~238'] },
   { label: 'Doanh thu tháng 18', cells: ['~45 triệu', '~62 triệu', '~77 triệu', '~86 triệu'] },
-  { label: 'Quỹ còn cuối tháng 18', cells: ['~429 triệu', '~522 triệu', '~603 triệu', '~656 triệu'] },
+  { label: 'Quỹ còn cuối tháng 18', cells: ['~443 triệu', '~536 triệu', '~617 triệu', '~669 triệu'] },
   { label: 'Hoà vốn hằng tháng', cells: ['~tháng 38', '~tháng 31', '~tháng 27', '~tháng 25'] },
-  { label: 'Cần gọi thêm vốn để tới hoà vốn?', cells: ['Có. Không gọi thêm thì quỹ cạn khoảng tháng 23. Nên gọi vòng sau trong khoảng tháng 15–18 (xem mục 6)', 'Có. Không gọi thêm thì quỹ cạn khoảng tháng 28. Nên gọi vòng sau trong khoảng tháng 15–18 (xem mục 6)', 'Không. Quỹ thấp nhất còn ~300 triệu ở tháng 26', 'Không. Quỹ thấp nhất còn ~452 triệu ở tháng 24'] },
+  { label: 'Cần gọi thêm vốn để tới hoà vốn?', cells: ['Có. Không gọi thêm thì quỹ cạn khoảng tháng 23. Nên gọi vòng sau trong khoảng tháng 15–18 (xem mục 6)', 'Có. Không gọi thêm thì quỹ cạn khoảng tháng 29. Nên gọi vòng sau trong khoảng tháng 15–18 (xem mục 6)', 'Không. Quỹ thấp nhất còn ~318 triệu ở tháng 26', 'Không. Quỹ thấp nhất còn ~469 triệu ở tháng 24'] },
 ]
 
 const pitchRevenueRows = [
@@ -141,19 +141,19 @@ const pitchRevenueRows = [
   { thang: '3', chuTro: '~12', binhThuong: '~2.208 triệu', honBinhThuong: '~2.208 triệu', kha: '~2.208 triệu', mauHong: '~2.208 triệu' },
   { thang: '4', chuTro: '~18', binhThuong: '~2.111 triệu', honBinhThuong: '~2.111 triệu', kha: '~2.111 triệu', mauHong: '~2.111 triệu' },
   { thang: '5', chuTro: '~25', binhThuong: '~2.020 triệu', honBinhThuong: '~2.020 triệu', kha: '~2.020 triệu', mauHong: '~2.020 triệu' },
-  { thang: '6', chuTro: '~32', binhThuong: '~1.866 triệu', honBinhThuong: '~1.866 triệu', kha: '~1.867 triệu', mauHong: '~1.867 triệu' },
-  { thang: '7', chuTro: '~39', binhThuong: '~1.744 triệu', honBinhThuong: '~1.746 triệu', kha: '~1.747 triệu', mauHong: '~1.748 triệu' },
-  { thang: '8', chuTro: '~49', binhThuong: '~1.623 triệu', honBinhThuong: '~1.627 triệu', kha: '~1.630 triệu', mauHong: '~1.631 triệu' },
-  { thang: '9', chuTro: '~61', binhThuong: '~1.504 triệu', honBinhThuong: '~1.510 triệu', kha: '~1.516 triệu', mauHong: '~1.519 triệu' },
-  { thang: '10', chuTro: '~74', binhThuong: '~1.387 triệu', honBinhThuong: '~1.397 triệu', kha: '~1.406 triệu', mauHong: '~1.411 triệu' },
-  { thang: '11', chuTro: '~89', binhThuong: '~1.272 triệu', honBinhThuong: '~1.287 triệu', kha: '~1.300 triệu', mauHong: '~1.308 triệu' },
-  { thang: '12', chuTro: '~105', binhThuong: '~1.156 triệu', honBinhThuong: '~1.177 triệu', kha: '~1.196 triệu', mauHong: '~1.208 triệu' },
-  { thang: '13', chuTro: '~123', binhThuong: '~1.029 triệu', honBinhThuong: '~1.058 triệu', kha: '~1.083 triệu', mauHong: '~1.099 triệu' },
-  { thang: '14', chuTro: '~142', binhThuong: '~905 triệu', honBinhThuong: '~943 triệu', kha: '~976 triệu', mauHong: '~997 triệu' },
-  { thang: '15', chuTro: '~163', binhThuong: '~784 triệu', honBinhThuong: '~832 triệu', kha: '~875 triệu', mauHong: '~902 triệu' },
-  { thang: '16', chuTro: '~186', binhThuong: '~657 triệu', honBinhThuong: '~718 triệu', kha: '~772 triệu', mauHong: '~806 triệu' },
-  { thang: '17', chuTro: '~211', binhThuong: '~541 triệu', honBinhThuong: '~617 triệu', kha: '~684 triệu', mauHong: '~727 triệu' },
-  { thang: '18', chuTro: '~238', binhThuong: '~429 triệu', honBinhThuong: '~522 triệu', kha: '~603 triệu', mauHong: '~656 triệu' },
+  { thang: '6', chuTro: '~32', binhThuong: '~1.873 triệu', honBinhThuong: '~1.874 triệu', kha: '~1.874 triệu', mauHong: '~1.874 triệu' },
+  { thang: '7', chuTro: '~39', binhThuong: '~1.752 triệu', honBinhThuong: '~1.754 triệu', kha: '~1.755 triệu', mauHong: '~1.756 triệu' },
+  { thang: '8', chuTro: '~49', binhThuong: '~1.632 triệu', honBinhThuong: '~1.635 triệu', kha: '~1.638 triệu', mauHong: '~1.640 triệu' },
+  { thang: '9', chuTro: '~61', binhThuong: '~1.513 triệu', honBinhThuong: '~1.519 triệu', kha: '~1.525 triệu', mauHong: '~1.528 triệu' },
+  { thang: '10', chuTro: '~74', binhThuong: '~1.396 triệu', honBinhThuong: '~1.406 triệu', kha: '~1.415 triệu', mauHong: '~1.421 triệu' },
+  { thang: '11', chuTro: '~89', binhThuong: '~1.282 triệu', honBinhThuong: '~1.297 triệu', kha: '~1.310 triệu', mauHong: '~1.318 triệu' },
+  { thang: '12', chuTro: '~105', binhThuong: '~1.167 triệu', honBinhThuong: '~1.188 triệu', kha: '~1.206 triệu', mauHong: '~1.218 triệu' },
+  { thang: '13', chuTro: '~123', binhThuong: '~1.040 triệu', honBinhThuong: '~1.069 triệu', kha: '~1.094 triệu', mauHong: '~1.110 triệu' },
+  { thang: '14', chuTro: '~142', binhThuong: '~916 triệu', honBinhThuong: '~954 triệu', kha: '~987 triệu', mauHong: '~1.009 triệu' },
+  { thang: '15', chuTro: '~163', binhThuong: '~796 triệu', honBinhThuong: '~844 triệu', kha: '~887 triệu', mauHong: '~914 triệu' },
+  { thang: '16', chuTro: '~186', binhThuong: '~669 triệu', honBinhThuong: '~730 triệu', kha: '~784 triệu', mauHong: '~819 triệu' },
+  { thang: '17', chuTro: '~211', binhThuong: '~554 triệu', honBinhThuong: '~630 triệu', kha: '~697 triệu', mauHong: '~740 triệu' },
+  { thang: '18', chuTro: '~238', binhThuong: '~443 triệu', honBinhThuong: '~536 triệu', kha: '~617 triệu', mauHong: '~669 triệu' },
 ]
 
 const pitchRevenueNote =
@@ -184,7 +184,7 @@ const pitchAssumptions = [
   'Hoa hồng Sale chính tính theo từng chủ ký được trong tháng. Chủ thứ 1 tới 5 được 400.000 đ mỗi chủ. Chủ thứ 6 và 7 được 600.000 đ. Chủ thứ 8 và 9 được 800.000 đ. Từ chủ thứ 10 trở đi được 1.000.000 đ.',
   'Hoa hồng CTV tính riêng từng người. Chủ thứ 1 tới 4 được 400.000 đ mỗi chủ. Chủ thứ 5 được 600.000 đ. Từ chủ thứ 6 trở đi được 1.000.000 đ.',
   'Dự phóng khách đi theo kiểu đánh du kích nên tăng dần. Khách mới cả đội mỗi tháng ở Đà Lạt (tháng 1–5) là 3, 4, 5, 6, 7. Ở TP.HCM (tháng 6–18) là 6, 7, 10, 11, 13, 14, 15, 17, 18, 19, 22, 23, 25. Founder ký 2 chủ mỗi tháng từ tháng 2. Ở Đà Lạt, CTV ký khoảng 1/3 phần còn lại. Ở TP.HCM, mỗi CTV tăng dần từ 1 lên 6 chủ mỗi tháng. Phần còn lại là của Sale chính, tới tháng 18 khoảng 11 chủ mỗi tháng. Mỗi tháng +3% nhờ giới thiệu, −2% khách rời. Không tính khách CEO ký.',
-  'Từ tháng 6, văn phòng TP.HCM là một căn 2PN ~17 triệu/tháng. Phòng khách làm văn phòng cho Founder và Dev. Một phòng share cho người ngoài 5 triệu. Founder ở phòng còn lại, tự trả 3,5 triệu. Công ty trả 8,5 triệu. Địa chỉ đăng ký công ty là văn phòng ảo.',
+  'Từ tháng 6, văn phòng TP.HCM là một căn 2PN ~17 triệu/tháng. Phòng khách làm văn phòng cho Founder và Dev. Phòng lớn share cho người ngoài 5 triệu. Founder ở phòng nhỏ, tự trả 4 triệu. Công ty trả 8 triệu. Địa chỉ đăng ký công ty là văn phòng ảo.',
   'Staging đặt trên một máy chủ riêng cho giống production. Máy trong bảng chỉ cấp cho Dev. Founder dùng máy đang có (xem phụ lục 10, mục Chỗ làm). CEO, Sale, CTV dùng máy riêng, mỗi người một tài khoản, nghỉ là khoá.',
   'API AI dùng để đọc số bằng 2 hãng và chạy các agent làm thay chủ cho thuê. Tháng 1 tốn 0,4 triệu. Tháng 2–5 tốn 0,8 triệu mỗi tháng. Tháng 6–12 tốn 3,2 triệu. Tháng 13–18 tốn 4,7 triệu. Khi các agent hoạt động đầy đủ thì khoản này bằng khoảng 8,5% doanh thu.',
   'Máy chủ tháng 1–5 dùng gói Founder đã trả trước, công ty chưa phải trả.',
@@ -319,17 +319,17 @@ function assertPitchFundingData() {
   const phaseTotals = pitchTableB.find((row) => row.kind === 'total' && row.label === 'CỘNG GIAI ĐOẠN')
   if (!phaseTotals) throw new Error('pitchTableB missing phase totals')
   const sumPhases = phaseTotals.c.reduce((acc, cell) => acc + parsePitchVnd(cell), 0)
-  if (sumPhases !== 2262340000) throw new Error('pitchTableB phase totals mismatch')
+  if (sumPhases !== 2255840000) throw new Error('pitchTableB phase totals mismatch')
 
   const sumC = pitchTableC.filter((row) => !row.total).reduce((acc, row) => acc + parsePitchVnd(row.vnd), 0)
-  if (sumC !== 178450000) throw new Error('pitchTableC total mismatch')
+  if (sumC !== 171450000) throw new Error('pitchTableC total mismatch')
 
-  if (2262340000 + 178450000 !== 2440790000) {
+  if (2255840000 + 171450000 !== 2427290000) {
     throw new Error('18-month budget identity mismatch')
   }
 
   const sumDChi = pitchTableD.reduce((acc, row) => acc + parsePitchVnd(row.chi), 0)
-  if (sumDChi !== 2440790000) throw new Error('pitchTableD chi sum mismatch')
+  if (sumDChi !== 2427290000) throw new Error('pitchTableD chi sum mismatch')
 }
 
 assertPitchFundingData()
@@ -5081,8 +5081,8 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
           <div class="slide-content">
             <p class="pitch-fund-ask">$100,000</p>
             <p class="pitch-fund-meta pitch-fund-meta--stacked">Khoảng 2,57 tỷ đồng cho 18 tháng runway.</p>
-            <p class="pitch-fund-meta">Chưa tính doanh thu thì vốn vẫn đủ 18 tháng, còn dư khoảng 129 triệu làm dự phòng.</p>
-            <p class="pitch-fund-meta">Bảng chi tính khi chưa có doanh thu. Có doanh thu thì cuối tháng 18 quỹ còn khoảng 429 triệu (bình thường), 522 triệu (hơn mức bình thường), 603 triệu (khá) hoặc 656 triệu (màu hồng). Xem phụ lục 12, mục 5.</p>
+            <p class="pitch-fund-meta">Chưa tính doanh thu thì vốn vẫn đủ 18 tháng, còn dư khoảng 143 triệu làm dự phòng.</p>
+            <p class="pitch-fund-meta">Bảng chi tính khi chưa có doanh thu. Có doanh thu thì cuối tháng 18 quỹ còn khoảng 443 triệu (bình thường), 536 triệu (hơn mức bình thường), 617 triệu (khá) hoặc 669 triệu (màu hồng). Xem phụ lục 12, mục 5.</p>
             <p class="pitch-fund-meta">Tiền này đủ để em đưa "roomio" tới khoảng 240 chủ trả phí ở tháng 18. Khoảng tháng 15–18, khi đã có số chủ và doanh thu, em gọi vòng tiếp theo. Điều kiện gọi vốn ở phụ lục 12, mục 6. Còn nếu chủ nhiều phòng, nhiều loại hình vào sớm (từ trường hợp khá trở lên) thì "roomio" tự đi tới hoà vốn, không cần gọi thêm.</p>
 
             <h3 class="pitch-fund-section-title">Tiền dùng vào đâu</h3>
@@ -6217,7 +6217,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                     <li>Dự trù thay Dev 1 lần trong 18 tháng lỡ không hợp. Tuyển lại tốn khoảng 0,5 triệu, cộng 1 tháng hai người làm chồng để bàn giao (khoảng 18 triệu). Founder mất khoảng 1 tháng kèm người mới nên sản phẩm chậm lại xí xi.</li>
                     <li>Dự trù thay Sale chính 2 lần, mỗi lần tuyển lại tốn khoảng 0,5 triệu. Người mới thử việc vẫn nhận đủ lương, 2 tháng đầu ký được khoảng nửa nhịp. Cả hai lần làm mất khoảng 13 chủ ở tháng 18.</li>
                     <li>CTV trả theo số khách, phí cứng thấp nên thay CTV không tính riêng.</li>
-                    <li>Tổng khoảng 20 triệu, lấy từ dự phòng 129 triệu (xem phụ lục 12). Bảng chi chưa trừ khoản này.</li>
+                    <li>Tổng khoảng 20 triệu, lấy từ dự phòng 143 triệu (xem phụ lục 12). Bảng chi chưa trừ khoản này.</li>
                     <li>Để mỗi lần thay người không phải dạy lại từ đầu, roomio sẽ làm sẵn tài liệu onboarding trước khi tuyển. Tài liệu gồm cách bán, cách cài cho chủ và cách đọc code.</li>
                   </ul>
                 </div>
@@ -6225,7 +6225,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                 <div class="pitch-budget-block">
                   <h4 class="pitch-budget-block__title">Chỗ làm</h4>
                   <ul class="pitch-budget-assumptions">
-                    <li>Tháng 1–5 làm tại nhà ở Đà Lạt. Từ tháng 6 thuê một căn 2PN ở TP.HCM, phòng khách làm chỗ làm chung cho founder và Dev. Còn 2PN cho founder thuê lại 1 phòng trả đầy đủ, và tìm thêm người share 1 phòng còn lại, đảm bảo tiết kiệm chi phí của công ty.</li>
+                    <li>Tháng 1–5 làm tại nhà ở Đà Lạt. Từ tháng 6 thuê một căn 2PN ở TP.HCM, phòng khách làm chỗ làm chung cho founder và Dev. Còn 2PN cho founder thuê lại 1 phòng nhỏ trả đầy đủ 4 triệu, và tìm thêm người share phòng lớn còn lại 5 triệu, đảm bảo tiết kiệm chi phí của công ty. Công ty trả phần còn lại 8 triệu.</li>
                     <li>Dev sẽ được cấp máy mạnh. Founder tuy có máy hơi cùi nhưng vẫn còn dùng tạm bợ được, vẫn dùng để xác định architecture trước cho dev được. Nên để phần máy mạnh đó cho dev, code xong chạy test tại chỗ luôn mà vẫn đảm bảo sức mạnh.</li>
                     <li>CEO, Sale, CTV dùng máy riêng. Nếu có thể được thì founder sẽ xin một màn hình thôi (đang cân nhắc kỹ vì chi phí công ty có hạn).</li>
                   </ul>
@@ -6336,7 +6336,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                       </table>
                     </div>
                   </div>
-                  <p class="pitch-budget-table-note">Bảng này tính khi chưa có đồng doanh thu nào. Chi 18 tháng là 2.440.790.000 đ, còn dư khoảng 129 triệu làm dự phòng.</p>
+                  <p class="pitch-budget-table-note">Bảng này tính khi chưa có đồng doanh thu nào. Chi 18 tháng là 2.427.290.000 đ, còn dư khoảng 143 triệu làm dự phòng.</p>
                   <div class="pitch-focus">
                     <h5 class="pitch-focus__title">Vốn dồn vào đâu</h5>
                     <div class="pitch-focus__body">
@@ -6413,7 +6413,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                       </table>
                     </div>
                   </div>
-                  <p class="pitch-budget-table-note">Tổng chi hằng tháng của 18 tháng là 2.262.340.000 đ. Cột tháng 2–5 là mức tháng 3–5. Tháng 2 chưa có CEO và Sale còn thử việc (đủ lương, chưa đóng bảo hiểm), nên chi 78.405.000 đ. Hoa hồng là trung bình mỗi tháng của giai đoạn, tăng dần theo số chủ ký được. Lương Sale chính ở cột tháng 6–12 cũng là trung bình, vì tháng 6 là 5,5 triệu còn tháng 7–12 là 6 triệu. Lương có điều kiện (Founder 25 rồi 28 triệu, Dev 18 triệu ở tháng 13–18, Sale chính 8 triệu) tính theo mức đạt số.</p>
+                  <p class="pitch-budget-table-note">Tổng chi hằng tháng của 18 tháng là 2.255.840.000 đ. Cột tháng 2–5 là mức tháng 3–5. Tháng 2 chưa có CEO và Sale còn thử việc (đủ lương, chưa đóng bảo hiểm), nên chi 78.405.000 đ. Hoa hồng là trung bình mỗi tháng của giai đoạn, tăng dần theo số chủ ký được. Lương Sale chính ở cột tháng 6–12 cũng là trung bình, vì tháng 6 là 5,5 triệu còn tháng 7–12 là 6 triệu. Lương có điều kiện (Founder 25 rồi 28 triệu, Dev 18 triệu ở tháng 13–18, Sale chính 8 triệu) tính theo mức đạt số.</p>
                 </div>
 
                 <div class="pitch-budget-block">
@@ -6440,7 +6440,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                       </table>
                     </div>
                   </div>
-                  <p class="pitch-budget-table-note">Tổng chi 18 tháng, gồm hằng tháng và một lần, là 2.440.790.000 đ. Số này chưa tính doanh thu.</p>
+                  <p class="pitch-budget-table-note">Tổng chi 18 tháng, gồm hằng tháng và một lần, là 2.427.290.000 đ. Số này chưa tính doanh thu.</p>
                 </div>
 
                 <div class="pitch-budget-block">
@@ -6467,7 +6467,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                       </table>
                     </div>
                   </div>
-                  <p class="pitch-budget-table-note">Đây là trường hợp chưa có đồng doanh thu nào. Vốn $100,000 vẫn đủ 18 tháng, cuối tháng 18 còn khoảng 129 triệu dự phòng. Có doanh thu thì khác, xem mục 5.</p>
+                  <p class="pitch-budget-table-note">Đây là trường hợp chưa có đồng doanh thu nào. Vốn $100,000 vẫn đủ 18 tháng, cuối tháng 18 còn khoảng 143 triệu dự phòng. Có doanh thu thì khác, xem mục 5.</p>
                 </div>
 
                 <div class="pitch-budget-block">
