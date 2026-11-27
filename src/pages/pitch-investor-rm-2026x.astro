@@ -6892,19 +6892,27 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
           revealObserver.observe(element);
         });
 
-        const appendixScrollBehavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-          ? 'auto'
-          : 'smooth';
-
         document.querySelectorAll('.apple-accordion-item').forEach((item) => {
           item.addEventListener('toggle', () => {
             if (!item.open) return;
             if (item.dataset.jumpOpen) {
               delete item.dataset.jumpOpen;
-              return;
             }
-            item.scrollIntoView({ block: 'start', behavior: appendixScrollBehavior });
           });
+        });
+
+        document.querySelectorAll('.apple-accordion-item > summary').forEach((summary) => {
+          summary.addEventListener('click', () => {
+            const savedTop = summary.getBoundingClientRect().top;
+            requestAnimationFrame(() => {
+              requestAnimationFrame(() => {
+                const delta = summary.getBoundingClientRect().top - savedTop;
+                if (Math.abs(delta) >= 1) {
+                  window.scrollBy(0, delta);
+                }
+              });
+            });
+          }, { capture: true });
         });
 
         // Jump to appendix dropdown & auto-open
