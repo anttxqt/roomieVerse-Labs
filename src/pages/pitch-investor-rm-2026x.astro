@@ -2338,6 +2338,16 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
         min-width: 880px;
       }
 
+      .pitch-budget-table--growth {
+        min-width: 640px;
+      }
+
+      .pitch-budget-table--growth th:first-child,
+      .pitch-budget-table--growth td:first-child {
+        width: 18%;
+        font-weight: 600;
+      }
+
       .pitch-fee-calc {
         display: flex;
         flex-direction: column;
@@ -6266,7 +6276,7 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
 
             <details class="apple-accordion-item" id="appendix-slide-9" name="pitch-appendix">
               <summary class="apple-accordion-header">
-                <span class="apple-accordion-title">Slide 9: Cách đi thị trường</span>
+                <span class="apple-accordion-title">Slide 9: Hướng phát triển của roomio</span>
                 <span class="apple-accordion-icon" aria-hidden="true">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="6 9 12 15 18 9"></polyline>
@@ -6306,6 +6316,52 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                     <li>Chủ cho thuê tự quản lý nhà, chưa thuê người quản lý. Hoặc có thể là người quản lý nếu roomio tìm ra được data về họ.</li>
                     <li>Trước mắt là các khu trọ khoảng 10 phòng trở lên (giả định ở phụ lục 8), sẽ kiểm chứng với những chủ đầu tiên.</li>
                     <li>Chưa nhắm chuỗi lớn hay toà nhà hàng trăm phòng. Nhóm này đã có các bên như Resident, AirCity.</li>
+                  </ul>
+                </div>
+
+                <div class="pitch-budget-block">
+                  <h4 class="pitch-budget-block__title">Sau vòng này: mở rộng ra cả nước theo 2 bước</h4>
+                  <p>Vòng này em tập trung ở Đà Lạt rồi TP.HCM để chứng minh cách bán chạy được. Sau đó em mở rộng ra cả nước theo 2 bước. Em không rải mỏng ngay từ đầu, vì roomio bán bằng người đi gặp chủ. Vùng nào cũng phải đủ dày thì mới giữ được khách.</p>
+                  <div class="pitch-budget-table-shell">
+                    <div class="pitch-budget-table-scroll">
+                      <table class="pitch-budget-table pitch-budget-table--growth">
+                        <thead>
+                          <tr>
+                            <th></th>
+                            <th>Bước 1: vòng Seed</th>
+                            <th>Bước 2: vòng Series A</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Khi nào</td>
+                            <td>Từ khoảng tháng 18, sau khi gọi xong vòng Seed</td>
+                            <td>Khi cách bán đã chạy được ở 3 vùng</td>
+                          </tr>
+                          <tr>
+                            <td>Ở đâu</td>
+                            <td>Giữ TP.HCM. Mở thêm Hà Nội và 1–2 tỉnh nhiều khu công nghiệp như Đồng Nai, Bắc Ninh</td>
+                            <td>Toàn quốc</td>
+                          </tr>
+                          <tr>
+                            <td>Bán thế nào</td>
+                            <td>Mỗi vùng một đội nhỏ gồm sale và CTV. Mở đăng ký online cho chủ ở mọi tỉnh, tự cài đặt, team hỗ trợ từ xa</td>
+                            <td>Mạng CTV hoặc đối tác ở từng tỉnh. Mở trước ở những tỉnh đã có nhiều chủ đăng ký online</td>
+                          </tr>
+                          <tr>
+                            <td>Cần chứng minh gì</td>
+                            <td>Hà Nội đạt nhịp bán gần bằng TP.HCM. Chủ đăng ký online tự dùng được, ít phải hỗ trợ</td>
+                            <td>Em sẽ đặt khi gọi vòng Seed</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <ul class="pitch-budget-assumptions">
+                    <li>Vì sao chưa phủ cả nước ở vòng Seed? Tiền Seed chỉ đủ nuôi vài đội trong 18–24 tháng. Nhà đầu tư vòng Seed cũng muốn thấy cách bán ở TP.HCM lặp lại được ở thành phố thứ hai, chứ chưa cần thấy phủ rộng.</li>
+                    <li>Kênh online giúp em chọn vùng theo số liệu thật. Tỉnh nào tự có nhiều chủ đăng ký thì em mở đội ở đó trước.</li>
+                    <li>Tên tỉnh em dùng theo địa giới mới sau sáp nhập ngày 01/07/2025.</li>
+                    <li>Đây là kế hoạch. Số tiền vòng sau em sẽ tính lại khi tới gần, dựa trên số thật của vòng này.</li>
                   </ul>
                 </div>
 
