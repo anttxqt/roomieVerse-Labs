@@ -604,11 +604,13 @@ const slide6AppendixKhachSteps = [
   'Khách chưa dùng Telegram vẫn xem được hoá đơn qua link.',
 ]
 
-const slide6KhachTileNs = [1, 2, 3] as const
+const slide6KhachTileNs = [1, 2] as const
+
+const appendixChuImage = slide6StepImage('chu', 4)
 
 const slide6TileWidths = [400, 800, 1200]
 const slide6LandlordTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 1100px) - 20px) / 3), 80vw'
-const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 720px) - 20px) / 3), 70vw'
+const slide6KhachTileSizes = '(min-width: 768px) calc((min(100vw - 40px, 480px) - 10px) / 2), 70vw'
 
 const appendix2ImageGlob = import.meta.glob('../assets/pitch/appendix-2/*.{png,jpg,jpeg,webp}', {
   eager: true,
@@ -3487,16 +3489,20 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
 
       #appendix-slide-5 .appendix-slide-6__khach-strip {
         width: 100%;
-        max-width: 720px;
+        max-width: 480px;
         margin: 12px auto 16px;
         min-width: 0;
       }
 
       #appendix-slide-5 .appendix-slide-6__khach-tiles {
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 10px;
         min-width: 0;
+      }
+
+      #appendix-slide-5 .appendix-slide-6__khach-strip--one {
+        max-width: 235px;
       }
 
       #appendix-slide-5 .appendix-slide-6__khach-tile {
@@ -5764,6 +5770,21 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
               <div class="apple-accordion-content">
                 <div class="pitch-budget-block">
                   <h4 class="pitch-budget-block__title">Chủ cho thuê</h4>
+                  {appendixChuImage && (
+                    <div class="appendix-slide-6__khach-strip appendix-slide-6__khach-strip--one">
+                      <div class="appendix-slide-6__khach-frame">
+                        <Picture
+                          src={appendixChuImage}
+                          alt="Chủ cho thuê hỏi quản gia roomio về hoá đơn chưa thanh toán và phòng trống"
+                          formats={['avif', 'webp']}
+                          widths={slide6TileWidths}
+                          sizes="(min-width: 768px) 235px, 70vw"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      </div>
+                    </div>
+                  )}
                   <ol class="appendix-slide-6__steps">
                     {slide6AppendixChuSteps.map((step) => (
                       <li>{step}</li>
