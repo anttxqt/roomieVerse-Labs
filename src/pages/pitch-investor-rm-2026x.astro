@@ -5320,6 +5320,35 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                     </li>
                   </ol>
                 </div>
+                <div class="pitch-budget-block">
+                  <h4 class="pitch-budget-block__title">3. Thiết kế hệ thống phòng cho việc nhà cung cấp sập</h4>
+                  <p>Em và team sẽ cố gắng hết sức để tối ưu hệ thống nhằm hạn chế việc mở rộng theo chiều ngang quá nhiều, tiết kiệm chi phí máy chủ hơn. Tuy nhiên vẫn sẽ đảm bảo việc phục vụ khách tốt nhất có thể.</p>
+                  <p>Em đang nghiên cứu tất cả các case mà khi hệ thống sập, vẫn không ảnh hưởng tới khách hàng của công ty, cụ thể là những chủ trọ. Và kể cả những case đảm bảo hoạt động khi nhà cung cấp máy chủ sập, ví dụ như đợt một vùng lớn của AWS sập hồi 10/2025 lên tới 15 tiếng.</p>
+                  <p>Phần dưới đây là kế hoạch, chưa làm. Em làm theo thứ tự, giữ dữ liệu trước rồi mới tới giữ cho hệ thống chạy được.</p>
+                  <ol class="sys-flow">
+                    <li class="sys-flow__step">
+                      <div class="sys-flow__actors"><span class="sys-flow__actor">Lúc bình thường</span></div>
+                      <p class="sys-flow__text">Sao lưu dữ liệu ra ngoài nhà cung cấp chính. Cơ sở dữ liệu tự lưu liên tục để quay lại được khi lỡ tay. Thêm một bản chép định kỳ sang nhà cung cấp thứ hai. Nhà cung cấp chính có sập hẳn thì dữ liệu vẫn còn.</p>
+                    </li>
+                    <li class="sys-flow__step">
+                      <div class="sys-flow__actors"><span class="sys-flow__actor">Lúc bình thường</span></div>
+                      <p class="sys-flow__text">Ghi đôi những gì khách gửi vào. Mỗi lần khách gửi ảnh đồng hồ, báo đã trả tiền, báo sự cố, hay có tiền báo về, roomio ghi vào cơ sở dữ liệu chính và đẩy thêm một bản sang nhà cung cấp thứ hai. Bản thứ hai chỉ để lưu, không phục vụ. Bên thứ hai chậm hay lỗi thì khách cũng không phải chờ.</p>
+                    </li>
+                    <li class="sys-flow__step">
+                      <div class="sys-flow__actors"><span class="sys-flow__actor">Lúc sập</span></div>
+                      <p class="sys-flow__text">Cổng nhận dự phòng. Nhà cung cấp chính sập thì cổng vào tự chuyển sang nhà cung cấp thứ hai. Khách vẫn gửi ảnh và báo trả tiền như thường, bot báo là đã nhận. Việc chủ duyệt và gửi hoá đơn tạm khoá tới khi hệ thống chính hoạt động lại.</p>
+                    </li>
+                    <li class="sys-flow__step">
+                      <div class="sys-flow__actors"><span class="sys-flow__actor">Khi hoạt động lại</span></div>
+                      <p class="sys-flow__text">Nạp những gì nhận được trong lúc sập về cơ sở dữ liệu chính, theo đúng thứ tự. Mỗi việc có mã riêng nên không bị ghi hai lần. Xong thì cổng vào chuyển về như cũ.</p>
+                    </li>
+                  </ol>
+                  <ul class="pitch-budget-assumptions">
+                    <li>Lúc nào cũng chỉ có một nơi được ghi dữ liệu chính, nên khi nhập lại không có chuyện hai bên vênh nhau.</li>
+                    <li>Ảnh đồng hồ vốn đã cất ở Cloudflare, nằm ngoài nhà cung cấp máy chủ chính.</li>
+                    <li>Bản ghi đôi chỉ giữ những gì khách gửi vào. Phòng, hợp đồng, hoá đơn của chủ thì nằm ở bản sao lưu. Nên cần cả hai.</li>
+                  </ul>
+                </div>
               </div>
             </details>
 
