@@ -4087,6 +4087,63 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
         border: 1px solid #d2d2d7;
       }
 
+      /* Sơ đồ 3 giai đoạn khi nhà cung cấp sập */
+      #appendix-system .dr-phases {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+        margin: 14px 0 22px;
+        min-width: 0;
+      }
+
+      #appendix-system .dr-phase {
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+      }
+
+      #appendix-system .dr-phase .sys-arch-node {
+        flex: none;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      #appendix-system .dr-phase .sys-arch-node--off {
+        margin-top: 12px;
+        border-style: dashed;
+        background: transparent;
+        box-shadow: none;
+      }
+
+      #appendix-system .dr-phase .sys-arch-node--off .sys-arch-node__title {
+        color: #86868b;
+      }
+
+      #appendix-system .dr-connector {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2px;
+        margin: 0;
+        padding: 8px 0;
+        font-size: 0.8rem;
+        line-height: 1.35;
+        color: #86868b;
+        text-align: center;
+      }
+
+      #appendix-system .dr-connector::before {
+        content: "↓";
+        font-size: 0.85rem;
+      }
+
+      @media (max-width: 760px) {
+        #appendix-system .dr-phases {
+          grid-template-columns: 1fr;
+          gap: 26px;
+        }
+      }
+
       @media (max-width: 480px) {
         #appendix-system .sys-arch-tier__row {
           flex-direction: column;
@@ -5324,7 +5381,70 @@ const appendix2AppsMedia = await Promise.all(appendix2Apps.map((app) => resolveA
                   <h4 class="pitch-budget-block__title">3. Thiết kế hệ thống phòng cho việc nhà cung cấp sập</h4>
                   <p>Em và team sẽ cố gắng hết sức để tối ưu hệ thống nhằm hạn chế việc mở rộng theo chiều ngang quá nhiều, tiết kiệm chi phí máy chủ hơn. Tuy nhiên vẫn sẽ đảm bảo việc phục vụ khách tốt nhất có thể.</p>
                   <p>Em đang nghiên cứu tất cả các case mà khi hệ thống sập, vẫn không ảnh hưởng tới khách hàng của công ty, cụ thể là những chủ trọ. Và kể cả những case đảm bảo hoạt động khi nhà cung cấp máy chủ sập, ví dụ như đợt một vùng lớn của AWS sập hồi 10/2025 lên tới 15 tiếng.</p>
+                  <p>Các bên khác hiện tại ít ai thiết kế hệ thống đảm bảo cho người dùng được như này lắm, vì muốn làm vậy tốn khá nhiều thời gian nghiên cứu để có được hướng vừa tiết kiệm chi phí vừa đảm bảo.</p>
                   <p>Phần dưới đây là kế hoạch, chưa làm. Em làm theo thứ tự, giữ dữ liệu trước rồi mới tới giữ cho hệ thống chạy được.</p>
+                  <div class="dr-phases">
+                    <div class="dr-phase">
+                      <p class="sys-arch-tier__label">Lúc bình thường</p>
+                      <div class="sys-arch-node">
+                        <p class="sys-arch-node__title">Khách thuê và chủ cho thuê</p>
+                        <p class="sys-arch-node__sub">Gửi ảnh, báo trả tiền, duyệt và gửi hoá đơn</p>
+                      </div>
+                      <p class="dr-connector" aria-hidden="true"></p>
+                      <div class="sys-arch-node">
+                        <p class="sys-arch-node__title">Cổng vào Cloudflare</p>
+                        <p class="sys-arch-node__sub">Dẫn mọi người vào nhà cung cấp chính</p>
+                      </div>
+                      <p class="dr-connector" aria-hidden="true"></p>
+                      <div class="sys-arch-node">
+                        <p class="sys-arch-node__title">App và cơ sở dữ liệu chính</p>
+                        <p class="sys-arch-node__sub">Ở nhà cung cấp chính, làm mọi việc như hiện nay</p>
+                      </div>
+                      <p class="dr-connector">Sao lưu định kỳ và ghi đôi những gì khách gửi vào</p>
+                      <div class="sys-arch-node">
+                        <p class="sys-arch-node__title">Nhà cung cấp thứ hai</p>
+                        <p class="sys-arch-node__sub">Chỉ lưu, không phục vụ ai</p>
+                      </div>
+                    </div>
+                    <div class="dr-phase">
+                      <p class="sys-arch-tier__label">Lúc sập</p>
+                      <div class="sys-arch-node">
+                        <p class="sys-arch-node__title">Khách thuê</p>
+                        <p class="sys-arch-node__sub">Vẫn gửi ảnh đồng hồ và báo trả tiền như thường</p>
+                      </div>
+                      <p class="dr-connector" aria-hidden="true"></p>
+                      <div class="sys-arch-node">
+                        <p class="sys-arch-node__title">Cổng vào Cloudflare</p>
+                        <p class="sys-arch-node__sub">Thấy nhà cung cấp chính không trả lời thì tự chuyển hướng</p>
+                      </div>
+                      <p class="dr-connector" aria-hidden="true"></p>
+                      <div class="sys-arch-node">
+                        <p class="sys-arch-node__title">Cổng nhận dự phòng</p>
+                        <p class="sys-arch-node__sub">Ở nhà cung cấp thứ hai. Ghi vào sổ chờ, bot báo khách là đã nhận</p>
+                      </div>
+                      <div class="sys-arch-node sys-arch-node--off">
+                        <p class="sys-arch-node__title">Chủ cho thuê</p>
+                        <p class="sys-arch-node__sub">Duyệt và gửi hoá đơn tạm khoá tới khi hệ thống chính hoạt động lại</p>
+                      </div>
+                    </div>
+                    <div class="dr-phase">
+                      <p class="sys-arch-tier__label">Khi hoạt động lại</p>
+                      <div class="sys-arch-node">
+                        <p class="sys-arch-node__title">Sổ chờ</p>
+                        <p class="sys-arch-node__sub">Những gì khách gửi trong lúc sập</p>
+                      </div>
+                      <p class="dr-connector">Nạp theo đúng thứ tự, việc nào đã có thì bỏ qua</p>
+                      <div class="sys-arch-node">
+                        <p class="sys-arch-node__title">Cơ sở dữ liệu chính</p>
+                        <p class="sys-arch-node__sub">Đủ dữ liệu như chưa từng sập</p>
+                      </div>
+                      <p class="dr-connector" aria-hidden="true"></p>
+                      <div class="sys-arch-node">
+                        <p class="sys-arch-node__title">Cổng vào chuyển về</p>
+                        <p class="sys-arch-node__sub">Mọi việc chạy lại như cũ, chủ duyệt và gửi hoá đơn tiếp</p>
+                      </div>
+                    </div>
+                  </div>
                   <ol class="sys-flow">
                     <li class="sys-flow__step">
                       <div class="sys-flow__actors"><span class="sys-flow__actor">Lúc bình thường</span></div>
