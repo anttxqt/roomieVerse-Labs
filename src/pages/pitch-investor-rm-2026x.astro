@@ -348,9 +348,9 @@ const pitchRateBandLabels = [
 
 const pitchRateMatrix = [
   { label: 'Nhà trọ', rates: [12000, 15000, 18000, 20000, 22000, 25000, 25000, 28000, 30000] },
-  { label: 'Căn hộ dịch vụ', rates: [22000, 25000, 30000, 32000, 35000, 40000, 42000, 45000, 45000] },
+  { label: 'Căn hộ dịch vụ (theo căn)', rates: [22000, 25000, 30000, 32000, 35000, 40000, 42000, 45000, 45000] },
   { label: 'Chung cư mini', rates: [38000, 42000, 48000, 50000, 55000, 60000, 80000, 100000, 100000] },
-  { label: 'Studio dài hạn', rates: [18000, 20000, 22000, 22000, 25000, 28000, 30000, 30000, 30000] },
+  { label: 'Căn hộ dịch vụ (theo phòng)', rates: [18000, 20000, 22000, 22000, 25000, 28000, 30000, 30000, 30000] },
   {
     label: 'Share phòng chung cư',
     rates: [12000, 15000, 18000, 20000, 22000, 25000, 25000, 28000, 30000],
@@ -368,9 +368,9 @@ const pitchPricingExamples = [
   { type: 'Nhà trọ', scale: '10 phòng', units: 10 },
   { type: 'Nhà trọ', scale: '20 phòng', units: 20 },
   { type: 'Nhà trọ', scale: '50 phòng', units: 50 },
-  { type: 'Studio dài hạn', scale: '10 phòng', units: 10 },
+  { type: 'Căn hộ dịch vụ (theo phòng)', scale: '10 phòng', units: 10 },
   { type: 'Chung cư mini', scale: '10 căn', units: 10 },
-  { type: 'Căn hộ dịch vụ', scale: '10 căn', units: 10 },
+  { type: 'Căn hộ dịch vụ (theo căn)', scale: '10 căn', units: 10 },
   { type: 'Căn hộ nguyên căn', scale: '3 căn', units: 3 },
   { type: 'Nhà nguyên căn', scale: '2 căn', units: 2 },
 ]
@@ -415,7 +415,7 @@ function assertPitchPricingData() {
   const checks = [
     ['Nhà trọ', 15, 0.9, 206340],
     ['Nhà trọ', 10, 0.9, 124890],
-    ['Căn hộ dịch vụ', 20, 0.9, 486890],
+    ['Căn hộ dịch vụ (theo căn)', 20, 0.9, 486890],
     ['Nhà nguyên căn', 5, 0.9, 262450],
     ['Nhà trọ', 250, 1.0, 6218000],
     ['Nhà trọ', 10, 0.0, 6900],
